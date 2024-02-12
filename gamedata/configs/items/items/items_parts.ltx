@@ -1,0 +1,2225 @@
+
+
+;;--;;;;;;;;;;;;;;;;;;;;;;;;;;;| СТВОЛЫ |;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;--
+;;-- 1.  Ствол ружейный (бокфлинт) 18.5мм
+;;-- 2.  Ствол ружейный ("тулка") 18.5мм
+;;-- 3.  Ствол для гладк. карабина 18.5мм
+;;-- 4.  Ствол для винтовок 7.62мм
+;;-- 5.  Ствол для винтовок 7.92мм
+;;-- 6.  Ствол для авт. винтовок 9мм
+;;-- 7.  Ствол для авт. винтовок 7.62мм
+;;-- 8.  Ствол для авт. винтовок 5.45мм
+;;-- 9.  Ствол для авт. винтовок 5.56мм
+;;-- 10. Ствол для пулемета 7.62мм
+;;-- 11. Ствол для спец. авт. винтовок 9мм
+;;-- 12. Ствол для ППШ 7.62мм
+;;--;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[tch_part]:identity_immunities ;;-- (technical)
+GroupControlSection                                    = spawn_group 
+discovery_dependency                                   = 
+$spawn                                                 = "food and drugs\harmonica_a"
+cform                                                  = skeleton 
+class                                                  = II_ATTCH 
+kind			                                       = i_part
+visual				                                   = dynamics\equipments\trade\parts.ogf
+description			                                   = st_wpn_spareparts_descr
+inv_name			                                   = st_wpn_spareparts
+inv_name_short		                                   = st_wpn_spareparts
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = -5
+inv_grid_y			                                   = 56
+cost				                                   = 0
+inv_weight			                                   = 1
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset	                               = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+
+
+[tch_part_con]:tch_part
+script_binding                                         = bind_item.bind
+use_condition                            		       = true 
+allow_repair                             		       = false
+
+cond_part										       = true ;-- for ui_item.script
+
+;[tch_part_con]:af_base
+;$spawn				                                   = "artefacts\af_surge"
+;kind			                                       = i_part
+;class				                                   = SCRPTART
+;visual				     						       = dynamics\equipments\trade\parts.ogf
+;description			     						   = st_wpn_spareparts_descr
+;inv_name			     						       = st_wpn_spareparts
+;inv_name_short		     						       = st_wpn_spareparts
+;inv_weight			                                   = 1.56
+;inv_grid_x			     						       = -5
+;inv_grid_y			     						       = 56
+;inv_grid_width			                               = 1
+;inv_grid_height			                           = 1
+;cost				                                   = 0
+;jump_height			                               = 0.0
+;;particles		                                       = artefact\af_thermal_idle
+;det_show_particles		                               = artefact\af_thermal_show
+;det_hide_particles		                               = artefact\af_thermal_hide
+;particles_bone			                               = joint2
+;af_rank				                               = 0
+;lights_enabled                                        = false
+;trail_light_color 		                               = 0.9,0.4,0.2
+;trail_light_range 		                               = 2.0
+;attach_angle_offset		                           = 1.922,1.551,-0.740   
+;attach_position_offset                                = 0.15,0.002,0.25
+;attach_bone_name		                               = bip01_r_hand
+;auto_attach			                               = false
+;slot											       = -1
+;health_restore_speed		                           = 0
+;radiation_restore_speed		                       = 0
+;satiety_restore_speed		                           = 0
+;power_restore_speed		                           = 0
+;bleeding_restore_speed		                           = 0
+;additional_inventory_weight	                       = 0
+;additional_inventory_weight2	                       = 0
+;artefact_activation_seq		                       = af_activation_bold
+;repair_part_bonus	 	                               = 0.02
+;hit_absorbation_sect		                           = part_absorbation
+;
+;[part_absorbation]
+;burn_immunity 			                               = 0
+;strike_immunity 		                               = 0
+;shock_immunity 			                           = 0
+;wound_immunity 			                           = 0
+;radiation_immunity 		                           = 0
+;telepatic_immunity 		                           = 0
+;chemical_burn_immunity 	                           = 0
+;explosion_immunity 		                           = 0
+;fire_wound_immunity  	                               = 0
+
+;;--=========================================================
+
+
+;;--===========================================================================
+;;--///////////////////////////////////////////////////////////////////////////
+;;-- 								ITEMS
+;;--///////////////////////////////////////////////////////////////////////////
+;;--===========================================================================
+
+[prt_i_ammo]:tch_part ;;-- Lead
+visual				                                   = dynamics\equipments\trade\ammo.ogf
+description			                                   = st_prt_i_ammo_descr
+inv_name			                                   = st_prt_i_ammo
+inv_name_short			                               = st_prt_i_ammo
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 0
+inv_grid_y			                                   = 46
+cost				                                   = 52
+inv_weight			                                   = 0.13
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+snd_on_take								 		       = bolt
+tier                                                   = 1
+
+[prt_i_paper]:tch_part ;;-- Paper Sheet
+visual                                                 = dynamics\equipments\quest\notes_letter_1.ogf
+cost				                                   = 61
+inv_name                                               = st_prt_i_paper
+inv_name_short                                         = st_prt_i_paper
+description                                            = st_prt_i_paper_descr
+inv_weight                                             = 0.01
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 1
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.01
+snd_on_take								 		       = paper
+tier                                                   = 1
+
+[prt_i_textolite]:tch_part ;;-- Textolite base
+visual                                                 = dynamics\equipments\quest\materials_textolite.ogf
+cost				                                   = 178
+inv_name                                               = st_prt_i_textolite
+inv_name_short                                         = st_prt_i_textolite
+description                                            = st_prt_i_textolite_descr
+inv_weight                                             = 0.05
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 2
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.02
+tier                                                   = 2
+
+[prt_i_capacitors]:tch_part ;;-- Pack of Capacitors
+visual                                                 = dynamics\equipments\quest\box_condensers.ogf
+cost				                                   = 193
+inv_name                                               = st_prt_i_capacitors
+inv_name_short                                         = st_prt_i_capacitors
+description                                            = st_prt_i_capacitors_descr
+inv_weight                                             = 0.13
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 3
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+tier                                                   = 2
+
+[prt_i_transistors]:tch_part ;;-- Pack of Transistors
+visual                                                 = dynamics\equipments\quest\box_transistors.ogf
+cost				                                   = 240
+inv_name                                               = st_prt_i_transistors
+inv_name_short                                         = st_prt_i_transistors
+description                                            = st_prt_i_transistors_descr
+inv_weight                                             = 0.12
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 4
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+tier                                                   = 2
+
+[prt_i_resistors]:tch_part ;;-- Pack of Resistors
+visual                                                 = dynamics\equipments\quest\box_resistors.ogf
+cost				                                   = 140
+inv_name                                               = st_prt_i_resistors
+inv_name_short                                         = st_prt_i_resistors
+description                                            = st_prt_i_resistors_descr
+inv_weight                                             = 0.1
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 5
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+tier                                                   = 2
+
+[prt_i_copper]:tch_part ;;-- A coil of copper wire
+visual                                                 = dynamics\equipments\quest\materials_wire.ogf
+cost				                                   = 134
+inv_name                                               = st_prt_i_copper
+inv_name_short                                         = st_prt_i_copper
+description                                            = st_prt_i_copper_descr
+inv_weight                                             = 0.15
+inv_grid_width                                         = 1
+inv_grid_height                                        = 1
+inv_grid_x                                             = 6
+inv_grid_y                                             = 46
+attach_angle_offset		                               = 0.000000, -1.204452, -1.262921
+attach_position_offset	                               = 0.081856, -0.035081, 0.011694
+attach_bone_name		                               = bip01_l_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.04
+tier                                                   = 2
+
+[prt_i_wood]:tch_part ;;-- Wooden parts
+visual				                                   = dynamics\part\prt_i_wood.ogf
+description			                                   = st_prt_i_wood_descr
+inv_name			                                   = st_prt_i_wood
+inv_name_short			                               = st_prt_i_wood
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 7
+inv_grid_y			                                   = 46
+cost				                                   = 132
+inv_weight			                                   = 0.27
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+tier                                                   = 1
+
+[prt_i_scrap]:tch_part ;;-- Scrap parts
+visual				                                   = dynamics\equipments\trade\ammo.ogf
+description			                                   = st_prt_i_scrap_descr
+inv_name			                                   = st_prt_i_scrap
+inv_name_short			                               = st_prt_i_scrap
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 8
+inv_grid_y			                                   = 46
+cost				                                   = 50
+inv_weight			                                   = 0.22
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.01
+snd_on_take								 		       = part
+tier                                                   = 1
+
+[prt_i_fasteners]:tch_part ;;-- Scrap parts
+visual				                                   = dynamics\equipments\trade\ammo.ogf
+description			                                   = st_prt_i_fasteners_descr
+inv_name			                                   = st_prt_i_fasteners
+inv_name_short			                               = st_prt_i_fasteners
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 9
+inv_grid_y			                                   = 46
+cost				                                   = 73
+inv_weight			                                   = 0.02
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.02
+snd_on_take								 		       = part
+tier                                                   = 1
+
+[prt_i_glass]:tch_part ;;-- Glass parts
+visual				                                   = dynamics\equipments\trade\parts.ogf
+description			                                   = st_prt_i_glass_descr
+inv_name			                                   = st_prt_i_glass
+inv_name_short			                               = st_prt_i_glass
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 10
+inv_grid_y			                                   = 46
+cost				                                   = 24
+inv_weight			                                   = 0.36
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+tier                                                   = 1
+
+[prt_i_ceramic]:tch_part ;;-- Glass parts
+visual				                                   = dynamics\equipments\trade\parts.ogf
+description			                                   = st_prt_i_ceramic_descr
+inv_name			                                   = st_prt_i_ceramic
+inv_name_short			                               = st_prt_i_ceramic
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 11
+inv_grid_y			                                   = 46
+cost				                                   = 46
+inv_weight			                                   = 0.42
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+tier                                                   = 1
+
+[prt_i_leather]:tch_part ;;-- Leather roll
+visual				                                   = dynamics\equipments\trade\parts.ogf
+description			                                   = st_prt_i_leather_descr
+inv_name			                                   = st_prt_i_leather
+inv_name_short			                               = st_prt_i_leather
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 12
+inv_grid_y			                                   = 46
+cost				                                   = 54
+inv_weight			                                   = 0.24
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+tier                                                   = 1
+
+[prt_i_plastic]:tch_part ;;-- Plastic base
+visual				                                   = dynamics\part\prt_i_plastic.ogf
+description			                                   = st_prt_i_plastic_descr
+inv_name			                                   = st_prt_i_plastic
+inv_name_short			                               = st_prt_i_plastic
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 13
+inv_grid_y			                                   = 46
+cost				                                   = 144
+inv_weight			                                   = 0.01
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+repair_part_bonus	 	                               = 0.01
+tier                                                   = 1
+
+[prt_i_rubber]:tch_part ;;-- Rubber base
+visual				                                   = dynamics\equipments\trade\parts.ogf
+description			                                   = st_prt_i_rubber_descr
+inv_name			                                   = st_prt_i_rubber
+inv_name_short			                               = st_prt_i_rubber
+inv_grid_width			                               = 1
+inv_grid_height			                               = 1
+inv_grid_x			                                   = 14
+inv_grid_y			                                   = 46
+cost				                                   = 22
+inv_weight			                                   = 0.13
+attach_angle_offset		                               = -0.287979, 1.560923, 1.544060
+attach_position_offset		                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                               = bip01_r_hand
+auto_attach				                               = false
+tier                                                   = 1
+
+
+;;--===========================================================================
+;;--///////////////////////////////////////////////////////////////////////////
+;;-- 								WEAPONS (Rifles)
+;;--///////////////////////////////////////////////////////////////////////////
+;;--===========================================================================
+
+
+;;------------------------------------------------------------------------------------
+;;--< Barrel >
+;;--==========
+
+[prt_w_barrel_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_1_descr
+inv_name			                                   = st_barrel_1
+inv_name_short		                                   = st_barrel_1
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 52
+inv_weight			                                   = 1.5
+part_y				                                   = 180
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_2_descr
+inv_name			                                   = st_barrel_2
+inv_name_short		                                   = st_barrel_2
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 53
+inv_weight			                                   = 1.5
+part_y				                                   = 240
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_3_descr
+inv_name			                                   = st_barrel_3
+inv_name_short		                                   = st_barrel_3
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.8
+part_y				                                   = 300
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_4_descr
+inv_name			                                   = st_barrel_4
+inv_name_short		                                   = st_barrel_4
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 55
+inv_weight			                                   = 1.0
+part_y				                                   = 360
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_5_descr
+inv_name			                                   = st_barrel_5
+inv_name_short		                                   = st_barrel_5
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 56
+inv_weight			                                   = 1.0
+part_y				                                   = 420
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_6_descr
+inv_name			                                   = st_barrel_6
+inv_name_short		                                   = st_barrel_6
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.75
+part_y				                                   = 120
+part_x				                                   = 240
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_7]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_7_descr
+inv_name			                                   = st_barrel_7
+inv_name_short		                                   = st_barrel_7
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.66
+part_y				                                   = 180
+part_x				                                   = 240
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_8]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_8_descr
+inv_name			                                   = st_barrel_8
+inv_name_short		                                   = st_barrel_8
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.6
+part_y				                                   = 240
+part_x				                                   = 240
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_9]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_9_descr
+inv_name			                                   = st_barrel_9
+inv_name_short		                                   = st_barrel_9
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.6
+part_y				                                   = 300
+part_x				                                   = 240
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_10]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_10_descr
+inv_name			                                   = st_barrel_10
+inv_name_short		                                   = st_barrel_10
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 61
+inv_weight			                                   = 1.5
+part_y				                                   = 360
+part_x				                                   = 240
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_11]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_11_descr
+inv_name			                                   = st_barrel_11
+inv_name_short		                                   = st_barrel_11
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 62
+inv_weight			                                   = 0.3
+part_y				                                   = 480
+part_x				                                   = 120
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_12]:tch_part_con
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_12_descr
+inv_name			                                   = st_barrel_12
+inv_name_short		                                   = st_barrel_12
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 63
+inv_weight			                                   = 0.3
+part_y				                                   = 480
+part_x				                                   = 0
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+[prt_w_barrel_13]:tch_part_con ;
+visual				                                   = dynamics\part\prt_w_barrel.ogf
+description			                                   = st_barrel_13_descr
+inv_name			                                   = st_barrel_13
+inv_name_short		                                   = st_barrel_13
+inv_grid_width		                                   = 3
+inv_grid_x			                                   = 61
+inv_grid_y			                                   = 64
+inv_weight			                                   = 1.5
+part_y				                                   = 480
+part_x				                                   = 0
+cost				                                   = 800
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 5
+
+;;------------------------------------------------------------------------------------
+;;--< Trigger componenet >
+;;--======================
+; 1. УСМ куркового типа (однорежимный)
+; 2. УСМ куркового типа (двухрежимный)
+; 3. УСМ куркового типа (трехрежимный)
+; 4. УСМ ударникового типа (однорежимный)
+; 5. УСМ ударникового типа (двухрежимный)
+; 6. УСМ куркового типа (ружейн.)
+
+[prt_w_trigger_components_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_1_descr
+inv_name			                                   = st_trigger_components_1
+inv_name_short		                                   = st_trigger_components_1
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.2
+part_y				                                   = 120
+part_x				                                   = 0
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_trigger_components_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_2_descr
+inv_name			                                   = st_trigger_components_2
+inv_name_short		                                   = st_trigger_components_2
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.2
+part_y				                                   = 180
+part_x				                                   = 0
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_trigger_components_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_3_descr
+inv_name			                                   = st_trigger_components_3
+inv_name_short		                                   = st_trigger_components_3
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.2
+part_y				                                   = 240
+part_x				                                   = 0
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_trigger_components_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_4_descr
+inv_name			                                   = st_trigger_components_4
+inv_name_short		                                   = st_trigger_components_4
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.2
+part_y				                                   = 300
+part_x				                                   = 0
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_trigger_components_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_5_descr
+inv_name			                                   = st_trigger_components_5
+inv_name_short		                                   = st_trigger_components_5
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.2
+part_y				                                   = 360
+part_x				                                   = 0
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_trigger_components_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_trigger_components_6_descr
+inv_name			                                   = st_trigger_components_6
+inv_name_short		                                   = st_trigger_components_6
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 57
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.2
+part_y				                                   = 120
+part_x				                                   = 120
+cost                                                   = 900
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 4
+
+;;------------------------------------------------------------------------------------
+;;--< Bolt carrier >
+;;--================
+; 1. Продольно-скользящий затвор с запиранием поворотом (Россия)
+; 2. Продольно-скользящий затвор с запиранием поворотом (Россия, спец)
+; 3. Продольно-скользящий затвор с запиранием поворотом (NATO)
+; 4. Продольно-скользящий затвор с запиранием перекосом
+; 5. Продольно-скользящий полусвободный затвор
+; 6. Продольно-скользящий затвор с болтовым запиранием
+; 7. Затвор рычажного типа с запиранием клином
+; 8. Колодка (бокфлинт)
+; 9. Колодка (курковка)
+; 10. Продольно-скользящий затвор с запиранием поворотом (NATO, 7.62)
+; 11. Продольно-скользящий свободный затвор
+
+[prt_w_bolt_carrier_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_1_descr
+inv_name			                                   = st_bolt_carrier_1
+inv_name_short		                                   = st_bolt_carrier_1
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.4
+part_y				                                   = 120
+part_x				                                   = 720
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_2_descr
+inv_name			                                   = st_bolt_carrier_2
+inv_name_short		                                   = st_bolt_carrier_2
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.4
+part_y				                                   = 180
+part_x				                                   = 720
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_3_descr
+inv_name			                                   = st_bolt_carrier_3
+inv_name_short		                                   = st_bolt_carrier_3
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.3
+part_y				                                   = 420
+part_x				                                   = 480
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_4_descr
+inv_name			                                   = st_bolt_carrier_4
+inv_name_short		                                   = st_bolt_carrier_4
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.3
+part_y				                                   = 300
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_5_descr
+inv_name			                                   = st_bolt_carrier_5
+inv_name_short		                                   = st_bolt_carrier_5
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.3
+part_y				                                   = 360
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_6_descr
+inv_name			                                   = st_bolt_carrier_6
+inv_name_short		                                   = st_bolt_carrier_6
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.3
+part_y				                                   = 240
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_7]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_7_descr
+inv_name			                                   = st_bolt_carrier_7
+inv_name_short		                                   = st_bolt_carrier_7
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.3
+part_y				                                   = 420
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_8]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_8_descr
+inv_name			                                   = st_bolt_carrier_8
+inv_name_short		                                   = st_bolt_carrier_8
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.3
+part_y				                                   = 120
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_9]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_9_descr
+inv_name			                                   = st_bolt_carrier_9
+inv_name_short		                                   = st_bolt_carrier_9
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.3
+part_y				                                   = 180
+part_x				                                   = 600
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_10]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_10_descr
+inv_name			                                   = st_bolt_carrier_10
+inv_name_short		                                   = st_bolt_carrier_10
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.3
+part_y				                                   = 480
+part_x				                                   = 480
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_carrier_11]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt_carrier.ogf
+description			                                   = st_bolt_carrier_11_descr
+inv_name			                                   = st_bolt_carrier_11
+inv_name_short		                                   = st_bolt_carrier_11
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 62
+inv_weight			                                   = 0.3
+part_y				                                   = 480
+part_x				                                   = 840
+cost                                                   = 700
+repair_type				                               = bolt_carrier
+snd_on_take								 		       = part
+tier                                                   = 3
+
+;;------------------------------------------------------------------------------------
+;;--< Bolt >
+;;--========
+; 1. Клин затвора (ружейн.)
+; 2. Поворотная личинка с 2-я упорами (пулемет.)
+; 3. Поворотная личинка с 2-я упорами (карабин.)
+; 4. Поворотная личинка с 2-я упорами (винтовоч.)
+; 5. Поворотная личинка с 3-я упорами (винтовоч.)
+; 6. Поворотная личинка с 2-я упорами (автомат.)
+; 7. Поворотная личинка с 4-я упорами (автомат.)
+; 8. Вращающаяся личинка с 6-ю упорами (автомат.)
+; 9. Вращающаяся личинка с 7-ю упорами (автомат.)
+; 10. Вращающаяся личинка с 8-ю упорами (автомат.)
+; 11. Нагнетатель с ударником (бокфлинт)
+; 12. Курок ("тулка")
+; 13. Поворотная личинка с 2-я упорами (автомат. NATO)
+; 14. Роликовая личинка для полусвободного затвора (автомат.)
+; 15. Ударник с боевой пружиной [ПП]
+; 16. Ударник с боевой пружиной [ПП][NATO]
+; 17. Ударник с боевой пружиной [ПП] для ППШ
+
+[prt_w_bolt_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_1_descr
+inv_name			                                   = st_bolt_1
+inv_name_short		                                   = st_bolt_1
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.15
+part_y				                                   = 120
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_2_descr
+inv_name			                                   = st_bolt_2
+inv_name_short		                                   = st_bolt_2
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.15
+part_y				                                   = 180
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_3_descr
+inv_name			                                   = st_bolt_3
+inv_name_short		                                   = st_bolt_3
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.15
+part_y				                                   = 360
+part_x				                                   = 480
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_4_descr
+inv_name			                                   = st_bolt_4
+inv_name_short		                                   = st_bolt_4
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.15
+part_y				                                   = 240
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_5_descr
+inv_name			                                   = st_bolt_5
+inv_name_short		                                   = st_bolt_5
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.15
+part_y				                                   = 300
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_6_descr
+inv_name			                                   = st_bolt_6
+inv_name_short		                                   = st_bolt_6
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.15
+part_y				                                   = 360
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_7]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_7_descr
+inv_name			                                   = st_bolt_7
+inv_name_short		                                   = st_bolt_7
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.15
+part_y				                                   = 120
+part_x				                                   = 480
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_8]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_8_descr
+inv_name			                                   = st_bolt_8
+inv_name_short		                                   = st_bolt_8
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.15
+part_y				                                   = 180
+part_x				                                   = 480
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_9]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_9_descr
+inv_name			                                   = st_bolt_9
+inv_name_short		                                   = st_bolt_9
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.15
+part_y				                                   = 240
+part_x				                                   = 480
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_10]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_10_descr
+inv_name			                                   = st_bolt_10
+inv_name_short		                                   = st_bolt_10
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.15
+part_y				                                   = 300
+part_x				                                   = 480
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_11]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_11_descr
+inv_name			                                   = st_bolt_11
+inv_name_short		                                   = st_bolt_11
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 62
+inv_weight			                                   = 0.15
+part_y				                                   = 420
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_12]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_12_descr
+inv_name			                                   = st_bolt_12
+inv_name_short		                                   = st_bolt_12
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 63
+inv_weight			                                   = 0.15
+part_y				                                   = 420
+part_x				                                   = 240
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_13]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_13_descr
+inv_name			                                   = st_bolt_13
+inv_name_short		                                   = st_bolt_13
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 58
+inv_grid_y			                                   = 64
+inv_weight			                                   = 0.15
+part_y				                                   = 480
+part_x				                                   = 360
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_14]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_14_descr
+inv_name			                                   = st_bolt_14
+inv_name_short		                                   = st_bolt_14
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 62
+inv_weight			                                   = 0.15
+part_y				                                   = 480
+part_x				                                   = 600
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_15]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_15_descr
+inv_name			                                   = st_bolt_15
+inv_name_short		                                   = st_bolt_15
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 63
+inv_weight			                                   = 0.15
+part_y				                                   = 180
+part_x				                                   = 960
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_16]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_16_descr
+inv_name			                                   = st_bolt_16
+inv_name_short		                                   = st_bolt_16
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 63
+inv_weight			                                   = 0.15
+part_y				                                   = 480
+part_x				                                   = 240
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_bolt_17]:tch_part_con
+visual				                                   = dynamics\part\prt_w_bolt.ogf
+description			                                   = st_bolt_17_descr
+inv_name			                                   = st_bolt_17
+inv_name_short		                                   = st_bolt_17
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 59
+inv_grid_y			                                   = 64
+inv_weight			                                   = 0.15
+part_y				                                   = 120
+part_x				                                   = 960
+cost                                                   = 600
+repair_type				                               = bolt
+snd_on_take								 		       = part
+tier                                                   = 3
+
+
+;;------------------------------------------------------------------------------------
+;;--< Gas tube >
+;;--============
+; 1. Газовая трубка для гладк. карабина
+; 2. Цевье продольно-скользящего типа
+; 3. Газовая трубка для самозарядн. винтовок
+; 4. Газовая трубка для спец. винтовок 9мм
+; 5. Газовая трубка винтовочная (Россия)
+; 6. Газовая трубка винтовочная (NATO)
+; 7. Газовая трубка пулеметная
+; 8. Отсечка-отражатель
+; 9. Эжекторы для бокфлинтов
+; 10. Эжекторы для "тулки"
+; 11. Газовая трубка с рукоятью для MP5
+
+[prt_w_gas_tube_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_1_descr
+inv_name			                                   = st_gas_tube_1
+inv_name_short		                                   = st_gas_tube_1
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.2
+part_y				                                   = 240
+part_x				                                   = 720
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_2_descr
+inv_name			                                   = st_gas_tube_2
+inv_name_short		                                   = st_gas_tube_2
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.2
+part_y				                                   = 360
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_3_descr
+inv_name			                                   = st_gas_tube_3
+inv_name_short		                                   = st_gas_tube_3
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.2
+part_y				                                   = 300
+part_x				                                   = 720
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_4_descr
+inv_name			                                   = st_gas_tube_4
+inv_name_short		                                   = st_gas_tube_4
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.2
+part_y				                                   = 360
+part_x				                                   = 720
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_5_descr
+inv_name			                                   = st_gas_tube_5
+inv_name_short		                                   = st_gas_tube_5
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.2
+part_y				                                   = 420
+part_x				                                   = 720
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_6_descr
+inv_name			                                   = st_gas_tube_6
+inv_name_short		                                   = st_gas_tube_6
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.2
+part_y				                                   = 420
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_7]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_7_descr
+inv_name			                                   = st_gas_tube_7
+inv_name_short		                                   = st_gas_tube_7
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.2
+part_y				                                   = 120
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_8]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_8_descr
+inv_name			                                   = st_gas_tube_8
+inv_name_short		                                   = st_gas_tube_8
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.2
+part_y				                                   = 180
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_9]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_9_descr
+inv_name			                                   = st_gas_tube_9
+inv_name_short		                                   = st_gas_tube_9
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.2
+part_y				                                   = 240
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_10]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_10_descr
+inv_name			                                   = st_gas_tube_10
+inv_name_short		                                   = st_gas_tube_10
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.2
+part_y				                                   = 300
+part_x				                                   = 840
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_gas_tube_11]:tch_part_con
+visual				                                   = dynamics\part\prt_w_gas_tube.ogf
+description			                                   = st_gas_tube_11_descr
+inv_name			                                   = st_gas_tube_11
+inv_name_short		                                   = st_gas_tube_11
+inv_grid_width		                                   = 1
+inv_grid_x			                                   = 60
+inv_grid_y			                                   = 64
+inv_weight			                                   = 0.2
+part_y				                                   = 480
+part_x				                                   = 720
+cost                                                   = 750
+repair_type				                               = gas_tube
+snd_on_take								 		       = part
+tier                                                   = 2
+
+
+;;--===========================================================================
+;;--///////////////////////////////////////////////////////////////////////////
+;;-- 								WEAPONS (Pistols)
+;;--///////////////////////////////////////////////////////////////////////////
+;;--===========================================================================
+
+;;------------------------------------------------------------------------------------
+;;--< barrels >
+;;--============
+
+[prt_w_p_barrel_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_1_descr
+inv_name			                                   = st_prt_w_p_barrel_1
+inv_name_short		                                   = st_prt_w_p_barrel_1
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.2
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_2_descr
+inv_name			                                   = st_prt_w_p_barrel_2
+inv_name_short		                                   = st_prt_w_p_barrel_2
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.2
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_3_descr
+inv_name			                                   = st_prt_w_p_barrel_3
+inv_name_short		                                   = st_prt_w_p_barrel_3
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.3
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_4_descr
+inv_name			                                   = st_prt_w_p_barrel_4
+inv_name_short		                                   = st_prt_w_p_barrel_4
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.3
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_5_descr
+inv_name			                                   = st_prt_w_p_barrel_5
+inv_name_short		                                   = st_prt_w_p_barrel_5
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.2
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_6_descr
+inv_name			                                   = st_prt_w_p_barrel_6
+inv_name_short		                                   = st_prt_w_p_barrel_6
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.2
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+[prt_w_p_barrel_7]:tch_part_con
+visual				                                   = dynamics\part\prt_w_p_barrel.ogf
+description			                                   = st_prt_w_p_barrel_7_descr
+inv_name			                                   = st_prt_w_p_barrel_7
+inv_name_short		                                   = st_prt_w_p_barrel_7
+inv_grid_x			                                   = 56
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.3
+cost                                                   = 750
+repair_type				                               = barrel
+snd_on_take								 		       = part
+tier                                                   = 4
+
+;;------------------------------------------------------------------------------------
+;;--< Pistol trigger mechanism >
+;;--============================
+
+[prt_w_p_trigger_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_prt_w_p_trigger_1_descr
+inv_name			                                   = st_prt_w_p_trigger_1
+inv_name_short		                                   = st_prt_w_p_trigger_1
+inv_grid_x			                                   = 55
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.15
+cost                                                   = 650
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_p_trigger_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_prt_w_p_trigger_2_descr
+inv_name			                                   = st_prt_w_p_trigger_2
+inv_name_short		                                   = st_prt_w_p_trigger_2
+inv_grid_x			                                   = 55
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.15
+cost                                                   = 650
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_p_trigger_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_prt_w_p_trigger_3_descr
+inv_name			                                   = st_prt_w_p_trigger_3
+inv_name_short		                                   = st_prt_w_p_trigger_3
+inv_grid_x			                                   = 55
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.15
+cost                                                   = 650
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 3
+
+[prt_w_p_trigger_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_trigger.ogf
+description			                                   = st_prt_w_p_trigger_4_descr
+inv_name			                                   = st_prt_w_p_trigger_4
+inv_name_short		                                   = st_prt_w_p_trigger_4
+inv_grid_x			                                   = 55
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.15
+cost                                                   = 650
+repair_type				                               = trigger_components
+snd_on_take								 		       = part
+tier                                                   = 3
+
+;;------------------------------------------------------------------------------------
+;;--< Recoil spring assembly >
+;;--==========================
+
+[prt_w_p_spring_1]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_1_descr
+inv_name			                                   = st_prt_w_p_spring_1
+inv_name_short		                                   = st_prt_w_p_spring_1
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_p_spring_2]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_2_descr
+inv_name			                                   = st_prt_w_p_spring_2
+inv_name_short		                                   = st_prt_w_p_spring_2
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_p_spring_3]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_3_descr
+inv_name			                                   = st_prt_w_p_spring_3
+inv_name_short		                                   = st_prt_w_p_spring_3
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_p_spring_4]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_4_descr
+inv_name			                                   = st_prt_w_p_spring_4
+inv_name_short		                                   = st_prt_w_p_spring_4
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_p_spring_5]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_5_descr
+inv_name			                                   = st_prt_w_p_spring_5
+inv_name_short		                                   = st_prt_w_p_spring_5
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+[prt_w_p_spring_6]:tch_part_con
+visual				                                   = dynamics\part\prt_w_spring.ogf
+description			                                   = st_prt_w_p_spring_6_descr
+inv_name			                                   = st_prt_w_p_spring_6
+inv_name_short		                                   = st_prt_w_p_spring_6
+inv_grid_x			                                   = 54
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.1
+cost                                                   = 850
+repair_type				                               = spring
+snd_on_take								 		       = part
+tier                                                   = 2
+
+
+;;--===========================================================================
+;;--///////////////////////////////////////////////////////////////////////////
+;;-- 								OUTFITS
+;;--///////////////////////////////////////////////////////////////////////////
+;;--===========================================================================
+
+;;------------------------------------------------------------------------------------
+;;--< Fabrics and hardware >
+;;--==========================
+
+[prt_o_fabrics_1]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_1.ogf
+description			                                   = st_prt_o_fabrics_1_descr
+inv_name			                                   = st_prt_o_fabrics_1
+inv_name_short		                                   = st_prt_o_fabrics_1
+inv_grid_x			                                   = 66
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.14
+cost                                                   = 200
+repair_type				                               = fabrics
+repair_part_bonus		                               = 0.01
+snd_on_take								 		   = outfit
+tier                                                   = 2
+
+[prt_o_fabrics_2]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_2.ogf
+description			                                   = st_prt_o_fabrics_2_descr
+inv_name			                                   = st_prt_o_fabrics_2
+inv_name_short		                                   = st_prt_o_fabrics_2
+inv_grid_x			                                   = 66
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.13
+cost                                                   = 200
+repair_type				                               = fabrics
+repair_part_bonus		                               = 0.02
+snd_on_take								 		   = outfit
+tier                                                   = 2
+
+[prt_o_fabrics_3]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_1.ogf
+description			                                   = st_prt_o_fabrics_3_descr
+inv_name			                                   = st_prt_o_fabrics_3
+inv_name_short		                                   = st_prt_o_fabrics_3
+inv_grid_x			                                   = 66
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.11
+cost                                                   = 200
+repair_type				                               = fabrics
+repair_part_bonus		                               = 0.01
+snd_on_take								 		   = outfit
+tier                                                   = 2
+
+[prt_o_fabrics_4]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_2.ogf
+description			                                   = st_prt_o_fabrics_4_descr
+inv_name			                                   = st_prt_o_fabrics_4
+inv_name_short		                                   = st_prt_o_fabrics_4
+inv_grid_x			                                   = 66
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.17
+cost                                                   = 200
+repair_type				                               = fabrics
+repair_part_bonus		                               = 0.02
+snd_on_take								 		   = outfit
+tier                                                   = 2
+
+;;------------------------------------------------------------------------------------
+;;--< Retardants / Protective textiles >
+;;--====================================
+
+[prt_o_retardant_1]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_1.ogf
+description			                                   = st_prt_o_retardant_1_descr
+inv_name			                                   = st_prt_o_retardant_1
+inv_name_short		                                   = st_prt_o_retardant_1
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_2]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_2.ogf
+description			                                   = st_prt_o_retardant_2_descr
+inv_name			                                   = st_prt_o_retardant_2
+inv_name_short		                                   = st_prt_o_retardant_2
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_3]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_3.ogf
+description			                                   = st_prt_o_retardant_3_descr
+inv_name			                                   = st_prt_o_retardant_3
+inv_name_short		                                   = st_prt_o_retardant_3
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_4]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_3.ogf
+description			                                   = st_prt_o_retardant_4_descr
+inv_name			                                   = st_prt_o_retardant_4
+inv_name_short		                                   = st_prt_o_retardant_4
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_5]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_5.ogf
+description			                                   = st_prt_o_retardant_5_descr
+inv_name			                                   = st_prt_o_retardant_5
+inv_name_short		                                   = st_prt_o_retardant_5
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_6]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_6.ogf
+description			                                   = st_prt_o_retardant_6_descr
+inv_name			                                   = st_prt_o_retardant_6
+inv_name_short		                                   = st_prt_o_retardant_6
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_7]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_1.ogf
+description			                                   = st_prt_o_retardant_7_descr
+inv_name			                                   = st_prt_o_retardant_7
+inv_name_short		                                   = st_prt_o_retardant_7
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_8]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_2.ogf
+description			                                   = st_prt_o_retardant_8_descr
+inv_name			                                   = st_prt_o_retardant_8
+inv_name_short		                                   = st_prt_o_retardant_8
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_9]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_1.ogf
+description			                                   = st_prt_o_retardant_9_descr
+inv_name			                                   = st_prt_o_retardant_9
+inv_name_short		                                   = st_prt_o_retardant_9
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_10]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_10.ogf
+description			                                   = st_prt_o_retardant_10_descr
+inv_name			                                   = st_prt_o_retardant_10
+inv_name_short		                                   = st_prt_o_retardant_10
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_11]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_11.ogf
+description			                                   = st_prt_o_retardant_11_descr
+inv_name			                                   = st_prt_o_retardant_11
+inv_name_short		                                   = st_prt_o_retardant_11
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_12]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_11.ogf
+description			                                   = st_prt_o_retardant_12_descr
+inv_name			                                   = st_prt_o_retardant_12
+inv_name_short		                                   = st_prt_o_retardant_12
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_13]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_2.ogf
+description			                                   = st_prt_o_retardant_13_descr
+inv_name			                                   = st_prt_o_retardant_13
+inv_name_short		                                   = st_prt_o_retardant_13
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_14]:tch_part_con
+visual				                                   = dynamics\part\prt_o_fabrics_1.ogf
+description			                                   = st_prt_o_retardant_14_descr
+inv_name			                                   = st_prt_o_retardant_14
+inv_name_short		                                   = st_prt_o_retardant_14
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_15]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_15.ogf
+description			                                   = st_prt_o_retardant_15_descr
+inv_name			                                   = st_prt_o_retardant_15
+inv_name_short		                                   = st_prt_o_retardant_15
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_16]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_15.ogf
+description			                                   = st_prt_o_retardant_16_descr
+inv_name			                                   = st_prt_o_retardant_16
+inv_name_short		                                   = st_prt_o_retardant_16
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_17]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_17.ogf
+description			                                   = st_prt_o_retardant_17_descr
+inv_name			                                   = st_prt_o_retardant_17
+inv_name_short		                                   = st_prt_o_retardant_17
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_18]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_18.ogf
+description			                                   = st_prt_o_retardant_18_descr
+inv_name			                                   = st_prt_o_retardant_18
+inv_name_short		                                   = st_prt_o_retardant_18
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_19]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_19.ogf
+description			                                   = st_prt_o_retardant_19_descr
+inv_name			                                   = st_prt_o_retardant_19
+inv_name_short		                                   = st_prt_o_retardant_19
+inv_grid_x			                                   = 67
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+[prt_o_retardant_20]:tch_part_con
+visual				                                   = dynamics\part\prt_o_retardant_20.ogf
+description			                                   = st_prt_o_retardant_20_descr
+inv_name			                                   = st_prt_o_retardant_20
+inv_name_short		                                   = st_prt_o_retardant_20
+inv_grid_x			                                   = 68
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.2
+cost                                                   = 550
+repair_type				                               = retardants
+snd_on_take								 		   = outfit
+tier                                                   = 3
+
+;;------------------------------------------------------------------------------------
+;;--< Ballistic inserts >
+;;--===============================
+
+[prt_o_ballistic_1]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_1.ogf
+description			                                   = st_prt_o_ballistic_1_descr
+inv_name			                                   = st_prt_o_ballistic_1
+inv_name_short		                                   = st_prt_o_ballistic_1
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_2]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_2.ogf
+description			                                   = st_prt_o_ballistic_2_descr
+inv_name			                                   = st_prt_o_ballistic_2
+inv_name_short		                                   = st_prt_o_ballistic_2
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 52
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_3]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_3.ogf
+description			                                   = st_prt_o_ballistic_3_descr
+inv_name			                                   = st_prt_o_ballistic_3
+inv_name_short		                                   = st_prt_o_ballistic_3
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_4]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_4.ogf
+description			                                   = st_prt_o_ballistic_4_descr
+inv_name			                                   = st_prt_o_ballistic_4
+inv_name_short		                                   = st_prt_o_ballistic_4
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 53
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_5]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_1.ogf
+description			                                   = st_prt_o_ballistic_5_descr
+inv_name			                                   = st_prt_o_ballistic_5
+inv_name_short		                                   = st_prt_o_ballistic_5
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_6]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_2.ogf
+description			                                   = st_prt_o_ballistic_6_descr
+inv_name			                                   = st_prt_o_ballistic_6
+inv_name_short		                                   = st_prt_o_ballistic_6
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 54
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_7]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_7.ogf
+description			                                   = st_prt_o_ballistic_7_descr
+inv_name			                                   = st_prt_o_ballistic_7
+inv_name_short		                                   = st_prt_o_ballistic_7
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_8]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_7.ogf
+description			                                   = st_prt_o_ballistic_8_descr
+inv_name			                                   = st_prt_o_ballistic_8
+inv_name_short		                                   = st_prt_o_ballistic_8
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 55
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_9]:tch_part_con
+visual			                                       = dynamics\repair\textile_patch_e.ogf
+description			                                   = st_prt_o_ballistic_9_descr
+inv_name			                                   = st_prt_o_ballistic_9
+inv_name_short		                                   = st_prt_o_ballistic_9
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_10]:tch_part_con
+visual			                                       = dynamics\repair\textile_patch_e.ogf
+description			                                   = st_prt_o_ballistic_10_descr
+inv_name			                                   = st_prt_o_ballistic_10
+inv_name_short		                                   = st_prt_o_ballistic_10
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 56
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_11]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_11.ogf
+description			                                   = st_prt_o_ballistic_11_descr
+inv_name			                                   = st_prt_o_ballistic_11
+inv_name_short		                                   = st_prt_o_ballistic_11
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_12]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_12.ogf
+description			                                   = st_prt_o_ballistic_12_descr
+inv_name			                                   = st_prt_o_ballistic_12
+inv_name_short		                                   = st_prt_o_ballistic_12
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 57
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_13]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_1.ogf
+description			                                   = st_prt_o_ballistic_13_descr
+inv_name			                                   = st_prt_o_ballistic_13
+inv_name_short		                                   = st_prt_o_ballistic_13
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_14]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_2.ogf
+description			                                   = st_prt_o_ballistic_14_descr
+inv_name			                                   = st_prt_o_ballistic_14
+inv_name_short		                                   = st_prt_o_ballistic_14
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 58
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_15]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_1.ogf
+description			                                   = st_prt_o_ballistic_15_descr
+inv_name			                                   = st_prt_o_ballistic_15
+inv_name_short		                                   = st_prt_o_ballistic_15
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_16]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_1.ogf
+description			                                   = st_prt_o_ballistic_16_descr
+inv_name			                                   = st_prt_o_ballistic_16
+inv_name_short		                                   = st_prt_o_ballistic_16
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 59
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_17]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_17.ogf
+description			                                   = st_prt_o_ballistic_17_descr
+inv_name			                                   = st_prt_o_ballistic_17
+inv_name_short		                                   = st_prt_o_ballistic_17
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_18]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_18.ogf
+description			                                   = st_prt_o_ballistic_18_descr
+inv_name			                                   = st_prt_o_ballistic_18
+inv_name_short		                                   = st_prt_o_ballistic_18
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 60
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_19]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_19.ogf
+description			                                   = st_prt_o_ballistic_19_descr
+inv_name			                                   = st_prt_o_ballistic_19
+inv_name_short		                                   = st_prt_o_ballistic_19
+inv_grid_x			                                   = 69
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+[prt_o_ballistic_20]:tch_part_con
+visual			                                       = dynamics\part\prt_o_ballistic_20.ogf
+description			                                   = st_prt_o_ballistic_20_descr
+inv_name			                                   = st_prt_o_ballistic_20
+inv_name_short		                                   = st_prt_o_ballistic_20
+inv_grid_x			                                   = 70
+inv_grid_y			                                   = 61
+inv_weight			                                   = 0.6
+cost                                                   = 750
+repair_type				                               = ballistic
+snd_on_take								 		   = outfit
+tier                                                   = 4
+
+;;------------------------------------------------------------------------------------
+;;--< Supportive installations >
+;;--============================
+
+[prt_o_support_1]:tch_part_con
+visual			     	                               = dynamics\outfit\exo_outfit
+description			                                   = st_prt_o_support_1_descr
+inv_name			                                   = st_prt_o_support_1
+inv_name_short		                                   = st_prt_o_support_1
+inv_grid_width			                               = 2
+inv_grid_x			                                   = 71
+inv_grid_y			                                   = 52
+inv_weight			                                   = 13.4
+cost                                                   = 5000
+repair_type				                               = outfit_exoskeleton
+repair_part_bonus		                               = 0.25
+tier                                                   = 5

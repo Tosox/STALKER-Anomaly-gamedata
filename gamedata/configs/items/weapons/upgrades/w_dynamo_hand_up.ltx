@@ -1,0 +1,79 @@
+
+[up_sect_firsta_dynamo_hand]
+cost                                     = 2500
+condition_shot_dec                       = -0.001
+
+[up_sect_firstc_dynamo_hand]
+cost                                     = 5000
+inv_weight                               = -0.750
+
+[up_sect_firste_dynamo_hand]
+cost                                     = 7500
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_dynamo_hand]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_dynamo_hand
+section                                  = up_sect_firsta_dynamo_hand
+property                                 = prop_weight
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_opt_dynamo_hand1_name
+description                              = st_up_opt_dynamo_hand1_descr
+icon                                     = ui_inGame2_upgrade_Dynamo_Hand_1
+
+[up_firstc_dynamo_hand]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_dynamo_hand
+section                                  = up_sect_firstc_dynamo_hand
+property                                 = prop_reliability
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_opt_dynamo_hand2_name
+description                              = st_up_opt_dynamo_hand2_descr
+icon                                     = ui_inGame2_upgrade_Dynamo_Hand_3
+
+[up_firste_dynamo_hand]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_dynamo_hand
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_opt_dynamo_hand3_name
+description                              = st_up_opt_dynamo_hand3_descr
+icon                                     = ui_inGame2_upgrade_Dynamo_Hand_2
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_dynamo_hand]
+elements                                 = up_firsta_dynamo_hand
+
+[up_gr_firstcd_dynamo_hand]
+elements                                 = up_firstc_dynamo_hand
+
+[up_gr_firstef_dynamo_hand]
+elements                                 = up_firste_dynamo_hand

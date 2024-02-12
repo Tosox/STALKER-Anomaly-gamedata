@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="mortal_sin_start_text_0">
+		<text>People are talking about some "dark stalker" from an unknown faction. Apparently, he's preaching about the Zone on and on. Have you heard of him?</text>
+	</string>
+
+	<string id="voronin_mortal_sin_0">
+		<text>Any new orders, General?</text>
+	</string>
+	<string id="voronin_mortal_sin_1">
+		<text>Initiative, I like that. The 100 Rads Bar is known for its... colourful crowds. But it seems we have a new patron, and he is causing trouble. No violence so far, but he has been rather aggressively promoting the Zone's "greatness". He thinks that by staying away from our main base, we'll ignore him. He is wrong. Find him and feign interest in his drivel. Extract any useful information you can. Once you feel you have enough, you have my permission to terminate him.</text>
+	</string>
+	<string id="voronin_mortal_sin_2">
+		<text>Understood. We cannot tolerate pro-Zone fanatics on our turf.</text>
+	</string>
+	<string id="voronin_mortal_sin_21">
+		<text>I apologise General. I'm going to need time to prepare myself for the interrogation.</text>
+	</string>
+	<string id="voronin_mortal_sin_3">
+		<text>I am glad to hear it.</text>
+	</string>
+	
+	<string id="voronin_mortal_sin_envoy_0">
+		<text>I completed my task, General.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_1">
+		<text>I see you chose to spare the fanatic. Why is that?</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_11">
+		<text>I see that you have terminated the fanatic. Excellent. Now, your report.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_2">
+		<text>He may be worth more to us captured. He claims to be some sort of agent from a faction called Sin. He also says Sin are the Zone's true keepers. They're recruiting others to their cause in preparation for some massive campaign.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_21">
+		<text>He was some sort of agent from a faction called Sin. He claimed that his faction are the Zone's true keepers, and that they're recruiting others to their cause in preparation for some massive campaign.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_3">
+		<text>You have done well, but this is a troubling development. There have been recent reports of conflict with an unknown stalker faction. Very hostile, they indiscriminately engage other stalker groups in a series of guerilla attacks. The last report came from the Red Forest. I want you to go see Forester, as he knows that place better than anyone. After that, assess the threat. Verify if those attackers are the "Sin" you've been told about. In the meantime, I will arrange "accommodations" for our unwelcome guest.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_31">
+		<text>You have done well, but this is a troubling development. There have been recent reports of conflict with an unknown stalker faction. Very hostile, they indiscriminately engage other stalker groups in a series of guerilla attacks. The last report came from the Red Forest. I want you to go see Forester, as he knows that place better than anyone. After that, assess the threat. Verify if those attackers are the "Sin" you've been told about.</text>
+	</string>
+	<string id="voronin_mortal_sin_envoy_4">
+		<text>Sir, yes sir!</text>
+	</string>
+	
+	<string id="voronin_mortal_sin_report_0">
+		<text>I have investigated the situation in the Red Forest, General.</text>
+	</string>
+	<string id="voronin_mortal_sin_report_1">
+		<text>Very well. What did you discover?</text>
+	</string>
+	<string id="voronin_mortal_sin_report_2">
+		<text>Sin were pursuing a comrade of Strelok, Stitch. I intercepted and destroyed their squad, then contacted the stalker. He confirmed that Sin have been preparing to launch a large scale invasion on the southern sectors of the Zone. Also, here's the PDA I took from the squad leader's body. You'll want to see this.</text>
+	</string>
+	<string id="voronin_mortal_sin_report_3">
+		<text>That is indeed grim news. Sometimes I wonder if the Zone is more stubborn than we are. When it's not one brainwashed cult, it's another. We ought to... hold on. Our western perimeter is under attack! Go, repel the enemy!</text>
+	</string>
+	<string id="voronin_mortal_sin_report_4">
+		<text>Roger that!</text>
+	</string>
+	
+	<string id="voronin_mortal_sin_ambush_0">
+		<text>We've repelled the enemy, General.</text>
+	</string>
+	<string id="voronin_mortal_sin_ambush_1">
+		<text>Well done. Sin made a very bold move, one that will have severe consequences. Reports indicate that enemy forces are currently approaching the two psy-installations, most likely in order to reactivate them. That cannot be allowed. We must do our utmost to stop them from re-establishing such potent defences.</text>
+	</string>
+	<string id="voronin_mortal_sin_ambush_2">
+		<text>Which installation do you want me to defend, General?</text>
+	</string>
+	<string id="voronin_mortal_sin_ambush_3">
+		<text>Choose the one you wish to defend personally, I trust your experience in the matter. I'll muster a force to defend the other one myself. Make haste, we have little time to act.</text>
+	</string>
+	<string id="voronin_mortal_sin_ambush_4">
+		<text>I'll defend the Miracle Machine. It's a remote location so my help is more needed over there.</text>
+	</string>
+	<string id="voronin_mortal_sin_ambush_41">
+		<text>I'll defend the Brain Scorcher. We can't let the enemy regain such a formidable stronghold.</text>
+	</string>
+	
+	<string id="voronin_mortal_sin_zone_hero_0">
+		<text>The enemy leader is dead, and their army decimated. Crisis averted, General.</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_1">
+		<text>Excellent work, excellent! I am very proud of you. You have become a paragon of Duty. While the Zone remains, it also remains contained. The outside world is safe.</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_2">
+		<text>Strelok and his companions were of great help, not to mention the efforts of our own forces.</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_3">
+		<text>That is right. Duty as a whole has fulfilled its promise to protect the innocent, with the aid of unusual allies. Speaking of allies, a former prisoner of war asked about you when he arrived. Contact him at your leisure.</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_31">
+		<text>That is right. Duty as a whole has fulfilled its promise to protect the innocent, with the aid of unusual allies.</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_4">
+		<text>Any further orders, General?</text>
+	</string>
+	<string id="voronin_mortal_sin_zone_hero_5">
+		<text>You are free to return to your regular duties. Dismissed.</text>
+	</string>
+	
+	<string id="dushman_mortal_sin_0">
+		<text>Dushman, things seem a little tense at base. Anything going on?</text>
+	</string>
+	<string id="dushman_mortal_sin_1">
+		<text>Come to think of it, there's something strange I'd like you to deal with. A few days ago some sorta creepy guy decided to camp in this dump of a city. Wasn't hostile or anything, so we let him stay for the time being. Under a careful watch, just in case. Lately however he's been pestering the local mercs, on and on, about some disturbing spiritual crap. Talks about salvation and damnation, cleansing and what-not. People around here are beginning to think he's some Monolith bastard in disguise. Go have a proper talk with him. Find out what his deal is, and then deal with him.</text>
+	</string>
+	<string id="dushman_mortal_sin_2">
+		<text>Alright, I'll look into it. Guess I'm doing all the cleaning up when I'm done?</text>
+	</string>
+	<string id="dushman_mortal_sin_21">
+		<text>Doesn't sound too urgent. I'll talk to you again when I'm ready.</text>
+	</string>
+	<string id="dushman_mortal_sin_3">
+		<text>Yeah. Professional practice and all that. Now go.</text>
+	</string>
+	
+	<string id="dushman_mortal_sin_envoy_0">
+		<text>I've talked with that creepy guy.</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_1">
+		<text>Just a little chit-chat, eh? You aren't getting a little soft, are you?</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_11">
+		<text>And you put him down, too. That's great, we were all fed up with that nutter. What did you find out?</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_2">
+		<text>I didn't want to invoke retaliation. He's some sort of agent. Supposedly belongs to a clandestine faction called Sin. He claims that they know more about the Zone than anyone else, and that they'll take over the world or something. Basically, he looks for recruits to join their cause.</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_21">
+		<text>He was some sort of agent from a faction called Sin. He claimed that they know more about the Zone than anyone else, and they apparently plan to take over the world. Also, he was looking for recruits to join their cause.</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_3">
+		<text>Sin, you say. That actually rings a bell. I've had some reports regarding stalkers from a mysterious faction who engage in hit-and-run attacks on other stalkers. Alright. Might be worthwhile to beat some sense into our honoured guest. In the meantime, I want you to investigate a recent situation from the Red Forest. That's one of the places the mysterious stalkers, maybe from this "Sin" you've just learned about, are allegedly haunting. Start by talking with Forester, he'll know more about this.</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_31">
+		<text>Sin, you say. That actually rings a bell. I've had some reports regarding stalkers from a mysterious faction who engage in hit-and-run attacks on other stalkers. Alright. Let's say I'll take care of the mortal remains of our honoured guest. In the meantime, I want you to investigate a recent situation from the Red Forest. That's one of the places the mysterious stalkers, maybe from this "Sin" you've just learned about, are allegedly haunting. Start by talking with Forester, he'll know more about this.</text>
+	</string>
+	<string id="dushman_mortal_sin_envoy_4">
+		<text>No rest for the wicked. Okay, I'll go see what I can do.</text>
+	</string>
+	
+	<string id="dushman_mortal_sin_report_0">
+		<text>I've been to the Red Forest, Dushman.</text>
+	</string>
+	<string id="dushman_mortal_sin_report_1">
+		<text>And you found something worth reporting, yes?</text>
+	</string>
+	<string id="dushman_mortal_sin_report_2">
+		<text>Quite. Sin were pursuing a comrade of Strelok whom I met during my previous mission. I intercepted and destroyed their squad, then contacted the stalker. He said that Sin have been preparing to launch a large scale invasion on the southern sectors of the Zone. He's a reliable person, and everything so far seems to support his claim. I've got the squad leader's PDA in case you want to take a look.</text>
+	</string>
+	<string id="dushman_mortal_sin_report_3">
+		<text>Shit. At least the Monolith tend to focus on defending their own territory. Now we've got a warmongering bunch of fanatics to deal with. I'm not big on faction wars, but we need the current status quo to function here. Alrighty, we... wait a second. Our men have sighted hostile forces nearby. Fuck! We're under attack! Go intercept the enemy, I'll prepare a defensive perimeter here!</text>
+	</string>
+	<string id="dushman_mortal_sin_report_4">
+		<text>I'm going!</text>
+	</string>
+	
+	<string id="dushman_mortal_sin_ambush_0">
+		<text>I've kicked their asses.</text>
+	</string>
+	<string id="dushman_mortal_sin_ambush_1">
+		<text>Not bad. You've certainly earned your reputation. Still, we can't let those fuckers do as they please. Mercenary scouts have revealed this assault to be a diversion. The main Sin forces have slipped by us and are approaching the Brain Scorcher and Miracle Machine as I speak. They probably want those psychic defences back online. 'Course, we won't let that happen.</text>
+	</string>
+	<string id="dushman_mortal_sin_ambush_2">
+		<text>I can kill as many Sin fanatics as you want, but there's only one of me.</text>
+	</string>
+	<string id="dushman_mortal_sin_ambush_3">
+		<text>One of you is plenty. I'll assemble a task force to defend one of the installations. You can pick the one you want to protect yourself. Better hurry, we're working on a tight schedule here.</text>
+	</string>
+	<string id="dushman_mortal_sin_ambush_4">
+		<text>Miracle Machine. It's very close, so I might as well keep our neighbourhood secure.</text>
+	</string>
+	<string id="dushman_mortal_sin_ambush_41">
+		<text>Brain Scorcher. We can't let the enemy regain such a formidable stronghold.</text>
+	</string>
+	
+	<string id="dushman_mortal_sin_zone_hero_0">
+		<text>I've kicked Sin's collective asses to kingdom come. They won't be taking over the world any time soon.</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_1">
+		<text>Now that's a professional one-man army here if I've ever seen one. Great job, merc.</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_2">
+		<text>Well, I did get some help from Strelok and his Merry Men.</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_3">
+		<text>True that, but you're the one who's getting paid in the end. We can continue our usual operations undisturbed, and that's certainly something to look forward to. By the by, Strelok's group sent me a prisoner of war. He was asking for you. He's around here somewhere, maybe go speak to him.</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_31">
+		<text>True that, but you're the one who's getting paid in the end. We can continue our usual operations undisturbed, and that's certainly something to look forward to.</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_4">
+		<text>Has anything new cropped up yet?</text>
+	</string>
+	<string id="dushman_mortal_sin_zone_hero_5">
+		<text>Nope. Back to bog-standard contracts. Enjoy the routine.</text>
+	</string>
+	
+	<string id="sidorovich_mortal_sin_0">
+		<text>Hey, Sidorovich. Any special tasks available?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_1">
+		<text>Hm, yes. Not sure if this is what you had in mind, but there's this nutcase hanging around the village. He appeared out of thin air, then started pestering stalkers at campfires about some religious bullshit. Something about the greatness of the Zone. He also wants people to join his organisation, whatever it is. Most stalkers tell him to sod off, but some did accept his offer. I don't want any more rookies to become members of some sort of sect and vanish without a trace, so why don't you take care of this guy?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_2">
+		<text>Should I ask him a few questions first?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_21">
+		<text>Doesn't sound like much of a problem. Maybe I'll check back later.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_3">
+		<text>Yes, try to find out more about his faction. Then we can arrange an accident for him. You know, there's a field of gravitational anomalies not far from here, and hungry mutants roam the area all the time...</text>
+	</string>
+	
+	<string id="sidorovich_mortal_sin_envoy_0">
+		<text>I talked to the creep, Sid.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_1">
+		<text>Don't call me like that. So, did you find out anything interesting? Why didn't you put him down?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_11">
+		<text>Don't call me like that. So, did you find out anything interesting before you offed him?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_2">
+		<text>I didn't want to paint a target on the Rookie Village. He's some sort of agent from a faction called Sin. He claims that they know more about the Zone than anyone else, and they apparently plan to "cleanse" the world. Like you said, he's here to recruit others to his cause.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_21">
+		<text>He was some sort of agent from a faction called Sin. He claimed that they know more about the Zone than anyone else, and they apparently plan to "cleanse" the world. As you said, he was here to recruit others to his cause.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_3">
+		<text>Sin, eh... I actually heard some rumours about such a group throughout the years, though nobody was able to verify them. Come to think of it, there's been a series of skirmishes between many different factions and members of an "unknown" one recently, especially in the Red Forest. Alright, we've got several pieces of puzzle to fit one another. Go to the Red Forest to see what's going on there. Talk to Forester, he should be able to help you. And I'll think how to remove that agent from our premises quietly.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_31">
+		<text>Sin, eh... I actually heard some rumours about such a group throughout the years, though nobody was able to verify them. Come to think of it, there's been a series of skirmishes between many different factions and members of an "unknown" one recently, especially in the Red Forest. Alright, we've got several pieces of puzzle to fit one another. Go to the Red Forest to see what's going on there. Talk to Forester, he should be able to help you. And I'll have someone dump the agent's body into a nearby anomaly field.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_envoy_4">
+		<text>Red Forest, yay...</text>
+	</string>
+	
+	<string id="sidorovich_mortal_sin_report_0">
+		<text>Hey, I'm back. Still alive.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_report_1">
+		<text>I didn't think a trip to the Red Forest would be enough to take you down. So, did you find out anything?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_report_2">
+		<text>Bad news as usual. Sin were pursuing Stitch, one of Strelok's companions. I intercepted and destroyed their squad, then contacted the stalker. He said that Sin have been preparing to launch a large scale invasion on the southern sectors of the Zone. He's a reliable person, and everything so far supports his word. Here, take this PDA, it belonged to the squad leader.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_report_3">
+		<text>Hmm, that sounds bad. Sometimes I scare the rookies with stories about the Monolith, but they're a distant threat. I'm not keen on a bunch of fanatics paying us a visit guns a-blazing. My business would suffer. Anyway, we should do something about this before the situation gets out of hand, so... Oh, what now? One of the rookies has just messaged: a sizeable squad is approaching the Village. They seem to be those Sin fanatics. Why don't you join the others and arrange a welcoming committee for our unexpected guests?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_report_4">
+		<text>My pleasure.</text>
+	</string>
+	
+	<string id="sidorovich_mortal_sin_ambush_0">
+		<text>Well, we killed them all.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_ambush_1">
+		<text>That's my boy! Glad to keep you around... however, the stakes have been raised. I've received reports from stalkers across the Zone that Sin's main forces have been moving toward the two psy-installations. I think they want to reactivate them and cut the centre of the Zone off again. Obviously, we can't let that happen.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_ambush_2">
+		<text>Sure, I don't feel like disabling them again. But I can only be at one place at a time.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_ambush_3">
+		<text>Not a problem. I'll use my contacts to assemble a team to defend one of the installations. I entrust the defence of the other one to you. At any rate, pick one and go quickly, we haven't got much time left.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_ambush_4">
+		<text>Miracle Machine. It's a remote location so my help is more needed over there.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_ambush_41">
+		<text>Brain Scorcher. We can't let the enemy regain such a formidable stronghold.</text>
+	</string>
+	
+	<string id="sidorovich_mortal_sin_zone_hero_0">
+		<text>I'm back, finally. Sin won't bother us any more, their forces are decimated and their leader's dead.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_1">
+		<text>Excellent work, stalker. Sometimes you remind me of the Marked One, although you actually return from major assignments.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_2">
+		<text>Speaking of Strelok, we couldn't have won without him and his men.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_3">
+		<text>Glad to know he's still somewhere out there, doing his thing. Why don't you stay around, though? People are getting interested in you, and you wouldn't believe how many people will buy the old junk you sell me just because it was once carried by you. Speaking of which, you have a fan waiting for you in the rookie village. Maybe you should go say hello.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_31">
+		<text>Glad to know he's still somewhere out there, doing his thing. Why don't you stay around, though? People are getting interested in you, and you wouldn't believe how many people will buy the old junk you sell me just because it was once carried by you.</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_4">
+		<text>That's... nice. No more special tasks for now?</text>
+	</string>
+	<string id="sidorovich_mortal_sin_zone_hero_5">
+		<text>Just the usual stuff for the time being.</text>
+	</string>
+	
+	<string id="cold_mortal_sin_0">
+		<text>Things are looking a little odd around here these days. What's going on?</text>
+	</string>
+	<string id="cold_mortal_sin_1">
+		<text>That creep in a trench coat. He arrived at our base with some other stalkers a few days ago. He didn't cause any trouble at first, so we let him stay. Now he delivers sermons about the greatness of the Zone. That it's some sort of miracle that can help us cleanse the world from sin or whatever. No, I'm not making this up, I heard him personally. He also tried recruiting some of our folks. I can stand a harmless lunatic, but that's some fishy business right there. Go pay him a visit and give him a listen. Try to find out what his goal is. And then... well, many people have been lost to the swamps, those poor souls.</text>
+	</string>
+	<string id="cold_mortal_sin_2">
+		<text>Yeah, I think I've had enough of Zone-worshipping lunatics. I'll go deal with him.</text>
+	</string>
+	<string id="cold_mortal_sin_21">
+		<text>Sorry Cold, I'm not ready to deal with this right now.</text>
+	</string>
+	<string id="cold_mortal_sin_3">
+		<text>Thanks man. He's somewhere around, I guarantee he'll stand out like a sore thumb, so you shouldn't have any trouble noticing him.</text>
+	</string>
+	
+	<string id="cold_mortal_sin_envoy_0">
+		<text>I had a little chat with the lunatic.</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_1">
+		<text>How was it? And why is he still roaming our base?</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_11">
+		<text>How was it? Did he tell you anything useful before his untimely demise?</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_2">
+		<text>Because the rabbit hole is deeper than I thought. He's some sort of agent from a faction called Sin. He claims that they know more about the Zone than anyone else, that they're its keepers. And like you said earlier, he's looking to recruit others all the while saying a lot of "cleanse the world" type of stuff.</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_21">
+		<text>He was some sort of agent from a faction called Sin. He claimed that they know more about the Zone than anyone else, that they're its keepers. And like you said earlier, he was looking to recruit others, and said lots of "cleanse the world" type of stuff.</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_3">
+		<text>This again... Yeah, I've heard about Sin already, although I used to think they were just a legend. A bunch of scary bastards who appear out of thin air and attack everyone, only to vanish without a trace when they're done. In fact, a few stalkers mentioned that something similar is happening in the Red Forest now. I don't like the way this is shaping up. You should visit the place to discover what's going on. Forester should help you out a bit. Meanwhile, we'll have a little party arranged for our honoured guest.</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_31">
+		<text>This again... Yeah, I've heard about Sin already, although I used to think they were just a legend. A bunch of scary bastards who appear out of thin air and attack everyone, only to vanish without a trace when they're done. In fact, a few stalkers mentioned that something similar is happening in the Red Forest now. I don't like the way this is shaping up. You should visit the place to discover what's going on. Forester should help you out a bit. Meanwhile, I'll have someone dump the mortal remains of our honoured guest into the swamp.</text>
+	</string>
+	<string id="cold_mortal_sin_envoy_4">
+		<text>Scary bastards in a scary place... sounds like fun.</text>
+	</string>
+	
+	<string id="cold_mortal_sin_report_0">
+		<text>I've been to the Red Forest, Cold.</text>
+	</string>
+	<string id="cold_mortal_sin_report_1">
+		<text>How's it been? Have you got any stories to tell?</text>
+	</string>
+	<string id="cold_mortal_sin_report_2">
+		<text>Just one. Sin were pursuing Stitch, one of Strelok's comrades. The Sin squad I dealt with, and I contacted Stitch afterward. He said that Sin have been preparing to launch a large scale invasion on the southern sectors of the Zone. He's trustworthy, and this PDA I took from the defeated Sin squad should convince you if you aren't already.</text>
+	</string>
+	<string id="cold_mortal_sin_report_3">
+		<text>Ah, damn. Not the happiest story I've ever heard. I hoped we could settle the Swamps in a more peaceful manner after we had to wash our hands of Renegade blood. I'm getting tired of all the violence, but we can't let a group of omnicidal maniacs just take everything. I suppose there's no avoiding this. Okay then, let's... huh. I've just got a message from the Fishing Hamlet. There's a big enemy squad headed our way. Damn it. Go help them at once, I'll rally our men here.</text>
+	</string>
+	<string id="cold_mortal_sin_report_4">
+		<text>Okay, I'm going!</text>
+	</string>
+	
+	<string id="cold_mortal_sin_ambush_0">
+		<text>We fended off the enemy. We're safe, for now.</text>
+	</string>
+	<string id="cold_mortal_sin_ambush_1">
+		<text>It's been a while since we had a sizeable enemy force at our doorstep. Your victory over them is good news. However, I'm afraid I haven't got any good news for you. According to my contacts around the Zone, this assault was merely a side-objective. Sin's true intent lies in reactivating the psy-installations north of us. How about we prepare forces to intercept them there, so we won't have to start from scratch again?</text>
+	</string>
+	<string id="cold_mortal_sin_ambush_2">
+		<text>Sounds like a good idea. Which one am I being sent to?</text>
+	</string>
+	<string id="cold_mortal_sin_ambush_3">
+		<text>You deactivated both of them before, so I'll leave the choice up to you. You and whoever you bring with you will defend the one you choose. I'll organise a task force to defend the other. I'll trust your judgement, but we haven't got much time to deliberate. Go as soon as you're ready.</text>
+	</string>
+	<string id="cold_mortal_sin_ambush_4">
+		<text>I'll defend the Miracle Machine. It's a remote location so my help is more needed over there.</text>
+	</string>
+	<string id="cold_mortal_sin_ambush_41">
+		<text>I'll defend the Brain Scorcher. We can't let the enemy regain such a formidable stronghold.</text>
+	</string>
+	
+	<string id="cold_mortal_sin_zone_hero_0">
+		<text>Hey, Cold, I made it. Sin is done for, and so is their leader.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_1">
+		<text>That's great news, stalker! At last, Clear Sky succeeded in its original mission. And we managed to pull through without sacrificing the majority of our men at that. Great job.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_2">
+		<text>And, ironically, Strelok and his crew helped a lot in calming the Zone down again.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_3">
+		<text>Yeah, who would've thought that could happen. Fate really has a twisted sense of humour sometimes. Now that this unholy crusade is over we can return to our boring, low-profile existence. By the way, there's this guy who came here not long ago asking for you. Go pay him a visit, he's somewhere around the base.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_31">
+		<text>Yeah, who would've thought that could happen? Fate really has a twisted sense of humour sometimes. Now that this unholy crusade is over we can return to our boring, low-profile existence.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_4">
+		<text>I have to say, it's good to finally rest a little.</text>
+	</string>
+	<string id="cold_mortal_sin_zone_hero_5">
+		<text>Sure, enjoy yourself for the time being. You deserve it.</text>
+	</string>
+	
+	<string id="lukash_mortal_sin_0">
+		<text>Hey Lukash, what's up? Anything interesting going on around here?</text>
+	</string>
+	<string id="lukash_mortal_sin_1">
+		<text>Freedom likes all sorts, right? So this guy comes to our base one day, pretty friendly and all. Says he admires the Zone as well. Then he starts pestering our guys about the need to cleanse the whole world from sin. That we don't understand what the Zone truly is, and some other religious crap. In short, he's a little nuts. People are getting a little edgy around here because of him. Can you talk with him? Maybe make some sense out of him? Bonus points if you get him to go away.</text>
+	</string>
+	<string id="lukash_mortal_sin_2">
+		<text>Okay. Do you want me to be extra persuasive?</text>
+	</string>
+	<string id="lukash_mortal_sin_21">
+		<text>Sorry man, I'm not ready for that sort of thing right now.</text>
+	</string>
+	<string id="lukash_mortal_sin_3">
+		<text>I give you a free hand. If he turns out to be dangerous, I trust you'll deal with him appropriately.</text>
+	</string>
+	<string id="lukash_mortal_sin_4">
+		<text>Got it.</text>
+	</string>
+	
+	<string id="lukash_mortal_sin_envoy_0">
+		<text>I talked with the nutter.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_1">
+		<text>He's still around, though? Bummer.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_11">
+		<text>Put him down, too? Good riddance.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_2">
+		<text>He says he's some sort of agent from a faction called Sin. He told me much of the things you've already heard, but he also revealed he's looking to recruit others into his group. Seems they've been planning something big.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_21">
+		<text>He was some sort of agent from a faction called Sin. He told me much of the things you've already heard, but he also revealed that he was looking to recruit others into his group. Seems they've been planning something big.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_3">
+		<text>Sin? Now that's new. Or is it? A bunch of unidentified stalkers in the Red Forest have been pretending to be Predators and hunt people, apparently. They could well be this "Sin" you've heard about. Hmm, I don't like where this is going. Monolith is bad enough without friends. Why don't you pay Forester a visit and ask him about this mysterious group? And I'll have someone go tell our guest that he's overstayed his welcome.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_31">
+		<text>Sin? Now that's new. Or is it? A bunch of unidentified stalkers in the Red Forest have been pretending to be Predators and hunt people, apparently. They could well be this "Sin" you've heard about. Hmm, I don't like where this is going. Monolith is bad enough without friends. Why don't you pay Forester a visit and ask him about this mysterious group? And I'll have someone clean up the stiff you left lying around.</text>
+	</string>
+	<string id="lukash_mortal_sin_envoy_4">
+		<text>Alrighty, time for a new adventure.</text>
+	</string>
+	
+	<string id="lukash_mortal_sin_report_0">
+		<text>I'm back from the Red Forest picnic, boss.</text>
+	</string>
+	<string id="lukash_mortal_sin_report_1">
+		<text>Oh, hey man. How was the trip? Met any interesting people over there?</text>
+	</string>
+	<string id="lukash_mortal_sin_report_2">
+		<text>A few of them. Reunited with Stitch, who was being chased by Sin. You were right about them. Anyway, the hunting squad is dead, but Stitch said that Sin've been preparing to launch a large scale invasion on the southern sectors of the Zone. He's trustworthy, and it seems that way anyway. Take a look at this: the head Predator's PDA.</text>
+	</string>
+	<string id="lukash_mortal_sin_report_3">
+		<text>Man, we've got a major war on the horizon. Well, I was fed up with the constant Monolith attacks anyway. This'll be a nice change of pace. I'll rally our guys for another faction war, just give me... a sec... Hmm. Guards at the main gate just reported that a large squad's approaching our base. Shots fired... but they aren't Monolith! Crap. Go help them out, will ya? I'll try to organise something here.</text>
+	</string>
+	<string id="lukash_mortal_sin_report_4">
+		<text>Sure, I'm going!</text>
+	</string>
+	
+	<string id="lukash_mortal_sin_ambush_0">
+		<text>Guess who's just wasted a bunch of fanatics?</text>
+	</string>
+	<string id="lukash_mortal_sin_ambush_1">
+		<text>I'm betting all of my roubles on you. Anyhow, you did a great job, but that's not the end. Our guys say that the enemy forces are approaching the two psy-installations right about now. Pretty sure they want them active again. I prefer the Zone being open to everyone, so let's keep it that way, shall we?</text>
+	</string>
+	<string id="lukash_mortal_sin_ambush_2">
+		<text>Heck yeah, but I doubt I can defend both of them at the same time unless you give me a really good sniper rifle.</text>
+	</string>
+	<string id="lukash_mortal_sin_ambush_3">
+		<text>Ah, that won't be necessary. I can send a team to protect one of the installations, so you won't hog all the glory this time. Still, pick the one you want to defend personally. And better hurry, it's rude to be late for a party.</text>
+	</string>
+	<string id="lukash_mortal_sin_ambush_4">
+		<text>Miracle Machine. It's a remote location so my help is more needed over there.</text>
+	</string>
+	<string id="lukash_mortal_sin_ambush_41">
+		<text>Brain Scorcher. It's close and quite important.</text>
+	</string>
+	
+	<string id="lukash_mortal_sin_zone_hero_0">
+		<text>Here I am, the destroyer of Sin. Even gave their leader a proper burial in the Sarcophagus and all.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_1">
+		<text>Wow, now that's a job well done! You're on fire, man. Let's keep our Zone the way we love it: unpredictable and deadly, but cosy. No need to change a thing about it.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_2">
+		<text>I tend to agree and, oddly enough, Strelok and his friends helped me a lot to keep it that way.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_3">
+		<text>Yeah, the guy's got balls of steel, but it's even better that he no longer wants to destroy the Zone. I hope. Anyhow, now that you're here you should check out a recent newcomer, he's been asking for you. Probably wandering around the base right now.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_31">
+		<text>Yeah, the guy's got balls of steel, but it's even better that he no longer wants to destroy the Zone. I hope.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_4">
+		<text>You won't mind if I chill out for a while? I'm a bit tired here.</text>
+	</string>
+	<string id="lukash_mortal_sin_zone_hero_5">
+		<text>Rest all you want mate, but don't forget to come to the victory celebration party!</text>
+	</string>
+	
+	<string id="sakharov_mortal_sin_0">
+		<text>Everything fine in here, Professor? The guards seem on edge, more than usual.</text>
+	</string>
+	<string id="sakharov_mortal_sin_1">
+		<text>Sometimes I cannot tell if you are joking, young man. I suppose the situation is fairly stable, at least. Come to think of it, there has been one unsettling development here lately. Some new stalkers came to Yantar a few days ago, this hooded fellow among them. Rather than help our guards fend off the constant incursions he prefers to preach about the wonders of the Zone. I heard him myself, and I am afraid the man might be insane. He has done no direct harm to us so far, although our guards are growing weary of his presence. Please, try to convince him to leave us be.</text>
+	</string>
+	<string id="sakharov_mortal_sin_2">
+		<text>Preaching about the Zone? Sounds eerily familiar. I'll question him first and then I'll see what I can do.</text>
+	</string>
+	<string id="sakharov_mortal_sin_21">
+		<text>I apologise Professor, I'm not ready to deal with more fanatics right now.</text>
+	</string>
+	<string id="sakharov_mortal_sin_3">
+		<text>I am very grateful.</text>
+	</string>
+	
+	<string id="sakharov_mortal_sin_envoy_0">
+		<text>I completed my task, Professor.</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_1">
+		<text>Very well. What did you discover?</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_11">
+		<text>So, you killed him. A drastic solution...</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_2">
+		<text>He's some sort of agent from a faction called Sin. He claims that they know more about the Zone than anyone else, and they apparently plan to "cleanse" the world. Also, he looks for recruits to join their cause.</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_21">
+		<text>I'm afraid we couldn't let him stay here any longer. He was some sort of agent from a faction called Sin. He claimed that they know more about the Zone than anyone else, and they apparently plan to "cleanse" the world. Also, he looked for recruits to join their cause.</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_3">
+		<text>That is disturbing. My guards have recently been encountering hostile stalkers from a mysterious faction. He is likely a member of that very faction. As far as I know, they frequent the Red Forest for their hunting. However, a legendary man lives there, called Forester. Please, talk to him about the situation. The more we know, the better we can prepare for whatever will come. Meanwhile, I'll talk with the guards about this security breach.</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_31">
+		<text>That is disturbing. My guards have recently been encountering hostile stalkers from a mysterious faction. He was likely a member of that very faction. As far as I know, they frequent the Red Forest for their hunting. However, a legendary man lives there, called Forester. Please, talk to him about the situation. The more we know, the better we can prepare for whatever will come. Meanwhile, I'll have the guards dispose of the agent's body.</text>
+	</string>
+	<string id="sakharov_mortal_sin_envoy_4">
+		<text>I'll see what I can do.</text>
+	</string>
+	
+	<string id="sakharov_mortal_sin_report_0">
+		<text>I investigated the situation in the Red Forest, Professor.</text>
+	</string>
+	<string id="sakharov_mortal_sin_report_1">
+		<text>Very well. I hope you discovered something of value.</text>
+	</string>
+	<string id="sakharov_mortal_sin_report_2">
+		<text>Sin were pursuing a comrade of Strelok whom I met during my previous mission. I intercepted and destroyed their squad, then contacted the stalker. He said that Sin have been preparing to launch a large scale invasion on the southern sectors of the Zone. He's a reliable person, and everything so far seems to support his claim. Please take the PDA I took from the squad leader's body.</text>
+	</string>
+	<string id="sakharov_mortal_sin_report_3">
+		<text>Oh my...! This is indeed grim news. The Monolith are at least contained in their current territory for the most part. I am afraid we have to deal with an equally formidable yet much more encroaching enemy now. We ought to... oh no. Seems we are under attack! Our guards spotted a hostile force approaching the mobile bunker. Please, go help them repel the enemy!</text>
+	</string>
+	<string id="sakharov_mortal_sin_report_4">
+		<text>I'm on it!</text>
+	</string>
+	
+	<string id="sakharov_mortal_sin_ambush_0">
+		<text>The area is clear, we've defeated the enemy.</text>
+	</string>
+	<string id="sakharov_mortal_sin_ambush_1">
+		<text>Excellent work, young man! I knew I could count on you. Sadly, this is merely the beginning. Military gunships observed substantial Sin forces moving toward both of the psy-installations. Given our current knowledge it is safe to assume they intend to reactivate them. The best course of action is to thwart their plan right now.</text>
+	</string>
+	<string id="sakharov_mortal_sin_ambush_2">
+		<text>I agree, Professor. But we simply haven't got the personnel to do this. How will we defend both places adequately at once?</text>
+	</string>
+	<string id="sakharov_mortal_sin_ambush_3">
+		<text>I will speak with Colonel Kuznetsov. While he'll surely be fortifying the Zone's borders to ensure Sin doesn't break out, I'm certain that he can still organise a force suitable enough to protect at least one of the installations. You will have to organise the defence of the other one, however, and fast, because our enemy does not seem to be willing to wait much longer. Please, hurry!</text>
+	</string>
+	<string id="sakharov_mortal_sin_ambush_4">
+		<text>I'll defend the Miracle Machine. It's right next to us so it's the most immediate threat.</text>
+	</string>
+	<string id="sakharov_mortal_sin_ambush_41">
+		<text>I'll defend the Brain Scorcher. We can't let the enemy regain such a formidable stronghold.</text>
+	</string>
+	
+	<string id="sakharov_mortal_sin_zone_hero_0">
+		<text>We've succeeded, Professor. The Sin forces have been routed, and their leader is dead.</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_1">
+		<text>What a horrible conflict, I am glad it is over. You have done well, young man. I knew I could count on you in this time of need. I sincerely hope that the Zone will be able to reach a state of equilibrium at last.</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_2">
+		<text>Victory wouldn't have been possible were it not for Strelok and his friends.</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_3">
+		<text>The Marked One, or rather Strelok, continues to live up to his legendary status. I can be at peace knowing that for every dangerous fanatic out there, we have got a resourceful and reasonable stalker to help maintain the shaky balance. In fact, we might have another such stalker amongst us. Last I saw, he was wandering around outside the bunker. You should go say hello to him.</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_31">
+		<text>The Marked One, or rather Strelok, continues to live up to his legendary status. I can be at peace knowing that for every dangerous fanatic out there, we have got a resourceful and reasonable stalker to help maintain the shaky balance.</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_4">
+		<text>Is that all, Professor?</text>
+	</string>
+	<string id="sakharov_mortal_sin_zone_hero_5">
+		<text>Yes, you are free to return to your usual activities now.</text>
+	</string>
+	
+	<string id="greh_envoy_greeting_0">
+		<text>Greetings, stalker. Do you seek enlightenment?</text>
+	</string>
+	<string id="greh_envoy_greeting_killer_0">
+		<text>Greetings, mercenary. Do you seek enlightenment?</text>
+	</string>
+	
+	<string id="greh_envoy_dialog_0">
+		<text>Hi.</text>
+	</string>
+	<string id="greh_envoy_dialog_1">
+		<text>What do you need?</text>
+	</string>
+	<string id="greh_envoy_dialog_2">
+		<text>I want to talk.</text>
+	</string>
+	<string id="greh_envoy_dialog_21">
+		<text>I've got a couple of questions, you creepy bastard.</text>
+	</string>
+	<string id="greh_envoy_dialog_3">
+		<text>Good. I'm glad that among all the people who single-mindedly pursue personal gain there are still some willing to talk about something greater. What do you want to know?</text>
+	</string>
+	<string id="greh_envoy_dialog_31">
+		<text>Be careful not to judge too quickly. Rumours and impressions can be deceiving. All I want is to share my knowledge with you and your friends. Ask, and I'll answer. You might find this very beneficial.</text>
+	</string>
+	<string id="greh_envoy_dialog_4">
+		<text>Who are you?</text>
+	</string>
+	<string id="greh_envoy_dialog_5">
+		<text>I am but a humble envoy of our Father. Long ago I used to be like any other stalker. But then I was shown the truth about the Zone. That was when I changed, became an entirely different person. My identity doesn't matter any more. All that matters is my message.</text>
+	</string>
+	<string id="greh_envoy_dialog_41">
+		<text>Who sent you?</text>
+	</string>
+	<string id="greh_envoy_dialog_51">
+		<text>The community to which I belong. We call ourselves Sin, after the flaw in humanity that we wish to correct. Various factions have various goals. Some wish to destroy the Zone, some to exploit its riches, and others marvel at its many wonders. However, we alone know the truth. We are the true keepers of the Zone. We alone boast all the knowledge and power that the Zone may grant.</text>
+	</string>
+	<string id="greh_envoy_dialog_511">
+		<text>Sin? I don't think I've ever heard of you before.</text>
+	</string>
+	<string id="greh_envoy_dialog_5111">
+		<text>I heard some stories about "dark stalkers", but nothing concrete.</text>
+	</string>
+	<string id="greh_envoy_dialog_512">
+		<text>For as long as the Zone has existed, we have kept a low profile. Rather than engage in turf wars or scour the Zone in pursuit of riches, we prefer to silently collect knowledge. Grow stronger. Where two are fighting, the third one wins. But now, we are almost ready to step out of the shadows... and into the light of Vyraj. I hope you'll step into it with us.</text>
+	</string>
+	<string id="greh_envoy_dialog_42">
+		<text>What's your goal?</text>
+	</string>
+	<string id="greh_envoy_dialog_52">
+		<text>My goal is to spread the message. Make all people aware of what the Zone truly is. That it is a miracle. That it can help us improve, that it can save humanity from its own self-destructive nature. I strive to encourage other stalkers to join us, so we may share the power inherent in the Zone's many secrets. This way, when push comes to shove, they'll be able to stand with us when we cleanse the world of sin.</text>
+	</string>
+	<string id="greh_envoy_dialog_6">
+		<text>That sounds fairly interesting.</text>
+	</string>
+	<string id="greh_envoy_dialog_61">
+		<text>I'm not buying this crap.</text>
+	</string>
+	<string id="greh_envoy_dialog_7">
+		<text>I knew you'd be interested. You have turned out to be quite special. Sadly, not everyone is ready to join our ranks, but I've got high hopes about you.</text>
+	</string>
+	<string id="greh_envoy_dialog_71">
+		<text>That's alright, you might need a while to consider what I've said. I remember how difficult it was to let go of my own old views. Please, take your time.</text>
+	</string>
+	<string id="greh_envoy_dialog_8">
+		<text>Thank you for bringing forth your... enlightenment. I must go now.</text>
+	</string>
+	<string id="greh_envoy_dialog_81">
+		<text>Enough of this nonsense. Time to end you.</text>
+	</string>
+	<string id="greh_envoy_dialog_9">
+		<text>Very well. I hope you'll consider joining us. Farewell.</text>
+	</string>
+	<string id="greh_envoy_dialog_91">
+		<text>Fool. Sin has no end. There shall only be yours.</text>
+	</string>
+	<string id="greh_envoy_dialog_92">
+		<text>Please, just shut up and die.</text>
+	</string>
+	
+	<string id="red_forester_mortal_sin_0">
+		<text>Forester, I'm looking for some mysterious stalkers who've been, well, stalking this forest. Could you help?</text>
+	</string>
+	<string id="red_forester_mortal_sin_1">
+		<text>Young man, the Red Forest is home to many strange phenomena and events. If I were to describe all of them, we would...</text>
+	</string>
+	<string id="red_forester_mortal_sin_2">
+		<text>So you don't know?</text>
+	</string>
+	<string id="red_forester_mortal_sin_3">
+		<text>Just be patient young man, I'm trying to remember! Ah, yes... I think I know who you're referring to. They appeared without warning a couple of days ago. Came from the north. There was something ominous about them, the way they walked silently in a tight formation... other stalkers immediately sidestepped to make way for them. And then they simply walked into the forest like it was some regular park. I've heard distant gunshots many times since, more often than usual, that is.</text>
+	</string>
+	<string id="red_forester_mortal_sin_4">
+		<text>They're still over there?</text>
+	</string>
+	<string id="red_forester_mortal_sin_5">
+		<text>Yes, I'm quite sure of that. I think they've been looking for something, or someone, what exactly I can't tell. Judging by the smoke, however, they have set up camp in the eastern part of the Red Forest and continue their search.</text>
+	</string>
+	<string id="red_forester_mortal_sin_6">
+		<text>Eastern part, you say?</text>
+	</string>
+	<string id="red_forester_mortal_sin_7">
+		<text>There is a glade over there, accessed through an abandoned mine shaft. If you wish to confront them then that's where they are likely to be. Aside from my tower, the Limansk bridge, and the mines to the west, there's no other place around here that could shelter a party of that size.</text>
+	</string>
+	<string id="red_forester_mortal_sin_8">
+		<text>Thanks for the info. I'll be going now.</text>
+	</string>
+	<string id="red_forester_mortal_sin_9">
+		<text>Be careful, young man. There's more than hostile stalkers that you may encounter there. Stay vigilant.</text>
+	</string>
+	
+	<string id="stalker_stitch_mortal_sin_0">
+		<text>That's an unexpected reunion. What are you doing here?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_1">
+		<text>Hey man, long time no see! It's a long, complicated story but I'll try to be concise. We're short on time here, I've been followed by a bunch of mean guys.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_2">
+		<text>They're dead. I took care of them before they could come pay you a visit.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_3">
+		<text>Oh... thanks a lot, man! Anyway, the faster we act, the better. So, remember the Shard of the Monolith? That artefact you helped Strelok get? Well, he asked it about the Zone and it granted him a vision or something. Like some magic 8 ball, only actually magic. Anyway, we discovered an area north-west of the Power Plant. A real scary place.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_4">
+		<text>What did you do next?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_5">
+		<text>Well, we went to take a proper look around and that was when shit hit the fan. Turned out there's a band of fanatics there... but they weren't Monolith! Fuckers chased us off and kept pursuing us for days. We eventually had to split up to lose them. I went here, Rogue went west, and I think Strelok actually turned back.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_6">
+		<text>And those same fanatics chased you all the way to the Red Forest? That's some scary resolve.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_7">
+		<text>Too bad for them you crossed their path. Before we split up, Strelok said that place we found is the source of all emissions, the birthplace of the Zone. And it's occupied by those nutcases. That can't be good.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_8">
+		<text>Holy crap! I agree. Have you got any plan?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_9">
+		<text>We have to break in and stop whatever they're doing over there. But, uhm, I left my decoder in a secret stash. I wanted to retrieve it, but I was afraid they'd find me the second I stuck my head out of here.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_10">
+		<text>That's not a problem any more, so what's stopping you?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_11">
+		<text>Erm, they will send another team if they haven't already, and they know what I look like. But they don't know you 'cause you killed the whole team. That, and I need to stay here in case Strelok or Rogue will try to contact me. Can you get the decoder for me?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_12">
+		<text>Yeah, sure, another fetch quest. Where is it?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_13">
+		<text>I hid it at the back of an orange bus wreckage near the middle of the Truck Cemetery.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_14">
+		<text>Which one? Forget it, just send me the coordinates.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_15">
+		<text>Thing is, you see, I haven't got the coordinates stored anywhere. It's a secret stash, after all. I'm sure you'll be able to find it, though.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_16">
+		<text>Are you crazy? There's like dozens of buses in there...</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_17">
+		<text>Well... The decoder has an RF module to transmit and receive signals. I set the frequency to 171 MHz just in case I missed its location. If you have an RF Receiver, you can try following its signal by using this frequency. Once you get close enough to its location, your device should start beeping. It should be easy enough to find it. I hope the batteries inside the decoder are still alive...</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_18">
+		<text>Eh, all right, I'll do it but this better be worth the effort.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_19">
+		<text>We might stop a bunch of fanatics from haphazardly unleashing emission after emission on us if you get it.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_20">
+		<text>Fair enough. Off I go.</text>
+	</string>
+	
+	<string id="stalker_stitch_mortal_sin_decoder_0">
+		<text>I've got your damn decoder, Stitch.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_1">
+		<text>I knew you'd get it no problem, man. Which is disturbing, actually. Still, thanks.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_2">
+		<text>Any news?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_3">
+		<text>Yup. I was able to contact Rogue. He's still somewhere to the west, observing enemy manoeuvres. He said Sin has mobilised a lot of men and are currently moving southward split into several detachments. That doesn't augur well for us.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_4">
+		<text>True, that can't be good. Come to think of it, their envoy said something about cleansing the whole world from sin. They might be about to attempt just that. We'll have to act fast if we want to stop them.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_5">
+		<text>Now that I've got the decoder I'll go back north. I must find Strelok and help him sabotage their base.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_6">
+		<text>You do that and I'll tell General Voronin about the situation. Let's go!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_61">
+		<text>You do that and I'll tell Dushman about the situation. Let's go!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_62">
+		<text>You do that and I'll tell Sidorovich about the situation. Let's go!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_63">
+		<text>You do that and I'll tell Cold about the situation. Let's go!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_64">
+		<text>You do that and I'll tell Lukash about the situation. Let's go!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_decoder_65">
+		<text>You do that and I'll tell Professor Sakharov about the situation. Let's go!</text>
+	</string>
+	
+	<string id="stalker_stitch_mortal_sin_generators_0">
+		<text>You're here! Great!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_generators_1">
+		<text>So, you got here before us. Where's Strelok?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_generators_2">
+		<text>That's the thing! He said we couldn't wait any longer, so we found a back entrance to the enemy base here, undefended and all. After we'd hacked the lift Strelok went alone to disable their thingamajig. I'm here to cover him.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_generators_3">
+		<text>Damn it, you could've waited a bit...</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_generators_4">
+		<text>You hear that? We have to hurry! But, but, we saw Sin gathering their forces near the main entrance. If they notice Strelok and all go down to stop him then we can kiss our asses goodbye! We have to divert their attention away!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_generators_5">
+		<text>Okay, fuck! We'll assault their headquarters. Let's go!</text>
+	</string>
+	
+	<string id="stalker_stitch_mortal_sin_choice_0">
+		<text>We made it. Another mutant fanatic bites the dust. Hopefully, that'll be the last one.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_1">
+		<text>Agreed. I mean I like it here in the Zone, but the idea that there's normal life going on out there helps me relax now and then. I'd love a safe place to return to when I'm done adventuring.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_2">
+		<text>Yeah, the Zone doesn't really need to get any larger.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_3">
+		<text>I suppose we're done here. Rogue and I will rejoin with Strelok. What about you? Do you want to make a wish?</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_4">
+		<text>Make a wish? I'd never use that abomination for personal gain, or at all. I'll report our success to General Voronin. Thanks for the help, Duty will remember your contribution.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_41">
+		<text>Nah, I'd prefer something more reliable, like cash. This whole Wish Granter business is rather iffy. I'll tell Dushman we kicked Sin's asses. See you around, guys.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_42">
+		<text>Many rookies come to the Zone to eventually find the Wish Granter... but I'm not a naive rookie. I can earn money just fine. I'll go tell Sidorovich about our success, so see you around.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_43">
+		<text>From what I know the Wish Granter has got a dark sense of humour. I'd rather not risk reliving "The Monkey's Paw". I'll be happy to tell Cold that Clear Sky succeeded this time, though. Thanks for the help guys, see you!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_44">
+		<text>Nope, I think I'm good. Life in the Zone is cool as is, I don't need no happy ending just yet. What even would I wish for? I'll tell Lukash and guys plenty of stories about our little adventure. Thanks, guys, and see ya!</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_45">
+		<text>I'd love to examine the so-called Wish Granter... but I think the risk is too great. It's a product of scientists being reckless. Maybe I'll break that trend, and just report to the Professor as soon as possible. I appreciate your help, guys. Farewell.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_46">
+		<text>Well, since I've gone through all this trouble to save the world, I suppose I deserve the ultimate reward.</text>
+	</string>
+	<string id="stalker_stitch_mortal_sin_choice_5">
+		<text>Oh, okay, if you say so. We'll accompany you to see the result, just in case.</text>
+	</string>
+	
+	<string id="stalker_rogue_dialog_ms_0">
+		<text>Hey, tough guy.</text>
+	</string>
+	
+	<string id="stalker_rogue_repair_0">
+		<text>Hey, Rogue. Can you repair my stuff?</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_0">
+		<text>What's the situation here, Rogue?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_1">
+		<text>Not good. When you stopped Sin from reactivating the psy-installations, they decided to retreat and regroup in Limansk. I managed to recruit a few stalkers, but it's simply not enough, especially since Sin have allied with the Monolith already present in the city. I saw them fighting shoulder to shoulder myself.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_2">
+		<text>That's just great. I was worried that those brainwashed cults were starting to get a little lonely.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_3">
+		<text>Very funny. Sin now seem to organise themselves into large groups, each led by a powerful exo-clad warrior known as a "Castigator". They're not only amazing fighters, but decent tacticians. I barely managed to kill even one, and they've been consistently pushing us back.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_4">
+		<text>Great. So, what's the plan?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_5">
+		<text>Our counter-offence will be executed in a few stages. First, we have to get rid of their leadership. That'll slow them down significantly.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_6">
+		<text>Sounds rather difficult.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_7">
+		<text>It sure will be. By the way, General Voronin sent a team of volunteers to help you out. They're all seasoned stalkers with deep vendettas against the Zone and its worshippers. Go and decapitate the enemy.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_71">
+		<text>It sure will be. By the way, Dushman sent a team of volunteers to help you out. They're all seasoned mercs with impeccable reputations for professionalism. Go and decapitate the enemy.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_72">
+		<text>It sure will be. By the way, I've assembled a team of volunteers to help you out. They're all seasoned stalkers, some of whom I trained myself. Go and decapitate the enemy.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_73">
+		<text>It sure will be. By the way, Cold sent a team of volunteers to help you out. They're all seasoned stalkers, some of them veterans of the faction wars. Go and decapitate the enemy.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_74">
+		<text>It sure will be. By the way, Lukash sent a team of volunteers to help you out. They're all seasoned stalkers who don't want madmen like this try to control the Zone. Go and decapitate the enemy.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_75">
+		<text>It sure will be. By the way, Professor Sakharov sent a team of volunteers to help you out. They're all seasoned stalkers, although I hope they've dressed for the occasion. Go and decapitate the enemy.</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_warfare_0">
+		<text>It was rough, but the Castigators are dead.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_warfare_1">
+		<text>Good job. Finally, we've got some breathing room. Your boss sent a reward for your efforts, so I'll pass it to you.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_warfare_2">
+		<text>Thanks. What now?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_warfare_3">
+		<text>A few stalkers and I managed to ambush a Sin patrol in the meantime. Killed most of them immediately, but I knocked one of them out. Seems to be a relatively fresh recruit, so he's a bit more responsive. I'm no good at interrogation, I get violent too quickly. Try to extract any useful info from him.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_warfare_4">
+		<text>Sure thing, I'll give this a try.</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_interrogation_0">
+		<text>Okay, I'm done.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_1">
+		<text>Well done. I didn't expect him to spill the beans without a good beating. Seems they aren't ready to strike yet. We should prepare a sudden counter-offence to thwart their plan.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_11">
+		<text>Just as I thought. No problem. I suppose my more persuasive approach might do the trick.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_12">
+		<text>What a waste of time. I doubt we'll be able to capture any more of them. We'll have to figure this out on our own, then.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_2">
+		<text>So, what happens now?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_3">
+		<text>I sent out a recon team soon after you'd gone to eliminate the Castigators. They were supposed to use the opportunity to observe enemy manoeuvres deep in the city. They'd been doing well until they got ambushed and I lost contact with them. Check if there are any survivors, and see if you can salvage their mission.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_4">
+		<text>Where were they the last time you contacted them?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_interrogation_5">
+		<text>I'll upload the coordinates to your PDA. Be careful, it's close to a fortified enemy position.</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_contact_lost_0">
+		<text>I'm back. I met the last survivor of the recon team. He didn't last long.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_1">
+		<text>Fuck. They were reliable men. What about their mission?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_2">
+		<text>The survivor wasn't able to tell me much, but I found the team leader's PDA. I think he recorded some useful data on it.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_3">
+		<text>Good, at least their sacrifice wasn't in vain. Let me see.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_4">
+		<text>So?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_5">
+		<text>They did a swell job. Their observations confirm what the PoW told us. Sin are preparing a large scale invasion, and they're gonna pass through Limansk at full strength soon. They aren't ready yet, though.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_51">
+		<text>They did a swell job. Guess we didn't need the PoW after all. Sin are preparing a large scale invasion, and they're gonna pass through Limansk at full strength soon. They aren't ready yet, though.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_6">
+		<text>We have to act quickly, catch them unawares.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_7">
+		<text>You're right. Still, this won't be easy. Make sure you're completely ready before we go, there'll be no turning back or stopping for a break.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_contact_lost_8">
+		<text>Fair enough, I'll tell you when I've finished my preparations.</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_ready_0">
+		<text>I'm ready to go.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_ready_1">
+		<text>About time. We'll strike at their outpost at the abandoned construction site first. That'll open the path further into their territory.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_ready_2">
+		<text>You said it was fortified?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_ready_3">
+		<text>They've got a barricade with a narrow entrance, clear view of the surrounding area from high ground and a bunch of snipers for good measure. Ah, and the whole place is heavily irradiated. Piece of cake. Let's go.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_ready_4">
+		<text>This is going to be fun...</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_destruction_0">
+		<text>Well, we're still alive.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_destruction_1">
+		<text>We've just taken over their main rally point while their reinforcements are still in transit. We should keep the momentum going.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_destruction_2">
+		<text>We're going further north?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_destruction_3">
+		<text>Yes. There's a path that'll take us to the Deserted Hospital. It used to be a Monolith stronghold a few years ago, so things might get ugly if we let them get too comfortable there.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_destruction_4">
+		<text>Sounds like time is of the essence. Let's go.</text>
+	</string>
+	
+	<string id="stalker_rogue_mortal_sin_assault_0">
+		<text>Damn. He simply vanished. Are you okay?</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_assault_1">
+		<text>Of all the things in the Zone... Yes, I'm fine. He wanted me to shoot you in the back.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_assault_2">
+		<text>Well, thanks for not doing that. How did you resist him? I just barely managed here.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_assault_3">
+		<text>I visualised disassembling, cleaning and assembling my gun, bit by bit... anyway, we have to go. The guy said he wants to expand the Zone, and they happen to occupy the place that causes emissions. Basically, we're fucked.</text>
+	</string>
+	<string id="stalker_rogue_mortal_sin_assault_4">
+		<text>Yeah. We've got to hurry. We'll take out any Sin patrols along the way too. Last thing I want is to be surrounded by armed fanatics while Chernobog is playing his mind tricks on us.</text>
+	</string>
+	
+	<string id="greh_prisoner_greeting_0">
+		<text>You can break me but you can't break Sin! We will emerge victorious!</text>
+	</string>
+	
+	<string id="greh_prisoner_dialog_0">
+		<text>Hello there.</text>
+	</string>
+	<string id="greh_prisoner_dialog_1">
+		<text>Duty! You think you've got the right to destroy the Zone? You think that's even possible!? Fools!</text>
+	</string>
+	<string id="greh_prisoner_dialog_111">
+		<text>Mercenaries! Stop interfering with something you don't understand! Get your blood money elsewhere!</text>
+	</string>
+	<string id="greh_prisoner_dialog_112">
+		<text>Stalkers! Always the same greedy, self-righteous children! Leave now, or perish!</text>
+	</string>
+	<string id="greh_prisoner_dialog_113">
+		<text>Hah! Clear Sky! We know your secrets... but you don't know ours! We'll spread the Zone across the whole world and you can't stop us!</text>
+	</string>
+	<string id="greh_prisoner_dialog_114">
+		<text>A Freedomer? You understand the miracle that is the Zone, but the magnitude of your sins is unacceptable. You'll die like the rest!</text>
+	</string>
+	<string id="greh_prisoner_dialog_115">
+		<text>Silly scientists... why fight us at all? If you want to research the Zone then just you wait! We'll make it all the greater for you to study!</text>
+	</string>
+	<string id="greh_prisoner_dialog_2">
+		<text>Calm down, man. I just want to talk a little.</text>
+	</string>
+	<string id="greh_prisoner_dialog_221">
+		<text>I've got a couple of questions.</text>
+	</string>
+	<string id="greh_prisoner_dialog_222">
+		<text>Shut the fuck up, you bloody fanatic.</text>
+	</string>
+	<string id="greh_prisoner_dialog_3">
+		<text>You... okay. You wanna talk, huh? About what?</text>
+	</string>
+	<string id="greh_prisoner_dialog_331">
+		<text>Questions? Why would I answer any questions from a filthy profligate... unless you seek enlightenment?</text>
+	</string>
+	<string id="greh_prisoner_dialog_332">
+		<text>You cannot silence the voice of the Zone!</text>
+	</string>
+	<string id="greh_prisoner_dialog_4">
+		<text>You put up a good fight, but you're clearly a newbie. Don't let those edgy Sin freaks control you. Tell me the next step of their plan, and we'll let you live.</text>
+	</string>
+	<string id="greh_prisoner_dialog_441">
+		<text>Reveal the next step of your plan. We might strike a deal if you cooperate.</text>
+	</string>
+	<string id="greh_prisoner_dialog_442">
+		<text>Listen, you mindless piece of shit. Tell me what your forces are gonna do and we'll make this quick. If you don't, I'll be sure to cut slowly...</text>
+	</string>
+	<string id="greh_prisoner_dialog_5">
+		<text>Sin doesn't control me! They... convinced me! What's the point of struggling alone to achieve anything if you can join them... and make the world better! I... think...</text>
+	</string>
+	<string id="greh_prisoner_dialog_551">
+		<text>Cooperate? How about no? I won't be making any deals with infidels like you.</text>
+	</string>
+	<string id="greh_prisoner_dialog_552">
+		<text>I'm not afraid of you! We must all be ready to make the ultimate sacrifice for the sake of this planet! I... I am ready!</text>
+	</string>
+	<string id="greh_prisoner_dialog_6">
+		<text>I don't think you've bought their bullshit yet. Don't trust a bunch of omnicidal bastards. Your life's worth more than a piece of info. Sin may be willing to toss it aside, but I'm not.</text>
+	</string>
+	<string id="greh_prisoner_dialog_661">
+		<text>You definitely should consider my offer in your current position.</text>
+	</string>
+	<string id="greh_prisoner_dialog_662">
+		<text>I'm fed up with you. Time to die.</text>
+	</string>
+	<string id="greh_prisoner_dialog_7">
+		<text>I... my head... Chernobog... our Father... he was very convincing... but the more I think about this, the less convinced I am. Promise you won't kill me if I tell you what I know, alright?</text>
+	</string>
+	<string id="greh_prisoner_dialog_771">
+		<text>Consider? You should be the one to consider your situation! You stand in the way of progress! Of something greater than you! You should be the one to surrender!</text>
+	</string>
+	<string id="greh_prisoner_dialog_8">
+		<text>I promise. You'll be a prisoner of war. Behave and you may even be released once we've won this conflict.</text>
+	</string>
+	<string id="greh_prisoner_dialog_881">
+		<text>Let's just get this over with.</text>
+	</string>
+	<string id="greh_prisoner_dialog_9">
+		<text>Okay. Fine. I'll tell you. We've been gathering our forces in the west of the Zone in preparation for a crushing offence. This area is worse protected than the Barrier, after all. Then, we would pour into the southern territories and pick off the factions one by one.</text>
+	</string>
+	<string id="greh_prisoner_dialog_991">
+		<text>I'm not telling you! I will not compromise the mission! I will not betray the integrity of our cause!</text>
+	</string>
+	<string id="greh_prisoner_dialog_10">
+		<text>See, that wasn't so hard. Thanks for the help. Hope your head feels better soon.</text>
+	</string>
+	<string id="greh_prisoner_dialog_1001">
+		<text>Well, that was pointless.</text>
+	</string>
+	
+	<string id="lazarus_greeting_0">
+		<text>What's up, bro?</text>
+	</string>
+	
+	<string id="lazarus_story_0">
+		<text>So, you're the guy that Rogue captured in Limansk. What was your name?</text>
+	</string>
+	<string id="lazarus_story_1">
+		<text>Yeah, my name... I don't remember my real name, but Sin called me Psoglav, so I guess I'll keep using that.</text>
+	</string>
+	<string id="lazarus_story_2">
+		<text>You don't remember? Anyway, why did you join Duty?</text>
+	</string>
+	<string id="lazarus_story_21">
+		<text>You don't remember? Anyway, why did you become a merc?</text>
+	</string>
+	<string id="lazarus_story_22">
+		<text>You don't remember? I see you've chosen to be an unaligned stalker now.</text>
+	</string>
+	<string id="lazarus_story_23">
+		<text>You don't remember? Anyway, why did you join Clear Sky?</text>
+	</string>
+	<string id="lazarus_story_24">
+		<text>You don't remember? Anyway, why did you join Freedom?</text>
+	</string>
+	<string id="lazarus_story_25">
+		<text>You don't remember? Anyway, why did you join the Ecologists?</text>
+	</string>
+	<string id="lazarus_story_3">
+		<text>You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to return the gesture and join Duty. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_31">
+		<text>You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to try meet up again as a merc. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_32">
+		<text>Yeah. You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to live on as a regular stalker. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_33">
+		<text>You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to return the gesture and join Clear Sky. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_34">
+		<text>You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to live on as part of Freedom. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_35">
+		<text>You helped me shake off Chernobog's brainwashing, but my memory is still very hazy. Rogue let me go and since you'd been kind to me, I decided to join the Ecologists. I can help you out if you like, can't remember if I was a mechanic or not but I still know how to fix stuff. Heh.</text>
+	</string>
+	<string id="lazarus_story_4">
+		<text>I'll think about that. Wait, did you come all the way here all alone with just a pistol?</text>
+	</string>
+	<string id="lazarus_story_5">
+		<text>I managed somehow. Back when I was recruited by Sin they did some... stuff to me so I guess I'm enhanced a little. You know, silver lining.</text>
+	</string>
+	<string id="lazarus_story_6">
+		<text>Not bad. I'll keep your offer in mind.</text>
+	</string>
+	
+	<string id="lazarus_repair_0">
+		<text>Hey man, can you fix my gear?</text>
+	</string>
+	
+	<string id="lim_stalker_scout_dialog_0">
+		<text>Ah... shit...</text>
+	</string>
+	<string id="lim_stalker_scout_dialog_1">
+		<text>Are you from the scout team? What happened?</text>
+	</string>
+	<string id="lim_stalker_scout_dialog_2">
+		<text>Yes... bloodsuckers got us... quick... find... dropped PDA... nearby...</text>
+	</string>
+	<string id="lim_stalker_scout_dialog_3">
+		<text>Wait, let me help you.</text>
+	</string>
+	<string id="lim_stalker_scout_dialog_4">
+		<text>Too late... find PDA... watch... out...</text>
+	</string>
+	<string id="lim_stalker_scout_dialog_5">
+		<text>Understood.</text>
+	</string>
+	
+	<string id="greh_sabaoth_start_0">
+		<text>I have been waiting for you.</text>
+	</string>
+	
+	<string id="kat_greh_sabaoth_mortal_sin_0">
+		<text>You have come a long way.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_1">
+		<text>A welcoming committee, how nice. Good thing I didn't shoot you on sight, mister...?</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_111">
+		<text>Identify yourself at once.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_121">
+		<text>Who the fuck are you?</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_2">
+		<text>My flock have taken to calling me "Chernobog". I saw the distant glow of Vyraj and I swear... I shall bring that light to this violent world.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_3">
+		<text>...?</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_4">
+		<text>Consider the Zone: a synthesis of the noosphere and the biosphere. Consider how destructive, how... hungry... the noosphere is. That's simply a reflection of human nature. But the Zone... the Zone could well be the remedy to our derailment. If it were to spread across the globe, everyone could see themselves for what they truly are. No more deceptions, nor delusions. Then, the healing could begin. I need you to stop killing my children. I need you to let them bring peace to this restless world.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_5">
+		<text>Sorry for throwing a spanner in the works, I suppose, but your merry men started killing us first.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_551">
+		<text>The C-Consciousness already tried to heal humanity, using similarly extreme methods. Instead, they unleashed a disaster.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_561">
+		<text>"Peace"? Enforced with guns, anomalies and abominations? Sorry, but I don't give a shit about some false prophet's insane vision.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_6">
+		<text>I don't expect you to understand this grand vision... this task I have been given, despite your extensive knowledge of the Zone. I used to exact punishment upon the unjust on my own, although my efforts were misunderstood. I was condemned to death... but the Masters saved me from the people who didn't understand, and then made me stronger. Gave me a new purpose. And yet they were sentenced to death themselves, helpless, by a person who didn't understand. Don't you see? Stalkers are a threat to the coming of a perfect world. Fear or greed always gets the better of them. We cannot let them interfere.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_7">
+		<text>You're surprisingly calm for someone who's about to suffer a crushing defeat. Have you accepted your fate already?</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_8">
+		<text>I accepted my fate over a decade ago, when it was first mandated by the Masters. I was improved in order to improve the world. My destiny is to... succeed. I cannot fail. You, on the other hand...</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_9">
+		<text>Okay, time to end this.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_10">
+		<text>... shall stop right here.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_11">
+		<text>Ugh... what... is this...?!?</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_12">
+		<text>That pathetic psy-helmet you carry won't protect you. Either you'll come to see the truth in my words, or you will die here... all of you.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_13">
+		<text>I won't... let you...!</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_14">
+		<text>Struggle all you want, like the billions of souls who have come before you. There will be change... the stubborn... the dying... it is not up to them any more. It is not up to you.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_15">
+		<text>Screw your... change... and fuck you!</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_1551">
+		<text>I can't let this... happen... I... can't...</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_1552">
+		<text>Ugh... my head... aaaargh!</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_16">
+		<text>Hmm. Impressive. Such a strong resolve. I truly wish you'd join us. The fact we are enemies saddens me... deeply.</text>
+	</string>
+	<string id="kat_greh_sabaoth_mortal_sin_17">
+		<text>I'll put you out of your misery soon enough, just you wait. I swear.</text>
+	</string>
+	
+	<string id="gen_greh_sabaoth_mortal_sin_generators_0">
+		<text>Here you are, full of sound and fury, signifying nothing. There'll be no place for you... in our peaceful world.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_1">
+		<text>Your men are dead. You are here alone. Strelok has foiled your plan, just as he foiled the C-Consciousness before you.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_2">
+		<text>What did you say?</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_3">
+		<text>The machines you wanted to harness the emission with? They're broken. You cannot force the Zone to expand now.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_4">
+		<text>Years of preparation... gone. My children, dead. I cannot let their sacrifice be in vain. I won't... let you doom the world. I shan't give up. The alternative... is unacceptable.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_5">
+		<text>Enough is enough. You have failed. Prepare to say goodbye.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_6">
+		<text>I cannot fail. There is still one option left. I will consult the Wish Granter. It shall have my life, and the world will have peace... Vyraj made manifest, just as the Masters wanted. Farewell.</text>
+	</string>
+	<string id="gen_greh_sabaoth_mortal_sin_generators_7">
+		<text>You can't force peace, Chernobog. I'll be seeing you soon.</text>
+	</string>
+</string_table>

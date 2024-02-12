@@ -1,0 +1,115 @@
+-- =======================================================================================
+-- Modified by Tronex
+-- Last modification: 2018/5/22
+-- Prevent quicksaving on hardcore save modes
+-- =======================================================================================
+
+-- called from engine! returning true will prevent engine for executing quick save
+local flags = {}
+function on_key_press(dik,bind,dis)
+
+	if (level.present() and db.actor) then
+		if (bind == key_bindings.kQUICK_SAVE) then
+			return action_quick_save(dik,bind)
+		elseif (bind == key_bindings.kQUICK_LOAD) then 
+			return action_quick_load(dik,bind)
+		else
+			flags.ret_value = true
+			SendScriptCallback("on_before_key_press",dik,bind,dis,flags)
+			return not flags.ret_value
+		end
+	end
+	
+	return false
+end
+
+function action_quick_save(dik,bind)
+	if not (db.actor:alive() and actor_menu.is_hud_free()) then 
+		return false 
+	end
+	
+	--	Saving will be interrupted if flags.ret is set to true by a custom script that have "on_before_save_input"
+	if level.present() then
+		flags.ret = false
+		SendScriptCallback("on_before_save_input", flags, 2, game.translate_string("st_ui_save"))
+		if (flags.ret == true) then 
+			return true
+		end
+	end
+
+	--if game isn't already paused, then force a pause here
+	local force_pause
+	if not (device():is_paused()) then 
+		device():pause(true)
+		force_pause = true
+	end
+	
+	-- get list of savegames with most recently modified first.
+	local flist = getFS():file_list_open_ex("$game_saves$",	bit_or(FS.FS_ListFiles,FS.FS_RootOnly),"*".. ui_load_dialog.saved_game_extension)
+	local f_cnt = flist and flist:Size() or 0
+   
+	local inc = 0
+	if (f_cnt > 0) then
+		flist:Sort(FS.FS_sort_by_modif_down)
+		
+		for it=0, f_cnt-1 do
+			local file_name = flist:GetAt(it):NameFull():sub(0,-6):lower()
+			
+			-- grab last modified quicksave increment count
+			local d = tonumber( string.match(file_name,"quicksave_(%d+)") )
+			if (d) then
+				inc = d
+				break 
+			end
+		end
+	end
+	
+	inc = (inc >= ui_options.get("other/quicksave_cnt")) and 1 or inc + 1
+	
+	exec_console_cmd("save " .. (user_name() or "") .. " - quicksave_" .. inc)
+	
+	--[[
+	local comm = utils_xml.get_special_txt(db.actor:character_community())
+	local map = utils_xml.get_special_txt(level.name())
+	exec_console_cmd("save " .. comm .. " - " .. map .. " - quicksave_" .. inc)
+	--]]
+	
+	if (force_pause) then 
+		device():pause(false)
+	end
+	
+	return true
+end 
+
+function action_quick_load(dik,bind)
+	
+	--	You must check in your callback, and set flags.ret = true if an action took place
+	flags.ret = false
+	SendScriptCallback("on_before_load_input",dik, bind,flags)
+	if (flags.ret == true) then 
+		return true
+	end
+	
+	if not (device():is_paused()) then 
+		device():pause(true)
+	end
+	
+	local flist = getFS():file_list_open_ex("$game_saves$",	bit_or(FS.FS_ListFiles,FS.FS_RootOnly),"*".. ui_load_dialog.saved_game_extension)
+	local f_cnt = flist and flist:Size() or 0
+	
+	if (f_cnt > 0) then
+		flist:Sort(FS.FS_sort_by_modif_down)
+		
+		for it=0, f_cnt-1 do
+			local file_name = flist:GetAt(it):NameFull():sub(0,-6):lower()
+			
+			-- grab last modified quicksave
+			if (string.match(file_name,".* %- quicksave_(%d+)")) then
+				exec_console_cmd("load " .. file_name)
+				return true
+			end
+		end
+	end
+	
+	return true
+end

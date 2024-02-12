@@ -1,0 +1,680 @@
+
+;;--=========================================================
+;;--=========================| JUNK |========================
+;;--=========================================================
+
+[tch_junk]:identity_immunities	;;-- (technical)
+GroupControlSection                                = spawn_group 
+discovery_dependency                               = 
+$spawn                                             = "food and drugs\harmonica_a"
+cform                                              = skeleton 
+class                                              = II_ATTCH 
+kind			                               		= i_misc
+attach_angle_offset                                = 0.000000, -1.204452, -1.262921 
+attach_position_offset                             = 0.081856, -0.035081, 0.011694 
+attach_bone_name                                   = bip01_l_hand 
+auto_attach                                        = false 
+cost	                                           = 0
+;;--=========================================================
+
+;;-- Plastic jar
+[jar]:tch_junk
+visual				                               = dynamics\equipments\trade\jar.ogf
+description			                               = st_jar_descr
+inv_name			                               = st_jar
+inv_name_short			                           = st_jar
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 3
+inv_grid_y			                               = 44
+cost				                               = 290
+inv_weight			                               = 0.09
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 2
+
+[e_syringe]:tch_junk
+visual						                       = dynamics\devices\glucose_shots\glucose_s.ogf
+cost						                       = 285
+inv_weight					                       = 0.012
+inv_name					                       = st_e_syringe
+inv_name_short				                       = st_e_syringe
+description					                       = st_e_syringe_descr
+inv_grid_width				                       = 1
+inv_grid_height				                       = 1
+inv_grid_x					                       = 15
+inv_grid_y					                       = 44
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+tier = 2
+
+[rope]:tch_junk ;;-- Rope
+visual					                           = dynamics\equipments\trade\rope.ogf
+cost					                           = 190
+inv_name				                           = st_rope
+inv_name_short				                       = st_rope
+description				                           = st_rope_descr
+inv_weight				                           = 0.7
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x				                           = 4
+inv_grid_y				                           = 42
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.03
+tier = 2
+
+
+;;-- Metal shovel
+[shovel_old]:tch_junk
+visual				                               = dynamics\equipments\trade\shovel.ogf
+description			                               = st_shovel_old_descr
+inv_name			                               = st_shovel_old
+inv_name_short			                           = st_shovel_old
+inv_grid_width			                           = 1
+inv_grid_height			                           = 2
+inv_grid_x			                               = 8
+inv_grid_y			                               = 42
+cost				                               = 260
+inv_weight			                               = 1.54
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 2
+
+
+;;-- Military field shovel
+[shovel_mili]:tch_junk
+visual				                               = dynamics\equipments\trade\shovel.ogf
+description			                               = st_shovel_mili_descr
+inv_name			                               = st_shovel_mili
+inv_name_short			                           = st_shovel_mili
+inv_grid_width			                           = 1
+inv_grid_height			                           = 2
+inv_grid_x			                               = 7
+inv_grid_y			                               = 42
+cost				                               = 390
+inv_weight			                               = 1.36
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Mein Kampf
+[meinkampf]:tch_junk
+visual				                               = dynamics\equipments\trade\meinkampf.ogf
+description			                               = st_meinkampf_descr
+inv_name			                               = st_meinkampf
+inv_name_short			                           = st_meinkampf
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 4
+inv_grid_y			                               = 43
+cost				                               = 360
+inv_weight			                               = 0.224
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.02
+tier = 3
+
+
+;;-- Bed spread
+[beadspread]:tch_junk
+visual				                               = dynamics\equipments\trade\bedspread.ogf
+description			                               = st_beadspread_descr
+inv_name			                               = st_beadspread
+inv_name_short			                           = st_beadspread
+inv_grid_width			                           = 2
+inv_grid_height			                           = 1
+inv_grid_x			                               = 5
+inv_grid_y			                               = 43
+cost				                               = 430
+inv_weight			                               = 0.75
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.03
+tier = 3
+
+
+;;-- Walkie talkie
+[walkie]:tch_junk
+visual                                             = dynamics\devices\dev_fmradio\dev_fmradio.ogf
+description			                               = st_walkie_descr
+inv_name			                               = st_walkie
+inv_name_short			                           = st_walkie
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 2
+inv_grid_y			                               = 43
+cost				                               = 630
+inv_weight			                               = 0.42
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Broken detector
+[broken_detector]:tch_junk ;;-- (new)
+visual                                             = dynamics\devices\dev_detector_0\dev_detector_0
+description			                               = st_broken_detector_descr
+inv_name			                               = st_broken_detector
+inv_name_short			                           = st_broken_detector
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 1
+inv_grid_y			                               = 43
+cost				                               = 420
+inv_weight			                               = 0.42
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Deck of Cards
+[cards]:tch_junk
+visual				                               = dynamics\equipments\trade\cards.ogf
+description			                               = st_cards_descr
+inv_name			                               = st_cards
+inv_name_short			                           = st_cards
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 16
+inv_grid_y			                               = 44
+cost				                               = 210
+inv_weight			                               = 0.11
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 1
+
+;;-- Leather boots
+[boots]:tch_junk
+visual				                               = dynamics\equipments\trade\boots.ogf
+description			                               = st_boots_descr
+inv_name			                               = st_boots
+inv_name_short			                           = st_boots
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 4
+inv_grid_y			                               = 44
+cost				                               = 690
+inv_weight			                               = 1
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.04
+snd_on_take										   = outfit
+tier = 3
+
+
+;;-- Gloves
+[gloves]:tch_junk ;;-- (new)
+visual				                               = dynamics\equipments\trade\boots.ogf
+description			                               = st_gloves_descr
+inv_name			                               = st_gloves
+inv_name_short			                           = st_gloves
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 5
+inv_grid_y			                               = 44
+cost				                               = 690
+inv_weight			                               = 1
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.04
+snd_on_take										   = outfit
+tier = 3
+
+
+;;-- Old head lamp
+[headlamp]:tch_junk
+visual				                               = dynamics\devices\dev_torch_light\dev_torch_light3.ogf
+description			                               = st_headlamp_descr
+inv_name			                               = st_headlamp
+inv_name_short			                           = st_headlamp
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 6
+inv_grid_y			                               = 44
+cost				                               = 660
+inv_weight			                               = 0.2
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Telescopic mirror
+[mirror]:tch_junk
+visual				                               = dynamics\equipments\trade\mirror.ogf
+description			                               = st_mirror_descr
+inv_name			                               = st_mirror
+inv_name_short			                           = st_mirror
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 7
+inv_grid_y			                               = 44
+cost				                               = 280
+inv_weight			                               = 0.09
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 2
+
+
+;;-- Welding goggles
+[welding_goggles]:tch_junk
+visual				                               = dynamics\equipments\trade\goggles.ogf
+description			                               = st_welding_goggles_descr
+inv_name			                               = st_welding_goggles
+inv_name_short			                           = st_welding_goggles
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 3
+inv_grid_y			                               = 43
+cost				                               = 440
+inv_weight			                               = 0.382
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 2
+
+
+;;-- Decorated jewelry box
+[jewelry_box]:tch_junk
+visual				                               = dynamics\equipments\trade\jbox.ogf
+description			                               = st_jewelry_box_descr
+inv_name			                               = st_jewelry_box
+inv_name_short			                           = st_jewelry_box
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 2
+inv_grid_y			                               = 44
+cost				                               = 7490
+inv_weight			                               = 0.76
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 5
+
+;;-- Picture of a woman
+[picture_woman]:tch_junk
+visual				                               = dynamics\equipments\trade\photo.ogf
+description			                               = st_picture_woman_descr
+inv_name			                               = st_picture_woman
+inv_name_short			                           = st_picture_woman
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 8
+inv_grid_y			                               = 44
+cost				                               = 90
+inv_weight			                               = 0.02
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.01
+tier = 1
+
+;;-- Broken flashlight
+[flashlight_broken]:tch_junk
+visual				                               = dynamics\devices\dev_flashlight\dev_flashlight.ogf
+description			                               = st_flashlight_broken_descr
+inv_name			                               = st_flashlight_broken
+inv_name_short			                           = st_flashlight_broken
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 9
+inv_grid_y			                               = 44
+cost				                               = 560
+inv_weight			                               = 0.424
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Soaked underwear
+[underwear]:tch_junk
+visual				                               = dynamics\equipments\sumka1.ogf
+description			                               = st_underwear_descr
+inv_name			                               = st_underwear
+inv_name_short			                           = st_underwear
+inv_grid_width			                           = 2
+inv_grid_height			                           = 1
+inv_grid_x			                               = 0
+inv_grid_y			                               = 42
+cost				                               = 390
+inv_weight			                               = 0.04
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.02
+snd_on_take										   = outfit
+tier = 2
+
+
+;;-- Russian PLAYBOY
+[porn]:tch_junk
+visual				                               = dynamics\equipments\trade\porn.ogf
+description			                               = st_porn_descr
+inv_name			                               = st_porn
+inv_name_short			                           = st_porn
+inv_weight			                               = 0.22	;0.2
+inv_grid_width                                     = 1
+inv_grid_height                                    = 2
+inv_grid_x                                         = 11
+inv_grid_y                                         = 43
+cost				                               = 330
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset	                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+;// should be deleted after update
+bone_name				                           = bip01_r_hand
+position_offset			                           = 0.0,0.0,0.0
+angle_offset			                           = 1.570790,1.570790,3.92699
+repair_part_bonus	 	                           = 0.02
+snd_on_take										   = paper
+tier = 2
+
+
+;;-- Ukrainian MAXIM
+[porn2]:tch_junk
+visual				                               = dynamics\equipments\trade\porn2.ogf
+description			                               = st_porn2_descr
+inv_name			                               = st_porn2
+inv_name_short			                           = st_porn2
+inv_weight			                               = 0.22	;0.2
+inv_grid_width                                     = 1
+inv_grid_height                                    = 2
+inv_grid_x                                         = 12
+inv_grid_y                                         = 43
+cost				                               = 420
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset	                           = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+;// should be deleted after update
+bone_name				                           = bip01_r_hand
+position_offset			                           = 0.0,0.0,0.0
+angle_offset			                           = 1.570790,1.570790,3.92699
+repair_part_bonus	 	                           = 0.02
+snd_on_take										   = paper
+tier = 2
+
+
+;;-- Camouflaged tarpaulin
+[tarpaulin]:tch_junk
+visual					                           = dynamics\equipments\trade\tarp.ogf
+cost					                           = 630
+inv_name				                           = st_tarpaulin
+inv_name_short				                       = st_tarpaulin
+description				                           = st_tarpaulin_descr
+inv_weight				                           = 1.2
+inv_grid_width			                           = 2
+inv_grid_height			                           = 1
+inv_grid_x				                           = 9
+inv_grid_y				                           = 43
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.04
+tier = 3
+
+
+;;-- 2 synthetic ropes
+[synthrope]:tch_junk
+visual					                           = dynamics\equipments\trade\rops.ogf
+cost					                           = 780
+inv_name				                           = st_synthrope
+inv_name_short				                       = st_synthrope
+description				                           = st_synthrope_descr
+inv_weight				                           = 1.972
+inv_grid_width			                           = 2
+inv_grid_height			                           = 1
+inv_grid_x				                           = 11
+inv_grid_y				                           = 42
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.04
+tier = 3
+
+
+;;-- Field cutlery
+[cutlery]:tch_junk
+visual					                           = dynamics\equipments\trade\cutlery.ogf
+cost					                           = 370
+inv_name				                           = st_cutlery
+inv_name_short				                       = st_cutlery
+description				                           = st_cutlery_descr
+inv_weight				                           = 0.2
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x				                           = 10
+inv_grid_y				                           = 44
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.02
+tier = 2
+
+
+;;-- Small radio
+[radio]:tch_junk
+visual                                             = dynamics\equipments\trade\radio.ogf
+cost					                           = 770
+inv_name				                           = st_radio
+inv_name_short				                       = st_radio
+description				                           = st_radio_descr
+inv_weight				                           = 0.4
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x				                           = 5
+inv_grid_y				                           = 42
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Broken radio
+[radio2]:tch_junk
+$spawn 				                               = "devices\roubles"
+$prefetch 			                               = 16
+cform                                              = skeleton
+kind			                               = i_misc
+class					                           = II_ATTCH
+visual                                             = dynamics\equipments\trade\radio.ogf
+cost					                           = 840
+inv_name				                           = st_radio2
+inv_name_short				                       = st_radio2
+description				                           = st_radio2_descr
+inv_weight				                           = 0.33
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x				                           = 6
+inv_grid_y				                           = 42
+attach_angle_offset		                           = 0.000000, -1.204452, -1.262921
+attach_position_offset	                           = 0.081856, -0.035081, 0.011694
+attach_bone_name		                           = bip01_l_hand
+auto_attach				                           = false
+tier = 3
+
+
+;;-- Industrial grease
+[grease]:tch_junk
+visual				                               = dynamics\repair\grease.ogf
+description			                               = st_grease_descr
+inv_name			                               = st_grease
+inv_name_short			                           = st_grease
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 13
+inv_grid_y			                               = 44
+cost				                               = 1195
+inv_weight			                               = 0.341
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.07
+tier = 4
+
+
+[ball_hammer]:tch_junk ;;--(new)
+visual                                             = dynamics\equipments\trade\hammer.ogf
+inv_name			                               = st_ball_hammer
+inv_name_short		                               = st_ball_hammer
+description			                               = st_ball_hammer_descr
+inv_weight   	                                   = 0.9
+inv_grid_width		                               = 1
+inv_grid_height		                               = 1
+inv_grid_x			                               = 13
+inv_grid_y			                               = 43
+cost    		                                   = 116
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.05
+tier = 3
+
+;;-- Steel Wool
+[steel_wool]:tch_junk
+visual				                               = dynamics\repair\steel_wool.ogf
+description			                               = st_steel_wool_descr
+inv_name			                               = st_steel_wool
+inv_name_short			                           = st_steel_wool
+inv_grid_width			                           = 1
+inv_grid_height			                           = 1
+inv_grid_x			                               = 14
+inv_grid_y			                               = 44
+cost				                               = 744
+inv_weight			                               = 0.224
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.07
+tier = 4
+
+[duct_tape]:tch_junk ;;--(new)
+visual                                             = dynamics\misc\duct_tape.ogf
+inv_name			                               = st_duct_tape
+inv_name_short		                               = st_duct_tape
+description			                               = st_duct_tape_descr
+inv_weight   	                                   = 0.125
+inv_grid_width		                               = 1
+inv_grid_height		                               = 1
+inv_grid_x			                               = 14
+inv_grid_y			                               = 43
+cost    		                                   = 190
+attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+attach_bone_name		                           = bip01_r_hand
+auto_attach				                           = false
+repair_part_bonus	 	                           = 0.03	;0.05
+tier = 3
+
+;[batteries_empty]:tch_junk
+;visual                                             = dynamics\equipments\trade\battery.ogf
+;inv_name			                               = st_batteries_empty
+;inv_name_short		                               = st_batteries_empty
+;description			                               = st_batteries_empty_descr
+;inv_weight   	                                   = 0.139
+;inv_grid_width		                               = 1
+;inv_grid_height		                               = 1
+;inv_grid_x			                               = 17
+;inv_grid_y			                               = 25
+;cost    		                                   = 32
+;attach_angle_offset		                           = -0.287979, 1.560923, 1.544060
+;attach_position_offset		                       = 0.096910, -0.013594, 0.107925
+;attach_bone_name		                           = bip01_r_hand
+;auto_attach				                           = false
+
+;[batteries_dead_empty]:batteries_empty
+;inv_name			                               = st_batteries_dead_empty
+;inv_name_short		                               = st_batteries_dead_empty
+;description			                               = st_batteries_dead_empty_descr
+;inv_weight   		                               = 0.127
+;inv_grid_width		                               = 1
+;inv_grid_height		                               = 1
+;inv_grid_x			                               = 17
+;inv_grid_y			                               = 26
+
+;[batteries_ccell_empty]:batteries_empty
+;inv_name			                               = st_batteries_ccell_empty
+;inv_name_short		                               = st_batteries_ccell_empty
+;description			                               = st_batteries_ccell_empty_descr
+;inv_weight   		                               = 0.141
+;inv_grid_width		                               = 1
+;inv_grid_height		                               = 1
+;inv_grid_x			                               = 18
+;inv_grid_y			                               = 25
+
+
+;;===========================================================
+;;=========================| UNUSED |========================
+;;===========================================================
+;;-- not found
+[itm_pda_personal]:booster
+GroupControlSection                                = spawn_group
+discovery_dependency                               =
+$spawn                                             = "devices\pda"
+$prefetch                                          = 16
+kind			                               = i_misc
+class                                              = II_FOOD
+cform                                              = skeleton
+visual                                             = dynamics\devices\dev_pda\dev_pda.ogf
+description                                        = st_pda_descr
+radius                                             = 68	                                       ; 50
+slot                                               = 7
+default_to_ruck                                    = false
+sprint_allowed                                     = true
+control_inertion_factor                            = 1
+script_binding                                     = bind_physic_object.init
+description								           = st_perspda_descr
+inv_name                                           = st_perspda
+inv_name_short                                     = st_perspda
+inv_weight                                         = 0.1	                                       ;0.2
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+cost                                               = 0
+attach_angle_offset                                = -1.303,0.107,-1.702	                                       ;onoaiaaeeaaaony a ?aaeaiao Angle*PI/180
+attach_position_offset                             = 0.14,0.001,0.02
+attach_bone_name                                   = bip01_l_hand
+auto_attach                                        = false
+remove_after_use						           = false

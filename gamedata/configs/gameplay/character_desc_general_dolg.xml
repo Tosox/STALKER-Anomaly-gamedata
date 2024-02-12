@@ -1,0 +1,1107 @@
+
+<specific_character id="sim_default_duty_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_dolg_ranger</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\dark_dolg</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_rookie</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_rookie_gasmask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_semi_pro</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_11</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_0_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_0.xml"
+    <icon>ui_inGame2_light_metro_all_suit</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mask_nohood</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_duty_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_0</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_stalker_dolg_berill</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_berill</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_dolg_ranger</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\dark_dolg</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_npc_u_stalker_do_balon_5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_npc_u_stalker_do_balon_5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_6</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_npc_u_stalker_do_balon_8</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_8</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_npc_u_stalker_do_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_npc_u_stalker_do_mask_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_mask_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_1_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_on_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_semi_pro</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_11</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_1_default_31" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_1.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_duty_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg1c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg1d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_0</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_stalker_dolg_berill</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_berill</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_dolg_ranger</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\dark_dolg</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_npc_u_stalker_do_balon_5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_npc_u_stalker_do_balon_5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_6</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_npc_u_stalker_do_balon_8</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_balon_8</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_npc_u_stalker_do_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_npc_u_stalker_do_mask_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_do_mask_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_backpack_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_dutygas_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_2_default_31" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_balloon_on_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_32" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_semi_pro</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_33" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_11</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_34" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_35" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_light_metro_all_suit</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_mask_nohood</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_2_default_36" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_2.xml"
+    <icon>ui_inGame2_light_metro_all_suit</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_duty_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_3</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+</specific_character>
+      
+<specific_character id="sim_default_duty_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_3</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_3</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_8</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_light_metro_all_suit</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_5</visual>
+</specific_character>
+ 
+<specific_character id="sim_default_duty_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_3</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_stalker_dolg_gas</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_aztec</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_stalker_dolg_berill</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_berill</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_dolg_proto</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_4_proto</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_dolg_skat</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_skat</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_dolg_3_skatus</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_3_psz9d_skat</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_dolg_ranger</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\dark_dolg</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_backpack_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_backpack_helm_battle_nogas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_backpack_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_backpack_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_balloon_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_balloon_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_balloon_on_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_3_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_balloon_on_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_0</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_helm_battle_nogas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_3_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_duty_bala</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_helm_tactic_nogas</visual>
+</specific_character>
+
+<specific_character id="sim_default_duty_3_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_3</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg3b</visual>
+</specific_character>
+<specific_character id="sim_default_duty_3_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_proto</visual>
+</specific_character>
+	   
+
+
+<specific_character id="sim_default_duty_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolg4c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_duty_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <visual>actors\stalker_dolg\stalker_dolgexo4c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_stalker_dolg_gas</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_aztec</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_dolg_proto</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_4_proto</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_dolg_skat</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_skat</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_dolg_3_skatus</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_3_psz9d_skat</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_stalker_dolg_exoseva</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_exoseva</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_9c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_duty_4_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_9b</visual>
+</specific_character>
+  
+<specific_character id="sim_default_duty_4_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_nosorog</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg4nosorog</visual>
+</specific_character>
+<specific_character id="sim_default_duty_4_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_2</icon>
+    <snd_config>characters_voice\human\dolg_3\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolg_2_proto</visual>
+</specific_character>
+  
+	
+	
+	<!-- Special -->
+<specific_character id="sim_default_dolg_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_special.xml"
+    <name>GENERATE_NAME_senior_sergeant</name>
+    <icon>ui_inGame2_dutygas_2</icon>
+    <class>sim_default_dolg_trader</class>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+<specific_character id="sim_default_dolg_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_special.xml"
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_dutygas_2</icon>
+    <class>sim_default_dolg_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+<specific_character id="sim_default_dolg_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_special.xml"
+    <name>GENERATE_NAME_senior_sergeant</name>
+    <icon>ui_inGame2_dutygas_2</icon>
+    <class>sim_default_dolg_medic</class>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_dolg_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_dolg_special.xml"
+    <name>GENERATE_NAME_senior_sergeant</name>
+    <icon>ui_inGame2_dutygas_2</icon>
+    <class>sim_default_dolg_barman</class>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+
+<specific_character id="sim_default_duty_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_duty_dead</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <rank>17837</rank>
+    <reputation>105</reputation>
+    <money min="5000" max="10000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolgexo_4</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	
+<specific_character id="sim_default_duty_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_duty_dead</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\dolg_1\</snd_config>
+    <rank>8352</rank>
+    <reputation>353</reputation>
+    <money min="1500" max="3500" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolg2a_mas3</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<specific_character id="sim_default_duty_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_duty_dead</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <rank>13641</rank>
+    <reputation>551</reputation>
+    <money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolgexo4b</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<specific_character id="sim_default_duty_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_captain</name>
+    <icon>ui_inGame2_Dolg_4e</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_duty_dead</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\dolg_1\</snd_config><!--2-->
+    <rank>15225</rank>
+    <reputation>359</reputation>
+    <money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolgexo4c</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>

@@ -1,0 +1,2253 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Weapons Upgrades
+-->
+
+<string_table>
+	<string id="st_upgr_required_materials">
+		<text>Необходимые материалы</text>
+	</string>
+	<string id="st_upgr_enough_materials">
+		<text>недостаточно материалов</text>
+	</string>
+	<string id="st_prop_bullet_speed">
+		<text>Настильность</text>
+	</string>
+	<string id="st_prop_calibre">
+		<text>Калибр</text>
+	</string>
+	<string id="st_prop_recoil">
+		<text>Отдача</text>
+	</string>
+	<string id="st_prop_reliability">
+		<text>Надёжность</text>
+	</string>
+	<string id="st_prop_scope_1.6x">
+		<text>1.6-кратный прицел</text>
+	</string>
+	<string id="st_prop_scope_4x">
+		<text>4-кратный прицел</text>
+	</string>
+	<string id="st_prop_silencer">
+		<text>Глушитель</text>
+	</string>
+	<string id="st_prop_underbarrel_slot">
+		<text>Подствольное крепление</text>
+	</string>
+	<string id="st_prop_weight">
+		<text>Масса</text>
+	</string>
+	<string id="st_up_add_a1_descr">
+		<text>Наружная резьба позволяет устанавливать глушители.</text>
+	</string>
+	<string id="st_up_add_a1_name">
+		<text>Внешняя резьба</text>
+	</string>
+	<string id="st_up_add_a2_descr">
+		<text>Установка крепления для оптических прицелов.</text>
+	</string>
+	<string id="st_up_add_a2_name">
+		<text>Крепление для оптических прицелов</text>
+	</string>
+	<string id="st_up_add_a3_descr">
+		<text>Установка планки для размещения подствольных гранатомётов.</text>
+	</string>
+	<string id="st_up_add_a3_name">
+		<text>Крепление подствольных гранатомётов</text>
+	</string>
+	<string id="st_up_add_a4_descr">
+		<text>Замена стандартного магазина на более ёмкий.</text>
+	</string>
+	<string id="st_up_add_a4_name">
+		<text>Увеличение вместимости магазина</text>
+	</string>
+	<string id="st_up_add_b1_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b1_name">
+		<text>Смена калибра на 5.45x39</text>
+	</string>
+	<string id="st_up_add_b2_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b2_name">
+		<text>Смена калибра на 5.56x45</text>
+	</string>
+	<string id="st_up_add_b3_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b3_name">
+		<text>Смена калибра на 9x18</text>
+	</string>
+	<string id="st_up_add_b4_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b4_name">
+		<text>Смена калибра на 9x19</text>
+	</string>
+	<string id="st_up_add_b5_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b5_name">
+		<text>Смена калибра на 7.62x39</text>
+	</string>
+	<string id="st_up_add_b6_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b6_name">
+		<text>Смена калибра на 7.62x51</text>
+	</string>
+	<string id="st_up_add_b7_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_add_b7_name">
+		<text>Смена калибра на 7.62x54</text>
+	</string>
+	<string id="st_up_addd_a1_descr">
+		<text>Увеличение ёмкости магазина без изменения габаритов оружия.</text>
+	</string>
+	<string id="st_up_addd_a1_name">
+		<text>Увеличение ёмкости магазина</text>
+	</string>
+	<string id="st_up_addh_a1_descr">
+		<text>Лёгкий, более вместительный магазин, компенсирующий увеличение массы оружия.</text>
+	</string>
+	<string id="st_up_addh_a1_name">
+		<text>Увеличение ёмкости магазина</text>
+	</string>
+	<string id="st_up_autd_a1_descr">
+		<text>Регулировка всех компонентов оружия позволяет улучшить надёжность.</text>
+	</string>
+	<string id="st_up_autd_a1_name">
+		<text>Регулировка составляющих оружия</text>
+	</string>
+	<string id="st_up_autd_a2_descr">
+		<text>Мода на установку пластиковых деталей не только окупила себя, но и стала довольно популярной.</text>
+	</string>
+	<string id="st_up_autd_a2_name">
+		<text>Полимерные компоненты</text>
+	</string>
+	<string id="st_up_autd_b1_descr">
+		<text>Спусковой механизм с уменьшенным импульсом позволяет снизить отдачу.</text>
+	</string>
+	<string id="st_up_autd_b1_name">
+		<text>Спусковой механизм с уменьшенным импульсом</text>
+	</string>
+	<string id="st_up_autd_b2_descr">
+		<text>Благодаря точному позиционированию в момент выстрела пуля летит точно в цель без больших отклонений.</text>
+	</string>
+	<string id="st_up_autd_b2_name">
+		<text>Система точного позиционирования</text>
+	</string>
+	<string id="st_up_autd_b3_descr">
+		<text>Широко применяемая в современном оружии, система блокировки затвора уменьшает отдачу и улучшает кучность стрельбы.</text>
+	</string>
+	<string id="st_up_autd_b3_name">
+		<text>Полусвободный затвор</text>
+	</string>
+	<string id="st_up_autd_b4_descr">
+		<text>Установка дополнительного цилиндра позволяет увеличить общую скорострельность оружия.</text>
+	</string>
+	<string id="st_up_autd_b4_name">
+		<text>Дополнительный газовый цилиндр</text>
+	</string>
+	<string id="st_up_autd_b5_descr">
+		<text>Газовый мотор используется в дробовиках для ведения полуавтоматического огня.</text>
+	</string>
+	<string id="st_up_autd_b5_name">
+		<text>Газовый мотор</text>
+	</string>
+	<string id="st_up_autd_c1_descr">
+		<text>Специальное напыление делает невозможным появление механических осечек.</text>
+	</string>
+	<string id="st_up_autd_c1_name">
+		<text>Защитное напыление</text>
+	</string>
+	<string id="st_up_autd_c2_descr">
+		<text>При стрельбе, данный компонент посредством скользящего движения цевье открывает и закрывает возможность выхода пороховых газов из ствола.</text>
+	</string>
+	<string id="st_up_autd_c2_name">
+		<text>Система закрытия выхода газов из ствола</text>
+	</string>
+	<string id="st_up_autd_c3_descr">
+		<text>Это приспособление, основанное на инерции, позволяет превращать обычные дробовики в автоматические. </text>
+	</string>
+	<string id="st_up_autd_c3_name">
+		<text>Инерциальная система</text>
+	</string>
+	<string id="st_up_autd_c4_descr">
+		<text>Свободный затвор является одним из лучших решений для предельного уменьшения отдачи при стрельбе.</text>
+	</string>
+	<string id="st_up_autd_c4_name">
+		<text>Свободный затвор</text>
+	</string>
+	<string id="st_up_autd_c5_descr">
+		<text>Автоматическое движение штока поршня улучшает общую точность ведения огня.</text>
+	</string>
+	<string id="st_up_autd_c5_name">
+		<text>Автоматический шток</text>
+	</string>
+	<string id="st_up_auth_a1_descr">
+		<text>Движущийся противовес частично компенсирует отдачу.</text>
+	</string>
+	<string id="st_up_auth_a1_name">
+		<text>Движущийся противовес</text>
+	</string>
+	<string id="st_up_auth_b1_descr">
+		<text>Установка дополнительных скользящих частей уменьшает отдачу.</text>
+	</string>
+	<string id="st_up_auth_b1_name">
+		<text>Система компенсации отдачи</text>
+	</string>
+	<string id="st_up_auth_c1_descr">
+		<text>Модернизация затвора оружия, позволяющая увеличить темп стрельбы. </text>
+	</string>
+	<string id="st_up_auth_c1_name">
+		<text>Модернизированный затвор</text>
+	</string>
+	<string id="st_up_auth_c2_descr">
+		<text>При стрельбе противовес движется в противоположную затвору сторону, уменьшая отдачу и делая стрельбу из пулемёта более комфортной.</text>
+	</string>
+	<string id="st_up_auth_c2_name">
+		<text>Саморегулирующийся противовес</text>
+	</string>
+	<string id="st_up_auto_a1_descr">
+		<text>Противовес позволяет уменьшить отдачу благодаря появлению противодействующей силы. </text>
+	</string>
+	<string id="st_up_auto_a1_name">
+		<text>Противовес</text>
+	</string>
+	<string id="st_up_auto_a2_descr">
+		<text>Мода на установку полимерных компонентов стала довольно популярной при модернизации оружия.</text>
+	</string>
+	<string id="st_up_auto_a2_name">
+		<text>Ударопрочные полимерные материалы для автоматики оружия</text>
+	</string>
+	<string id="st_up_auto_b1_descr">
+		<text>Установка специального механизма для защиты оружия от попадания грязи.</text>
+	</string>
+	<string id="st_up_auto_b1_name">
+		<text>Автоматический двухпозиционный газовый регулятор</text>
+	</string>
+	<string id="st_up_auto_b2_descr">
+		<text>Специальный компонент запечатывает ствол для увеличения давления пороховых газов при выстреле.</text>
+	</string>
+	<string id="st_up_auto_b2_name">
+		<text>Система блокировки ствола</text>
+	</string>
+	<string id="st_up_auto_b3_descr">
+		<text>Синхронизация движений штока позволяет увеличить итоговую настильность.</text>
+	</string>
+	<string id="st_up_auto_b3_name">
+		<text>Синхронизация движений штока</text>
+	</string>
+	<string id="st_up_auto_b4_descr">
+		<text>Компонент, установленный на задней стороне приёмника, уменьшающий скорость движения затвора. Необходим для повышения эффективности прицельной стрельбы.</text>
+	</string>
+	<string id="st_up_auto_b4_name">
+		<text>Инерциальный механизм задержки</text>
+	</string>
+	<string id="st_up_auto_c1_descr">
+		<text>Специальный компонент, установленный в механизм затвора, позволяет смягчить его движения и уменьшить отдачу.</text>
+	</string>
+	<string id="st_up_auto_c1_name">
+		<text>Уменьшение скорости движения затвора</text>
+	</string>
+	<string id="st_up_auto_c2_descr">
+		<text>Используется в снайперских винтовках из-за значительного увеличения массы оружия.</text>
+	</string>
+	<string id="st_up_auto_c2_name">
+		<text>Система амортизации отдачи</text>
+	</string>
+	<string id="st_up_auto_c3_descr">
+		<text>Установка механизма, увеличивающего скорость подачи патронов в ствол при стрельбе.</text>
+	</string>
+	<string id="st_up_auto_c3_name">
+		<text>Автоматическое питание боеприпасами</text>
+	</string>
+	<string id="st_up_auto_c4_descr">
+		<text>Модернизация автоматики оружия, которая предполагает замену некоторых частей. Повышает точность.</text>
+	</string>
+	<string id="st_up_auto_c4_name">
+		<text>Сбалансированная автоматика</text>
+	</string>
+	<string id="st_up_auto_c5_descr">
+		<text>Установка синтетических компонентов в механизме затвора позволяет увеличить точность стрельбы.</text>
+	</string>
+	<string id="st_up_auto_c5_name">
+		<text>Тормоз</text>
+	</string>
+	<string id="st_up_auto_c6_descr">
+		<text>Если ствол находится в движении, то происходит открытие дополнительных отверстий для компенсации отдачи.</text>
+	</string>
+	<string id="st_up_auto_c6_name">
+		<text>Компенсатор отдачи</text>
+	</string>
+	<string id="st_up_auts_a1_descr">
+		<text>Модернизация позволяет спусковому механизму работать плавнее, что особенно важно для снайперов.</text>
+	</string>
+	<string id="st_up_auts_a1_name">
+		<text>Механизм регуляции спуска</text>
+	</string>
+	<string id="st_up_auts_a2_descr">
+		<text>Этот компонент позволяет стрелку чувствовать, когда происходит выстрел, тем самым увеличивая точность.</text>
+	</string>
+	<string id="st_up_auts_a2_name">
+		<text>Система оповещения о спуске затвора</text>
+	</string>
+	<string id="st_up_auts_b1_descr">
+		<text>Часто используемый в западных образцах оружия, роликовая система блокировки уменьшает отдачу и увеличивает кучность стрельбы..</text>
+	</string>
+	<string id="st_up_auts_b1_name">
+		<text>Полусвободный затвор с роликовой системой.</text>
+	</string>
+	<string id="st_up_auts_b2_descr">
+		<text>Специальный механизм принимает на себя часть отдачи, делая стрельбу из оружия более комфортной.</text>
+	</string>
+	<string id="st_up_auts_b2_name">
+		<text>Система амортизации</text>
+	</string>
+	<string id="st_up_auts_b3_descr">
+		<text>Так как снайперские винтовки требуют особого подхода в обслуживании, они могут быть модернизированы 3-позиционным газовым регулятором.</text>
+	</string>
+	<string id="st_up_auts_b3_name">
+		<text>3-позиционный газовый регулятор</text>
+	</string>
+	<string id="st_up_auts_c1_descr">
+		<text>Использование специального напыления не позволяет энергии выстрела быстро исчезнуть, что увеличивает импульс пули.</text>
+	</string>
+	<string id="st_up_auts_c1_name">
+		<text>Специальное напыление</text>
+	</string>
+	<string id="st_up_auts_c2_descr">
+		<text>Установка длинного штока в механизм затвора позволяет снайперским винтовкам вести огонь в автоматическом режиме.</text>
+	</string>
+	<string id="st_up_auts_c2_name">
+		<text>Модернизация затвора</text>
+	</string>
+	<string id="st_up_auts_c3_descr">
+		<text>Специальный тормоз снижает отдачу, увеличивая точность стрельбы.</text>
+	</string>
+	<string id="st_up_auts_c3_name">
+		<text>Специальный тормоз</text>
+	</string>
+	<string id="st_up_bar_a1_descr">
+		<text>Замена ствола на более длинный увеличивает точность и настильность стрельбы.</text>
+	</string>
+	<string id="st_up_bar_a1_name">
+		<text>Удлинённый ствол</text>
+	</string>
+	<string id="st_up_bar_a2_descr">
+		<text>Установка «плавающего» ствола оказывает положительное влияние на точность.</text>
+	</string>
+	<string id="st_up_bar_a2_name">
+		<text>«Плавающий» ствол</text>
+	</string>
+	<string id="st_up_bar_a3_descr">
+		<text>Эта модификация уменьшает вред, вызываемый модификациями, направленными на увеличение скорострельности.</text>
+	</string>
+	<string id="st_up_bar_a3_name">
+		<text>Ствол с охлаждающими рёбрами</text>
+	</string>
+	<string id="st_up_bar_b1_descr">
+		<text>Замена устаревшей детали на более новую позволяет уменьшить отдачу.</text>
+	</string>
+	<string id="st_up_bar_b1_name">
+		<text>Оптимизированный дульный тормоз</text>
+	</string>
+	<string id="st_up_bar_b2_descr">
+		<text>Установка нового ствола с дополнительными каналами улучшает точность стрельбы, но увеличивает отдачу.</text>
+	</string>
+	<string id="st_up_bar_b2_name">
+		<text>Дополнительные каналы в стволе</text>
+	</string>
+	<string id="st_up_bar_b3_descr">
+		<text>Этот ствол предназначен для ближнего боя, в связи с чем совершенно не подходит для стрельбы на дальние дистанции.</text>
+	</string>
+	<string id="st_up_bar_b3_name">
+		<text>Ствол с упрощённой нарезной частью</text>
+	</string>
+	<string id="st_up_bar_c1_descr">
+		<text>Нарезы в стволе необходимы для повышения точности стрельбы.</text>
+	</string>
+	<string id="st_up_bar_c1_name">
+		<text>Нарезной ствол</text>
+	</string>
+	<string id="st_up_bar_c2_descr">
+		<text>Позволяет снизить нагрев ствола и увеличить темп стрельбы.</text>
+	</string>
+	<string id="st_up_bar_c2_name">
+		<text>Синусоидальные нарезы в камере ствола</text>
+	</string>
+	<string id="st_up_bar_c3_descr">
+		<text>Замена ствола оружия для увеличения точности стрельбы.</text>
+	</string>
+	<string id="st_up_bar_c3_name">
+		<text>Нарезной ствол</text>
+	</string>
+	<string id="st_up_bard_a1_descr">
+		<text>Высокопрочные материалы снижают износ ствола оружия.</text>
+	</string>
+	<string id="st_up_bard_a1_name">
+		<text>Высокопрочные сплавы</text>
+	</string>
+	<string id="st_up_bard_b1_descr">
+		<text>Обработка внутренней поверхности ствола защищает его от механических повреждений.</text>
+	</string>
+	<string id="st_up_bard_b1_name">
+		<text>Обработка ствола</text>
+	</string>
+	<string id="st_up_bard_b2_descr">
+		<text>Синтетические утолщения в полости ствола увеличивают кучность стрельбы.</text>
+	</string>
+	<string id="st_up_bard_b2_name">
+		<text>Синтетические утолщения полости ствола</text>
+	</string>
+	<string id="st_up_bard_b3_descr">
+		<text>Замена стандартного ствола на более длинный улучшает настильность.</text>
+	</string>
+	<string id="st_up_bard_b3_name">
+		<text>Удлинённый ствол</text>
+	</string>
+	<string id="st_up_bard_b4_descr">
+		<text>Газоотводные каналы в стволе не только предотвращают попадание грязи, но и уменьшают силу отдачи.</text>
+	</string>
+	<string id="st_up_bard_b4_name">
+		<text>Продольные газоотводные каналы</text>
+	</string>
+	<string id="st_up_bard_b5_descr">
+		<text>Замена стандартного ствола на более длинный улучшает настильность.</text>
+	</string>
+	<string id="st_up_bard_b5_name">
+		<text>Удлинённый ствол</text>
+	</string>
+	<string id="st_up_bard_b6_descr">
+		<text>Это напыление предохраняет ствол от перегрева, устраняет производственные дефекты и значительно увеличивает срок службы.</text>
+	</string>
+	<string id="st_up_bard_b6_name">
+		<text>Защитное напыление ствола</text>
+	</string>
+	<string id="st_up_bard_c1_descr">
+		<text>Система балансировки ствола включает в себя несколько подвижных поршней, которые улучшают стабильность оружия при стрельбе.</text>
+	</string>
+	<string id="st_up_bard_c1_name">
+		<text>Система балансировки ствола</text>
+	</string>
+	<string id="st_up_bard_c2_descr">
+		<text>Нарезной ствол не позволяет вести стрельбу дробью, но точность стрельбы другими видами боеприпасов компенсирует этот недостаток.</text>
+	</string>
+	<string id="st_up_bard_c2_name">
+		<text>Нарезной ствол</text>
+	</string>
+	<string id="st_up_bard_c3_descr">
+		<text>Утолщения в стволе из полиматериалов увеличивают скорость пули.</text>
+	</string>
+	<string id="st_up_bard_c3_name">
+		<text>Динамические утолщения в стволе</text>
+	</string>
+	<string id="st_up_bard_c4_descr">
+		<text>Цилиндрические каналы позволяют увеличить темп стрельбы, не затрагивая точность.</text>
+	</string>
+	<string id="st_up_bard_c4_name">
+		<text>Цилиндрические каналы в стволе</text>
+	</string>
+	<string id="st_up_bard_c5_descr">
+		<text>При стрельбе активный противовес автоматически перемещается вперёд, гася часть отдачи.</text>
+	</string>
+	<string id="st_up_bard_c5_name">
+		<text>Движущийся противовес на кожух ствола</text>
+	</string>
+	<string id="st_up_bard_c6_descr">
+		<text>Комплексная переделка всех составляющих оружия для смены калибра в ущерб надёжности.</text>
+	</string>
+	<string id="st_up_bard_c6_name">
+		<text>Смена калибра на 7.62x54</text>
+	</string>
+	<string id="st_up_barp_a1_descr">
+		<text>Замена стандартного ствола на более длинный улучшает точность и настильность, но снижает темп стрельбы.</text>
+	</string>
+	<string id="st_up_barp_a1_name">
+		<text>Удлинённый ствол</text>
+	</string>
+	<string id="st_up_barp_a2_descr">
+		<text>Перфорация ствола позволяет уменьшить отдачу..</text>
+	</string>
+	<string id="st_up_barp_a2_name">
+		<text>Перфорация ствола</text>
+	</string>
+	<string id="st_up_barp_a3_descr">
+		<text>Более технологичный укороченный ствол увеличивает скорострельность без ущерба точности и настильности..</text>
+	</string>
+	<string id="st_up_barp_a3_name">
+		<text>Укороченный ствол</text>
+	</string>
+	<string id="st_up_barp_b1_descr">
+		<text>Хромирование увеличивает долговечность ствола.</text>
+	</string>
+	<string id="st_up_barp_b1_name">
+		<text>Хромирование внутренней части ствола</text>
+	</string>
+	<string id="st_up_barp_b2_descr">
+		<text>Сепараторы поглощают часть отдачи.</text>
+	</string>
+	<string id="st_up_barp_b2_name">
+		<text>Резиновые сепараторы</text>
+	</string>
+	<string id="st_up_barp_b3_descr">
+		<text>Упрощённый спусковой механизм полезен при перестрелках на ближних дистанциях, когда скорострельность важнее точности.</text>
+	</string>
+	<string id="st_up_barp_b3_name">
+		<text>Ствол с упрощённым спуском</text>
+	</string>
+	<string id="st_up_barp_b4_descr">
+		<text>Установка ствола с дополнительными отверстиями улучшает скорость пули и точность стрельбы, но приводит к увеличению отдачи.</text>
+	</string>
+	<string id="st_up_barp_b4_name">
+		<text>Ствол с дополнительными каналами</text>
+	</string>
+	<string id="st_up_barp_b5_descr">
+		<text>Разгрузка ствола позволяет значительно снизить отдачу при стрельбе.</text>
+	</string>
+	<string id="st_up_barp_b5_name">
+		<text>Перенос компенсатора отдачи и пламегасителя на каркас оружия</text>
+	</string>
+	<string id="st_up_barp_c1_descr">
+		<text>Позволяет уменьшить нагрев ствола и увеличить темп стрельбы без ущерба настильности.</text>
+	</string>
+	<string id="st_up_barp_c1_name">
+		<text>Синусоидальный спусковой механизм</text>
+	</string>
+	<string id="st_up_barp_c2_descr">
+		<text>Специальные нарезы используются для увеличения точности стрельбы снайперских винтовок.</text>
+	</string>
+	<string id="st_up_barp_c2_name">
+		<text>Ствол со специальными нарезами</text>
+	</string>
+	<string id="st_up_barp_c3_descr">
+		<text>Пневматический усилитель позволяет превратить часть энергии отдачи в давление, оказываемое на пулю при выстреле, увеличив тем самым начальную скорость её полёта.</text>
+	</string>
+	<string id="st_up_barp_c3_name">
+		<text>Пневматический усилитель</text>
+	</string>
+	
+	<string id="st_up_opt_a1_descr">
+		<text>Установка штурмового прицела для сражений на ближних дистанциях.</text>
+	</string>
+	<string id="st_up_opt_a1_name">
+		<text>1.6-кратный прицел</text>
+	</string>
+	<string id="st_up_opt_a2_descr">
+		<text>Установка оптического прицела для стрельбы на средних и дальних дистанциях.</text>
+	</string>
+	<string id="st_up_opt_a2_name">
+		<text>4-кратный прицел</text>
+	</string>
+	<string id="st_up_opt_a3_descr">
+		<text>Установка прицела для стрельбы на дальние дистанции.</text>
+	</string>
+	<string id="st_up_opt_a3_name">
+		<text>8-кратный прицел ПСО-3</text>
+	</string>
+	<string id="st_up_opt_a4_descr">
+		<text>Установка оптического прицела для стрельбы на дальние дистанции.</text>
+	</string>
+	<string id="st_up_opt_a4_name">
+		<text>12-кратный прицел</text>
+	</string>
+	<string id="st_up_opt_a5_descr">
+		<text>Установка оптического прицела для стрельбы на сверхдальние дистанции.</text>
+	</string>
+	<string id="st_up_opt_a5_name">
+		<text>15-кратный прицел</text>
+	</string>
+	<string id="st_up_opt_a6_descr">
+		<text>Установка оптического прицела для стрельбы на дальние дистанции.</text>
+	</string>
+	<string id="st_up_opt_a6_name">
+		<text>10-кратный прицел</text>
+	</string>
+	<string id="st_up_opt_b1_descr">
+		<text>Модификация штурмового прицела с целью увеличения контрастности изображения для перестрелок в условиях плохого освещения.</text>
+	</string>
+	<string id="st_up_opt_b1_name">
+		<text>Улучшение контрастности изображения</text>
+	</string>
+	<string id="st_up_opt_c1_descr">
+		<text>Тепловизор определяет положение противников по тепловому излучению.</text>
+	</string>
+	<string id="st_up_opt_c1_name">
+		<text>Система автоматического целеуказания</text>
+	</string>
+	<string id="st_up_opt_c2_descr">
+		<text>ПНВ является незаменимой вещью для снайпера в тёмное время суток. Увеличивает массу на 0,27 кг.</text>
+	</string>
+	<string id="st_up_opt_c2_name">
+		<text>Прибор ночного видения</text>
+	</string>
+	<string id="st_up_opt_c3_descr">
+		<text>Эта модификация позволяет проводить регулировку прицела в соответствии с дистанцией стрельбы.</text>
+	</string>
+	<string id="st_up_opt_c3_name">
+		<text>Регулируемый прицел</text>
+	</string>
+	<string id="st_up_opt_binoc1_descr">
+		<text>Контрастные фильтры улучшают видимость в условиях плохого освещения.</text>
+	</string>
+	<string id="st_up_opt_binoc1_name">
+		<text>Контрастные фильтры</text>
+	</string>
+	<string id="st_up_opt_binoc2_descr">
+		<text>Замена линз, на соответствующие 15-кратным прицелам. Масса увеличивается на 0,2 кг.</text>
+	</string>
+	<string id="st_up_opt_binoc2_name">
+		<text>Улучшение оптических линз</text>
+	</string>
+	<string id="st_up_opt_binoc3_descr">
+		<text>Замена оптических приборов на регулируемые. Из-за установки дополнительных механизмов увеличилась масса.</text>
+	</string>
+	<string id="st_up_opt_binoc3_name">
+		<text>Настраиваемые линзы</text>
+	</string>
+	<string id="st_up_stk_binoc1_descr">
+		<text>Замена металлических креплений на полимерные для снижения массы.</text>
+	</string>
+	<string id="st_up_stk_binoc1_name">
+		<text>Полимерные крепления</text>
+	</string>
+	<string id="st_up_stk_binoc2_descr">
+		<text>Замена каркаса на алюминиевый. Это уменьшает массу и увеличивает удобство использования.</text>
+	</string>
+	<string id="st_up_stk_binoc2_name">
+		<text>Алюминиевый каркас</text>
+	</string>
+	<string id="st_up_stk_binoc3_descr">
+		<text>Замена движущихся деталей на аналоги из титана. Меньший вес и большая эффективность.</text>
+	</string>
+	<string id="st_up_stk_binoc3_name">
+		<text>Механические части из титана</text>
+	</string>
+	<string id="st_up_opt_dynamo_hand3_name">
+		<text>Дополнительные магниты</text>
+	</string>
+	<string id="st_up_pri_a1_descr">
+		<text>Используется для уменьшения отдачи при стрельбе.</text>
+	</string>
+	<string id="st_up_pri_a1_name">
+		<text>Пневматический шток</text>
+	</string>
+	<string id="st_up_pri_b1_descr">
+		<text>Специальный упор позволяет снизить воздействие отдачи на организм.</text>
+	</string>
+	<string id="st_up_pri_b1_name">
+		<text>Амортизирующий упор</text>
+	</string>
+	<string id="st_up_pri_b2_descr">
+		<text>Более современная рукоятка, которая учитывает особенности физиологии человека.</text>
+	</string>
+	<string id="st_up_pri_b2_name">
+		<text>Эргономичная ручка</text>
+	</string>
+	<string id="st_up_pri_c1_descr">
+		<text>При выстреле некоторая часть газов собирается позади затвора, обеспечивая его плавную остановку.</text>
+	</string>
+	<string id="st_up_pri_c1_name">
+		<text>Газовый буфер затвора</text>
+	</string>
+	<string id="st_up_pri_c2_descr">
+		<text>Частичное удлинение ствола позволяет улучшить настильность в ущерб увеличившейся отдаче.</text>
+	</string>
+	<string id="st_up_pri_c2_name">
+		<text>Удлинение части ствола</text>
+	</string>
+	<string id="st_up_pri_c3_descr">
+		<text>Установка подвижного противовеса.</text>
+	</string>
+	<string id="st_up_pri_c3_name">
+		<text>Подвижный противовес</text>
+	</string>
+	<string id="st_up_prih_a1_descr">
+		<text>Увеличенный упор предназначен для более точной стрельбы.</text>
+	</string>
+	<string id="st_up_prih_a1_name">
+		<text>Увеличенный упор</text>
+	</string>
+	<string id="st_up_prih_b1_descr">
+		<text>Пружинный компенсатор отдачи позволяет вести комфортный огонь из ручных пулемётов.</text>
+	</string>
+	<string id="st_up_prih_b1_name">
+		<text>Пружинный компенсатор</text>
+	</string>
+	<string id="st_up_prih_c1_descr">
+		<text>Компенсатор ствола принимает на себя часть отдачи.</text>
+	</string>
+	<string id="st_up_prih_c1_name">
+		<text>Дополнительный газовый компенсатор</text>
+	</string>
+	<string id="st_up_pris_a1_descr">
+		<text>Прорезиненный компенсатор часто используется на крупнокалиберных снайперских винтовках.</text>
+	</string>
+	<string id="st_up_pris_a1_name">
+		<text>Амортизация ствола</text>
+	</string>
+	<string id="st_up_pris_b1_descr">
+		<text>Регулируемая ручка позволяет уменьшить отдачу при стрельбе.</text>
+	</string>
+	<string id="st_up_pris_b1_name">
+		<text>Регулируемая ручка</text>
+	</string>
+	<string id="st_up_pris_c1_descr">
+		<text>Компонент, предназначенный для крупнокалиберных снайперских винтовок.</text>
+	</string>
+	<string id="st_up_pris_c1_name">
+		<text>Гидравлический компенсатор в рукоятке</text>
+	</string>
+	
+	<string id="st_up_ret_a1_descr">
+		<text>Усиленная пружина используется для увеличения скорости пули.</text>
+	</string>
+	<string id="st_up_ret_a1_name">
+		<text>Усиленная возвратная пружина</text>
+	</string>
+	<string id="st_up_ret_a2_descr">
+		<text>Установка уплотнителей на подвижные части механизма, которые гарантируют отсутствие отклонений ствола при стрельбе.</text>
+	</string>
+	<string id="st_up_ret_a2_name">
+		<text>Амортизация возвратного механизма</text>
+	</string>
+	<string id="st_up_ret_a3_descr">
+		<text>Установка дополнительной пружины для компенсации отдачи без ущерба настильности.</text>
+	</string>
+	<string id="st_up_ret_a3_name">
+		<text>Дополнительная возвратная пружина</text>
+	</string>
+	<string id="st_up_ret_b1_descr">
+		<text>Защитное напыление увеличивает надёжность и предотвращает рассеивание энергии при выстреле.</text>
+	</string>
+	<string id="st_up_ret_b1_name">
+		<text>Защитное напыление возвратного механизма</text>
+	</string>
+	<string id="st_up_ret_b2_descr">
+		<text>Титановые штоки позволяют увеличить скорострельность.</text>
+	</string>
+	<string id="st_up_ret_b2_name">
+		<text>Титановые штоки возвратного механизма</text>
+	</string>
+	<string id="st_up_ret_b3_descr">
+		<text>Синтетические элементы, установленные в механизм оружия, улучшают точность стрельбы.</text>
+	</string>
+	<string id="st_up_ret_b3_name">
+		<text>Балансирующие элементы</text>
+	</string>
+	<string id="st_up_ret_c1_descr">
+		<text>Утолщения позволяют увеличить давление, а как следствие и скорость пули.</text>
+	</string>
+	<string id="st_up_ret_c1_name">
+		<text>Утолщения возвратного механизма</text>
+	</string>
+	<string id="st_up_ret_c2_descr">
+		<text>Система, направляющая часть энергии газа для работы возвратного механизма.</text>
+	</string>
+	<string id="st_up_ret_c2_name">
+		<text>Распределитель газовой энергии</text>
+	</string>
+	<string id="st_up_ret_c3_descr">
+		<text>Замена возвратного механизма на механизм с двумя стержнями и возвратными пружинами. Улучшает темп стрельбы</text>
+	</string>
+	<string id="st_up_ret_c3_name">
+		<text>Модернизация возвратного механизма</text>
+	</string>
+	<string id="st_up_roun_a1_descr">
+		<text>Специальные каналы для отвода газа позволяют уменьшить отдачу.</text>
+	</string>
+	<string id="st_up_roun_a1_name">
+		<text>Использование энергии газов</text>
+	</string>
+	<string id="st_up_roun_a2_descr">
+		<text>Добавление этого механизма увеличивает скорость вращения механизма, используя энергию газа.</text>
+	</string>
+	<string id="st_up_roun_a2_name">
+		<text>Ускорение вращения механизма</text>
+	</string>
+	<string id="st_up_stk_a1_descr">
+		<text>Преимущество этой модификации заключается в значительном снижении массы без потери других характеристик.</text>
+	</string>
+	<string id="st_up_stk_a1_name">
+		<text>Противоударная рукоятка</text>
+	</string>
+	<string id="st_up_stk_a2_descr">
+		<text>Высокопрочный приёмник позволяет использовать оружие каждодневно, не опасаясь за его повреждение.</text>
+	</string>
+	<string id="st_up_stk_a2_name">
+		<text>Высокопрочный приёмник</text>
+	</string>
+	<string id="st_up_stk_a3_descr">
+		<text>Простое добавление противовеса на переднюю часть приёмника позволяет уменьшить отдачу.</text>
+	</string>
+	<string id="st_up_stk_a3_name">
+		<text>Добавление противовеса</text>
+	</string>
+	<string id="st_up_stk_b1_descr">
+		<text>Установка дополнительного кожуха позволяет контролировать температуру при стрельбе.</text>
+	</string>
+	<string id="st_up_stk_b1_name">
+		<text>Дополнительный охлаждающий кожух</text>
+	</string>
+	<string id="st_up_stk_b2_descr">
+		<text>Более удобная ручка, позволяющая комфортно вести стрельбу сходу.</text>
+	</string>
+	<string id="st_up_stk_b2_name">
+		<text>Эргономичная форма приёмника</text>
+	</string>
+	<string id="st_up_stk_c1_descr">
+		<text>Модификация для оружия компоновки булл-пап, которая упрощает техническое обслуживание.</text>
+	</string>
+	<string id="st_up_stk_c1_name">
+		<text>Модульный приёмник</text>
+	</string>
+	<string id="st_up_stk_c2_descr">
+		<text>Это напыление предотвращает перегрев ствола, сглаживает заводские огрехи и значительно увеличивает жизненный цикл.</text>
+	</string>
+	<string id="st_up_stk_c2_name">
+		<text>Напыление приёмника</text>
+	</string>
+	<string id="st_up_stk_c3_descr">
+		<text>Противовес, установленный в ручке, частично поглощает отдачу при стрельбе.</text>
+	</string>
+	<string id="st_up_stk_c3_name">
+		<text>Рукоятка-противовес</text>
+	</string>
+	<string id="st_up_stvd_a1_descr">
+		<text>Установка полой рукоятки позволяет снизить массу оружия.</text>
+	</string>
+	<string id="st_up_stvd_a1_name">
+		<text>Полая рукоятка</text>
+	</string>
+	<string id="st_up_stvd_a2_descr">
+		<text>Облегчённая рукоятка.</text>
+	</string>
+	<string id="st_up_stvd_a2_name">
+		<text>Облегчённая рукоятка</text>
+	</string>
+	<string id="st_up_stvd_a3_descr">
+		<text>Лёгкие полиматериалы позволяют снизить массу оружия.</text>
+	</string>
+	<string id="st_up_stvd_a3_name">
+		<text>Рукоятка из полимеров</text>
+	</string>
+	<string id="st_up_stvd_b1_descr">
+		<text>Установка утяжелённых деталей для уменьшения отдачи.</text>
+	</string>
+	<string id="st_up_stvd_b1_name">
+		<text>Противовес</text>
+	</string>
+	<string id="st_up_stvd_b2_descr">
+		<text>Более современная и удобная рукоятка упрощает обращение с оружием.</text>
+	</string>
+	<string id="st_up_stvd_b2_name">
+		<text>Эргономичная рукоятка</text>
+	</string>
+	<string id="st_up_stvd_b3_descr">
+		<text>Амортизирующая рукоятка уменьшает отдачу.</text>
+	</string>
+	<string id="st_up_stvd_b3_name">
+		<text>Амортизирующая рукоятка</text>
+	</string>
+	<string id="st_up_stvd_b4_descr">
+		<text>Более современная и удобная рукоятка упрощает обращение с оружием.</text>
+	</string>
+	<string id="st_up_stvd_b4_name">
+		<text>Эргономичная рукоятка</text>
+	</string>
+	<string id="st_up_stvd_b5_descr">
+		<text>Специальное покрытие предохраняет оружие от коррозии.</text>
+	</string>
+	<string id="st_up_stvd_b5_name">
+		<text>Анти-коррозийное покрытие</text>
+	</string>
+	<string id="st_up_stvd_c1_descr">
+		<text>Компенсатор расположен на рукоятке, поглощая часть отдачи.</text>
+	</string>
+	<string id="st_up_stvd_c1_name">
+		<text>Компенсатор отдачи</text>
+	</string>
+	<string id="st_up_stvd_c2_descr">
+		<text>Подвижный противовес, который перемещаясь по стволу принимает на себя часть отдачи при выстреле.</text>
+	</string>
+	<string id="st_up_stvd_c2_name">
+		<text>Активный противовес</text>
+	</string>
+	<string id="st_up_stvh_a1_descr">
+		<text>Замена материалов уменьшает износ ствола от перегрева во время стрельбы, улучшая скорострельность.</text>
+	</string>
+	<string id="st_up_stvh_a1_name">
+		<text>Высокопрочные, огнеупорные материалы</text>
+	</string>
+	<string id="st_up_stvh_b1_descr">
+		<text>Важная модификация, предохраняющая оружие от повреждений из-за контраста температур.</text>
+	</string>
+	<string id="st_up_stvh_b1_name">
+		<text>Добавление терморегулирующих кожухов</text>
+	</string>
+	<string id="st_up_stvh_b2_descr">
+		<text>Технологическое улучшение, позволяющее предотвратить нагрев определённых точек ствола.</text>
+	</string>
+	<string id="st_up_stvh_b2_name">
+		<text>Внешний обдув ствола</text>
+	</string>
+	<string id="st_up_stvh_c1_descr">
+		<text>Замена ствола на более современный позволяет повысить точность стрельбы.</text>
+	</string>
+	<string id="st_up_stvh_c1_name">
+		<text>Замена ствола</text>
+	</string>
+	<string id="st_up_stvp_a1_descr">
+		<text>Дорогостоящий каркас, который увеличивает срок службы оружия.</text>
+	</string>
+	<string id="st_up_stvp_a1_name">
+		<text>Титановый каркас</text>
+	</string>
+	<string id="st_up_stvp_a2_descr">
+		<text>Данный каркас является более надёжным, чем составной.</text>
+	</string>
+	<string id="st_up_stvp_a2_name">
+		<text>Прочный стальной каркас</text>
+	</string>
+	<string id="st_up_stvp_b1_descr">
+		<text>Замена каркаса пистолета на более лёгкий не затрагивает надёжность оружия.</text>
+	</string>
+	<string id="st_up_stvp_b1_name">
+		<text>Полимерный каркас</text>
+	</string>
+	<string id="st_up_stvp_b2_descr">
+		<text>Более современная и комфортная рукоятка улучшает удобство обращения с оружием.</text>
+	</string>
+	<string id="st_up_stvp_b2_name">
+		<text>Эргономичная рукоятка</text>
+	</string>
+	<string id="st_up_stvp_b3_descr">
+		<text>Амортизационная рукоятка гасит часть отдачи.</text>
+	</string>
+	<string id="st_up_stvp_b3_name">
+		<text>Амортизационная рукоятка</text>
+	</string>
+	<string id="st_up_stvp_b4_descr">
+		<text>Специальные уплотнители защищают оружие от загрязнения.</text>
+	</string>
+	<string id="st_up_stvp_b4_name">
+		<text>Защитные уплотнители</text>
+	</string>
+	<string id="st_up_stvp_b5_descr">
+		<text>Изменения в задней части рукоятки придают ей эргономичную форму.</text>
+	</string>
+	<string id="st_up_stvp_b5_name">
+		<text>Изменение формы рукоятки</text>
+	</string>
+	<string id="st_up_stvp_b6_descr">
+		<text>Возможность регулирования длины рукоятки увеличивает удобство управления оружием.</text>
+	</string>
+	<string id="st_up_stvp_b6_name">
+		<text>Регулируемая рукоятка</text>
+	</string>
+	<string id="st_up_stvp_c1_descr">
+		<text>Это модификация возможна только в том случае, если в рукоятку была установлена возвратная пружина.</text>
+	</string>
+	<string id="st_up_stvp_c1_name">
+		<text>Амортизатор возвратной пружины</text>
+	</string>
+	<string id="st_up_stvp_c2_descr">
+		<text>Возможность выбора подходящей формы рукоятки улучшает её эргономичность.</text>
+	</string>
+	<string id="st_up_stvp_c2_name">
+		<text>Изменение формы ручки</text>
+	</string>
+	<string id="st_up_stvs_a1_descr">
+		<text>Предназначается для оружия, находящегося в длительном использовании. Специальный кожух защищает их от преждевременного износа.</text>
+	</string>
+	<string id="st_up_stvs_a1_name">
+		<text>Стальной кожух</text>
+	</string>
+	<string id="st_up_stvs_b1_descr">
+		<text>Более технологичный, чем используемый в большинстве видов оружия.</text>
+	</string>
+	<string id="st_up_stvs_b1_name">
+		<text>Эффективный дульный тормоз-компенсатор</text>
+	</string>
+	<string id="st_up_stvs_b2_descr">
+		<text>Более современный и удобный ствол для снайперской стрельбы на сверхдальние дистанции.</text>
+	</string>
+	<string id="st_up_stvs_b2_name">
+		<text>Тяжёлый ствол с многоугольными разрезами</text>
+	</string>
+	<string id="st_up_stvs_b3_descr">
+		<text>Продольные разрезы ствола предохраняют оружие от перегрева и мешают попаданию грязи.</text>
+	</string>
+	<string id="st_up_stvs_b3_name">
+		<text>Продольные разрезы ствола</text>
+	</string>
+	<string id="st_up_stvs_c1_descr">
+		<text>Интегрированный глушитель и пламегаситель крайне необходимы для скрытного ведения огня.</text>
+	</string>
+	<string id="st_up_stvs_c1_name">
+		<text>Установка глушителя</text>
+	</string>
+	<string id="st_up_stvs_c2_descr">
+		<text>Синусоидальные нарезы камеры ствола обычно встречаются на автоматических винтовках для увеличения их скорострельности.</text>
+	</string>
+	<string id="st_up_stvs_c2_name">
+		<text>Синусоидальные нарезы камеры ствола</text>
+	</string>
+	<string id="st_up_usm_a1_descr">
+		<text>Цель данного компенсатора - снизить отдачу и улучшить кучность стрельбы.</text>
+	</string>
+	<string id="st_up_usm_a1_name">
+		<text>Компенсатор ударника затвора</text>
+	</string>
+	<string id="st_up_usm_a2_descr">
+		<text>Одна из самых простых и популярных модификаций, позволяющая снизить сопротивление спускового механизма. Просто и удобно.</text>
+	</string>
+	<string id="st_up_usm_a2_name">
+		<text>Мягкий спуск</text>
+	</string>
+	<string id="st_up_usm_b1_descr">
+		<text>Специальная подборка материалов, подходящая к данному оружию. Не смотря на высокую стоимость, это может значительно увеличить жизненный цикл вашего оружия.</text>
+	</string>
+	<string id="st_up_usm_b1_name">
+		<text>Комплексные компоненты спускового механизма</text>
+	</string>
+	<string id="st_up_usm_b2_descr">
+		<text>Позволяет увеличить темп стрельбы за счёт точности и надёжности.</text>
+	</string>
+	<string id="st_up_usm_b2_name">
+		<text>Усиленная система задержки спуска</text>
+	</string>
+	<string id="st_up_usm_b3_descr">
+		<text>Удаление пружин позволяет делать первый выстрел на полсекунды быстрее. Это не так много, но, тем не менее, может сохранить Вам жизнь.</text>
+	</string>
+	<string id="st_up_usm_b3_name">
+		<text>Беспружинный спуск</text>
+	</string>
+	<string id="st_up_usm_c1_descr">
+		<text>Защитное напыление делает осечки практически невозможными.</text>
+	</string>
+	<string id="st_up_usm_c1_name">
+		<text>Защитное напыление спускового механизма</text>
+	</string>
+	<string id="st_up_usm_c2_descr">
+		<text>Беззатворная фиксация спускового механизма позволяет улучшить автоматическую перезарядку, увеличив скорострельность.</text>
+	</string>
+	<string id="st_up_usm_c2_name">
+		<text>Беззатворная фиксация спускового механизма</text>
+	</string>
+	<string id="st_up_usm_c3_descr">
+		<text>Безударный спусковой механизм аккуратно прокалывает, а не ударяет, делая процесс стрельбы более комфортным.</text>
+	</string>
+	<string id="st_up_usm_c3_name">
+		<text>Безударный спусковой механизм</text>
+	</string>
+	<string id="st_up_usmp_a1_descr">
+		<text>Первый выстрел происходит после первого нажатия на спусковой крючок, последующиее активирует режим автоматического огня.</text>
+	</string>
+	<string id="st_up_usmp_a1_name">
+		<text>Режим двойного спуска</text>
+	</string>
+	<string id="st_up_usmp_b1_descr">
+		<text>Одна из самых простых и популярных модификаций, позволяющая уменьшить сопротивление спускового механизма. Простая и удобная.</text>
+	</string>
+	<string id="st_up_usmp_b1_name">
+		<text>Мягкий спуск</text>
+	</string>
+	<string id="st_up_usmp_b2_descr">
+		<text>Данное улучшение позволяет увеличить точность стрельбы.</text>
+	</string>
+	<string id="st_up_usmp_b2_name">
+		<text>Ударно-спусковой механизм с предварительной зарядкой</text>
+	</string>
+	<string id="st_up_usmp_b3_descr">
+		<text>Требует одинаковой силы нажатия на спусковой механизм от первого до последнего выстрела, повышая удобство использования.</text>
+	</string>
+	<string id="st_up_usmp_b3_name">
+		<text>Безопасный спуск</text>
+	</string>
+	<string id="st_up_usmp_b4_descr">
+		<text>Современная модификация, предотвращающая отделение затвора.</text>
+	</string>
+	<string id="st_up_usmp_b4_name">
+		<text>Увеличенная головка затвора</text>
+	</string>
+	<string id="st_up_usmp_b5_descr">
+		<text>Модульный механизм стрельбы упрощает обслуживание и общее удобство использования оружия.</text>
+	</string>
+	<string id="st_up_usmp_b5_name">
+		<text>Модульный механизм стрельбы</text>
+	</string>
+	<string id="st_up_usmp_c1_descr">
+		<text>Новый спусковой механизм уменьшает необходимое давление при нажатии на спусковой крючок, увеличивая точность.</text>
+	</string>
+	<string id="st_up_usmp_c1_name">
+		<text>Усиленный спусковой механизм</text>
+	</string>
+	<string id="st_up_usmp_c2_descr">
+		<text>Новое технологическое изобретение позволяет изменить механизм для ведения огня.</text>
+	</string>
+	<string id="st_up_usmp_c2_name">
+		<text>«Двойной» режим стрельбы</text>
+	</string>
+	<string id="st_up_usmp_c3_descr">
+		<text>После первого выстрела половина хода спускового механизма используется для последующих выстрелов.</text>
+	</string>
+	<string id="st_up_usmp_c3_name">
+		<text>Спусковой механизм с коротким ходом</text>
+	</string>
+
+	
+	
+	
+	
+	
+	
+	
+	<string id="st_up_zat_a1_descr">
+		<text>Эта дорогостоящая модификация является стандартной для всех современных видов оружия.</text>
+	</string>
+	<string id="st_up_zat_a1_name">
+		<text>Цельный затвор</text>
+	</string>
+	<string id="st_up_zat_a2_descr">
+		<text>Утолщения во внутренней части затвора предотвращают пустую трату дульной энергии, увеличивая тем самым настильность стрельбы.</text>
+	</string>
+	<string id="st_up_zat_a2_name">
+		<text>Утолщения затвора</text>
+	</string>
+	<string id="st_up_zat_a3_descr">
+		<text>Несмотря на название, это улучшение предполагает изменение положения затвора для противодействия отдаче из-за улучшенной скорострельности.</text>
+	</string>
+	<string id="st_up_zat_a3_name">
+		<text>Улучшенная автоматика</text>
+	</string>
+	<string id="st_up_zat_b1_descr">
+		<text>Система поставляется с дополнительным блоком, выполняющим роль подвижного противовеса, что позволяет снизить отдачу.</text>
+	</string>
+	<string id="st_up_zat_b1_name">
+		<text>Подвижный газоотводный механизм</text>
+	</string>
+	<string id="st_up_zat_b2_descr">
+		<text>Второй газовый поршень двигается в противоположную стволу сторону, компенсируя отдачу оружия.</text>
+	</string>
+	<string id="st_up_zat_b2_name">
+		<text>Дополнительный газовый поршень</text>
+	</string>
+	<string id="st_up_zat_b3_descr">
+		<text>Защитное напыление увеличивает надёжность и предотвращает чрезмерное распыление энергии.</text>
+	</string>
+	<string id="st_up_zat_b3_name">
+		<text>Защитное напыление затвора</text>
+	</string>
+	<string id="st_up_zat_b4_descr">
+		<text>Добавление дополнительных продольных канавок позволяет уменьшить трение и загрязнённость оружия.</text>
+	</string>
+	<string id="st_up_zat_b4_name">
+		<text>Добавление дополнительных продольных канавок</text>
+	</string>
+	<string id="st_up_zat_b5_descr">
+		<text>Уменьшение газовой камеры с помощью синтетических материалов позволяет увеличить скорость полёта пули.</text>
+	</string>
+	<string id="st_up_zat_b5_name">
+		<text>Увеличение внутренней энергии</text>
+	</string>
+	<string id="st_up_zat_b6_descr">
+		<text>При движении в исходное положение, затвор направляет поток воздуха через патронник, охлаждая его.</text>
+	</string>
+	<string id="st_up_zat_b6_name">
+		<text>Усиленное охлаждение</text>
+	</string>
+	<string id="st_up_zat_c1_descr">
+		<text>Затвор скользит вдоль ствола, снижая вероятность появления механических неисправностей.</text>
+	</string>
+	<string id="st_up_zat_c1_name">
+		<text>Скользящий затвор</text>
+	</string>
+	<string id="st_up_zat_c2_descr">
+		<text>Установка газового поршня не позволяет газам проникать в затвор, уменьшая тем самым загрязнённость оружия.</text>
+	</string>
+	<string id="st_up_zat_c2_name">
+		<text>Монтаж газового поршня</text>
+	</string>
+	<string id="st_up_zat_c3_descr">
+		<text>Это приспособление использует часть исходящих после выстрела газов для увеличения скорости движения затвора.</text>
+	</string>
+	<string id="st_up_zat_c3_name">
+		<text>Система сбора отработанных газов</text>
+	</string>
+	<string id="st_up_zat_c4_descr">
+		<text>Замена автоматики пистолета является оптимизацией, а не реальным улучшением. Тем не менее, это позволяет значительно увеличить скорострельность.</text>
+	</string>
+	<string id="st_up_zat_c4_name">
+		<text>Короткий ход газового поршня</text>
+	</string>
+	<string id="st_up_zat_c5_descr">
+		<text>Часто используемая в современном оружии, роликовая система блокировки затвора уменьшает отдачу и увеличивает кучность стрельбы.</text>
+	</string>
+	<string id="st_up_zat_c5_name">
+		<text>Смена системы затвора на полусвободную</text>
+	</string>
+	<string id="st_up_zath_a1_descr">
+		<text>Поглощая некоторую часть тепла, данное устройство уменьшает колебания температуры оружия при стрельбе.</text>
+	</string>
+	<string id="st_up_zath_a1_name">
+		<text>Теплопоглощающие компоненты</text>
+	</string>
+	<string id="st_up_zath_b1_descr">
+		<text>Длинный ход газового поршня увеличивает длину оружия, но также улучшает настильность при ведении огня.</text>
+	</string>
+	<string id="st_up_zath_b1_name">
+		<text>Длинный ход газового поршня</text>
+	</string>
+	<string id="st_up_zath_b2_descr">
+		<text>Буфер движущихся частей распределяет силу отдачи по всему оружию, делая её менее заметной.</text>
+	</string>
+	<string id="st_up_zath_b2_name">
+		<text>Буфер для движущихся частей</text>
+	</string>
+	<string id="st_up_zath_c1_descr">
+		<text>Симметричная система охлаждения ствола позволяет предохранять оружие от перегрева.</text>
+	</string>
+	<string id="st_up_zath_c1_name">
+		<text>Усиленная система охлаждения</text>
+	</string>
+	<string id="st_up_zatp_a1_descr">
+		<text>Обеспечивает улучшение скорострельности не перегружая другие части оружия и не увеличивая отдачу.</text>
+	</string>
+	<string id="st_up_zatp_a1_name">
+		<text>Перемещение затвора</text>
+	</string>
+	<string id="st_up_zatp_b1_descr">
+		<text>Обеспечивает увеличение настильности стрельбы благодаря улучшенной передаче импульса к пуле.</text>
+	</string>
+	<string id="st_up_zatp_b1_name">
+		<text>Улучшенная система закрытия затвора</text>
+	</string>
+	<string id="st_up_zatp_b2_descr">
+		<text>Уменьшает отдачу снижая скорость движения затвора.</text>
+	</string>
+	<string id="st_up_zatp_b2_name">
+		<text>Система медленного возврата затвора</text>
+	</string>
+	<string id="st_up_zatp_b3_descr">
+		<text>Напыление предохраняет оружие от износа.</text>
+	</string>
+	<string id="st_up_zatp_b3_name">
+		<text>Защитное напыление затвора</text>
+	</string>
+	<string id="st_up_zatp_b4_descr">
+		<text>Улучшает настильность благодаря улучшенной передаче импульса пуле.</text>
+	</string>
+	<string id="st_up_zatp_b4_name">
+		<text>Система закрытия ствола</text>
+	</string>
+	<string id="st_up_zatp_b5_descr">
+		<text>Более тяжёлый и закрытый затвор предотвращает появление неисправностей.</text>
+	</string>
+	<string id="st_up_zatp_b5_name">
+		<text>Усиленный, полностью закрытый затвор</text>
+	</string>
+	<string id="st_up_zatp_b6_descr">
+		<text>Небольшой буфер, принимающий на себя часть энергии отдачи.</text>
+	</string>
+	<string id="st_up_zatp_b6_name">
+		<text>Полимерный буфер отдачи</text>
+	</string>
+	<string id="st_up_zatp_b7_descr">
+		<text>Установка стальной вставки помогает уменьшить отдачу.</text>
+	</string>
+	<string id="st_up_zatp_b7_name">
+		<text>Запирающая вставка</text>
+	</string>
+	<string id="st_up_zatp_b8_descr">
+		<text>Благодаря увеличению времени движения затвора и усиления возвратного механизма возможно улучшить настильность стрельбы.</text>
+	</string>
+	<string id="st_up_zatp_b8_name">
+		<text>Увеличенное время движения затвора</text>
+	</string>
+	<string id="st_up_zatp_c1_descr">
+		<text>Короткий ход затвора значительно увеличивает темп ведения огня не затрагивая итоговую настильность.</text>
+	</string>
+	<string id="st_up_zatp_c1_name">
+		<text>Затвор с коротким ходом</text>
+	</string>
+	<string id="st_up_zatp_c2_descr">
+		<text>Длинный ход затвора оружия придаёт пуле гораздо больше энергии..</text>
+	</string>
+	<string id="st_up_zatp_c2_name">
+		<text>Ствол с длинным ходом затвора</text>
+	</string>
+	<string id="st_up_zatp_c3_descr">
+		<text>Замена автоматических частей является больше способом оптимизации, чем реальной модернизации. Это позволяет увеличить темп стрельбы.</text>
+	</string>
+	<string id="st_up_zatp_c3_name">
+		<text>Тормоз с коротким ходом</text>
+	</string>
+	<string id="st_up_zatp_c4_descr">
+		<text>Установка данного модуля значительно улучшает кучность, не затрагивая темп стрельбы.</text>
+	</string>
+	<string id="st_up_zatp_c4_name">
+		<text>2-х пружинный возвратный модуль</text>
+	</string>
+	<string id="st_up_zatp_c5_descr">
+		<text>Дополнительные компенсационные отверстия в стволе помогают значительно снизить отдачу.</text>
+	</string>
+	<string id="st_up_zatp_c5_name">
+		<text>Интегрированные компенсаторы ствола</text>
+	</string>
+	<string id="st_up_zatp_c6_descr">
+		<text>Модернизация автоматики пистолета для ведения автоматического огня.</text>
+	</string>
+	<string id="st_up_zatp_c6_name">
+		<text>Автоматический режим стрельбы</text>
+	</string>
+	<string id="st_up_zatp_c7_descr">
+		<text>Улучшение автоматики пистолета позволяет вести автоматический огонь с отсечкой по 3 патрона.</text>
+	</string>
+	<string id="st_up_zatp_c7_name">
+		<text>Режим стрельбы с отсечками по 3 патрона</text>
+	</string>
+	<string id="st_upgr_cost">
+		<text>Стоимость</text>
+	</string>
+	<string id="st_upgr_disable">
+		<text>Установка невозможна</text>
+	</string>
+	<string id="st_upgr_installed">
+		<text>Установлено</text>
+	</string>
+	<string id="st_upgrade_install">
+		<text>Вы уверены, что хотите установить:</text>
+	</string>
+	<string id="st_prop_autolock">
+		<text>Система автоматического целеуказания</text>
+	</string>
+	<string id="st_prop_autolockscope">
+		<text>Система автоматического целеуказания</text>
+	</string>
+	<string id="st_prop_scope_5x">
+		<text>8-кратный оптический прицел</text>
+	</string>
+	<string id="st_prop_scope_6x">
+		<text>15-кратный оптический прицел</text>
+	</string>
+	<string id="st_prop_scope_12x">
+		<text>12-кратный оптический прицел</text>
+	</string>
+	<string id="st_prop_scope_15x">
+		<text>15-кратный оптический прицел</text>
+	</string>
+	<string id="st_prop_scanner">
+		<text>Инфракрасный сканер</text>
+	</string>
+	<string id="st_prop_weightoutfit">
+		<text>Масса бронежилета</text>
+	</string>
+	<string id="st_prop_night_vision_2">
+		<text>ПНВ ПН21КЛ</text>
+	</string>
+	<string id="st_prop_night_vision_3">
+		<text>Улучшение ПНВ ПН21КЛ</text>
+	</string>
+	<string id="st_prop_night_vision_10">
+		<text>Улучшение ПНВ ПН21КЛ</text>
+	</string>
+	<string id="st_prop_scope_attach">
+		<text>Установка оптического прицела</text>
+	</string>
+	<string id="st_int_silencer">
+		<text>Встроенный глушитель</text>
+	</string>
+	<string id="st_prop_grenade_launcher">
+		<text>Подствольный гранатомёт</text>
+	</string>
+	<string id="st_prop_restore_bleeding">
+		<text>Заживление ран</text>
+	</string>
+	<string id="st_prop_restore_health">
+		<text>Восстановление здоровья</text>
+	</string>
+	<string id="st_prop_night_vision">
+		<text>ПНВ 1ПН93-1</text>
+	</string>
+	<string id="st_prop_scope">
+		<text>Регулируемый прицел</text>
+	</string>
+	<string id="st_prop_contrast">
+		<text>Высококонтрастный прицел</text>
+	</string>
+	<string id="st_prop_sprint">
+		<text>Усиление сервомоторов</text>
+	</string>
+	<string id="st_prop_durability">
+		<text>Долговечность костюма</text>
+	</string>
+	<string id="st_prop_not_available">
+		<text>Модификация не поддерживается данным оружием</text>
+	</string>
+	<string id="st_prop_not_available_no_reason">
+		<text>Модификация не поддерживается данным снаряжением</text>
+	</string>
+	<string id="st_gauss_cannot_be_repaired">
+		<text>Неизвестно, как работает данный вид оружия. Оно не может быть отремонтировано без дополнительной информации о его конструкции.</text>
+	</string>
+	<string id="st_upgr_cant_do">
+		<text>Техник не может провести эту модификацию</text>
+	</string>
+	<string id="st_upgr_group">
+		<text>Эта часть уже была модифицирована</text>
+	</string>
+	<string id="st_upgr_enough_money">
+		<text>Недостаточно денег</text>
+	</string>
+	<string id="st_no_buck">
+		<text>Использование дроби невозможно</text>
+	</string>
+	<string id="st_auto_fire">
+		<text>Режим автоматического огня</text>
+	</string>
+	<string id="st_semi_auto_fire">
+		<text>Режим стрельбы с отсечками по 3 патрона</text>
+	</string>
+	<string id="st_prop_artefact">
+		<text>Крепления модулей</text>
+	</string>
+	<string id="st_upgr_vodka">
+		<text>технику нужна водка</text>
+	</string>
+	<string id="st_upgr_toolkit_1">
+		<text>технику нужны инструменты для грубой работы</text>
+	</string>
+	<string id="st_upgr_toolkit_2">
+		<text>технику нужны инструменты для тонкой работы</text>
+	</string>
+	<string id="st_upgr_toolkit_3">
+		<text>технику нужны инструменты для калибровки</text>
+	</string>
+	<string id="st_upgr_condlist">
+		<text>технику необходимы дополнительные инструменты</text>
+	</string>
+	<string id="st_upgr_parents">
+		<text>необходимы предшествующие модификации</text>
+	</string>
+	<string id="st_upgr_rusty_profile">
+		<text>оружие проржавело, проведение модификаций невозможно</text>
+	</string>
+	<string id="st_upgr_worn_profile">
+		<text>коррозия оружия не позволяет выполнять модификации выше базового уровня</text>
+	</string>
+	<string id="st_upgr_standard_profile">
+		<text>необходима модернизация перед установкой данной модификации</text>
+	</string>
+	<string id="st_upgr_no_reason">
+		<text>конструкция предмета не позволяет провести данную модификацию</text>
+	</string>
+	<string id="st_up_arm_c9_name">
+		<text>Защитное покрытие из кристаллов сапфиров</text>
+	</string>
+	<string id="st_up_arm_c5_name">
+		<text>Усиленная титановая и бериллиевая матрица</text>
+	</string>
+	<string id="st_up_arm_c7_name">
+		<text>Дополнительное покрытие из углеродного волокна</text>
+	</string>
+	<string id="st_up_kom_a5_name">
+		<text>Прорезиненная подкладка</text>
+	</string>
+	<string id="st_up_upgrade_not_available_name">
+		<text>Модернизация невозможна</text>
+	</string>
+	<string id="st_up_upgrade_not_available_descr">
+		<text>Улучшение недоступно</text>
+	</string>
+	
+	
+	<!-- Armor upgrade descriptions  -->	
+	
+	<string id="st_up_arm_a1_descr">
+		<text>Увеличенное количество титановых пластин для большой износостойкости.</text>
+	</string>
+	<string id="st_up_arm_a1_name">
+		<text>Дополнительные алюминиевые/титановые пластины</text>
+	</string>
+	<string id="st_up_arm_a2_descr">
+		<text>Усиленные пластины, которые увеличивают износостойкость и служат большее количество времени.</text>
+	</string>
+	<string id="st_up_arm_a2_name">
+		<text>Кевларовые пластины</text>
+	</string>
+	<string id="st_up_arm_a3_descr">
+		<text>Сплав алюминия и титана позволяет снизить массу, по сравнению с титановыми пластинами для персонального использования.</text>
+	</string>
+	<string id="st_up_arm_a3_name">
+		<text>Алюминиево-титановый сплав</text>
+	</string>
+	<string id="st_up_arm_a4_descr">
+		<text>Обычно титан слишком тяжёл для использования в средствах личной защиты, но он может применяться в экзоскелетах.</text>
+	</string>
+	<string id="st_up_arm_a4_name">
+		<text>Усиленные титановые детали</text>
+	</string>
+	<string id="st_up_arm_a5_descr">
+		<text>Замена металла карбоновыми волокнами позволяет снизить вес брони, не жертвуя при этом надёжностью.</text>
+	</string>
+	<string id="st_up_arm_a5_name">
+		<text>Замена металла карбоновыми волокнами</text>
+	</string>
+	<string id="st_up_arm_a6_descr">
+		<text>Кевлар - один из самых распространённых материалов для создания бронежилетов.</text>
+	</string>
+	<string id="st_up_arm_a6_name">
+		<text>Кевларовые пластины</text>
+	</string>
+	<string id="st_up_arm_a7_descr">
+		<text>Поликарбонат способен остановить пистолетную пулю, оставаясь при этом лёгким как обычный пластик.</text>
+	</string>
+	<string id="st_up_arm_a7_name">
+		<text>Пластины из поликарбоната</text>
+	</string>
+	<string id="st_up_arm_a8_descr">
+		<text>Керамические пластины недолговечны, но более надёжные чем кевларовые, благодаря лучшему сопротивлению импульсу пули.</text>
+	</string>
+	<string id="st_up_arm_a8_name">
+		<text>Установка керамических пластин</text>
+	</string>
+	<string id="st_up_arm_a9_descr">
+		<text>Простые стальные пластины, встраиваемые в бронежилет.</text>
+	</string>
+	<string id="st_up_arm_a9_name">
+		<text>Стальные пластины</text>
+	</string>
+	<string id="st_up_arm_b1_descr">
+		<text>Слой керамики на наружной стороне бронежилета позволяет улучшить сопротивляемость простым и бронебойным пулям.</text>
+	</string>
+	<string id="st_up_arm_b1_name">
+		<text>Внешний керамический слой</text>
+	</string>
+	<string id="st_up_arm_b2_descr">
+		<text>Дополнительный внутренний слой брони, необходимый в случае повреждения внешнего.</text>
+	</string>
+	<string id="st_up_arm_b2_name">
+		<text>Двойной слой бронезащиты</text>
+	</string>
+	<string id="st_up_arm_b3_descr">
+		<text>Броня с внутренним слоем, который равномерно распределяет силу удара.</text>
+	</string>
+	<string id="st_up_arm_b3_name">
+		<text>Установка компенсационного слоя</text>
+	</string>
+	<string id="st_up_arm_b4_descr">
+		<text>Каркас способен остановить пистолетную пулю, даже если внешняя броня сильно повреждена.</text>
+	</string>
+	<string id="st_up_arm_b4_name">
+		<text>Дополнительный защитный каркас</text>
+	</string>
+	<string id="st_up_arm_b5_descr">
+		<text>Тонкие листы брони позволяют дополнительно увеличить сопротивляемость огнестрельным попаданиям.</text>
+	</string>
+	<string id="st_up_arm_b5_name">
+		<text>Сегментированная защита</text>
+	</string>
+	<string id="st_up_arm_b6_descr">
+		<text>Несмотря на то, что большее количество пластин совсем не означает серьёзное увеличение защиты, они помогают продлить срок службы экипировки.</text>
+	</string>
+	<string id="st_up_arm_b6_name">
+		<text>Запасной слой брони</text>
+	</string>
+	<string id="st_up_arm_b7_descr">
+		<text>Подвижные пластины защищают владельца от огнестрельных ранений.</text>
+	</string>
+	<string id="st_up_arm_b7_name">
+		<text>Установка подвижных пластин</text>
+	</string>
+	<string id="st_up_arm_b8_descr">
+		<text>Более лёгкий алюминиевый каркас, который заменяет стальной.</text>
+	</string>
+	<string id="st_up_arm_b8_name">
+		<text>Алюминиевый каркас</text>
+	</string>
+	<string id="st_up_arm_b9_descr">
+		<text>Утолщённые вставки позволяют уменьшить воздействие от попадания пуль.</text>
+	</string>
+	<string id="st_up_arm_b9_name">
+		<text>Утолщённые вставки</text>
+	</string>
+	<string id="st_up_arm_c10_descr">
+		<text>Дополнительный слой керамики с амортизаторами.</text>
+	</string>
+	<string id="st_up_arm_c10_name">
+		<text>Усиленные керамические пластины</text>
+	</string>
+	<string id="st_up_arm_c11_descr">
+		<text>Использование более лёгких материалов позволяет снизить массу костюма.</text>
+	</string>
+	<string id="st_up_arm_c11_name">
+		<text>Установка лёгких синтетических и пластиковых деталей</text>
+	</string>
+	<string id="st_up_arm_c12_descr">
+		<text>Титановые пластины очень тяжелы для использования в обычных бронежилетах, однако вполне подходят для экзоскелетов.</text>
+	</string>
+	<string id="st_up_arm_c12_name">
+		<text>Титановая броня</text>
+	</string>
+	<string id="st_up_arm_c13_descr">
+		<text>СБК-РКгЦ.м.II обеспечивает радиохимическую защиту.</text>
+	</string>
+	<string id="st_up_arm_c13_name">
+		<text>Защитный костюм СБК-РКгЦ.м.II</text>
+	</string>
+	<string id="st_up_arm_c1_descr">
+		<text>Это дорогое и времязатратное улучшение не очень популярное, хотя оно помогло сохранить немало жизней.</text>
+	</string>
+	<string id="st_up_arm_c1_name">
+		<text>Вшитая кольчужная рубаха</text>
+	</string>
+	<string id="st_up_arm_c2_descr">
+		<text>Данный апгрейд подразумевает наложение керамических пластин, дающих дополнительную защиту.</text>
+	</string>
+	<string id="st_up_arm_c2_name">
+		<text>Установка керамических пластин</text>
+	</string>
+	<string id="st_up_arm_c3_descr">
+		<text>Обработка составом «Суверен» позволяет костюму оставаться практически неуязвимым к механическим повреждениям.</text>
+	</string>
+	<string id="st_up_arm_c3_name">
+		<text>Обработка составом «Суверен»</text>
+	</string>
+	<string id="st_up_arm_c4_descr">
+		<text>Керамика смягчает эффект от попадания пули, раскалывая её на части.</text>
+	</string>
+	<string id="st_up_arm_c4_name">
+		<text>Установка слоя керамики поверх бронепластин</text>
+	</string>
+	<string id="st_up_arm_c5_descr">
+		<text>Использование бериллия вместо алюминия - один из самых популярных способов усилить бронезащиту.</text>
+	</string>
+	<string id="st_up_arm_c6_descr">
+		<text>Керамика смягчает эффект от попадания пули, раскалывая её на части.</text>
+	</string>
+	<string id="st_up_arm_c6_name">
+		<text>Установка слоя керамики поверх бронепластин</text>
+	</string>
+	<string id="st_up_arm_c7_descr">
+		<text>Карбоновые волокна - один из самых устойчивых материалов, который также используется при создании самолётов.</text>
+	</string>
+	<string id="st_up_arm_c8_descr">
+		<text>Защита из многослойных полимеров и керамического покрытия.</text>
+	</string>
+	<string id="st_up_arm_c8_name">
+		<text>Комбинированная защита</text>
+	</string>
+	<string id="st_up_arm_c9_descr">
+		<text>Одно из самых последних изобретений в сфере персональной защиты - выращивание искусственных сапфиров.</text>
+	</string>
+	
+	
+	<string id="st_up_exo_a1_descr">
+		<text>Дополнительные моторы позволяют увеличить максимально переносимый вес.</text>
+	</string>
+	<string id="st_up_exo_a1_name">
+		<text>Дополнительные сервомоторы</text>
+	</string>
+	<string id="st_up_exo_b1_descr">
+		<text>Разработка техников группировки «Свобода», которые первыми предложили заменять металлические части карбоновыми волокнами из-за большой массы экзоскелетов.</text>
+	</string>
+	<string id="st_up_exo_b1_name">
+		<text>Замена металлических компонентов карбоновыми волокнами</text>
+	</string>
+	<string id="st_up_exo_b2_descr">
+		<text>Дополнительная защита предохраняет основные компоненты экзоскелета от повреждений.</text>
+	</string>
+	<string id="st_up_exo_b2_name">
+		<text>Защита двигательной системы</text>
+	</string>
+	<string id="st_up_exo_c1_descr">
+		<text>Улучшенная двигательная система включает в себя дополнительные пружины и суставы, которые позволяют использовать собственный вес экзоскелета для увеличения подвижности.</text>
+	</string>
+	<string id="st_up_exo_c1_name">
+		<text>Двигательная система «Шагоход»</text>
+	</string>
+	<string id="st_up_exo_c2_descr">
+		<text>Установка гидравлических усилителей - то, что что отличает экзоскелеты третьего поколения от четвёртого. Позволяет переходить на бег.</text>
+	</string>
+	<string id="st_up_exo_c2_name">
+		<text>Установка гидравлических усилителей двигательной системы</text>
+	</string>
+	<string id="st_up_kom_a1_descr">
+		<text>Тканевая вставка увеличивает защиту и предотвращает повреждение мягких тканей при попадании по основному слою брони.</text>
+	</string>
+	<string id="st_up_kom_a1_name">
+		<text>Амортизирующая вставка</text>
+	</string>
+	<string id="st_up_kom_a2_descr">
+		<text>Более эффективные чем их аналоги из резины, силиконовые уплотнители гасят часть получаемого урона.</text>
+	</string>
+	<string id="st_up_kom_a2_name">
+		<text>Силиконовые амортизаторы</text>
+	</string>
+	<string id="st_up_kom_a3_descr">
+		<text>Уплотнители заменяются более лёгкими синтетическими материалами для уменьшения массы брони.</text>
+	</string>
+	<string id="st_up_kom_a3_name">
+		<text>Лёгкие полимерные материалы</text>
+	</string>
+	<string id="st_up_kom_a4_descr">
+		<text>Прорезиненное покрытие защищает владельца от воздействия энергии пули, ударившей в основной слой брони.</text>
+	</string>
+	<string id="st_up_kom_a4_name">
+		<text>Амортизационное прорезиненное покрытие</text>
+	</string>
+	<string id="st_up_kom_a5_descr">
+		<text>Дополнительная подкладка необходима в случае повреждения основного слоя ткани.</text>
+	</string>
+	<string id="st_up_kom_a6_descr">
+		<text>Многослойный поликарбонат и карбоновые волокна предотвращают поражение владельца костюма в случае повреждения основного слоя брони.</text>
+	</string>
+	<string id="st_up_kom_a6_name">
+		<text>Защитные вставки из полимера</text>
+	</string>
+	<string id="st_up_kom_a7_descr">
+		<text>Данное устройство позволяет определять положение артефактов в аномальных районах.</text>
+	</string>
+	<string id="st_up_kom_a7_name">
+		<text>Определитель положения артефактов</text>
+	</string>
+	<string id="st_up_kom_a8_descr">
+		<text>Дополнительный слой синтетических материалов на случай повреждения основного.</text>
+	</string>
+	<string id="st_up_kom_a8_name">
+		<text>Синтетический слой</text>
+	</string>
+	<string id="st_up_kom_b10_descr">
+		<text>Эргономичные вставки из резины, которые позволяют сохранять мобильность даже при ношении тяжёлой брони.</text>
+	</string>
+	<string id="st_up_kom_b10_name">
+		<text>Резиновый костюм</text>
+	</string>
+	<string id="st_up_kom_b11_descr">
+		<text>Константан позволяет изолировать владельца от воздействия электричества, а также имеет крайне высокую температуру плавления.</text>
+	</string>
+	<string id="st_up_kom_b11_name">
+		<text>Термоизоляция из константана</text>
+	</string>
+	<string id="st_up_kom_b12_descr">
+		<text>Свинец является надёжной защитой от радиации.</text>
+	</string>
+	<string id="st_up_kom_b12_name">
+		<text>Свинцовые вставки</text>
+	</string>
+	<string id="st_up_kom_b1_descr">
+		<text>Базовая защита от дождя и вредных веществ, которые могут контактировать с кожей.</text>
+	</string>
+	<string id="st_up_kom_b1_name">
+		<text>Брезент</text>
+	</string>
+	<string id="st_up_kom_b2_descr">
+		<text>Обработка ткани веществами, устойчивыми к высоким температурам, является очень популярной среди охотников за артефактами термического происхождения.</text>
+	</string>
+	<string id="st_up_kom_b2_name">
+		<text>Ткань с огнеупорным покрытием</text>
+	</string>
+	<string id="st_up_kom_b3_descr">
+		<text>Магниевые вставки защищают владельца костюма от термических ожогов.</text>
+	</string>
+	<string id="st_up_kom_b3_name">
+		<text>Магниевые вставки</text>
+	</string>
+	<string id="st_up_kom_b4_descr">
+		<text>Даже простая пластиковая вставка может предохранить владельца от электрических и химических воздействий.</text>
+	</string>
+	<string id="st_up_kom_b4_name">
+		<text>Пластиковые вставки</text>
+	</string>
+	<string id="st_up_kom_b5_descr">
+		<text>Ткани и уплотнители заменяются синтетическими материалами с целью уменьшения массы брони.</text>
+	</string>
+	<string id="st_up_kom_b5_name">
+		<text>Замена тканей синтетическими материалами</text>
+	</string>
+	<string id="st_up_kom_b6_descr">
+		<text>Оргстекло способно поглощать радиоактивное излучение, имея меньшую массу чем у свинца.</text>
+	</string>
+	<string id="st_up_kom_b6_name">
+		<text>Установка оргстекла</text>
+	</string>
+	<string id="st_up_kom_b7_descr">
+		<text>Улучшают защиту от электричества и химических веществ.</text>
+	</string>
+	<string id="st_up_kom_b7_name">
+		<text>Эластичные пластиковые вставки вставки</text>
+	</string>
+	<string id="st_up_kom_b8_descr">
+		<text>Тонкий слой константана позволяет защитить владельца от поражения током.</text>
+	</string>
+	<string id="st_up_kom_b8_name">
+		<text>Изоляция из константана</text>
+	</string>
+	<string id="st_up_kom_b9_descr">
+		<text>Стекловолокно активно используется при изготовлении одежды для спасательных служб.</text>
+	</string>
+	<string id="st_up_kom_b9_name">
+		<text>Термозащита из стекловолокна</text>
+	</string>
+	<string id="st_up_kom_c1_descr">
+		<text>Пропитка тканей препятствует химическому отравлению.</text>
+	</string>
+	<string id="st_up_kom_c1_name">
+		<text>Пропитка тканей</text>
+	</string>
+	<string id="st_up_kom_c2_descr">
+		<text>Резина является основным способом кратковременной защиты от излучения.</text>
+	</string>
+	<string id="st_up_kom_c2_name">
+		<text>Прорезиненная ткань</text>
+	</string>
+	<string id="st_up_kom_c3_descr">
+		<text>Используется в сталкерских костюмах для улучшения износостойкости.</text>
+	</string>
+	<string id="st_up_kom_c3_name">
+		<text>Защитный каркас</text>
+	</string>
+	<string id="st_up_kom_c4_descr">
+		<text>Никель достаточно хорошо противостоит воздействию высоких температур, что позволяет устанавливать его в сталкерские костюмы.</text>
+	</string>
+	<string id="st_up_kom_c4_name">
+		<text>Огнеупорные никелевые вставки</text>
+	</string>
+	<string id="st_up_kom_c5_descr">
+		<text>Никель-магниевые сплавы используются в костюмах для защиты от поражения электрическим током.</text>
+	</string>
+	<string id="st_up_kom_c5_name">
+		<text>Изоляционный костюм с магниевыми вставками</text>
+	</string>
+	<string id="st_up_kom_c6_descr">
+		<text>Бронежилет с анти-коррозийной подкладкой и кевларовыми пластинами.</text>
+	</string>
+	<string id="st_up_kom_c6_name">
+		<text>Бронежилет «Вторая кожа»</text>
+	</string>
+	<string id="st_up_kom_c7_descr">
+		<text>Костюм, сделанный из полимеров, ранее использованных киевскими НИИ при разработке костюма для научных работников с полостями, заполненными висмутом.</text>
+	</string>
+	<string id="st_up_kom_c7_name">
+		<text>Полимерный костюм с висмутовыми вставками</text>
+	</string>
+	<string id="st_up_kom_c8_descr">
+		<text>Специальная сетка увеличивает радиационную и химическую защиту без ущерба для мобильности владельца.</text>
+	</string>
+	<string id="st_up_kom_c8_name">
+		<text>Жилет со свинцовой сеткой</text>
+	</string>
+	<string id="st_up_kom_c9_descr">
+		<text>Изобретение, появившееся уже после Чернобыльской катастрофы. Используется в экзоскелетах для предотвращения неисправностей электроники.</text>
+	</string>
+	<string id="st_up_kom_c9_name">
+		<text>Алюминиевые вставки</text>
+	</string>
+	
+	<string id="st_up_res_a1_name">
+		<text>Активные фильтры</text>
+	</string>
+	<string id="st_up_res_a1_descr">
+		<text>Активные фильтры могут противостоять даже веществам, вызывающим коррозию.</text>
+	</string>
+	<string id="st_up_res_a2_descr">
+		<text>Антенна, защищающая от воздействия пси-шторма.</text>
+	</string>
+	<string id="st_up_res_a2_name">
+		<text>Защитная антенна</text>
+	</string>
+	<string id="st_up_res_a3_descr">
+		<text>Маска, используемая при экстремальных температурах, когда обычное дыхание невозможно.</text>
+	</string>
+	<string id="st_up_res_b1_descr">
+		<text>Установка экранирующего покрытия.</text>
+	</string>
+	<string id="st_up_res_b1_name">
+		<text>Установка экранирующего покрытия</text>
+	</string>
+	<string id="st_up_res_b2_descr">
+		<text>Фильтр с усиленным анти-коррозийным покрытием, предотвращающий заражение владельца ядами.</text>
+	</string>
+	<string id="st_up_res_b2_name">
+		<text>Фильтр для работы в загрязнённых районах</text>
+	</string>
+	<string id="st_up_res_b3_descr">
+		<text>Специальная маска может обеспечить частичную защиту от радиации.</text>
+	</string>
+	<string id="st_up_res_b3_name">
+		<text>Покрытие из оргстекла</text>
+	</string>
+	<string id="st_up_res_b4_descr">
+		<text>Добавление свинца в фильтры поможет обеспечить дополнительную защиту от радиации.</text>
+	</string>
+	<string id="st_up_res_b4_name">
+		<text>Модернизация фильтров</text>
+	</string>
+	<string id="st_up_res_b5_descr">
+		<text>Респиратор обеспечивает фильтрацию воздуха от радиоактивных частиц и химических реагентов.</text>
+	</string>
+	<string id="st_up_res_b5_name">
+		<text>Установка респиратора с двумя универсальными фильтрами</text>
+	</string>
+	<string id="st_up_res_c1_descr">
+		<text>Защита из бериллия и алюминия даёт потрясающий эффект без серьёзного увеличения массы.</text>
+	</string>
+	<string id="st_up_res_c1_name">
+		<text>Пластины из бериллия и алюминия</text>
+	</string>
+	<string id="st_up_res_c2_descr">
+		<text>Защита из бериллия и алюминия даёт потрясающий эффект без серьёзного увеличения массы.</text>
+	</string>
+	<string id="st_up_res_c2_name">
+		<text>Пластины из бериллия и алюминия</text>
+	</string>
+	<string id="st_up_res_c3_descr">
+		<text>Улучшенные фильтры поддерживают неизменный уровень кислорода вне зависимости от условий окружающей среды.</text>
+	</string>
+	<string id="st_up_res_c3_name">
+		<text>Установка улучшенных фильтров</text>
+	</string>
+	<string id="st_up_res_c4_descr">
+		<text>Высокотехнологичная пси-защита, которая, по слухам, была изобретена учёным по фамилии Сахаров.</text>
+	</string>
+	<string id="st_up_res_c4_name">
+		<text>Установка защитного купола</text>
+	</string>
+	<string id="st_up_res_c5_descr">
+		<text>Защитный каркас против химических и термических повреждений.</text>
+	</string>
+	<string id="st_up_res_c5_name">
+		<text>Защита лица из константана</text>
+	</string>
+	<string id="st_up_res_c6_descr">
+		<text>Дополнительная защита, увеличивающая износостойкость.</text>
+	</string>
+	<string id="st_up_res_c6_name">
+		<text>Укреплённый бронежилет</text>
+	</string>
+	<string id="st_up_res_c7_descr">
+		<text>Фильтр с дополнительным покрытием и системой очистки воздуха от ядов.</text>
+	</string>
+	<string id="st_up_res_c7_name">
+		<text>Усиленный фильтр для действий в экстремальных условиях</text>
+	</string>
+	<string id="st_up_resp_a1_descr">
+		<text>Стандартный ПНВ 1ПН93-1. Эта модифицированная версия может быть установлена на боевой шлем. Предлагает качество картинки поколения 2+, что особенно полезно во время проведения ночных операций или при недостаточной освещённости. Замена батареи на УЗУ помогла сбросить вес до где-то 1,5 кг. Будучи полным комплектом, имеет все необходимые детали, позволяющие установку на свою базу более продвинутых вариантов ПНВ.\n \n%c[d_cyan] • %c[default] большое потребление энергии </text>
+	</string>
+	<string id="st_up_resp_a1_name">
+		<text>ПНВ 1ПН93-1</text>
+	</string>
+	<string id="st_up_resp_a2_descr">
+		<text>Переключение на замкнутый цикл дыхания производится в загрязнённых районах.</text>
+	</string>
+	<string id="st_up_resp_a2_name">
+		<text>Система защиты от попадания вредных частиц</text>
+	</string>
+	<string id="st_up_resp_a3_name">
+		<text>Система очистки дыхательной маски</text>
+	</string>
+	<string id="st_up_resp_b1_descr">
+		<text>Современное поколение приборов ночного видения, ПН21КЛ позволяет значительно улучшить условия ведения боя при недостаточной освещённости. Для установки необходима база в виде монтажной сетки. При весе около 270 грамм он значительно легче других шлемов. При наличии комплекта модернизации, может быть улучшен установкой более продвинутых линз и более сложным программным обеспечением для обработки картинки.\n \n%c[d_cyan] • %c[default] большое потребление энергии</text>
+	</string>
+	<string id="st_up_resp_b1_name">
+		<text>ПНВ ПН21КЛ</text>
+	</string>
+	<string id="st_up_resp_b2_descr">
+		<text>Тепловизор, определяющий положение противников по исходящей от них тепловой энергии.</text>
+	</string>
+	<string id="st_up_resp_b2_name">
+		<text>Система автоматического целеуказания</text>
+	</string>
+	<string id="st_up_resp_b3_descr">
+		<text>Научный прибор, построенный на действиях радиоволн. Используется в аномальных районах с высокой вероятностью пси-шторма.</text>
+	</string>
+	<string id="st_up_resp_b3_name">
+		<text>Пси-стимулятор «Оракул»</text>
+	</string>
+	<string id="st_up_resp_c1_descr">
+		<text>Улучшенные линзы и обновлённое ПО позволяет избавить изображение от шумов, превращая ПН21КЛ в полноценный ПНВ третьего поколения. Не затрагивает массу или потребление энергии.</text>
+	</string>
+	<string id="st_up_resp_c1_name">
+		<text>Улучшенные линзы и обновлённое ПО</text>
+	</string>
+	<string id="st_up_resp_c2_descr">
+		<text>Ионизированные потоки воздуха создают своеобразный ветер, выступая охлаждающим компонентом.</text>
+	</string>
+	<string id="st_up_resp_c2_name">
+		<text>Система охлаждения «Ионный ветер»</text>
+	</string>
+	<string id="st_up_resp_c3_descr">
+		<text>Инфракрасный сканер позволяет обнаружить людей, находящихся поблизости.</text>
+	</string>
+	<string id="st_up_resp_c3_name">
+		<text>Инфракрасный сканер</text>
+	</string>
+	<string id="st_up_resp_c4_descr">
+		<text>SPB - VPZ.m.IV - современная система пси-защиты</text>
+	</string>
+	<string id="st_up_resp_c4_name">
+		<text>SPB - VPZ.m.IV</text>
+	</string>
+	
+	
+	
+	<string id="st_up_tch_a1_descr">
+		<text>Инъектор поколения А, разработанный одним из киевских институтов. Он регулярно впрыскивает в кровь владельца небольшие дозы адреналина. Это довольно опасно, но может сохранить вашу жизнь в экстренных случаях</text>
+	</string>
+	<string id="st_up_tch_a1_name">
+		<text>Автоматический инъектор «Ярость»</text>
+	</string>
+	<string id="st_up_tch_a2_descr">
+		<text>Данное устройство удаляет конденсат с ядами из дыхательных фильтров.</text>
+	</string>
+	<string id="st_up_tch_a2_name">
+		<text>Система фильтрации ядов</text>
+	</string>
+	<string id="st_up_tch_a3_descr">
+		<text>Изобретение членов группировки «Чистое Небо». Небольшой излучатель, установленный на спине, значительно увеличивает скорость свёртывания крови.</text>
+	</string>
+	<string id="st_up_tch_a3_name">
+		<text>Гемостимулятор</text>
+	</string>
+	<string id="st_up_tch_a4_descr">
+		<text>Данное устройство образует вокруг владельца электрическое поле, отталкивающее радиоактивную пыль.</text>
+	</string>
+	<string id="st_up_tch_a4_name">
+		<text>Система пылезащиты</text>
+	</string>
+	<string id="st_up_tch_b1_descr">
+		<text>Инъектор поколения Б впрыскивает гемоглобин в кровь, в случае резкого падения кровяного давления.</text>
+	</string>
+	<string id="st_up_tch_b1_name">
+		<text>Инъектор гемоглобина</text>
+	</string>
+	<string id="st_up_tch_b2_descr">
+		<text>Благодаря поддержанию оптимальной температуры, данное устройство снижает усталость владельца.</text>
+	</string>
+	<string id="st_up_tch_b2_name">
+		<text>Установка системы регуляции температуры</text>
+	</string>
+	<string id="st_up_tch_b3_descr">
+		<text>Этот излучатель устанавливается на грудь и увеличивает скорость заживления ран и имунной системы, а также устраняет боль.</text>
+	</string>
+	<string id="st_up_tch_b3_name">
+		<text>Солнечный биостимулятор</text>
+	</string>
+	<string id="st_up_tch_b4_descr">
+		<text>Научный прибор, построенный на воздействии проникающих волн. Разработан для работы в аномальных районах с высокой пси-активностью.</text>
+	</string>
+	<string id="st_up_tch_b4_name">
+		<text>Пси-стимулятор «Оракул»</text>
+	</string>
+	<string id="st_up_tch_c1_descr">
+		<text>Инъектор поколения С, вводящий в кровь полезные вещества, помогающие восстанавливать повреждённые ткани и устранять боль.</text>
+	</string>
+	<string id="st_up_tch_c1_name">
+		<text>Система восстановления «Феникс»</text>
+	</string>
+	<string id="st_up_tch_c2_descr">
+		<text>Интегрированная система, отслеживающая состояние здоровья владельца и производящая инъекции витаминов, адреналина или анаболиков.</text>
+	</string>
+	<string id="st_up_tch_c2_name">
+		<text>Установка лёгкой системы жизнеобеспечения</text>
+	</string>
+	<string id="st_up_tch_c3_descr">
+		<text>Данный волновой излучатель устанавливается на шею и даёт успокаивающий эффект, хотя метод его работы так до сих пор и неизвестен</text>
+	</string>
+	<string id="st_up_tch_c3_name">
+		<text>Излучатель нейроволн</text>
+	</string>
+	
+	
+	
+	
+	<string id="st_up_uti_a1_descr">
+		<text>Дополнительные двигательные механизмы позволяют переносить более тяжёлые грузы.</text>
+	</string>
+	<string id="st_up_uti_a1_name">
+		<text>Дополнительные сервомоторы</text>
+	</string>
+	<string id="st_up_uti_a2_descr">
+		<text>Поддерживает инъекции анти-тетанических, противовоспалительных и стрептоцидальных веществ.</text>
+	</string>
+	<string id="st_up_uti_a2_name">
+		<text>Встроенный комплекс "Доктор"</text>
+	</string>
+	<string id="st_up_uti_a3_descr">
+		<text>Система вентиляции, встроенная в костюм, позволяющая работать в загрязнённых районах.</text>
+	</string>
+	<string id="st_up_uti_a3_name">
+		<text>Встроенная система регуляции температуры</text>
+	</string>
+	<string id="st_up_uti_a4_descr">
+		<text>Улучшение в эргономике: специальные крепления на костюме позволяют с комфортом переносить грузы большой массы.</text>
+	</string>
+	<string id="st_up_uti_a4_name">
+		<text>Распределительный жилет</text>
+	</string>
+	<string id="st_up_uti_a5_descr">
+		<text>Кислородный баллон жизненно необходим в районах с химическим или радиоактивным загрязнением.</text>
+	</string>
+	<string id="st_up_uti_a5_name">
+		<text>Установка газового баллона</text>
+	</string>
+	<string id="st_up_uti_b1_descr">
+		<text>Установка дополнительных креплений для модулей.</text>
+	</string>
+	<string id="st_up_uti_b1_name">
+		<text>Дополнительные крепления для модулей</text>
+	</string>
+	<string id="st_up_uti_b2_descr">
+		<text>Система креплений позволяет распределить массу груза по всему телу.</text>
+	</string>
+	<string id="st_up_uti_b2_name">
+		<text>Система креплений для распределения массы</text>
+	</string>
+	<string id="st_up_uti_b3_descr">
+		<text>Специальный каркас равномерно распределяет массу переносимого груза по всему телу, увеличивая тем самым возможность к переносу тяжёлых вещей.</text>
+	</string>
+	<string id="st_up_uti_b3_name">
+		<text>Каркас для распределения веса</text>
+	</string>
+	<string id="st_up_uti_b4_descr">
+		<text>Система используется для автоматических инъекций антисептических, противовоспалительных и стимулирующих препаратов. Самодельная, но маловероятно, что она может нанести телу вред.</text>
+	</string>
+	<string id="st_up_uti_b4_name">
+		<text>Встроенная система ухода за человеком</text>
+	</string>
+	<string id="st_up_uti_b5_descr">
+		<text>Это приспособление состоит из металлической решётки, на которую подаётся заряд одного знака с тем, что имеет электрическая аномалия. Это позволяет снизить угрозу поражения током.</text>
+	</string>
+	<string id="st_up_uti_b5_name">
+		<text>Система противоэлектрической защиты «Скат»</text>
+	</string>
+	<string id="st_up_uti_b6_descr">
+		<text>Внутренняя пропитка позволяет избежать химических отравлений.</text>
+	</string>
+	<string id="st_up_uti_b6_name">
+		<text>Пропитка внутренностей костюма для увеличения химической защиты</text>
+	</string>
+	<string id="st_up_uti_b7_descr">
+		<text>Экспериментальная система для марафонских забегов, неиспользуемая за пределами Зоны из-за своей высокой цены и сложности конструкции.</text>
+	</string>
+	<string id="st_up_uti_b7_name">
+		<text>Комплекс «Марафонец»</text>
+	</string>
+	<string id="st_up_uti_b8_descr">
+		<text>Эта система удаляет яды вместе с избыточным конденсатом, образующимся в маске костюма.</text>
+	</string>
+	<string id="st_up_uti_b8_name">
+		<text>Комплекс фильтрации ядов</text>
+	</string>
+	<string id="st_up_uti_c1_descr">
+		<text>Установка дополнительного крепления для модулей.</text>
+	</string>
+	<string id="st_up_uti_c1_name">
+		<text>Дополнительное крепление для модулей</text>
+	</string>
+	<string id="st_up_uti_c2_descr">
+		<text>Система обеспечения, встроенная в костюм. Используется редко, в основном бойцами Спецназа. Включает в себя инъекции адреналина и препаратов для ускорения свёртываемости крови.</text>
+	</string>
+	<string id="st_up_uti_c2_name">
+		<text>Система жизнеобеспечения «Варяг»</text>
+	</string>
+	<string id="st_up_uti_c3_descr">
+		<text>В этом комплексе жизнеобеспечения создатели решили отказаться от вредных инъекций адреналина в пользу лечебных веществ, впрыскиваемых прямо в кровь.</text>
+	</string>
+	<string id="st_up_uti_c3_name">
+		<text>Система жизнеобеспечения</text>
+	</string>
+	
+	
+		<string id="st_prop_binoc_zoom">
+		<text>Увеличение</text>
+	</string>
+	<string id="st_prop_binoc_nightvision">
+		<text>ПНВ</text>
+	</string>
+	<string id="st_prop_binoc_autolock">
+		<text>Обнаружение</text>
+	</string>
+	
+<!-- Binoculars -->
+	<string id="st_prop_binoc_nightvision_1">
+		<text>Установка высоко-контрастных фильтров</text>
+	</string>
+	<string id="st_prop_binoc_nightvision_2">
+		<text>ПНВ I-поколения</text>
+	</string>
+	<string id="st_prop_binoc_nightvision_3">
+		<text>ПНВ II-поколения</text>
+	</string>
+	
+	<string id="st_up_binoc_a1_name">
+		<text>Улучшенный объектив (x10-кратное увеличение)</text>
+	</string>
+	<string id="st_up_binoc_a1_descr">
+		<text>Установка улучшенных линз для дальних дистанций, предлагающих х10-кратное увеличение.</text>
+	</string>
+	<string id="st_up_binoc_a2_name">
+		<text>Улучшенный объектив (x15-кратное увеличение)</text>
+	</string>
+	<string id="st_up_binoc_a2_descr">
+		<text>Установка улучшенных линз для дальних дистанций, предлагающих х15-кратное увеличение.</text>
+	</string>
+	<string id="st_up_binoc_a3_name">
+		<text>Высококачественный объектив (x20-кратное увеличение)</text>
+	</string>
+	<string id="st_up_binoc_a3_descr">
+		<text>Установка улучшенных линз для дальних дистанций, предлагающих х20-кратное увеличение</text>
+	</string>
+	<string id="st_up_binoc_b1_name">
+		<text>Улучшение контраста изображения</text>
+	</string>
+	<string id="st_up_binoc_b1_descr">
+		<text>Низкодисперсионное стекло линз позволяет минимизировать эффект хроматических аберраций, что даёт гораздо лучшую картинку</text>
+	</string>
+	<string id="st_up_binoc_b2_name">
+		<text>Прибор ночного видения I-поколения</text>
+	</string>
+	<string id="st_up_binoc_b2_descr">
+		<text>Установка прибора ночного видения I-поколения, улучшающего видимость в условиях плохого освещения.</text>
+	</string>
+	<string id="st_up_binoc_b3_name">
+		<text>Прибор ночного видения II-поколения</text>
+	</string>
+	<string id="st_up_binoc_b3_descr">
+		<text>Установка прибора ночного видения с более широким полем зрения и большим объективом для максимальной передачи света, позволяющего значительно улучшить видимость при недостаточной освещённости. </text>
+	</string>
+	<string id="st_up_binoc_c1_name">
+		<text>Алюминиевый каркас</text>
+	</string>
+	<string id="st_up_binoc_c1_descr">
+		<text>Замена каркаса на алюминиевый. Это уменьшает массу и увеличивает удобство использования.</text>
+	</string>
+	<string id="st_up_binoc_d1_name">
+		<text>Система захвата целей</text>
+	</string>
+	<string id="st_up_binoc_d1_descr">
+		<text>Замена каркаса на алюминиевый. Это уменьшает массу и увеличивает удобство использования.</text>
+	</string>
+	
+<!-- Dynamo -->
+	<string id="st_up_opt_dynamo_hand1_descr">
+		<text>Замена редуктора на нейлоновый немного повышает надёжность и долговечность механизма.</text>
+	</string>
+	<string id="st_up_opt_dynamo_hand1_name">
+		<text>Блок шестерней</text>
+	</string>
+	<string id="st_up_opt_dynamo_hand2_descr">
+		<text>Замена стальных частей корпуса генератора на дюралевые значительно снижают вес.</text>
+	</string>
+	<string id="st_up_opt_dynamo_hand2_name">
+		<text>Дюралевый каркас</text>
+	</string>
+	<string id="st_up_opt_dynamo_hand3_descr">
+		<text>Установка дополнительных неодимовых магнитов на ротор двигателя, увеличивает производительность генератора.</text>
+	</string>
+</string_table>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="Clear">
+		<text>Clear</text>
+	</string>
+	<string id="Cloudy">
+		<text>Cloudy</text>
+	</string>
+	<string id="Night">
+		<text>Night</text>
+	</string>
+	<string id="Rain">
+		<text>Rain</text>
+	</string>
+	<string id="game type">
+		<text>GAME TYPE</text>
+	</string>
+	<string id="gd_master">
+		<text>Master</text>
+	</string>
+	<string id="gd_novice">
+		<text>Rookie</text>
+	</string>
+	<string id="gd_veteran">
+		<text>Veteran</text>
+	</string>
+	<string id="icon">
+		<text>ICONS</text>
+	</string>
+	<string id="map">
+		<text>MAP</text>
+	</string>
+	<string id="st_opt_high">
+		<text>High</text>
+	</string>
+	<string id="st_opt_low">
+		<text>Low</text>
+	</string>
+	<string id="st_opt_medium">
+		<text>Medium</text>
+	</string>
+	<string id="st_opt_off">
+		<text>Off</text>
+	</string>
+	<string id="ui_mm_action">
+		<text>Action</text>
+	</string>
+	<string id="ui_mm_advanced">
+		<text>Advanced</text>
+	</string>
+	<string id="ui_mm_alternative">
+		<text>Alternative</text>
+	</string>
+	<string id="ui_mm_back">
+		<text>Back</text>
+	</string>
+	<string id="ui_mm_blood">
+		<text>Blood</text>
+	</string>
+	<string id="ui_mm_ok">
+		<text>OK</text>
+	</string>
+	<string id="ui_mm_next">
+		<text>Next</text>
+	</string>
+	<string id="ui_mm_previous">
+		<text>Previous</text>
+	</string>
+	<string id="ui_mm_craft">
+		<text>Craft</text>
+	</string>
+	<string id="ui_mm_upgrade">
+		<text>Upgrade</text>
+	</string>
+	<string id="ui_mm_repair">
+		<text>Repair</text>
+	</string>
+	<string id="ui_mm_cook">
+		<text>Cook</text>
+	</string>
+	<string id="ui_mm_loot_selected">
+		<text>Loot selected</text>
+	</string>
+	<string id="ui_mm_loot_all">
+		<text>Loot all (ENTER)</text>
+	</string>
+	<string id="ui_mm_check_updates">
+		<text>Game updates</text>
+	</string>
+	<string id="ui_mm_controls">
+		<text>Controls</text>
+	</string>
+	<string id="ui_mm_credits">
+		<text>Credits</text>
+	</string>
+	<string id="ui_mm_delete">
+		<text>Delete</text>
+	</string>
+	<string id="ui_mm_delete_existing_file_q">
+		<text>Do you really want to delete this file?</text>
+	</string>
+	<string id="ui_mm_difficulty">
+		<text>Difficulty</text>
+	</string>
+	<string id="ui_mm_disconnect">
+		<text>Disconnect</text>
+	</string>
+	<string id="ui_mm_disconnect_message">
+		<text>Are you sure you want to disconnect?</text>
+	</string>
+	<string id="ui_mm_key">
+		<text>Button</text>
+	</string>
+	<string id="ui_mm_keyboard_setup">
+		<text>Keyboard setup</text>
+	</string>
+	<string id="ui_mm_last_save">
+		<text>Last save</text>
+	</string>
+	<string id="ui_mm_load">
+		<text>Load</text>
+	</string>
+	<string id="ui_mm_load_game">
+		<text>Load game</text>
+	</string>
+	<string id="ui_mm_logout">
+		<text>Quit profile</text>
+	</string>
+	<string id="ui_mm_master">
+		<text>Master</text>
+	</string>
+	<string id="ui_mm_need_restart">
+		<text>Changes will only take effect after the game is restarted</text>
+	</string>
+	<string id="ui_mm_network_game">
+		<text>Multiplayer</text>
+	</string>
+	<string id="ui_mm_newgame">
+		<text>New game</text>
+	</string>
+	<string id="ui_mm_novice">
+		<text>Rookie</text>
+	</string>
+	<string id="ui_mm_options">
+		<text>OPTIONS</text>
+	</string>
+	<string id="ui_mm_particles_distance">
+		<text>Particle distance</text>
+	</string>
+	<string id="ui_mm_quality_presets">
+		<text>Quality settings</text>
+	</string>
+	<string id="ui_mm_quit2windows">
+		<text>Exit to Windows</text>
+	</string>
+	<string id="ui_mm_quit_game">
+		<text>Quit game</text>
+	</string>
+	<string id="ui_mm_quit_game_message">
+		<text>Are you sure you want to quit the game?</text>
+	</string>
+	<string id="ui_mm_quit_windows_message">
+		<text>Are you sure you want to leave the Zone, stalker?</text>
+	</string>
+	<string id="ui_mm_return_game">
+		<text>Return to game</text>
+	</string>
+	<string id="ui_mm_save">
+		<text>Save</text>
+	</string>
+	<string id="ui_mm_save_game">
+		<text>Save game</text>
+	</string>
+	<string id="ui_mm_stalker">
+		<text>Stalker</text>
+	</string>
+	<string id="ui_mm_veteran">
+		<text>Veteran</text>
+	</string>
+	<string id="ui_st_reset">
+		<text>Reset</text>
+	</string>
+	<string id="ui_st_sell_all">
+		<text>Sell all</text>
+	</string>
+	<string id="version">
+		<text>Version</text>
+	</string>
+	<string id="gd_stalker">
+		<text>Stalker</text>
+	</string>
+	<string id="st_opt_extreme">
+		<text>Extreme</text>
+	</string>
+	<string id="st_opt_ultra">
+		<text>Very high</text>
+	</string>
+	<string id="ui_mm_confirm_changes">
+		<text>Apply changes? All changes will be reverted in</text>
+	</string>
+	<string id="st_cap_check_story">
+		<text>Story mode</text>
+	</string>
+	<string id="st_cap_check_survival">
+		<text>Survival mode</text>
+	</string>
+	<string id="st_cap_check_hardcore">
+		<text>Ironman mode</text>
+	</string>
+	<string id="ui_mm_hardcore">
+		<text>Ironman mode</text>
+	</string>
+	<string id="ui_mm_only_campfire">
+		<text>Hardcore save: campfire</text> <!-- edited -->
+	</string>
+	<string id="ui_mm_environment_effect">
+		<text>Extra atmosphere effects</text>
+	</string>
+	<string id="ui_mm_faction_sel">
+		<text>Faction</text>
+	</string>
+	<string id="ui_mm_disanim">
+		<text>Enable/Disable Item Animations</text>
+	</string>
+	<string id="st_cap_check_azazel_mode">
+		<text>Azazel mode</text>
+	</string>
+	
+	
+	<!-- New -->
+	<string id="ui_mm_character_name">
+		<text>Character name</text>
+	</string>
+	<string id="ui_mm_transitions_closed_disable">
+		<text>Open level passageways</text>
+	</string>
+	
+	
+</string_table>

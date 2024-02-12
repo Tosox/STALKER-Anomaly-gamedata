@@ -1,0 +1,495 @@
+
+-- =======================================================================================
+-- Made by Tronex
+-- 2019/5/26
+-- Interactive commands/weather UI
+-- This UI allows you test commands and see their impact right away instead of using the console
+
+-- Press INSERT to start
+-- Up and Down keys to rotate through the avaiable commands
+-- NUMPAD_8 and NUMPAD_2 keys to increase/reduce the value of highlighted command
+-- Enter key to save the adjusted commands to print_table.txt
+
+-- You can add any command in "commands" table, by settings its min/max/step value, leave the current value to 0 as it get set automatically by the script
+-- Only supports numric, 1 vector commands
+-- =======================================================================================
+
+local enable_debug = false
+function print_dbg(...)
+	if enable_debug then
+		printf(...)
+	end
+end
+
+local precision = 6 -- allowed number of zeros
+local commands = {
+	["r2_sun_lumscale"]					= { indx = 1 ,	curr = 0 , min = 0,		max = 3,	 step = 0.1 	},
+	["r2_sun_lumscale_amb"]				= { indx = 2 ,	curr = 0 , min = 0,		max = 3,	 step = 0.1 	},
+	["r2_sun_lumscale_hemi"]			= { indx = 3 ,	curr = 0 , min = 0,		max = 3,	 step = 0.05	},
+	["r2_tonemap_amount"]				= { indx = 4 ,	curr = 0 , min = 0,		max = 1,	 step = 0.1 	},
+	["r2_tonemap_lowlum"]				= { indx = 5 ,	curr = 0 , min = 0,		max = 1,	 step = 0.05 },
+	["r2_tonemap_middlegray"]			= { indx = 6 ,	curr = 0 , min = 0,		max = 2,	 step = 0.05 },
+	["r2_gloss_min"]					= { indx = 7 ,	curr = 0 , min = 0.1,	max = 1,	 step = 0.1 	},
+	["r2_gloss_factor"]					= { indx = 8 ,	curr = 0 , min = 0.1,	max = 10,	 step = 0.1 	},
+	["r2_ls_bloom_kernel_b"]			= { indx = 9 ,	curr = 0 , min = 0.01,	max = 2,	 step = 0.1 	},
+	["r2_ls_bloom_kernel_g"]			= { indx = 10,	curr = 0 , min = 1.0,	max = 7,	 step = 0.1 	},
+	["r2_ls_bloom_kernel_scale"]		= { indx = 11,	curr = 0 , min = 0.05,	max = 2,	 step = 0.1 	},
+	["r2_sun_shafts_min"]				= { indx = 12,	curr = 0 , min = 0.0,	max = 0.5,	 step = 0.025},
+	["r2_sun_shafts_value"]				= { indx = 13,	curr = 0 , min = 0.5,	max = 2,	 step = 0.025},
+	["r__optimize_dynamic_geom"]		= { indx = 14,	curr = 0 , min = 0,		max = 4,	 step = 1},
+	["r__optimize_static_geom"]			= { indx = 15,	curr = 0 , min = 0,		max = 4,	 step = 1},
+	["r__optimize_shadow_geom"]			= { indx = 16,	curr = 0 , min = 0,		max = 1,	 step = 1},
+	["rs_vis_distance"]					= { indx = 17,	curr = 0 , min = 0.4,   max = 1.5,	 step = 0.1},
+	["r2_tnmp_onoff"]					= { indx = 18,	curr = 0 , min = 0.0,   max =  1.,	 step = 1.0},
+	["r2_tnmp_a"]						= { indx = 19,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_b"]						= { indx = 20,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_c"]						= { indx = 21,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_d"]						= { indx = 22,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_e"]						= { indx = 23,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_f"]						= { indx = 24,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_w"]						= { indx = 25,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_gamma"]					= { indx = 26,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r2_tnmp_exposure"]				= { indx = 27,	curr = 0 , min = 0.0,   max = 20.,	 step = 0.001},
+	["r3_dynamic_wet_surfaces_near"]	= { indx = 28,	curr = 0 , min = 30.0,   max = 100.0,step = 0.1},
+	["r3_dynamic_wet_surfaces_far"]		= { indx = 29,	curr = 0 , min = 10.0,   max = 70.0, step = 0.1},
+	["r3_dynamic_wet_surfaces_sm_res"]	= { indx = 30,	curr = 0 , min = 64.0,   max = 2048.0,step = 32},
+}
+
+local key_timer = 0
+local jump_1 = 1
+local jump_2 = 10
+local jump_3 = 50
+local jump = jump_1
+
+GUI = nil -- instance, don't touch
+function start(owner)
+
+	-- Hide the owner
+	if owner then
+		if (owner:IsShown()) then
+			print_dbg("~ hide owner: %s", owner.name or "?")
+			owner:HideDialog()
+			owner:Show(false)
+		end
+	else
+		hide_hud_inventory()
+	end
+	
+	if (not GUI) then
+		GUI = LightEditor(owner)
+	end
+	
+	
+	if (GUI) and (not GUI:IsShown()) then
+		GUI:ShowDialog(true)
+		GUI:Reset()
+		
+		RegisterScriptCallback("on_key_release",on_key_release)
+		RegisterScriptCallback("on_key_hold",on_key_hold)
+		
+		Register_UI("LightEditor","ui_debug_lighting")
+	end
+end
+
+function on_key_release(key)
+	jump = jump_1
+end
+
+function on_key_hold(key)
+	if GUI then
+		if (key == DIK_keys["DIK_LSHIFT"]) then
+			jump = jump_2
+			key_timer = time_global() + 200
+		elseif (key == DIK_keys["DIK_LMENU"]) then
+			jump = jump_3
+			key_timer = time_global() + 200
+		end
+	end
+end
+
+function on_localization_change()
+	GUI = nil -- clear ui to force initing again
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_localization_change",on_localization_change)
+end
+
+
+-------------------------------------------------------------------
+class "LightEditor" (CUIScriptWnd)
+
+function LightEditor:__init(owner) super()
+	self.owner = owner
+	
+	self.weather_presets = {}
+	self.selected = nil
+	self.cnt = 0
+	self.op = {}
+	self.op_cap = {}
+	self.op_hl = {}
+	self.commands_ind = {}
+	
+	-- Setting current commands values
+	local functor = function(t,a,b) return t[a].indx < t[b].indx end
+	for command,v in spairs(commands,functor) do
+		local val = get_console_cmd(2,command)
+		commands[command].curr = round_idp(val, precision)
+		print_dbg("/ Commands UI | init: command [%s] = %s", command, commands[command].curr)
+	end
+	
+	self:InitControls()
+	self:InitCallBacks()
+	
+	printf("LightEditor | started")
+end
+
+function LightEditor:__finalize()
+end
+
+function LightEditor:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	
+	if self.owner then
+		self.xml = self.owner.xml
+	else
+		self.xml = CScriptXmlInit()
+	end
+	
+	local xml = self.xml
+	if (not self.owner) then
+		xml:ParseFile			("ui_debug_launcher.xml")
+	end
+
+	self.dialog	= xml:InitStatic("dbg_lighting_editor", self)
+	xml:InitFrame("dbg_lighting_editor:frame", self.dialog)
+	xml:InitStatic("dbg_lighting_editor:cap",self.dialog)
+	
+	-- Weather selector
+	xml:InitStatic("dbg_lighting_editor:cap_weather",self.dialog)
+	
+	self.list_weather = xml:InitComboBox("dbg_lighting_editor:list_weather", self.dialog)
+	self.list_weather:SetAutoDelete(true)
+	self:Register(self.list_weather, "list_weather")
+	
+	local weather_presets = level_weathers.get_weather_manager().presets
+	local weather_curr_preset = level_weathers.get_weather_manager().preset
+	
+	local n = 0
+	self.list_weather:ClearList()
+	for k,v in pairs(weather_presets) do
+		for k1,v1 in pairs(v) do
+			n = n + 1
+			self.weather_presets[n] = k1
+			self.list_weather:AddItem(k1, n)
+		end
+	end
+	self.list_weather:SetText(weather_curr_preset)
+	
+	-- Commands
+	self.scroll = xml:InitScrollView("dbg_lighting_editor:scroll_d", self.dialog)
+	self.scroll:Clear()
+	
+	local functor = function(t,a,b) return t[a].indx < t[b].indx end
+	for command,v in spairs(commands,functor) do
+		local _st = xml:InitStatic("dbg_lighting_editor:tmp", nil)
+		
+		self.cnt = self.cnt + 1
+		self.commands_ind[self.cnt] = command
+		
+		self.op_hl[self.cnt] = xml:InitStatic("dbg_lighting_editor:op_tmp:highlight", _st)
+		self.op_hl[self.cnt]:Show(false)
+		
+		self.op_cap[self.cnt] = xml:InitTextWnd("dbg_lighting_editor:op_tmp:cap", _st)
+		--self.op_cap[self.cnt]:SetText(command)
+		
+		self.op[self.cnt] = xml:InitEditBox("dbg_lighting_editor:op_tmp:input", _st)
+		self:Register(self.op[self.cnt],"input_" .. self.cnt)
+		--self.op[self.cnt]:SetText(v.curr)
+		print_dbg("/ Commands UI | InitControls: command [%s] = %s", command, v.curr)
+		
+		self.scroll:AddWindow(_st, true)
+		_st:SetAutoDelete(false)
+	end
+end
+
+function LightEditor:InitCallBacks()
+	self:AddCallback("list_weather", ui_events.LIST_ITEM_SELECT, self.OnSelectWeather, self)
+	for i=1,self.cnt do
+		self:AddCallback("input_" .. self.cnt, ui_events.BUTTON_CLICKED, self["OnInput_"..self.cnt], self)
+	end
+end
+
+function LightEditor:Reset()
+	for i=1,#self.commands_ind do
+		local command = self.commands_ind[i]
+		local v = commands[command]
+		self.op_cap[i]:SetText(command)
+		self.op[i]:SetText(v.curr)
+	end
+end
+
+function LightEditor:Update()
+	CUIScriptWnd.Update(self)
+
+	-- Trick for managing shift/ctrl hold
+	if time_global() > key_timer then
+		key_timer = time_global() + 200
+		jump = jump_1
+	end
+end
+
+---------------< Callbacks >---------------
+function LightEditor:OnSelectWeather()
+	local selected_weather = self.weather_presets[self.list_weather:CurrentID()]
+	if selected_weather then
+		local weather_path = selected_weather .. ((string.find(selected_weather,"clear") and "_0") or (string.find(selected_weather,"partly") and "_0") or "")
+		level.set_weather(weather_path, true)
+		actor_menu.set_msg(2, "Weather Set: " .. weather_path, 4)
+	end
+end
+
+function LightEditor:OnInput(n)
+	if self.selected then
+		self.op_hl[self.selected]:Show(false)
+	end
+	
+	local cmd = self.commands_ind[n]
+	if cmd then
+		local input_val = self.op[n]:GetText()
+		local curr_val = input_val and (input_val ~= "") and tonumber(input_val) or commands[cmd].curr
+		curr_val = round_idp(curr_val, precision)
+		
+		local max_val = commands[cmd].max
+		local min_val = commands[cmd].min
+		local new_val = clamp(curr_val, min_val, max_val)
+		
+		exec_console_cmd(cmd .. " " .. tostring(new_val))
+		commands[cmd].curr = new_val
+		self.op[n]:SetText(new_val)
+		
+		self.op_hl[n]:Show(false)
+		
+		actor_menu.set_msg(2, cmd .. " " .. new_val, 4)
+		
+		print_dbg("/ Commands UI | OnInput: command [%s] = %s", cmd, new_val)
+	end
+end
+
+function LightEditor:OnInput_1()
+	self:OnInput(1)
+end
+function LightEditor:OnInput_2()
+	self:OnInput(2)
+end
+function LightEditor:OnInput_3()
+	self:OnInput(3)
+end
+function LightEditor:OnInput_4()
+	self:OnInput(4)
+end
+function LightEditor:OnInput_5()
+	self:OnInput(5)
+end
+function LightEditor:OnInput_6()
+	self:OnInput(6)
+end
+function LightEditor:OnInput_7()
+	self:OnInput(7)
+end
+function LightEditor:OnInput_8()
+	self:OnInput(8)
+end
+function LightEditor:OnInput_9()
+	self:OnInput(9)
+end
+function LightEditor:OnInput_10()
+	self:OnInput(10)
+end
+function LightEditor:OnInput_11()
+	self:OnInput(11)
+end
+function LightEditor:OnInput_12()
+	self:OnInput(12)
+end
+function LightEditor:OnInput_13()
+	self:OnInput(13)
+end
+function LightEditor:OnInput_14()
+	self:OnInput(14)
+end
+function LightEditor:OnInput_15()
+	self:OnInput(15)
+end
+function LightEditor:OnInput_16()
+	self:OnInput(16)
+end
+function LightEditor:OnInput_17()
+	self:OnInput(17)
+end
+function LightEditor:OnInput_18()
+	self:OnInput(18)
+end
+function LightEditor:OnInput_19()
+	self:OnInput(19)
+end
+function LightEditor:OnInput_20()
+	self:OnInput(20)
+end
+function LightEditor:OnInput_21()
+	self:OnInput(21)
+end
+function LightEditor:OnInput_22()
+	self:OnInput(22)
+end
+function LightEditor:OnInput_23()
+	self:OnInput(23)
+end
+function LightEditor:OnInput_24()
+	self:OnInput(24)
+end
+function LightEditor:OnInput_25()
+	self:OnInput(25)
+end
+function LightEditor:OnInput_26()
+	self:OnInput(26)
+end
+function LightEditor:OnInput_27()
+	self:OnInput(27)
+end
+function LightEditor:OnInput_28()
+	self:OnInput(28)
+end
+function LightEditor:OnInput_29()
+	self:OnInput(29)
+end
+function LightEditor:OnInput_30()
+	self:OnInput(30)
+end
+function LightEditor:OnInput_31()
+	self:OnInput(31)
+end
+function LightEditor:OnInput_32()
+	self:OnInput(32)
+end
+function LightEditor:OnInput_33()
+	self:OnInput(33)
+end
+function LightEditor:OnInput_34()
+	self:OnInput(34)
+end
+function LightEditor:OnInput_35()
+	self:OnInput(35)
+end
+function LightEditor:OnInput_36()
+	self:OnInput(36)
+end
+function LightEditor:OnInput_37()
+	self:OnInput(37)
+end
+function LightEditor:OnInput_38()
+	self:OnInput(38)
+end
+function LightEditor:OnInput_39()
+	self:OnInput(39)
+end
+
+function LightEditor:Hightlight(idx)
+	
+end
+
+function LightEditor:SwitchCommand(state)
+	if (not self.selected) then
+		self.selected = 1
+	else
+		self.op_hl[self.selected]:Show(false)
+		
+		if state then
+			self.selected = self.selected - 1
+		else
+			self.selected = self.selected + 1
+		end
+		
+		if (self.selected < 1) then
+			self.selected = self.cnt
+		elseif (self.selected > self.cnt) then
+			self.selected = 1
+		end
+	end
+
+	self.op_hl[self.selected]:Show(true)
+end
+
+function LightEditor:SwitchValue(state)
+	if (not self.selected) then
+		self.selected = 1
+	end
+	
+	local idx = self.selected
+	local cmd = self.commands_ind[idx]
+	local input_val = self.op[idx]:GetText()
+	local curr_val = input_val and (input_val ~= "") and tonumber(input_val) or commands[cmd].curr
+	local max_val = commands[cmd].max
+	local min_val = commands[cmd].min
+	local step = commands[cmd].step * jump
+	if state then
+		curr_val = curr_val + step
+	else
+		curr_val = curr_val - step
+	end
+	curr_val = round_idp(curr_val, precision)
+	local new_val = clamp(curr_val, min_val, max_val)
+	
+	exec_console_cmd(cmd .. " " .. tostring(new_val))
+	commands[cmd].curr = new_val
+	self.op[idx]:SetText(new_val)
+	
+	actor_menu.set_msg(2, cmd .. " " .. new_val, 4)
+	
+	print_dbg("/ Commands UI | SwitchValue: command [%s] = %s", cmd, new_val)
+end
+
+function LightEditor:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		local bind = dik_to_bind(dik)
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+		
+			if dik == DIK_keys.DIK_UP then
+				self:SwitchCommand(true)
+			elseif dik == DIK_keys.DIK_DOWN then
+				self:SwitchCommand(false)
+				
+			elseif dik == DIK_keys.DIK_NUMPAD8 then
+				self:SwitchValue(true)
+			elseif dik == DIK_keys.DIK_NUMPAD2 then
+				self:SwitchValue(false)
+				
+			elseif dik == DIK_keys.DIK_ESCAPE then
+				self:Close()
+			elseif dik == DIK_keys.DIK_RETURN then
+				utils_data.print_table(commands,"debug_lighting")
+				actor_menu.set_msg(2, "Commands saved to print_table.txt", 4)
+				self:Close()
+			end
+		end
+	end
+	return res
+end
+
+function LightEditor:Close()
+	self:HideDialog()
+	self:Show(false)
+	--ui = nil
+	
+	UnregisterScriptCallback("on_key_release",on_key_release)
+	UnregisterScriptCallback("on_key_hold",on_key_hold)
+	
+	Unregister_UI("LightEditor")
+	
+	if (level.present()) then
+		printf("- main_menu off")
+		exec_console_cmd("main_menu off")
+	end
+end

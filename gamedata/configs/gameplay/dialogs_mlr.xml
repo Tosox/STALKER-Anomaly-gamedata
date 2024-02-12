@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game_dialogs>
+	<dialog id="look_for_cs_history_part_4_2">
+		<precondition>dialogs_mlr.inf_trader_buy_transitions5</precondition>
+		<has_info>look_for_cs_history_part_4_give</has_info>
+		<dont_has_info>look_for_cs_history_part_4_2_give</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>look_for_cs_history_part_4_2_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>look_for_cs_history_part_4_2_1</text>
+				<give_info>look_for_cs_history_part_4_2_give</give_info>
+				<action>dialogs_mlr.inf_trader_buy_transitions55</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="look_for_cs_history_part_4_1">
+		<precondition>dialogs_mlr.inf_trader_buy_transitions5</precondition>
+		<has_info>look_for_cs_history_part_3_2_give</has_info>
+		<dont_has_info>look_for_cs_history_part_4_give</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>look_for_cs_history_part_4_1_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>look_for_cs_history_part_4_1_1</text>
+				<give_info>look_for_cs_history_part_4_give</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="look_for_cs_history_part_3_2">
+		<has_info>look_for_cs_history_part_3_give</has_info>
+		<dont_has_info>look_for_cs_history_part_3_2_give</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>look_for_cs_history_part_3_2_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>look_for_cs_history_part_3_2_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>look_for_cs_history_part_3_2_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>look_for_cs_history_part_3_2_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>look_for_cs_history_part_3_2_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>look_for_cs_history_part_3_2_5</text>
+				<give_info>look_for_cs_history_part_3_2_give</give_info>
+				<action>txr_routes.open_route_lim_red</action>
+				<action>dialogs_mlr.give_look_for_cs_history_part_4</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="look_for_cs_history_part_1_1">
+		<precondition>dialogs.actor_not_dolg</precondition>
+		<precondition>dialogs.actor_not_killer</precondition>
+		<dont_has_info>look_for_cs_history_part_1_give</dont_has_info>
+		<dont_has_info>actor_by_limansk_side</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>look_for_cs_history_part_1_1_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>look_for_cs_history_part_1_1_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>look_for_cs_history_part_1_1_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>look_for_cs_history_part_1_1_3</text>
+				<next>4</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="4">
+				<text>look_for_cs_history_part_1_1_4</text>
+				<give_info>look_for_cs_history_part_1_give</give_info>
+				<action>dialogs_mlr.give_look_for_cs_history_part_1</action>
+			</phrase>
+			<phrase id="5">
+				<text>look_for_cs_history_part_1_1_5</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="look_for_cs_history_part_1_2">
+		<has_info>look_for_cs_history_part_1_give</has_info>
+		<has_info>marsh_bs_lfchp1_squad_die</has_info>
+		<dont_has_info>look_for_cs_history_part_2_give</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>look_for_cs_history_part_1_2_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>look_for_cs_history_part_1_2_1</text>
+				<next>2</next>
+				<give_info>look_for_cs_history_part_2_give</give_info>
+				<action>txr_routes.open_route_mil_red</action>
+				<action>dialogs_mlr.give_look_for_cs_history_part_2</action>
+			</phrase>
+			<phrase id="2">
+				<text>look_for_cs_history_part_1_2_2</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+</game_dialogs>

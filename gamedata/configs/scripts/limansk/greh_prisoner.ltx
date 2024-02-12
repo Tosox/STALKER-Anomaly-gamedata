@@ -1,0 +1,40 @@
+[logic@greh_prisoner]
+active = beh@greh_prisoner
+suitable = {=check_npc_name(greh_prisoner)} true
+prior = 200
+can_select_weapon = true
+dont_keep_items = true
+   
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 90
+jog_dist = 150
+wait_anim = prisoner
+walk_anim = sneak_no_wpn
+jog_anim = sneak_no_wpn
+run_anim = sneak_no_wpn
+delay_anim = prisoner
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+invulnerable = false
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[beh@greh_prisoner]:beh@general
+pt1 = 88860000,prisoner | pos:-17.629608154297,1.5048096179962,-319.88146972656 look:0.78778851032257,-0.05364827811718,0.61360496282578
+path_end = loop

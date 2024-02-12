@@ -1,0 +1,65 @@
+;--[[
+
+; Tronex
+; 2019/8/16
+; Outfits files rework
+
+;--]]
+
+
+[outfit_base]:global_item_actions
+; delete full_scale_icon	next update- obsolete, use  full_icon_name instead !!!
+GroupControlSection                      	= spawn_group
+discovery_dependency                     	=
+class                                    	= EQU_STLK	;Change to E_STLK if you want to use se_item.se_outfit script binding
+cform                                    	= skeleton
+community								 	= 
+additional_inventory_weight2 				= 0
+additional_inventory_weight 				= 0	  
+full_icon_name                           	= npc_icon_without_outfit
+slot                                     	= 6
+repair_type 								= outfit
+inv_grid_width                           	= 2
+inv_grid_height                          	= 3
+default_to_ruck                          	= true
+can_trade                                   = true
+sprint_allowed                           	= true
+helmet_avaliable							= true
+backpack_avaliable							= true
+control_inertion_factor                  	= 1
+player_hud_section                       	= actor_hud_05
+power_loss                    				= 0.1
+snd_on_take								    = outfit
+
+use1_functor         						= gameplay_disguise.menu_patch
+use1_action_functor  						= gameplay_disguise.menu_patch_action
+
+[without_outfit]:outfit_base
+full_scale_icon                          	= 6,6
+player_hud_section                       	= actor_hud_05
+;repair_part_bonus	 						= 0.18
+
+[outfit_restrictions_1]
+helmet_avaliable							= false
+
+[outfit_restrictions_2]
+helmet_avaliable							= false
+backpack_avaliable							= false
+
+[outfit_restrictions_3]
+helmet_avaliable							= false
+backpack_avaliable							= false
+sprint_allowed								= false
+
+[outfit_restrictions_4]
+backpack_avaliable							= false
+sprint_allowed								= false
+
+[outfit_restrictions_5]
+backpack_avaliable							= false
+
+[outfit_restrictions_temp] ;-- dummy section, leave it as last or game will fail to read "outfit_restrictions_5". For some reason, engine fails to read last section before the includes!!! TODO: fix this
+backpack_avaliable							= false
+
+;---------------------------------------------------------------------------------------------
+

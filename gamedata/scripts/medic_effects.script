@@ -1,0 +1,37 @@
+function medic_anim()
+	xr_effects.disable_ui_only(db.actor, nil)
+	level.add_cam_effector("camera_effects\\item_use_fast.anm", 10, false, "medic_effects.medic_pp")
+	level.add_pp_effector('surge_fade.ppe', 11, false)
+	local snd_obj = sound_object("interface\\inv_medkit")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+--function medic_anim2()
+--	level.add_cam_effector("camera_effects\\item_use.anm", 10, false, "medic_effects.medic_pp")
+--	local snd_obj = sound_object("interface\\inv_kit_use_2p8")
+--	snd_obj:play(db.actor,0,sound_object.s2d)
+--end
+
+function medic_pp()
+	xr_effects.enable_ui(db.actor, nil)
+	level.add_pp_effector('inv_medkit.ppe', 8012, false)
+end
+
+function medic_rad_anim()
+	xr_effects.disable_ui_only(db.actor, nil)
+	level.add_cam_effector("camera_effects\\item_use.anm", 10, false, "medic_effects.medic_rad_pp")
+	level.add_pp_effector('surge_fade.ppe', 11, false)
+	local snd_obj = sound_object("interface\\inv_properties")
+	snd_obj:play(db.actor,0,sound_object.s2d)
+end
+
+--function medic_rad_anim2()
+--	level.add_cam_effector("camera_effects\\surge_01.anm", 10, false, "medic_effects.medic_rad_pp")
+--	local snd_obj = sound_object("interface\\inv_medkit")
+--	snd_obj:play(db.actor,0,sound_object.s2d)
+--end
+
+function medic_rad_pp()
+	xr_effects.enable_ui(db.actor, nil)
+	level.add_pp_effector('blur.ppe', 8012, false)
+end

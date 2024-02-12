@@ -1,0 +1,158 @@
+[logic@bar_visitors_cardan_tech]
+suitable = {=check_npc_name(bar_visitors_stalker_mechanic)} true, {=check_npc_mechanic} true
+prior = 100
+active = animpoint@base
+can_select_weapon = {=is_warfare} true, false
+level_spot = mechanic
+trade = items\trade\trade_generic_mechanic.ltx
+dont_keep_items = true
+
+[animpoint@base]
+cover_name = bar_visitors_cardan_tech
+reach_distance = 2
+avail_animations = zat_b3_tech_idle
+use_camp = false
+meet = meet
+on_info = {+bar_visitors_tech_out =dist_to_actor_ge(20)} animpoint@sleep, {+bar_visitors_tech_drinking +bar_visitors_tech_out} animpoint@drinking %-bar_visitors_tech_drinked_out%, {+bar_visitors_tech_drinking +bar_visitors_tech_have_couple_dose} animpoint@drinking %-bar_visitors_tech_drinked_out%, {+bar_visitors_tech_drinking +bar_visitors_tech_have_one_dose} animpoint@drinking %-bar_visitors_tech_drinked_out%, {+awr_bar_visitors_stalker_mechanic_access} walker@base
+;on_info2 = {=dist_to_actor_ge(75)} %-bar_visitors_tech_greetings%, {=see_actor =dist_to_actor_le(3) -zat_b3_mech_greetings}  %=play_sound(zat_b3_tech_realy_drunk) +bar_visitors_tech_greetings%
+on_info2 = {=dist_to_actor_ge(20)} %+bar_visitors_tech_waked_up +bar_visitors_tech_drinked_out%
+on_info3 = {=npc_talking} animpoint@short_idle
+on_info4 = {=obj_on_job(bar_visitors:bar_visitors_beh_tech_job_1) =job_on_point(bar_visitors:bar_visitors_beh_tech_job_1:2:3:false)} %=tech_job_give_id(bar_visitors:bar_visitors_beh_tech_job_1)%
+on_game_timer = 100 | %+bar_visitors_tech_waked_up +bar_visitors_tech_drinked_out% 
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+
+[walker@base]
+path_walk = guid_bar_2_walk
+path_look  = guid_bar_2_look
+gather_items_enabled = false
+help_wounded_enabled = false
+on_game_timer = 100 | remark@smoke
+corpse_detection_enabled = false
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+meet = no_meet
+
+[remark@smoke]:walker@base
+anim = animpoint_sit_normal_drink_vodka
+meet = meet	;no_meet
+on_game_timer = 2000 | animpoint@base %=awr_timer_msg_off%
+
+[animpoint@short_idle]:animpoint@base
+avail_animations = zat_b3_tech_idle_short
+on_actor_dist_ge_nvis = 10 | animpoint@base
+
+[meet]
+close_snd_hello = bar_mech_meet
+close_snd_bye   = bar_mech_meet_bye
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+;use = {+bar_visitors_tech_waked_up +bar_visitors_tech_drinked_out} true, false
+use = true
+allow_break = false
+;meet_dialog	= {+bar_visitors_tech_see_produce_62 -zat_a23_actor_has_access_card_to_testing_workshop} zat_b3_stalker_tech_produce_62_start
+meet_on_talking = false
+trade_enable = false
+
+[animpoint@drinking]
+cover_name = bar_visitors_cardan_tech
+reach_distance = 2
+avail_animations = zat_b3_tech_drink
+use_camp = false
+on_game_timer = 37 | {-bar_visitors_tech_take_dose +bar_visitors_tech_out} %=play_sound(zat_b3_tech_take_third_dose) +bar_visitors_tech_take_dose%
+on_game_timer2 = 42 | {+bar_visitors_tech_out} animpoint@sleep %-bar_visitors_tech_drinking -bar_visitors_tech_take_dose -bar_visitors_tech_waked_up%, animpoint@base %-bar_visitors_tech_drinking -bar_visitors_tech_take_dose%
+meet = no_meet
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[animpoint@sleep]
+cover_name = bar_visitors_cardan_tech
+reach_distance = 2
+avail_animations = zat_b3_tech_drunk
+use_camp = false
+on_game_timer = 220 | %+zat_a2_mech_sleep_sound%
+on_info = {-bar_visitors_tech_out} animpoint@base  %-zat_a2_mech_sleep_sound%
+on_info2 = {=dist_to_actor_ge(20)} %-bar_visitors_tech_sleeping%, {=see_actor =dist_to_actor_le(4) -bar_visitors_tech_sleeping +zat_a2_mech_sleep_sound} %=play_sound(zat_b3_tech_sleep_) +bar_visitors_tech_sleeping -bar_visitors_tech_out -bar_visitors_tech_have_couple_dose -bar_visitors_tech_have_one_dose%
+meet = meet@sleep
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[meet@sleep]
+close_snd_hello = nil
+close_snd_bye   = nil
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+snd_on_use = zat_b3_tech_no_sleep_
+abuse = false
+use	= false
+meet_on_talking = false
+trade_enable = false
+
+;------------------------------
+;--------- NPC tech ----------
+;------------------------------
+[logic@bar_visitors_beh_tech_job_1]
+active = beh@bar_visitors_beh_tech_job_1
+suitable = {=npc_has_tech_items(bar_visitors) !surge_started} true
+prior = 65
+
+[beh@general]
+meet = meet@bar_visitors_animpoint_tech_meet
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+sound_idle = state
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+delay_anim = guard
+
+[beh@bar_visitors_beh_tech_job_1]:beh@general
+pt1 = 10000,guard | pos:111.16274261475,0.098837852478027,70.691551208496 look:111.14487311431,0.098837852478027,71.594827115536
+pt2 = 10000,choose | pos:111.16274261475,0.098837852478027,70.691551208496 look:111.14487311431,0.098837852478027,71.594827115536 sig:tech
+pt3 = 10000,search | pos:111.16274261475,0.098837852478027,70.691551208496 look:111.14487311431,0.098837852478027,71.594827115536
+on_signal = tech | %=tech_job_upgrade_items%
+path_end = loop
+
+[meet@bar_visitors_animpoint_tech_meet]
+close_snd_hello = bar_mech_meet
+close_snd_bye   = bar_mech_meet_bye
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
+snd_on_use = {!dist_to_actor_le(3)} nil
+meet_on_talking = false

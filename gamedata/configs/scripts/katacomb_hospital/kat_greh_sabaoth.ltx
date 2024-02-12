@@ -1,0 +1,44 @@
+[logic@kat_greh_sabaoth]
+active = beh@kat_greh_sabaoth
+suitable = {=check_npc_name(kat_greh_sabaoth)} true
+prior = 200
+can_select_weapon = true
+dont_keep_items = true
+   
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 90
+jog_dist = 150
+wait_anim = fold_arms
+walk_anim = assault
+jog_anim = assault
+run_anim = assault
+delay_anim = guard
+on_info = {+kat_greh_sabaoth_mortal_sin} %=play_sound_on_actor(gimlet_teleport) =remove_special_task_squad(greh_sabaoth)%
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+meet = meet
+
+[meet]
+close_anim 		= fold_arms
+close_victim 	= actor
+far_anim 		= nil
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 5
+far_distance 	= 0
+use 			= {=dist_to_actor_le(2)} self, false
+meet_dialog 	= kat_greh_sabaoth_mortal_sin
+trade_enable 	= false
+allow_break 	= false
+meet_on_talking = false
+
+[beh@kat_greh_sabaoth]:beh@general
+pt1 = 88860000,trans_0 | pos:-83.096977233887,20.048332214355,562.62377929688 look:-0.53261148929596,0.22652849555016,0.81548130512238
+path_end = loop

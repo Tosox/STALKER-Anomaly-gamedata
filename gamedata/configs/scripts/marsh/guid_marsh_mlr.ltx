@@ -1,0 +1,31 @@
+[logic@guid_marsh_mlr]
+suitable = {=check_npc_name(guid_marsh_mlr)} true
+prior = 140
+active = walker@base
+can_select_weapon = true
+dont_keep_items = true
+level_spot = quest_npc
+
+[walker@base]
+path_walk = guid_1_walk
+path_look = guid_1_look
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, false
+combat_ignore_keep_when_attacked = true
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = 3
+abuse           = false
+use = {=actor_enemy} false, true
+allow_break = false
+meet_on_talking = false

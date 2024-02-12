@@ -1,0 +1,119 @@
+;--Lost to the Zone: Living Legend
+
+[stalker_gatekeeper_squad]:online_offline_group
+faction = stalker
+npc = stalker_gatekeeper
+relationship = {=is_actor_from_faction(bandit:army:monolith)} nil, neutral
+target_smart = mil_smart_terrain_4_8
+story_id = stalker_gatekeeper
+on_death = %+stalker_gatekeeper_dead%
+
+[barrier_freedom_guardians_squad]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_in_squad = 5, 5
+target_smart = mil_smart_terrain_3_8
+
+[mil_smart_terrain_3_8_monolith_attackers]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 9, 9
+target_smart = mil_smart_terrain_3_8
+story_id = mil_smart_terrain_3_8_monolith_attackers_squad
+on_death = %+mil_smart_terrain_3_8_monolith_attackers_squad_death%
+
+[special_poltergeist_task_squad]:online_offline_group
+faction = monster
+npc_random = m_poltergeist_normal_flame
+npc_in_squad = 2, 3
+target_smart = zat_a23_smart_terrain
+on_death = %+special_poltergeist_task_squad_dead%
+
+[lost_stalker_strelok_squad]:online_offline_group
+faction = stalker
+npc = lost_stalker_strelok
+target_smart = pri_a16
+story_id = lost_stalker_strelok
+on_death = %+lost_stalker_strelok_dead%
+
+[stalker_stitch_squad]:online_offline_group
+faction = stalker
+npc = stalker_stitch
+target_smart = pri_a16
+story_id = stalker_stitch
+on_death = %+stalker_stitch_dead%
+
+[stalker_rogue_squad]:online_offline_group
+faction = stalker
+npc = stalker_rogue
+target_smart = zat_stalker_base_smart
+story_id = stalker_rogue
+on_death = %+stalker_rogue_dead%
+
+[jupiter_underpass_monolith_ambush]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 6, 6
+target_smart = pas_b400_hall
+story_id = jupiter_underpass_monolith_ambush_squad
+on_death = %+jupiter_underpass_monolith_ambush_squad_death%
+
+[pri_a16_stalker_rogue_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_rogue
+target_smart = pri_a16
+story_id = pri_a16_stalker_rogue
+on_death = %+stalker_rogue_dead%
+
+[stalker_scope_squad]:online_offline_group
+faction = stalker
+npc = stalker_scope
+story_id = stalker_scope
+on_death = %+stalker_scope_dead%
+
+[stalker_wayfarer_squad]:online_offline_group
+faction = stalker
+npc = stalker_wayfarer
+story_id = stalker_wayfarer
+on_death = %+stalker_wayfarer_dead%
+
+[special_gigant_task_squad]:online_offline_group
+faction = monster
+npc_random = gigant_strong
+npc_in_squad = 1, 1
+target_smart = pri_sim_3
+story_id = special_gigant
+on_death = %+special_gigant_task_squad_dead%
+
+[monolith_eidolon_recon_squad]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 6, 6
+target_smart = pri_a16
+story_id = monolith_eidolon_recon_squad
+on_death = %+monolith_eidolon_recon_squad_death%
+
+[monolith_eidolon_assault_squad]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4, sim_monolith_sniper
+npc_in_squad = 6, 8
+target_smart = pri_monolith
+story_id = monolith_eidolon_assault_squad
+on_death = %+monolith_eidolon_assault_squad_death%
+
+[monolith_chernobyl_defence_squad]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 6, 6
+target_smart = aes_smart_terrain_monolit_blockpost4
+story_id = monolith_chernobyl_defence_squad
+on_death = %+monolith_chernobyl_defence_squad_death%
+
+[monolith_shard_guardian_squad]:online_offline_group
+faction = monolith
+npc_random = sim_default_phantom_1, sim_default_phantom_2, sim_default_phantom_3
+npc_in_squad = 6, 6
+target_smart = sar_monolith_guard
+story_id = monolith_shard_guardian_squad
+on_death = %+monolith_shard_guardian_squad_dead%

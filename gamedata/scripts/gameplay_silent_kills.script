@@ -1,0 +1,285 @@
+local M = {victims={}}
+
+local LOUD_DEBUG 	= false
+local DEBUG 		= false
+local INB4_DAMAGE	= false
+
+function pr(...)
+	local txt = strformat(...)
+	if LOUD_DEBUG then 
+		tasks_chimera_scan.message_by_id(0,txt)
+	end
+	if DEBUG then
+		printf('gameplay_silent_kills: %s', txt)
+	end
+	return true
+end
+
+function feature_enabled()
+	local val = ui_options.get("gameplay/silent_kills/sk_enabled")
+	-- pr('enabled: %s', val)
+	return val
+end
+function all_melee_ok()
+	local val = ui_options.get("gameplay/silent_kills/sk_all_melee_ok")
+	pr('all melee ok: %s', val)
+	return val
+end
+function melee_enabled()
+	local val = ui_options.get("gameplay/silent_kills/sk_melee_enabled")
+	pr('melee enabled: %s', val)
+	return val
+end
+function gun_enabled()
+	local val = ui_options.get("gameplay/silent_kills/sk_gun_enabled")
+	pr('gun enabled: %s', val)
+	return val
+end
+function headshot_only()
+	local val = ui_options.get("gameplay/silent_kills/sk_headshot_only")
+	pr('headshot only: %s', val)
+	return val
+end
+
+function get_fresh_time() 
+	local val = ui_options.get("gameplay/silent_kills/sk_fresh_time")
+	pr('fresh time: %s', val)
+	return (tonumber(val) or 5) * level.get_time_factor() 
+end
+
+
+function get_suspect_dist() 
+	local val = ui_options.get("gameplay/silent_kills/sk_suspect_dist")
+	pr('fresh time: %s', val)
+	return (tonumber(val) or 10)
+end
+
+function backstab_hear_range()
+	local val = ui_options.get("gameplay/silent_kills/sk_melee_hear_dist")
+	pr('melee hear range: %s', val)
+	val = tonumber(val) or 5
+	return val - val * 0.5 * level.rain_factor()
+end
+
+function silent_weapon_hear_range(obj)
+	local val = ui_options.get("gameplay/silent_kills/sk_gun_hear_dist")
+	pr('gun hear range: %s', val)
+	val = tonumber(val) or 10
+	return val - val * 0.5 * level.rain_factor()
+end
+
+function on_game_start()
+	RegisterScriptCallback("npc_on_before_hit",npc_on_before_hit)
+	RegisterScriptCallback("npc_on_update",npc_on_update)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+end
+
+
+function tss()
+	return game.get_game_time():diffSec(level.get_start_time())
+end
+
+function anybody_see(obj)
+	for i=1, #db.OnlineStalkers do
+		local npc = level.object_by_id(db.OnlineStalkers[i])
+		if (npc and IsStalker(npc,npc:clsid()) and npc:alive()) then
+			if (npc:see(obj or db.actor)) then
+				pr('%s can see %s', npc:name(), obj and obj:name() or 'actor')
+				return npc
+			end
+		end
+	end
+	return false
+end
+
+function closest_npc_dist(obj, victim)
+	local testp = obj and obj:position() or db.actor:position()
+	local closest = 99999999999
+	for i=1, #db.OnlineStalkers do
+		local npc = not (db.OnlineStalkers[i] == victim:id() or db.OnlineStalkers[i] == obj:id()) and level.object_by_id(db.OnlineStalkers[i])
+		if npc and IsStalker(npc) and npc:alive() then
+			local dist = npc:position():distance_to(testp)
+			closest = closest > dist and dist or closest
+		end
+	end
+	return closest
+end
+
+
+function save_state(md)
+	md.stealth_kills = M
+end
+function load_state(md) 
+	M = md.stealth_kills or {
+		victims = {
+			-- id = death time
+		}
+	}
+end
+
+function are_enemies(a,b)
+	return game_relations.is_factions_enemies(a:character_community(), b:character_community())
+end
+
+function npc_on_update(npc)
+	if not feature_enabled() then return end
+	if not npc then return end
+	if not npc:alive() then return end
+	
+	if npc:see(db.actor) then
+		local now = tss()
+		for id,ktime in pairs(M.victims) do
+			local ded = level.object_by_id(id)
+			if 
+				ded
+				and not are_enemies(npc, ded)
+				and now < ktime
+				and npc:see(ded)
+				and db.actor:position():distance_to(ded:position()) < get_suspect_dist()
+			then
+				pr('%s is triggered by seeing the corpse of %s!', npc and npc:name(), ded and ded:name())
+				
+				local h = hit()
+				h.type = hit.fire_wound
+				h.power = 0.0
+				h.impulse = 0.0
+				h.direction = VEC_Y
+				h.draftsman = db.actor
+				npc:hit(h)
+				M.victims[id] = nil
+			elseif not ded then
+				pr('%s no longer online', ded and ded:name())
+				M.victims[id] = nil
+			elseif now > ktime then
+				pr('%s forgot the death of %s', npc and npc:name(), ded and ded:name())
+				M.victims[id] = nil
+			end
+		end
+	end
+end
+
+local _section_cache = {}
+function valid_backstab_weapon(obj)
+	if not obj then return false end
+	if all_melee_ok() then return true end
+	if not _section_cache[obj:section()] then
+		_section_cache[obj:section()] = ini_sys:r_bool_ex(obj:section(),"can_stealth_stab", false)
+	end
+	return _section_cache[obj:section()]
+end
+
+function valid_silent_weapon(obj)
+	return obj and obj:weapon_is_silencer()
+end
+
+local dtype = {
+	[hit.light_burn]    = "light_burn",
+	[hit.burn]          = "burn",
+	[hit.strike]        = "strike",
+	[hit.shock]         = "shock",
+	[hit.wound]         = "wound",
+	[hit.radiation]     = "radiation",
+	[hit.telepatic]     = "telepatic",
+	[hit.chemical_burn] = "chemical_burn",
+	[hit.explosion]     = "explosion",
+	[hit.fire_wound]    = "fire_wound",
+}
+
+
+function npc_on_before_hit(npc,shit,bone_id,flags)
+	if not feature_enabled() then return end
+	if not (melee_enabled() or gun_enabled()) then return end
+	
+	_ = INB4_DAMAGE and pr(
+		'%s about to be hit by %s at %s at distance %s damage type %s', 
+		npc and npc:name(), 
+		shit and shit.draftsman and shit.draftsman:name(), 
+		bone_id, 
+		db.actor:position():distance_to(npc:position()),
+		dtype[shit.type]
+	)
+	
+	-- skip if it wasnt a hit by the player (skips also fake lethal hits because draftsman is weapon)
+	if not (shit.draftsman and shit.draftsman:id() == 0) then return end
+	
+	-- skip if player has no weapon out (it wasn't damage dealt directly eg. grenade)
+	local weapon = db.actor:active_item()
+	if not weapon then 
+		pr("no active weapon")
+		return 
+	end
+	
+	-- not effective vs npc fighting with player
+	local in_combat	= npc:best_enemy() and npc:best_enemy():id() == 0
+	if in_combat then 
+		pr("victim in combat with player")
+		return 
+	end
+	
+	-- skip if anybody seen the victim or the player when it happened
+	
+	local actor_seen	= anybody_see(db.actor) 
+	if actor_seen then  
+		pr('player seen')
+		return
+	end
+	
+	local victim_seen	= anybody_see(npc)		
+	if victim_seen then  
+		pr('victim seen')
+		return
+	end
+	
+	-- find distance of closest non victim npc
+	local closest_npc_to_player = closest_npc_dist(db.actor,npc)
+	pr('closest to player: %s', closest_npc_to_player)
+	
+	local closest_npc_to_victim = closest_npc_dist(npc,db.actor)
+	pr('closest to victim: %s', closest_npc_to_victim)
+	
+	if 
+		melee_enabled()
+		and valid_backstab_weapon(weapon)  								and not printf('stab weapon ok')
+		and shit.type == hit.wound        							and not printf('stab damage type ok')
+		and closest_npc_to_player > backstab_hear_range()           and not printf('stab distance others ok')
+		and closest_npc_to_victim > backstab_hear_range()           and not printf('stab distance others ok')
+	then
+		local h = hit(shit)
+		h.draftsman = weapon
+		h.power = 100
+		npc:hit(h)
+		M.victims[npc:id()] = tss() + get_fresh_time()
+
+		pr('%s stealth stabbed', npc:name())
+		
+		flags.ret_value = false
+		return
+	end
+	
+	-- skip if it wasnt a hit to the head
+	if headshot_only() then
+		if not (bone_id == 15) then 
+			pr("it wasn't a headshot")
+			return 
+		end
+	end
+	
+	if 
+		gun_enabled()
+		and shit.type == hit.fire_wound 								and not printf('shot damage type ok')
+		and valid_silent_weapon(weapon)									and not printf('shot weapon ok')
+		and closest_npc_to_player > silent_weapon_hear_range(weapon)	and not printf('shot distance others ok')
+		and closest_npc_to_victim > silent_weapon_hear_range(weapon)	and not printf('shot distance others ok')
+	then
+		local h = hit(shit)
+		h.draftsman = weapon
+		h.power = 100
+		npc:hit(h)
+		M.victims[npc:id()] = tss() + get_fresh_time()
+		
+		pr('%s stealth shot', npc:name())
+		
+		flags.ret_value = false
+	end
+end

@@ -1,0 +1,920 @@
+
+<specific_character id="sim_default_freedom_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_nov</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_0_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\dark_free</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_0_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_0.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_rookie</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_freedom_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mas2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual> <!-- chnaged from mas3 cause errors -->
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_1_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\dark_free</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_balloon_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_backpack_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_backpack_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_backpack_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_backpack_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_1_default_31" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_1.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_freedom_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_free_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_0g</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_free0a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom2b_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual> <!-- chnaged from mas3 cause errors -->
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2a_mas4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_bala</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_mas4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_npc_u_stalker_sv_rukzak_3_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\dark_free</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_backpack_helm_battle</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_backpack_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_backpack_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_backpack_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_freedom_2_old</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_balloon_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_2_balloon_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_2_balloon_on_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_2_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_2_balloon_on_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_6</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_7</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_2_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_2.xml"
+    <icon>ui_inGame2_Freedom_1</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_13</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_freedom_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_5</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_5_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom3a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_free_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_5_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom5b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_freedom_0g</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_free0a</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\dark_free</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_3_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_3_helm_battle_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_3_helm_tactic</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_11</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_12</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_3_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_semi_pro</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_3_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_3.xml"
+    <icon>ui_inGame2_neutral_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral3b</visual>
+</specific_character>
+	
+
+
+<specific_character id="sim_default_freedom_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_free_0</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_4</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_4_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_4_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_5</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_freedom_0g</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_free0a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_5_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_5_alt</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom5b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_freedom_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_3</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom3a</visual>
+</specific_character>
+
+<specific_character id="sim_default_freedom_4_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_batlsold</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_4_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_freedom_proto</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_4_proto</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_4_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_stalker_freedom_exoseva</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_exoseva</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_4_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\dark_free</visual>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_4_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_Freedom_4</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_10</visual>
+</specific_character>
+ 
+<specific_character id="sim_default_freedom_4_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_nosorog</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom4nosorog</visual>
+</specific_character>
+ 
+<specific_character id="sim_default_freedom_4_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_4.xml"
+    <icon>ui_inGame2_neutral_4</icon>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4b</visual>
+</specific_character>
+ 
+
+	<!-- Special -->
+<specific_character id="sim_default_freedom_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <class>sim_default_freedom_trader</class>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_old</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_1</icon>
+    <class>sim_default_freedom_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <visual>actors\stalker_freedom\stalker_freedom_1</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <class>sim_default_freedom_medic</class>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_old</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_freedom_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_freedom_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <class>sim_default_freedom_barman</class>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <visual>actors\stalker_freedom\stalker_freedom2b_old</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+	
+<specific_character id="sim_default_freedom_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_freedom_dead</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\freedom_1\</snd_config>
+    <rank>6944</rank>
+    <reputation>56</reputation>
+    <money min="1000" max="2000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom2a_mask</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_freedom_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_freedom_dead</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\freedom_1\</snd_config><!--2-->
+    <rank>8050</rank>
+    <reputation>376</reputation>
+    <money min="1500" max="2500" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom2b_mask</visual> <!-- chnaged from mas3 cause errors -->
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+ 
+<specific_character id="sim_default_freedom_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_freedom_ranger</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_freedom_dead</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <rank>18914</rank>
+    <reputation>-153</reputation>
+    <money min="5000" max="10000" infinitive="0"/>
+    <visual>actors\stalker_freedom\dark_free</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	
+<specific_character id="sim_default_freedom_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_freedom_dead</class>
+    <community>freedom</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\freedom_3\</snd_config>
+    <rank>18373</rank>
+    <reputation>269</reputation>
+    <money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_freedom\stalker_freedom_3_helm_battle</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+ 

@@ -1,0 +1,90 @@
+[agr_u_bandits_boss_squad]:online_offline_group
+faction = bandit
+;relationship = enemy
+;sympathy = 0
+npc = agr_u_bandit_boss
+target_smart = {+agr_u_bandit_boss_task_completed} val_smart_terrain_9_4, {+agr_u_bandit_boss_task_completed_alt} val_smart_terrain_9_4, agr_u_bandits
+story_id = agr_u_bandits_boss_squad
+on_death = %+agr_u_bandits_boss_dead%
+
+[agr_u_bandits_squad]:online_offline_group
+faction = bandit
+;relationship = enemy
+;sympathy = 0
+npc = sim_default_bandit_2, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_3, sim_default_bandit_3
+target_smart = agr_u_bandits
+story_id = agr_u_bandits_squad
+on_death = %+agr_u_bandits_dead%
+
+
+[agr_u_bloodsucker_1_squad]:online_offline_group
+faction = monster
+npc_random = bloodsucker_red_strong, psysucker_2_strong, zombie_blind
+npc_in_squad = 1
+target_smart = agr_u_bloodsucker
+spawn_point = agr_u_bloodsucker_home
+story_id = agr_u_bloodsucker_1_squad
+
+[agr_u_bloodsucker_2_squad]:online_offline_group
+faction = monster
+npc_random = bloodsucker_black_strong, psysucker_2_strong, zombie_blind, m_poltergeist_normal_tele, burer_normal
+npc_in_squad = 2
+target_smart = agr_u_bloodsucker_2
+spawn_point = agr_u_bloodsucker_2_walk
+story_id = agr_u_bloodsucker_2_squad
+
+[agr_u_bloodsucker_3_squad]:online_offline_group
+faction = monster
+npc_random = bloodsucker_red_strong, bloodsucker_black_strong, psysucker_3_strong
+npc_in_squad = 1
+target_smart = agr_u_bloodsucker
+spawn_point = agr_u_bloodsucker_home
+story_id = agr_u_bloodsucker_3_squad
+
+[agr_u_soldiers_controller_squad]:online_offline_group		;;-- modified
+faction = monster
+npc_random = m_controller_normal2, m_controller_normal1111, m_controller_normal777, m_controller_normal888, zombie_blind, psysucker_3_strong, m_karlik_e 
+npc_in_squad = 1
+target_smart = agr_u_soldiers
+spawn_point = agr_u_soldiers_home1
+story_id = agr_u_soldiers_controller_squad
+
+[agr_u_soldiers_squad]:online_offline_group
+faction = army
+npc = sim_default_military_2, sim_default_military_2, sim_default_military_3, sim_default_military_3, sim_default_military_3, sim_default_military_4, sim_default_military_0, sim_default_military_1
+target_smart = agr_u_soldiers
+on_death = %+agr_u_soldiers_dead%
+story_id = agr_u_soldiers_squad
+
+[agru_controller_1_squad]:online_offline_group
+faction = monster
+npc = agru_controller_1
+target_smart = agr_u_monsters
+spawn_point = agr_u_monsters_walk
+story_id = agru_controller_1_squad
+
+[agru_poltergeist_squad]:online_offline_group
+faction = monster
+npc = agru_poltergeist_1, agru_poltergeist_2, agru_poltergeist_3, agru_poltergeist_4
+spawn_point = agr_u_monsters_spawn_point
+target_smart = agr_u_monsters
+story_id = agru_poltergeist_squad
+
+
+;!!!полтеры заменены на бюреров, чекать spawn_sections_agroprom_underground.ltx!!!
+[agru_end_poltergeist_squad]:online_offline_group
+faction = monster
+npc = agru_end_poltergeist_1, agru_end_poltergeist_2, agru_end_poltergeist_3, agru_end_poltergeist_4
+spawn_point = agru_end_poltergeist_squad_spawn_point
+target_smart = agr_u_soldiers
+on_death = %+agru_end_poltergeist_squad_dead%
+story_id = agru_end_poltergeist_squad
+
+;====новые===================
+
+[burer_agr_u_bandits]:online_offline_group
+faction = monster
+npc = burer_normal, zombie_normal, zombie_weak, zombie_weak, burer_normal
+target_smart = agr_u_bandits
+always_arrived = true
+

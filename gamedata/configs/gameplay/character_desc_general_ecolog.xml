@@ -1,0 +1,695 @@
+
+<specific_character id="sim_default_ecolog_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_0.xml"
+    <icon>ui_inGame2_ecolog_guard_blue</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_0.xml"
+    <icon>ui_inGame2_ecolog_guard_blue</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_0.xml"
+    <icon>ui_inGame2_ecolog_guard_blue</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_0.xml"
+    <icon>ui_inGame2_ecolog_guard_blue</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_0.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral_6</visual>
+</specific_character>
+
+
+	
+<specific_character id="sim_default_ecolog_01_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_orange</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_01_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_white</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_white</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_01_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_blue</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_blue</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_01_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_green</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_01_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_yellow</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_yellow</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_01_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_01.xml"
+    <icon>ui_inGame2_ecolog_red</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_red</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+	
+	
+<specific_character id="sim_default_ecolog_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_orange</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_white</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_white</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_blue</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_blue</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_green</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_yellow</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_yellow</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_1.xml"
+    <icon>ui_inGame2_ecolog_red</icon>
+    <visual>actors\stalker_ecologist\stalker_ecolog_red</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+</specific_character>
+
+	
+	
+<specific_character id="sim_default_ecolog_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_old</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_tactical</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_old</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_tactical</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2mask1</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_old</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_seva</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_31" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_32" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_33" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_34" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_35" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_36" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2mask1</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_37" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_2_default_38" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_2.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_mask</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_ecolog_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc0</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_mercsun_old</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc1</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_0</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard1_tactical</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_2</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard2_tactical</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_2_gp5</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_merc</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_3.xml"
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard3_seva</visual>
+</specific_character>
+
+ 
+<specific_character id="sim_default_ecolog_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc0</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_mercsun_old</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc1</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_freedom_0</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc0</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_mercsun_old</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc1</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\killer_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_merc2</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_stalker_ecolog_proto</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_proto</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_exolight</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_ecolog_5_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_5.xml"
+    <icon>ui_inGame2_stalker_ecolog_proto</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecologist_proto</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_5_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_5.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_exolight</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_5_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_5.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_exo</visual>
+</specific_character>
+
+<specific_character id="sim_default_ecolog_5_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_5.xml"
+    <icon>ui_inGame2_stalker_dolg_exoseva</icon>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_exoseva</visual>
+</specific_character>
+
+	
+	<!-- Special -->
+<specific_character id="sim_default_ecolog_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <class>sim_default_ecolog_trader</class>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_ecolog_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <class>sim_default_ecolog_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_ecolog_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <class>sim_default_ecolog_medic</class>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_ecolog_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_ecolog_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <class>sim_default_ecolog_barman</class>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+	
+<specific_character id="sim_default_ecolog_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_ecolog_orange</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Member of mobile science camp. Detailed information is missing.</bio>
+    <class>sim_default_ecolog_dead</class>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <rank>5000</rank>
+    <reputation>520</reputation>
+    <visual>actors\stalker_ecologist\stalker_ecolog</visual>
+    <snd_config>characters_voice\human\ecolog_3\</snd_config>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_ecolog_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_neutral_2_old</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_ecolog_dead</class>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <rank>7000</rank>
+    <money min="500" max="5000" infinitive="0"/>
+    <reputation>200</reputation>
+    <visual>actors\stalker_neutral\stalker_neutral_2_old</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_ecolog_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_ecolog_dead</class>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <rank>12000</rank>
+    <money min="1000" max="8000" infinitive="0"/>
+    <reputation>150</reputation>
+    <visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_ecolog_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_ecolog_green</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_ecolog_dead</class>
+    <community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <rank>12000</rank>
+    <money min="1000" max="8000" infinitive="0"/>
+    <reputation>420</reputation>
+    <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>

@@ -1,0 +1,73 @@
+<w>
+	<file name="ui\ui_actor_radio">
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_interface_off" x="0" y="0" width="512" height="120" />
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_interface_ch1" x="0" y="120" width="512" height="120" />
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_interface_ch2" x="0" y="240" width="512" height="120" />
+		<texture id="ui_inGame2_pda_Filtr_plyer_interface_off" x="0" y="516" width="512" height="76" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_1_e" x="0" y="360" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_1_h" x="251" y="360" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_1_t" x="251" y="360" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_1_d" x="0" y="360" width="251" height="78" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_2_e" x="0" y="438" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_2_h" x="251" y="438" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_2_t" x="251" y="438" width="251" height="78" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_channel_2_d" x="0" y="438" width="251" height="78" />
+
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_down_e" x="0" y="592" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_down_h" x="0" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_down_t" x="0" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_down_d" x="0" y="592" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_up_e" x="60" y="592" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_up_h" x="60" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_up_t" x="60" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_v_up_d" x="60" y="592" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop_e" x="120" y="592" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop_h" x="120" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop_t" x="120" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop_d" x="120" y="592" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start_e" x="180" y="592" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start_h" x="180" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start_t" x="180" y="622" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start_d" x="180" y="592" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_playlist_e" x="360" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_playlist_h" x="360" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_playlist_t" x="360" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_playlist_d" x="360" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_loop_e" x="0" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_loop_h" x="0" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_loop_t" x="0" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_loop_d" x="0" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_shuffle_e" x="60" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_shuffle_h" x="60" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_shuffle_t" x="60" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_shuffle_d" x="60" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_prev_e" x="120" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_prev_h" x="120" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_prev_t" x="120" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_prev_d" x="120" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop2_e" x="240" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop2_h" x="240" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop2_t" x="240" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_stop2_d" x="240" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start2_e" x="300" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start2_h" x="300" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start2_t" x="300" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_start2_d" x="300" y="652" width="60" height="30" />
+		
+		<texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_next_e" x="180" y="652" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_next_h" x="180" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_next_t" x="180" y="682" width="60" height="30" />
+	    <texture id="ui_inGame2_pda_Filtr_radio_plyr_btn_next_d" x="180" y="652" width="60" height="30" />
+	</file>
+</w>

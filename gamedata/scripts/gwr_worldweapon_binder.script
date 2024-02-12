@@ -1,0 +1,30 @@
+function init_m98(obj)
+   local new_binder = gwr_wpn_m98_binder(obj)
+   obj:bind_object(new_binder)
+end
+class "gwr_wpn_m98_binder" (object_binder)
+function gwr_wpn_m98_binder:__init(obj) super(obj)
+	self.ammo = self.object:get_ammo_in_magazine()
+	self.delta = 400
+end
+
+function gwr_wpn_m98_binder:update()
+	my_parent = self.object:parent()
+	if (my_parent~=nil) and (my_parent:active_item()~=nil) then
+		if my_parent:active_item():id() == self.object:id() then
+			self.object:play_cycle("idle")
+		end
+		
+		local a = self.object:get_ammo_in_magazine()
+		if a<self.ammo then
+			if my_parent:id()==AC_ID then
+				self.efftime=device():time_global()
+			end
+		end
+		
+		self.ammo = a		
+	else
+		self.object:play_cycle("idle_scopeclosed")	
+	end
+end
+

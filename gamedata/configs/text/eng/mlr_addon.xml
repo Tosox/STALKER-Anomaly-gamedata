@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="look_for_cs_history_part_4_2_0">
+		<text>Hello, Gatekeeper.</text>
+	</string>
+	<string id="look_for_cs_history_part_4_2_1">
+		<text>Hey there. Going to Limansk, are you? If it weren't for Leshiy... Anyway, welcome. Gonna need the money from you... And be careful not to get caught by our patrols - they aren't part of the agreement.</text>
+	</string>
+
+	<string id="look_for_cs_history_part_4_1_0">
+		<text>Here's the money.</text>
+	</string>
+	<string id="look_for_cs_history_part_4_1_1">
+		<text>Very well. I'll give the heads-up to the watch at the bridge. Once you get there, the one to speak to is "Gatekeeper". Just act cool, and please try to find something that would shed some light on the disappearance of Scar.</text>
+	</string>
+
+	<string id="look_for_cs_history_part_3_2_0">
+		<text>Leshiy, right?</text>
+	</string>
+	<string id="look_for_cs_history_part_3_2_1">
+		<text>Yep. Need a guide, or did you want anything else?</text>
+	</string>
+	<string id="look_for_cs_history_part_3_2_2">
+		<text>Well, I know something about your past. I could use your help, merc.</text>
+	</string>
+	<string id="look_for_cs_history_part_3_2_3">
+		<text>Uh... What kind of help?</text>
+	</string>
+	<string id="look_for_cs_history_part_3_2_4">
+		<text>Could you talk to the mercs guarding the bridge in the Red Forest? I need to get to Limansk. I understand that this might be inconvenient, but I can promise you that I'll try to find any tracks left by the mercenary Scar.</text>
+	</string>
+	<string id="look_for_cs_history_part_3_2_5">
+		<text>Hm. You gotta understand that I haven't been part of the Syndicate for a long time... Not even sure who runs the group at the bridge. I've got a few connections, but I'm gonna need some time for this... and some money. One hundred and fifty thousand, no less.</text>
+	</string>
+
+	<string id="look_for_cs_history_part_1_1_0">
+		<text>I've heard something about the history of your group. I would like to investigate.</text>
+	</string>
+	<string id="look_for_cs_history_part_1_1_1">
+		<text>You looking for something, or what? Hah, listen. You have virtually no chance of surviving in those areas - but even if you do, finding information about our stay there ain't exactly gonna be a walk in the park.</text>
+	</string>
+	<string id="look_for_cs_history_part_1_1_2">
+		<text>Aren't you interested? Or is there something you want in return?</text>
+	</string>
+	<string id="look_for_cs_history_part_1_1_3">
+		<text>Hmm... You can help us take out a pack of bloodsuckers in the swamp, and maybe then I'll share what I've got with you.</text>
+	</string>
+	<string id="look_for_cs_history_part_1_1_4">
+		<text>Fine, give me the coordinates.</text>
+	</string>
+	<string id="look_for_cs_history_part_1_1_5">
+		<text>There you go - have fun.</text>
+	</string>
+
+	<string id="look_for_cs_history_part_1_2_0">
+		<text>It's done. What info do you have?</text>
+	</string>
+	<string id="look_for_cs_history_part_1_2_1">
+		<text>So I've heard - well done. You're a good fighter and I trust you, so I'll give you what you need. The boys have probably told you about the assault at that damned bridge in Limansk. In case you don't know... Back then, in the city - as well as the surrounding area in the Red Forest - mercenaries were in charge of everything. Of course, they aren't going to just lower the bridge for you, but there is a live participant in those events - they call him Forester. It was him, along with Scar, who somehow agreed that a group of "standards" would lower the bridge while our fighters protected them from the other shore. Here, I'll give you info on a route between the Army Warehouses and the Red Forest - use it to find Forester and talk to him. And here's a reward for the bloodsucker cleanup.</text>
+	</string>
+	<string id="look_for_cs_history_part_1_2_2">
+		<text>Thank you.</text>
+	</string>
+
+	<string id="mlr_inventory_box_unuse">
+		<text>Locked stash</text>
+	</string>
+
+	<string id="totaliz_helper_mlr_text">
+		<text>For a different perspective on the area, press the tilde key or \ to open the console, and enter: demo_record 1. The camera is controlled using the W, A, S and D keys along with CTRL. To exit, press the ESC key.</text>
+	</string>
+	
+	<string id="st_pda_mlr_descr">
+		<text>A PDA containing possible information on routes between different areas. Its message history is inaccessible due to the presence of a password lock.</text>
+	</string>
+	<string id="st_new_path_mlr">
+		<text>A route between two areas has become accessible.</text>
+	</string>
+
+	<string id="killer_bridge_trader_mlr_task_1_name">
+		<text>Find %s</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_1_text">
+		<text>The mercenaries have asked me to get hold of %s.</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_1_about">
+		<text>Our soldiers need some equipment, can you get it for us?</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_1_fetch_about">
+		<text>Our soldiers need %s, will you retrieve it for us?</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_1_fetch_finish">
+		<text>Thank you, here's your reward.</text>
+	</string>
+
+	<string id="killer_bridge_trader_mlr_task_2_name">
+		<text>Find a %s artefact</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_2_text">
+		<text>A mercenary needs a %s.</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_2_about">
+		<text>Our soldiers could use a few artefacts, it'll be tough getting through Limansk without them. Could you help us find one?</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_2_fetch_about">
+		<text>Our soldiers could use a few artefacts, it'll be tough getting through Limansk without them. Could you help us find a %s?</text>
+	</string>
+	<string id="killer_bridge_trader_mlr_task_2_fetch_finish">
+		<text>Many thanks. Here, have this.</text>
+	</string>
+
+	<string id="task_look_for_cs_history_part_1_1">
+		<text>Find and kill the bloodsuckers</text>
+	</string>
+	<string id="task_look_for_cs_history_part_1_2">
+		<text>Return to Cold</text>
+	</string>
+	<string id="task_look_for_cs_history_part_1_3">
+		<text>So, he's afraid to send me "this way", but it's okay if I'm going to fight against swamp bloodsuckers? Cheap salesmen even in Clear Sky, I see..</text>
+	</string>
+
+	<string id="task_look_for_cs_history_part_2_1">
+		<text>Following the tracks of Clear Sky: talk with Forester</text>
+	</string>
+	<string id="task_look_for_cs_history_part_descr_2_1">
+		<text>Cold told me that the immediate participant of those events is Forester and gave me his coordinates. I have to talk to him and get to Limansk.</text>
+	</string>
+
+	<string id="task_look_for_cs_history_part_3_1">
+		<text>Following the tracks of Clear Sky: find Leshiy</text>
+	</string>
+	<string id="task_look_for_cs_history_part_3_2">
+		<text>Following the tracks of Clear Sky: talk to Leshiy</text>
+	</string>
+	<string id="task_look_for_cs_history_part_descr_3_1">
+		<text>Well, back to the military. It turns out that the key figure of that battle for the bridge was under my nose all this time.</text>
+	</string>
+	<string id="task_look_for_cs_history_part_descr_3_2">
+		<text>I only have to reach an agreement with Leshiy himself, I hope this will end my quest.</text>
+	</string>
+
+	<string id="task_look_for_cs_history_part_4_1">
+		<text>Following the tracks of Clear Sky: collect 150000 RU and bring it to Leshiy</text>
+	</string>
+	<string id="task_look_for_cs_history_part_4_3">
+		<text>Following the tracks of Clear Sky: go to a meeting with Gatekeeper</text>
+	</string>
+	<string id="task_look_for_cs_history_part_4_4">
+		<text>Following the tracks of Clear Sky: speak with Gatekeeper</text>
+	</string>
+
+	<string id="task_look_for_cs_history_part_descr_4_1">
+		<text>Finally, soon I'll be on the other side of the bridge and those running errands will end.</text>
+	</string>
+
+	<string id="st_bridge_is_open_message">
+		<text>Gatekeeper:\nI see someone. Hey, stalker! Come over here, got a few words for you.</text>
+	</string>
+
+</string_table>

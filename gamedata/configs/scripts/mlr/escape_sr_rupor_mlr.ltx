@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@wait
+
+[ph_idle@wait]
+on_info = %=play_sound(escape_sr_rupor_mlr_sound)%
+on_info2 = {=check_smart_alarm_status(esc_smart_terrain_3_16)} ph_idle@alarm
+
+[ph_idle@alarm]
+on_info = %=play_sound(escape_sr_rupor_mlr_alarm)%
+on_info2 = {!check_smart_alarm_status(esc_smart_terrain_3_16)} ph_idle@wait

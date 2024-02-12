@@ -1,0 +1,2412 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+<!-- Voronin -->
+	<dialog id="voronin_mortal_sin">
+	<precondition>dialogs.actor_true_dolg</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>voronin_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_dolg</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>voronin_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>voronin_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>voronin_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>voronin_mortal_sin_3</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_dolg</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_dolg</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="voronin_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_dolg</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>voronin_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>voronin_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>voronin_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>voronin_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>voronin_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>voronin_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>voronin_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>voronin_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="voronin_mortal_sin_report">
+	<precondition>dialogs.actor_true_dolg</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>voronin_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>voronin_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>voronin_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>voronin_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>voronin_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_dolg</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="voronin_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_dolg</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>voronin_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>voronin_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>voronin_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>voronin_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>voronin_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>voronin_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="voronin_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_dolg</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>voronin_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>voronin_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>voronin_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>voronin_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>voronin_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>voronin_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>voronin_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+
+<!-- Dushman -->
+	<dialog id="dushman_mortal_sin">
+	<precondition>dialogs.actor_true_killer</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>dushman_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_killer</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>dushman_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>dushman_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>dushman_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>dushman_mortal_sin_3</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_killer</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_killer</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="dushman_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_killer</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dushman_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>dushman_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>dushman_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>dushman_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>dushman_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>dushman_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>dushman_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>dushman_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="dushman_mortal_sin_report">
+	<precondition>dialogs.actor_true_killer</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dushman_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>dushman_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>dushman_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>dushman_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>dushman_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_killer</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="dushman_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_killer</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dushman_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>dushman_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>dushman_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>dushman_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>dushman_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>dushman_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="dushman_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_killer</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>dushman_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>dushman_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>dushman_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>dushman_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>dushman_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>dushman_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>dushman_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Sidorovich -->
+	<dialog id="sidorovich_mortal_sin">
+	<precondition>dialogs.actor_true_stalker</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>sidorovich_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_stalker</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sidorovich_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>sidorovich_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>sidorovich_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>sidorovich_mortal_sin_3</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_stalker</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_stalker</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sidorovich_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_stalker</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sidorovich_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>sidorovich_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>sidorovich_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidorovich_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>sidorovich_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidorovich_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>sidorovich_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>sidorovich_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sidorovich_mortal_sin_report">
+	<precondition>dialogs.actor_true_stalker</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sidorovich_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sidorovich_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidorovich_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidorovich_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>sidorovich_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_stalker</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sidorovich_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_stalker</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sidorovich_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sidorovich_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidorovich_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sidorovich_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>sidorovich_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>sidorovich_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sidorovich_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_stalker</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sidorovich_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sidorovich_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sidorovich_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>sidorovich_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>sidorovich_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>sidorovich_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sidorovich_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Cold -->
+	<dialog id="cold_mortal_sin">
+	<precondition>dialogs.actor_true_csky</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>cold_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_csky</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>cold_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>cold_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>cold_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>cold_mortal_sin_3</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_csky</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_csky</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="cold_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_csky</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>cold_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>cold_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>cold_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>cold_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>cold_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>cold_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>cold_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>cold_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="cold_mortal_sin_report">
+	<precondition>dialogs.actor_true_csky</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>cold_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>cold_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>cold_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>cold_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>cold_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_csky</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="cold_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_csky</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>cold_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>cold_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>cold_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>cold_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>cold_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>cold_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="cold_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_csky</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>cold_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>cold_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>cold_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>cold_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>cold_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>cold_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>cold_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Lukash -->
+	<dialog id="lukash_mortal_sin">
+	<precondition>dialogs.actor_true_freedom</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>lukash_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_freedom</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lukash_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>lukash_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>lukash_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>lukash_mortal_sin_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>lukash_mortal_sin_4</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_freedom</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_freedom</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lukash_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_freedom</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lukash_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>lukash_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>lukash_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>lukash_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>lukash_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>lukash_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>lukash_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>lukash_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lukash_mortal_sin_report">
+	<precondition>dialogs.actor_true_freedom</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lukash_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lukash_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>lukash_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>lukash_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>lukash_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_freedom</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lukash_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_freedom</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lukash_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lukash_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>lukash_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>lukash_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>lukash_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>lukash_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lukash_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_freedom</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lukash_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lukash_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>lukash_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>lukash_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>lukash_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>lukash_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>lukash_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Sakharov -->
+	<dialog id="sakharov_mortal_sin">
+	<precondition>dialogs.actor_true_ecolog</precondition>
+	<!--has_info>mortal_sin_info_about_done</has_info-->
+	<has_info>sakharov_living_legend_finish</has_info>
+	<dont_has_info>mortal_sin</dont_has_info>
+	<dont_has_info>mortal_sin_ecolog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>mortal_sin_start_text_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sakharov_mortal_sin_1</text>
+				<next>2</next>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+                <text>sakharov_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+                <text>sakharov_mortal_sin_21</text>
+			</phrase>
+			<phrase id="3">
+                <text>sakharov_mortal_sin_3</text>
+				<give_info>mortal_sin</give_info>
+				<give_info>mortal_sin_ecolog</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_start_ecolog</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sakharov_mortal_sin_envoy">
+	<precondition>dialogs.actor_true_ecolog</precondition>
+	<has_info>mortal_sin_envoy_complete</has_info>
+	<dont_has_info>mortal_sin_red_forest</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sakharov_mortal_sin_envoy_0</text>
+				<next>1</next>
+				<next>11</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_envoy</has_info>
+			<dont_has_info>greh_envoy_dead</dont_has_info>
+				<text>sakharov_mortal_sin_envoy_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_envoy_dead</has_info>
+                <text>sakharov_mortal_sin_envoy_11</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="2">
+				<text>sakharov_mortal_sin_envoy_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+				<text>sakharov_mortal_sin_envoy_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+				<text>sakharov_mortal_sin_envoy_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+				<text>sakharov_mortal_sin_envoy_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>sakharov_mortal_sin_envoy_4</text>
+				<give_info>mortal_sin_red_forest</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="sakharov_mortal_sin_report">
+	<precondition>dialogs.actor_true_ecolog</precondition>
+	<has_info>stalker_stitch_mortal_sin_decoder</has_info>
+	<dont_has_info>mortal_sin_report</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sakharov_mortal_sin_report_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sakharov_mortal_sin_report_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sakharov_mortal_sin_report_2</text>
+				<action>xr_effects.lttz_ms_take_attackers_pda</action>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sakharov_mortal_sin_report_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>sakharov_mortal_sin_report_4</text>
+				<give_info>mortal_sin_report</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_ambush_ecolog</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sakharov_mortal_sin_ambush">
+	<precondition>dialogs.actor_true_ecolog</precondition>
+	<has_info>greh_ambush_squad_dead</has_info>
+	<dont_has_info>mortal_sin_ambush</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sakharov_mortal_sin_ambush_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sakharov_mortal_sin_ambush_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sakharov_mortal_sin_ambush_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>sakharov_mortal_sin_ambush_3</text>
+				<next>4</next>
+				<next>41</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="4">
+                <text>sakharov_mortal_sin_ambush_4</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_miracle_machine</action>
+			</phrase>
+			<phrase id="41">
+                <text>sakharov_mortal_sin_ambush_41</text>
+				<give_info>mortal_sin_ambush</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_dark_crusade</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_protect_brain_scorcher</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="sakharov_mortal_sin_zone_hero">
+	<precondition>dialogs.actor_true_ecolog</precondition>
+	<has_info>mortal_sin_choice</has_info>
+	<dont_has_info>mortal_sin_zone_hero</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>sakharov_mortal_sin_zone_hero_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>sakharov_mortal_sin_zone_hero_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>sakharov_mortal_sin_zone_hero_2</text>
+				<next>3</next>
+				<next>31</next>
+			</phrase>
+			<phrase id="3">
+			<has_info>greh_prisoner_dialog_success</has_info>
+                <text>sakharov_mortal_sin_zone_hero_3</text>
+				<next>4</next>
+				<give_info>lazarus_join</give_info>
+			</phrase>
+			<phrase id="31">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+                <text>sakharov_mortal_sin_zone_hero_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>sakharov_mortal_sin_zone_hero_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>sakharov_mortal_sin_zone_hero_5</text>
+				<give_info>mortal_sin_zone_hero</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Sin Envoy -->
+	<dialog id="greh_envoy_greeting">
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_envoy_greeting_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="greh_envoy_greeting_killer">
+	<precondition>dialogs.actor_true_killer</precondition>
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_envoy_greeting_killer_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="greh_envoy_dialog">
+		<has_info>mortal_sin</has_info>
+		<dont_has_info>mortal_sin_envoy_complete</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_envoy_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>greh_envoy_dialog_1</text>
+				<next>2</next>
+				<next>21</next>
+            </phrase>
+			<phrase id="2">
+                <text>greh_envoy_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="21">
+                <text>greh_envoy_dialog_21</text>
+				<next>31</next>
+            </phrase>
+			<phrase id="3">
+				<text>greh_envoy_dialog_3</text>
+				<next>4</next>
+				<next>41</next>
+				<next>42</next>
+				<next>6</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="31">
+				<text>greh_envoy_dialog_31</text>
+				<next>4</next>
+				<next>41</next>
+				<next>42</next>
+				<next>6</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="4">
+				<dont_has_info>mortal_sin_envoy_identity</dont_has_info>
+                <text>greh_envoy_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>greh_envoy_dialog_5</text>
+				<give_info>mortal_sin_envoy_identity</give_info>
+				<next>41</next>
+				<next>42</next>
+				<next>6</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="41">
+				<dont_has_info>mortal_sin_envoy_faction</dont_has_info>
+                <text>greh_envoy_dialog_41</text>
+				<next>51</next>
+			</phrase>
+			<phrase id="51">
+                <text>greh_envoy_dialog_51</text>
+				<next>511</next>
+			</phrase>
+			<phrase id="511">
+                <text>greh_envoy_dialog_511</text>
+				<next>512</next>
+			</phrase>
+			<phrase id="512">
+                <text>greh_envoy_dialog_512</text>
+				<give_info>mortal_sin_envoy_faction</give_info>
+				<next>4</next>
+				<next>42</next>
+				<next>6</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="42">
+				<dont_has_info>mortal_sin_envoy_goal</dont_has_info>
+                <text>greh_envoy_dialog_42</text>
+				<next>52</next>
+			</phrase>
+			<phrase id="52">
+                <text>greh_envoy_dialog_52</text>
+				<give_info>mortal_sin_envoy_goal</give_info>
+				<next>4</next>
+				<next>41</next>
+				<next>6</next>
+				<next>61</next>
+			</phrase>
+			<phrase id="6">
+				<has_info>mortal_sin_envoy_identity</has_info>
+				<has_info>mortal_sin_envoy_faction</has_info>
+				<has_info>mortal_sin_envoy_goal</has_info>
+                <text>greh_envoy_dialog_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="61">
+				<has_info>mortal_sin_envoy_identity</has_info>
+				<has_info>mortal_sin_envoy_faction</has_info>
+				<has_info>mortal_sin_envoy_goal</has_info>
+                <text>greh_envoy_dialog_61</text>
+				<next>71</next>
+			</phrase>
+			<phrase id="7">
+                <text>greh_envoy_dialog_7</text>
+				<next>8</next>
+				<next>81</next>
+			</phrase>
+			<phrase id="71">
+                <text>greh_envoy_dialog_71</text>
+				<next>8</next>
+				<next>81</next>
+			</phrase>
+			<phrase id="8">
+                <text>greh_envoy_dialog_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="81">
+                <text>greh_envoy_dialog_81</text>
+				<next>91</next>
+			</phrase>
+			<phrase id="9">
+                <text>greh_envoy_dialog_9</text>
+				<give_info>mortal_sin_envoy</give_info>
+				<give_info>mortal_sin_envoy_complete</give_info>
+			</phrase>
+			<phrase id="91">
+                <text>greh_envoy_dialog_91</text>
+				<next>92</next>
+			</phrase>
+			<phrase id="92">
+                <text>greh_envoy_dialog_92</text>
+				<give_info>mortal_sin_envoy_kill</give_info>
+				<give_info>mortal_sin_envoy_complete</give_info>
+				<action>xr_effects.hit_npc_from_actor</action>
+				<action>dialogs.set_enemy</action>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Forester -->
+	<dialog id="red_forester_mortal_sin">
+	<has_info>mortal_sin_red_forest</has_info>
+	<has_info>red_forester_who_are_you</has_info>
+	<dont_has_info>red_forester_mortal_sin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>red_forester_mortal_sin_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>red_forester_mortal_sin_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>red_forester_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+                <text>red_forester_mortal_sin_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>red_forester_mortal_sin_4</text>
+				<next>5</next>
+				</phrase>
+			<phrase id="5">
+                <text>red_forester_mortal_sin_5</text>
+				<next>6</next>
+				</phrase>
+			<phrase id="6">
+                <text>red_forester_mortal_sin_6</text>
+				<next>7</next>
+				</phrase>
+			<phrase id="7">
+                <text>red_forester_mortal_sin_7</text>
+				<next>8</next>
+				</phrase>
+			<phrase id="8">
+                <text>red_forester_mortal_sin_8</text>
+				<next>9</next>
+				</phrase>
+			<phrase id="9">
+                <text>red_forester_mortal_sin_9</text>
+				<give_info>red_forester_mortal_sin</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+
+<!-- Stitch -->
+	<dialog id="stalker_stitch_mortal_sin">
+	<has_info>forest_haunters_done</has_info>
+	<dont_has_info>stalker_stitch_mortal_sin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_stitch_mortal_sin_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_stitch_mortal_sin_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_stitch_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_stitch_mortal_sin_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_stitch_mortal_sin_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>stalker_stitch_mortal_sin_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>stalker_stitch_mortal_sin_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>stalker_stitch_mortal_sin_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>stalker_stitch_mortal_sin_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>stalker_stitch_mortal_sin_9</text>
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+				<text>stalker_stitch_mortal_sin_10</text>
+				<next>11</next>
+			</phrase>
+			<phrase id="11">
+				<text>stalker_stitch_mortal_sin_11</text>
+				<next>12</next>
+			</phrase>
+			<phrase id="12">
+				<text>stalker_stitch_mortal_sin_12</text>
+				<next>13</next>
+			</phrase>
+			<phrase id="13">
+				<text>stalker_stitch_mortal_sin_13</text>
+				<next>14</next>
+			</phrase>
+			<phrase id="14">
+				<text>stalker_stitch_mortal_sin_14</text>
+				<next>15</next>
+			</phrase>
+			<phrase id="15">
+				<text>stalker_stitch_mortal_sin_15</text>
+				<next>16</next>
+			</phrase>
+			<phrase id="16">
+				<text>stalker_stitch_mortal_sin_16</text>
+				<next>17</next>
+			</phrase>
+			<phrase id="17">
+				<text>stalker_stitch_mortal_sin_17</text>
+				<next>18</next>
+			</phrase>
+			<phrase id="18">
+				<text>stalker_stitch_mortal_sin_18</text>
+				<next>19</next>
+			</phrase>
+			<phrase id="19">
+				<text>stalker_stitch_mortal_sin_19</text>
+				<next>20</next>
+			</phrase>
+			<phrase id="20">
+				<text>stalker_stitch_mortal_sin_20</text>
+				<give_info>stalker_stitch_mortal_sin</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_stitch_mortal_sin_decoder">
+	<has_info>has_stitch_decoder</has_info>
+	<dont_has_info>stalker_stitch_mortal_sin_decoder</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_stitch_mortal_sin_decoder_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_stitch_mortal_sin_decoder_1</text>
+				<action>xr_effects.lttz_ms_take_stitch_decoder</action>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_stitch_mortal_sin_decoder_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_stitch_mortal_sin_decoder_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>stalker_stitch_mortal_sin_decoder_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>stalker_stitch_mortal_sin_decoder_5</text>
+				<next>6</next>
+				<next>61</next>
+				<next>62</next>
+				<next>63</next>
+				<next>64</next>
+				<next>65</next>
+			</phrase>
+			<phrase id="6">
+			<has_info>mortal_sin_dolg</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_6</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_dolg</action>
+			</phrase>
+			<phrase id="61">
+			<has_info>mortal_sin_killer</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_61</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_killer</action>
+			</phrase>
+			<phrase id="62">
+			<has_info>mortal_sin_stalker</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_62</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_stalker</action>
+			</phrase>
+			<phrase id="63">
+			<has_info>mortal_sin_csky</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_63</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_csky</action>
+			</phrase>
+			<phrase id="64">
+			<has_info>mortal_sin_freedom</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_64</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_freedom</action>
+			</phrase>
+			<phrase id="65">
+			<has_info>mortal_sin_ecolog</has_info>
+                <text>stalker_stitch_mortal_sin_decoder_65</text>
+				<give_info>stalker_stitch_mortal_sin_decoder</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_report_ecolog</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_stitch_mortal_sin_generators">
+	<precondition>dialogs_lostzone.actor_has_lttz_ms_heart_zone</precondition>
+	<has_info>aes2_greh_squad1_dead</has_info>
+	<has_info>aes2_greh_squad2_dead</has_info>
+	<dont_has_info>stalker_stitch_mortal_sin_generators</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_stitch_mortal_sin_generators_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_stitch_mortal_sin_generators_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_stitch_mortal_sin_generators_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_stitch_mortal_sin_generators_3</text>
+				<next>4</next>
+				<give_info>stalker_stitch_mortal_sin_emission_buildup</give_info>
+			</phrase>
+			<phrase id="4">
+				<text>stalker_stitch_mortal_sin_generators_4</text>
+				<next>5</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="5">
+                <text>stalker_stitch_mortal_sin_generators_5</text>
+				<give_info>stalker_stitch_mortal_sin_generators</give_info>
+				<action>dialogs_lostzone.set_stalker_living_legend_as_companion</action>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_stitch_mortal_sin_choice">
+	<has_info>mortal_sin_endgame</has_info>
+	<dont_has_info>stalker_stitch_mortal_sin_choice</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_stitch_mortal_sin_choice_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_stitch_mortal_sin_choice_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_stitch_mortal_sin_choice_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_stitch_mortal_sin_choice_3</text>
+				<next>4</next>
+				<next>41</next>
+				<next>42</next>
+				<next>43</next>
+				<next>44</next>
+				<next>45</next>
+				<next>46</next>
+			</phrase>
+			<phrase id="4">
+			<has_info>mortal_sin_dolg</has_info>
+                <text>stalker_stitch_mortal_sin_choice_4</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_dolg</action>
+			</phrase>
+			<phrase id="41">
+			<has_info>mortal_sin_killer</has_info>
+                <text>stalker_stitch_mortal_sin_choice_41</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_killer</action>
+			</phrase>
+			<phrase id="42">
+			<has_info>mortal_sin_stalker</has_info>
+                <text>stalker_stitch_mortal_sin_choice_42</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_stalker</action>
+			</phrase>
+			<phrase id="43">
+			<has_info>mortal_sin_csky</has_info>
+                <text>stalker_stitch_mortal_sin_choice_43</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_csky</action>
+			</phrase>
+			<phrase id="44">
+			<has_info>mortal_sin_freedom</has_info>
+                <text>stalker_stitch_mortal_sin_choice_44</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_freedom</action>
+			</phrase>
+			<phrase id="45">
+			<has_info>mortal_sin_ecolog</has_info>
+                <text>stalker_stitch_mortal_sin_choice_45</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_deny_the_wish</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_zone_hero_ecolog</action>
+			</phrase>
+			<phrase id="46">
+                <text>stalker_stitch_mortal_sin_choice_46</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>stalker_stitch_mortal_sin_choice_5</text>
+				<give_info>stalker_stitch_mortal_sin_choice</give_info>
+				<give_info>stalker_stitch_mortal_sin_wishful_thinking</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+
+<!-- Rogue -->
+	<dialog id="stalker_rogue_dialog_ms">
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_dialog_ms_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_repair">
+	<has_info>stalker_rogue_st</has_info>
+       <phrase_list>
+            <phrase id="0">
+                <action>dialogs.npc_is_tech</action>
+                <action>dialogs.break_dialog</action>
+                <text>stalker_rogue_repair_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin">
+	<has_info>psy_installation_defended</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>stalker_rogue_mortal_sin_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>stalker_rogue_mortal_sin_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>stalker_rogue_mortal_sin_6</text>
+				<next>7</next>
+				<next>71</next>
+				<next>72</next>
+				<next>73</next>
+				<next>74</next>
+				<next>75</next>
+			</phrase>
+			<phrase id="7">
+			<has_info>mortal_sin_dolg</has_info>
+                <text>stalker_rogue_mortal_sin_7</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_dolg</action>
+			</phrase>
+			<phrase id="71">
+			<has_info>mortal_sin_killer</has_info>
+                <text>stalker_rogue_mortal_sin_71</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_killer</action>
+			</phrase>
+			<phrase id="72">
+			<has_info>mortal_sin_stalker</has_info>
+                <text>stalker_rogue_mortal_sin_72</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_stalker</action>
+			</phrase>
+			<phrase id="73">
+			<has_info>mortal_sin_csky</has_info>
+                <text>stalker_rogue_mortal_sin_73</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_csky</action>
+			</phrase>
+			<phrase id="74">
+			<has_info>mortal_sin_freedom</has_info>
+                <text>stalker_rogue_mortal_sin_74</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_freedom</action>
+			</phrase>
+			<phrase id="75">
+			<has_info>mortal_sin_ecolog</has_info>
+                <text>stalker_rogue_mortal_sin_75</text>
+				<give_info>stalker_rogue_mortal_sin</give_info>
+				<action>dialogs_lostzone.give_task_lttz_ms_urban_warfare_ecolog</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_warfare">
+	<has_info>greh_castigator_1_dead</has_info>
+	<has_info>greh_castigator_2_dead</has_info>
+	<has_info>greh_castigator_3_dead</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_warfare</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_warfare_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_warfare_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_warfare_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_warfare_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_rogue_mortal_sin_warfare_4</text>
+				<give_info>stalker_rogue_mortal_sin_warfare</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_interrogation">
+	<has_info>greh_prisoner_dialog</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_interrogation</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_interrogation_0</text>
+				<next>1</next>
+				<next>11</next>
+				<next>12</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>greh_prisoner_dialog_success</has_info>
+				<text>stalker_rogue_mortal_sin_interrogation_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="11">
+			<has_info>greh_prisoner_dialog_failure</has_info>
+				<text>stalker_rogue_mortal_sin_interrogation_11</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="12">
+			<has_info>greh_prisoner_dialog_kill</has_info>
+				<text>stalker_rogue_mortal_sin_interrogation_12</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_interrogation_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_interrogation_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_rogue_mortal_sin_interrogation_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>stalker_rogue_mortal_sin_interrogation_5</text>
+				<give_info>stalker_rogue_mortal_sin_interrogation</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_contact_lost">
+	<precondition>dialogs_lostzone.actor_has_contact_lost_pda</precondition>
+	<has_info>lim_stalker_scout_dialog</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_contact_lost</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_contact_lost_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_contact_lost_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_contact_lost_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_contact_lost_3</text>
+				<action>xr_effects.lttz_ms_take_contact_lost_pda</action>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_rogue_mortal_sin_contact_lost_4</text>
+				<next>5</next>
+				<next>51</next>			
+			</phrase>
+			<phrase id="5">
+			<has_info>greh_prisoner_dialog_success</has_info>
+				<text>stalker_rogue_mortal_sin_contact_lost_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="51">
+			<dont_has_info>greh_prisoner_dialog_success</dont_has_info>
+				<text>stalker_rogue_mortal_sin_contact_lost_51</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>stalker_rogue_mortal_sin_contact_lost_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>stalker_rogue_mortal_sin_contact_lost_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>stalker_rogue_mortal_sin_contact_lost_8</text>
+				<give_info>stalker_rogue_mortal_sin_contact_lost</give_info>		
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_ready">
+	<has_info>stalker_rogue_mortal_sin_contact_lost</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_ready</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_ready_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_ready_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_ready_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_ready_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>stalker_rogue_mortal_sin_ready_4</text>
+				<give_info>stalker_rogue_mortal_sin_ready</give_info>
+				<action>dialogs_lostzone.set_stalker_living_legend_as_companion</action>
+				<action>dialogs_lostzone.give_task_lttz_ms_destruction_site</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_destruction">
+	<has_info>lim_greh_outpost_squad_dead</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_destruction</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_destruction_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_destruction_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_destruction_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_destruction_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_rogue_mortal_sin_destruction_4</text>
+				<give_info>stalker_rogue_mortal_sin_destruction</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="stalker_rogue_mortal_sin_assault">
+	<has_info>kat_greh_sabaoth_mortal_sin</has_info>
+	<dont_has_info>stalker_rogue_mortal_sin_assault</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>stalker_rogue_mortal_sin_assault_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>stalker_rogue_mortal_sin_assault_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>stalker_rogue_mortal_sin_assault_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>stalker_rogue_mortal_sin_assault_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>stalker_rogue_mortal_sin_assault_4</text>
+				<give_info>stalker_rogue_mortal_sin_assault</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Greh Prisoner -->
+	<dialog id="greh_prisoner_greeting">
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_prisoner_greeting_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="greh_prisoner_dialog">
+	<has_info>stalker_rogue_mortal_sin_warfare</has_info>
+	<dont_has_info>greh_prisoner_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_prisoner_dialog_0</text>
+				<next>1</next>
+				<next>111</next>
+				<next>112</next>
+				<next>113</next>
+				<next>114</next>
+				<next>115</next>
+            </phrase>
+			<phrase id="1">
+			<has_info>mortal_sin_dolg</has_info>
+				<text>greh_prisoner_dialog_1</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="111">
+			<has_info>mortal_sin_killer</has_info>
+				<text>greh_prisoner_dialog_111</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="112">
+			<has_info>mortal_sin_stalker</has_info>
+				<text>greh_prisoner_dialog_112</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="113">
+			<has_info>mortal_sin_csky</has_info>
+				<text>greh_prisoner_dialog_113</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="114">
+			<has_info>mortal_sin_freedom</has_info>
+				<text>greh_prisoner_dialog_114</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="115">
+			<has_info>mortal_sin_ecolog</has_info>
+				<text>greh_prisoner_dialog_115</text>
+				<next>2</next>
+				<next>221</next>
+				<next>222</next>
+			</phrase>
+			<phrase id="2">
+				<text>greh_prisoner_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="221">
+				<text>greh_prisoner_dialog_221</text>
+				<next>331</next>
+			</phrase>
+			<phrase id="222">
+				<text>greh_prisoner_dialog_222</text>
+				<next>332</next>
+			</phrase>
+			<phrase id="3">
+				<text>greh_prisoner_dialog_3</text>
+				<next>4</next>
+				<next>441</next>
+			</phrase>
+			<phrase id="331">
+				<text>greh_prisoner_dialog_331</text>
+				<next>4</next>
+				<next>441</next>
+				<next>442</next>
+			</phrase>
+			<phrase id="332">
+				<text>greh_prisoner_dialog_332</text>
+				<next>4</next>
+				<next>441</next>
+				<next>442</next>
+			</phrase>
+			<phrase id="4">
+                <text>greh_prisoner_dialog_4</text>
+				<next>5</next>				
+			</phrase>
+			<phrase id="441">
+                <text>greh_prisoner_dialog_441</text>
+				<next>551</next>
+			</phrase>
+			<phrase id="442">
+                <text>greh_prisoner_dialog_442</text>
+				<next>552</next>
+			</phrase>
+			<phrase id="5">
+				<text>greh_prisoner_dialog_5</text>
+				<next>6</next>
+				<next>661</next>
+			</phrase>
+			<phrase id="551">
+				<text>greh_prisoner_dialog_551</text>
+				<next>6</next>
+				<next>661</next>
+				<next>662</next>
+			</phrase>
+			<phrase id="552">
+				<text>greh_prisoner_dialog_552</text>
+				<next>662</next>
+			</phrase>
+			<phrase id="6">
+				<text>greh_prisoner_dialog_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="661">
+				<text>greh_prisoner_dialog_661</text>
+				<next>771</next>
+			</phrase>
+			<phrase id="662">
+				<text>greh_prisoner_dialog_662</text>
+				<action>xr_effects.hit_npc_from_actor</action>
+				<action>dialogs.set_enemy</action>
+				<action>dialogs_lostzone.end_conversation</action>
+				<give_info>greh_prisoner_dialog_kill</give_info>
+				<give_info>greh_prisoner_dialog</give_info>
+			</phrase>
+			<phrase id="7">
+				<text>greh_prisoner_dialog_7</text>
+				<next>8</next>
+				<next>881</next>
+			</phrase>
+			<phrase id="771">
+				<text>greh_prisoner_dialog_771</text>
+				<next>6</next>
+				<next>881</next>
+			</phrase>
+			<phrase id="8">
+				<text>greh_prisoner_dialog_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="881">
+				<text>greh_prisoner_dialog_881</text>
+				<next>991</next>
+			</phrase>
+			<phrase id="9">
+				<text>greh_prisoner_dialog_9</text>			
+				<next>10</next>
+			</phrase>
+			<phrase id="991">
+				<text>greh_prisoner_dialog_991</text>
+				<next>1001</next>
+				<next>662</next>
+			</phrase>
+			<phrase id="10">
+				<text>greh_prisoner_dialog_10</text>
+				<give_info>greh_prisoner_dialog_success</give_info>
+				<give_info>greh_prisoner_dialog</give_info>
+			</phrase>
+			<phrase id="1001">
+				<text>greh_prisoner_dialog_1001</text>
+				<give_info>greh_prisoner_dialog_failure</give_info>
+				<give_info>greh_prisoner_dialog</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lazarus_greeting">
+        <phrase_list>
+            <phrase id="0">
+                <text>lazarus_greeting_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lazarus_story">
+	<has_info>greh_prisoner_dialog_success</has_info>
+	<dont_has_info>lazarus_story</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lazarus_story_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lazarus_story_1</text>
+				<next>2</next>
+				<next>21</next>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+			</phrase>
+			<phrase id="2">
+			<has_info>mortal_sin_dolg</has_info>
+                <text>lazarus_story_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="21">
+			<has_info>mortal_sin_killer</has_info>
+                <text>lazarus_story_21</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="22">
+			<has_info>mortal_sin_stalker</has_info>
+                <text>lazarus_story_22</text>
+				<next>32</next>
+			</phrase>
+			<phrase id="23">
+			<has_info>mortal_sin_csky</has_info>
+                <text>lazarus_story_23</text>
+				<next>33</next>
+			</phrase>
+			<phrase id="24">
+			<has_info>mortal_sin_freedom</has_info>
+                <text>lazarus_story_24</text>
+				<next>34</next>
+			</phrase>
+			<phrase id="25">
+			<has_info>mortal_sin_ecolog</has_info>
+                <text>lazarus_story_25</text>
+				<next>35</next>
+			</phrase>
+			<phrase id="3">
+                <text>lazarus_story_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="31">
+                <text>lazarus_story_31</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="32">
+                <text>lazarus_story_32</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="33">
+                <text>lazarus_story_33</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="34">
+                <text>lazarus_story_34</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="35">
+                <text>lazarus_story_35</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>lazarus_story_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>lazarus_story_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>lazarus_story_6</text>
+				<give_info>lazarus_story</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lazarus_repair">
+	<has_info>lazarus_story</has_info>
+       <phrase_list>
+            <phrase id="0">
+                <action>dialogs.npc_is_tech</action>
+                <action>dialogs.break_dialog</action>
+                <text>lazarus_repair_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="lazarus_join_companion">
+		<precondition>dialogs_axr_companion.is_not_actor_companion</precondition>
+		<precondition>dialogs_axr_companion.is_actor_friend</precondition>
+		<precondition>dialogs_axr_companion.is_not_hostage_task_giver</precondition>
+		<has_info>lazarus_story</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>axr_phrase_friend_companion_ask_join</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>axr_phrase_friend_companion_answer_join</text>
+				<action>dialogs_axr_companion.become_actor_companion</action>
+            </phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Stalker Scout -->
+	<dialog id="lim_stalker_scout_dialog">
+	<has_info>stalker_rogue_mortal_sin_interrogation</has_info>
+	<dont_has_info>lim_stalker_scout_dialog</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>lim_stalker_scout_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>lim_stalker_scout_dialog_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>lim_stalker_scout_dialog_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>lim_stalker_scout_dialog_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>lim_stalker_scout_dialog_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>lim_stalker_scout_dialog_5</text>
+				<give_info>lim_stalker_scout_dialog</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+<!-- Chernobog -->
+	<dialog id="greh_sabaoth_start">
+        <phrase_list>
+            <phrase id="0">
+                <text>greh_sabaoth_start_0</text>
+            </phrase>
+        </phrase_list>
+    </dialog>
+
+	<dialog id="kat_greh_sabaoth_mortal_sin">
+	<has_info>kat_greh_sabaoth_call</has_info>
+	<dont_has_info>kat_greh_sabaoth_mortal_sin</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>kat_greh_sabaoth_mortal_sin_0</text>
+				<next>1</next>
+				<next>111</next>
+				<next>121</next>
+            </phrase>
+			<phrase id="1">
+				<text>kat_greh_sabaoth_mortal_sin_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="111">
+				<text>kat_greh_sabaoth_mortal_sin_111</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="121">
+				<text>kat_greh_sabaoth_mortal_sin_121</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>kat_greh_sabaoth_mortal_sin_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>kat_greh_sabaoth_mortal_sin_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>kat_greh_sabaoth_mortal_sin_4</text>
+				<next>5</next>
+				<next>551</next>
+				<next>561</next>
+			</phrase>
+			<phrase id="5">
+				<text>kat_greh_sabaoth_mortal_sin_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="551">
+				<text>kat_greh_sabaoth_mortal_sin_551</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="561">
+				<text>kat_greh_sabaoth_mortal_sin_561</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>kat_greh_sabaoth_mortal_sin_6</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>kat_greh_sabaoth_mortal_sin_7</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>kat_greh_sabaoth_mortal_sin_8</text>
+				<next>9</next>
+			</phrase>
+			<phrase id="9">
+				<text>kat_greh_sabaoth_mortal_sin_9</text>
+				<next>10</next>
+			</phrase>
+			<phrase id="10">
+				<text>kat_greh_sabaoth_mortal_sin_10</text>
+				<next>11</next>
+				<give_info>kat_greh_sabaoth_psi</give_info>
+			</phrase>
+			<phrase id="11">
+				<text>kat_greh_sabaoth_mortal_sin_11</text>
+				<next>12</next>
+			</phrase>
+			<phrase id="12">
+				<text>kat_greh_sabaoth_mortal_sin_12</text>
+				<next>13</next>
+			</phrase>
+			<phrase id="13">
+				<text>kat_greh_sabaoth_mortal_sin_13</text>
+				<next>14</next>
+			</phrase>
+			<phrase id="14">
+                <text>kat_greh_sabaoth_mortal_sin_14</text>
+				<next>15</next>
+				<!-- <next>1551</next> -->
+				<!-- <next>1552</next> -->
+			</phrase>
+			<phrase id="15">
+				<text>kat_greh_sabaoth_mortal_sin_15</text>
+				<next>16</next>
+				<give_info>kat_greh_sabaoth_psi_end</give_info>
+			</phrase>
+			<phrase id="1551">
+				<text>kat_greh_sabaoth_mortal_sin_1551</text>
+				<give_info>kat_greh_sabaoth_psi_conversion</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+			<phrase id="1552">
+				<text>kat_greh_sabaoth_mortal_sin_1552</text>
+				<give_info>kat_greh_sabaoth_psi_death</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+			<phrase id="16">
+                <text>kat_greh_sabaoth_mortal_sin_16</text>
+				<next>17</next>
+			</phrase>
+			<phrase id="17">
+                <text>kat_greh_sabaoth_mortal_sin_17</text>
+				<give_info>kat_greh_sabaoth_mortal_sin</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="gen_greh_sabaoth_mortal_sin_generators">
+	<has_info>ms_decisive_blow</has_info>
+	<dont_has_info>gen_greh_sabaoth_mortal_sin_generators</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>gen_greh_sabaoth_mortal_sin_generators_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>gen_greh_sabaoth_mortal_sin_generators_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+                <text>gen_greh_sabaoth_mortal_sin_generators_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>gen_greh_sabaoth_mortal_sin_generators_3</text>
+				<next>4</next>
+				<give_info>premature_emission</give_info>
+			</phrase>
+			<phrase id="4">
+                <text>gen_greh_sabaoth_mortal_sin_generators_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+                <text>gen_greh_sabaoth_mortal_sin_generators_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+                <text>gen_greh_sabaoth_mortal_sin_generators_6</text>
+				<next>7</next>
+				<action>dialogs_lostzone.set_impending_doom_timer</action>
+			</phrase>
+			<phrase id="7">
+                <text>gen_greh_sabaoth_mortal_sin_generators_7</text>
+				<give_info>gen_greh_sabaoth_mortal_sin_generators</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+			</phrase>
+        </phrase_list>
+    </dialog>
+</game_dialogs>

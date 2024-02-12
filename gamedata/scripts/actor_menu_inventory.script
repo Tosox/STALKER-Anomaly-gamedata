@@ -1,0 +1,89 @@
+
+
+-- all functions below are called from engine!
+--[[
+ Refers to when an icon is dragged onto another icon in Actor Inventory Menu
+ 
+ passed parameters:
+	itm1 is the object being dragged; may be nil
+	itm2 is the object the item is being dragged onto; may be nil
+	from_slot is the number value of the slot itm1 is being dragged from;  0 or EDDListType.iInvalid is invalid 
+	to_slot is the number value of the slot itm2 is occupying;  0 or EDDListType.iInvalid is invalid 
+	
+from_slot and to_slot values:
+		EDDListType.iInvalid			= 0
+		EDDListType.iActorSlot			= 1
+		EDDListType.iActorBag			= 2
+		EDDListType.iActorBelt			= 3
+
+		EDDListType.iActorTrade			= 4
+		EDDListType.iPartnerTradeBag	= 5
+		EDDListType.iPartnerTrade		= 6
+		EDDListType.iDeadBodyBag		= 7
+		EDDListType.iQuickSlot			= 8
+		EDDListType.iTrashSlot			= 9
+		
+ex. if (to_slot == EDDListType.iActorSlot) then 
+		printf("dragging item to slot!")
+	end
+	
+--]]
+function CUIActorMenu_OnItemDropped(itm1,itm2,from_slot,to_slot)
+	--printf("itm1=%s itm2=%s from_slot=%s to_slot=%s",itm1 and itm1:name(),itm2 and itm2:name(),from_slot,to_slot)
+	
+	if (itm1 and itm2) then
+		SendScriptCallback("ActorMenu_on_item_drag_drop",itm1,itm2,from_slot,to_slot)
+	end
+	
+	return true
+end
+
+function CUIActorMenu_OnItemFocusReceive(itm)
+	SendScriptCallback("ActorMenu_on_item_focus_receive",itm)
+end
+
+function CUIActorMenu_OnItemFocusLost(itm)
+	SendScriptCallback("ActorMenu_on_item_focus_lost",itm)
+end
+
+local flags = { ret = false}
+function CUIActorMenu_OnMode_Inventory()
+	--printf("-CUIActorMenu_OnMode_Inventory")
+	flags.ret = false
+	SendScriptCallback("ActorMenu_on_before_init_mode","inventory",flags)
+	return flags.ret
+end
+
+function CUIActorMenu_OnMode_DeadBodySearch(obj)
+	--printf("-CUIActorMenu_OnMode_DeadBodySearch | %s", obj and obj:name())
+	flags.ret = false
+	SendScriptCallback("ActorMenu_on_before_init_mode","loot",flags, obj)
+	return flags.ret
+end
+
+function CUIActorMenu_OnMode_Trade(obj)
+	--printf("-CUIActorMenu_OnMode_Trade | %s", obj and obj:name())
+	flags.ret = false
+	SendScriptCallback("ActorMenu_on_before_init_mode","trade",flags, obj)
+	return flags.ret
+end
+
+function CUIActorMenu_OnMode_Upgrade(obj)
+	--printf("-CUIActorMenu_OnMode_Upgrade | %s", obj and obj:name())
+	flags.ret = false
+	SendScriptCallback("ActorMenu_on_before_init_mode","repair",flags, obj)
+	return flags.ret
+end
+
+function CUIActorMenu_OnHideActorMenu()
+	--printf("-CUIActorMenu_OnHideActorMenu")
+end
+
+function CUIActorMenu_DonateCurrentItem(npc, item)
+	return true
+end
+
+function CInventory_ItemAvailableToTrade(npc, item)
+	return true
+end
+

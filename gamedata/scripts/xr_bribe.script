@@ -1,0 +1,408 @@
+--[[
+
+- Created by tdef
+- Bribe factions
+- 2018/10/27
+
+--]]
+
+local M_DATA = {}
+local BRIBE_CHECK_TIME = (30 * 60)/level.get_time_factor() -- every 30 minutes in-game
+local ACTIVE = false
+
+
+-- returns if the npc is neutral to the player considering active ceasefires
+function at_peace(npc_comm, player_comm, distance)
+	-- if player and npc factions are normally neutral then skip check and let xr_combat_ignore.is_enemy() do his stuff
+	local normal_enemy = game_relations.is_factions_enemies(npc_comm, player_comm)
+	if not normal_enemy then return false end
+		
+	if M_DATA[npc_comm] then
+		if distance > M_DATA[npc_comm].distance then
+			-- peaceful
+			return true
+		else
+			-- muh personal space!
+			announce_break(npc_comm)
+			M_DATA[npc_comm] = nil
+			try_to_toggle(false)
+			return false
+		end
+	end
+end
+
+-- news message when a ceasefire end
+function announce_break(npc_comm, is_expired)
+	if is_expired then
+		news_manager.send_tip(db.actor, strformat(game.translate_string("st_bribe_expired"), game.translate_string(npc_comm)))
+	else
+		news_manager.send_tip(db.actor, strformat(game.translate_string("st_bribe_broke"), game.translate_string(npc_comm)))
+	end
+end
+
+-- remove ceasefire if player attacks bribed faction npc
+-- hijacked from xr_combat_ignore to not add one more
+function npc_on_hit_callback(comm)	
+	if M_DATA[comm] then
+		announce_break(comm)
+		M_DATA[comm] = nil
+		try_to_toggle(false)
+		printdbg("/ Bribe | Bribe with faction [%s] is canceled!", comm)
+	end
+end
+
+WARNING_TIME = 300 -- 5 min
+function trigger_warning(comm)
+	if M_DATA[comm] then 
+		local current_date = utils_data.CTime_to_table(game.get_game_time())
+		if M_DATA[comm].last_warning then	
+			local last_warning_time = utils_data.CTime_from_table(M_DATA[comm].last_warning)
+			local warning_time = game.get_game_time():diffSec(last_warning_time)
+			if warning_time < WARNING_TIME then return end
+			M_DATA[comm].last_warning = current_date
+		else
+			M_DATA[comm].last_warning = current_date
+		end
+		news_manager.send_tip(db.actor, strformat('You are getting too close to a %s!', game.translate_string(comm)))
+	end
+end
+
+-- recurring check to see if any ceasefire expired
+function bribe_check()
+	ResetTimeEvent("cycle","bribe_check",BRIBE_CHECK_TIME)
+	
+	-- table to handle multiple expirations at once if sleeping through many expirations
+	local tobreak = {}
+	
+	for comm,v in pairs(M_DATA) do
+		local start = utils_data.CTime_from_table(v.start)
+		local elapsed = game.get_game_time():diffSec(start)
+		if elapsed > v.duration then
+			table.insert(tobreak,comm)
+		end
+	end
+	
+	if #tobreak<1 then return false end
+	
+	for _,v in pairs(tobreak) do
+		announce_break(v,true)
+		M_DATA[v] = nil
+		printdbg("/ Bribe | Bribed with faction [%s] is over!", v)
+	end
+			
+	try_to_toggle(false)
+	
+	return false
+end
+
+-- launch timed event
+function actor_on_first_update()
+	--printf('set time event')
+	CreateTimeEvent("cycle","bribe_check",BRIBE_CHECK_TIME,bribe_check)
+end
+
+function save_state(m_data)
+	m_data.bribe = M_DATA
+	for k,v in pairs(M_DATA) do
+		printdbg("# SAVING: Bribe | Bribed faction: %s", k)
+	end
+end
+
+function load_state(m_data)
+	M_DATA = m_data.bribe or {}
+	for k,v in pairs(M_DATA) do
+		printdbg("# LOADING: Bribe | Bribed faction: %s", k)
+	end
+end
+
+WARNING_DISTANCE = 100 -- 10m
+function npc_on_update(obj)
+	ACTIVE = true
+	local id = obj:id()
+	local comm = character_community(obj)
+	local dist = db.actor:position():distance_to_sqr(obj:position())
+	obj = nil
+	local st = db.storage[id]
+	
+	if M_DATA[comm] and dist < (M_DATA[comm].distance + WARNING_DISTANCE) then
+		trigger_warning(comm)
+		if st.ini_filename == '<customdata>' then
+			-- printf('npc %s inside warning', id)
+			local npc = level.object_by_id(id)
+
+			npc:inactualize_patrol_path()
+			local loaded = false
+			local ltx_name = "scripts\\bribes_logic.ltx"
+			local ltx = ini_file(ltx_name)
+
+			local sim = alife()
+			local se_npc = sim:object(id)
+			local unreg_id = se_npc and se_npc.m_smart_terrain_id
+			if (unreg_id and unreg_id ~= 65535) then
+				local unreg = sim:object(unreg_id)
+				if (unreg) then
+					unreg:unregister_npc(se_npc)
+				end
+			end
+			
+			xr_logic.configure_schemes(npc, ltx, ltx_name, modules.stype_stalker, loaded and st.loaded_section_logic or "logic", "")
+			
+			local section = loaded and st.loaded_active_section or xr_logic.determine_section_to_activate(npc, ltx, "logic", db.actor)
+			xr_logic.activate_by_section(npc, ltx, section, "", loaded)
+			-- printf('npc %s switched', id)
+		end
+	end
+	
+	-- handled in logic
+	-- if M_DATA[comm] and st.active_section == 'remark@aim_bribe' and dist >= 100 then
+		-- local npc = level.object_by_id(id)
+		-- xr_logic.restore_scheme_and_logic(npc)
+	-- end
+end
+
+function on_game_start()
+	local function on_game_load()
+		try_to_toggle(true)
+	end
+	
+	RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+	RegisterScriptCallback("on_game_load",on_game_load)
+end
+
+
+function try_to_toggle(state)
+	local c = size_table(M_DATA)
+	if state and (not ACTIVE) and (c > 0) then -- ON
+		RegisterScriptCallback("npc_on_update",npc_on_update)
+		printdbg("- Bribe | Enabled")
+	elseif (not state) and ACTIVE and (c < 1) then -- OFF
+		UnregisterScriptCallback("npc_on_update",npc_on_update)
+		ACTIVE = false
+		printdbg("- Bribe | Disabled")
+	end
+end
+
+
+-- faction is the faction
+-- distance is how close the player can get before the ceasefire is off (value squared, for 50 meters distance must be 250)
+-- seconds is how many seconds the ceasefire lasts
+function set_bribe(faction, distance, seconds)
+	local current_time = game.get_game_time()
+	
+	-- if the faction is wrong nothing bad happens so no need to hard check
+	-- but if either distance or duration are not then there will be crashes
+	assert(tonumber(distance), 'bribe distance must be a number')
+	assert(tonumber(seconds), 'bribe seconds must be a number')
+	
+	M_DATA[faction] = {}
+	M_DATA[faction].distance = tonumber(distance)
+	M_DATA[faction].duration = tonumber(seconds)
+	M_DATA[faction].start = utils_data.CTime_to_table(current_time)
+	try_to_toggle(true)
+	printdbg("/ Bribe | Bribed new faction: %s", faction)
+end
+
+function xr_effects.bribes_reset_scheme(a,b)
+	local npc = a:id() > 0 and a or b
+	xr_logic.restore_scheme_and_logic(npc)
+end
+
+function xr_conditions.bribes_dist_to_actor_check(a,b)
+	local obj = a:id() > 0 and a or b
+	local id = obj:id()
+	local comm = character_community(obj)
+	local dist = db.actor:position():distance_to_sqr(obj:position())
+	obj = nil
+	a = nil
+	b = nil
+	
+	if not M_DATA[comm] then
+		-- ceasefire broke when npc still in this scheme so allow it to get out
+		return true
+	end
+	return dist > (M_DATA[comm].distance + WARNING_DISTANCE + 1)
+end
+
+
+--====================< Dialog >====================--
+function is_enemy_to_army()
+	if game_relations.is_factions_enemies(character_community(db.actor),"army") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_bandit()
+	if game_relations.is_factions_enemies(character_community(db.actor),"bandit") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_csky()
+	if game_relations.is_factions_enemies(character_community(db.actor),"csky") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_dolg()
+	if game_relations.is_factions_enemies(character_community(db.actor),"dolg") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_ecolog()
+	if game_relations.is_factions_enemies(character_community(db.actor),"ecolog") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_freedom()
+	if game_relations.is_factions_enemies(character_community(db.actor),"freedom") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_killer()
+	if game_relations.is_factions_enemies(character_community(db.actor),"killer") then
+		return true
+	end
+	return false
+end
+function is_enemy_to_stalker()
+	if game_relations.is_factions_enemies(character_community(db.actor),"stalker") then
+		return true
+	end
+	return false
+end
+
+function have_money_4000()
+	return mlr_utils.have_money(4000)
+end
+function have_money_5000()
+	return mlr_utils.have_money(5000)
+end
+function have_money_6000()
+	return mlr_utils.have_money(6000)
+end
+function have_money_8000()
+	return mlr_utils.have_money(4000)
+end
+function have_money_10000()
+	return mlr_utils.have_money(10000)
+end
+function have_money_12000()
+	return mlr_utils.have_money(12000)
+end
+
+function take_money_4000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 4000) 
+end
+function take_money_5000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 5000) 
+end
+function take_money_6000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 6000) 
+end
+function take_money_8000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 8000) 
+end
+function take_money_10000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 10000) 
+end
+function take_money_12000(first_speaker, second_speaker) 
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 12000) 
+end
+
+function bribe_2_days_army(first_speaker, second_speaker)
+	set_bribe("army", 25, 60*60*24*2)
+end
+function bribe_2_days_bandit(first_speaker, second_speaker)
+	set_bribe("bandit", 25, 60*60*24*2)
+end
+function bribe_2_days_csky(first_speaker, second_speaker)
+	set_bribe("csky", 25, 60*60*24*2)
+end
+function bribe_2_days_dolg(first_speaker, second_speaker)
+	set_bribe("dolg", 25, 60*60*24*2)
+end
+function bribe_2_days_ecolog(first_speaker, second_speaker)
+	set_bribe("ecolog", 25, 60*60*24*2)
+end
+function bribe_2_days_freedom(first_speaker, second_speaker)
+	set_bribe("freedom", 25, 60*60*24*2)
+end
+function bribe_2_days_killer(first_speaker, second_speaker)
+	set_bribe("killer", 25, 60*60*24*2)
+end
+function bribe_2_days_stalker(first_speaker, second_speaker)
+	set_bribe("stalker", 25, 60*60*24*2)
+end
+
+function bribe_4_days_army(first_speaker, second_speaker)
+	set_bribe("army", 25, 60*60*24*4)
+end
+function bribe_4_days_bandit(first_speaker, second_speaker)
+	set_bribe("bandit", 25, 60*60*24*4)
+end
+function bribe_4_days_csky(first_speaker, second_speaker)
+	set_bribe("csky", 25, 60*60*24*4)
+end
+function bribe_4_days_dolg(first_speaker, second_speaker)
+	set_bribe("dolg", 25, 60*60*24*4)
+end
+function bribe_4_days_ecolog(first_speaker, second_speaker)
+	set_bribe("ecolog", 25, 60*60*24*4)
+end
+function bribe_4_days_freedom(first_speaker, second_speaker)
+	set_bribe("freedom", 25, 60*60*24*4)
+end
+function bribe_4_days_killer(first_speaker, second_speaker)
+	set_bribe("killer", 25, 60*60*24*4)
+end
+function bribe_4_days_stalker(first_speaker, second_speaker)
+	set_bribe("stalker", 25, 60*60*24*4)
+end
+
+
+--===================< DEBUG >===================--
+cmd = debug_cmd_list.command_get_list()
+
+function split(txt)
+	args = {}
+	for x in txt:gmatch("%S+") do table.insert(args, x) end
+	return args
+end
+
+function cmd.bribes_set(_,txt,x)
+	local dist = 30
+	local duration = 24
+	local args = split(txt)
+	if args then
+		if #args > 0 then 
+			if args[2] and tonumber(args[2]) then
+				dist = tonumber(args[2])
+			end
+			if args[3] and tonumber(args[3]) then
+				duration = tonumber(args[3])
+			end
+			x:SendOutput('bribed %s for %sm and %sh', args[1], dist, duration)
+			dist = dist * dist
+			duration = duration * 3600
+			set_bribe(args[1], dist, duration)
+		end
+	end
+end
+
+function cmd.bribes_print(_,__,x)
+	x:SendOutput('faction --> engage distance, duration')
+	for k,v in pairs(M_DATA) do
+		x:SendOutput('%s --> %sm, %sh', k, math.sqrt(v.distance), v.duration/3600)
+	end
+end
+
+function cmd.bribes_reset()
+	M_DATA = {}
+	try_to_toggle(false)
+	return 'all ceasefires removed'
+end

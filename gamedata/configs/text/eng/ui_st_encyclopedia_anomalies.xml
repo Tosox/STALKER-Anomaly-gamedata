@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_anomalies">
+		<text>Anomalies</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_emission">
+		<text>Emission</text>
+	</string>
+	<string id="encyclopedia_anomalies_emission_text">
+		<text>
+			%c[pda_white]Emissions%c[ui_gray_1], also known as %c[pda_green]Blowouts%c[ui_gray_1], are sudden releases of massive amounts of radiation.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nStrong winds, storm clouds and a scarlet red sky all appear with the onset of an emission, followed by numerous eruptions of thunder and a deep rumbling underfoot.\n
+			\n \nThese events begin with a sharp surge in radioactive, abnormal and psychic activity - and end with destroying most life in their wake as waves of radiation cover the Zone.\n
+			\n \nDespite being extremely deadly, it is still quite easy to survive an emission by taking cover within buildings or underground tunnels until the event has run its course.\n
+			\n \nMuch in the same way as a psy-storm, the massive amount of energy released by an emission appears to "recharge" many anomalies, allowing stalkers to farm new artefacts from them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_phantom">
+		<text>Phantom</text>
+	</string>
+	<string id="encyclopedia_anomalies_phantom_text">
+		<text>
+			%c[pda_white]Phantoms%c[ui_gray_1] are illusory beings that exist within the mind, rather than physically.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nWhilst difficult to classify as either an anomaly or a mutant, a phantom is an involuntary mental projection of a mutant currently found somewhere within the Zone.\n
+			\n \nThese projections are always accompanied by a audible "howling" noise and appear glowing and transparent, gradually floating toward the victim through walls and across the air.\n
+			\n \nIt is unknown why they only take the form of mutants, including those of which a stalker has never encountered, and as to why they never take the appearance of those that are now extinct, such as the tark.\n
+			\n \nA leading theory about this phenomenon suggests that the Zone's living mutants are in some way strongly connected to the Noosphere, and that through this a psy-field unintentionally imprints their visual appearance and hostile nature into the minds of its victims.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_psistorm">
+		<text>Psy-storm</text>
+	</string>
+	<string id="encyclopedia_anomalies_psistorm_text">
+		<text>
+			%c[pda_white]Psy-storms%c[ui_gray_1] consist of multiple psy-vortices, which release lethal amounts of psychic energy.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThese unusual weather anomalies are a very recent arrival to the Zone, and there is much speculation as to what causes their occurrence.\n
+			\nBeginning with a purple/pink haze and large formations of storm clouds, it takes very little time for a psy-storm to form and start wreaking havoc upon the Zone.\n
+			\n \nIf a stalker's equipment gives the wearer great protection against psychic damage, or makes use of drugs to provide a similar effect, it is possible to survival the discharge of individual psy-vortices during the storm without taking cover.\n
+			\n \nThis is provided that they immediately medicate themselves afterwards, as even the most prepared stalkers will still find themselves in a very delicate situation after such exposure.\n
+			\n \nSimilar to Emissions, the massive amount of energy dispersed by a psy-storm appears to "recharge" many anomalies, allowing stalkers to farm new artefacts from them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_radiation">
+		<text>Radiation</text>
+	</string>
+	<string id="encyclopedia_anomalies_radiation_text">
+		<text>
+			%c[ui_gray_1]Pockets of ionizing radiation, or simply %c[pda_green]radiation%c[ui_gray_1] for short, are areas where the ambient radiation count exceeds 50 mR per hour.
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nThey can be found all over the Zone. In the outside areas, radiation tends to be dominant in wide, open spaces and on piles of scrap (such as the dirt or scrap piles of the Garbage, or cars, tractors and anything mechanical).
+			\n \n%c[pda_green]Tips%c[ui_gray_1]
+			\n• The %c[pda_white]Geiger counter%c[ui_gray_1] is an essential tool for detecting and measuring ionizing radiation. The more rapid the clicking, the more radiation in the area.
+			\n• A lot of stalkers die due to radiation sickness. It is highly advised to keep a packet of %c[pda_white]Anti-radiation drugs%c[ui_gray_1] in your pocket.
+			\n• Make sure that your gas mask is always in good condition.
+			\n• %c[pda_white]Vodka%c[ui_gray_1] and %c[pda_white]cigarettes%c[ui_gray_1] are widely used among stalkers as a cheap yet considerable alternative to anti-rads. They help by curing the radiation poisoning slowly.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_psi">
+		<text>Psy-field</text>
+	</string>
+	<string id="encyclopedia_anomalies_psi_text">
+		<text>
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nThese are very large areas of psy-activity that ascend up to the clouds and are often only visible by the way such columns distort the light that passes through it.
+			\nThese fields have harmful effects on brain tissue, and sometimes could be a visible sign of a psy-emission, causing light to heavy damage. However, most of the time these columns contain pools of anomalies and if no anomalies are present, they are instead coupled with highly irradiated areas. 
+			\nThe psy-field does not spawn any artefacts.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_brain_scorcher">
+		<text>Brain Scorcher</text>
+	</string>
+	<string id="encyclopedia_anomalies_brain_scorcher_text">
+		<text>
+			%c[ui_gray_1]The %c[pda_green]Brain Scorcher%c[ui_gray_1] is a former military installation that was seized by the Group and became the first major application of mind control technology in the Zone.
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			After the Soviet Union's dissolution, the Group continued the research started in X8 and adapted the installation at the Scorcher, or most importantly, the Lab X-19 located in an old bunker underneath the facility.
+			\n \nWhen the Zone was created, the Scorcher was activated by the Common Consciousness in order to obstruct the way into the center of the Zone. The psy-emissions generated by the installation were effective at mind controlling trespassers and subjecting them to the will of the collective, creating mindless zombified stalkers out of some and raw recruits for the Monolith faction.
+			\n \nWhile the majority of Stalkers who came too close to the Brain Scorcher became zombies, a group of stalkers known as Strelok's Group were able to slip past the Brain Scorcher (most likely with the help of Guide) and reached the center of the Zone. The path to the Scorcher and the installation itself was heavily guarded by the fanatical Monolith.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_burner">
+		<text>Burner</text>
+	</string>
+	<string id="encyclopedia_anomalies_burner_text"> 	
+		<text>
+			• Name: %c[d_cyan]Burner%c[ui_gray_1]
+			\n• Type: %c[d_orange]Flame-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThe Burner can be a bit difficult to see, even in daylight, as it's only revealed by a faint heat haze.
+			\nIf the anomaly is triggered by either a living being or an object such as a metal bolt, it shoots out a tall pillar of flame in the air, burning everything in its vicinity.
+			\n \nThough somewhat rare, the Burner anomaly is often found in clusters. Some clusters also emit an extremely high ambient temperature, which cooks anything in their vicinity. Burners can emit temperatures anywhere from 100 degrees Celsius to several thousand - hot enough to crack concrete and melt metal, which explains why some Burners appear in areas that have massive cracks and severely damaged soil, while other sites are untouched.
+			\n \nBurners are very dangerous at high difficulties, and can be extremely dangerous even with top-tier armor. The Burners don't have a set spawn point like other anomalies do, or even a set trigger point. Simply being in the same vicinity can trigger a conflagration.
+			\nA tactic for avoiding damage is to first throw a bolt into the anomaly, triggering it, then quickly running through the jet of flame. This tactic, if used repeatedly and without delay, can mean the difference between traversing a cluster unharmed and getting scorched.		
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_comet">
+		<text>Comet</text>
+	</string>
+	<string id="encyclopedia_anomalies_comet_text"> 	
+		<text>
+			• Name: %c[d_cyan]Comet%c[ui_gray_1]
+			\n• Type: %c[d_orange]Flame-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThe Comet anomaly functions much like a Burner anomaly in that it deals fire damage on close contact, but with a key difference in that the Comet is mobile, hovering around within a certain area at a rapid pace.
+			\nThe Comet anomaly, unlike the Burner, is extremely powerful: it can kill even a well-armoured stalker if he gets hit directly.
+			\nThis anomaly does not spawn any kind of artefact.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_vortex">
+		<text>Vortex</text>
+	</string>
+	<string id="encyclopedia_anomalies_vortex_text"> 	
+		<text>
+			• Name: %c[d_cyan]Vortex%c[ui_gray_1]
+			\n• Type: %c[d_orange]Gravity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nAn anomaly of a presumably gravitational nature. When triggered, the tremendous power of the Vortex drags everything within its radius 10-15 meters towards the center. Victims drawn into the core have little to no chance of survival: their bodies are quickly constricted into a tight lump, only to be blown up in a powerful discharge of energy a moment later. In some cases, they may levitate in the air in agony, and soon their entire body is shredded into mere bone and flesh.
+			\n \nThe anomaly remains stationary throughout its lifetime (a week on average). Easily recognizable in daylight by the air fluctuation above, dancing leaves, fragments of dismembered corpses lying around and a distinctive dark stain in the center. Highly dangerous at night since it can be revealed only by means of a detector or by throwing metal objects into it.
+			\n \nThe difference between a Whirligig and a Vortex is pretty simple: size and strength. The Vortex has a much larger range, is much harder to escape from than a Whirligig, and it deals a lot more damage. Escaping the Vortex anomaly, once dragged in, can range in difficulty from easy to downright impossible, depending on the strength of the anomaly and the difficulty level. The type of armor worn is also very important, as the odds are that you will take at least one hit. One possible method of escaping, once drawn in, is to wait until the anomaly discharges, taking the hit. After discharging, the anomaly has no pulling power for approximately one second, allowing you to sprint out and escape it. This method will only be possible with armor with high anomaly protection. Wearing an exoskeleton and getting caught in a Vortex almost always ends in the player's death, since it prevents sprinting - meaning that the player cannot escape the anomaly once drawn in.
+			\n \nA simple tactic for escaping Vortexes requires timing, jumping and stamina. Before the anomaly does damage, the player would wobble like a "rubber band". A player with good enough timing can jump at just the right moment, right at the edge of the rubber band effect (right when it boings you away from its epicenter). At the edge, a very fast sprint and a jump can get you out of there fast enough to escape.
+			\n \nOf course, the simplest method of escaping a Vortex is avoiding it entirely. The presence of a Vortex can be very, very easily identified by the sounds it produces, similar to a "warping" sound you'd hear in some science fiction movies. The anomaly itself is unaffected by bullets, grenades, RPG rockets or bolts. Bolts simply bounce away from it.
+			\n \nEncountering a lone vortex is usually not a problem for a person who can sprint fast. However, a clustered group of vortexes are very dangerous and in some cases, an artefact may be lying in the middle of the cluster.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_springboard">
+		<text>Springboard</text>
+	</string>
+	<string id="encyclopedia_anomalies_springboard_text"> 	
+		<text>
+			• Name: %c[d_cyan]Springboard%c[ui_gray_1]
+			\n• Type: %c[d_orange]Gravity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nIt was one of the first types of anomalies ever recorded. A Springboard is an unstable gravitational field limited to a pocket on ground level, about 1-2 meters wide. Reacts to the presence of creatures or objects by sending out a powerful shockwave that damages anything within its radius. The damage caused by this changes throughout the anomaly's lifetime, ranging from minor bruises to serious wounds to instant death.
+			\n \nThe Springboard anomaly is very common and can be found almost anywhere in the Zone, both outside and in buildings. To the naked eye, the anomaly appears as a rippling heat haze or an air fluctuation accompanied by dancing leaves and sometimes crimson-colored stains on the ground. Throwing a bolt into a Springboard causes it to send out its distinctive shockwave, making it easily identifiable.
+			\nIt is also one of the anomalies that are harmless to pass through for a split moment after having been triggered, making bolts very useful tools for navigating a Springboard field. As players approach a Springboard their vision becomes gradually but markedly brighter as they get closer to the anomaly itself.
+			\n \nSpringboards are easily identifiable, and easily avoidable but varying locations and odd spawn points in the Zone can make them a nuisance in a firefight. Stalkers have often died in the middle of a fight, forgetting or not noticing the anomaly's presence due to being distracted, then walking straight into it. Just like all anomalies, its best to scout the location and find a way around it.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_whirligig">
+		<text>Whirligig</text>
+	</string>
+	<string id="encyclopedia_anomalies_whirligig_text"> 	
+		<text>
+			• Name: %c[d_cyan]Whirligig%c[ui_gray_1]
+			\n• Type: %c[d_orange]Gravity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nA common and dangerous anomaly, which snatches its victims up in the air and spins them at breakneck speed. The exact nature of the Whirligig remains unknown. The anomaly can be recognized by a light whirlwind of dust above and by body fragments scattered in the vicinity. Victims caught on its outer rim, far enough from the maximum effect zone at the center, can escape the Whirligig with relatively minor injuries.
+			\n \nWhen one is too close to the anomaly when it is triggered, the Whirligig will violently pull the victim upward, which continues to severely damage the victim until it discharges, and that discharge is powerful enough to dismember the victim's body purely by the sheer force exerted. It is not as easily avoidable as the Vortex and because it elevates its victims into the air, escaping once within its effective radius is practically impossible since jumping and sprinting is ineffective.
+			\n \nEven though the damage done by the Whirligig is less than that of a Vortex, the Whirligig can be considered more dangerous as it is very hard to escape, and the Vortex does have its weak aspects.
+			\n \nThe basic characteristics are easily recognizable. When activated the Whirligig discharges as a tornado or whirlwind.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_fruit">
+		<text>Fruit Punch</text>
+	</string>
+	<string id="encyclopedia_anomalies_fruit_text"> 	
+		<text>
+			• Name: %c[d_cyan]Fruit Punch%c[ui_gray_1]
+			\n• Type: %c[d_orange]Chemical-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThe Fruit Punch is a puddle of lambent green liquid that is easily visible in almost any environment due to its bright glow and distinctive hissing and bubbling noises. On contact with creatures or objects such as bolts, a Fruit Punch lights up brightly and emits a sharp hissing sound. It is extremely corrosive, damaging creatures and objects on contact. Any matter left in a Fruit Punch will eventually dissolve, hinting at the anomaly's corrosive nature and spelling doom for any protective suit. For players, contact with a Fruit Punch will cause damage with each 'flash'. This anomaly is commonly found underground.
+			\n \nConcerning its characteristics, it is generally accepted that it derives from the remnants of a highly radioactive spill of some reactive substance that gained its anomalous abilities from the Zone. Its corrosive properties are exhibited by its intense and rapid damage to all living tissue and inorganic matter, metal and plastic alike.
+			\n \nOwing to its ability to spawn artefacts in Shadow of Chernobyl, and not in Clear Sky, it could be said that the last emission seen in Clear Sky destabilized the Zone somewhat and dispersed the Gas Anomaly, replacing it with the Fruit Punch instead. It's fairly common, occurring mostly in buildings and underground complexes, usually in an isolated spot.
+			\n \nOn a few occasions, both Fruit Punch and Gas anomalies can be found, and in some cases they actually seem to merge together. Anomalous activity and radiation combine to create a deadly blend of both highly corrosive liquid, directly damaging armor and equipment, and a toxic cloud of poisonous gas that deals direct health and stamina damage. In Call of Pripyat, the Fruit Punch by itself can only be found very rarely, and as per the norm, only in closed or confined areas.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_fuzz">
+		<text>Burnt Fuzz</text>
+	</string>
+	<string id="encyclopedia_anomalies_fuzz_text"> 	
+		<text>
+			• Name: %c[d_cyan]Burnt Fuzz%c[ui_gray_1]
+			\n• Type: %c[d_orange]Chemical-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThis anomaly is usually found outdoors. It resembles moss or vines, hanging down like curtains from its growing spot. Reacts to rapidly approaching living beings by discharging a cloud of projectiles severely injuring uncovered or lightly protected skin upon contact. Does not react to slowly moving targets. Burnt Fuzz is generally considered the least dangerous anomaly in the Zone since it can be easily spotted and avoided. Even so, players rarely seem to take damage when coming into contact with the anomaly. Touching a Burnt Fuzz curtain seems to elicit a reaction from the anomaly, but only players with little or no armor have reported being hurt by it. Burnt Fuzz is the only anomaly not to react to metal bolts.
+			\n \nThe first example in the Zone of anomalous or mutated plant life, its organic origins may be they key to understanding why it isn't affected by things like other anomalies, or that it doesn't normally respond to situations like other anomalies do.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_gas">
+		<text>Gas</text>
+	</string>
+	<string id="encyclopedia_anomalies_gas_text"> 	
+		<text>
+			• Name: %c[d_cyan]Gas%c[ui_gray_1]
+			\n• Type: %c[d_orange]Chemical-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nNot always easy to spot, this anomaly is recognizable by the green gas clouds floating and wandering over the ground. If one approaches, the screen will turn green and a hissing noise can be heard. When triggered by metal parts or organic tissue, it emits acidic compounds, splashing them around in its vicinity.
+			\n \nIt should not to be confused with the Fruit Punch, due to the fact that it behaves more like a cloud or fog bank rather than a puddle of liquid as the Fruit Punch does.
+			\n \nIt seems to be an evolved or greater version of Fruit Punch, because Fruit Punch does not have the toxic choking effect Gas does, and it's more corrosive and more damaging.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_gascloud">
+		<text>Gas Cloud</text>
+	</string>
+	<string id="encyclopedia_anomalies_gascloud_text"> 	
+		<text>
+			• Name: %c[d_cyan]Gas Cloud%c[ui_gray_1]
+			\n• Type: %c[d_orange]Chemical-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThe Gas Cloud anomaly resembles a Gas anomaly and causes chemical burns. The Gas Cloud however moves and deals far more damage. As such, it is the chemical counterpart to the Comet and Tesla anomalies.
+			\n \nEven while wearing a top-tier protective suit and some chemical-protection artefacts, only a touch from this anomaly would reduce health dramatically and a direct hit may result in instant death. Running through it is the best thing to do, as it will prevent the player from taking high damage. Certain drugs can severly reduce the damage dealt by the Gas Cloud.
+			\n \nThis anomaly also does not spawn any kind of artefact.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_electro">
+		<text>Electro</text>
+	</string>
+	<string id="encyclopedia_anomalies_electro_text"> 	
+		<text>
+			• Name: %c[d_cyan]Electro%c[ui_gray_1]
+			\n• Type: %c[d_orange]Electricity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nAn anomalous formation, roughly 10 meters in diameter, containing large quantities of static electricity. When triggered, the anomaly bursts into a storm of arcing electricity nearly always lethal to all living beings. Easily recognizable by the blue gas it emits, along with the endless arcing of small bolts of electricity in the vicinity, the Electro holds no distinction for what crosses its event horizon - be it a human, a mutants or an inanimate object, and discharges as soon as anything gets too close.
+			\n \nThe Electro is always in clusters and often located in tightly confined spaces, although clusters out in the open with a spacing of one meter or more between neighboring Electros have also been recorded. They are easily avoided when outdoors, and at their most dangerous in confined areas. At night, the Electro can be revealed using the Svarog detector or by throwing bolts into it, at which point it will discharge. In Call of Pripyat, any Electro that discharges will form a chain reaction and discharge any neighbors, leading to the activation of the entire cluster.
+			\n \nIts power and recharge rate could mean it is a natural generator, much like a thundercloud or lightning storm. Its power means a single Electro may be able to store a bare minimum of 5000 volts of tension, all the way up to several hundred thousand, with a current in the hundreds or even thousands of amperes, enabling it to kill almost anything in the Zone in just a few jolts. Lethality varies from game to game, with Call of Pripyat bearing the most dangerous variants.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_tesla">
+		<text>Tesla</text>
+	</string>
+	<string id="encyclopedia_anomalies_tesla_text"> 	
+		<text>
+			• Name: %c[d_cyan]Tesla%c[ui_gray_1]
+			\n• Type: %c[d_orange]Electricity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nThe Tesla anomaly functions much like an Electro anomaly and deals electric damage, with the difference being that the Tesla is mobile. In that sense, it's the Electro's equivalent of the Comet. It takes the appearance of a fast-moving ball of pure electricity.
+			\nIt can be said the Tesla is the evolved or greater form of an Electro. It's possible that a particularly large or intense Electro anomaly went undisturbed or built up a massive charge for an extensive amount of time and became mobile as a result, either to discharge its built up energy or to 'hunt' for targets or prey.
+			\n \nUnless one is equipped with a few electricity-absorbing artefacts and/or wearing a suit with high electrical protection, simply being scraped by this anomaly significantly reduces the player's health and outrights kills them if they get struck directly by it.
+			\n \nThis anomaly does not spawn any kind of artefact.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_space">
+		<text>Space</text>
+	</string>
+	<string id="encyclopedia_anomalies_space_text"> 	
+		<text>
+			• Name: %c[d_cyan]Space%c[ui_gray_1]
+			\n• Type: %c[d_orange]Reality-altering%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nIt is truly the ultimate result of the Zone's instability as it alters the very fabric of reality and distorts time and space, seemingly creating miniature wormholes, which teleport the player and anything thrown into it to another spot.
+			\n \nThis theory of teleportation seems to be proven upon talking to a stalker at the Cordon by the rail bridge. Asking him about the 'black hole' will direct you to the Space anomaly there, along with his details about it. Apparently he and his friends have been throwing trash into it, and he recalls seeing the trash in an old tunnel, meaning the Space anomaly teleports anything thrown into it.
+			\n \nThe fact stalkers can get 'trapped' is a testament to the Zone's instability, giving this anomaly some kind of will of its own.
+			\n \nAdditionally, while it does not randomly spawn artefacts like most anomalies, Forester claims that he found a Compass artefact while trapped inside a Space Anomaly, hinting that those rare artefacts may only spawn from inside the time loop of the anomaly. This is further implied by the fact that Noah, who uses the Space anomaly at the Burnt Farmstead in Zaton to travel to the southern plateau, possesses two of them despite of their rarity.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_teleport">
+		<text>Teleport</text>
+	</string>
+	<string id="encyclopedia_anomalies_teleport_text"> 	
+		<text>
+			• Name: %c[d_cyan]Teleport%c[ui_gray_1]
+			\n• Type: %c[d_orange]Reality-altering%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nA rare anomaly found in a few locations throughout the Zone. Harmless in nature, coming in contact with the teleport causes you to teleport to another location.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_anomalies_pulse">
+		<text>Pulse</text>
+	</string>
+	<string id="encyclopedia_anomalies_pulse_text"> 	
+		<text>
+			• Name: %c[d_cyan]Pulse%c[ui_gray_1]
+			\n• Type: %c[d_orange]Electricity-based%c[ui_gray_1]
+			\n \n%c[d_green]Information%c[ui_gray_1]
+			\nScientists believe that the "Pulse" is a unique formation of thunderbolts under the aggressive effect of psy-waves within Zone borders.\n
+			\nBeginning with a blue haze, it takes very little time for a Pulse to form and discharge into the ground, leading to an instant death for any humans close enough to the point of discharge.\n
+			\nThe frequency of this anomaly is directly connected to the weather, as it has more chance to form during rain and storms in similar way to thunderbolts.
+			\nAlthough its kill radius is not as wide as a full psy-storm, the Pulse remains a credible threat. If a Pulse started forming near you, run away as fast as you can. The anomaly can be identified by its distingtive sound, which can be considered as a warning sign.
+			\n \nIf a stalker's equipment gives the wearer great protection against psy and electric damage, it is possible to survive the shock without taking cover.\n
+			\nThis anomaly isn't known to leave any artefacts.
+		</text>
+	</string>
+	
+</string_table>

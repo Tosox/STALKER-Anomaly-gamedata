@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Griffith (Mercs leader in the Bookstore) -->
+	<string id="grifon_meet_dialog_0">
+		<text>I saw your message. How come you've turned into such a do-gooder?</text>
+	</string>
+	<string id="grifon_meet_dialog_1">
+		<text>...Don't push your luck. The only reason you even stand in this place is because things have been going to crap. We've lost several important people to the military, who used to roam around here... and we haven't been able to find information necessary to us. If we return to Dushman, he's gonna tear our balls off and shove them right down our throats, which is why we're stationed here for the time being. At this point, I see no use in fighting random stalkers.</text>
+	</string>
+	<string id="grifon_meet_dialog_2">
+		<text>What kind of help do you need?</text>
+	</string>
+	<string id="grifon_meet_dialog_3">
+		<text>Any. We have no supplies here, no standard equipment - only what we manage to find after successful operations. You can also talk to our supplier; for a fee, he'll share some excess equipment equipment with you.</text>
+	</string>
+
+	<string id="task_find_inf_inx_8_mlr_1_0">
+		<text>Got any special jobs?</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_1">
+		<text>We actually came here to retrieve info from Lab X8, which is located near the Yubileiny service center north of here; inside, there was an elevator that allowed us to go down to "minus first floor", but we got interrupted by the fucking military. It's because of them that we've ended up this deep in shit. Dushman's going to kill us anyway, but maybe there are a few documents left... we'd have something useful to leave with, at least. I'd head over there again with the guys, but there aren't many of us left and it'd be too much to handle, since we'd rather not spend any more manpower than we need to trying to somehow get away from the center of the fucking Zone. Maybe you could head down to X8 - there could be something left, and, well... you'll earn some good money at the same time. You feel like going?</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_2">
+		<text>I'll go.</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_3">
+		<text>No, thanks.</text>
+	</string>
+	
+	<string id="task_find_inf_inx_8_mlr_2_0">
+		<text>Here's what I managed to find.</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_2_1">
+		<text>Stack of papers doesn't seem very thick... Nevertheless, there are some interesting points here. It won't be hard to find a buyer for such a find. Here's your cut.</text>
+	</string>
+	
+<!-- Trunk (Merc Mechanic in the Bookstore) -->
+	<string id="tech_a18_meet_dialog_0">
+		<text>You're the local technician, right? What services do you offer?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_1">
+		<text>That's correct. I can provide repair service and ammunition, which our guys find in raids from time to time, in exchange for any foreign munitions you bring us. We also have some foreign ones, and the exchange ratio for everything expect RPG warheads is one to one. The weapons we have are all fine and dandy, but a few prefer using more domestic firearms, ammunition for which is more abundant - having anything to shoot with helps keep us alive and well. I can also give you RPG projectiles and M209 underbarrel grenades, which we've received in abundance for carrying out tasks, though unfortunately, we don't have any more grenade launchers to go with it. Medical assistance is also something I can provide.</text>
+	</string>
+
+	<string id="tech_a18_meet_dialog_1_0">
+		<text>What kinds of munitions do you exchange?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_1_1">
+		<text>I have two hundred 9x19 rounds that I can exchange for an equal number of 9x18 +P+ rounds, about three hundred 5.56x45 rounds in exchange for 5.45x39 rounds, twenty F1 grenades for the same amount of M209 grenades and ten RGD-5 grenades in exchange for three RPG warheads.</text>
+	</string>
+	
+	<string id="tech_a18_meet_dialog_2_0">
+		<text>Think I'll make an exchange.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_1">
+		<text>Great. What do you have?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_2">
+		<text>I'll take one hundred 9x19 rounds in exchange for one hundred 9x18 +P+ rounds.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_3">
+		<text>I'll take one hundred 5.56x45 rounds in exchange for one hundred 5.45x39 rounds.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_4">
+		<text>I'll take twenty F1 grenades in exchange for twenty M209 grenades.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_5">
+		<text>I'll take ten RGD-5 grenades in exchange for three RPG warheads.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_6">
+		<text>I've changed my mind.</text>
+	</string>
+
+	
+<!-- Meeker (Special trader  in the Bookstore, substituting Nimble as special orders trader) -->
+	<string id="pri_special_trader_mlr1_0">
+		<text>Who are you?</text>
+	</string>
+	<string id="pri_special_trader_mlr1_1">
+		<text>A new client... Understand that I'm not interested in who you are or where you come from - you choose what you need from the list and wait exactly one day until I get the goods. Moreover, I do not accept refusals - I don't have time for games, or bullshit, and I work without prepayments. Everything will be exactly on time, and you can order no more than one item.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr4_0">
+		<text>How do you cooperate with the Monolith and how do you manage to get such unique armor and weapons?</text>
+	</string>
+	<string id="pri_special_trader_mlr4_1">
+		<text>If I'm not interested in who you are, then the feeling should be mutual, right? I'll tell you this only your reassurance: I'm an intermediary. You're lucky that I decided to cooperate with you, as I can be very selective with my clients. Believe me.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr2_0">
+		<text>I want to place an order.</text>
+	</string>
+	<string id="pri_special_trader_mlr2_1">
+		<text>Choose what interests you.</text>
+	</string>
+		<string id="pri_special_trader_mlr2_2">
+			<text>Pistols.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_7">
+			<text>Remember, you may choose one and only one. Here.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_8">
+			<text>The Steppe Eagle - a hand-made pistol based on the Desert Eagle design. Finely tuned to achieve incredible accuracy. It'll cost you eight thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_11">
+			<text>You'll receive a message on your PDA from me in exactly twenty-four hours.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_9">
+			<text>Alpine - a modified SIG P220 with an extended magazine. It'll cost you sixty-five thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_10">
+			<text>March - modified UDP Compact, high caliber and quick-firing. It'll cost you seven thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_3">
+			<text>Shotguns and SMGs.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_28">
+			<text>Right. Choose one of the following.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_12">
+			<text>The Frasier - a handmade sub-machine gun based on the MP5. Increased caliber, improved characteristics over standard counterpart. It'll cost you ninety-five hundred.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_13">
+			<text>The Carabiner - an army-modified SPAS-12 with reduced recoil and automatic firing mode. It'll cost you eleven thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_14">
+			<text>The Armsel Protecta - a shotgun based on the design of the Striker shotgun. It'll cost you seventeen thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_15">
+			<text>I didn't find what I was looking for.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_4">
+			<text>Sniper and assault rifles.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_29">
+			<text>Here's what I've got - pick one.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_16">
+			<text>Storm - a modified OTs-14 Groza manufactured for Spetsnaz special forces, secretly leaked to the masses. One of the advantages worth noting is the increased magazine capacity. It'll cost you nineteen thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_17">
+			<text>The H&amp;K G36 - a rare sight in the zone. It'll cost you fourteen thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_18">
+			<text>The FN F2000. A Belgian rarity and a decent assault rifle. It'll cost you seventeen thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_19">
+			<text>The Tide - an exclusive modification of the VSS Vintorez. Lower rate of fire, but increased stopping power. It'll cost you twenty thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_20">
+			<text>The SVU2-A - an evolution of the SVUmk-2 sniper rifle. This weapon used to belong to Max, the legendary guardian of Freedom. It'll cost you twenty-four thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_21">
+			<text>The SVD Lynx - an army modification that combines increased accuracy and stopping power. It'll cost you eighteen thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_27">
+			<text>Gauss rifle. A trophy weapon - you can count the number of these in the Zone on your fingers. Absolute accuracy and damage with almost no recoil included. The price is one-hundred and fifty thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_5">
+			<text>Suits.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_30">
+			<text>Alright, choose one.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_22">
+			<text>A Monolith exoskeleton - the best combination of protective characteristics. In addition, you won't get this anywhere else, unless you are a certain representative of the brotherhood. The price is at a hundred thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_23">
+			<text>A mercenary exoskeleton - perhaps one of the most reliable means of protection. It'll cost you seventy-five thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_24">
+			<text>Bandit exoskeleton. Exclusivity in its purest form. It'll cost you sixty-five thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_25">
+			<text>A Monolith suit featuring a closed-cycle breathing system; as with the exoskeleton, you are unlikely to see it anywhere else. It'll cost you seventy thousand.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_26">
+			<text>A Mercenary suit with a closed breathing system. Excellent protection from anomalies and a real rarity for the average stalker. It'll cost you fifty thousand.</text>
+		</string>
+	<string id="pri_special_trader_mlr2_6">
+		<text>I've changed my mind.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr3_0">
+		<text>I recieved your message, is my order ready?</text>
+	</string>
+	<string id="pri_special_trader_mlr3_1">
+		<text>Yes, hope you have the funds to afford it. [%s RU] if you don't remember.</text>
+	</string>
+		<string id="pri_special_trader_mlr3_2">
+			<text>Yeah, give me the Steppe Eagle. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_20">
+			<text>Come again.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_3">
+			<text>I'll take the SIG-220 Alpine. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_4">
+			<text>Give me the USP March. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_5">
+			<text>I'd like the MP-5 Frasier. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_6">
+			<text>Gimme the Carabiner. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_7">
+			<text>Let me get the Protecta. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_8">
+			<text>I'll place an order for the OT-14 Storm. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_9">
+			<text>Wouldn't mind the HK G36. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_10">
+			<text>FN-2000 sounds like a nice pick. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_11">
+			<text>Definitely want the VSS Tide. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_12">
+			<text>SVU2-A, eh? Sure. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_13">
+			<text>I'll grab that SVD Lynx. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_14">
+			<text>I'll take the Monolith exoskeleton. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_15">
+			<text>Gimme the mercenary exoskeleton. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_16">
+			<text>I'll toss some cash at the bandit exoskeleton. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_17">
+			<text>I needed that Monolith SEVA suit. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_18">
+			<text>Give me the mercenary SEVA suit. Here's your money.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_19">
+			<text>Gauss rifle. Right now. Here's your money.</text>
+		</string>
+	<string id="pri_special_trader_mlr3_21">
+		<text>Uh... Not yet. I'm working on it.</text>
+	</string>
+
+
+<!-- Monolith Mechanic in the Yubileiny service center -->
+	<string id="mechanic_monolith_kbo_start_0">
+		<text>Greetings, brother. I carry out Its will by preserving the equipment of our brotherhood.</text>
+	</string>
+
+	
+<!-- Monolith trader in the Yubileiny service center -->
+	<string id="meet_guid_prikbo_mon_0">
+		<text>To which places may I travel to, brother?</text>
+	</string>
+	<string id="meet_guid_prikbo_mon_1">
+		<text>I personally can not escort you, but our brothers may show you where to go - for a fee. We've got positions set up in the Red Forest, Jupiter and Pripyat. We would be glad to assist you at any time.</text>
+	</string>
+
+	<string id="meet_guid_prikbo_mon_list_0">
+		<text>Where can the guides take me?</text>
+	</string>
+	<string id="meet_guid_prikbo_mon_list_1">
+		<text>To the Red Forest for five thousand rubles, Jupiter for two thousand and Pripyat for one thousand.</text>
+	</string>
+
+	<string id="travel_guid_prikbo_mon_mon_0">
+		<text>I'd like to travel somewhere.</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_1">
+		<text>Certainly. Where would you like the guides to take you?</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_2">
+		<text>To the Red Forest. %c[d_orange][5000 RU]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_3">
+		<text>To Jupiter. %c[d_orange][2000 RU]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_4">
+		<text>To Pripyat. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_5">
+		<text>I've changed my mind.</text>
+	</string>
+
+	
+<!---- Charon, in the basement of the Palace of Culture --->
+	<string id="meet_guid_l11pri_mon_haron_0">
+		<text>Is there anywhere I may travel, brother?</text>
+	</string>
+	<string id="meet_guid_l11pri_mon_haron_1">
+		<text>Certainly. I may ask our brothers to lead you - in exchange for a donation to the brotherhood. You may be taken to the outskirts of Pripyat east of here, to Jupiter to the west, and to the Red Forest located to the southwest.</text>
+	</string>
+
+	<string id="meet_guid_l11pri_mon_haron_list_0">
+		<text>To which places may I travel to, brother?</text>
+	</string>
+	<string id="meet_guid_l11pri_mon_haron_list_1">
+		<text>There are ways to the Outskirts east of here, to Jupiter to the west, and to the Red Forest located to the southwest.</text>
+	</string>
+
+	<string id="travel_guid_l11pri_mon_haron_0">
+		<text>I'd like to travel somewhere.</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_1">
+		<text>To which location do you seek to go, brother?</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_2">
+		<text>To the Outskirts. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_3">
+		<text>To Jupiter. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_4">
+		<text>To the Red Forest. %c[d_orange][5000 RU]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_5">
+		<text>I've changed my mind.</text>
+	</string>
+
+	<string id="find_blackbox_mlr_reward_haron_0">
+		<text>Brother, I have found a flight recorder device under the wreckage of a helicopter.</text>
+	</string>
+	<string id="find_blackbox_mlr_reward_haron_1">
+		<text>I am pleased. With this, the infidels will burn.</text>
+	</string>
+
+	
+
+<!-- Guide in eastern Pripyat -->
+	<string id="meet_guid_pri_stalker_0">
+		<text>You're a guide, right?</text>
+	</string>
+	<string id="meet_guid_pri_stalker_1">
+		<text>Yeah, they call me Tourist. I like to wander around in poorly-mapped areas to find secret paths that no other stalkers know about. Anyway, here's where I can take you: to the Nuclear Power Plant for twelve thousand rubles, Pripyat for three thousand, Yanov station in Jupiter for four thousand, the Radar for eight thousand, the Jupiter Underground for just one thousand and Zaton, via Garry, for four thousand.</text>
+	</string>
+
+	<string id="meet_guid_pri_stalker_list_0">
+		<text>Where do you travel to again?</text>
+	</string>
+	<string id="meet_guid_pri_stalker_list_1">
+		<text>To the Nuclear Power Plant for twelve thousand rubles, Pripyat for three thousand, Yanov station in Jupiter for four thousand, the Radar for eight thousand, the Jupiter Underground for just one thousand and Zaton, via Garry, for four thousand.</text>
+	</string>
+
+	<string id="travel_guid_pri_stalker_0">
+		<text>Guide me.</text>
+	</string>
+	<string id="travel_guid_pri_stalker_1">
+		<text>Where?</text>
+	</string>
+	<string id="travel_guid_pri_stalker_2">
+		<text>To the Chernobyl NPP. %c[d_orange][12000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_3">
+		<text>To Pripyat. %c[d_orange][3000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_4">
+		<text>To the Radar. %c[d_orange][8000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_5">
+		<text>To Jupiter. %c[d_orange][4000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_6">
+		<text>To the Jupiter Underground. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_7">
+		<text>To Zaton. %c[d_orange][4000 RU]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_8">
+		<text>I've changed my mind.</text>
+	</string>
+
+<!-- Eidolon -->
+	<string id="monolith_eidolon_st_1">
+		<text>I am Eidolon. Chosen of the Monolith. I was the one, to restore the Brain Scorcher. With guidance from the Monolith. I sought audience, and was granted. Bestowed with a gift. Clarity of vision, crystal. To protect, to punish. To serve the greatest cause. I scour the Zone in search of dangerous infidels. Ignorant fools who wish to destroy us, destroy the almighty Monolith. I teach them, I preach. With my weapons. My blessed mind. I sense them, as they run and hide. Futile. To no avail, for I perceive. I pursue. I destroy, to protect, in the name of the Monolith.</text>
+	</string>
+
+</string_table>

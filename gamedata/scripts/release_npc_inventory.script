@@ -1,0 +1,101 @@
+--[[
+	By tdef
+	2019/7/29
+	Auto inventory cleaner for common NPCs (once each x days)
+--]]
+
+local num_of_days = 3
+local enable_debug = false
+
+
+function print_dbg(frmt, ...)
+	if enable_debug then
+		printf(strformat('--inventory cleaner: ' .. frmt, ...))
+	end
+end
+
+function actor_on_update()
+	UnregisterScriptCallback("actor_on_update",actor_on_update)
+	
+	local passed = game.get_game_time():diffSec(level.get_start_time())
+	local days = math.floor(passed / 86400)
+	local old = load_var(db.actor, 'next_clean', num_of_days)
+	
+	-- Force cleaning if num of IDs became critical 
+	if alife_on_limit() then
+		old = days - 1
+	end
+	
+	if days <= old then
+		print_dbg('cleaning skipped')
+		return
+	end
+	
+	print_dbg('cleaning started')
+	
+	save_var(db.actor, 'next_clean', days + num_of_days)
+	
+	local sim = alife()
+	local se_actor = sim:actor()
+	local to_clean = {}
+	local sid, cfg
+	
+	-- get id of npc to clean
+	for id in pairs(SIMBOARD.squads) do
+		local se_sq = sim:object(id)
+
+		if se_sq
+		and (not is_squad_monster[se_sq.player_id])
+		and (not simulation_objects.is_on_the_same_level(se_sq, se_actor))
+--		and (not simulation_objects.is_on_the_linked_level(se_sq, se_actor))
+		then
+			for k in se_sq:squad_members() do
+				sid = get_object_story_id(k.id)
+				cfg = trade_manager.get_trade_profile(k.id,"cfg_ltx")
+				if sid and cfg and (cfg ~= "items\\trade\\trade_generic.ltx") then
+					print_dbg('trader npc spotted (%s) [%s] = %s', k.id, sid, trade_manager.get_trade_profile(k.id,"cfg_ltx"))
+				else
+					clean_npc_inv( alife_object(k.id) )
+				end
+			end
+		end
+	end
+end
+
+local itms_keep
+function clean_npc_inv(se_npc)
+	if (not itms_keep) then
+		itms_keep = death_manager.item_by_story_id or {}
+	end
+	
+	for id in alife():get_children(se_npc) do
+		local se_item = alife_object(id)
+		if se_item then
+			local sec = se_item:section_name()
+			local cls_id = se_item:clsid()
+			
+			if (not (ini_sys:r_bool_ex(sec,"quest_item")))       -- quest items
+			and (ini_sys:r_string_ex(sec,"kind") ~= "i_quest")   -- quest items
+			and (not IsItem("anim",sec))                         -- anim items
+			and (not itms_keep[sec])                             -- keep items from death manager
+			and (not get_object_story_id(id))                    -- items with story id (extra protection)
+			and (not IsWeapon(nil,cls_id))                       -- weapons
+			and (not IsAmmo(nil,cls_id))                         -- ammo
+			and (not IsGrenade(nil,cls_id))                      -- grenades
+			and (not IsArtefact(nil,cls_id))                     -- artefacts
+			then
+				print_dbg('releasing %s from %s', se_item:name(), se_npc:name())
+				alife_release(se_item)
+			else
+				--print_dbg('keeping %s on %s', se_item:name(), se_npc:name())
+			end
+		end
+	end
+	
+	-- Clean extra ammo
+	item_weapon.remove_extra_ammo(se_npc.id)
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+end

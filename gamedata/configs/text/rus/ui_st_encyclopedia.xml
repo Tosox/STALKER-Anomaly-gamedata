@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<!-- PDA -->
+	<string id="pda_btn_encyclopedia">
+		<text>Справочник</text>
+	</string>
+
+	<string id="pda_btn_encyclopedia_hint">
+		<text>Открыть справочник</text>
+	</string>
+	
+	<!-- Interface components -->
+	<string id="pda_encyclopedia_title">
+		<text>Справочник Зоны</text>
+	</string>
+	
+	<string id="st_pda_encyclopedia_image_checkbox">
+		<text>Изображения сверху</text>
+	</string>
+	
+	<string id="st_pda_encyclopedia_message_checkbox">
+		<text>Показать сообщения</text>
+	</string>
+	
+	<!-- Messages -->
+	<string id="pda_encyclopedia_notify">
+		<text>Открыта статья: %s, %s</text>
+	</string>
+	<string id="pda_encyclopedia_notify_note">
+		<text>Новая заметка: %s</text>
+	</string>
+	
+	<!-- Misc -->
+	<string id="pda_encyclopedia_info">
+		<text>Информация</text>
+	</string>
+	<string id="pda_encyclopedia_properties">
+		<text>Свойства</text>
+	</string>
+	<string id="pda_encyclopedia_subject">
+		<text>Предмет</text>
+	</string>
+	<string id="pda_encyclopedia_content">
+		<text>Содержание</text>
+	</string>
+	
+	<string id="pda_encyclopedia_ironman_lifes">
+		<text>Предоставленные жизни</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_life">
+		<text>Оставшиеся жизни</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_deaths">
+		<text>Количество смертей</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_cycle">
+		<text>Срок предоставления жизней (в часах)</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_1">
+		<text>Одна ошибка и все кончено...</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_2">
+		<text>Надо быть осторожнее!</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_3">
+		<text>Я в безопасности.</text>
+	</string>
+	
+	
+	<!-- Locked articles -->
+	<string id="pda_encyclopedia_locked">
+		<text>??????????</text>
+	</string>
+	
+	<string id="pda_encyclopedia_locked_text">
+		<text>
+			Вы ещё не открыли эту статью.\n
+			\nСтатьи можно открыть следующими способами:\n
+			\n• Нахождение локаций.
+			\n• Использование карт памяти.
+			\n• Свежевание и разделка мутантов.
+			\n• Общение и взаимодействие со сталкерами.
+			\n• Использование предметов и фракционного снаряжения.
+		</text>
+	</string>
+	
+</string_table>

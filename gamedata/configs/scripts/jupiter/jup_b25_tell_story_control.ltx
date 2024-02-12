@@ -1,0 +1,43 @@
+[logic]
+active = sr_idle@jup_oa_msg
+
+[sr_idle@jup_oa_msg]
+on_info = {=actor_on_level(jupiter) !actor_in_zone(jup_surge_hide_a6) +operation_afterglow_transmission_report} sr_idle@yanov_invitation %=create_squad(army_degtyarev_jup_squad:jup_a6)%
+on_info2 = {=actor_in_zone(jup_surge_hide_a6) +operation_afterglow_transmission_report} sr_idle@yanov_invitation2 %=create_squad(army_degtyarev_jup_squad:jup_a6)%
+
+[sr_idle@yanov_invitation]
+on_game_timer = 300 | sr_idle@jup_oa_further_cooperation %=yanov_invitation()%
+
+[sr_idle@yanov_invitation2]
+on_game_timer = 60 | sr_idle@jup_oa_further_cooperation %=yanov_invitation2()%
+
+[sr_idle@jup_oa_further_cooperation]
+on_info = {+degtyarev_further_cooperation_special_delivery} sr_idle@jup_oa_special_delivery %=clear_smart_terrain(jup_b46) =clear_smart_terrain(jup_sim_14) =give_task(lttz_oa_special_delivery) =lttz_oa_give_special_delivery_case%
+
+[sr_idle@jup_oa_special_delivery]
+on_info = {+army_lt_jup_take_case} %=lttz_oa_take_special_delivery_case%
+on_info1 = {+army_lt_jup_special_delivery} sr_idle@jup_oa_special_delivery2 %=remove_special_companion_squad(army_lt_jup)%
+on_info2 = {+delivery_too_late} sr_idle@jup_oa_special_delivery2 %=remove_squad(army_lt_jup)%
+on_info3 = {+army_jup_squad_dead} sr_idle@jup_oa_special_delivery2
+
+[sr_idle@jup_oa_special_delivery2]
+on_info = {+degtyarev_further_cooperation_good_reward} sr_idle@jup_oa_undercover_agent %=reward_money(8000) =complete_task_inc_goodwill(250:army_npc) =remove_squad(isg_delivery_interception_squad) =clear_smart_terrain(jup_a10_smart_terrain) =give_task(lttz_oa_undercover_agent)%
+on_info2 = {+degtyarev_further_cooperation_bad_reward} sr_idle@jup_oa_undercover_agent %=reward_money(2000) =lttz_oa_take_special_delivery_case =remove_squad(isg_delivery_interception_squad) =clear_smart_terrain(jup_a10_smart_terrain) =give_task(lttz_oa_undercover_agent)%
+
+[sr_idle@jup_oa_undercover_agent]
+on_info = {+army_isg_spy_dead -undercover_agent_convo} sr_idle@nil %=remove_squad(army_degtyarev_jup)%
+on_info2 = {+degtyarev_further_cooperation_undercover_agent_good} sr_idle@jup_oa_undercover_agent2
+on_info3 = {+degtyarev_further_cooperation_undercover_agent_bad} sr_idle@jup_oa_undercover_agent2 %=lttz_set_squad_enemy_to_actor(isg_checkpoint_squad) =remove_special_companion_squad(army_isg_spy)%
+
+[sr_idle@jup_oa_undercover_agent2]
+on_info = {+degtyarev_further_cooperation_undercover_agent_good_reward} sr_idle@jup_oa_search_unit %=reward_money(10000) =complete_task_inc_goodwill(250:army_npc) =remove_squad(army_isg_spy) =clear_smart_terrain(jup_b8_smart_terrain) =give_task(lttz_oa_search_unit)%
+on_info2 = {+degtyarev_further_cooperation_undercover_agent_bad_reward} sr_idle@jup_oa_search_unit %=reward_money(2500) =lttz_oa_take_special_delivery_case =clear_smart_terrain(jup_b8_smart_terrain) =give_task(lttz_oa_search_unit)%
+
+[sr_idle@jup_oa_search_unit]
+on_info = {=actor_in_zone(jup_factory_default_in_restrictor) +degtyarev_further_cooperation_search_unit -search_unit_approach} %+search_unit_approach%
+on_info2 = {+search_too_late -search_unit_despawn} %=remove_squad(isg_jupiter_factory_squad) +search_unit_despawn%
+on_info3 = {+isg_jupiter_factory_squad_dead -jupiter_documents_spawn} %=spawn_jupiter_documents +jupiter_documents_spawn%
+on_info4 = {+degtyarev_further_cooperation_final} sr_idle@nil %=reward_money(16000) =complete_task_inc_goodwill(250:army_npc) =remove_special_companion_squad(army_degtyarev)%
+on_info5 = {+degtyarev_further_cooperation_final_bad} sr_idle@nil %=reward_money(4000) =remove_special_companion_squad(army_degtyarev)%
+
+[sr_idle@nil]

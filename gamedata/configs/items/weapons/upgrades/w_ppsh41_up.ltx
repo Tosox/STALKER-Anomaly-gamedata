@@ -1,0 +1,328 @@
+
+[up_sect_firsta_ppsh41]
+cost                                     = 4480
+value                                    = -15
+cam_dispersion                           = -0.093
+cam_dispersion_inc                       = 0.0 ;-0.063
+cam_step_angle_horz                      = -0.226
+zoom_cam_dispersion                      = -0.071
+zoom_cam_dispersion_inc                  = 0.0 ; -0.049
+zoom_cam_step_angle_horz                 = -0.022
+inv_weight                               = +0.12
+
+[up_sect_firstc_ppsh41]
+cost                                     = 1850
+value                                    = +15
+
+condition_shot_dec                       = -0.0001
+condition_queue_shot_dec                 = -0.0001
+misfire_start_prob                       = -0.0006
+misfire_end_prob                         = -0.006
+inv_weight                               = +0.15
+
+[up_sect_firstd_ppsh41]
+cost                                     = 2920
+value                                    = -10
+cam_dispersion                           = -0.062
+cam_dispersion_inc                       = 0.0 ;-0.042
+cam_step_angle_horz                      = -0.164
+zoom_cam_dispersion                      = -0.046
+zoom_cam_dispersion_inc                  = 0.0 ; -0.033
+zoom_cam_step_angle_horz                 = -0.0154
+inv_weight                               = +0.2
+
+[up_sect_firste_ppsh41]
+cost                                     = 1750
+value                                    = +10
+fire_dispersion_base                     = -0.06
+inv_weight                               = +0.1
+
+[up_sect_firstf_ppsh41]
+cost                                     = 2650
+value                                    = +30
+bullet_speed                             = +110
+fire_dispersion_base                     = -0.04
+inv_weight                               = +0.2
+
+[up_sect_secona_ppsh41]
+cost                                     = 1860
+value                                    = +10
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.15
+PDM_disp_accel_factor                    = -0.15
+inv_weight                               = +0.15
+
+[up_sect_seconc_ppsh41]
+cost                                     = 1850
+value                                    = +10
+fire_dispersion_base                     = -0.06
+
+[up_sect_second_ppsh41]
+cost                                     = 3150
+value                                    = +10
+rpm                                      = +90
+inv_weight                               = +0.15
+
+[up_sect_thirda_ppsh41]
+cost                                     = 2650
+value                                    = +10
+
+condition_shot_dec                       = -0.0001
+condition_queue_shot_dec                 = -0.0001
+misfire_start_prob                       = -0.0005
+misfire_end_prob                         = -0.005
+inv_weight                               = +0.12
+
+[up_sect_thirdc_ppsh41]
+cost                                     = 2950
+value                                    = +10
+bullet_speed                             = +38
+fire_dispersion_base                     = -0.05
+inv_weight                               = +0.15
+
+[up_sect_thirde_ppsh41]
+cost                                     = 2870
+value                                    = +25
+condition_queue_shot_dec                 = -0.00015
+condition_shot_dec                       = -0.00015
+
+[up_sect_thirdf_ppsh41]
+cost                                     = 3250
+value                                    = +25
+crosshair_inertion                       = -1
+PDM_disp_base                            = -0.15
+PDM_disp_vel_factor                      = -0.4
+PDM_disp_accel_factor                    = -0.4
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_ppsh41]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_ppsh41
+section                                  = up_sect_firsta_ppsh41
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_a1_name
+description                              = st_up_auto_a1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_1
+
+[up_firstc_ppsh41]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_ppsh41
+section                                  = up_sect_firstc_ppsh41
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_b1_name
+description                              = st_up_auto_b1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_2
+
+[up_firstd_ppsh41]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_ppsh41
+section                                  = up_sect_firstd_ppsh41
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c1_name
+description                              = st_up_auto_c1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_4
+
+[up_firste_ppsh41]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_ppsh41
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b3_name
+description                              = st_up_ret_b3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_6
+
+[up_firstf_ppsh41]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstf_ppsh41
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_c1_name
+description                              = st_up_ret_c1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_8
+
+[up_secona_ppsh41]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_ppsh41
+section                                  = up_sect_secona_ppsh41
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a2_name
+description                              = st_up_ret_a2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_5
+
+[up_seconc_ppsh41]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconc_ppsh41
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b3_name
+description                              = st_up_ret_b3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_6
+
+[up_second_ppsh41]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_second_ppsh41
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b2_name
+description                              = st_up_ret_b2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_7
+
+[up_thirda_ppsh41]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_ppsh41
+section                                  = up_sect_thirda_ppsh41
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a1_name
+description                              = st_up_zat_a1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_9
+
+[up_thirdc_ppsh41]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_ppsh41
+section                                  = up_sect_thirdc_ppsh41
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_b5_name
+description                              = st_up_zat_b5_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_10
+
+[up_thirde_ppsh41]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_ppsh41
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a1_name
+description                              = st_up_zat_a1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_9
+
+[up_thirdf_ppsh41]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdf_ppsh41
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stk_c3_name
+description                              = st_up_stk_c3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_15
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_ppsh41]
+elements                                 = up_firsta_ppsh41
+
+[up_gr_firstcd_ppsh41]
+elements                                 = up_firstc_ppsh41, up_firstd_ppsh41
+
+[up_gr_firstef_ppsh41]
+elements                                 = up_firste_ppsh41, up_firstf_ppsh41
+
+[up_gr_seconab_ppsh41]
+elements                                 = up_secona_ppsh41
+
+[up_gr_seconcd_ppsh41]
+elements                                 = up_seconc_ppsh41, up_second_ppsh41
+
+[up_gr_thirdab_ppsh41]
+elements                                 = up_thirda_ppsh41
+
+[up_gr_thirdcd_ppsh41]
+elements                                 = up_thirdc_ppsh41
+
+[up_gr_thirdef_ppsh41]
+elements                                 = up_thirde_ppsh41, up_thirdf_ppsh41

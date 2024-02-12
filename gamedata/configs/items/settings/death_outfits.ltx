@@ -1,0 +1,999 @@
+;;---------------------------------------------------------------------------
+;;-- Tronex
+;;-- Outfit and helmet listed per model
+;;-- They spawn on the corpse the moment its looted. See death_manager.script
+;;-- if outfit drop option is "Progressive", outfit drop happens according to settings in [outfit_drop_settings]
+;;---------------------------------------------------------------------------
+
+
+
+;-- drop outfits according to player rank and outfit cost
+;-- if the following equation is true, outfit can drop
+;-- ( player progression x rank_multiplier ) + cost_start >= outfit cost
+;-- player progression: rank number, starts from 0 on playthrough start, ends with Legend rank (27999)
+[outfit_drop_settings]
+rank_multiplier		= 20
+cost_start       	= 25000
+helmet_cost_multi	= 3
+
+
+
+;-- outfit drop according to model
+[outfit_by_visual]
+
+;-- o_assault_vest
+stalker_merc_6                              = light_merc_outfit,helm_metro
+stalker_dolg1b                              = light_dolg_outfit,helm_metro
+stalker_dolg1c                              = light_dolg_outfit,helm_metro
+stalker_dolg_5                              = light_dolg_outfit,helm_metro
+light_mono                                  = light_monolit_outfit,helm_metro
+light_voen                                  = light_voen_outfit,helm_metro
+light_free                                  = light_freedom_outfit,helm_metro
+light_neutral                               = light_loner_outfit,helm_metro
+light_isg                                   = light_isg_outfit,helm_metro
+
+;-- o_berill
+stalker_soldier_1_helm_battle                = army_outfit,helm_battle
+stalker_soldier_1_helm_battle_nogas          = army_outfit,helm_battle
+stalker_soldier_1_helm_tactic_nogas          = army_outfit,helm_tactic
+stalker_soldier_1                            = army_outfit,helm_bandana
+stalker_soldier1b                            = army_outfit,helm_bandana
+stalker_soldier1c                            = army_outfit,helm_bandana
+stalker_soldier1d                            = army_outfit,helm_bandana
+stalker_soldier1e                            = army_outfit,helm_bandana
+stalker_soldier1f                            = army_outfit,helm_bandana
+stalker_soldier1g                            = army_outfit,helm_bandana
+soldier_bandana	                             = army_outfit,helm_bandana
+soldier_bandana_1                            = army_outfit,helm_bandana
+soldier_bandana_2                            = army_outfit,helm_bandana
+soldier_bandana_3                            = army_outfit,helm_bandana
+soldier_bandana_4                            = army_outfit,helm_bandana
+soldier_bandana_5                            = army_outfit,helm_bandana
+soldier_bandana_6                            = army_outfit,helm_bandana
+soldier_obichniy                             = army_outfit,helm_bandana
+stalker_soldier_6_helm_tactic_nogas          = army_outfit,helm_tactic
+stalker_soldier_6_helm_battle_nogas          = army_outfit,helm_battle
+stalker_soldier_6_helm_battle                = army_outfit,helm_battle
+stalker_soldier_2                            = army_outfit,helm_tactic
+stalker_soldier_2_face_1                     = army_outfit
+stalker_soldier_5_beret                      = army_outfit
+stalker_soldier5a_beret                      = army_outfit
+stalker_soldier5b_beret                      = army_outfit
+stalker_soldier5c_beret                      = army_outfit
+stalker_soldier5d_beret                      = army_outfit
+stalker_soldier5e_beret                      = army_outfit
+stalker_soldier5f_beret                      = army_outfit
+stalker_soldier5g_beret                      = army_outfit
+stalker_soldier5h_beret                      = army_outfit
+stalker_soldier5i_beret                      = army_outfit
+stalker_soldier5j_beret                      = army_outfit
+stalker_soldier5k_beret                      = army_outfit
+
+stalker_soldierb2                            = specops_outfit,helm_tactic
+stalker_soldierb3                            = specops_outfit,helm_tactic
+stalker_soldier_2_helm_battle                = specops_outfit,helm_battle
+stalker_soldier_2_helm_battle_nogas          = specops_outfit,helm_battle
+stalker_soldier_2_helm_tactic                = specops_outfit,helm_tactic
+stalker_soldier_2_helm_tactic_nogas          = specops_outfit,helm_tactic
+stalker_soldier_3                            = specops_outfit,helm_battle
+stalker_soldier_3_beret                      = specops_outfit
+stalker_soldier3a_beret                      = specops_outfit
+stalker_soldier3b_beret                      = specops_outfit
+stalker_soldier3c_beret                      = specops_outfit
+stalker_soldier3d_beret                      = specops_outfit
+stalker_soldier3e_beret                      = specops_outfit
+stalker_soldier3f_beret                      = specops_outfit
+stalker_soldier3g_beret                      = specops_outfit
+stalker_soldier3h_beret                      = specops_outfit
+stalker_soldier3i_beret                      = specops_outfit
+stalker_soldier3j_beret                      = specops_outfit
+stalker_soldier3k_beret                      = specops_outfit
+
+stalker_dolg_berill                          = specops_dolg_outfit,helm_tactic
+
+stalker_dolg2a_mas3 						= dolg_specops_red_outfit,helm_cloth_mask
+
+stalker_bandit_5                    		 = specops_bandit_outfit
+stalker_bandit_5_gasmask                     = specops_bandit_outfit,helm_tactic
+
+stalker_merc_berill_specnaz                  = specops_merc_outfit,helm_tactic
+stalker_merc_berill_antigaz                  = specops_merc_outfit,helm_tactic
+
+stalker_freedom_3_helm_battle                = svoboda_heavy_outfit,helm_battle
+stalker_freedom_3_helm_battle_nogas          = svoboda_heavy_outfit,helm_battle
+stalker_freedom_3_helm_tactic                = svoboda_heavy_outfit,helm_tactic
+stalker_freedom_3                            = svoboda_heavy_outfit,helm_tactic
+stalker_freedom3a                            = svoboda_heavy_outfit,helm_tactic
+stalker_freedom_11                           = svoboda_heavy_outfit,helm_m40
+stalker_freedom_12                           = svoboda_heavy_outfit
+stalker_freedom_semi_pro                     = svoboda_heavy_outfit,helm_exo
+
+
+;-- o_exolight
+stalker_neutral_3_backpack_helm_tactic_nogas = exolight_outfit
+stalker_neutral_3_backpack_helm_tactic       = exolight_outfit
+stalker_neutral_3_backpack_helm_battle_nogas = exolight_outfit
+
+stalker_neutral_3                            = exo_wood_outfit
+;----------
+stalker_radexo4a                             = cs_exolight_outfit
+stalker_radexo4b                             = cs_exolight_outfit
+;----------
+stalker_monolith_3                           = monolith_exolight_outfit
+stalker_monolith3a                           = monolith_exolight_outfit
+stalker_monolith3b                           = monolith_exolight_outfit
+;----------
+stalker_isg_radiationsuit 					 = isg_exolight_outfit
+stalker_isg_radiationsuit_2 				 = isg_exolight_outfit
+;----------
+stalker_neutraltbearth 						 = bandit_exo_earth_outfit
+stalker_neutral3a                            = bandit_exo_earth_outfit
+;----------
+stalker_freedom_5                            = svoboda_exolight_outfit
+stalker_freedom5a                            = svoboda_exolight_outfit
+stalker_freedom5b                            = svoboda_exolight_outfit
+
+stalker_neutral3b 							 = freedom_exo_vineleaf_outfit
+;----------
+stalker_mercexo_4 							= merc_exolight_outfit
+;stalker_mercexo4a 							= exo_merc_urban_outfit
+stalker_mercexo4a 							= exo_merc_wood_outfit
+;----------
+stalker_dolgexo4a                            = dolg_exolight_outfit
+stalker_dolgexo_4 							= exo_dolg_outfit
+stalker_dolgexo4b 							= exo_dolg_wood_outfit
+stalker_dolgexo4c 							= exo_dolg_urban_outfit
+;----------
+stalker_neutral_reinforced                  = military_exolight_outfit
+;----------
+;stalker_ecolog_exolight
+
+
+;-- exoskeleton
+stalker_neutral_4							 = exo_outfit
+;stalker_neutral4b 							 = freedom_exo_vineleaf_outfit
+
+stalker_freedom_4                            = svoboda_exo_outfit
+stalker_freedom4a                            = svoboda_exo_outfit
+stalker_freedom4b                            = svoboda_exo_outfit
+
+stalker_merc_4 								= merc_exo_outfit
+stalker_merc4a 								= merc_exo_outfit
+
+stalker_neutral4a	   						 = bandit_exo_outfit
+
+stalker_dolg_4                               = dolg_exo_outfit
+stalker_dolg4a                               = dolg_exo_outfit
+stalker_dolg4b                               = dolg_exo_outfit
+stalker_dolg4c                               = dolg_exo_outfit
+
+stalker_monolith_4                           = monolith_exo_outfit
+stalker_monolith4a                           = monolith_exo_outfit
+stalker_monolith4b                           = monolith_exo_outfit
+
+stalker_military_exo						 = military_exo_outfit
+
+stalker_nauchniy_exo						 = ecolog_exo_outfit
+stalker_ecolog_exo						 	 = ecolog_exo_outfit
+;stalker_ecolog_exoseva						 = ecolog_exo_outfit
+
+stalker_nebo_exo_1							 = cs_exo_outfit
+
+stalker_greh_4								 = greh_exo_outfit
+
+stalker_isg_exoskeleton						 = isg_exo_outfit
+stalker_isg_exoskeleton_2                    = isg_exo_outfit
+
+stalker_renegade_4a                          = renegade_exo_outfit
+stalker_renegade_4                           = renegade_exo_outfit
+
+;-- o_lcs
+stalker_merc_2								 = merc_outfit,helm_m40
+stalker_mercen2b_mask						 = merc_outfit,helm_rp_bala
+stalker_mercen2c_mask						 = merc_outfit,helm_rp_bala
+stalker_merc_2_balloon_helm_tactic           = merc_outfit,helm_tactic
+stalker_merc_2_balloon_on_helm_tactic        = merc_outfit,helm_tactic
+stalker_merc_2_helm_battle                   = merc_outfit,helm_battle
+stalker_merc_2_helm_battle_nogas             = merc_outfit,helm_battle
+stalker_merc_2_helm_tactic                   = merc_outfit,helm_tactic
+stalker_merc_2_helm_tactic_nogas             = merc_outfit,helm_tactic
+stalker_merc_medic_2                         = merc_outfit,helm_m40
+
+stalker_merc2a								 = merc_fighter_outfit,helm_m40
+stalker_mercen2a_mask					 	 = merc_fighter_outfit,helm_rp_bala
+stalker_mercb2							 	 = merc_fighter_outfit,helm_m40
+
+stalker_ki_mask								 = merc_jackal_outfit,helm_rp_bala
+
+stalker_ki_antigas							 = merc_coyote_outfit,helm_m40
+stalker_merc_aztec							 = merc_coyote_outfit,helm_m50
+
+stalker_band_2_mask							 = banditmerc_outfit,helm_m40
+stalker_band2a_mask                          = banditmerc_outfit,helm_m40
+stalker_bandit_2                             = banditmerc_outfit,helm_cloth_mask
+stalker_bandit2a                             = banditmerc_outfit,helm_cloth_mask
+stalker_bandit_2_mask                        = banditmerc_outfit,helm_rp_bala
+stalker_bandit2a_mask                        = banditmerc_outfit,helm_rp_bala
+
+stalker_merc2c								 = merc_scout_outfit,helm_m40
+
+stalker_merc2b								 = merc_sunset_outfit,helm_m40
+
+stalker_dolg_voin							 = dolg_voin_outfit
+
+stalker_nebo_3								 = cs_light_outfit
+stalker_nebo3a                               = cs_light_outfit
+stalker_nebo3b                               = cs_light_outfit
+
+stalker_nebo_2								 = cs_medium_outfit
+stalker_nebo2a                               = cs_medium_outfit
+stalker_nebo2b                               = cs_medium_outfit
+stalker_nebo_2_backpack_helm_battle          = cs_medium_outfit,helm_battle
+stalker_nebo_2_backpack_helm_battle_nogas    = cs_medium_outfit,helm_battle
+stalker_nebo_2_backpack_helm_tactic          = cs_medium_outfit,helm_tactic
+stalker_nebo_2_backpack_helm_tactic_nogas    = cs_medium_outfit,helm_tactic
+stalker_nebo_3_balloon_helm_battle	         = cs_medium_outfit,helm_battle
+stalker_nebo_3_balloon_helm_tactic	         = cs_medium_outfit,helm_tactic
+stalker_nebo_3_helm_battle			         = cs_medium_outfit,helm_battle
+stalker_nebo_3_helm_battle_nogas	         = cs_medium_outfit,helm_battle
+stalker_nebo_3_helm_tactic			         = cs_medium_outfit,helm_tactic
+stalker_nebo_3_helm_tactic_nogas	         = cs_medium_outfit,helm_tactic
+
+stalker_greh_3c_merc						 = greh_armored_outfit,helm_m40
+
+stalker_greh_3c								 = greh_armored_camo_outfit,helm_cloth_mask
+
+stalker_renegade_1a_face_1                   = renegademerc_outfit,helm_rp_bala
+stalker_renegade_1a_face_2                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1a_face_3                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1a_merc                     = renegademerc_outfit,helm_m40
+stalker_renegade_1b_face_1                   = renegademerc_outfit,helm_rp_bala
+stalker_renegade_1b_face_2                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1b_face_3                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1b_merc                     = renegademerc_outfit,helm_m40
+stalker_renegade_1c_face_1                   = renegademerc_outfit,helm_rp_bala
+stalker_renegade_1c_face_2                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1c_face_3                   = renegademerc_outfit,helm_cloth_mask
+stalker_renegade_1c_merc                     = renegademerc_outfit,helm_m40
+
+stalker_isg_1a_face_1                        = isg_lcs_outfit,helm_rp_bala
+stalker_isg_1a_face_2                        = isg_lcs_outfit,helm_cloth_mask
+stalker_isg_1a_face_3                        = isg_lcs_outfit,helm_cloth_mask
+stalker_isg_1a_merc                          = isg_lcs_outfit,helm_m40
+stalker_isg_1a_sci                           = isg_lcs_outfit,helm_protective
+stalker_isg_1b_face_1                       = isg_lcs_camo_outfit,helm_rp_bala
+stalker_isg_1b_face_2                       = isg_lcs_camo_outfit,helm_cloth_mask
+stalker_isg_1b_face_3                       = isg_lcs_camo_outfit,helm_cloth_mask
+stalker_isg_1b_merc                         = isg_lcs_camo_outfit,helm_m40
+stalker_isg_1b_sci                          = isg_lcs_camo_outfit,helm_protective
+stalker_isg_1c_face_1                       = isg_lcs_urban_outfit,helm_rp_bala
+stalker_isg_1c_face_2                       = isg_lcs_urban_outfit,helm_cloth_mask
+stalker_isg_1c_face_3                       = isg_lcs_urban_outfit,helm_cloth_mask
+stalker_isg_1c_merc                         = isg_lcs_urban_outfit,helm_m40
+stalker_isg_1c_sci                          = isg_lcs_urban_outfit,helm_protective
+stalker_isg_1_helm_battle                  = isg_lcs_outfit,helm_battle
+stalker_isg_1_helm_battle_nogas            = isg_lcs_outfit,helm_battle
+stalker_isg_1_helm_tactic                  = isg_lcs_outfit,helm_tactic
+stalker_isg_1_helm_tactic_nogas            = isg_lcs_outfit,helm_tactic
+
+;-- o_nbc
+stalker_neutral_2_gp5						 = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2a_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2b_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2c_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2d_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2e_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2f_gp5                        = nbc_outfit ;,helm_respirator_gp5
+stalker_neutral2g_gp5                        = nbc_outfit ;,helm_respirator_gp5
+
+stalker_freedom_2a_gp5                      = nbc_freedom_outfit ;,helm_respirator_gp5
+
+stalker_dolg_2a_gp5                      	= nbc_dolg_outfit ;,helm_respirator_gp5
+
+stalker_merc_2a_gp5							= nbc_merc_outfit ;,helm_respirator_gp5
+
+stalker_nebo_s_gp5							= cs_nbc_outfit ;,helm_respirator_gp5
+
+stalker_monolith0_gp5						= monolith_nbc_outfit ;,helm_respirator_gp5
+stalker_monolith1_gp5						= monolith_nbc_outfit ;,helm_respirator_gp5
+stalker_monolith2_gp5						= monolith_nbc_outfit ;,helm_respirator_gp5
+
+stalker_bandit_2a_gp5						= bandit_nbc_outfit ;,helm_respirator_gp5
+
+
+;-- o_nosorog
+stalker_dolg4nosorog						= dolg_nosorog_outfit
+stalker_dolg_9c								= dolg_nosorog_outfit
+stalker_dolg_9b								= dolg_nosorog_outfit
+
+stalker_freedom4nosorog						= freedom_nosorog_outfit
+;stalker_freedom_10							= freedom_nosorog_outfit
+
+stalker_merc4nosorog						= merc_nosorog_outfit
+
+stalker_soldier4nosorog						= army_nosorog_outfit
+
+stalker_monolith4nosorog					= monolith_nosorog_outfit
+;stalker_monolith_6							= monolith_nosorog_outfit
+
+stalker_isg_nosorog                         = isg_nosorog_outfit
+
+
+;-- o_novice
+stalker_neutral_1                           = novice_outfit,helm_cloth_mask
+stalker_neutral1a                           = novice_outfit,helm_cloth_mask
+stalker_neutral1b                           = novice_outfit_camo,helm_cloth_mask
+;stalker_neutral1c
+stalker_neutral1d                           = novice_outfit,helm_cloth_mask
+;stalker_neutral1e
+stalker_neutral1f                           = novice_outfit,helm_rp_bala
+stalker_neutral_1_mask                     = novice_outfit,helm_rp_bala
+stalker_neutral1a_mask                     = novice_outfit,helm_rp_bala
+stalker_neutral1b_mask                     = novice_outfit_camo,helm_rp_bala
+;stalker_neutral1c_mask
+stalker_neutral1d_mask                     = novice_outfit,helm_rp_bala
+;stalker_neutral1e_mask
+stalker_neutral1f_mask                     = novice_outfit,helm_rp_bala
+stalker_neutral_a                          = novice_outfit,helm_cloth_mask
+stalker_neutrala1                          = novice_outfit,helm_cloth_mask
+stalker_neutrala2                          = novice_outfit_camo,helm_cloth_mask
+;stalker_neutrala3
+stalker_neutrala4                          = novice_outfit,helm_cloth_mask
+;stalker_neutrala5
+stalker_neutrala6                          = novice_outfit,helm_cloth_mask
+stalker_neutral_1_gas                     = novice_outfit,helm_respirator
+stalker_neutral1a_gas                     = novice_outfit,helm_respirator
+stalker_neutral1b_gas                     = novice_outfit_camo,helm_respirator
+;stalker_neutral1c_gas
+stalker_neutral1d_gas                     = novice_outfit,helm_respirator
+;stalker_neutral1e_gas
+stalker_neutral1f_gas                     = novice_outfit,helm_respirator
+stalker_neutral_1_mas2                    = novice_outfit,helm_cloth_mask
+stalker_neutral1a_mas2                    = novice_outfit,helm_cloth_mask
+stalker_neutral1b_mas2                    = novice_outfit_camo,helm_cloth_mask
+;stalker_neutral1c_mas2
+stalker_neutral1d_mas2                    = novice_outfit,helm_cloth_mask
+;stalker_neutral1e_mas2
+stalker_neutral1f_mas2                    = novice_outfit,helm_cloth_mask
+
+stalker_nebo_r						  	  = cs_novice_outfit,helm_cloth_mask
+stalker_nebo_r_mask 				  	  = cs_novice_outfit,helm_rp_bala
+stalker_nebo_r_mas2 				  	  = cs_novice_outfit,helm_cloth_mask
+stalker_nebo_r_gas  				  	  = cs_novice_outfit,helm_respirator
+stalker_nebo_r2     				  	  = cs_novice_outfit,helm_cloth_mask
+
+stalker_bandit_1					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandit1a					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandit1b					  	  = bandit_novice_outfit_alt,helm_cloth_mask
+stalker_bandit1c					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandit_1_mask				  	  = bandit_novice_outfit,helm_rp_bala
+stalker_bandit1a_mask				  	  = bandit_novice_outfit,helm_rp_bala
+stalker_bandit1b_mask				  	  = bandit_novice_outfit_alt,helm_rp_bala
+stalker_bandit1c_mask				  	  = bandit_novice_outfit,helm_rp_bala
+stalker_bandit_a					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandita1					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandita2					  	  = bandit_novice_outfit_alt,helm_cloth_mask
+stalker_bandita3					  	  = bandit_novice_outfit,helm_cloth_mask
+stalker_bandit_1_gas 				  	  = bandit_novice_outfit,helm_respirator
+stalker_bandit1a_gas 				  	  = bandit_novice_outfit,helm_respirator
+stalker_bandit1b_gas 				  	  = bandit_novice_outfit_alt,helm_respirator
+stalker_bandit1c_gas 				  	  = bandit_novice_outfit,helm_respirator
+
+stalker_dolg_0							  = dolg_novice_outfit,helm_cloth_mask
+stalker_dolg_rookie                       = dolg_novice_outfit,helm_cloth_mask
+stalker_dolg_rookie_gasmask               = dolg_novice_outfit,helm_ppm88
+
+stalker_freedom_0                         = svoboda_novice_outfit,helm_cloth_mask
+stalker_freedom_rookie                    = svoboda_novice_outfit,helm_cloth_mask
+
+stalker_renegade_1_2                      = redline_novice_outfit,helm_cloth_mask
+
+
+;-- o_proto_exo
+stalker_exo_proto						  = stalker_proto_exo_outfit,helm_respirator
+
+stalker_freedom_4_proto                   = svoboda_light_proto_exo_outfit,helm_respirator
+
+;stalker_merc_exo_proto					  = 
+
+stalker_dolg_4_proto                      =	dolg_proto_exo_outfit,helm_respirator
+stalker_dolg_2_proto                      =	dolg_heavy_proto_exo_outfit,helm_battle
+
+stalker_soldier_9_proto                   = military_proto_exo_outfit,helm_battle
+
+stalker_ecologist_proto                  = ecolog_proto_exo_outfit,helm_respirator_old
+
+stalker_monolith_4_proto                  = monolith_proto_exo_outfit,helm_respirator
+
+stalker_nebo_1_proto					  = cs_stalker_proto_exo_outfit,helm_respirator
+
+stalker_isg_proto                         = isg_proto_exo_outfit,helm_respirator
+
+;-- o_ps5
+;stalker_neutral_ps5m
+
+;stalker_merc_ps5m
+
+stalker_freedom2a_mask					  = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom_2_mas2                    = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom2a_mas2                    = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom_2_mas3                    = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom2a_mas3                    = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom_2_mas4                    = svoboda_heavy_outfit_2,helm_rp_bala
+stalker_freedom2a_mas4                    = svoboda_heavy_outfit_2,helm_rp_bala
+stalker_freedom_2                          = svoboda_heavy_outfit_2,helm_respirator
+stalker_freedom2a                          = svoboda_heavy_outfit_2,helm_respirator
+stalker_freedom_2_old                      = svoboda_heavy_outfit_2,helm_respirator_old
+stalker_freedom2a_old                      = svoboda_heavy_outfit_2,helm_respirator_old
+stalker_freedom_2_backpack_helm_battle           = svoboda_heavy_outfit_2,helm_battle
+stalker_freedom_2_backpack_helm_battle_nogas     = svoboda_heavy_outfit_2,helm_battle
+stalker_freedom_2_backpack_helm_tactic           = svoboda_heavy_outfit_2,helm_tactic
+stalker_freedom_2_backpack_helm_tactic_nogas     = svoboda_heavy_outfit_2,helm_tactic
+stalker_freedom_2_balloon_helm_battle            = svoboda_heavy_outfit_2,helm_battle
+stalker_freedom_2_balloon_helm_tactic            = svoboda_heavy_outfit_2,helm_tactic
+stalker_freedom_2_balloon_on_helm_battle         = svoboda_heavy_outfit_2,helm_battle
+stalker_freedom_2_balloon_on_helm_tactic         = svoboda_heavy_outfit_2,helm_tactic
+stalker_freedom_11                               = svoboda_heavy_outfit_2,helm_m40
+stalker_freedom_12                               = svoboda_heavy_outfit_2,helm_cloth_mask
+stalker_freedom_semi_pro                         = svoboda_heavy_outfit_2
+
+stalker_dolg_2		                             = dolg_outfit,helm_respirator
+stalker_dolg2a		                             = dolg_scout_outfit,helm_respirator
+stalker_dolggas_2	                             = dolg_outfit,helm_resp
+stalker_dolggas2a	                             = dolg_scout_outfit,helm_resp
+stalker_dolg_2_mas2                              = dolg_outfit,helm_cloth_mask
+stalker_dolg2a_mas2	                             = dolg_scout_outfit,helm_rp_bala
+stalker_dolg2a_mask	                             = dolg_scout_outfit,helm_cloth_mask
+stalker_dolg_2_old	                             = dolg_outfit,helm_respirator_old
+stalker_dolg2a_old	                             = dolg_red_outfit,helm_respirator_old
+stalker_dolg_2_mas4	                             = dolg_outfit,helm_cloth_mask
+stalker_dolg2a_mas4	                             = dolg_scout_outfit,helm_cloth_mask
+stalker_dolg_semi_pro                            = dolg_outfit
+stalker_dolg_11		                             = dolg_outfit
+stalker_dolg_10		                             = dolg_outfit
+stalker_dolg_2_mask_nohood                       = dolg_outfit
+stalker_dolg2a_mas3	                             = dolg_scout_outfit,helm_cloth_mask
+stalker_dolg_2_backpack_helm_battle	             = dolg_outfit,helm_battle
+stalker_dolg_2_backpack_helm_battle_nogas        = dolg_outfit,helm_battle
+stalker_dolg_2_backpack_helm_tactic              = dolg_outfit,helm_tactic
+stalker_dolg_2_backpack_helm_tactic_nogas        = dolg_outfit,helm_tactic
+stalker_dolg_2_balloon_helm_battle               = dolg_outfit,helm_battle
+stalker_dolg_2_balloon_helm_tactic               = dolg_outfit,helm_tactic
+stalker_dolg_2_balloon_on_helm_tactic            = dolg_outfit,helm_tactic
+;stalker_dolg_aztec
+stalker_do_balon_5                               = dolg_outfit,helm_cloth_mask
+stalker_do_balon_6                               = dolg_outfit,helm_cloth_mask
+stalker_do_balon_8                               = dolg_outfit,helm_cloth_mask
+stalker_do_mask                                  = dolg_outfit,helm_cloth_mask
+stalker_do_mask_1                                = dolg_outfit,helm_rp_bala
+
+stalker_bondit_zara								 = bandit_ps5_outfit,helm_resp
+
+;stalker_bandit_2a
+
+stalker_greh_2a                                  = greh_ps5_outfit, helm_cloth_mask
+stalker_greh_2b                                  = greh_ps5_outfit, helm_cloth_mask
+stalker_greh_2c                                  = greh_ps5_outfit, helm_cloth_mask
+stalker_greh_2a_mask                             = greh_ps5_outfit, helm_respirator
+stalker_greh_2b_mask                             = greh_ps5_outfit, helm_respirator
+stalker_greh_2c_mask                             = greh_ps5_outfit, helm_respirator
+stalker_greh_2a_gp5                              = greh_ps5_outfit, helm_respirator_gp5
+stalker_greh_2b_gp5                              = greh_ps5_outfit, helm_respirator_gp5
+stalker_greh_2c_gp5                              = greh_ps5_outfit, helm_respirator_gp5
+stalker_greh_2a_old                              = greh_ps5_outfit, helm_respirator_old
+stalker_greh_2b_old                              = greh_ps5_outfit, helm_respirator_old
+stalker_greh_2c_old                              = greh_ps5_outfit, helm_respirator_old
+
+dark_dolg                                        = trenchcoat_dolg_brown_outfit,helm_respirator
+
+dark_free                                        = trenchcoat_freedom_brown_outfit,helm_respirator
+
+;-- o_seva
+stalker_neutral_nauchniy						 = scientific_outfit
+
+stalker_monolith_1								 = monolith_scientific_outfit
+stalker_monolith_nauchni3                        = monolith_scientific_light_outfit
+
+stalker_dolg_1									 = dolg_scientific_outfit
+stalker_dolg1a                                   = dolg_scientific_wood_outfit
+stalker_dolg1d                                   = dolg_scientific_red_outfit
+
+stalker_mercenary3                               = merc_scientific_outfit
+;stalker_mercenary3                               = merc_combat_scientific_outfit
+stalker_mercenary4								 = merc_scientific_armored_outfit
+;stalker_mercenary3                               = merc_ace_outfit
+
+stalker_free_0			                         = svoboda_scientific_outfit
+stalker_free0a			                         = svoboda_scientific_outfit
+
+;stalker_bandit_seva1                             = bandit_scientific_outfit
+stalker_bandit_seva2                             = bandit_scientific_outfit
+stalker_neutral_nauchni2                         = bandit_scientific_dark_outfit
+
+;stalker_nebo_seva_1
+stalker_nebo_seva_3                              = cs_scientific_outfit
+stalker_nebo_seva_2                              = cs_scientific_outfit_good
+
+stalker_isg_scientific                           = isg_scientific_outfit
+
+stalker_neutral_nauchni4                         = hybrid_outfit
+
+stalker_renegade_3                               = renegade_scientific_outfit
+
+
+;-- o_skat_9
+stalker_soldier_4								= military_outfit
+stalker_soldier4a                               = military_outfit,helm_battle
+stalker_soldier5a                               = military_outfit
+stalker_soldier_4_skat                          = military_outfit
+stalker_militari_1                              = military_outfit
+stalker_militari_2                              = military_outfit
+stalker_soldier_4_helm_battle                   = military_outfit,helm_battle
+stalker_soldier_4_helm_battle_nogas             = military_outfit,helm_battle
+stalker_soldier_4_helm_tactic                   = military_outfit,helm_tactic
+stalker_soldier_4_helm_tactic_nogas             = military_outfit,helm_tactic
+
+stalker_merc_military                           = military_merc_outfit,helm_battle
+stalker_merc_4_skat                             = military_merc_outfit
+
+stalker_soldier_b                               = military_bandit_outfit
+
+stalker_soldier_4_monolith                      = military_monolit_outfit
+
+stalker_freedom_military                        = military_freedom_outfit,helm_battle
+stalker_freedom_batlsold                       = military_freedom_outfit,helm_battle
+
+stalker_nebo_military                           = military_sky_outfit
+stalker_nebo_skat                               = military_sky_outfit
+
+stalker_dolg3b                                  = dolg_heavy_redline_outfit
+stalker_dolg_skat                                = dolg_heavy_redline_outfit
+stalker_dolg_3_psz9d_skat                       = dolg_heavy_outfit
+stalker_dolg_3_backpack_helm_battle             = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_backpack_helm_battle_nogas       = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_backpack_helm_tactic             = dolg_heavy_outfit,helm_tactic
+stalker_dolg_3_backpack_helm_tactic_nogas       = dolg_heavy_outfit,helm_tactic
+stalker_dolg_3_balloon_helm_battle              = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_balloon_helm_tactic              = dolg_heavy_outfit,helm_tactic
+stalker_dolg_3_balloon_on_helm_battle           = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_balloon_on_helm_tactic           = dolg_heavy_outfit,helm_tactic
+stalker_dolg_3_helm_battle                      = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_helm_battle_nogas                = dolg_heavy_outfit,helm_battle
+stalker_dolg_3_helm_tactic                      = dolg_heavy_outfit,helm_tactic
+stalker_dolg_3_helm_tactic_nogas                = dolg_heavy_outfit,helm_tactic
+stalker_dolg_8                                  = dolg_heavy_outfit,helm_respirator
+
+;stalker_isg_military
+
+;-- o_ssp_99
+stalker_ecolog                                  = ecolog_outfit_orange
+
+stalker_ecolog_military                         = ecolog_outfit_green
+
+stalker_ecolog_white                            = ecolog_outfit_white
+
+stalker_ecolog_blue                             = ecolog_outfit_blue
+
+stalker_ecolog_yellow                           = ecolog_outfit_yello
+
+stalker_ecolog_red                              = ecolog_outfit_red
+
+
+;-- o_sts
+stalker_freedom2b_mask					  = svoboda_light_outfit,helm_cloth_mask
+stalker_freedom2b_mas2                    = svoboda_light_outfit,helm_cloth_mask
+;stalker_freedom2b_mas3                    = svoboda_light_outfit,helm_cloth_mask 
+stalker_freedom2b_mas4                    = svoboda_light_outfit,helm_rp_bala
+stalker_freedom2b                         = svoboda_light_outfit,helm_respirator
+stalker_freedom2b_old                     = svoboda_light_outfit,helm_respirator_old
+stalker_freedom_1                         = svoboda_light_outfit,helm_resp
+stalker_freedom1a                                 = svoboda_light_outfit,helm_resp
+stalker_freedom_1_balloon_helm_battle             = svoboda_light_outfit,helm_battle
+stalker_freedom_1_backpack_helm_tactic_nogas      = svoboda_light_outfit,helm_tactic
+stalker_freedom_1_backpack_helm_tactic            = svoboda_light_outfit,helm_tactic
+stalker_freedom_1_backpack_helm_battle_nogas      = svoboda_light_outfit,helm_battle
+stalker_freedom_1_backpack_helm_battle            = svoboda_light_outfit,helm_battle
+stalker_freedom_1_helm_tactic_nogas               = svoboda_light_outfit,helm_tactic
+stalker_freedom_1_helm_battle_nogas               = svoboda_light_outfit,helm_battle
+stalker_freedom_6                                 = svoboda_light_outfit,helm_tactic
+stalker_freedom_7                                 = svoboda_light_outfit
+stalker_freedom_13                                = svoboda_light_outfit
+
+stalker_monolith_2                        = monolith_outfit,helm_respirator
+;stalker_monolith1                         = monolith_outfit
+;stalker_monolith_2_old                    = monolith_outfit,helm_respirator_old
+;stalker_monolith2a_old                    = monolith_outfit,helm_respirator_old
+;stalker_monolith2b_old                    = monolith_outfit,helm_respirator_old
+stalker_mo_head1                          = monolith_outfit
+stalker_mo_head2                          = monolith_outfit
+stalker_mo_head_1                         = monolith_outfit
+
+stalker_bandit_2a                         = bandit_sun_outfit,helm_resp
+stalker_merc_10                           = bandit_sun_outfit,helm_respirator_old
+
+stalker_merc_sun1                         = merc_sun_outfit,helm_respirator
+
+stalker_merc_sun1_merc                    = merc_wolven_outfit,helm_m40
+
+stalker_merc_sun1_old                     = merc_nighthunter_outfit,helm_respirator_old
+
+stalker_isg_outfit                        = isg_outfit,helm_resp
+
+stalker_isg_merc                          = isg_camo_outfit,helm_m40
+
+
+;-- o_sunrise
+stalker_neutral_2                         = stalker_outfit
+stalker_neutral_2_backpack_helm_battle           = stalker_outfit,helm_battle
+stalker_neutral_2_backpack_helm_battle_nogas     = stalker_outfit,helm_battle
+stalker_neutral_2_backpack_helm_tactic           = stalker_outfit,helm_tactic
+stalker_neutral_2_backpack_helm_tactic_nogas     = stalker_outfit,helm_tactic
+stalker_neutral_10                               = stalker_outfit,helm_tactic
+stalker_neutral_8                                = stalker_outfit
+
+stalker_ecolog_guard                      = ecolog_guard_outfit
+stalker_ecolog_guard1                     = ecolog_guard_outfit
+stalker_ecolog_guard1_gp5                 = ecolog_guard_outfit,helm_respirator_gp5
+stalker_ecolog_guard1_mas2                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard1_mas3                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard1_mask                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard1_merc                = ecolog_guard_outfit,helm_m40
+stalker_ecolog_guard1_old                 = ecolog_guard_outfit,helm_respirator_old
+stalker_ecolog_guard1_tactical            = ecolog_guard_outfit,helm_tactic
+stalker_ecolog_guard2_gp5                 = ecolog_guard_outfit,helm_respirator_gp5
+stalker_ecolog_guard2_mas2                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard2_mas3                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard2_mask                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard2_merc                = ecolog_guard_outfit,helm_m40
+stalker_ecolog_guard2_old                 = ecolog_guard_outfit,helm_respirator_old
+stalker_ecolog_guard2_tactical            = ecolog_guard_outfit,helm_tactic
+stalker_ecolog_guard3_gp5                 = ecolog_guard_outfit,helm_respirator_gp5
+stalker_ecolog_guard3_mas2                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard3_mas3                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard3_mask                = ecolog_guard_outfit,helm_cloth_mask
+stalker_ecolog_guard3_merc                = ecolog_guard_outfit,helm_m40
+stalker_ecolog_guard3_old                 = ecolog_guard_outfit,helm_respirator_old
+stalker_ecolog_guard3_seva            	  = ecolog_guard_outfit
+stalker_ecologist_merc0                   = merc_outfit,helm_protective
+stalker_ecologist_merc1                   = merc_wolven_outfit,helm_m40
+stalker_ecologist_merc2                   = merc_outfit,helm_m40
+stalker_neutral_zarya_zo1_ecolog          = ecolog_guard_outfit,helm_respirator_old
+
+stalker_nebo_s_old                        = cs_stalker_outfit,helm_respirator_old
+stalker_nebo_s                            = cs_stalker_outfit,helm_respirator
+stalker_nebo_s_mask                       = cs_stalker_outfit,helm_cloth_mask
+stalker_nebo_smask1                       = cs_stalker_outfit,helm_rp_bala
+stalker_nebo_smask2                       = cs_stalker_outfit,helm_cloth_mask
+stalker_nebo_s_merc                       = cs_stalker_outfit,helm_m40
+stalker_nebo_s_mas2                       = cs_stalker_outfit,helm_cloth_mask
+stalker_nebo_s_mas3                       = cs_stalker_outfit,helm_cloth_mask
+
+;;-- dark brown, black chest
+stalker_neutral2a                         = stalker_bear_outfit,helm_respirator
+stalker_neutral0a                         = stalker_bear_outfit,helm_resp
+stalker_neutral2a_mask                    = stalker_bear_outfit,helm_rp_bala
+stalker_neutral2amask1                    = stalker_bear_outfit,helm_rp_bala
+stalker_neutral2amask2                    = stalker_bear_outfit,helm_cloth_mask
+stalker_neutral2a_old                     = stalker_bear_outfit,helm_respirator_old
+stalker_neutral2a_merc                    = stalker_bear_outfit,helm_m40
+stalker_neutral2a_mas2                    = stalker_bear_outfit,helm_cloth_mask
+stalker_neutral2a_mas3                    = stalker_bear_outfit,helm_cloth_mask
+
+;;-- dark green, black chest
+stalker_neutral2g                         = stalker_salamander_outfit,helm_respirator
+stalker_neutral0g                         = stalker_salamander_outfit,helm_resp
+stalker_neutral2g_mask                    = stalker_salamander_outfit,helm_rp_bala
+stalker_neutral2gmask1                    = stalker_salamander_outfit,helm_rp_bala
+stalker_neutral2gmask2                    = stalker_salamander_outfit,helm_cloth_mask
+stalker_neutral2g_old                     = stalker_salamander_outfit,helm_respirator_old
+stalker_neutral2g_merc                    = stalker_salamander_outfit,helm_m40
+stalker_neutral2g_mas2                    = stalker_salamander_outfit,helm_cloth_mask
+stalker_neutral2g_mas3                    = stalker_salamander_outfit,helm_cloth_mask
+
+;;-- dark camo blue, black chest
+stalker_neutral2b                         = stalker_graphite_outfit,helm_respirator
+stalker_neutral0b                         = stalker_graphite_outfit,helm_resp
+stalker_neutral2b_mask                    = stalker_graphite_outfit,helm_rp_bala
+stalker_neutral2bmask1                    = stalker_graphite_outfit,helm_rp_bala
+stalker_neutral2bmask2                    = stalker_graphite_outfit,helm_cloth_mask
+stalker_neutral2b_old                     = stalker_graphite_outfit,helm_respirator_old
+stalker_neutral2b_merc                    = stalker_graphite_outfit,helm_m40
+stalker_neutral2b_mas2                    = stalker_graphite_outfit,helm_cloth_mask
+stalker_neutral2b_mas3                    = stalker_graphite_outfit,helm_cloth_mask
+
+;;-- light camo brown, black chest
+stalker_neutral2d                         = stalker_tigerstripe_outfit,helm_respirator
+stalker_neutral0d                         = stalker_tigerstripe_outfit,helm_resp
+stalker_neutral2d_mask                    = stalker_tigerstripe_outfit,helm_rp_bala
+stalker_neutral2dmask1                    = stalker_tigerstripe_outfit,helm_rp_bala
+stalker_neutral2dmask2                    = stalker_tigerstripe_outfit,helm_cloth_mask
+stalker_neutral2d_old                     = stalker_tigerstripe_outfit,helm_respirator_old
+stalker_neutral2d_merc                    = stalker_tigerstripe_outfit,helm_m40
+stalker_neutral2d_mas2                    = stalker_tigerstripe_outfit,helm_cloth_mask
+stalker_neutral2d_mas3                    = stalker_tigerstripe_outfit,helm_cloth_mask
+stalker_neutral_9d                        = stalker_tigerstripe_outfit,helm_tactic
+
+;;-- light camo brown
+stalker_neutral2c                         = stalker_drought_outfit,helm_respirator
+stalker_neutral0c                         = stalker_drought_outfit,helm_resp
+stalker_neutral2c_mask                    = stalker_drought_outfit,helm_rp_bala
+stalker_neutral2cmask1                    = stalker_drought_outfit,helm_rp_bala
+stalker_neutral2cmask2                    = stalker_drought_outfit,helm_cloth_mask
+stalker_neutral2c_old                     = stalker_drought_outfit,helm_respirator_old
+stalker_neutral2c_merc                    = stalker_drought_outfit,helm_m40
+stalker_neutral2c_mas2                    = stalker_drought_outfit,helm_cloth_mask
+stalker_neutral2c_mas3                    = stalker_drought_outfit,helm_cloth_mask
+
+;;-- camo green, dark green chest
+stalker_neutral2apex                      = stalker_predator_outfit
+
+;;-- camo green/yellow
+stalker_neutral2fall                      = stalker_autumn_outfit
+stalker_neutral2e                         = stalker_vineleaf_outfit,helm_respirator
+stalker_neutral0e                         = stalker_vineleaf_outfit,helm_resp
+stalker_neutral2e_mask                    = stalker_vineleaf_outfit,helm_rp_bala
+stalker_neutral2emask1                    = stalker_vineleaf_outfit,helm_rp_bala
+stalker_neutral2emask2                    = stalker_vineleaf_outfit,helm_cloth_mask
+stalker_neutral2e_old                     = stalker_vineleaf_outfit,helm_respirator_old
+stalker_neutral2e_merc                    = stalker_vineleaf_outfit,helm_m40
+stalker_neutral2e_mas2                    = stalker_vineleaf_outfit,helm_cloth_mask
+stalker_neutral2e_mas3                    = stalker_vineleaf_outfit,helm_cloth_mask
+
+;;-- camo green, more powerful color
+stalker_neutral2vine_merc                 = stalker_vineleaf_outfit,helm_m40
+stalker_neutral2f                         = stalker_vineleaf_outfit,helm_respirator
+stalker_neutral0f                         = stalker_vineleaf_outfit,helm_resp
+stalker_neutral2f_mask                    = stalker_vineleaf_outfit,helm_rp_bala
+stalker_neutral2fmask1                    = stalker_vineleaf_outfit,helm_rp_bala
+stalker_neutral2fmask2                    = stalker_vineleaf_outfit,helm_cloth_mask
+stalker_neutral2f_old                     = stalker_vineleaf_outfit,helm_respirator_old
+stalker_neutral2f_merc                    = stalker_vineleaf_outfit,helm_m40
+stalker_neutral2f_mas2                    = stalker_vineleaf_outfit,helm_cloth_mask
+stalker_neutral2f_mas3                    = stalker_vineleaf_outfit,helm_cloth_mask
+
+
+;-- o_trenchcoat
+stalker_bandit_3_mask                      = trenchcoat_outfit,helm_rp_bala
+stalker_bandit3a                           = trenchcoat_outfit,helm_rp_bala
+stalker_bandit_4                           = trenchcoat_outfit
+stalker_bandit5b                           = trenchcoat_outfit
+stalker_bandit6b                           = trenchcoat_outfit,helm_m40
+stalker_bandit6e                           = trenchcoat_outfit,helm_m40
+
+stalker_bandit_3                           = trenchcoat_brown_outfit,helm_rp_bala
+stalker_bandit3c                           = trenchcoat_brown_outfit,helm_rp_bala
+stalker_bandit4a                           = trenchcoat_brown_outfit
+stalker_bandit4c                           = trenchcoat_brown_outfit
+stalker_bandit5a                           = trenchcoat_brown_outfit
+stalker_bandit6a                           = trenchcoat_brown_outfit,helm_m40
+stalker_bandit6f                           = trenchcoat_brown_outfit,helm_m40
+
+stalker_greh_0a_1                          = trenchcoat_brown_outfit
+stalker_greh_0b_1                          = trenchcoat_brown_outfit
+stalker_greh_0c_1                          = trenchcoat_brown_outfit
+stalker_greh_0d                            = trenchcoat_brown_outfit
+stalker_greh_0e                            = trenchcoat_brown_outfit
+stalker_greh_0f                            = trenchcoat_brown_outfit
+stalker_greh_0g_1                          = trenchcoat_brown_outfit
+stalker_greh_0g_2                          = trenchcoat_brown_outfit
+stalker_greh_0g_3                          = trenchcoat_brown_outfit
+stalker_greh_0h                            = trenchcoat_brown_outfit
+stalker_greh_0i                            = trenchcoat_brown_outfit
+stalker_greh_0j                            = trenchcoat_brown_outfit
+stalker_greh_0d_face_06                    = trenchcoat_brown_outfit
+stalker_greh_0e_face_06                    = trenchcoat_brown_outfit
+stalker_greh_0a_face_07                    = trenchcoat_brown_outfit
+stalker_greh_0f_face_07                    = trenchcoat_brown_outfit
+stalker_greh_0d_face_08                    = trenchcoat_brown_outfit
+stalker_greh_0f_face_08                    = trenchcoat_brown_outfit
+stalker_greh_0a_face_09                    = trenchcoat_brown_outfit
+stalker_greh_0f_face_09                    = trenchcoat_brown_outfit
+stalker_greh_0d_face_10                    = trenchcoat_brown_outfit
+stalker_greh_0f_face_10                    = trenchcoat_brown_outfit
+
+stalker_greh_0b_1                          = greh_trenchcoat_outfit
+stalker_greh_1a_face_01                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_02                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_03                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_04                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_05                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_06                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_07                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_08                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_09                    = greh_trenchcoat_outfit
+stalker_greh_1a_face_10                    = greh_trenchcoat_outfit
+
+stalker_monolith_preacher                  = monolith_trenchcoat_outfit
+
+stalker_bandit3b                           = trenchcoat_green_outfit,helm_rp_bala
+stalker_bandit4b                           = trenchcoat_green_outfit
+stalker_bandit5c                           = trenchcoat_green_outfit
+stalker_bandit6c                           = trenchcoat_green_outfit,helm_m40
+stalker_bandit6g                           = trenchcoat_green_outfit,helm_m40
+
+;stalker_bandit5d
+;stalker_bandit6d
+;stalker_bandit6h
+
+
+;;-- o_explorer
+st_nt_1                                      = nomad_outfit
+stalker_neutral4hunter                       = wastelander_outfit
+stalker_neutral_6                            = travel_outfit
+
+
+;;-- o_no_group
+stalker_nebo_1                               = cs_light_novice_outfit
+
+stalker_nebo_b                               = cs_heavy_outfit
+
+stalker_dolg_3                               = dolg_pantsir_outfit
+
+stalker_ghillie                              = ghillie_outfit
+
+
+
+
+;;-- zombies
+;stalker_zombied_1                            = novice_outfit
+;stalker_zombied_2                            = stalker_outfit
+;stalker_zombied_3                            = cs_light_novice_outfit
+;stalker_zombied_4                            = exo_outfit
+;stalker_zombied_1_face1                      = novice_outfit
+;stalker_zombied_1_face2                      = novice_outfit
+;stalker_zombied1a                            = novice_outfit
+;stalker_zombied1a_face1                      = novice_outfit
+;stalker_zombied1a_face2                      = novice_outfit
+;stalker_zombied1b                            = novice_outfit
+;stalker_zombied1b_face1                      = novice_outfit
+;stalker_zombied1b_face2                      = novice_outfit
+;stalker_zombied1c                            = novice_outfit
+;stalker_zombied1c_face1                      = novice_outfit
+;stalker_zombied1c_face2                      = novice_outfit
+;stalker_zombied1d                            = novice_outfit
+;stalker_zombied1d_face1                      = novice_outfit
+;stalker_zombied1d_face2                      = novice_outfit
+;stalker_zombied1e                            = novice_outfit
+;stalker_zombied1e_face1                      = novice_outfit
+;stalker_zombied1e_face2                      = novice_outfit
+;stalker_zombied1f                            = novice_outfit
+;stalker_zombied1f_face1                      = novice_outfit
+;stalker_zombied1f_face2                      = novice_outfit
+;stalker_zombied1g                            = novice_outfit
+;stalker_zombied1g_face1                      = novice_outfit
+;stalker_zombied1g_face2                      = novice_outfit
+;stalker_zombied1h                            = novice_outfit
+;stalker_zombied1h_face1                      = novice_outfit
+;stalker_zombied1h_face2                      = novice_outfit
+;stalker_zombied1i                            = novice_outfit
+;stalker_zombied1i_face1                      = novice_outfit
+;stalker_zombied1i_face2                      = novice_outfit
+;stalker_zombied1j                            = novice_outfit
+;stalker_zombied1j_face1                      = novice_outfit
+;stalker_zombied1j_face2                      = novice_outfit
+;stalker_zombied_2_face1                      = stalker_outfit
+;stalker_zombied_2_face2                      = stalker_outfit
+;stalker_zombied2a                            = stalker_bear_outfit
+;stalker_zombied2a_face1                      = stalker_bear_outfit
+;stalker_zombied2a_face2                      = stalker_bear_outfit
+;stalker_zombied2b                            = stalker_graphite_outfit
+;stalker_zombied2b_face1                      = stalker_graphite_outfit
+;stalker_zombied2b_face2                      = stalker_graphite_outfit
+;stalker_zombied2c                            = stalker_outfit
+;stalker_zombied2c_face1                      = stalker_outfit
+;stalker_zombied2c_face2                      = stalker_outfit
+;stalker_zombied2e                            = dolg_outfit
+;stalker_zombied2e_face1                      = dolg_outfit
+;stalker_zombied2e_face2                      = dolg_outfit
+;stalker_zombied2f                            = dolg_outfit
+;stalker_zombied2f_face1                      = dolg_outfit
+;stalker_zombied2f_face2                      = dolg_outfit
+;stalker_zombied2g                            = svoboda_light_outfit
+;stalker_zombied2g_face1                      = svoboda_light_outfit
+;stalker_zombied2g_face2                      = svoboda_light_outfit
+;stalker_zombied2h                            = svoboda_heavy_outfit_2
+;stalker_zombied2h_face1                      = svoboda_heavy_outfit_2
+;stalker_zombied2h_face2                      = svoboda_heavy_outfit_2
+;stalker_zombied2i                            = svoboda_heavy_outfit_2 
+;stalker_zombied2i_face1                      = svoboda_heavy_outfit_2
+;stalker_zombied2i_face2                      = svoboda_heavy_outfit_2
+;stalker_zombied2j                            = svoboda_heavy_outfit_2 
+;stalker_zombied2j_face1                      = svoboda_heavy_outfit_2
+;stalker_zombied2j_face2                      = svoboda_heavy_outfit_2
+;stalker_zombied2k                            = stalker_vineleaf_outfit
+;stalker_zombied2k_face1                      = stalker_vineleaf_outfit
+;stalker_zombied2k_face2                      = stalker_vineleaf_outfit
+;stalker_zombied2l                            = stalker_autumn_outfit
+;stalker_zombied2l_face1                      = stalker_autumn_outfit
+;stalker_zombied2l_face2                      = stalker_autumn_outfit
+;stalker_zombied_3_face1                      = stalker_outfit
+;stalker_zombied_3_face2                      = stalker_outfit
+;stalker_zombied3a                            = stalker_outfit
+;stalker_zombied3a_face1                      = stalker_outfit
+;stalker_zombied3a_face2                      = stalker_outfit
+;stalker_zombied_4_face1                      = exo_outfit
+;stalker_zombied_4_face2                      = exo_outfit
+;stalker_zombied4a                            = merc_exo_outfit
+;stalker_zombied4a_face1                      = merc_exo_outfit
+;stalker_zombied4a_face2                      = merc_exo_outfit
+;stalker_zombied4b                            = merc_exo_outfit
+;stalker_zombied4b_face1                      = merc_exo_outfit
+;stalker_zombied4b_face2                      = merc_exo_outfit
+;stalker_zombied4c                            = dolg_exo_outfit
+;stalker_zombied4c_face1                      = dolg_exo_outfit
+;stalker_zombied4c_face2                      = dolg_exo_outfit
+;stalker_zombied4d                            = dolg_exo_outfit
+;stalker_zombied4d_face1                      = dolg_exo_outfit
+;stalker_zombied4d_face2                      = dolg_exo_outfit
+;stalker_zombied4e                            = dolg_exo_outfit
+;stalker_zombied4e_face1                      = dolg_exo_outfit
+;stalker_zombied4e_face2                      = dolg_exo_outfit
+;stalker_zombied4f                            = svoboda_exo_outfit
+;stalker_zombied4f_face1                      = svoboda_exo_outfit
+;stalker_zombied4f_face2                      = svoboda_exo_outfit
+;stalker_zombied4g                            = svoboda_exo_outfit
+;stalker_zombied4g_face1                      = svoboda_exo_outfit
+;stalker_zombied4g_face2                      = svoboda_exo_outfit
+;stalker_zombied4h                            = dolg_exo_outfit
+;stalker_zombied4h_face1                      = dolg_exo_outfit
+;stalker_zombied4h_face2                      = dolg_exo_outfit
+;stalker_zombied4i                            = svoboda_exo_outfit
+;stalker_zombied4i_face1                      = svoboda_exo_outfit
+;stalker_zombied4i_face2                      = svoboda_exo_outfit
+;stalker_zombied_merecenary_2_face1           = merc_outfit
+;stalker_zombied_merecenary_2_face2           = merc_outfit
+;stalker_zombied_merecenary_2_face3           = merc_outfit
+;stalker_zombied_merecenary2a_face1           = merc_outfit
+;stalker_zombied_merecenary2a_face2           = merc_outfit
+;stalker_zombied_merecenary2a_face3           = merc_outfit
+;stalker_zombied_merecenary2b_face1           = merc_fighter_outfit
+;stalker_zombied_merecenary2b_face2           = merc_fighter_outfit
+;stalker_zombied_merecenary2b_face3           = merc_fighter_outfit
+;stalker_zombied_merecenary2c_face1           = merc_fighter_outfit
+;stalker_zombied_merecenary2c_face2           = merc_fighter_outfit
+;stalker_zombied_merecenary2c_face3           = merc_fighter_outfit
+;stalker_zombied_bandit_2_face1               = banditmerc_outfit
+;stalker_zombied_bandit_2_face2               = banditmerc_outfit
+;stalker_zombied_bandit_2_face3               = banditmerc_outfit
+;stalker_zombied_bandit2a_face1               = banditmerc_outfit
+;stalker_zombied_bandit2a_face2               = banditmerc_outfit
+;stalker_zombied_bandit2a_face3               = banditmerc_outfit
+;stalker_zombied_ecolog_red_1                 = ecolog_outfit_red
+;stalker_zombied_ecolog_red_2                 = ecolog_outfit_red
+;stalker_zombied_ecolog_red_3                 = ecolog_outfit_red
+;stalker_zombied_ecolog_red_4                 = ecolog_outfit_red
+;stalker_zombied_ecolog_red_5                 = ecolog_outfit_red
+;stalker_zombied_ecolog_red_6                 = ecolog_outfit_red
+;stalker_zombied_ecolog_yellow_1              = ecolog_outfit_yello
+;stalker_zombied_ecolog_yellow_2              = ecolog_outfit_yello
+;stalker_zombied_ecolog_yellow_3              = ecolog_outfit_yello
+;stalker_zombied_ecolog_yellow_4              = ecolog_outfit_yello
+;stalker_zombied_ecolog_yellow_5              = ecolog_outfit_yello
+;stalker_zombied_ecolog_yellow_6              = ecolog_outfit_yello
+;stalker_zombied_ecolog_blue_1                = ecolog_outfit_blue
+;stalker_zombied_ecolog_blue_2                = ecolog_outfit_blue
+;stalker_zombied_ecolog_blue_3                = ecolog_outfit_blue
+;stalker_zombied_ecolog_blue_4                = ecolog_outfit_blue
+;stalker_zombied_ecolog_blue_5                = ecolog_outfit_blue
+;stalker_zombied_ecolog_blue_6                = ecolog_outfit_blue
+;stalker_zombied_ecolog_white_1               = ecolog_outfit_white
+;stalker_zombied_ecolog_white_2               = ecolog_outfit_white
+;stalker_zombied_ecolog_white_3               = ecolog_outfit_white
+;stalker_zombied_ecolog_white_4               = ecolog_outfit_white
+;stalker_zombied_ecolog_white_5               = ecolog_outfit_white
+;stalker_zombied_ecolog_white_6               = ecolog_outfit_white
+;stalker_zombied_ecolog_green_1               = ecolog_outfit_green
+;stalker_zombied_ecolog_green_2               = ecolog_outfit_green
+;stalker_zombied_ecolog_green_3               = ecolog_outfit_green
+;stalker_zombied_ecolog_green_4               = ecolog_outfit_green
+;stalker_zombied_ecolog_green_5               = ecolog_outfit_green
+;stalker_zombied_ecolog_green_6               = ecolog_outfit_green
+;stalker_zombied_ecolog_orange_1              = ecolog_outfit_orange
+;stalker_zombied_ecolog_orange_2              = ecolog_outfit_orange
+;stalker_zombied_ecolog_orange_3              = ecolog_outfit_orange
+;stalker_zombied_ecolog_orange_4              = ecolog_outfit_orange
+;stalker_zombied_ecolog_orange_5              = ecolog_outfit_orange
+;stalker_zombied_ecolog_orange_6              = ecolog_outfit_orange
+;stalker_zombied2d                            = stalker_drought_outfit
+;stalker_zombied2d_face1                      = stalker_drought_outfit
+;stalker_zombied2d_face2                      = stalker_drought_outfit

@@ -1,0 +1,19 @@
+[logic]
+active = sr_idle@down
+
+[sr_idle@down]
+on_info = {=actor_in_zone(red_bridge_control_restrictor_mlr) -red_bridge_down_done_2} sr_idle@stop %=run_tutorial(bridge_down_red_forest)%
+on_info2 = {+red_bridge_down_done} sr_idle@up
+on_info3 = {+look_for_cs_history_part_4_1_give} sr_idle@up
+
+[sr_idle@stop]
+on_info = {!actor_in_zone(red_bridge_control_restrictor_mlr)} sr_idle@down %=stop_tutorial%
+on_info2 = {+red_bridge_down_done} sr_idle@up
+
+[sr_idle@up]
+on_info = {=actor_in_zone(red_bridge_control_restrictor_mlr) +red_bridge_down_done} sr_idle@stop2 %=run_tutorial(bridge_up_red_forest)%
+on_info2 = {-red_bridge_down_done} sr_idle@down
+
+[sr_idle@stop2]
+on_info = {!actor_in_zone(red_bridge_control_restrictor_mlr)} sr_idle@up %=stop_tutorial%
+on_info2 = {-red_bridge_down_done} sr_idle@down

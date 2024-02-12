@@ -1,0 +1,54 @@
+<w>
+	<file name="ui\items\ui_dosimeter">
+		<texture id="led_screen"	x="0"	y="0"	width="40"	height="120" />
+		<texture id="green_0"		x="361"	y="0"	width="40"	height="120" />
+		<texture id="green_1"		x="1"	y="0"	width="40"	height="120" />
+		<texture id="green_2"		x="41"	y="0"	width="40"	height="120" />
+		<texture id="green_3"		x="81"	y="0"	width="40"	height="120" />
+		<texture id="green_4"		x="121"	y="0"	width="40"	height="120" />
+		<texture id="green_5"		x="161"	y="0"	width="40"	height="120" />
+		<texture id="green_6"		x="201"	y="0"	width="40"	height="120" />
+		<texture id="green_7"		x="241"	y="0"	width="40"	height="120" />
+		<texture id="green_8"		x="281"	y="0"	width="40"	height="120" />
+		<texture id="green_9"		x="321"	y="0"	width="40"	height="120" />
+		
+		<texture id="red_diod"	x="440"	y="0"	width="76"	height="76" />
+	</file>
+	
+	<file name="ui\items\ui_detector_rfproxy">
+		<texture id="led_screen"	x="0"	y="0"	width="40"	height="10" />
+		<texture id="blue_0"		x="361"	y="0"	width="40"	height="100" />
+		<texture id="blue_1"		x="1"	y="0"	width="40"	height="100" />
+		<texture id="blue_2"		x="41"	y="0"	width="40"	height="100" />
+		<texture id="blue_3"		x="81"	y="0"	width="40"	height="100" />
+		<texture id="blue_4"		x="121"	y="0"	width="40"	height="100" />
+		<texture id="blue_5"		x="161"	y="0"	width="40"	height="100" />
+		<texture id="blue_6"		x="201"	y="0"	width="40"	height="100" />
+		<texture id="blue_7"		x="241"	y="0"	width="40"	height="100" />
+		<texture id="blue_8"		x="281"	y="0"	width="40"	height="100" />
+		<texture id="blue_9"		x="321"	y="0"	width="40"	height="100" />
+		
+		<texture id="red_diod"	x="440"	y="0"	width="76"	height="76" />
+	</file>
+	
+	<file name="ui\items\ui_detector_rf">
+		<texture id="seg_black_0"	x="361"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_1"	x="1"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_2"	x="41"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_3"	x="81"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_4"	x="121"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_5"	x="161"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_6"	x="201"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_7"	x="241"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_8"	x="281"	y="0"	width="40"	height="100" />
+		<texture id="seg_black_9"	x="321"	y="0"	width="40"	height="100" />
+		
+		<texture id="green_diod"		x="440"	y="0"	width="76"	height="76" />
+		<texture id="rect_diod_orange"	x="654"	y="0"	width="106"	height="128" />
+		<texture id="rect_diod_green"	x="548"	y="0"	width="106"	height="128" />
+		<texture id="rf_screen"			x="900"	y="0"	width="76"	height="76" />
+		
+		<texture id="green_black_ano"	x="857"	y="0"	width="38"	height="128" />
+		<texture id="green_seg_ano"		x="817"	y="0"	width="38"	height="128" />
+	</file>
+</w>

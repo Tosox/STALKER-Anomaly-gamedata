@@ -1,0 +1,90 @@
+--[[
+	Modified by Faustle (2018)
+]]--
+
+local strong_monster = { 'boar', 'chimera', 'gigant' }
+local knifes = { 
+	wpn_knife  = 0.04,
+	wpn_knife2 = 0.03,
+	wpn_knife3 = 0.02,
+	wpn_knife4 = 0.015,
+	wpn_knife5 = 0.01,
+	wpn_axe    = 0.01,
+	wpn_axe2   = 0.01,
+	wpn_axe3   = 0.01,
+}
+
+function is_equipped()
+	if (db.actor) then
+		local obj = db.actor:active_item()
+		if (obj) then
+			local sec = obj:section()
+			return knifes[sec]
+		end
+	end
+	return false
+end
+
+function get_condition()
+	local cond = 1
+	if (is_equipped()) then
+		local obj = db.actor:active_item()
+		return obj:condition()
+	end
+end
+
+function can_loot(monster)
+	if not (monster) then
+		return
+	end
+
+	if (db.actor) then
+		local obj = db.actor:active_item()
+		if obj then			
+			local wpn = obj:section()
+
+			for _,k in ipairs(strong_monster) do
+				if monster:match(k) then
+					if wpn:match('wpn_knife$') or wpn:match('wpn_knife2$') then
+						return false
+					end
+				end
+			end
+		else
+			return
+		end
+	end
+	return true
+end
+
+function degradate()
+	local num = 0
+	local obj = db.actor:active_item()
+	if obj then
+		local cond = obj:condition()
+		local wpn = obj:section()
+
+		if knifes[wpn] then
+			num = knifes[wpn]
+		end
+
+		if (cond > num) then 
+			obj:set_condition(cond-num/4) 
+		else
+			obj:set_condition(0.01)
+		end
+	else
+		return
+	end
+end
+
+function is_axe()
+	if (db.actor:active_slot() == 2 or db.actor:active_slot() == 3) then
+		local wpn = db.actor:active_item()
+		if wpn then
+			if wpn:section():match('axe') then
+				return true
+			end
+		end
+	end
+end

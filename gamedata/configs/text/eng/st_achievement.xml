@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="st_achievement_1_name">
+		<text>Heavy Pockets</text>
+	</string>
+	<string id="st_achievement_1_hint">
+		<text>Traders are more willing to sell higher tier gear to you, even if you don't meet the goodwill requirements with their faction.</text>
+	</string>
+	<string id="st_achievement_1_descr">
+		<text>Your great wealth has become well-known among the traders of the Zone. Eager for your patronage, they're more likely to offer their best wares to you, regardless of your standing with their faction.</text>
+	</string>
+	<string id="st_achievement_1_unlock">
+		<text>You have unlocked the "Heavy Pockets" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_2_name">
+		<text>Radiotherapy</text>
+	</string>
+	<string id="st_achievement_2_hint">
+		<text>Each time a psy-storm or emission begins, there's a chance you won't need to take cover.</text>
+	</string>
+	<string id="st_achievement_2_descr">
+		<text>Your mind has numbed to the whispers, and you no longer fear the approach of emissions or psy-storms. At times, their arrival even brings you peace.</text>
+	</string>
+	<string id="st_achievement_2_unlock">
+		<text>You have unlocked the "Radiotherapy" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_3_name">
+		<text>Infopreneur</text>
+	</string>
+	<string id="st_achievement_3_hint">
+		<text>Brokers will now pay you a small bonus for any further PDAs you deliver to them.</text>
+	</string>
+	<string id="st_achievement_3_descr">
+		<text>Artefacts are flashy, but knowledge is where the true power lies. Having learned this through experience, you're able to charge more for the secrets you sell.</text>
+	</string>
+	<string id="st_achievement_3_unlock">
+		<text>You have unlocked the "Infopreneur" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_4_name">
+		<text>Duga Free</text>
+	</string>
+	<string id="st_achievement_4_hint">
+		<text>Stalkers are more likely to move through Yantar and Radar, possibly increasing their population in northern areas.</text>
+	</string>
+	<string id="st_achievement_4_descr">
+		<text>After seeing what reckless experimentation had brought to the Zone of Alienation, you chose to shut down some of its decaying science projects. With two major psy-fields disabled, paths through Yantar and Radar are now more accessible than ever.</text>
+	</string>
+	<string id="st_achievement_4_unlock">
+		<text>You have unlocked the "Duga Free" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_5_name">
+		<text>Well Dressed</text>
+	</string>
+	<string id="st_achievement_5_hint">
+		<text>You are able to skin mutants much faster than normal.</text>
+	</string>
+	<string id="st_achievement_5_descr">
+		<text>Rightly so does the Zone's wildlife fear you - more than a fair share have fallen at your hands. Practiced hands make for swift work, and you've grown practiced indeed.</text>
+	</string>
+	<string id="st_achievement_5_unlock">
+		<text>You have unlocked the "Well Dressed" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_6_name">
+		<text>Silver or Lead</text>
+	</string>
+	<string id="st_achievement_6_hint">
+		<text>Surrendering stalkers may occasionally reveal the location of a second stash.</text>
+	</string>
+	<string id="st_achievement_6_descr">
+		<text>Bodies and bullet casings litter the tracks behind you. Your enemies know you as a remorseless killer. Those who survive your horrifying onslaughts are now much more willing to part with their goods if it means living to see another day.</text>
+	</string>
+	<string id="st_achievement_6_unlock">
+		<text>You have unlocked the "Silver or Lead" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_7_name">
+		<text>Mechanized Warfare</text>
+	</string>
+	<string id="st_achievement_7_hint">
+		<text>Bonus items used in repairs are more effective.</text>
+	</string>
+	<string id="st_achievement_7_descr">
+		<text>Grateful for your diligent assistance, the technician you've helped kit out has decided to teach you a thing or two about field maintenance, allowing you to make more efficient repairs yourself.</text>
+	</string>
+	<string id="st_achievement_7_unlock">
+		<text>You have unlocked the "Mechanized Warfare" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_8_name">
+		<text>Tourist</text>
+	</string>
+	<string id="st_achievement_8_hint">
+		<text>Your keen familiarity with the Zone has allowed you to deduce the whereabouts of some of its best stashes.</text>
+	</string>
+	<string id="st_achievement_8_descr">
+		<text>Despite the dangers, you have explored all accessible parts of the Zone. From the murky depths of the Great Swamp to the alien landscape of the Generators... you know the Zone like the back of your hand.</text>
+	</string>
+	<string id="st_achievement_8_unlock">
+		<text>You have unlocked the "Tourist" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_9_name">
+		<text>Rag and Bone</text>
+	</string>
+	<string id="st_achievement_9_hint">
+		<text>You occasionally find more loot when searching stashes.</text>
+	</string>
+	<string id="st_achievement_9_descr">
+		<text>After gaining extensive experience poking around in other stalkers' stashes, you've grown wise to false bottoms and secret pouches where additional goodies might be squirreled away.</text>
+	</string>
+	<string id="st_achievement_9_unlock">
+		<text>You have unlocked the "Rag and Bone" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_10_name">
+		<text>Completionist</text>
+	</string>
+	<string id="st_achievement_10_hint">
+		<text>All available achievements have been unlocked.</text>
+	</string>
+	<string id="st_achievement_10_descr">
+		<text>All there is to achieve has been achieved. The road has been long, but you've arrived at the end triumphant.</text>
+	</string>
+	<string id="st_achievement_10_unlock">
+		<text>You have unlocked the "Completionist" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_11_name">
+		<text>Wishful Thinking</text>
+	</string>
+	<string id="st_achievement_11_hint">
+		<text>You've unlocked "Renegades" as a playable faction.</text>
+	</string>
+	<string id="st_achievement_11_descr">
+		<text>You did whatever it took to obtain secret knowledge from one of the oldest stalkers of the Zone. While you're skeptical he revealed the whole truth to you, what you accomplished in the quest for knowledge cannot be denied.</text>
+	</string>
+	<string id="st_achievement_11_unlock">
+		<text>You have unlocked the "Wishful Thinking" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_12_name">
+		<text>Down to Earth</text>
+	</string>
+	<string id="st_achievement_12_hint">
+		<text>Mi-2 helicopters will appear in place of Mi-24s.</text>
+	</string>
+	<string id="st_achievement_12_descr">
+		<text>The higher they fly the harder they fall. Not willing to waste any more expensive equipment, the Zone's helicopters now seem to be of a much weaker variety. But are no less tempting to destroy.</text>
+	</string>
+	<string id="st_achievement_12_unlock">
+		<text>You have unlocked the "Down to Earth" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_13_name">
+		<text>Geologist</text>
+	</string>
+	<string id="st_achievement_13_hint">
+		<text>You have an increased chance of finding artefacts after an emission.</text>
+	</string>
+	<string id="st_achievement_13_descr">
+		<text>Humming, buzzing and spitting - the anomalies of the Zone do not scare you any longer. Your extensive experience with detectors additionally makes artefacts easier to find.</text>
+	</string>
+	<string id="st_achievement_13_unlock">
+		<text>You have unlocked the "Geologist" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_14_name">
+		<text>Folk Hero</text>
+	</string>
+	<string id="st_achievement_14_hint">
+		<text>You can recruit larger groups of followers to act as your companions.</text>
+	</string>
+	<string id="st_achievement_14_descr">
+		<text>Your exploits have begun to establish you as a local legend, and you carry yourself with a clear confidence that only experience can bring. Larger groups of stalkers are more willing to place themselves directly under your leadership, believing you'll lead them to success.</text>
+	</string>
+	<string id="st_achievement_14_unlock">
+		<text>You have unlocked the "Folk Hero" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_15_name">
+		<text>Bookworm Food</text>
+	</string>
+	<string id="st_achievement_15_hint">
+		<text>Memory sticks will be replaced by rare PDAs when spawned.</text>
+	</string>
+	<string id="st_achievement_15_descr">
+		<text>Through your own endeavours or by reading about those of others, you have come to learn a lot about the Zone and its many inhabitants. Perhaps you should consider sharing some of this knowledge?</text>
+	</string>
+	<string id="st_achievement_15_unlock">
+		<text>You have unlocked the "Bookworm Food" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_16_name">
+		<text>Infantile Pleasure</text>
+	</string>
+	<string id="st_achievement_16_hint">
+		<text>You're likely to recover more loot from boxes you destroy.</text>
+	</string>
+	<string id="st_achievement_16_descr">
+		<text>Storage crates now tremble at your approach, for hundreds of their boxy brethren have been broken at your hand. You have since elevated box breaking to an art form, cracking them open with minimal damage to the contents within.</text>
+	</string>
+	<string id="st_achievement_16_unlock">
+		<text>You have unlocked the "Infantile Pleasure" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_17_name">
+		<text>Vigilant Recycler</text>
+	</string>
+	<string id="st_achievement_17_hint">
+		<text>You have a slight chance to recover additional material during disassembly.</text>
+	</string>
+	<string id="st_achievement_17_descr">
+		<text>Believing that every part counts, you cannot help but break down junk into more useful components. After much experience, you have become more precise. Waste not, want not.</text>
+	</string>
+	<string id="st_achievement_17_unlock">
+		<text>You have unlocked the "Vigilant Recycler" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_18_name">
+		<text>Artificer Eagerness</text>
+	</string>
+	<string id="st_achievement_18_hint">
+		<text>Crafting requires one or two less components.</text>
+	</string>
+	<string id="st_achievement_18_descr">
+		<text>Crafting your own equipment has always been an empowering process, but now your increased experience in the matter has allowed you use your components with greater efficiency.</text>
+	</string>
+	<string id="st_achievement_18_unlock">
+		<text>You have unlocked the "Artificer Eagerness" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_19_name">
+		<text>Unforeseen Guest</text>
+	</string>
+	<string id="st_achievement_19_hint">
+		<text>You are less likely to draw suspicion or be discovered while disguised.</text>
+	</string>
+	<string id="st_achievement_19_descr">
+		<text>You've grown more familiar with the subtle customs of your enemies, and as a result your disguises are more convincing. Because of this, your various slip-ups in other areas are more likely to be overlooked, seen as nothing more than the quirks of a quiet, well-meaning guest.</text>
+	</string>
+	<string id="st_achievement_19_unlock">
+		<text>You have unlocked the "Unforeseen Guest" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_20_name">
+		<text>Absolver</text>
+	</string>
+	<string id="st_achievement_20_hint">
+		<text>You've unlocked "Sin" as a playable faction.</text>
+	</string>
+	<string id="st_achievement_20_descr">
+		<text>When the dark stalkers of Sin stepped forth to bring their vision upon the world, you stood against them, giving the world a chance to sort itself out without the manipulation of the noosphere. </text>
+	</string>
+	<string id="st_achievement_20_unlock">
+		<text>You have unlocked the "Absolver" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_21_name">
+		<text>Collaborator</text>
+	</string>
+	<string id="st_achievement_21_hint">
+		<text>You've unlocked "UNISG" as a playable faction.</text>
+	</string>
+	<string id="st_achievement_21_descr">
+		<text>For better or worse, you chose your side and made your decision. It's hard to tell if you were wrong or right...but you made it. And one guesses you should be thankful for that.</text>
+	</string>
+	<string id="st_achievement_21_unlock">
+		<text>You have unlocked the "Collaborator" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_22_name">
+		<text>Iron Curtain</text>
+	</string>
+	<string id="st_achievement_22_hint">
+		<text>You have been awarded a 50,000 RU bonus for your contribution to the faction's war effort.</text>
+	</string>
+	<string id="st_achievement_22_descr">
+		<text>Your faction has become an indisputable force within the Zone, with lesser groups even considering it a local superpower. The spoils of war are already being divided, and a healthy dividend has come your way.</text>
+	</string>
+	<string id="st_achievement_22_unlock">
+		<text>You have unlocked the "Iron Curtain" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_23_name">
+		<text>Murky Spirit</text>
+	</string>
+	<string id="st_achievement_23_hint">
+		<text>Your rank has been greatly increased.</text>
+	</string>
+	<string id="st_achievement_23_descr">
+		<text>You have soundly survived events that would've killed most stalkers several times over. Some stalkers are beginning to wonder if you can even be killed at all.</text>
+	</string>
+	<string id="st_achievement_23_unlock">
+		<text>You have unlocked the "Murky Spirit" achievement.</text>
+	</string>
+	
+	<string id="st_achievement_24_name">
+		<text>Invictus</text>
+	</string>
+	<string id="st_achievement_24_hint">
+		<text>You can now take a screenshot and brag about this achievement to your fellow stalkers.</text>
+	</string>
+	<string id="st_achievement_24_descr">
+		<text>Despite the vicious vicissitudes thrown your way, you have proven yourself to be a resounding success. It is clear that there is nothing left in the Zone to challenge you, and that it may be time to move on to even greater things. </text>
+	</string>
+	<string id="st_achievement_24_unlock">
+		<text>You have unlocked the "Invictus" achievement.</text>
+	</string>
+	
+</string_table>

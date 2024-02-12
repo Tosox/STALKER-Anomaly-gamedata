@@ -1,0 +1,96 @@
+;-- Darkscape
+[ds_isg_leader_squad]:online_offline_group
+faction = isg
+npc = ds_domik_isg_leader
+target_smart = ds2_domik_st
+story_id = ds_isg_leader_squad
+on_death = %+ds_isg_leader_dead%
+
+[ds_isg_recon_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = ds2_domik_st
+story_id = ds_isg_recon_squad
+on_death = %+ds_isg_recon_squad_dead%
+
+;-- Jupiter
+[jup_depo_isg_leader_squad]:online_offline_group
+faction = isg
+npc = jup_depo_isg_leader
+target_smart = {+lttz_hb_task_2_2_breakthrough_started} pas_b400_hall, jup_b208 
+story_id = jup_depo_isg_leader_squad
+on_death = %+jup_depo_isg_leader_squad_dead%
+
+[jup_depo_isg_tech_squad]:online_offline_group
+faction = isg
+npc = jup_depo_isg_tech
+target_smart = jup_b208 
+story_id = jup_depo_isg_tech_squad
+on_death = %+jup_depo_isg_tech_squad_dead%
+
+[jup_depo_isg_recon_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = jup_b208 
+story_id = jup_depo_isg_recon_squad
+on_death = %+jup_depo_isg_recon_squad_dead%
+
+[jup_depo_isg_guard_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = {+lttz_hb_task_2_2_breakthrough_started} pas_b400_hall, jup_b208 
+story_id = jup_depo_isg_guard_squad
+on_death = %+jup_depo_isg_guard_squad_dead%
+
+[jup_depo_isg_guard_squad_2]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = jup_b208
+story_id = jup_depo_isg_guard_squad_2
+on_death = %+jup_depo_isg_guard_squad_2_dead%
+
+
+[jup_b8_army_recon_1_squad]:online_offline_group
+faction = army
+npc_random = sim_default_military_3, sim_default_military_2, sim_default_military_2, sim_default_military_2
+npc_in_squad = 2, 3
+story_id = jup_b8_army_recon_1_squad
+target_smart = jup_b219
+
+[jup_b8_army_recon_2_squad]:online_offline_group
+faction = army
+npc_random = sim_default_military_3, sim_default_military_2, sim_default_military_2, sim_default_military_2
+npc_in_squad = 3, 4
+story_id = jup_b8_army_recon_2_squad
+target_smart = jup_b8_smart_terrain
+
+;-- Jupiter Underground
+[jup_u_isg_guard_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = pas_b400_hall
+story_id = jup_u_isg_guard_squad
+on_death = %+jup_u_isg_guard_squad_dead%
+
+[jup_u_isg_guard_2_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = pas_b400_hall
+story_id = jup_u_isg_guard_2_squad
+on_death = %+jup_u_isg_guard_2_squad_dead%
+
+;-- Outskirts
+[stalker_strelok_hb_squad]:online_offline_group
+faction = stalker
+relationship = neutral
+npc = stalker_strelok_hb
+target_smart = pri_b35_mercs
+story_id = lost_stalker_strelok
+on_death = %+lost_stalker_strelok_dead%
+
+[pass_hall_isg_companion_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_4, sim_default_isg_3, sim_default_isg_2, sim_default_isg_1
+target_smart = pri_b35_mercs	;pas_b400_hall 
+story_id = pass_hall_isg_companion_squad
+on_death = %+pass_hall_isg_companion_squad_dead%

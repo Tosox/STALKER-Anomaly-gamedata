@@ -1,0 +1,491 @@
+
+
+[up_sect_firsta_saiga12]
+cost                                     = 3230
+value                                    = +10
+rpm                                      = +35
+inv_weight                               = +0.1
+
+
+[up_sect_firstc_saiga12]
+cost                                     = 3560
+value                                    = +15
+
+condition_queue_shot_dec                 = -0.0003
+condition_shot_dec                       = -0.0003
+misfire_start_prob                       = -0.0007
+misfire_end_prob                         = -0.011
+inv_weight                               = +0.14
+
+
+[up_sect_firstd_saiga12]
+cost                                     = 3490
+value                                    = -5
+cam_dispersion                           = -0.138 
+cam_dispersion_inc                       = 0.0 ;-0.134 
+cam_step_angle_horz                      = -0.045 
+zoom_cam_dispersion                      = -0.068
+zoom_cam_dispersion_inc                  = 0.0 ; -0.096
+zoom_cam_step_angle_horz                 = -0.04
+inv_weight                               = +0.16
+
+
+[up_sect_firste_saiga12]
+cost                                     = 4890
+
+fire_modes                               = 1, 3
+cam_dispersion                           = -0.038 
+cam_dispersion_inc                       = 0.0 ;-0.044 
+cam_step_angle_horz                      = -0.025 
+
+
+[up_sect_secona_saiga12]
+cost                                     = 2840
+value                                    = -5
+cam_dispersion                           = -0.138 
+cam_dispersion_inc                       = 0.0 ;-0.134 
+cam_step_angle_horz                      = -0.045 
+zoom_cam_dispersion                      = -0.068
+zoom_cam_dispersion_inc                  = 0.0 ; -0.096
+zoom_cam_step_angle_horz                 = -0.04
+
+
+[up_sect_seconc_saiga12]
+cost                                     = 5180
+value                                    = -0.88
+crosshair_inertion                       = -0.7
+inv_weight                               = -0.88
+
+
+[up_sect_secone_saiga12]
+cost                                     = 3690
+value                                    = -10
+cam_dispersion                           = -0.226 
+cam_dispersion_inc                       = 0.0 ;-0.269 
+cam_step_angle_horz                      = -0.09 
+zoom_cam_dispersion                      = -0.136
+zoom_cam_dispersion_inc                  = 0.0 ; -0.192
+zoom_cam_step_angle_horz                 = -0.08
+inv_weight                               = +0.15
+
+
+[up_sect_seconf_saiga12]
+cost                                     = 3760
+value                                    = +15
+
+condition_queue_shot_dec                 = -0.0003
+condition_shot_dec                       = -0.0003
+misfire_start_prob                       = -0.0007
+misfire_end_prob                         = -0.011
+inv_weight                               = +0.13
+
+
+[up_sect_thirda_saiga12]
+cost                                     = 3290
+value                                    = -5
+cam_dispersion                           = -0.138 
+cam_dispersion_inc                       = 0.0 ;-0.134 
+cam_step_angle_horz                      = -0.045 
+zoom_cam_dispersion                      = -0.068
+zoom_cam_dispersion_inc                  = 0.0 ; -0.096
+zoom_cam_step_angle_horz                 = -0.04
+
+
+[up_sect_thirdc_saiga12]
+cost                                     = 3890
+value                                    = +15
+rpm                                      = +50
+
+
+[up_sect_thirdd_saiga12]
+cost                                     = 2650
+value                                    = +15
+
+condition_queue_shot_dec                 = -0.0003
+condition_shot_dec                       = -0.0003
+misfire_start_prob                       = -0.0007
+misfire_end_prob                         = -0.011
+inv_weight                               = +0.1
+
+
+[up_sect_thirde_saiga12]
+cost                                     = 2920
+value                                    = +25
+crosshair_inertion                       = -0.7
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.3
+PDM_disp_accel_factor                    = -0.3
+inv_weight                               = +0.12
+
+
+[up_sect_fourta_saiga12]
+cost                                     = 1390
+value                                    = -5
+cam_dispersion                           = -0.1
+cam_dispersion_inc                       = 0.0 ;-0.1
+cam_step_angle_horz                      = -0.025
+zoom_cam_dispersion                      = -0.09
+zoom_cam_dispersion_inc                  = 0.0 ; -0.09
+zoom_cam_step_angle_horz                 = -0.025
+
+
+[up_sect_fourtc_saiga12]
+cost                                     = 2650
+value                                    = +10
+rpm                                      = +35
+
+
+[up_sect_fourte_saiga12]
+cost                                     = 3680
+value                                    = +15
+rpm                                      = +50
+
+[up_sect_fiftha_saiga12]
+cost                                     = 2440
+value                                    = +5
+crosshair_inertion                       = -0.25
+PDM_disp_base                            = -0.07
+PDM_disp_vel_factor                      = -0.1
+PDM_disp_accel_factor                    = -0.1
+cam_dispersion                           = -0.046
+cam_dispersion_inc                       = 0.0 ;-0.033
+cam_step_angle_horz                      = -0.057 
+zoom_cam_dispersion                      = -0.047
+zoom_cam_dispersion_inc                  = 0.0 ; -0.025
+zoom_cam_step_angle_horz                 = -0.051
+inv_weight                               = +0.06
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_saiga12]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_saiga12
+section                                  = up_sect_firsta_saiga12
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a3_name
+description                              = st_up_zat_a3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_1
+
+
+[up_firstc_saiga12]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_saiga12
+section                                  = up_sect_firstc_saiga12
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_b4_name
+description                              = st_up_zat_b4_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_2
+
+[up_firstd_saiga12]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_saiga12
+section                                  = up_sect_firstd_saiga12
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_b1_name
+description                              = st_up_zat_b1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_3
+
+[up_firste_saiga12]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_saiga12
+property                                 = prop_3xfire
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_c7_name
+description                              = st_up_zatp_c7_descr
+icon                                     = ui_inGame2_upgrade_Volker_P9M_4
+
+[up_secona_saiga12]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_saiga12
+section                                  = up_sect_secona_saiga12
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_a1_name
+description                              = st_up_auto_a1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_5
+
+[up_seconc_saiga12]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_saiga12
+section                                  = up_sect_seconc_saiga12
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c6_name
+description                              = st_up_auto_c6_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_8
+
+[up_secone_saiga12]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_saiga12
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c1_name
+description                              = st_up_auto_c1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_7
+
+[up_seconf_saiga12]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconf_saiga12
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_b1_name
+description                              = st_up_auto_b1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_6
+
+
+[up_thirda_saiga12]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_saiga12
+section                                  = up_sect_thirda_saiga12
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usm_a1_name
+description                              = st_up_usm_a1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_9
+
+[up_thirdc_saiga12]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  = up_gr_thirdef_saiga12
+section                                  = up_sect_thirdc_saiga12
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usm_b2_name
+description                              = st_up_usm_b2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_10
+
+
+[up_thirdd_saiga12]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_saiga12
+section                                  = up_sect_thirdd_saiga12
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usm_b1_name
+description                              = st_up_usm_b1_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_11
+
+
+[up_thirde_saiga12]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_saiga12
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usm_c3_name
+description                              = st_up_usm_c3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_12
+
+
+[up_fourta_saiga12]
+scheme_index                             = 0, 3
+known                                    = 1
+effects                                  = up_gr_fourtcd_saiga12
+section                                  = up_sect_fourta_saiga12
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a3_name
+description                              = st_up_ret_a3_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_13
+
+[up_fourtc_saiga12]
+scheme_index                             = 1, 5
+known                                    = 1
+effects                                  = up_gr_fourtef_saiga12
+section                                  = up_sect_fourtc_saiga12
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b2_name
+description                              = st_up_ret_b2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_14
+
+[up_fourte_saiga12]
+scheme_index                             = 2, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourte_saiga12
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_c2_name
+description                              = st_up_ret_c2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2U_15
+
+
+[up_fiftha_saiga12]
+scheme_index                             = 0, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fiftha_saiga12
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = true
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a2_name
+description                              = st_up_ret_a2_descr
+icon                                     = ui_inGame2_upgrade_AKM_74_2_5
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_saiga12]
+elements                                 = up_firsta_saiga12
+
+[up_gr_firstcd_saiga12]
+elements                                 = up_firstc_saiga12, up_firstd_saiga12
+
+[up_gr_firstef_saiga12]
+elements                                 = up_firste_saiga12
+
+[up_gr_seconab_saiga12]
+elements                                 = up_secona_saiga12
+
+[up_gr_seconcd_saiga12]
+elements                                 = up_seconc_saiga12
+
+[up_gr_seconef_saiga12]
+elements                                 = up_secone_saiga12, up_seconf_saiga12
+
+[up_gr_thirdab_saiga12]
+elements                                 = up_thirda_saiga12
+
+[up_gr_thirdcd_saiga12]
+elements                                 = up_thirdc_saiga12, up_thirdd_saiga12
+
+[up_gr_thirdef_saiga12]
+elements                                 = up_thirde_saiga12
+
+[up_gr_fourtab_saiga12]
+elements                                 = up_fourta_saiga12
+
+[up_gr_fourtcd_saiga12]
+elements                                 = up_fourtc_saiga12
+
+[up_gr_fourtef_saiga12]
+elements                                 = up_fourte_saiga12
+
+[up_gr_fifthab_saiga12]
+elements                                 = up_fiftha_saiga12

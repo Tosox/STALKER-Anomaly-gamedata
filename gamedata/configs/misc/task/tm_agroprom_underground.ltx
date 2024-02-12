@@ -1,0 +1,20 @@
+
+;------------------------------------------------
+; Bandit squad leader in Agroprom underground
+ 
+[agr_u_bandit_boss_task_1]
+
+icon = ui_inGame2_Ohota_na_Krovososov
+storyline = false
+prior = 75
+
+title = agr_u_bandit_boss_task_1_name
+descr = agr_u_bandit_boss_task_1_desc
+
+descr_functor = agr_u_bandit_boss_task_1_functor
+target_functor = agr_u_bandit_boss_task_1_functor
+status_functor = agr_u_bandit_boss_task_1_stages
+condlist_0 = {+agr_u_bandits_boss_dead} fail, {+agr_u_bandit_boss_refused} fail, {+agr_u_bandit_boss_task_completed} complete, {+agr_u_bandit_boss_task_completed_alt} complete
+
+on_init = %+agr_u_bandit_boss_task_accepted%
+on_fail = %=fail_task_dec_goodwill(50:bandit)%

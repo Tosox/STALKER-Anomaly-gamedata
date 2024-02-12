@@ -1,0 +1,1620 @@
+;--------------------------------------------------------------------------------
+;-- Copyright: 2010-2012 SWM Team -----------------------------------------------
+;-- last edited: Jurok ----------------------------------------------------------
+;--------------------------------------------------------------------------------
+
+;--------------------------------------------------------------------------------
+; ARTEFACTS
+;--------------------------------------------------------------------------------
+;јртефакты, которые при активизации создают аномальные зоны
+;формат: {секци€_артефакта} = {секци€_зоны},Radius,Power
+[artefact_spawn_zones]
+af_medusa                                        = zone_mosquito_bald_weak, 2.0, 30.0
+af_cristall_flower                               = zone_mosquito_bald_weak, 3.0, 50.0
+af_night_star                                    = zone_mosquito_bald_weak, 5.0, 100.0
+af_vyvert                                        = zone_gravi_zone_weak, 2.0, 30.0
+af_gravi                                         = zone_gravi_zone_weak, 3.0, 50.0
+af_gold_fish                                     = zone_gravi_zone_weak, 5.0, 100.0
+af_cristall                                      = torrid_zone, 3.0, 50.0
+af_blood                                         = zone_mincer_weak, 2, 30.0
+af_mincer_meat                                   = zone_mincer_weak, 3, 50.0
+af_soul                                          = zone_mincer_weak, 5, 100.0
+af_electra_sparkler                              = zone_witches_galantine, 2, 30.0
+af_electra_flash                                 = zone_witches_galantine, 3, 50.0
+af_electra_moonlight                             = zone_witches_galantine, 5, 100.0
+mp_af_electra_flash                              = mp_zone_witches_galantine, 3, 50.0
+mp_af_cta_green                                  = mp_zone_witches_galantine, 3, 50.0
+mp_af_cta_blue                                   = mp_zone_witches_galantine, 3, 50.0
+
+[af_activation_gravi]
+;----------------------------------------------------------------------------------------------------------------------------------------
+;format:						time(sec),	sound_name,	         	light_R,G,B,  	light_range,    	particle_name,						af_animation_name
+;----------------------------------------------------------------------------------------------------------------------------------------
+starting                                         = 5.0,		anomaly\gravi_idle00,	0.5, 1.0, 1.5,  	5.0,			"anomaly2\artefact_gravi_blast_start",	"idle"
+flying                                           = 2.0,		anomaly\gravi_idle01,	0.8, 1.0, 1.2,  	3.0,			"artefact\artefact_gravi",				"idle"
+idle_before_spawning                             = 5.0,		anomaly\gravi_blowout5,	1.0, 1.0, 1,    	0.0,			"anomaly2\artefact_gravi_blast_finished",	"idle"
+spawning                                         = 1,  		anomaly\gravity_entrance,	0.9, 1.1, 1.01,  	0.0,		"",		"idle"
+
+[af_activation_bold]
+;----------------------------------------------------------------------------------------------------------------------------------------
+;format:						time(sec),	sound_name,	         	light_R,G,B,  	light_range,    	particle_name,						af_animation_name
+;----------------------------------------------------------------------------------------------------------------------------------------
+starting                                         = 5.0,		anomaly\gravi_idle00,	0.8, 1.5, 0.9,  	5.0,			"anomaly2\artefact_bold_blast_start",	"idle"
+flying                                           = 2.0,		anomaly\gravi_idle01,	0.8, 0.9, 0.8,  	2.0,			"artefact\artefact_zharka",				"idle"
+idle_before_spawning                             = 2.0,		anomaly\gravity_entrance,1.0, 1.1, 1.0,  	0.0,			"anomaly2\artefact_bold_blast_finished",	"idle"
+spawning                                         = 0.5,		anomaly\pux_blast,  	1.0, 1.0, 0.5,  	5.0,			"anomaly2\gravi_anomaly_00",		"idle"
+
+[af_activation_mincer]
+;----------------------------------------------------------------------------------------------------------------------------------------
+;format:						time(sec),	sound_name,	         	light_R,G,B,  	light_range,    	particle_name,						af_animation_name
+;----------------------------------------------------------------------------------------------------------------------------------------
+starting                                         = 5.0,		anomaly\gravi_idle00,	0.5, 1.0, 1.5,  	5.0,			"anomaly2\artefact_gravi_blast_start",	"idle"
+flying                                           = 2.0,		anomaly\gravi_idle01,	0.8, 1.0, 1.2,  	3.0,			"artefact\artefact_mincer",				"idle"
+idle_before_spawning                             = 5.0,		anomaly\gravi_blowout2,	1.0, 1.0, 1.0,  	0.0,			"anomaly2\artefact_gravi_blast_finished",	"idle"
+spawning                                         = 0.0,		"",						1.0, 1.0, 0.5,  	0.0,			"",		"idle"
+
+[af_activation_electra]
+;----------------------------------------------------------------------------------------------------------------------------------------
+;format:						time(sec),	sound_name,	         	light_R,G,B,  	light_range,    	particle_name,						af_animation_name
+;----------------------------------------------------------------------------------------------------------------------------------------
+starting                                         = 5.0,		anomaly\bfuzz_blowout,	0.8, 1.0, 1.5,  	5.0,			"anomaly2\artefact_electra_blast_start",	"idle"
+flying                                           = 2.0,		anomaly\electra_idle1,	1.0, 1.0, 1.0,  	5.0,			"artefact\artefact_electra",				"idle"
+idle_before_spawning                             = 0.0,		"",	                	1.0, 1.0, 2.5,  	0,		    	"",	"idle"
+spawning                                         = 2,		"anomaly\pux_blast",	1.0, 1.0, 1.5,  	5.0,			"anomaly2\artefact_electra_blast_finished",		"idle"
+
+
+[af_base]:identity_immunities
+GroupControlSection                              = spawn_group
+cform                                            = skeleton
+hud                                              = artefact_hud
+animation_slot                                   = 11
+allow_inertion                                   = true
+attach_angle_offset                              = 0,0,0
+attach_position_offset                           = -0.1,-0.1,0
+attach_bone_name                                 = bip01_root
+inv_grid_width                                   = 1
+inv_grid_height                                  = 1
+belt                                             = true
+slot                                             = -1	                                       ;10
+default_to_ruck                                  = true
+af_actor_properties                              = on
+actor_properties                                 = on
+det_show_particles                               = anomaly2\plasma_generator_death
+det_hide_particles                               = anomaly2\plasma_generator_death
+det_show_snd                                     = anomaly\bfuzz_blowout
+det_hide_snd                                     = anomaly\pux_blast
+af_rank                                          = 1
+can_be_controlled                                = true
+script_binding                                   = item_artefact.bind
+particles_bone                                   = link
+degrade_rate							 		 = 1.0	;Artefact Degradation
+idle_light_shadow                                = false
+health_restore_speed 	                         = 0.00		;Восстановление здоровья		1 еденица = 0.00015	(+ лечение/- повреждение)
+radiation_restore_speed                          = 0.00		;Вывод радиации					1 еденица = 0.001	(- вывод/+ облучение)
+satiety_restore_speed 	                         = 0.00		;Сытость1						1 еденица = 0.1
+power_restore_speed 	                         = 0.00		;Восстановление сил				1 еденица = 0.0005	(+ восстановление/- убывание)
+bleeding_restore_speed 	                         = 0.00		;Заживление ран					1 еденица = 0.001
+additional_inventory_weight		                 = 0	;Дополнительный переносимый вес	1 еденица = 1кг		(+ увеличение/- уменьшение)
+additional_inventory_weight2	                 = 0
+hit_absorbation_sect	                         = af_base_absorbation
+
+[artefact_hud]:hud_base
+item_visual                                      = dynamics\artefacts\artefact_electra_blue_hud
+attach_place_idx                                 = 0
+hands_position                                   = 0,0,0
+hands_orientation                                = 0,0,0
+hands_position_16x9                              = 0,0,0
+hands_orientation_16x9                           = 0,0,0
+item_position                                    = 0,0,0
+item_orientation                                 = 0,0,0
+aim_hud_offset_pos                               = 0,0,0
+aim_hud_offset_rot                               = 0,0,0
+gl_hud_offset_pos                                = 0,0,0
+gl_hud_offset_rot                                = 0,0,0
+lean_hud_offset_pos                              = 0,0,0
+lean_hud_offset_rot                              = 0,0,0
+anm_idle                                         = dev_artefact_idle
+anm_idle_sprint                                  = dev_artefact_idle
+anm_hide                                         = dev_artefact_holster
+anm_show                                         = dev_artefact_draw
+anm_activate                                     = dev_artefact_use
+
+[af_base_absorbation]
+burn_immunity 			                         = 0			;Термозащита	3 еденицы = 0.02
+strike_immunity 		                         = 0			;
+shock_immunity 			                         = 0			;Электрозащита	3 еденицы = 0.05
+wound_immunity 			                         = 0			;
+radiation_immunity 		                         = 0			;Радиозащита	1 еденица = 0.001
+telepatic_immunity 		                         = 0			;Пси-защита		3 еденицы = 0.01
+chemical_burn_immunity 	                         = 0			;Хим. защита	3 еденицы = 0.02
+explosion_immunity 		                         = 0			;
+fire_wound_immunity  	                         = 0		
+
+
+;;--================================================================================
+;;--=================================| Burn immunity |================================
+;;--================================================================================
+
+[af_itcher]:af_base
+$spawn                                           = "artefacts\artefact_itcher"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\af_cell.ogf	;dynamics\artefacts\artefact_itcher.ogf
+inv_name                                         = st_af_itcher_name
+inv_name_short                                   = st_af_itcher_name
+description                                      = st_af_itcher_descr
+inv_grid_x                                       = 0
+inv_grid_y                                       = 70
+cost                                             = 18400
+;jump_height                                      = 0.0
+inv_weight                                       = 0.8
+particles                                        = artefact\af_thermal_idle
+det_show_particles                               = artefact\af_thermal_show
+det_hide_particles                               = artefact\af_thermal_hide
+af_rank                                          = 1
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_itcher_absorbation
+radiation_restore_speed = 0.00013
+
+tier = 2
+
+[af_itcher_absorbation]:af_base_absorbation
+burn_immunity = 0.00248
+chemical_burn_immunity = -0.00021
+explosion_immunity = 0.034
+
+;;--================================================================================
+
+[af_pin]:af_base
+$spawn                                           = "artefacts\artefact_pin"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_pin.ogf
+inv_name                                         = st_af_pin_name
+inv_name_short                                   = st_af_pin_name
+description                                      = st_af_pin_descr
+inv_grid_x                                       = 1
+inv_grid_y                                       = 70
+cost                                             = 21100
+;jump_height                                      = 0.0
+inv_weight                                       = 1.0
+particles                                        = artefact\af_thermal_idle
+det_show_particles                               = artefact\af_thermal_show
+det_hide_particles                               = artefact\af_thermal_hide
+af_rank                                          = 1
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_pin_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 2
+
+[af_pin_absorbation]:af_base_absorbation
+burn_immunity = 0.00388
+telepatic_immunity = 0.0072
+chemical_burn_immunity = -0.00021
+
+;;--================================================================================
+
+[af_cristall]:af_base
+$spawn 				                             = "artefacts\thermal_1_cristall"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_cristall.ogf
+description			                             = st_af_cristall_descr
+inv_name			                             = st_af_cristall_name
+inv_name_short		                             = st_af_cristall_name
+inv_weight			                             = 2.73
+inv_grid_x			                             = 2
+inv_grid_y			                             = 70
+cost				                             = 31800
+;jump_height			                         = .01
+particles					                     = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2 ;0.9,0.5,0.5
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_mincer
+hit_absorbation_sect                             = af_cristall_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 3
+
+[af_cristall_absorbation]:af_base_absorbation
+burn_immunity = 0.004821
+shock_immunity = 0.0623
+strike_immunity = -0.034
+fire_wound_immunity = -0.034
+
+;;--================================================================================
+
+[af_fireball]:af_base
+$spawn 				                             = "artefacts\thermal_2_fireball"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_fireball.ogf
+description			                             = st_af_fireball_descr
+inv_name			                             = st_af_fireball_name
+inv_name_short		                             = st_af_fireball_name
+inv_weight			                             = 3.67
+inv_grid_x			                             = 3
+inv_grid_y			                             = 70
+cost				                             = 46800
+impulse_threshold		                         = 10
+radius				                             = 10
+strike_impulse			                         = 20
+particles					                     = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_fireball_absorbation
+radiation_restore_speed = 0.00047
+
+tier = 4
+
+[af_fireball_absorbation]:af_base_absorbation
+burn_immunity = 0.005903
+shock_immunity = -0.1089
+strike_immunity = -0.034
+wound_immunity = 0.034
+
+;;--=================================================================================================
+;;--====================================| Chemical burn immunity |===================================
+;;--=================================================================================================
+[af_blood]:af_base
+$spawn				                             = "artefacts\acidic_1_blood"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_blood.ogf
+description			                             = st_af_blood_descr
+inv_name			                             = st_af_blood_name
+inv_name_short		                             = st_af_blood_name
+inv_weight			                             = 1.22
+inv_grid_x			                             = 5
+inv_grid_y			                             = 70
+cost				                             = 22200
+jump_height			                             = .01
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_mincer
+hit_absorbation_sect                             = af_blood_absorbation
+radiation_restore_speed = 0.00013
+bleeding_restore_speed = 0.000124
+
+tier = 2
+
+[af_blood_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+chemical_burn_immunity = 0.00039
+
+;;--================================================================================
+
+[af_mincer_meat]:af_base
+$spawn				                             = "artefacts\acidic_2_mincer_meat"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_mincer_meat.ogf
+description			                             = st_af_mincer_meat_descr
+inv_name			                             = st_af_mincer_meat_name
+inv_name_short		                             = st_af_mincer_meat_name
+inv_weight			                             = 1.24
+inv_grid_x			                             = 6
+inv_grid_y			                             = 70
+cost				                             = 31300
+jump_height			                             = .01
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_mincer
+hit_absorbation_sect                             = af_mincer_meat_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 2
+
+[af_mincer_meat_absorbation]:af_base_absorbation
+chemical_burn_immunity = 0.00057
+shock_immunity = 0.0623
+telepatic_immunity = -0.0072
+
+;;--================================================================================
+
+[af_bracelet]:af_base
+$spawn                                           = "artefacts\artefact_bracelet"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_bracelet.ogf
+inv_name                                         = st_af_bracelet_name
+inv_name_short                                   = st_af_bracelet_name
+description                                      = st_af_bracelet_descr
+inv_grid_x                                       = 7
+inv_grid_y                                       = 70
+cost                                             = 37940
+jump_height                                      = .01
+inv_weight                                       = 1.0
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank                                          = 2
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 1.5
+hit_absorbation_sect                             = af_bracelet_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 3
+
+[af_bracelet_absorbation]:af_base_absorbation
+chemical_burn_immunity = 0.00092
+telepatic_immunity = 0.0072
+explosion_immunity = -0.034
+
+;;--================================================================================
+
+[af_baloon]:af_base
+$spawn 				                             = "artefacts\acidic_5_baloon"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_baloon.ogf
+description			                             = st_af_baloon_descr
+inv_name			                             = st_af_baloon_name
+inv_name_short			                         = st_af_baloon_name
+inv_weight			                             = 1.44
+inv_grid_x			                             = 8
+inv_grid_y			                             = 70
+cost				                             = 47400
+jump_height			                             = .01
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_baloon_absorbation
+radiation_restore_speed = 0.00047
+
+tier = 4
+
+[af_baloon_absorbation]:af_base_absorbation
+burn_immunity = 0.00115
+chemical_burn_immunity = 0.00131
+telepatic_immunity = -0.0138
+wound_immunity = -0.034
+
+;;--=================================================================================================
+;;--=================================| Shock immunity |================================
+;;--=================================================================================================
+
+[af_electra_sparkler]:af_base
+$spawn				                             = "artefacts\electric_1_electra_sparkler"
+kind			                             = i_arty
+class				                             = SCRPTART    ; физ объект
+visual				                             = dynamics\artefacts\af_electra_sparkler.ogf
+description			                             = st_af_electra_sparkler_descr
+inv_name			                             = st_af_electra_sparkler_name
+inv_name_short			                         = st_af_electra_sparkler_name
+inv_weight			                             = 0.15
+inv_grid_x			                             = 10
+inv_grid_y			                             = 70
+cost				                             = 21600
+jump_height			                             = .5      ; игнорируетс€ при типе SCRPTART
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_electra
+hit_absorbation_sect                             = af_electra_sparkler_absorbation
+radiation_restore_speed = 0.00013
+
+tier = 2
+
+[af_electra_sparkler_absorbation]:af_base_absorbation
+shock_immunity = 0.1089
+chemical_burn_immunity = -0.00021
+wound_immunity = 0.034
+
+
+;;--================================================================================
+
+[af_sponge]:af_base
+$spawn                                           = "artefacts\artefact_sponge"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_sponge.ogf
+inv_name                                         = st_af_sponge_name
+inv_name_short                                   = st_af_sponge_name
+description                                      = st_af_sponge_descr
+inv_grid_x                                       = 11
+inv_grid_y                                       = 70
+cost                                             = 30320
+jump_height                                      = .6
+inv_weight                                       = 2.25
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank                                          = 1
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_sponge_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 2
+
+[af_sponge_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+shock_immunity = 0.2044
+explosion_immunity = 0.034
+
+;;--================================================================================
+
+[af_ring]:af_base
+$spawn                                           = "artefacts\artefact_ring"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_ring.ogf
+inv_name                                         = st_af_ring_name
+inv_name_short                                   = st_af_ring_name
+description                                      = st_af_ring_descr
+inv_grid_x                                       = 12
+inv_grid_y                                       = 70
+cost                                             = 42220
+jump_height                                      = .1
+inv_weight                                       = 1.1
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank                                          = 2
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_ring_absorbation
+radiation_restore_speed = 0.00025
+power_restore_speed = 0.00088
+
+tier = 3
+
+[af_ring_absorbation]:af_base_absorbation
+burn_immunity = -0.00248
+shock_immunity = 0.31269
+
+;;--================================================================================
+
+[af_electra_flash]:af_base
+$spawn				                             = "artefacts\electric_2_electra_flash"
+kind			                             = i_arty
+class				                             = SCRPTART
+visual				                             = dynamics\artefacts\af_electra_flash.ogf
+description			                             = st_af_electra_flash_descr
+inv_name			                             = st_af_electra_flash_name
+inv_name_short		                             = st_af_electra_flash_name
+inv_weight			                             = 0.17
+inv_grid_x			                             = 13
+inv_grid_y			                             = 70
+cost				                             = 48900
+jump_height			                             = .1
+particles				                         = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_electra
+hit_absorbation_sect                             = af_electra_flash_absorbation
+radiation_restore_speed = 0.00047
+
+tier = 4
+
+[af_electra_flash_absorbation]:af_base_absorbation
+shock_immunity = 0.4206
+telepatic_immunity = 0.0072
+strike_immunity = -0.034
+fire_wound_immunity = -0.1
+
+;;--=================================================================================================
+;;--=================================| Telepathy immunity |================================
+;;--=================================================================================================
+
+[af_cristall_flower]:af_base
+$spawn				                             = "artefacts\gravitational_2_cristall_flower"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_cristall_flower.ogf
+description			                             = st_af_cristall_flower_descr
+inv_name			                             = st_af_cristall_flower_name
+inv_name_short			                         =
+inv_weight			                             = 5.08
+inv_grid_x			                             = 15
+inv_grid_y			                             = 70
+cost				                             = 22800
+jump_height			                             = .6
+particles					                     = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_bold
+hit_absorbation_sect 		                     = af_cristall_flower_absorbation
+radiation_restore_speed = 0.00013
+
+tier = 2
+
+[af_cristall_flower_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+telepatic_immunity = 0.0138
+chemical_burn_immunity = 0.00021
+
+;;--================================================================================
+
+[af_lobster_eyes]:af_base
+$spawn                                           = "artefacts\artefact_lobster_eyes"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_lobster_eyes.ogf
+inv_name                                         = st_af_lobster_eyes_name
+inv_name_short                                   = st_af_lobster_eyes_name
+description                                      = st_af_lobster_eyes_descr
+inv_grid_x                                       = 16
+inv_grid_y                                       = 70
+cost                                             = 35640
+jump_height                                      = .1
+inv_weight                                       = 3.75
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank                                          = 1
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_lobster_eyes_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 2
+
+[af_lobster_eyes_absorbation]:af_base_absorbation
+burn_immunity = 0.00115
+telepatic_immunity = 0.0189
+explosion_immunity = -0.034
+
+;;--================================================================================
+
+[af_electra_moonlight]:af_base
+$spawn				                             = "artefacts\electric_3_electra_moonlight"
+kind			                             = i_arty
+class				                             = SCRPTART
+visual				                             = dynamics\artefacts\af_electra_moonlight.ogf
+description			                             = st_af_electra_moonlight_descr
+inv_name			                             = st_af_electra_moonlight_name
+inv_name_short		                             = st_af_electra_moonlight_name
+inv_weight			                             = 0.19
+inv_grid_x			                             = 17
+inv_grid_y			                             = 70
+cost				                             = 43600
+jump_height			                             = .1
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_electra
+hit_absorbation_sect                             = af_electra_moonlight_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 3
+
+[af_electra_moonlight_absorbation]:af_base_absorbation
+burn_immunity = -0.00248
+telepatic_immunity = 0.0239
+shock_immunity = 0.0623
+
+
+;;--================================================================================
+
+[af_black_spray]:af_base
+$spawn                                           = "artefacts\artefact_black_spray"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_black_spray.ogf
+inv_name                                         = st_af_black_spray_name
+inv_name_short                                   = st_af_black_spray_name
+description                                      = st_af_black_spray_descr
+inv_grid_x                                       = 18
+inv_grid_y                                       = 70
+cost                                             = 55320
+jump_height                                      = .4
+inv_weight                                       = 0.9
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank                                          = 3
+lights_enabled                                   = true
+trail_light_color                                = 0.9,0.4,0.2
+trail_light_range                                = 2
+hit_absorbation_sect                             = af_black_spray_absorbation
+radiation_restore_speed = 0.00047
+
+tier = 4
+
+[af_black_spray_absorbation]:af_base_absorbation
+telepatic_immunity = 0.0318
+chemical_burn_immunity = -0.00021
+strike_immunity = 0.034
+wound_immunity = -0.1
+
+;;--=================================================================================================
+;;--=================================| Physical immunity |================================
+;;--=================================================================================================
+
+[af_medusa]:af_base
+$spawn				                             = "artefacts\gravitational_1_medusa"
+kind			                             = i_arty
+class				                             = ARTEFACT  	
+visual				                             = dynamics\artefacts\af_medusa.ogf
+description			                             = st_af_medusa_descr
+inv_name			                             = st_af_medusa_name
+inv_name_short		                             = st_af_medusa_name
+inv_weight			                             = 3.25
+inv_grid_x			                             = 20
+inv_grid_y			                             = 70
+cost				                             = 24900
+jump_height			                             = .5 
+particles				                         = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_bold
+hit_absorbation_sect		                     = af_medusa_absorbation
+radiation_restore_speed = 0.00013
+
+tier = 2
+
+[af_medusa_absorbation]:af_base_absorbation
+burn_immunity = 0.00115
+telepatic_immunity = -0.0072
+strike_immunity = 0.1
+wound_immunity = 0.11
+explosion_immunity = 0.089
+fire_wound_immunity = 0.097
+
+;;--================================================================================
+
+[af_vyvert]:af_base
+$spawn				                             = "artefacts\gravitational_4_vyvert"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_vyvert.ogf
+description			                             = st_af_vyvert_descr
+inv_name			                             = st_af_vyvert_name
+inv_name_short		                             = st_af_vyvert_name
+inv_weight			                             = 5.07
+inv_grid_x			                             = 21
+inv_grid_y			                             = 70
+cost				                             = 35500
+jump_height			                             = .8
+particles				                         = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 2
+particles_bone			                         = joint2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_gravi
+hit_absorbation_sect 		                     = af_vyvert_absorbation
+radiation_restore_speed = 0.00025
+
+tier = 3
+
+[af_vyvert_absorbation]:af_base_absorbation
+chemical_burn_immunity = 0.00021
+shock_immunity = -0.0623
+strike_immunity = 0.135
+wound_immunity = 0.124
+explosion_immunity = 0.128
+fire_wound_immunity = 0.117
+
+;;--================================================================================
+
+[af_empty]:af_base
+$spawn                                           = "artefacts\artefact_empty"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_empty.ogf
+inv_name                                         = st_af_empty_name
+inv_name_short                                   = st_af_empty_name
+description                                      = st_af_empty_descr
+inv_grid_x                                       = 22
+inv_grid_y                                       = 70
+cost                                             = 42760
+jump_height                                      = 0
+inv_weight                                       = 0.75
+particles                                        = artefact\af_gravi_idle
+det_show_particles                               = artefact\af_gravi_show
+det_hide_particles                               = artefact\af_gravi_hide
+af_rank                                          = 2
+lights_enabled                                   = false
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_empty_absorbation
+radiation_restore_speed = 0.00025
+power_restore_speed = -0.00088
+
+tier = 3
+
+[af_empty_absorbation]:af_base_absorbation
+shock_immunity = 0.0623
+strike_immunity = 0.16
+wound_immunity = 0.165
+explosion_immunity = 0.152
+fire_wound_immunity = 0.158
+
+;;--================================================================================
+
+[af_full_empty]:af_base
+$spawn                                           = "artefacts\artefact_full_empty"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_full_empty.ogf
+description                                      = st_af_full_empty_descr
+inv_name                                         = st_af_full_empty_name
+inv_name_short                                   = st_af_full_empty_name
+inv_grid_x                                       = 23
+inv_grid_y                                       = 70
+cost                                             = 57320
+jump_height                                      = 0.0
+inv_weight                                       = 6.23
+particles                                        = artefact\af_gravi_idle
+det_show_particles                               = artefact\af_gravi_show
+det_hide_particles                               = artefact\af_gravi_hide
+af_rank                                          = 3
+lights_enabled                                   = false
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+radiation_restore_speed                          = 0.00005
+hit_absorbation_sect                             = af_full_empty_absorbation
+radiation_restore_speed = 0.00047
+power_restore_speed = -0.00113
+
+tier = 4
+
+[af_full_empty_absorbation]:af_base_absorbation
+telepatic_immunity = 0.0072
+strike_immunity = 0.21
+wound_immunity = 0.2
+explosion_immunity = 0.185
+fire_wound_immunity = 0.192
+
+;;--=================================================================================================
+;;--=================================| Additional Carry weight |================================
+;;--=================================================================================================
+
+[af_night_star]:af_base
+$spawn				                             = "artefacts\gravitational_3_night_star"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_night_star.ogf
+description			                             = st_af_night_star_descr
+inv_name			                             = st_af_night_star_name
+inv_name_short		                             = st_af_night_star_name
+inv_weight			                             = 0.83
+inv_grid_x			                             = 1
+inv_grid_y			                             = 71
+cost				                             = 33200
+jump_height			                             = .7
+particles					                     = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0 ;0.6,0.7,0.5
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_bold
+hit_absorbation_sect 		                     = af_night_star_absorbation
+radiation_restore_speed = 0.00013
+additional_inventory_weight	= 5.23
+additional_inventory_weight2 = 5.23
+
+tier = 2
+
+[af_night_star_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+chemical_burn_immunity = 0.00021
+
+
+;;--================================================================================
+
+[af_gravi]:af_base
+$spawn				                             = "artefacts\gravitational_5_gravi"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_gravi.ogf
+description			                             = st_af_gravi_descr
+inv_name			                             = st_af_gravi_name
+inv_name_short		                             = st_af_gravi_name
+inv_weight			                             = 1.14	;4.88
+inv_grid_x			                             = 2
+inv_grid_y			                             = 71
+cost				                             = 47500
+jump_height			                             = .9
+particles					                     = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_gravi
+hit_absorbation_sect                             = af_gravi_absorbation
+radiation_restore_speed = 0.00025
+additional_inventory_weight	= 8.41
+additional_inventory_weight2 = 8.41
+
+tier = 3
+
+[af_gravi_absorbation]:af_base_absorbation
+shock_immunity = -0.0623
+telepatic_immunity = -0.0072
+explosion_immunity = 0.034
+
+;;--================================================================================
+
+[af_gold_fish]:af_base
+$spawn				                             = "artefacts\gravitational_6_gold_fish"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_gold_fish.ogf
+description			                             = st_af_gold_fish_descr
+inv_name			                             = st_af_gold_fish_name
+inv_name_short		                             = st_af_gold_fish_name
+inv_weight			                             = 1.49		;5.09
+inv_grid_x			                             = 3
+inv_grid_y			                             = 71
+cost				                             = 66200
+jump_height			                             = 1
+particles					                     = artefact\af_gravi_idle
+det_show_particles		                         = artefact\af_gravi_show
+det_hide_particles		                         = artefact\af_gravi_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_gravi
+hit_absorbation_sect                             = af_gold_fish_absorbation
+radiation_restore_speed = 0.00047
+additional_inventory_weight	= 13.3
+additional_inventory_weight2 = 13.3
+
+tier = 4
+
+[af_gold_fish_absorbation]:af_base_absorbation
+strike_immunity = -0.034
+explosion_immunity = -0.034
+wound_immunity = -0.1
+
+;;--=================================================================================================
+;;--=================================| Bleed control |================================
+;;--=================================================================================================
+
+[af_dummy_glassbeads]:af_base
+$spawn 				                             = "artefacts\thermal_3_dummy_glassbeads"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_dummy_glassbeads.ogf
+description			                             = st_af_dummy_glassbeads_descr
+inv_name			                             = st_af_dummy_glassbeads_name
+inv_name_short		                             = st_af_dummy_glassbeads_name
+inv_weight			                             = 3.43
+inv_grid_x			                             = 5
+inv_grid_y			                             = 71
+cost				                             = 24800
+jump_height			                             = .01
+particles					                     = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_dummy_glassbeads_absorbation
+radiation_restore_speed = 0.00013
+bleeding_restore_speed = 0.00144
+
+tier = 2
+
+[af_dummy_glassbeads_absorbation]:af_base_absorbation
+burn_immunity = 0.00115
+shock_immunity = -0.0623
+
+;;--================================================================================
+
+[af_eye]:af_base
+$spawn 				                             = "artefacts\thermal_4_eye"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_eye.ogf
+description			                             = st_af_eye_descr
+inv_name			                             = st_af_eye_name
+inv_name_short		                             = st_af_eye_name
+inv_weight			                             = 3.12
+inv_grid_x			                             = 6
+inv_grid_y			                             = 71
+cost				                             = 36900
+jump_height			                             = .05
+particles					                     = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_eye_absorbation
+radiation_restore_speed = 0.00025
+bleeding_restore_speed = 0.00278
+
+tier = 3
+
+[af_eye_absorbation]:af_base_absorbation
+telepatic_immunity = 0.0072
+shock_immunity = -0.0623
+chemical_burn_immunity = -0.00021
+
+;;--================================================================================
+
+[af_fire]:af_base
+$spawn 				                             = "artefacts\thermal_5_fire"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_fire.ogf
+description			                             = st_af_fire_descr
+inv_name			                             = st_af_fire_name
+inv_name_short		                             = st_af_fire_name
+inv_weight			                             = 3.18
+inv_grid_x			                             = 7
+inv_grid_y			                             = 71
+cost				                             = 46925
+jump_height			                             = .1
+particles					                     = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_fire_absorbation
+radiation_restore_speed = 0.00047
+bleeding_restore_speed = 0.00435
+power_restore_speed = -0.00088
+
+tier = 4
+
+[af_fire_absorbation]:af_base_absorbation
+telepatic_immunity = -0.0072
+strike_immunity = -0.034
+radiation_immunity = -0.002
+wound_immunity = 0.034
+
+;;--=================================================================================================
+;;--=================================| Stamina recovery |================================
+;;--=================================================================================================
+
+[af_dummy_battery]:af_base
+$spawn 				                             = "artefacts\electric_4_dummy_battery"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_dummy_battery.ogf
+description			                             = st_af_dummy_battery_descr
+inv_name			                             = st_af_dummy_battery_name
+inv_name_short		                             = st_af_dummy_battery_name
+inv_weight			                             = 0.36
+inv_grid_x			                             = 9
+inv_grid_y			                             = 71
+jump_height			                             = .01
+cost				                             = 27200
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_dummy_battery_absorbation
+radiation_restore_speed = 0.00013
+power_restore_speed = 0.00088
+
+tier = 2
+
+[af_dummy_battery_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+shock_immunity = 0.0623
+strike_immunity = -0.034
+
+
+;;--================================================================================
+
+[af_dummy_dummy]:af_base
+$spawn 				                             = "artefacts\electric_5_dummy_dummy"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_dummy_dummy.ogf
+description			                             = st_af_dummy_dummy_descr
+inv_name			                             = st_af_dummy_dummy_name
+inv_name_short		                             = st_af_dummy_dummy_name
+inv_weight			                             = 0.37
+inv_grid_x			                             = 10
+inv_grid_y			                             = 71
+cost				                             = 37200
+jump_height			                             = .0
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_dummy_dummy_absorbation
+radiation_restore_speed = 0.00025
+power_restore_speed = 0.00142
+
+tier = 3
+
+[af_dummy_dummy_absorbation]:af_base_absorbation
+telepatic_immunity = 0.0072
+chemical_burn_immunity = -0.00039
+wound_immunity = -0.034
+
+;;--================================================================================
+
+[af_ice]:af_base
+$spawn 				                             = "artefacts\electric_6_ice"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_ice.ogf
+description			                             = st_af_ice_descr
+inv_name			                             = st_af_ice_name
+inv_name_short		                             = st_af_ice_name
+inv_weight			                             = 0.54
+inv_grid_x			                             = 11
+inv_grid_y			                             = 71
+cost				                             = 51400
+jump_height			                             = .0
+particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_ice_absorbation
+radiation_restore_speed = 0.00047
+power_restore_speed = 0.00186
+
+tier = 4
+
+[af_ice_absorbation]:af_base_absorbation
+burn_immunity = -0.00248
+telepatic_immunity = -0.0072
+chemical_burn_immunity = -0.00021
+
+;;--=================================================================================================
+;;--=================================| Health restoration |================================
+;;--=================================================================================================
+
+[af_soul]:af_base
+$spawn				                             = "artefacts\acidic_3_soul"
+kind			                             = i_arty
+class				                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_soul.ogf
+description			                             = st_af_soul_descr
+inv_name			                             = st_af_soul_name
+inv_name_short		                             = st_af_soul_name
+inv_weight			                             = 1.34
+inv_grid_x			                             = 13
+inv_grid_y			                             = 71
+cost				                             = 26200
+jump_height			                             = .01
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 1
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+artefact_activation_seq		                     = af_activation_mincer
+hit_absorbation_sect                             = af_soul_absorbation
+radiation_restore_speed = 0.00013
+health_restore_speed = 0.000075
+power_restore_speed = -0.00088
+
+tier = 2
+
+[af_soul_absorbation]:af_base_absorbation
+telepatic_immunity = 0.0072
+radiation_immunity = -0.001
+
+;;--================================================================================
+
+[af_fuzz_kolobok]:af_base
+$spawn 				                             = "artefacts\acidic_4_fuzz_kolobok"
+kind			                             = i_arty
+class   			                             = SCRPTART
+visual				                             = dynamics\artefacts\af_fuzz_kolobok.ogf
+description			                             = st_af_fuzz_kolobok_descr
+inv_name			                             = st_af_fuzz_kolobok_name
+inv_name_short		                             = st_af_fuzz_kolobok_name
+inv_weight			                             = 1.40
+inv_grid_x			                             = 14
+inv_grid_y			                             = 71
+cost				                             = 40600
+jump_height			                             = .5
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 2
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_fuzz_kolobok_absorbation
+radiation_restore_speed = 0.00025
+health_restore_speed = 0.00015
+power_restore_speed = -0.00108
+
+tier = 3
+
+[af_fuzz_kolobok_absorbation]:af_base_absorbation
+burn_immunity = -0.00115
+radiation_immunity = -0.001
+
+;;--================================================================================
+
+[af_glass]:af_base
+$spawn 				                             = "artefacts\acidic_6_glass"
+kind			                             = i_arty
+class   			                             = ARTEFACT
+visual				                             = dynamics\artefacts\af_glass.ogf
+description			                             = st_af_glass_descr
+inv_name			                             = st_af_glass_name
+inv_name_short		                             = st_af_glass_name
+inv_weight			                             = 1.49
+inv_grid_x			                             = 15
+inv_grid_y			                             = 71
+cost				                             = 54400
+jump_height			                             = .01
+particles					                     = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 3
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = af_glass_absorbation
+radiation_restore_speed = 0.00047
+health_restore_speed = 0.0003
+power_restore_speed = -0.00186
+
+tier = 4
+
+[af_glass_absorbation]:af_base_absorbation
+radiation_immunity = -0.002
+strike_immunity = -0.034
+wound_immunity = -0.034
+
+;;--============================================================================
+;;--=================================| Special |================================
+;;--============================================================================
+
+[af_compass]:af_base
+$spawn 				                             = "artefacts\compass"
+kind			                             = i_arty
+class   			                             = SCRPTART
+visual				                             = dynamics\artefacts\af_compass.ogf
+description			                             = st_af_compass_descr
+inv_name			                             = st_af_compass_name
+inv_name_short		                             = st_af_compass_name
+inv_weight			                             = 3.781
+inv_grid_x			                             = 17
+inv_grid_y			                             = 71
+jump_height			                             = .2
+cost				                             = 74500
+particles				                         = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 1.0,1.0,0.75 ;1.0,0.9,0.5
+trail_light_range 		                         = 2.0
+;can_trade			                             = false
+;quest_item 			                         = false
+hit_absorbation_sect 		                     = af_compass_absorbation
+radiation_restore_speed = 0.00047
+power_restore_speed = -0.00088
+bleeding_restore_speed = -0.000124
+
+tier = 5
+
+[af_compass_absorbation]:af_base_absorbation
+strike_immunity = 0.034
+wound_immunity = 0.034
+explosion_immunity = 0.034
+fire_wound_immunity = 0.034
+
+;;--================================================================================
+
+[af_oasis_heart]:af_base
+$spawn 				                             = "artefacts\af_oasis_heart"
+kind			                             = i_arty
+class   			                             = SCRPTART
+story_id                                         = jup_b16_oasis_artifact
+visual				                             = dynamics\artefacts\af_cristall_plant.ogf
+description			                             = st_af_oasis_heart_descr
+inv_name			                             = st_af_oasis_heart_name
+inv_name_short		                             = st_af_oasis_heart_name
+inv_weight			                             = 2.794
+inv_grid_x			                             = 18
+inv_grid_y			                             = 71
+jump_height			                             = .2
+cost				                             = 57200
+;particles			                             = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+particles_bone			                         = cristall
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 1.0,1.0,0.75 ;1.0,0.9,0.5
+trail_light_range 		                         = 2.0
+;can_trade			                             = false
+;quest_item 			                         = false
+hit_absorbation_sect 		                     = af_oasis_heart_absorbation
+radiation_restore_speed = 0.00047
+health_restore_speed = 0.00015
+power_restore_speed = 0.00142
+bleeding_restore_speed = 0.00278
+
+tier = 5
+
+[af_oasis_heart_absorbation]:af_base_absorbation
+burn_immunity = -0.00388
+shock_immunity = -0.2044
+telepatic_immunity =  -0.0189
+chemical_burn_immunity =  -0.00057
+
+;;--================================================================================
+
+[af_monolith]:af_base
+$spawn 							                 = "artefacts\af_monolith"
+kind			                             = i_arty
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_monolith.ogf
+description						                 = st_af_monolith_descr
+inv_name						                 = st_af_monolith_name
+inv_name_short					                 = st_af_monolith_name
+inv_grid_x						                 = 19
+inv_grid_y						                 = 71
+cost							                 = 59850
+jump_height						                 = 0.5
+inv_weight						                 = 0.95
+particles						                 = artefact\af_electra_idle
+det_show_particles				                 = artefact\af_electra_show
+det_hide_particles				                 = artefact\af_electra_hide
+af_rank							                 = 0
+lights_enabled          		                 = true
+trail_light_color 				                 = 0.5,0.7,0.2
+trail_light_range 				                 = 2.0
+;can_trade						                 = false
+;quest_item 						                 = false
+hit_absorbation_sect 		                     = af_monolith_absorbation
+
+tier = 5
+
+[af_monolith_absorbation]:af_base_absorbation
+burn_immunity = 0.004821
+shock_immunity = 0.31269
+telepatic_immunity = 0.0239
+chemical_burn_immunity = 0.00092
+
+strike_immunity = -0.034
+wound_immunity = -0.034
+explosion_immunity = -0.034
+fire_wound_immunity = -0.034
+
+;;--================================================================================
+
+[af_death_lamp]:af_base
+$spawn                                           = "artefacts\artefact_death_lamp"
+kind			                             = i_arty
+class                                            = ARTEFACT
+visual                                           = dynamics\artefacts\artefact_death_lamp.ogf
+inv_name                                         = st_af_death_lamp_name
+inv_name_short                                   = st_af_death_lamp_name
+description                                      = st_af_death_lamp_descr
+inv_grid_x                                       = 20
+inv_grid_y                                       = 71
+cost                                             = 71000
+jump_height                                      = 0
+inv_weight                                       = 9.0
+particles                                        = artefact\af_gravi_idle
+det_show_particles                               = artefact\af_gravi_show
+det_hide_particles                               = artefact\af_gravi_hide
+af_rank                                          = 3
+lights_enabled                                   = true
+trail_light_color                                = 0.4,0.4,0.0
+trail_light_range                                = 2.0
+hit_absorbation_sect                             = af_death_lamp_absorbation
+radiation_restore_speed = 0.0006
+power_restore_speed = -0.00088
+satiety_restore_speed = -0.1
+
+tier = 4
+
+[af_death_lamp_absorbation]:af_base_absorbation
+telepatic_immunity = -0.0544 ;0.00318
+radiation_immunity = -0.002
+
+;;--============================================================================
+;;--=================================| Unused |================================
+;;--============================================================================
+
+[af_vaselisk]:af_base
+$spawn 							                 = "artefacts\af_vaselisk"
+kind			                             = i_arty
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_vaselisk.ogf
+inv_name						                 = st_af_vaselisk_name
+inv_name_short					                 = st_af_vaselisk_name
+description						                 = st_af_vaselisk_descr
+inv_grid_x						                 = 0
+inv_grid_y						                 = 0
+jump_height						                 = 0.27
+cost							                 = 64650
+inv_weight						                 = 0.5
+particles						                 = artefact\af_electra_idle
+det_show_particles				                 = artefact\af_electra_show
+det_hide_particles				                 = artefact\af_electra_hide
+af_rank							                 = 3
+lights_enabled          		                 = true
+trail_light_color 				                 = 0.6,0.7,0.9
+trail_light_range 				                 = 2.0
+can_trade						                 = false
+quest_item 						                 = false
+hit_absorbation_sect                             = af_vaselisk_absorbation
+
+tier = 4
+
+[af_vaselisk_absorbation]:af_base_absorbation
+
+;;--================================================================================
+
+[af_geliy]:af_base
+$spawn 							                 = "artefacts\af_geliy"
+kind			                             = i_arty
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\artefact_electra_blue.ogf
+inv_name						                 = st_af_geliy_name
+inv_name_short					                 = st_af_geliy_name
+description						                 = st_af_geliy_descr
+inv_grid_x						                 = 0
+inv_grid_y						                 = 0
+cost							                 = 73150
+jump_height						                 = 0.5
+inv_weight						                 = 0.34
+particles						                 = artefact\af_electra_idle
+det_show_particles				                 = artefact\af_electra_show
+det_hide_particles				                 = artefact\af_electra_hide
+af_rank							                 = 3
+lights_enabled              	                 = true
+trail_light_color 				                 = 0.6,0.7,0.9
+trail_light_range 				                 = 2.0
+can_trade						                 = false
+quest_item 						                 = false
+
+tier = 4
+
+;;--================================================================================
+
+[af_gimlet]:af_base
+$spawn							                 = "artefacts\af_gimlet"
+kind			                             = i_arty
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_gimlet.ogf
+inv_name						                 = st_af_gimlet_name
+inv_name_short					                 = st_af_gimlet_name
+description						                 = st_af_gimlet_descr
+inv_grid_x						                 = 0
+inv_grid_y						                 = 0
+inv_weight						                 = 0.09
+cost				                             = 30700
+jump_height						                 = 0.5
+particles						                 = artefact\af_electra_idle
+det_show_particles				                 = artefact\af_electra_show
+det_hide_particles				                 = artefact\af_electra_hide
+af_rank							                 = 3
+lights_enabled      			                 = true
+trail_light_color 				                 = 0.6,0.7,0.9
+trail_light_range 				                 = 2.0
+can_trade						                 = false
+quest_item 						                 = false
+
+tier = 4
+
+;;--================================================================================
+
+[jup_b1_half_artifact]:af_base
+$spawn 				                             = "artefacts\af_psi_field"
+kind			                             = i_arty
+class   			                             = SCRPTART
+story_id                                         = jup_b1_half_artifact
+visual				                             = dynamics\artefacts\af_psi_field.ogf
+description			                             = jup_b1_half_artifact_descr
+inv_name			                             = jup_b1_half_artifact
+inv_name_short		                             = jup_b1_half_artifact
+can_trade			                             = false
+quest_item     		                             = true
+particles					                     = artefact\artefact_mincer
+inv_weight			                             = 3.92
+inv_grid_x			                             = 13
+inv_grid_y			                             = 74
+jump_height			                             = .2
+cost				                             = 24200
+;particles					                     = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.2,0.1
+trail_light_range 		                         = 2.0
+hit_absorbation_sect                             = jup_b1_half_artifact_absorbation
+radiation_restore_speed = 0.0006
+
+tier = 2
+
+[jup_b1_half_artifact_absorbation]:af_base_absorbation
+burn_immunity 			                         = 0				
+strike_immunity 		                         = 0
+shock_immunity 			                         = 0.55736
+wound_immunity 			                         = 0
+radiation_immunity 		                         = 0
+telepatic_immunity 		                         = 0.0544
+chemical_burn_immunity 		                     = 0
+explosion_immunity 			                     = 0
+fire_wound_immunity  		                     = 0
+
+;;--================================================================================
+
+[af_quest_b14_twisted]:af_base
+$spawn 				                             = "artefacts\af_control"
+kind			                             = i_arty
+class   			                             = SCRPTART
+visual				                             = dynamics\artefacts\af_control.ogf
+description			                             = st_af_quest_b14_twisted_descr
+inv_name			                             = st_af_quest_b14_twisted
+inv_name_short		                             = st_af_quest_b14_twisted
+inv_weight			                             = 3.604
+inv_grid_x			                             = 14
+inv_grid_y			                             = 74
+jump_height			                             = .2
+cost				                             = 9800
+;particles			                             = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.6,1.0 ;0.85,1.0,0.5
+trail_light_range 		                         = 7.5
+can_trade			                             = false
+quest_item 			                             = true
+attach_angle_offset		                         = 1.922,1.551,-0.740   ;устанавливаетс€ в радианах Angle*PI/180
+attach_position_offset	                         = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+hit_absorbation_sect 		                     = af_control_absorbation
+radiation_restore_speed = 0.0006
+
+tier = 1
+
+[af_control_absorbation]:af_base_absorbation
+
+
+;;--================================================================================
+
+[af_base_mlr]:identity_immunities
+GroupControlSection                      = spawn_group
+cform                                    = skeleton
+hud                                      = artefact_hud
+animation_slot                           = 11
+allow_inertion                           = true
+attach_angle_offset                      = 0,0,0
+attach_position_offset                   = -0.1,-0.1,0
+attach_bone_name                         = bip01_root
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+belt                                     = true
+slot                                     = -1	                                       ;10
+default_to_ruck                          = true
+af_actor_properties                      = on
+actor_properties                         = on
+det_show_particles                       = anomaly2\plasma_generator_death
+det_hide_particles                       = anomaly2\plasma_generator_death
+det_show_snd                             = anomaly\bfuzz_blowout
+det_hide_snd                             = anomaly\pux_blast
+af_rank                                  = 1
+can_be_controlled                        = true
+script_binding                           = item_artefact.bind
+particles_bone                           = link
+additional_inventory_weight              = 0
+idle_light_shadow                        = false
+;use_condition 							 = true
+degrade_rate							 = 1.0	;Artefact Degradation
+
+[af_misery_bread]:af_base_mlr
+$spawn                                   = "artefacts\gravitational_1_medusa"
+class                                    = ARTEFACT
+visual                                   = dynamics\devices\dev_bred\dev_bred.ogf
+description                              = st_af_misery_bread_descr
+inv_name                                 = st_af_misery_bread_name
+inv_name_short                           = st_af_misery_bread_name
+inv_weight                               = 0.3
+inv_grid_x                               = 15
+inv_grid_y                               = 74
+cost                                     = 9000
+jump_height                              = .5	                                       ; высота прыжка
+particles                                = artefact\af_gravi_idle
+det_show_particles                       = artefact\af_gravi_show
+det_hide_particles                       = artefact\af_gravi_hide
+af_rank                                  = 0
+lights_enabled                           = true
+trail_light_color                        = 0.4,0.4,0
+trail_light_range                        = 2.0
+;скорости увеличения (уменьшения)
+health_restore_speed                     = 0
+radiation_restore_speed                  = 0.00050
+satiety_restore_speed                    = 0.00001
+power_restore_speed                      = 0
+bleeding_restore_speed                   = 0
+hit_absorbation_sect                     = af_misery_bread_absorbation
+additional_inventory_weight              = 0
+additional_inventory_weight2             = 0
+artefact_activation_seq                  = af_activation_bold
+
+tier = 1
+
+[af_misery_bread_absorbation]
+burn_immunity                            = 0	                                       ;коэффициенты иммунитета
+strike_immunity                          = 0
+shock_immunity                           = 0
+wound_immunity                           = 0
+radiation_immunity                       = 0
+telepatic_immunity                       = 0
+chemical_burn_immunity                   = 0
+explosion_immunity                       = 0
+fire_wound_immunity                      = 0
+;monster_items
+
+[marker]:af_electra_flash

@@ -1,0 +1,55 @@
+
+--==========================================< Task functors >==========================================--
+task_functor.simulation_task_target = function ( task_id, field, p, tsk )
+--	Description: Returns the id of the current target for a simulation hostage task
+--	Usage: simulation_task_target( )
+--	Return value (type: ): ID of the current simulation hostage task target
+
+	if (not db.actor) then
+		return
+	end
+
+	local squad = get_story_squad( "hostage_companion_task_1" )
+	if not ( squad and squad:clsid( ) == clsid.online_offline_group_s ) then
+		return  -- quest will auto-fail via section condition
+	end
+
+	if ( tsk ) then
+		if ( tsk.stage == 0 ) or ( squad and squad.dist_to_actor and squad.dist_to_actor > 50 ) then
+			return squad and squad.id
+		elseif ( tsk.stage >= 1 or db.actor:has_info( "hostage_companion_task_1_hostage_rescued" ) ) then
+			local id = tsk.task_giver_id
+			if ( id ) then
+				return id
+			end
+		end
+	end
+
+	return squad.id
+
+end
+
+
+--==========================================< Task Status functors >==========================================--
+task_status_functor.hostage_task = function (tsk,task_id)
+	if not (db.actor) then
+		return
+	end
+
+	local id = tonumber(load_var(db.actor,task_id .. "_id"))
+	local smart = id and alife_object(id)
+	if (smart) then
+		smart.locked = true
+	end
+
+	if (tsk.stage == 0) then
+		if (db.actor:has_info("hostage_companion_task_1_hostage_rescued")) then
+			tsk.stage = 1
+		end
+	elseif (tsk.stage == 1) then
+		if not (axr_task_manager.is_task_giver_valid(tsk)) then
+			hide_hud_inventory()
+			return "complete" -- complete task even though giver is dead/missing/deleted
+		end
+	end
+end

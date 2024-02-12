@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!--===========================================================
+<
+< TEX-T STRINGS FOR LOST TO THE ZONE: HOLLOW BOUNDARIES TASKS
+<	Anomaly 1.5 - Lost to the Zone: Hollow Boundaries
+<
+<	Made by: Tronex
+<	Last revised: 10 September 2019
+<
+<===========================================================-->
+
+<string_table>
+
+	<!-- Dushman intel -->
+	<string id="st_hb_isg_dushman_intel_name">
+		<text>Dushman's Intelligence</text>
+	</string>
+	<string id="st_hb_isg_dushman_intel_desc">
+		<text>If Dushman has kept his word, this case contains drawn up maps and notes that'll be invaluable to UNISG. Should drastically reduce the risk that future UNISG missions will entail.</text>
+	</string>
+
+
+	<!-- Hollow Boundaries Arc 1 -->
+	<string id="lttz_hb_task_1_1_dushman_intel_name">
+		<text>Hollow Boundaries: Intelligence</text>
+	</string>
+	<string id="lttz_hb_task_1_1_dushman_intel_desc">
+		<text>Major Hernandez has tasked me to find a man known as "Dushman", and retrieve important intelligence that the UN paid him for.</text>
+	</string>
+	
+	<string id="lttz_hb_task_1_2_recruit_name">
+		<text>Hollow Boundaries: Rendevous</text>
+	</string>
+	<string id="lttz_hb_task_1_2_recruit_desc">
+		<text>Major Hernandez and his squad have settled in a place the locals call "Jupiter". I must bring the intelligence to the specified location.</text>
+	</string>
+
+	
+	<!-- Hollow Boundaries Arc 2 -->
+	<string id="lttz_hb_task_2_1_guarded_secrets_name_1">
+		<text>Hollow Boundaries: Investigate the Jupiter Factory</text>
+	</string>
+	<string id="lttz_hb_task_2_1_guarded_secrets_name_2">
+		<text>Hollow Boundaries: Return to Hernandez</text>
+	</string>
+	<string id="lttz_hb_task_2_1_guarded_secrets_desc_1">
+		<text>We must search the Jupiter Factory for the briefcase. Witnesses should be eliminated.</text>
+	</string>
+	<string id="lttz_hb_task_2_1_guarded_secrets_desc_2">
+		<text>Once we've ensured the area is secure, I should bring this briefcase to Major Hernandez.</text>
+	</string>
+
+	<string id="lttz_hb_task_2_2_breakthrough_name_1">
+		<text>Hollow Boundaries: Breakthrough</text>
+	</string>
+	<string id="lttz_hb_task_2_2_breakthrough_name_2">
+		<text>Hollow Boundaries: Talk to Hernandez</text>
+	</string>
+	<string id="lttz_hb_task_2_2_breakthrough_desc_1">
+		<text>I have been assigned to take point through Jupiter Underground. The major will follow with the rest of his squad. Orders are to advance and keep an eye out for any papers that may still be down here.</text>
+	</string>
+	<string id="lttz_hb_task_2_2_breakthrough_desc_2">
+		<text>I have found some documents. I should show them to Major Hernandez.</text>
+	</string>
+	
+	<!-- Hollow Boundaries Arc 3 -->
+	<string id="st_lttz_hb_task_3_1_search_agr_ug_name">
+		<text>Investigate the Agroprom Underground</text>
+	</string>
+	<string id="st_lttz_hb_task_3_1_search_agr_ug_text">
+		<text>Investigate the Agroprom Underground and search for hard evidence of a conspiracy.</text>
+	</string>
+	<string id="st_lttz_hb_task_3_2_search_labx18_name">
+		<text>Investigate Lab X-18</text>
+	</string>
+	<string id="st_lttz_hb_task_3_2_search_labx18_text">
+		<text>I've been assigned to investigate Lab X-18 and search for hard evidence of a conspiracy.</text>
+	</string>
+	<string id="st_lttz_hb_task_3_3_search_labx16_name">
+		<text>Investigate Lab X-16</text>
+	</string>
+	<string id="st_lttz_hb_task_3_3_search_labx16_text">
+		<text>I've been assigned to investigate Lab X-16 and search for hard evidence of a conspiracy.</text>
+	</string>
+	<string id="st_lttz_hb_task_3_4_search_labx10_name">
+		<text>Investigate Lab X-19</text>
+	</string>
+	<string id="st_lttz_hb_task_3_4_search_labx10_text">
+		<text>I've been assigned to investigate Lab X-19 and search for hard evidence of a conspiracy.</text>
+	</string>
+	<string id="st_lttz_hb_task_3_5_search_labx8_name">
+		<text>Investigate Lab X-8</text>
+	</string>
+	<string id="st_lttz_hb_task_3_5_search_labx8_text">
+		<text>I've been assigned to investigate Lab X-8 and search for hard evidence of a conspiracy.</text>
+	</string>
+	
+	<string id="lttz_hb_task_3_8_handle_docs_name">
+		<text>Mystery Uncovered</text>
+	</string>
+	<string id="lttz_hb_task_3_8_handle_docs_text">
+		<text>I've found sufficient evidence of a major conspiracy. I should return to the Major with my findings - he'll be pleased to see what I've uncovered.</text>
+	</string>
+
+	<!-- Hollow Boundaries Arc 4 -->
+	<string id="lttz_hb_task_4_1_crossfire_1_name">
+		<text>Crossfire: Eliminate the Military forces</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_2_name">
+		<text>Crossfire: Deal with Strelok</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_3_name">
+		<text>Crossfire: Escort Strelok</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_4_name">
+		<text>Crossfire: Talk to Strelok</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_5_name">
+		<text>Crossfire: Kill Strelok</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_6_name">
+		<text>Crossfire: Search Strelok's corpse</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_7_name">
+		<text>Crossfire: Return to Major Hernandez</text>
+	</string>
+	
+	<string id="lttz_hb_task_4_1_crossfire_1_desc">
+		<text>Major Hernandez has assigned me to extract information from Strelok, but I must eliminate the Military force chasing him on the outskirts of Pripyat first.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_2_desc">
+		<text>The military squad has been eliminated. Time to obtain Strelok's secrets, one way or the other.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_3_desc">
+		<text>I can help Strelok by escorting him to the Red Forest. Alternatively, I could capture him by luring him into the UNISG base, in Jupiter Underground.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_4_desc">
+		<text>Strelok and I have safely reached the Red Forest, as promised. Maybe he's ready to talk now.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_5_desc">
+		<text>Strelok can't escape us now. Time to put him down.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_6_desc">
+		<text>Strelok is dead. I should search his body for any useful information he might've been carrying.</text>
+	</string>
+	<string id="lttz_hb_task_4_1_crossfire_7_desc">
+		<text>I found a flashdrive amongst Strelok's belongings. Major Hernandez should see this as soon as possible.</text>
+	</string>
+
+	
+	<!-- Maus (ISG Mechanic) Find Level 1 Toolkit Task -->
+	<string id="jup_depo_isg_tech_task_1_name">
+		<text>Find %s for Maus</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_1_text">
+		<text>%s are required by Maus to install basic equipment upgrades. I should bring them back to him if I find any.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_1_about">
+		<text>I have a proposition for you. If you can bring me some new tools, you will receive payment. Are you up for it?</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_1_fetch_about">
+		<text>There is. I've been looking all over for a set of %s. It should contain some oil and tools I need to do work on firearms. I'll pay you for one of those toolkits if you can bring a full set back to me.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_1_fetch_finish">
+		<text>Brilliant! This is what I've been looking for. Thanks!</text>
+	</string>
+
+	<!-- Maus (ISG Mechanic) Find Level 2 Toolkit Task -->
+	<string id="jup_depo_isg_tech_task_2_name">
+		<text>Find %s for Maus</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_2_text">
+		<text>%s are required by Maus to install advanced equipment upgrades, I should bring them back to him if I find any.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_2_about">
+		<text>I have another proposition. The toolkit you brought me is working out good, but it doesn't have everything I need. Do you think you can find me a better set?</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_2_fetch_about">
+		<text>I need an %s. I'm not sure where you can get one of those, but if you can find one, I need it.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_2_fetch_finish">
+		<text>It's got everything I need. Thank you.</text>
+	</string>
+
+	<!-- Maus (ISG Mechanic) Find Level 3 Toolkit Task -->
+	<string id="jup_depo_isg_tech_task_3_name">
+		<text>Find %s for Maus</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_3_text">
+		<text>%s are required by Maus to install expert equipment upgrades. I should bring them back to him if I find any.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_3_about">
+		<text>I have another proposition. The toolkit you brought me is working out good, but it doesn't have everything I need. Do you think you can find me a better set?</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_3_fetch_about">
+		<text>I need an %s. I'm not sure where you can get one of those, but if you can find one, I need it.</text>
+	</string>
+	<string id="jup_depo_isg_tech_task_3_fetch_finish">
+		<text>It's got everything I need. Thank you.</text>
+	</string>
+	
+</string_table>

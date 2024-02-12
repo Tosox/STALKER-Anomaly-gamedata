@@ -1,0 +1,239 @@
+;==============================================================
+;
+; TASKS PROVIDED FOR LOST TO THE ZONE: HOLLOW BOUNDARIES
+;	Anomaly 1.5 - Lost to the Zone: Hollow Boundaries
+;
+;	Made by: Tronex
+;	Last revised: 10 September 2019
+;
+;==============================================================
+
+;==========< Arc 1 >==========
+; Retreive the Intel from Dushman 
+;-- task start by dialog with Charlos
+;-- remove ds_isg_leader_squad once player leave darkscape
+;-- info lttz_hb_isg_leader_in_jup is given, mutants won't spawn in depo terrain, stalkers won't target this smart
+;-- info isg_entered_the_zone is given, to spawn ISG squads in the zone
+[lttz_hb_task_1_1_dushman_intel]
+icon = ui_inGame2_PD_Torgovets_informatsiey
+prior = 100
+storyline = true
+
+title = lttz_hb_task_1_1_dushman_intel_name
+descr = lttz_hb_task_1_1_dushman_intel_desc
+target = cit_killers_merc_trader_stalker
+condlist_0 = {+cit_killers_merc_trader_stalker_squad_dead} fail
+condlist_1 = {=actor_has_item(hb_isg_dushman_intel)} complete
+
+on_init = %+lttz_hb_task_1_1_dushman_intel_started +isg_entered_the_zone%
+on_complete = %+lttz_hb_isg_leader_in_jup =clear_smart_terrain(jup_b208:true) =create_squad(jup_depo_isg_leader_squad:jup_b208) =create_squad(jup_depo_isg_tech_squad:jup_b208) =create_squad(jup_depo_isg_recon_squad:jup_b208) =create_squad(jup_depo_isg_guard_squad:jup_b208) =create_squad(jup_depo_isg_guard_squad_2:jup_b208) =give_task(lttz_hb_task_1_2_recruit) =send_msg_hb_isg_dushman_intel%
+
+; Recruit with Calros squad in Jupiter
+;-- task done by dialog with Charlos
+[lttz_hb_task_1_2_recruit]
+icon = ui_inGame2_Put_v_pripyat
+prior = 100
+storyline = true
+
+title = lttz_hb_task_1_2_recruit_name
+descr = lttz_hb_task_1_2_recruit_desc
+target = jup_depo_isg_leader
+condlist_0 = {+jup_depo_isg_leader_squad_dead} fail
+on_complete = %=remove_item(hb_isg_dushman_intel)%
+
+
+;==========< Arc 2 >==========
+; Get the briefcase in Jupiter Factory
+;-- start/end by dialog end
+;-- transfer briefcase to Charlos
+[lttz_hb_task_2_1_guarded_secrets]
+icon = ui_inGame2_Pripyat_1
+prior = 100
+storyline = true
+
+title = {=actor_has_item(jupiter_documents)} lttz_hb_task_2_1_guarded_secrets_name_2, lttz_hb_task_2_1_guarded_secrets_name_1
+descr = {=actor_has_item(jupiter_documents)} lttz_hb_task_2_1_guarded_secrets_desc_2, lttz_hb_task_2_1_guarded_secrets_desc_1
+target_functor = task_targets_lostzone_all
+status_functor = special_steps_for_lostzone_tasks
+stage_complete = 2
+condlist_0 = {+jup_depo_isg_leader_squad_dead} fail
+
+on_init = %=spawn_jupiter_documents() =add_task_companion(jup_depo_isg_recon_squad) =clear_smart_terrain(jup_b219:true) =create_squad(jup_b8_army_recon_1_squad:jup_b219) =clear_smart_terrain(jup_b8_smart_terrain:true) =create_squad(jup_b8_army_recon_2_squad:jup_b8_smart_terrain)%
+on_complete = %=remove_item(jupiter_documents) =remove_task_companion(jup_depo_isg_recon_squad) =remove_squad(jup_b8_army_recon_1_squad) =remove_squad(jup_b8_army_recon_2_squad) +lttz_hb_jupiter_documents_given%
+
+
+; Clear your way till you reach the hall inside Underpass
+;-- start/end by dialog end
+;-- mutants stop spawning with the info lttz_hb_isg_breakthrough
+;-- disable vector task on lttz_hb_isg_breakthrough
+;-- spawn jup_u_isg_guard_squad once actor leave jup_u
+;-- put logic here for ISG
+;-- actor should get psy-helm before starting mysteries of the zone
+[lttz_hb_task_2_2_breakthrough]
+icon = ui_inGame2_Ohota_na_Burerov
+prior = 100
+storyline = true
+
+title = {=actor_has_item(main_story_6_jup_ug_documents)} lttz_hb_task_2_2_breakthrough_name_2, lttz_hb_task_2_2_breakthrough_name_1
+descr = {=actor_has_item(main_story_6_jup_ug_documents)} lttz_hb_task_2_2_breakthrough_desc_2, lttz_hb_task_2_2_breakthrough_desc_1
+target = {=actor_has_item(main_story_6_jup_ug_documents)} jup_depo_isg_leader_squad, {=actor_on_level(jupiter_underground)} nil, jupiter_space_restrictor_to_jupiter_ug
+condlist_0 = {+jup_depo_isg_leader_squad_dead} fail
+
+on_init = %=add_task_companion(jup_depo_isg_leader_squad) =add_task_companion(jup_depo_isg_guard_squad) =send_msg_hb_isg_tech_goodluck +lttz_hb_task_2_2_breakthrough_started%
+on_complete = %=remove_item(main_story_6_jup_ug_documents) =remove_task_companion(jup_depo_isg_leader_squad) =remove_task_companion(jup_depo_isg_guard_squad) =send_msg_hb_isg_breakthrough +lttz_hb_isg_breakthrough%
+
+
+;==========< Arc 3 >==========
+; Mysteries of the Zone: gather documents from labs
+
+[lttz_hb_task_3_1_search_agr_ug]
+icon = ui_inGame2_Laboratoriya_X8
+prior = 108
+storyline = true
+title = st_lttz_hb_task_3_1_search_agr_ug_name
+descr = st_lttz_hb_task_3_1_search_agr_ug_text
+target = {=actor_on_level(l03u_agr_underground)} nil, agr_space_restrictor_to_agr_ug_6
+condlist_0 = {=actor_has_item(main_story_1_quest_case)} complete
+on_complete = %+main_1_search_agr_ug_task_done =evaluate_mysteries_of_the_zone_tasks%
+
+[lttz_hb_task_3_2_search_labx18]
+icon = ui_inGame2_Laboratoriya_X8
+prior = 107
+storyline = true
+title = st_lttz_hb_task_3_2_search_labx18_name
+descr = st_lttz_hb_task_3_2_search_labx18_text
+target = val_space_restrictor_to_labx18
+condlist_0 = {=actor_on_level(l04u_labx18)} nil, {=actor_has_item(main_story_2_lab_x18_documents)} complete
+on_complete = %+main_2_search_labx18_task_done =evaluate_mysteries_of_the_zone_tasks%
+
+[lttz_hb_task_3_3_search_labx16]
+icon = ui_inGame2_Laboratoriya_X8
+prior = 106
+storyline = true
+title = st_lttz_hb_task_3_3_search_labx16_name
+descr = st_lttz_hb_task_3_3_search_labx16_text
+target = {=actor_on_level(l08u_brainlab)} nil, yan_space_restrictor_to_x16
+condlist_0 = {=actor_has_item(main_story_3_lab_x16_documents)} complete
+on_complete = %+main_3_search_labx16_task_done =evaluate_mysteries_of_the_zone_tasks%
+
+[lttz_hb_task_3_4_search_labx10]
+icon = ui_inGame2_Laboratoriya_X8
+prior = 105
+storyline = true
+title = st_lttz_hb_task_3_4_search_labx10_name
+descr = st_lttz_hb_task_3_4_search_labx10_text
+target = {=actor_on_level(l10u_bunker)} nil, rad_space_restrictor_to_bunker
+condlist_0 = {=actor_has_item(main_story_4_lab_x10_documents)} complete
+on_complete = %+main_4_search_labx10_task_done =evaluate_mysteries_of_the_zone_tasks%
+
+[lttz_hb_task_3_5_search_labx8]
+icon = ui_inGame2_Laboratoriya_X8
+prior = 104
+storyline = true
+title = st_lttz_hb_task_3_5_search_labx8_name
+descr = st_lttz_hb_task_3_5_search_labx8_text
+target = {=actor_on_level(labx8)} nil, pri_space_restrictor_to_labx8
+condlist_0 = {=actor_has_item(main_story_5_lab_x8_documents)} complete
+on_complete = %+main_5_search_labx8_task_done =evaluate_mysteries_of_the_zone_tasks%
+
+[lttz_hb_task_3_8_handle_docs]
+;-- task complete once actor handle all documents by dialog
+icon = ui_inGame2_PD_Hranitel_tayn
+prior = 100
+storyline = true
+
+title = lttz_hb_task_3_8_handle_docs_name
+descr = lttz_hb_task_3_8_handle_docs_text
+target = {=actor_on_level(jupiter_underground)} jup_depo_isg_leader_squad, jupiter_space_restrictor_to_jupiter_ug
+condlist_0 = {+jup_depo_isg_leader_squad_dead} fail
+on_complete = %=remove_item(main_story_1_quest_case) =remove_item(main_story_2_lab_x18_documents) =remove_item(main_story_3_lab_x16_documents) =remove_item(main_story_4_lab_x10_documents) =remove_item(main_story_5_lab_x8_documents)%
+
+
+;==========< Arc 4 >==========
+; Engage with Major Degryatev and Strelok squad in Outskirts, get the flashdrive Strelok has and go back to the commander
+;-- set/end by dialog
+;-- info lttz_hb_isg_breakthrough is removed, mutants can spawn in jup_u
+;-- info lttz_hb_isg_leader_in_jup is removed, mutants can spawn in depo terrain
+;-- info faction_limited_playthrough_cf is removed, you can change your faction if you want
+[lttz_hb_task_4_1_crossfire]
+icon = ui_inGame2_Neizvestnoe_oruzhie
+prior = 100
+storyline = true
+
+title = {=actor_has_item(strelok_pendrive)} lttz_hb_task_4_1_crossfire_7_name, {+lost_stalker_strelok_dead} lttz_hb_task_4_1_crossfire_6_name, {+hb_betray_strelok} lttz_hb_task_4_1_crossfire_5_name, {+hb_escort_strelok =actor_on_level(l10_red_forest)} lttz_hb_task_4_1_crossfire_4_name, {+hb_escort_strelok} lttz_hb_task_4_1_crossfire_3_name, {+army_degtyarev_dead +tarasov_pri_b35_squad_dead} lttz_hb_task_4_1_crossfire_2_name, {+tarasov_pri_b35_squad_dead} lttz_hb_task_4_1_crossfire_1_name, lttz_hb_task_4_1_crossfire_1_name
+descr = {=actor_has_item(strelok_pendrive)} lttz_hb_task_4_1_crossfire_7_desc, {+lost_stalker_strelok_dead} lttz_hb_task_4_1_crossfire_6_desc, {+hb_betray_strelok} lttz_hb_task_4_1_crossfire_5_desc, {+hb_escort_strelok =actor_on_level(l10_red_forest)} lttz_hb_task_4_1_crossfire_4_desc, {+hb_escort_strelok} lttz_hb_task_4_1_crossfire_3_desc, {+army_degtyarev_dead +tarasov_pri_b35_squad_dead} lttz_hb_task_4_1_crossfire_2_desc, {+tarasov_pri_b35_squad_dead} lttz_hb_task_4_1_crossfire_1_desc, lttz_hb_task_4_1_crossfire_1_desc
+target = {=actor_on_level(jupiter_underground) =actor_has_item(strelok_pendrive)} jup_depo_isg_leader_squad, {=actor_has_item(strelok_pendrive)} jupiter_space_restrictor_to_jupiter_ug, {+lost_stalker_strelok_dead} nil, {+hb_betray_strelok} lost_stalker_strelok, {+hb_escort_strelok =actor_on_level(l10_red_forest)} lost_stalker_strelok, {+hb_escort_strelok} jupiter_space_restrictor_to_red_forest, {+army_degtyarev_dead +tarasov_pri_b35_squad_dead} lost_stalker_strelok, {+army_degtyarev_dead} tarasov_pri_b35_squad, army_degtyarev
+condlist_0 = {+hb_escort_strelok -lost_stalker_strelok_dead -hb_betray_strelok =actor_inside_zone(pas_b400_sr_hall_1:pas_b400_sr_hall_12:pas_b400_field_tunnel:pas_b400_sr_track_door_in)} nil %+hb_betray_strelok =remove_task_companion(lost_stalker_strelok) =lttz_set_squad_enemy_to_actor(lost_stalker_strelok)%
+condlist_1 = {+hb_escorted_strelok -hb_strelok_leaving} nil %+hb_strelok_leaving =remove_special_companion_squad(lost_stalker_strelok)%
+
+on_init = %=clear_smart_terrain(pri_b35_mercs) =create_squad(stalker_strelok_hb_squad:pri_b35_mercs) =create_squad(degtyarev_pri_b35_squad:pri_b35_mercs) =create_squad(tarasov_pri_b35_squad:pri_b35_mercs) =pripyat_degtyarev_message_isg%
+on_complete = %=remove_item(strelok_pendrive) =remove_task_companion(pass_hall_isg_companion_squad) +lttz_hb_task_4_1_crossfire_done -lttz_hb_isg_leader_in_jup -lttz_hb_isg_breakthrough -faction_limited_playthrough_cf%
+on_fail = %=drx_sl_change_factions(stalker) =remove_special_companion_squad(lost_stalker_strelok) =fail_task_dec_goodwill(500:isg) +lttz_hb_task_4_1_crossfire_done -lttz_hb_isg_leader_in_jup -lttz_hb_isg_breakthrough -faction_limited_playthrough_cf%
+
+;------------------------------------------------------------------------------------------
+; Maus (UNISG Mechanic)
+;------------------------------------------------------------------------------------------
+[jup_depo_isg_tech_task_1]	;-- Find Level 1 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 15
+precondition = {-jup_depo_isg_tech_upgrade_tier_1} true, false
+title = jup_depo_isg_tech_task_1_name
+title_functor = general_fetch_task
+descr = jup_depo_isg_tech_task_1_text
+descr_functor = general_fetch_task
+job_descr = jup_depo_isg_tech_task_1_about
+fetch_descr = jup_depo_isg_tech_task_1_fetch_about
+task_complete_descr = jup_depo_isg_tech_task_1_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(jup_depo_isg_tech_task_1)} fail
+condlist_1 = {+lttz_hb_leaving_jup_done} fail
+fetch_func = %=setup_generic_fetch_task(jup_depo_isg_tech_task_1_fetch:1:itm_basickit)%
+on_complete = %=complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(jup_depo_isg_tech_task_1_fetch) =inc_task_stage(jup_depo_isg_tech_task_1) +jup_depo_isg_tech_upgrade_tier_1 =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:isg) =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_1)%
+
+
+[jup_depo_isg_tech_task_2]	;-- Find Level 2 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 16
+precondition = {+jup_depo_isg_tech_upgrade_tier_1 -jup_depo_isg_tech_upgrade_tier_2} true, false
+title = jup_depo_isg_tech_task_2_name
+title_functor = general_fetch_task
+descr = jup_depo_isg_tech_task_2_text
+descr_functor = general_fetch_task
+job_descr = jup_depo_isg_tech_task_2_about
+fetch_descr = jup_depo_isg_tech_task_2_fetch_about
+task_complete_descr = jup_depo_isg_tech_task_2_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(jup_depo_isg_tech_task_2)} fail
+condlist_1 = {+lttz_hb_leaving_jup_done} fail
+fetch_func = %=setup_generic_fetch_task(jup_depo_isg_tech_task_2_fetch:1:itm_advancedkit)%
+on_complete = %=complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(jup_depo_isg_tech_task_2_fetch) =inc_task_stage(jup_depo_isg_tech_task_2) +jup_depo_isg_tech_upgrade_tier_2 =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:isg) =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_2)%
+
+
+[jup_depo_isg_tech_task_3]	;-- Find Level 3 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 17
+precondition = {+jup_depo_isg_tech_upgrade_tier_2 -jup_depo_isg_tech_upgrade_tier_3} true, false
+title = jup_depo_isg_tech_task_3_name
+title_functor = general_fetch_task
+descr = jup_depo_isg_tech_task_3_text
+descr_functor = general_fetch_task
+job_descr = jup_depo_isg_tech_task_3_about
+fetch_descr = jup_depo_isg_tech_task_3_fetch_about
+task_complete_descr = jup_depo_isg_tech_task_3_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(jup_depo_isg_tech_task_3)} fail
+condlist_1 = {+lttz_hb_leaving_jup_done} fail
+fetch_func = %=setup_generic_fetch_task(jup_depo_isg_tech_task_3_fetch:1:itm_expertkit)%
+on_complete = %=complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(jup_depo_isg_tech_task_3_fetch) =inc_task_stage(jup_depo_isg_tech_task_3) +jup_depo_isg_tech_upgrade_tier_3 =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:isg) =drx_sl_unregister_task_giver(jup_depo_isg_tech_task_3)%

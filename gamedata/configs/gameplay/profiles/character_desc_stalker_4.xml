@@ -1,0 +1,20 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_stalker_4</class>
+<community>stalker</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="5000" max="10000" infinitive="0"/>
+<name>GENERATE_NAME_stalker</name>
+<rank min="22000" max="30000" />
+<reputation min="-1500" max="2500" />
+<supplies>
+#include "gameplay\loadouts\stalker_base.ltx"
+#include "gameplay\loadouts\stalker_tier_4.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food_2.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

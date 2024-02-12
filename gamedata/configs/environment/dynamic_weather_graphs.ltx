@@ -1,0 +1,147 @@
+; AtmosFear 3 by Cromm Cruac
+
+; Tronex
+; 2018/2019
+; Global Weather
+; support for Weather cycles and presets
+
+; Every cycle has presets, those presets represent the weather files (match their names so the script will read them correctly)
+; You can have as much as you want of cycles and presets for them
+
+; Example of weather preset/profile: w_cloudy.ltx
+; Naming rule: w_(cycle preset)_(moon pharse)
+; Directory: environment\weathers\
+
+; cycle preset: a name of your choice, its better to have the cycle name included. like foggy_01 and foggy_02
+; moon pharse: only needed for clear and partly presets, used to detemind the moon pharse for the weather preset
+; NOTE: add your new presets to [dof_kernels] section too, this will help with extra weather effects based on preset parameters (and prevent crashes)
+
+
+;------------------------------------------
+;-- Weather cycles
+;------------------------------------------
+[weather_cycles]
+clear
+partly
+cloudy
+rain
+storm
+foggy
+
+;------------------------------------------
+;-- Presets per cycle
+;------------------------------------------
+[cycle_clear]
+w_clear1
+w_clear2
+
+[cycle_partly]
+w_partly1
+w_partly2
+
+[cycle_cloudy]
+w_cloudy1
+w_cloudy2_dark
+
+[cycle_rain]
+w_rain1
+w_rain2
+w_rain3
+
+[cycle_storm]
+w_storm1
+w_storm2
+
+[cycle_foggy]
+w_foggy1
+w_foggy2
+
+[cycle_pre_blowout] ;-- special, only used before emission/psi-storm event
+w_foggy2
+
+
+;------------------------------------------
+;-- Weather parameter modifiers
+;------------------------------------------
+; These are modifiers for weather color parameters, they are picked based on brightness choice from weather settings then applied to weather parameters when game is loaded
+; You can boost a weather parameter value by brightness, renderer, weather like this:
+; 		[index].[renderer].[weather].[parameter] = [value] , [hour1]:[hour2]:[hour3]:[hour4]...
+
+; [index]: 		doesn't serve any purpose except for having unlimited keys, in case you have identical lines
+; [renderer]: 	you can specify modifiers by used renderer, for example "r2" will apply the modifier only on r2 (DX9). use "rr" if you want to apply a modifer regardless of the used renderer
+; [weather]: 	you can specify a weather profile to be affected by a modifier, for example "w_rain2" will apply the modifier only for w_rain2. use "all" if you want to apply a modifer to all weather profiles
+; [parameter]: 	the parameter that you want to be modified, keep in mind not all of them work. it's mainly aimed for color parameters
+; [hour]: 		determine when your modifier is activated by defining hours range
+
+; Example:
+; 1.r2.w_foggy2.rain_color   = 0.2   , 21:22:23:0:1:2:3:4
+; This modifier will add +0.2 to rain color from 9 PM to 4 AM, in foggy weather "w_foggy2", and only if you're playing on DX9 "r2"
+
+; NOTE:
+; modifiers that meet same conditions will add to each others for a total value effect, this allows you combine modifiers freely
+;------------------------------------------
+
+[global_modifiers] ;-- put modifiers that can work on all brightness settings here
+
+[brightness_bright]:global_modifiers
+1.rr.all.ambient_color    = 0.002 , 21:22:23:0:1:2:3:4
+1.rr.all.hemisphere_color = 0.02  , 21:22:23:0:1:2:3:4
+1.rr.all.rain_color       = 0.2   , 21:22:23:0:1:2:3:4
+1.rr.all.sky_color        = 0.1   , 21:22:23:0:1:2:3:4
+1.rr.all.sun_color        = 0.02  , 21:22:23:0:1:2:3:4
+
+[brightness_medium]:global_modifiers
+1.rr.all.ambient_color    = 0.001 , 21:22:23:0:1:2:3:4
+1.rr.all.hemisphere_color = 0.01  , 21:22:23:0:1:2:3:4
+1.rr.all.rain_color       = 0.1   , 21:22:23:0:1:2:3:4
+1.rr.all.sky_color        = 0.05  , 21:22:23:0:1:2:3:4
+1.rr.all.sun_color        = 0.01  , 21:22:23:0:1:2:3:4
+
+[brightness_slight]:global_modifiers ;-- reference, no modified color
+
+[brightness_dark]:global_modifiers
+1.rr.all.ambient_color    = -0.002 , 21:22:23:0:1:2:3:4
+1.rr.all.hemisphere_color = -0.01  , 21:22:23:0:1:2:3:4
+1.rr.all.rain_color       = -0.1   , 21:22:23:0:1:2:3:4
+1.rr.all.sky_color        = -0.05  , 21:22:23:0:1:2:3:4
+1.rr.all.sun_color        = -0.01  , 21:22:23:0:1:2:3:4
+
+
+;------------------------------------------
+;-- DoF kernals, used for effects
+;------------------------------------------
+[dof_kernels]
+w_clear1 				= 2
+w_clear2 				= 2
+w_partly1				= 2
+w_partly2				= 2
+w_foggy1				= 6
+w_foggy2				= 6
+w_cloudy1				= 3
+w_cloudy2_dark			= 3
+w_rain1					= 8
+w_rain2					= 8
+w_rain3					= 8
+w_storm1 				= 4
+w_storm2 				= 4
+
+;------------------------------------------
+;-- Distant storm sounds
+;------------------------------------------
+[distant_storm_sounds]
+nature\pre_storm_6
+nature\pre_storm_7
+nature\pre_storm_8
+nature\pre_storm_9
+nature\pre_storm_10
+nature\pre_storm_11
+nature\pre_storm_12
+nature\pre_storm_new_1
+nature\pre_storm_new_2
+nature\pre_storm_new_3
+nature\pre_storm_new_4
+nature\pre_storm_new_5
+nature\pre_storm_new_6
+nature\pre_storm_new_7
+nature\pre_storm_new_8
+nature\pre_storm_new_9

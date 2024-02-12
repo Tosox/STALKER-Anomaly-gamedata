@@ -1,0 +1,676 @@
+
+[tch_letter]:identity_immunities ;;-- (technical)
+$spawn 									 = "devices\roubles"
+$prefetch 								 = 16
+kind			                     = i_letter
+class 									 = II_ATTCH
+cform									 = skeleton
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_weight                               = 0.1
+cost                                     = 500
+visual                                   = dynamics\equipments\trade\survivalguide.ogf
+description                              = st_recipe_descr
+inv_name                                 = st_recipe
+inv_name_short                           = st_recipe
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset	                 = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_recipe
+use1_allow_db         					 = true
+
+
+
+;;--==========================< Recipes >=============================
+[recipe_basic_1]:tch_letter
+inv_grid_x                               = 0
+inv_grid_y                               = 14
+cost                                     = 500
+visual                                   = dynamics\equipments\trade\book1.ogf
+description                              = st_recipe_basic_descr
+inv_name                                 = st_recipe_basic_1
+inv_name_short                           = st_recipe_basic_1
+recipe									 = true
+
+[recipe_basic_2]:recipe_basic_1
+cost                                     = 500
+inv_name                                 = st_recipe_basic_2
+inv_name_short                           = st_recipe_basic_2
+
+[recipe_basic_3]:recipe_basic_1
+cost                                     = 500
+inv_name                                 = st_recipe_basic_3
+inv_name_short                           = st_recipe_basic_3
+
+[recipe_basic_4]:recipe_basic_1
+cost                                     = 500
+inv_name                                 = st_recipe_basic_4
+inv_name_short                           = st_recipe_basic_4
+
+[recipe_advanced_1]:tch_letter
+inv_grid_x                               = 1
+inv_grid_y                               = 14
+cost                                     = 500
+visual                                   = dynamics\equipments\trade\book2.ogf
+description                              = st_recipe_advanced_descr
+inv_name                                 = st_recipe_advanced_1
+inv_name_short                           = st_recipe_advanced_1
+recipe									 = true
+
+[recipe_advanced_2]:recipe_advanced_1
+cost                                     = 500
+inv_name                                 = st_recipe_advanced_2
+inv_name_short                           = st_recipe_advanced_2
+
+[recipe_advanced_3]:recipe_advanced_1
+cost                                     = 500
+inv_name                                 = st_recipe_advanced_3
+inv_name_short                           = st_recipe_advanced_3
+
+[recipe_advanced_4]:recipe_advanced_1
+cost                                     = 500
+inv_name                                 = st_recipe_advanced_4
+inv_name_short                           = st_recipe_advanced_4
+
+[recipe_expert_1]:tch_letter
+inv_grid_x                               = 2
+inv_grid_y                               = 14
+cost                                     = 500
+visual                                   = dynamics\equipments\trade\book3.ogf
+description                              = st_recipe_expert_descr
+inv_name                                 = st_recipe_expert_1
+inv_name_short                           = st_recipe_expert_1
+recipe									 = true
+
+[recipe_expert_2]:recipe_expert_1
+cost                                     = 500
+inv_name                                 = st_recipe_expert_2
+inv_name_short                           = st_recipe_expert_2
+
+[recipe_expert_3]:recipe_expert_1
+cost                                     = 500
+inv_name                                 = st_recipe_expert_3
+inv_name_short                           = st_recipe_expert_3
+
+[recipe_expert_4]:recipe_expert_1
+cost                                     = 500
+inv_name                                 = st_recipe_expert_4
+inv_name_short                           = st_recipe_expert_4
+
+[recipe_drug_1]:tch_letter
+inv_grid_x                               = 3
+inv_grid_y                               = 14
+cost                                     = 500
+visual                                   = dynamics\equipments\quest\notes_letter_1.ogf
+description                              = st_recipe_drug_descr
+inv_name                                 = st_recipe_drug_1
+inv_name_short                           = st_recipe_drug_1
+recipe									 = true
+
+[recipe_drug_2]:recipe_drug_1
+cost                                     = 500
+inv_name                                 = st_recipe_drug_2
+inv_name_short                           = st_recipe_drug_2
+
+[recipe_drug_3]:recipe_drug_1
+cost                                     = 500
+inv_name                                 = st_recipe_drug_3
+inv_name_short                           = st_recipe_drug_3
+
+[recipe_drug_4]:recipe_drug_1
+cost                                     = 500
+inv_name                                 = st_recipe_drug_4
+inv_name_short                           = st_recipe_drug_4
+
+[recipe_ammo_1]:tch_letter
+inv_grid_x                               = 4
+inv_grid_y                               = 14
+cost                                     = 500
+visual                                   = dynamics\equipments\trade\survivalguide.ogf
+description                              = st_recipe_ammo_descr
+inv_name                                 = st_recipe_ammo_1
+inv_name_short                           = st_recipe_ammo_1
+recipe									 = true
+
+[recipe_ammo_2]:recipe_ammo_1
+cost                                     = 500
+inv_name                                 = st_recipe_ammo_2
+inv_name_short                           = st_recipe_ammo_2
+
+[recipe_ammo_3]:recipe_ammo_1
+cost                                     = 500
+inv_name                                 = st_recipe_ammo_3
+inv_name_short                           = st_recipe_ammo_3
+
+[recipe_ammo_4]:recipe_ammo_1
+cost                                     = 500
+inv_name                                 = st_recipe_ammo_4
+inv_name_short                           = st_recipe_ammo_4
+
+
+
+;;--==========================< Letters >=============================
+[recipe_cooking_1]:identity_immunities
+$spawn 									 = "devices\roubles"
+$prefetch 								 = 16
+kind			                     = i_letter
+class 									 = II_ATTCH
+cform									 = skeleton
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_weight                               = 0.1
+cost                                     = 500
+visual                                   = dynamics\equipments\quest\notes_writing_book_2.ogf
+description                              = st_recipe_cooking_descr
+inv_name                                 = st_recipe_cooking_1
+inv_name_short                           = st_recipe_cooking_1
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset	                 = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+[letter_memoirs_1_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_writing_book_2.ogf
+description			                     = st_memoirs_1_of_2_desc
+inv_name			                     = st_memoirs_1_of_2_name
+inv_name_short			                 = st_memoirs_1_of_2_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 140
+inv_weight			                     = 0.018
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.02
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_memoirs_2_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_writing_book_2.ogf
+description			                     = st_memoirs_2_of_2_desc
+inv_name			                     = st_memoirs_2_of_2_name
+inv_name_short			                 = st_memoirs_2_of_2_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 140
+inv_weight			                     = 0.018
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.02
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_freedom_manual_1_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_writing_book_1.ogf
+description			                     = st_freedom_manual_1_of_2_desc
+inv_name			                     = st_freedom_manual_1_of_2_name
+inv_name_short			                 = st_freedom_manual_1_of_2_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 0
+inv_grid_y			                     = 15
+cost				                     = 165
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+[letter_freedom_manual_2_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_writing_book_1.ogf
+description			                     = st_freedom_manual_1_of_2_desc
+inv_name			                     = st_freedom_manual_1_of_2_name
+inv_name_short			                 = st_freedom_manual_1_of_2_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 0
+inv_grid_y			                     = 15
+cost				                     = 165
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_stalker_letter_1_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_2.ogf
+description			                     = st_stalker_letter_1_of_2_desc
+inv_name			                     = st_stalker_letter_1_of_2_name
+inv_name_short			                 = st_stalker_letter_1_of_2_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 135
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_stalker_letter_2_of_2]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_2.ogf
+description			                     = st_stalker_letter_2_of_2_desc
+inv_name			                     = st_stalker_letter_2_of_2_name
+inv_name_short			                 = st_stalker_letter_2_of_2_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 135
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_ecologist_report_1_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_document_case_2.ogf
+description			                     = st_ecologist_report_1_of_3_desc
+inv_name			                     = st_ecologist_report_1_of_3_name
+inv_name_short			                 = st_ecologist_report_1_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 2
+inv_grid_y			                     = 15
+cost				                     = 785
+inv_weight			                     = 0.014
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.02
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_ecologist_report_2_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_document_case_2.ogf
+description			                     = st_ecologist_report_2_of_3_desc
+inv_name			                     = st_ecologist_report_2_of_3_name
+inv_name_short			                 = st_ecologist_report_2_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 2
+inv_grid_y			                     = 15
+cost				                     = 785
+inv_weight			                     = 0.014
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.02
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_ecologist_report_3_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_document_case_2.ogf
+description			                     = st_ecologist_report_3_of_3_desc
+inv_name			                     = st_ecologist_report_3_of_3_name
+inv_name_short			                 = st_ecologist_report_3_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 2
+inv_grid_y			                     = 15
+cost				                     = 785
+inv_weight			                     = 0.014
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.02
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_monolith_prayer_1_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_paper_2.ogf
+description			                     = st_monolith_prayer_1_of_3_desc
+inv_name			                     = st_monolith_prayer_1_of_3_name
+inv_name_short			                 = st_monolith_prayer_1_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 4
+inv_grid_y			                     = 15
+cost				                     = 345
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_monolith_prayer_2_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_paper_2.ogf
+description			                     = st_monolith_prayer_2_of_3_desc
+inv_name			                     = st_monolith_prayer_2_of_3_name
+inv_name_short			                 = st_monolith_prayer_2_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 4
+inv_grid_y			                     = 15
+cost				                     = 345
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_monolith_prayer_3_of_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_paper_2.ogf
+description			                     = st_monolith_prayer_3_of_3_desc
+inv_name			                     = st_monolith_prayer_3_of_3_name
+inv_name_short			                 = st_monolith_prayer_3_of_3_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 4
+inv_grid_y			                     = 15
+cost				                     = 345
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_monolithian_thoughts]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_3.ogf
+description			                     = st_monolithian_thoughts_desc
+inv_name			                     = st_monolithian_thoughts_name
+inv_name_short			                 = st_monolithian_thoughts_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 255
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_letter_to_outside]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_2.ogf
+description			                     = st_letter_to_outside_desc
+inv_name			                     = st_letter_to_outside_name
+inv_name_short			                 = st_letter_to_outside_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 145
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_military_stalker]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_1.ogf
+description			                     = st_letter_military_stalker_desc
+inv_name			                     = st_letter_military_stalker_name
+inv_name_short			                 = st_letter_military_stalker_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 0
+inv_grid_y			                     = 15
+cost				                     = 195
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_mercenary]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_1.ogf
+description			                     = st_letter_mercenary_desc
+inv_name			                     = st_letter_mercenary_name
+inv_name_short			                 = st_letter_mercenary_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 165
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_military_log]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_paper_1.ogf
+description			                     = st_letter_military_log_desc
+inv_name			                     = st_letter_military_log_name
+inv_name_short			                 = st_letter_military_log_name
+inv_grid_width		                     = 2
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 15
+cost				                     = 780
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+
+
+[letter_stalker_letter_3]:identity_immunities
+$spawn 				                     = "devices\roubles"
+$prefetch 			                     = 16
+kind			                     = i_letter
+class				                     = II_ATTCH
+cform				                     = skeleton
+visual				                     = dynamics\equipments\quest\notes_letter_1.ogf
+description			                     = st_letter_stalker_letter_3_desc
+inv_name			                     = st_letter_stalker_letter_3_name
+inv_name_short			                 = st_letter_stalker_letter_3_name
+inv_grid_width		                     = 1
+inv_grid_height		                     = 1
+inv_grid_x			                     = 6
+inv_grid_y			                     = 14
+cost				                     = 161
+inv_weight			                     = 0.01
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name		                 = bip01_r_hand
+auto_attach				                 = false
+repair_part_bonus	 	                 = 0.01
+letter									 = true
+snd_on_take								 = paper
+use1_functor         					 = item_recipe.menu_read
+use1_action_functor  					 = item_recipe.func_letter
+use1_allow_db         					 = true
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game_dialogs>
+	<dialog id="totaliz_pre">
+		<has_info>bar_arena_fight_8_done</has_info>
+		<dont_has_info>totaliz_pre</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>totaliz_pre_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>totaliz_pre_1</text>
+				<give_info>totaliz_pre</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="totaliz_begin">
+		<dont_has_info>totaliz_begin_over_dialog</dont_has_info>
+		<has_info>totaliz_pre</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>totaliz_begin_0</text>
+				<disable_info>total_stalker_left</disable_info>
+				<disable_info>total_stalker_right</disable_info>
+				<disable_info>total_group_stalkers</disable_info>
+				<disable_info>total_group_stalker_1_death</disable_info>
+				<disable_info>total_group_stalker_2_death</disable_info>
+				<disable_info>total_group_stalker_3_death</disable_info>
+				<disable_info>total_group_stalker_4_death</disable_info>
+				<disable_info>total_group_bandit_1_death</disable_info>
+				<disable_info>total_group_bandit_2_death</disable_info>
+				<disable_info>total_group_bandit_3_death</disable_info>
+				<disable_info>total_group_bandit_4_death</disable_info>
+				<disable_info>total_group_bandits</disable_info>
+				<disable_info>total_duty_one</disable_info>
+				<disable_info>total_freeman_one</disable_info>
+				<disable_info>total_soldier_one</disable_info>
+				<disable_info>total_stalker_one</disable_info>
+				<disable_info>total_stalker_one_with_mutant</disable_info>
+				<disable_info>total_pseudodog_one_with_human</disable_info>
+				<disable_info>total_group_dolg</disable_info>
+				<disable_info>total_zombies_group</disable_info>
+				<disable_info>total_group_bandits_with_bloodsucker</disable_info>
+				<disable_info>total_bloodsucker_with_group_bandits</disable_info>
+				<disable_info>total_dog_with_rookie</disable_info>
+				<disable_info>total_two_soldiers_with_burer</disable_info>
+				<disable_info>total_burer_with_two_soldiers</disable_info>
+				<disable_info>total_snork_left</disable_info>
+				<disable_info>total_snork_right</disable_info>
+				<disable_info>total_bloodsucker_left</disable_info>
+				<disable_info>total_bloodsucker_right</disable_info>
+				<disable_info>total_chimera_left</disable_info>
+				<disable_info>total_chimera_right</disable_info>
+				<disable_info>total_fight_1</disable_info>
+				<disable_info>total_fight_2</disable_info>
+				<disable_info>total_fight_3</disable_info>
+				<disable_info>total_fight_4</disable_info>
+				<disable_info>total_fight_5</disable_info>
+				<disable_info>total_fight_6</disable_info>
+				<disable_info>total_fight_7</disable_info>
+				<disable_info>total_fight_9</disable_info>
+				<disable_info>total_fight_10</disable_info>
+				<disable_info>total_fight_11</disable_info>
+				<disable_info>total_fight_12</disable_info>
+				<disable_info>remove_is_reload</disable_info>
+				<disable_info>totaliz_money_has_gone</disable_info>
+				<disable_info>totaliz_money_has_gone_5000</disable_info>
+				<disable_info>totaliz_money_has_gone_2500</disable_info>
+				<disable_info>totaliz_money_has_gone_1000</disable_info>
+				<disable_info>total_fight_is_over</disable_info>
+				<disable_info>total_group_stalkers_death</disable_info>
+				<disable_info>total_group_bandits_death</disable_info>
+				<disable_info>total_stalker_left_death</disable_info>
+				<disable_info>total_stalker_right_death</disable_info>
+				<disable_info>total_duty_one_death</disable_info>
+				<disable_info>total_freeman_one_death</disable_info>
+				<disable_info>total_stalker_one_death</disable_info>
+				<disable_info>total_soldier_one_death</disable_info>
+				<disable_info>total_pseudodog_one_with_human_death</disable_info>
+				<disable_info>total_stalker_one_with_mutant_death</disable_info>
+				<disable_info>total_zombies_with_dolg_death</disable_info>
+				<disable_info>total_duty_one_with_zombies_death</disable_info>
+				<disable_info>total_group_bandits_with_bloodsucker_done</disable_info>
+				<disable_info>total_bloodsucker_with_group_bandits_death</disable_info>
+				<disable_info>total_two_soldiers_with_burer_done</disable_info>
+				<disable_info>total_burer_with_two_soldiers_death</disable_info>
+				<disable_info>total_snork_left_g_death</disable_info>
+				<disable_info>total_snork_right_g_death</disable_info>
+				<disable_info>total_bloodsucker_left_death</disable_info>
+				<disable_info>total_bloodsucker_right_death</disable_info>
+				<disable_info>total_chimera_left_death</disable_info>
+				<disable_info>total_chimera_right_death</disable_info>
+				<disable_info>total_two_soldiers_with_burer_1_death</disable_info>
+				<disable_info>total_two_soldiers_with_burer_2_death</disable_info>
+				<disable_info>total_group_bandits_with_bloodsucker_1_death</disable_info>
+				<disable_info>total_group_bandits_with_bloodsucker_2_death</disable_info>
+				<disable_info>total_zombied_with_dolg_1_death</disable_info>
+				<disable_info>total_zombied_with_dolg_2_death</disable_info>
+				<disable_info>total_zombied_with_dolg_3_death</disable_info>
+				<disable_info>total_zombied_with_dolg_4_death</disable_info>
+				<disable_info>total_zombied_with_dolg_5_death</disable_info>
+				<disable_info>total_zombied_with_dolg_6_death</disable_info>
+				<disable_info>total_group_bandit_1_death</disable_info>
+				<disable_info>total_group_bandit_2_death</disable_info>
+				<disable_info>total_group_bandit_3_death</disable_info>
+				<disable_info>total_group_bandit_4_death</disable_info>
+				<disable_info>total_group_stalker_1_death</disable_info>
+				<disable_info>total_group_stalker_2_death</disable_info>
+				<disable_info>total_group_stalker_3_death</disable_info>
+				<disable_info>total_group_stalker_4_death</disable_info>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>totaliz_begin_1</text>
+				<next>2</next>
+				<next>3</next>
+				<next>5</next>
+			</phrase>
+			<phrase id="2">
+				<text>totaliz_begin_2</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>totaliz_begin_6</text>
+				<next>9</next>
+				<next>10</next>
+				<next>11</next>
+				<next>12</next>
+				<next>20</next>
+			</phrase>
+			<phrase id="9">
+				<text>totaliz_begin_9</text>
+				<next>21</next>
+			</phrase>
+			<phrase id="21">
+				<text>totaliz_begin_21</text>
+				<next>32</next>
+				<next>33</next>
+			</phrase>
+			<phrase id="32">
+				<text>totaliz_begin_32</text>
+				<give_info>total_stalker_left</give_info>
+				<give_info>total_fight_1</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="33">
+				<text>totaliz_begin_33</text>
+				<give_info>total_stalker_right</give_info>
+				<give_info>total_fight_1</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="10">
+				<text>totaliz_begin_10</text>
+				<next>22</next>
+			</phrase>
+			<phrase id="22">
+				<text>totaliz_begin_22</text>
+				<next>34</next>
+				<next>35</next>
+			</phrase>
+			<phrase id="34">
+				<text>totaliz_begin_34</text>
+				<give_info>total_group_stalkers</give_info>
+				<give_info>total_fight_2</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="35">
+				<text>totaliz_begin_35</text>
+				<give_info>total_group_bandits</give_info>
+				<give_info>total_fight_2</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="11">
+				<text>"totaliz_begin_11</text>
+				<next>23</next>
+			</phrase>
+			<phrase id="23">
+				<text>totaliz_begin_23</text>
+				<next>36</next>
+				<next>37</next>
+			</phrase>
+			<phrase id="36">
+				<text>totaliz_begin_36</text>
+				<give_info>total_duty_one</give_info>
+				<give_info>total_fight_3</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="37">
+				<text>totaliz_begin_37</text>
+				<give_info>total_freeman_one</give_info>
+				<give_info>total_fight_3</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="12">
+				<text>totaliz_begin_12</text>
+				<next>24</next>
+			</phrase>
+			<phrase id="24">
+				<text>totaliz_begin_24</text>
+				<next>38</next>
+				<next>39</next>
+			</phrase>
+			<phrase id="38">
+				<text>totaliz_begin_38</text>
+				<give_info>total_soldier_one</give_info>
+				<give_info>total_fight_4</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="39">
+				<text>totaliz_begin_39</text>
+				<give_info>total_stalker_one</give_info>
+				<give_info>total_fight_4</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="3">
+				<text>totaliz_begin_3</text>
+				<next>7</next>
+			</phrase>
+			<phrase id="7">
+				<text>totaliz_begin_7</text>
+				<next>13</next>
+				<next>14</next>
+				<next>15</next>
+				<next>16</next>
+				<next>20</next>
+			</phrase>
+			<phrase id="13">
+				<text>totaliz_begin_13</text>
+				<next>25</next>
+			</phrase>
+			<phrase id="25">
+				<text>totaliz_begin_25</text>
+				<next>40</next>
+				<next>41</next>
+			</phrase>
+			<phrase id="40">
+				<text>totaliz_begin_40</text>
+				<give_info>total_stalker_one_with_mutant</give_info>
+				<give_info>total_fight_5</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="41">
+				<text>totaliz_begin_41</text>
+				<give_info>total_pseudodog_one_with_human</give_info>
+				<give_info>total_fight_5</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="14">
+				<text>totaliz_begin_14</text>
+				<next>26</next>
+			</phrase>
+			<phrase id="26">
+				<text>totaliz_begin_26</text>
+				<next>42</next>
+				<next>43</next>
+			</phrase>
+			<phrase id="42">
+				<text>totaliz_begin_42</text>
+				<give_info>total_group_dolg</give_info>
+				<give_info>total_fight_6</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="43">
+				<text>totaliz_begin_43</text>
+				<give_info>total_zombies_group</give_info>
+				<give_info>total_fight_6</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="15">
+				<text>totaliz_begin_15</text>
+				<next>27</next>
+			</phrase>
+			<phrase id="27">
+				<text>totaliz_begin_27</text>
+				<next>44</next>
+				<next>45</next>
+			</phrase>
+			<phrase id="44">
+				<text>totaliz_begin_44</text>
+				<give_info>total_group_bandits_with_bloodsucker</give_info>
+				<give_info>total_fight_7</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="45">
+				<text>totaliz_begin_45</text>
+				<give_info>total_bloodsucker_with_group_bandits</give_info>
+				<give_info>total_fight_7</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="16">
+				<text>totaliz_begin_16</text>
+				<next>28</next>
+			</phrase>
+			<phrase id="28">
+				<text>totaliz_begin_28</text>
+				<next>46</next>
+				<next>47</next>
+			</phrase>
+			<phrase id="46">
+				<text>totaliz_begin_46</text>
+				<give_info>total_two_soldiers_with_burer</give_info>
+				<give_info>total_fight_9</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="47">
+				<text>totaliz_begin_47</text>
+				<give_info>total_burer_with_two_soldiers</give_info>
+				<give_info>total_fight_9</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="4">
+				<text>totaliz_begin_4</text>
+				<next>8</next>
+			</phrase>
+			<phrase id="8">
+				<text>totaliz_begin_8</text>
+				<next>17</next>
+				<next>18</next>
+				<next>19</next>
+				<next>20</next>
+			</phrase>
+			<phrase id="17">
+				<text>totaliz_begin_17</text>
+				<next>29</next>
+			</phrase>
+			<phrase id="29">
+				<text>totaliz_begin_29</text>
+				<next>48</next>
+				<next>49</next>
+			</phrase>
+			<phrase id="48">
+				<text>totaliz_begin_48</text>
+				<give_info>total_snork_left</give_info>
+				<give_info>total_fight_10</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="49">
+				<text>totaliz_begin_49</text>
+				<give_info>total_snork_right</give_info>
+				<give_info>total_fight_10</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="18">
+				<text>totaliz_begin_18</text>
+				<next>30</next>
+			</phrase>
+			<phrase id="30">
+				<text>totaliz_begin_30</text>
+				<next>50</next>
+				<next>51</next>
+			</phrase>
+			<phrase id="50">
+				<text>totaliz_begin_50</text>
+				<give_info>total_bloodsucker_left</give_info>
+				<give_info>total_fight_11</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="51">
+				<text>totaliz_begin_51</text>
+				<give_info>total_bloodsucker_right</give_info>
+				<give_info>total_fight_11</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="19">
+				<text>totaliz_begin_19</text>
+				<next>31</next>
+			</phrase>
+			<phrase id="31">
+				<text>totaliz_begin_31</text>
+				<next>52</next>
+				<next>53</next>
+			</phrase>
+			<phrase id="52">
+				<text>totaliz_begin_52</text>
+				<give_info>total_chimera_left</give_info>
+				<give_info>total_fight_12</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="53">
+				<text>totaliz_begin_53</text>
+				<give_info>total_chimera_right</give_info>
+				<give_info>total_fight_12</give_info>
+				<next>54</next>
+			</phrase>
+			<phrase id="54">
+				<text>totaliz_begin_54</text>
+				<next>55</next>
+				<next>56</next>
+				<next>57</next>
+				<next>58</next>
+			</phrase>
+			<phrase id="55">
+				<precondition>dialogs_mlr.totaliz_1</precondition>
+				<text>totaliz_begin_55</text>
+				<give_info>begin_the_battle</give_info>
+				<give_info>totaliz_money_has_gone</give_info>
+				<give_info>totaliz_money_has_gone_1000</give_info>
+				<action>dialogs_mlr.take_totaliz_1</action>
+				<give_info>totaliz_begin_over_dialog</give_info>
+				<disable_info>total_reward_over_dialog</disable_info>
+				<action>dialogs_mlr.teleport_for_totaliz</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="56">
+				<precondition>dialogs_mlr.totaliz_2</precondition>
+				<text>totaliz_begin_56</text>
+				<give_info>begin_the_battle</give_info>
+				<give_info>totaliz_money_has_gone</give_info>
+				<give_info>totaliz_money_has_gone_2500</give_info>
+				<action>dialogs_mlr.take_totaliz_2</action>
+				<give_info>totaliz_begin_over_dialog</give_info>
+				<disable_info>total_reward_over_dialog</disable_info>
+				<action>dialogs_mlr.teleport_for_totaliz</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="57">
+				<precondition>dialogs_mlr.totaliz_5</precondition>
+				<text>totaliz_begin_57</text>
+				<give_info>begin_the_battle</give_info>
+				<give_info>totaliz_money_has_gone</give_info>
+				<give_info>totaliz_money_has_gone_5000</give_info>
+				<action>dialogs_mlr.take_totaliz_5</action>
+				<give_info>totaliz_begin_over_dialog</give_info>
+				<disable_info>total_reward_over_dialog</disable_info>
+				<action>dialogs_mlr.teleport_for_totaliz</action>
+				<action>dialogs.break_dialog</action>
+			</phrase>
+			<phrase id="58">
+				<text>totaliz_begin_58</text>
+			</phrase>
+			<phrase id="20">
+				<text>totaliz_begin_20.</text>
+			</phrase>
+			<phrase id="5">
+				<text>totaliz_begin_5</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="total_reward_dialog_1000">
+		<dont_has_info>total_reward_over_dialog</dont_has_info>
+		<has_info>totaliz_money_has_gone_1000</has_info>
+		<has_info>total_fight_is_over</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>total_reward_dialog_1000_0</text>
+				<disable_info>totaliz_begin_over_dialog</disable_info>
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+				<next>7</next>
+				<next>8</next>
+				<next>9</next>
+				<next>10</next>
+				<next>11</next>
+				<next>12</next>
+				<next>13</next>
+				<next>14</next>
+				<next>15</next>
+				<next>16</next>
+				<next>17</next>
+				<next>18</next>
+				<next>19</next>
+				<next>20</next>
+				<next>21</next>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>26</next>
+				<next>27</next>
+				<next>28</next>
+				<next>29</next>
+				<next>30</next>
+				<next>31</next>
+				<next>32</next>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>36</next>
+				<next>37</next>
+				<next>38</next>
+			</phrase>
+			<phrase id="1">
+				<dont_has_info>total_stalker_left_death</dont_has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_1000_1</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="2">
+				<dont_has_info>total_stalker_right_death</dont_has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_1000_2</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="3">
+				<dont_has_info>total_group_bandits_death</dont_has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_1000_3</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="4">
+				<dont_has_info>total_group_stalkers_death</dont_has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_1000_4</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="5">
+				<dont_has_info>total_duty_one_death</dont_has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_1000_5</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="6">
+				<dont_has_info>total_freeman_one_death</dont_has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_1000_6</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="7">
+				<dont_has_info>total_stalker_one_death</dont_has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_1000_7</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="8">
+				<dont_has_info>total_soldier_one_death</dont_has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_1000_8</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="9">
+				<dont_has_info>total_pseudodog_one_with_human_death</dont_has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_1000_9</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="10">
+				<dont_has_info>total_stalker_one_with_mutant_death</dont_has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_1000_10</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="11">
+				<dont_has_info>total_zombies_with_dolg_death</dont_has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_1000_11</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="12">
+				<dont_has_info>total_duty_one_with_zombies_death</dont_has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_1000_12</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="13">
+				<dont_has_info>total_group_bandits_with_bloodsucker_done</dont_has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_1000_13</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="14">
+				<dont_has_info>total_bloodsucker_with_group_bandits_death</dont_has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_1000_14</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="15">
+				<dont_has_info>total_two_soldiers_with_burer_done</dont_has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_1000_15</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="16">
+				<dont_has_info>total_burer_with_two_soldiers_death</dont_has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_1000_16</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="17">
+				<dont_has_info>total_snork_left_g_death</dont_has_info>
+				<has_info>total_snork_left</has_info>
+				<text>total_reward_dialog_1000_17</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="18">
+				<dont_has_info>total_snork_right_g_death</dont_has_info>
+				<has_info>total_snork_right</has_info>
+				<text>total_reward_dialog_1000_18</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="19">
+				<dont_has_info>total_bloodsucker_left_death</dont_has_info>
+				<has_info>total_bloodsucker_left</has_info>
+				<text>total_reward_dialog_1000_19</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="20">
+				<dont_has_info>total_bloodsucker_right_death</dont_has_info>
+				<has_info>total_bloodsucker_right</has_info>
+				<text>total_reward_dialog_1000_20</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="21">
+				<dont_has_info>total_chimera_left_death</dont_has_info>
+				<has_info>total_chimera_left</has_info>
+				<text>total_reward_dialog_1000_21</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="22">
+				<dont_has_info>total_chimera_right_death</dont_has_info>
+				<has_info>total_chimera_right</has_info>
+				<text>total_reward_dialog_1000_22</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_1000</action>
+			</phrase>
+			<phrase id="23">
+				<has_info>total_stalker_left_death</has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_1000_23</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="24">
+				<has_info>total_stalker_right_death</has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_1000_24</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="25">
+				<has_info>total_group_bandits_death</has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_1000_25</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="26">
+				<has_info>total_group_stalkers_death</has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_1000_26</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="27">
+				<has_info>total_duty_one_death</has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_1000_27</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="28">
+				<has_info>total_freeman_one_death</has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_1000_28</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="29">
+				<has_info>total_stalker_one_death</has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_1000_29</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="30">
+				<has_info>total_soldier_one_death</has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_1000_30</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="31">
+				<has_info>total_pseudodog_one_with_human_death</has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_1000_31</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="32">
+				<has_info>total_stalker_one_with_mutant_death</has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_1000_32</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="33">
+				<has_info>total_zombies_with_dolg_death</has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_1000_33</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="34">
+				<has_info>total_duty_one_with_zombies_death</has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_1000_34</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="35">
+				<has_info>total_group_bandits_with_bloodsucker_done</has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_1000_35</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="36">
+				<has_info>total_bloodsucker_with_group_bandits_death</has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_1000_36</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="37">
+				<has_info>total_two_soldiers_with_burer_done</has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_1000_37</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="38">
+				<has_info>total_burer_with_two_soldiers_death</has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_1000_38</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="total_reward_dialog_2500">
+		<dont_has_info>total_reward_over_dialog</dont_has_info>
+		<has_info>totaliz_money_has_gone_2500</has_info>
+		<has_info>total_fight_is_over</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>total_reward_dialog_2500_0</text>
+				<disable_info>totaliz_begin_over_dialog</disable_info>
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+				<next>7</next>
+				<next>8</next>
+				<next>9</next>
+				<next>10</next>
+				<next>11</next>
+				<next>12</next>
+				<next>13</next>
+				<next>14</next>
+				<next>15</next>
+				<next>16</next>
+				<next>17</next>
+				<next>18</next>
+				<next>19</next>
+				<next>20</next>
+				<next>21</next>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>26</next>
+				<next>27</next>
+				<next>28</next>
+				<next>29</next>
+				<next>30</next>
+				<next>31</next>
+				<next>32</next>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>36</next>
+				<next>37</next>
+				<next>38</next>
+			</phrase>
+			<phrase id="1">
+				<dont_has_info>total_stalker_left_death</dont_has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_2500_1</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="2">
+				<dont_has_info>total_stalker_right_death</dont_has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_2500_2</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="3">
+				<dont_has_info>total_group_bandits_death</dont_has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_2500_3</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="4">
+				<dont_has_info>total_group_stalkers_death</dont_has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_2500_4</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="5">
+				<dont_has_info>total_duty_one_death</dont_has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_2500_5</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="6">
+				<dont_has_info>total_freeman_one_death</dont_has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_2500_6</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="7">
+				<dont_has_info>total_stalker_one_death</dont_has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_2500_7</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="8">
+				<dont_has_info>total_soldier_one_death</dont_has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_2500_8</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="9">
+				<dont_has_info>total_pseudodog_one_with_human_death</dont_has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_2500_9</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="10">
+				<dont_has_info>total_stalker_one_with_mutant_death</dont_has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_2500_10</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="11">
+				<dont_has_info>total_zombies_with_dolg_death</dont_has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_2500_11</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="12">
+				<dont_has_info>total_duty_one_with_zombies_death</dont_has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_2500_12</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="13">
+				<dont_has_info>total_group_bandits_with_bloodsucker_done</dont_has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_2500_13</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="14">
+				<dont_has_info>total_bloodsucker_with_group_bandits_death</dont_has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_2500_14</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="15">
+				<dont_has_info>total_two_soldiers_with_burer_done</dont_has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_2500_15</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="16">
+				<dont_has_info>total_burer_with_two_soldiers_death</dont_has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_2500_16</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="17">
+				<dont_has_info>total_snork_left_g_death</dont_has_info>
+				<has_info>total_snork_left</has_info>
+				<text>total_reward_dialog_2500_17</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="18">
+				<dont_has_info>total_snork_right_g_death</dont_has_info>
+				<has_info>total_snork_right</has_info>
+				<text>total_reward_dialog_2500_18</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="19">
+				<dont_has_info>total_bloodsucker_left_death</dont_has_info>
+				<has_info>total_bloodsucker_left</has_info>
+				<text>total_reward_dialog_2500_19</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="20">
+				<dont_has_info>total_bloodsucker_right_death</dont_has_info>
+				<has_info>total_bloodsucker_right</has_info>
+				<text>total_reward_dialog_2500_20</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="21">
+				<dont_has_info>total_chimera_left_death</dont_has_info>
+				<has_info>total_chimera_left</has_info>
+				<text>total_reward_dialog_2500_21</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="22">
+				<dont_has_info>total_chimera_right_death</dont_has_info>
+				<has_info>total_chimera_right</has_info>
+				<text>total_reward_dialog_2500_22</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_2500</action>
+			</phrase>
+			<phrase id="23">
+				<has_info>total_stalker_left_death</has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_2500_23</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="24">
+				<has_info>total_stalker_right_death</has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_2500_24</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="25">
+				<has_info>total_group_bandits_death</has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_2500_25</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="26">
+				<has_info>total_group_stalkers_death</has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_2500_26</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="27">
+				<has_info>total_duty_one_death</has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_2500_27</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="28">
+				<has_info>total_freeman_one_death</has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_2500_28</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="29">
+				<has_info>total_stalker_one_death</has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_2500_29</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="30">
+				<has_info>total_soldier_one_death</has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_2500_30</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="31">
+				<has_info>total_pseudodog_one_with_human_death</has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_2500_31</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="32">
+				<has_info>total_stalker_one_with_mutant_death</has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_2500_32</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="33">
+				<has_info>total_zombies_with_dolg_death</has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_2500_33</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="34">
+				<has_info>total_duty_one_with_zombies_death</has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_2500_34</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="35">
+				<has_info>total_group_bandits_with_bloodsucker_done</has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_2500_35</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="36">
+				<has_info>total_bloodsucker_with_group_bandits_death</has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_2500_36</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="37">
+				<has_info>total_two_soldiers_with_burer_done</has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_2500_37</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="38">
+				<has_info>total_burer_with_two_soldiers_death</has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_2500_38</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="total_reward_dialog_5000">
+		<dont_has_info>total_reward_over_dialog</dont_has_info>
+		<has_info>totaliz_money_has_gone_5000</has_info>
+		<has_info>total_fight_is_over</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>total_reward_dialog_5000_0</text>
+				<disable_info>totaliz_begin_over_dialog</disable_info>
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+				<next>6</next>
+				<next>7</next>
+				<next>8</next>
+				<next>9</next>
+				<next>10</next>
+				<next>11</next>
+				<next>12</next>
+				<next>13</next>
+				<next>14</next>
+				<next>15</next>
+				<next>16</next>
+				<next>17</next>
+				<next>18</next>
+				<next>19</next>
+				<next>20</next>
+				<next>21</next>
+				<next>22</next>
+				<next>23</next>
+				<next>24</next>
+				<next>25</next>
+				<next>26</next>
+				<next>27</next>
+				<next>28</next>
+				<next>29</next>
+				<next>30</next>
+				<next>31</next>
+				<next>32</next>
+				<next>33</next>
+				<next>34</next>
+				<next>35</next>
+				<next>36</next>
+				<next>37</next>
+				<next>38</next>
+			</phrase>
+			<phrase id="1">
+				<dont_has_info>total_stalker_left_death</dont_has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_5000_1</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="2">
+				<dont_has_info>total_stalker_right_death</dont_has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_5000_2</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="3">
+				<dont_has_info>total_group_bandits_death</dont_has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_5000_3</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="4">
+				<dont_has_info>total_group_stalkers_death</dont_has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_5000_4</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="5">
+				<dont_has_info>total_duty_one_death</dont_has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_5000_5</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="6">
+				<dont_has_info>total_freeman_one_death</dont_has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_5000_6</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="7">
+				<dont_has_info>total_stalker_one_death</dont_has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_5000_7</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="8">
+				<dont_has_info>total_soldier_one_death</dont_has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_5000_8</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="9">
+				<dont_has_info>total_pseudodog_one_with_human_death</dont_has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_5000_9</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="10">
+				<dont_has_info>total_stalker_one_with_mutant_death</dont_has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_5000_10</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="11">
+				<dont_has_info>total_zombies_with_dolg_death</dont_has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_5000_11</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="12">
+				<dont_has_info>total_duty_one_with_zombies_death</dont_has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_5000_12</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="13">
+				<dont_has_info>total_group_bandits_with_bloodsucker_done</dont_has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_5000_13</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="14">
+				<dont_has_info>total_bloodsucker_with_group_bandits_death</dont_has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_5000_14</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="15">
+				<dont_has_info>total_two_soldiers_with_burer_done</dont_has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_5000_15</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="16">
+				<dont_has_info>total_burer_with_two_soldiers_death</dont_has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_5000_16</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="17">
+				<dont_has_info>total_snork_left_g_death</dont_has_info>
+				<has_info>total_snork_left</has_info>
+				<text>total_reward_dialog_5000_17</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="18">
+				<dont_has_info>total_snork_right_g_death</dont_has_info>
+				<has_info>total_snork_right</has_info>
+				<text>total_reward_dialog_5000_18</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="19">
+				<dont_has_info>total_bloodsucker_left_death</dont_has_info>
+				<has_info>total_bloodsucker_left</has_info>
+				<text>total_reward_dialog_5000_19</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="20">
+				<dont_has_info>total_bloodsucker_right_death</dont_has_info>
+				<has_info>total_bloodsucker_right</has_info>
+				<text>total_reward_dialog_5000_20</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="21">
+				<dont_has_info>total_chimera_left_death</dont_has_info>
+				<has_info>total_chimera_left</has_info>
+				<text>total_reward_dialog_5000_21</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="22">
+				<dont_has_info>total_chimera_right_death</dont_has_info>
+				<has_info>total_chimera_right</has_info>
+				<text>total_reward_dialog_5000_22</text>
+				<give_info>total_reward_over_dialog</give_info>
+				<action>dialogs_mlr.total_reward_5000</action>
+			</phrase>
+			<phrase id="23">
+				<has_info>total_stalker_left_death</has_info>
+				<has_info>total_stalker_left</has_info>
+				<text>total_reward_dialog_5000_23</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="24">
+				<has_info>total_stalker_right_death</has_info>
+				<has_info>total_stalker_right</has_info>
+				<text>total_reward_dialog_5000_24</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="25">
+				<has_info>total_group_bandits_death</has_info>
+				<has_info>total_group_bandits</has_info>
+				<text>total_reward_dialog_5000_25</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="26">
+				<has_info>total_group_stalkers_death</has_info>
+				<has_info>total_group_stalkers</has_info>
+				<text>total_reward_dialog_5000_26</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="27">
+				<has_info>total_duty_one_death</has_info>
+				<has_info>total_duty_one</has_info>
+				<text>total_reward_dialog_5000_27</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="28">
+				<has_info>total_freeman_one_death</has_info>
+				<has_info>total_freeman_one</has_info>
+				<text>total_reward_dialog_5000_28</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="29">
+				<has_info>total_stalker_one_death</has_info>
+				<has_info>total_stalker_one</has_info>
+				<text>total_reward_dialog_5000_29</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="30">
+				<has_info>total_soldier_one_death</has_info>
+				<has_info>total_soldier_one</has_info>
+				<text>total_reward_dialog_5000_30</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="31">
+				<has_info>total_pseudodog_one_with_human_death</has_info>
+				<has_info>total_pseudodog_one_with_human</has_info>
+				<text>total_reward_dialog_5000_31</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="32">
+				<has_info>total_stalker_one_with_mutant_death</has_info>
+				<has_info>total_stalker_one_with_mutant</has_info>
+				<text>total_reward_dialog_5000_32</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="33">
+				<has_info>total_zombies_with_dolg_death</has_info>
+				<has_info>total_zombies_group</has_info>
+				<text>total_reward_dialog_5000_33</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="34">
+				<has_info>total_duty_one_with_zombies_death</has_info>
+				<has_info>total_group_dolg</has_info>
+				<text>total_reward_dialog_5000_34</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="35">
+				<has_info>total_group_bandits_with_bloodsucker_done</has_info>
+				<has_info>total_group_bandits_with_bloodsucker</has_info>
+				<text>total_reward_dialog_5000_35</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="36">
+				<has_info>total_bloodsucker_with_group_bandits_death</has_info>
+				<has_info>total_bloodsucker_with_group_bandits</has_info>
+				<text>total_reward_dialog_5000_36</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="37">
+				<has_info>total_two_soldiers_with_burer_done</has_info>
+				<has_info>total_two_soldiers_with_burer</has_info>
+				<text>total_reward_dialog_5000_37</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+			<phrase id="38">
+				<has_info>total_burer_with_two_soldiers_death</has_info>
+				<has_info>total_burer_with_two_soldiers</has_info>
+				<text>total_reward_dialog_5000_38</text>
+				<give_info>total_reward_over_dialog</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>

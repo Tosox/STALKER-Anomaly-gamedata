@@ -1,0 +1,122 @@
+<w>
+	<main x="0" y="0" width="1024" height="768"/>
+	
+	<frame1 x="28" y="41" width="764" height="90" stretch="1">
+		<texture>ui_inGame2_pda_buttons_background</texture>
+	</frame1>
+	
+	<frame2 x="28" y="137" width="764" height="347" stretch="1">
+		<texture>ui_inGame2_pda_buttons_background</texture>
+		<caption x="35" y="150" width="754" height="30">
+			<text font="letterica18" align="c" x="0" y="0" r="170" g="170" b="170">pda_btn_radio_title</text>
+		</caption>
+	</frame2>
+	
+	<frame3 x="28" y="490" width="764" height="218" stretch="1">
+		<texture>ui_inGame2_pda_buttons_background</texture>
+		<caption x="35" y="503" width="754" height="30">
+			<text font="letterica18" align="c" x="0" y="0" r="170" g="170" b="170">pda_btn_plyr_title</text>
+		</caption>
+	</frame3>
+	
+	
+	<time_left x="381" y="563" width="56" height="20">
+			<text r="66" g="157" b="195" a="155" font="letterica16" align="c" vert_align="c"/>
+	</time_left>
+	
+	<suffle_state x="206" y="563" width="56" height="20">
+			<text r="66" g="157" b="195" a="155" font="letterica16" align="c" vert_align="c"/>
+	</suffle_state>
+	
+	<loop_state x="555" y="563" width="56" height="20">
+			<text r="66" g="157" b="195" a="155" font="letterica16" align="c" vert_align="c"/>
+	</loop_state>
+	
+	<playlist_state x="212" y="590" width="392" height="20">
+			<text r="140" g="140" b="140" a="155" font="letterica16" vert_align="c"/>
+	</playlist_state>
+	
+	<playing x="212" y="605" width="392" height="25" light_anim="ui_slow_blinking_alpha" la_cyclic="1" la_texture="0" la_text="1">
+			<text r="66" g="157" b="195" a="155" font="letterica18" vert_align="c"/>
+	</playing>
+	
+	
+	<interface_radio_off x="204" y="294" width="410" height="120" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_interface_off</texture>
+	</interface_radio_off>
+	
+	<interface_radio_ch1 x="204" y="294" width="410" height="120" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_interface_ch1</texture>
+	</interface_radio_ch1>
+	
+	<interface_radio_ch2 x="204" y="294" width="410" height="120" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_interface_ch2</texture>
+	</interface_radio_ch2>
+	
+	<interface_plyr x="204" y="561" width="410" height="76" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_plyer_interface_off</texture>
+	</interface_plyr>
+	
+	
+	<btn_radio_ch_1 x="204" y="206" width="200" height="78" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_channel_1</texture>
+	</btn_radio_ch_1>
+	
+	<btn_radio_ch_2 x="413" y="206" width="200" height="78" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_channel_2</texture>
+	</btn_radio_ch_2>
+	
+	<btn_radio_v_down x="300" y="428" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_v_down</texture>
+	</btn_radio_v_down>
+	
+	<btn_radio_v_up x="350" y="428" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_v_up</texture>
+	</btn_radio_v_up>
+	
+	<btn_radio_stop x="420" y="428" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_stop</texture>
+	</btn_radio_stop>
+	
+	<btn_radio_start x="470" y="428" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_start</texture>
+	</btn_radio_start>
+	
+	
+	<btn_plyr_playlist x="166" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_playlist</texture>
+	</btn_plyr_playlist>
+	
+	<btn_plyr_loop x="216" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_loop</texture>
+	</btn_plyr_loop>
+	
+	<btn_plyr_shuffle x="267" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_shuffle</texture>
+	</btn_plyr_shuffle>
+	
+	<btn_plyr_v_down x="336" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_v_down</texture>
+	</btn_plyr_v_down>
+	
+	<btn_plyr_v_up x="387" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_v_up</texture>
+	</btn_plyr_v_up>
+	
+	<btn_plyr_prev x="454" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_prev</texture>
+	</btn_plyr_prev>
+	
+	<btn_plyr_stop x="504" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_stop2</texture>
+	</btn_plyr_stop>
+	
+	<btn_plyr_start x="555" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_start2</texture>
+	</btn_plyr_start>
+	
+	<btn_plyr_next x="605" y="652" width="48" height="30" stretch="1">
+		<texture>ui_inGame2_pda_Filtr_radio_plyr_btn_next</texture>
+	</btn_plyr_next>
+	
+</w>

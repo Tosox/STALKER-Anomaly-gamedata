@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--------------------------------------------
+
+Colors:
+-------
+Gray			- %c[ui_gray_2]
+Gray (Light)	- %c[ui_gray_1]		
+Blue			- %c[d_cyan]	
+Orange			- %c[d_orange]
+Red				- %c[d_red]
+Purple			- %c[d_purple]	
+Green			- %c[d_green]	
+Yellow			- %c[0,250,250,0]	
+White 			- %c[0,255,255,255]	
+
+-------------------------------------------->

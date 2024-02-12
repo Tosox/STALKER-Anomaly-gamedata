@@ -1,0 +1,295 @@
+;------------------------------------------------------------------------------------------------
+[wpn_mk14]:identity_immunities,weapon_probability,default_weapon_params,wpn_m14_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\mk14"
+scheduled                                = off
+cform                                    = skeleton
+parent_section                           = wpn_mk14
+
+class                                    = WP_AK74
+slot                                     = 2
+animation_slot                           = 2
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 8
+hand_dependence                          = 1
+single_handed                            = 0
+
+inv_grid_height                          = 2
+inv_grid_width                           = 6
+inv_grid_x                               = 41
+inv_grid_y                               = 72
+inv_name                                 = st_wpn_mk14
+inv_name_short                           = st_wpn_mk14
+description                              = st_wpn_mk14_descr
+
+kind                                     = w_rifle
+inv_weight                               = 5.10
+cost                                     = 40000
+repair_type                              = rifle_7
+weapon_class                             = assault_rifle
+
+hud                                      = wpn_mk14_hud
+visual                                   = dynamics\weapons\wpn_m14\wpn_mk14.ogf
+position                                 = -0.026, -0.130, 0
+orientation                              = 0, 0, 0
+fire_point                               = 0, 0.199, 0.575
+fire_point2                              = 0, 0.199, 0.575
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.15, -0.37, 0.2
+strap_orientation                        = -10, -5, 10
+ph_mass                                  = 3
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point             		         = 0.12, 0, 0.07
+shell_dir               		         = 0, 0, 0.4
+shell_particles         		         = weapons\762x51
+
+light_disabled                           = false
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 5
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.1
+
+upgrades                                 = up_gr_firstab_lr300_alt, up_gr_seconab_lr300_alt, up_gr_thirdab_lr300_alt, up_gr_fourtab_lr300_alt, up_gr_fifthab_lr300_alt
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_lr300
+upgr_icon_x                              = 300
+upgr_icon_y                              = 1350
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+fire_modes                               = 1
+ammo_class                               = ammo_7.62x51_fmj, ammo_7.62x51_fmj_bad, ammo_7.62x51_fmj_verybad, ammo_7.62x51_ap, ammo_7.62x51_ap_bad, ammo_7.62x51_ap_verybad
+ammo_current                             = 180
+ammo_elapsed                             = 20
+ammo_limit                               = 210
+ammo_mag_size                            = 20
+startup_ammo                             = 90
+
+scopes                                   = ac10632, acog, eot, c-more
+scope_status                             = 0
+scope_name                               = wpn_addon_scope_susat
+scope_x                                  = 67
+scope_y                                  = -8
+scope_zoom_factor                        = 0
+
+silencer_name                            = wpn_sil_nato
+silencer_status                          = 2
+silencer_x                               = 253
+silencer_y                               = 17
+silencer_light_color                     = 0.6, 0.5, 0.3
+silencer_light_range                     = 0.01
+silencer_light_time                      = 0.2
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_smoke_particles                 = amik\weapons\smoke_particles\silencer_smoke_particles_00
+
+grenade_class                            = ammo_m209, ammo_m209_bad, ammo_m209_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 111
+grenade_launcher_y                       = 34
+grenade_vel                              = 76
+launch_speed                             = 76
+
+hit_impulse                              = 37
+hit_power                                = 0.76, 0.76, 0.76, 0.76
+hit_type                                 = fire_wound
+fire_distance                            = 1000
+bullet_speed                             = 845
+rpm                                      = 725
+rpm_empty_click                          = 200
+
+use_aim_bullet                           = false
+time_to_aim                              = 0.0 ;  2.0
+zoom_dof                                 = 0.5, 1, 180
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.2
+reload_dof                               = 0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 6.0
+fire_dispersion_base                     = 0.21
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.6
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.072
+
+condition_queue_shot_dec                 = 0.0009
+condition_shot_dec                       = 0.0009
+
+cam_return                               = 0
+cam_relax_speed                          = 5
+cam_dispersion                           = 1.5
+cam_dispersion_frac                      = 0.7
+cam_dispersion_inc                       = 0.0775
+cam_max_angle                            = 60.0
+cam_max_angle_horz                       = 10.0
+cam_step_angle_horz                      = 3.0
+zoom_cam_relax_speed                     = 5
+zoom_cam_dispersion                      = 1.2
+zoom_cam_dispersion_frac                 = 1.0
+zoom_cam_dispersion_inc                  = 0.0675
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 10.0
+zoom_cam_step_angle_horz                 = 2
+
+PDM_disp_accel_factor                    = 2.0
+PDM_disp_base                            = 0.5
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 2.0
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 360
+holder_fov_modifier                      = 1.00
+holder_range_modifier                    = 1.00
+min_radius                               = 30
+max_radius                               = 50
+
+kill_msg_x                               = 175
+kill_msg_y                               = 0
+kill_msg_width                           = 82
+kill_msg_height                          = 28
+
+
+[wpn_mk14_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_m14\wpn_mk14_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = -0.062, -0.17, 0.1
+hands_position_16x9                      = -0.062, -0.17, 0.1
+hands_orientation                        = 0.55, 2.4, 0.15
+hands_orientation_16x9                   = 0.55, 2.4, 0.15
+
+aim_hud_offset_pos                       = -0.0897, 0.067, -0.28
+aim_hud_offset_pos_16x9                  = -0.0897, 0.067, -0.28
+aim_hud_offset_rot                       = 0.0305, 0.0088, -0.005
+aim_hud_offset_rot_16x9                  = 0.0305, 0.0088, -0.005
+
+gl_hud_offset_pos                        = 0, 0, 0
+gl_hud_offset_pos_16x9                   = 0, 0, 0
+gl_hud_offset_rot                        = 0, 0, 0
+gl_hud_offset_rot_16x9                   = 0, 0, 0
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = lancew_m14_holster
+anm_idle                                 = lancew_m14_idle
+anm_idle_aim                             = lancew_m14_idle_aim, idle_aim
+anm_idle_aim_moving                      = lancew_m14_moving, idle, 0.75
+anm_idle_aim_moving_crouch               = lancew_m14_moving, idle, 0.7
+anm_idle_moving                          = lancew_m14_moving
+anm_idle_sprint                          = lancew_m14_sprint
+anm_reload                               = lancew_m14_reload, reload
+anm_shots                                = lancew_m14_shoot, shoot
+anm_show                                 = lancew_m14_draw
+
+shell_bone                               = wpn_body
+shell_dir                                = 0, 1, 0
+shell_point                              = 0.025, 0.055, 0.221
+
+fire_bone                                = wpn_body
+fire_point                               = 0, 0.070908, 0.872161
+
+freelook_z_offset_mul					 = 0.4
+
+;------------------------------------------------------------------------------------------------
+[wpn_mk14_ac10632]:wpn_mk14
+$spawn                                   = "weapons\mk14_ac10632"
+
+inv_weight                               = 5.21
+
+1icon_layer                              = ac10632
+1icon_layer_x                            = 90
+1icon_layer_y                            = 1
+
+hud                                      = wpn_mk14_ac10632_hud
+visual                                   = dynamics\weapons\wpn_m14\wpn_mk14_barska.ogf
+
+
+[wpn_mk14_ac10632_hud]:wpn_mk14_hud
+item_visual                              = anomaly_weapons\wpn_m14\wpn_mk14_barska_hud.ogf
+
+aim_hud_offset_pos                       = -0.08942,0.0398,-0.28
+aim_hud_offset_pos_16x9                  = -0.08942,0.0398,-0.28
+
+;------------------------------------------------------------------------------------------------
+[wpn_mk14_acog]:wpn_mk14
+$spawn                                   = "weapons\mk14_acog"
+
+inv_weight                               = 5.45
+
+1icon_layer                              = acog
+1icon_layer_x                            = 81
+1icon_layer_y                            = -1
+
+hud                                      = wpn_mk14_acog_hud
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.3
+
+
+[wpn_mk14_acog_hud]:wpn_mk14_ac10632_hud,hud_low_interia
+item_visual                              = anomaly_weapons\wpn_m14\wpn_mk14_acog_hud.ogf
+
+aim_hud_offset_pos                       = -0.089405, 0.043055, -0.345
+aim_hud_offset_pos_16x9                  = -0.089405, 0.043055, -0.345
+aim_hud_offset_rot                       = 0.0295, 0.0087, -0.0081
+aim_hud_offset_rot_16x9                  = 0.0295, 0.0087, -0.0081
+
+;------------------------------------------------------------------------------------------------
+[wpn_mk14_c-more]:wpn_mk14
+$spawn                                   = "weapons\mk14_c-more"
+
+inv_weight                               = 5.4
+
+1icon_layer                              = c-more
+1icon_layer_x                            = 90
+1icon_layer_y                            = 1
+
+hud                                      = wpn_mk14_c-more_hud
+visual                                   = dynamics\weapons\wpn_m14\wpn_mk14_c-more.ogf
+
+[wpn_mk14_c-more_hud]:wpn_mk14_hud
+item_visual                              = anomaly_weapons\wpn_m14\wpn_mk14_c-more_hud.ogf
+
+aim_hud_offset_pos                       = -0.0897,0.0385,-0.28
+aim_hud_offset_pos_16x9                  = -0.0897,0.0385,-0.28
+
+;------------------------------------------------------------------------------------------------
+[wpn_mk14_eot]:wpn_mk14
+$spawn                                   = "weapons\mk14_eot"
+
+inv_weight                               = 5.4
+
+1icon_layer                              = eot
+1icon_layer_x                            = 88
+1icon_layer_y                            = -1
+
+hud                                      = wpn_mk14_eot_hud
+visual                                   = dynamics\weapons\wpn_m14\wpn_mk14_eot.ogf
+
+
+[wpn_mk14_eot_hud]:wpn_mk14_hud
+item_visual                              = anomaly_weapons\wpn_m14\wpn_mk14_eot_hud.ogf
+
+aim_hud_offset_pos                       = -0.0894, 0.0317, -0.28
+aim_hud_offset_pos_16x9                  = -0.0894, 0.0317, -0.28
+

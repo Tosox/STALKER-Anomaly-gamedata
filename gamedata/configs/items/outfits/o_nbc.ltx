@@ -1,0 +1,434 @@
+;--------------------------------------------------------------------------
+
+[nbc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\nbc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_neutral\stalker_neutral_2_gp5.ogf
+		player_hud_section            = actor_hud_loner_nbc
+		character_portrait            = ui_inGame2_neutral_2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = nbc_outfit_name
+		inv_name_short                = nbc_outfit_name
+		description                   = nbc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 314
+		upgr_icon_y                   = 0
+		upgr_icon_width               = 308
+		upgr_icon_height              = 134
+		upgrades                      = up_gr_firstab_sunrise_3, up_gr_seconab_sunrise_3, up_gr_thirdab_sunrise_3, up_gr_fourtab_sunrise_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_extra_1
+        
+		community                     = stalker
+		kind                          = o_medium
+		cost                          = 63280
+		inv_weight                    = 15.2
+		additional_inventory_weight   = 32
+		additional_inventory_weight2  = 32
+		artefact_count                = 2
+		immunities_sect               = sect_nbc_outfit_immunities
+		repair_type                   = outfit_light
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.14
+		shock_protection              = 1.2
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.14
+		wound_protection              = 0.21
+		fire_wound_protection         = 0.27
+
+[sect_nbc_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+		
+;--------------------------------------------------------------------------
+
+[bandit_nbc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\bandit_nbc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\bandit_sun_outfit
+		actor_visual                  = actors\stalker_bandit\stalker_bandit_2a_gp5.ogf
+		npc_visual                    = actors\stalker_bandit\stalker_bandit_2a_gp5.ogf
+		player_hud_section            = actor_hud_bandit_nbc
+		character_portrait            = ui_inGame2_bandit_2a_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = bandit_nbc_outfit_name
+		inv_name_short                = bandit_nbc_outfit_name
+		description                   = bandit_nbc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 1272
+		upgr_icon_y                   = 389
+		upgr_icon_width               = 285
+		upgr_icon_height              = 109
+		upgrades                      = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1, up_gr_fourtab_sts_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_extra_1
+        
+		community                     = bandit
+		kind                          = o_medium
+		cost                          = 66340
+		inv_weight                    = 14.5
+		additional_inventory_weight   = 31
+		additional_inventory_weight2  = 31
+		artefact_count                = 1
+		immunities_sect               = sect_bandit_nbc_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.23
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.14
+		shock_protection              = 1.2
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.14
+		wound_protection              = 0.21
+		fire_wound_protection         = 0.27
+
+[sect_bandit_nbc_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+
+;--------------------------------------------------------------------------
+
+[cs_nbc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\cs_nbc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\cs_light_outfit
+		actor_visual                  = actors\stalker_nebo\stalker_nebo_s_gp5.ogf
+		player_hud_section            = actor_hud_cs_nbc
+		character_portrait            = ui_inGame2_csky_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = cs_nbc_outfit_name
+		inv_name_short                = cs_nbc_outfit_name
+		description                   = cs_nbc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 12
+		upgr_icon_x                   = 3438
+		upgr_icon_y                   = 745
+		upgr_icon_width               = 312
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_sunrise_3, up_gr_seconab_sunrise_3, up_gr_thirdab_sunrise_3, up_gr_fourtab_sunrise_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_extra_1
+        
+		community                     = csky
+		kind                          = o_medium
+		cost                          = 63995
+		inv_weight                    = 16
+		additional_inventory_weight   = 33
+		additional_inventory_weight2  = 33
+		artefact_count                = 3
+		immunities_sect               = sect_cs_nbc_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.23
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.3
+		shock_protection              = 0.9
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.07
+		telepatic_protection          = 0
+		strike_protection             = 0.25
+		explosion_protection          = 0.22
+		wound_protection              = 0.21
+		fire_wound_protection         = 0.25
+
+[sect_cs_nbc_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.047
+		explosion_immunity            = 0.15
+		fire_wound_immunity           = 0.033
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+ 
+;--------------------------------------------------------------------------
+
+[monolith_nbc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\monolith_nbc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\monolith_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith2_gp5.ogf
+		player_hud_section            = actor_hud_monolith_nbc
+		character_portrait            = ui_inGame2_monolith2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = monolith_nbc_outfit_name
+		inv_name_short                = monolith_nbc_outfit_name
+		description                   = monolith_nbc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 15
+		upgr_icon_x                   = 3438
+		upgr_icon_y                   = 608
+		upgr_icon_width               = 308
+		upgr_icon_height              = 136
+		upgrades                      = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1, up_gr_fourtab_sts_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_extra_1
+        
+		community                     = monolith
+		kind                          = o_medium
+		cost                          = 68120
+		inv_weight                    = 8.2
+		additional_inventory_weight   = 28
+		additional_inventory_weight2  = 28
+		artefact_count                = 3
+		immunities_sect               = sect_monolith_nbc_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 0.17
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.19
+		wound_protection              = 0.19
+		fire_wound_protection         = 0.19
+
+[sect_monolith_nbc_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+ 
+;--------------------------------------------------------------------------
+
+[nbc_dolg_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\nbc_dolg_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_dolg\stalker_dolg_2a_gp5.ogf
+		player_hud_section            = actor_hud_duty_nbc
+		character_portrait            = ui_inGame2_neutral_2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = nbc_dolg_outfit_name
+		inv_name_short                = nbc_dolg_outfit_name
+		description                   = nbc_dolg_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 6
+		upgr_icon_x                   = 0
+		upgr_icon_y                   = 160
+		upgr_icon_width               = 304
+		upgr_icon_height              = 136
+		upgrades                      = up_gr_firstab_ps5_1, up_gr_seconab_ps5_1, up_gr_thirdab_ps5_1, up_gr_fourtab_ps5_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_ps5_extra_1
+        
+		community                     = dolg
+		kind                          = o_medium
+		cost                          = 69280
+		inv_weight                    = 12
+		additional_inventory_weight   = 30
+		additional_inventory_weight2  = 30
+		artefact_count                = 2
+		immunities_sect               = sect_nbc_dolg_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.5
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.27
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.09
+		shock_protection              = 0.5
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.022
+		telepatic_protection          = 0
+		strike_protection             = 0.3
+		explosion_protection          = 0.4
+		wound_protection              = 0.33
+		fire_wound_protection         = 0.25
+
+[sect_nbc_dolg_outfit_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.029
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.029
+
+;--------------------------------------------------------------------------
+
+[nbc_freedom_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\nbc_freedom_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_freedom\stalker_freedom_2a_gp5.ogf
+		player_hud_section            = actor_hud_freedom_nbc
+		character_portrait            = ui_inGame2_neutral_2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = nbc_freedom_outfit_name
+		inv_name_short                = nbc_freedom_outfit_name
+		description                   = nbc_freedom_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 3
+		upgr_icon_x                   = 0
+		upgr_icon_y                   = 451
+		upgr_icon_width               = 310
+		upgr_icon_height              = 128
+		upgrades                      = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1, up_gr_fourtab_sts_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_extra_1
+        
+		community                     = freedom
+		kind                          = o_medium
+		cost                          = 68700
+		inv_weight                    = 10
+		additional_inventory_weight   = 28
+		additional_inventory_weight2  = 28
+		artefact_count                = 1
+		immunities_sect               = sect_nbc_freedom_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.18
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.09
+		shock_protection              = 0.2
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.12
+		telepatic_protection          = 0
+		strike_protection             = 0.2
+		explosion_protection          = 0.21
+		wound_protection              = 0.32
+		fire_wound_protection         = 0.25
+
+[sect_nbc_freedom_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+
+;--------------------------------------------------------------------------
+
+[nbc_merc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\nbc_merc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_merc\stalker_merc_2a_gp5.ogf
+		player_hud_section            = actor_hud_merc_nbc
+		character_portrait            = ui_inGame2_neutral_2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = nbc_merc_outfit_name
+		inv_name_short                = nbc_merc_outfit_name
+		description                   = nbc_merc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 9
+		upgr_icon_x                   = 3439
+		upgr_icon_y                   = 318
+		upgr_icon_width               = 301
+		upgr_icon_height              = 141
+		upgrades                      = up_gr_firstab_ps5_1, up_gr_seconab_ps5_1, up_gr_thirdab_ps5_1, up_gr_fourtab_ps5_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_ps5_extra_1
+        
+		community                     = killer
+		kind                          = o_medium
+		cost                          = 68280
+		inv_weight                    = 14
+		additional_inventory_weight   = 32
+		additional_inventory_weight2  = 32
+		artefact_count                = 1
+		immunities_sect               = sect_nbc_merc_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.23
+		hit_fraction_actor            = 0.28
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.35
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.0327
+		shock_protection              = 0.5868
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.0222
+		telepatic_protection          = 0.0000
+		strike_protection             = 0.32
+		explosion_protection          = 0.4155
+		wound_protection              = 0.3125
+		fire_wound_protection         = 0.3224
+
+[sect_nbc_merc_outfit_immunities]
+		burn_immunity				= 0.1
+		strike_immunity				= 0.0
+		shock_immunity				= 0.02
+		wound_immunity				= 0.05
+		radiation_immunity			= 0.0
+		telepatic_immunity			= 0.0
+		chemical_burn_immunity		= 0.05
+		explosion_immunity			= 0.13
+		fire_wound_immunity			= 0.04

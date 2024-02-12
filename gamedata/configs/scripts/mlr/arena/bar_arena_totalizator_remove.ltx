@@ -1,0 +1,32 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info  =  {+total_duty_one_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_freeman_one_h) =remove_npc(total_duty_one_h)%
+on_info1 =  {+total_freeman_one_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_duty_one_h) =remove_npc(total_freeman_one_h)%
+on_info2 =  {+total_stalker_left_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_stalker_right_one) =remove_npc(total_stalker_left_one)%
+on_info3 =  {+total_stalker_right_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_stalker_left_one) =remove_npc(total_stalker_right_one)%
+on_info4 =  {+total_group_stalker_1_death +total_group_stalker_2_death +total_group_stalker_3_death +total_group_stalker_4_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_group_stalkers_1) =remove_npc(total_group_stalkers_2) =remove_npc(total_group_stalkers_3) =remove_npc(total_group_stalkers_4) =remove_npc(total_group_bandits_1) =remove_npc(total_group_bandits_2) =remove_npc(total_group_bandits_3) =remove_npc(total_group_bandits_4)%
+on_info5 =  {+total_group_bandit_1_death +total_group_bandit_2_death +total_group_bandit_3_death +total_group_bandit_4_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_group_stalkers_1) =remove_npc(total_group_stalkers_2) =remove_npc(total_group_stalkers_3) =remove_npc(total_group_stalkers_4) =remove_npc(total_group_bandits_1) =remove_npc(total_group_bandits_2) =remove_npc(total_group_bandits_3) =remove_npc(total_group_bandits_4)%
+on_info6 =  {+total_stalker_one_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_soldier_one_n) =remove_npc(total_stalker_one_n)%
+on_info7 =  {+total_soldier_one_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_stalker_one_n) =remove_npc(total_soldier_one_n)%
+on_info8 =  {+total_stalker_one_with_mutant_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_pseudodog_one_with_human) =remove_npc(total_stalker_one_with_mutant)%
+on_info9 =  {+total_pseudodog_one_with_human_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_stalker_one_with_mutant) =remove_npc(total_pseudodog_one_with_human)%
+on_info10 = {+total_duty_one_with_zombies_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_duty_one_with_zombies) =remove_npc(total_zombied_with_dolg_1) =remove_npc(total_zombied_with_dolg_2) =remove_npc(total_zombied_with_dolg_3)%
+on_info11 = {+total_zombied_with_dolg_1_death +total_zombied_with_dolg_2_death +total_zombied_with_dolg_3_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_duty_one_with_zombies) =remove_npc(total_zombied_with_dolg_1) =remove_npc(total_zombied_with_dolg_2) =remove_npc(total_zombied_with_dolg_3)%
+on_info12 = {+total_group_bandits_with_bloodsucker_1_death +total_group_bandits_with_bloodsucker_2_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_group_bandits_with_bloodsucker_1) =remove_npc(total_group_bandits_with_bloodsucker_2) =remove_npc(total_bloodsucker_with_group_bandits)%
+on_info13 = {+total_bloodsucker_with_group_bandits_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_group_bandits_with_bloodsucker_1) =remove_npc(total_group_bandits_with_bloodsucker_2) =remove_npc(total_bloodsucker_with_group_bandits)%
+on_info14 = {+total_two_soldiers_with_burer_1_death +total_two_soldiers_with_burer_2_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_burer_with_two_soldiers) =remove_npc(total_two_soldiers_with_burer_1) =remove_npc(total_two_soldiers_with_burer_2)%
+on_info15 = {+total_burer_with_two_soldiers_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_burer_with_two_soldiers) =remove_npc(total_two_soldiers_with_burer_1) =remove_npc(total_two_soldiers_with_burer_2)%
+on_info16 = {+total_snork_left_g_death +remove_is_reload}   sr_idle@reload %=remove_npc(total_snork_right_g) =remove_npc(total_snork_left_g)%
+on_info17 = {+total_snork_right_g_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_snork_right_g) =remove_npc(total_snork_left_g)%
+on_info18 = {+total_bloodsucker_left_death +remove_is_reload}   sr_idle@reload %=remove_npc(total_bloodsucker_left) =remove_npc(total_bloodsucker_right)%
+on_info19 = {+total_bloodsucker_right_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_bloodsucker_left) =remove_npc(total_bloodsucker_right)%
+on_info20 = {+total_chimera_left_death +remove_is_reload}   sr_idle@reload %=remove_npc(total_chimera_left) =remove_npc(total_chimera_right)%
+on_info21 = {+total_chimera_right_death +remove_is_reload}  sr_idle@reload %=remove_npc(total_chimera_left) =remove_npc(total_chimera_right)%
+
+[sr_idle@reload]
+on_info = sr_idle@over
+
+[sr_idle@over]
+on_info = {+begin_the_battle} sr_idle@idle

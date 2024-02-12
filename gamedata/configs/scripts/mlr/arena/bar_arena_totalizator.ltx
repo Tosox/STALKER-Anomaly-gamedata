@@ -1,0 +1,29 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_info  =  {+total_fight_1 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_stalker_left_one:left_mlr_1_walk_3:0) =spawn_object(total_stalker_right_one:right_mlr_1_walk_2:0)%
+on_info1 =  {+total_fight_2 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_group_bandits_1:right_mlr_1_walk_1) =spawn_object(total_group_bandits_2:right_mlr_1_walk_2) =spawn_object(total_group_bandits_3:right_mlr_1_walk_3) =spawn_object(total_group_bandits_4:right_mlr_1_walk_4) =spawn_object(total_group_stalkers_1:left_mlr_1_walk_1) =spawn_object(total_group_stalkers_2:left_mlr_1_walk_2) =spawn_object(total_group_stalkers_3:left_mlr_1_walk_3) =spawn_object(total_group_stalkers_4:left_mlr_1_walk_4)%  
+on_info2 =  {+total_fight_3 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_duty_one_h:left_mlr_1_walk_3:0) =spawn_object(total_freeman_one_h:right_mlr_1_walk_2:0)%  
+on_info3 =  {+total_fight_4 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_stalker_one_n:right_mlr_1_walk_2:0) =spawn_object(total_soldier_one_n:left_mlr_1_walk_2:0)%
+on_info4 =  {+total_fight_5 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_stalker_one_with_mutant:left_mlr_1_walk_2:0) =spawn_object(total_pseudodog_one_with_human:right_mlr_1_walk_2:0)%  
+on_info5 =  {+total_fight_6 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_duty_one_with_zombies:right_mlr_1_walk_2:0) =spawn_object(total_zombied_with_dolg_1:left_mlr_1_walk_1:0) =spawn_object(total_zombied_with_dolg_2:left_mlr_1_walk_2:0) =spawn_object(total_zombied_with_dolg_3:left_mlr_1_walk_3:0)%  
+on_info6 =  {+total_fight_7 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_group_bandits_with_bloodsucker_1:left_mlr_1_walk_1:0) =spawn_object(total_group_bandits_with_bloodsucker_2:left_mlr_1_walk_4:0)  =spawn_object(total_bloodsucker_with_group_bandits:right_mlr_1_walk_2:0)%   
+on_info7 =  {+total_fight_9 +totaliz_money_has_gone}  sr_idle@teleport %=spawn_object(total_burer_with_two_soldiers:left_mlr_1_walk_2:0) =spawn_object(total_two_soldiers_with_burer_1:right_mlr_1_walk_2:0) =spawn_object(total_two_soldiers_with_burer_2:right_mlr_1_walk_3:0)%  
+on_info8 =  {+total_fight_10 +totaliz_money_has_gone} sr_idle@teleport %=spawn_object(total_snork_left_g:bar_arena_wait_walk_3:0) =spawn_object(total_snork_right_g:t_look:0)%  
+on_info9 =  {+total_fight_11 +totaliz_money_has_gone} sr_idle@teleport %=spawn_object(total_bloodsucker_left:bar_arena_wait_walk_3:0) =spawn_object(total_bloodsucker_right:t_look:0)%  
+on_info10 = {+total_fight_12 +totaliz_money_has_gone} sr_idle@teleport %=spawn_object(total_chimera_left:bar_arena_wait_walk_3:0) =spawn_object(total_chimera_right:t_look:0)%  
+
+[sr_idle@teleport]
+on_info  = {+total_fight_is_over} sr_idle@timer
+on_info1 = {+total_group_stalker_1_death +total_group_stalker_2_death +total_group_stalker_3_death +total_group_stalker_4_death} sr_idle@timer %+total_fight_is_over +total_group_stalkers_death%
+on_info2 = {+total_group_bandit_1_death +total_group_bandit_2_death +total_group_bandit_3_death +total_group_bandit_4_death} sr_idle@timer %+total_fight_is_over +total_group_bandits_death%
+on_info3 = {+total_zombied_with_dolg_1_death +total_zombied_with_dolg_2_death +total_zombied_with_dolg_3_death} sr_idle@timer %+total_fight_is_over +total_zombies_with_dolg_death%
+on_info4 = {+total_group_bandits_with_bloodsucker_1_death +total_group_bandits_with_bloodsucker_2_death} sr_idle@timer %+total_fight_is_over +total_group_bandits_with_bloodsucker_done%
+on_info5 = {+total_two_soldiers_with_burer_1_death +total_two_soldiers_with_burer_2_death} sr_idle@timer %+total_fight_is_over +total_two_soldiers_with_burer_done%
+
+[sr_idle@timer]
+on_timer = 1500 | sr_idle@over %=teleport_for_totaliz_out =disable_begin_the_battle +remove_is_reload%
+
+[sr_idle@over]
+on_info = {+begin_the_battle} sr_idle@idle

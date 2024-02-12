@@ -1,0 +1,38 @@
+function on_game_start()
+	RegisterScriptCallback("actor_on_footstep",actor_on_footstep)
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+end
+
+function actor_on_footstep(mat)
+	if string.find(mat,"water") then
+		save_var(db.actor,'grw_in_water',true)
+	else
+		save_var(db.actor,'grw_in_water',nil)
+	end
+end
+
+function actor_on_update(_,delta)
+	if load_var(db.actor,"grw_in_water") == true then
+		local h = hit()
+		h.impulse = 0
+		h.direction = VEC_Z
+		h.draftsman = db.actor
+		h.type = hit.radiation
+		h.power = delta * get_damage_ms()
+		db.actor:hit(h)
+	end
+end
+
+local settings
+function get_damage_ms()
+	if not settings then
+		local i = ini_file("plugins\\radioactive_water_settings.ltx")
+		settings = utils_data.parse_ini_section_to_array(i, 'settings')
+	end
+	
+	if not (settings and settings.enabled == "true") then 
+		return 0 
+	end
+	
+	return tonumber(settings[level.name()]) or 0
+end

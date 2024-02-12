@@ -1,0 +1,715 @@
+
+<specific_character id="sim_default_monolith_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2b_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith0_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_0.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_preacher</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_monolith_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2b_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith0_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_1_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_1_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_1_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_1_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_1.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_preacher</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_monolith_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith1gas</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2b_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith0_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith1_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith2_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_2.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_preacher</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_monolith_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_mono_old</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_3</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_3a</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith3a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_3</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith3b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolith_proto</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_4_proto</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_stalker_bandit_skat</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_soldier_4_monolith</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_npc_u_stalker_mo_head_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_mo_head_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_preacher</visual>
+</specific_character>
+
+<specific_character id="sim_default_monolith_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_3.xml"
+    <icon>ui_inGame2_monolit_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_nauchni3</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_monolith_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_4</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_4a</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_4</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_3</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_3a</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith3a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_monolith_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_3</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith3b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolith_proto</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_4_proto</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_stalker_bandit_skat</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_soldier_4_monolith</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolith_exoseva</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_exoseva</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_4_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_2</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_preacher</visual>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_4_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_4</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith_6</visual>
+</specific_character>
+
+<specific_character id="sim_default_monolith_4_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_nosorog</icon>
+	<terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith4nosorog</visual>
+</specific_character>
+
+<specific_character id="sim_default_monolith_4_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_4.xml"
+    <icon>ui_inGame2_monolit_1</icon>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_nauchni3</visual>
+</specific_character>
+    
+	
+    <!--  monolith sniper  -->
+<specific_character id="sim_monolith_sniper" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolit_2</icon>
+    <map_icon x="3" y="0"></map_icon>
+    <bio>No data. He's dangerous.</bio>
+    <class>sim_monolith_sniper</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <rank>3886</rank>
+    <reputation>-5000</reputation>
+    <panic_threshold>0.0</panic_threshold>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <crouch_type>-1</crouch_type>
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+    <supplies></supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+    <!--  monolith rg6  -->
+<specific_character id="sim_monolith_specnaz_rg6" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolit_2</icon>
+    <map_icon x="3" y="0"></map_icon>
+    <bio>No data. He's dangerous.</bio>
+    <class>sim_monolith_specnaz_rg6</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <rank>6169</rank>
+    <reputation>-5000</reputation>
+    <snd_config>characters_voice\human\monolith_3\</snd_config>
+    <crouch_type>-1</crouch_type>
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+    <supplies></supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+    <!--  monolith gauss rifle  -->
+<specific_character id="sim_monolith_sniper_gauss" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolit_2</icon>
+    <map_icon x="3" y="0"></map_icon>
+    <bio>No data. He's dangerous.</bio>
+    <class>sim_monolith_sniper_gauss</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <rank>3982</rank>
+    <reputation>-5000</reputation>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <crouch_type>-1</crouch_type>
+    <panic_threshold>0.0</panic_threshold>
+    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
+    <supplies></supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+	
+	
+	<!-- Special -->
+<specific_character id="sim_default_monolith_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_mono_old</icon>
+    <class>sim_default_monolith_trader</class>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <class>sim_default_monolith_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <visual>actors\stalker_monolith\stalker_monolith2_gp5</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_mono_old</icon>
+    <class>sim_default_monolith_medic</class>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_monolith_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_monolith_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_mono_old</icon>
+    <class>sim_default_monolith_barman</class>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <visual>actors\stalker_monolith\stalker_monolith_2_old</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+	
+<specific_character id="sim_default_monolith_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolith2_gp5</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_monolith_dead</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <rank>5341</rank>
+    <reputation>-5000</reputation>
+    <visual>actors\stalker_monolith\stalker_monolith0_gp5</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_monolith_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolith1gas</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_monolith_dead</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 -->
+    <rank>6264</rank>
+    <reputation>-5000</reputation>
+    <visual>actors\stalker_monolith\stalker_monolith1</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_monolith_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolit_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_monolith_dead</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <rank>13591</rank>
+    <reputation>-5000</reputation>
+    <visual>actors\stalker_monolith\stalker_monolith_3</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<specific_character id="sim_default_monolith_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_monolit_1</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_monolith_dead</class>
+    <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\monolith_3\</snd_config><!-- 1 --><!--2-->
+    <rank>13129</rank>
+    <reputation>-5000</reputation>
+    <visual>actors\stalker_monolith\stalker_monolith_1</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+ 

@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="voronin_living_legend_0">
+		<text>General, Colonel Petrenko said you're looking for men to track down some stalker.</text>
+	</string>
+	<string id="voronin_living_legend_1">
+		<text>Indeed. Difficult times have come. Emissions are frequent and devastating. The Miracle Machine and the Brain Scorcher are active again. The Monolith relentlessly attempts to expand their territory. But an old ally, a legendary stalker who had almost managed to defeat them all returned. I knew him as the Marked One, although his true name is Strelok. While he was not a member of Duty, he was a determined warrior, and one of the few to assault the CNPP and live to tell the tale. After all this time, he may possess the secret knowledge required to destroy the Zone once and for all. Find him, or at least learn what he knows, so we can provide the manpower and resolve to achieve that goal.</text>
+	</string>
+	<string id="voronin_living_legend_2">
+		<text>I will track him down, commander.</text>
+	</string>
+	<string id="voronin_living_legend_21">
+		<text>I apologise commander, I'm not ready for such an important mission right now.</text>
+	</string>
+	<string id="voronin_living_legend_3">
+		<text>Good. Clear Sky's leader was eager to help us in our search, so luckily you have a lead to start off of: an old friend of Strelok, Doctor, currently lives in a remote corner of the Great Swamps. It looks fenced off, but you should be able to find a gap if you pay attention. Here are the coordinates. Take something to protect yourself from radiation, you'll need it. Find Doctor. Learn Strelok's whereabouts from him.</text>
+	</string>
+	
+	<string id="voronin_living_legend_finish_0">
+		<text>I've returned, commander.</text>
+	</string>
+	<string id="voronin_living_legend_finish_1">
+		<text>At last. That alone is impressive. However, I assume you have not returned empty-handed.</text>
+	</string>
+	<string id="voronin_living_legend_finish_2">
+		<text>That's true. I met Strelok and his team. Together, we struck a heavy blow to the Monolith forces and retrieved an extremely rare artefact from the Sarcophagus itself. Strelok revealed some of the Zone's secrets to me and gave me this pendrive. It contains more information than I could ever report back to you.</text>
+	</string>
+	<string id="voronin_living_legend_finish_3">
+		<text>Excellent. Did you discover the way to purge the Zone once and for all?</text>
+	</string>
+	<string id="voronin_living_legend_finish_4">
+		<text>I'm afraid it might be impossible. At least for now. Strelok had tried to do that a few years ago, but failed spectacularly. He's still looking for a way to achieve this. He advised caution.</text>
+	</string>
+	<string id="voronin_living_legend_finish_5">
+		<text>I see. We shall remain devoted to our cause, yet level-headed in our approach. Wars are not won overnight. We will continue on our quest. Meanwhile, you have successfully finished yours. Your performance was praiseworthy and you deserve a reward.</text>
+	</string>
+	
+	<string id="dushman_living_legend_0">
+		<text>So, what's this super important contract about?</text>
+	</string>
+	<string id="dushman_living_legend_1">
+		<text>A little hide-and-seek with a substantial reward involved. Our agents reported that a famous stalker named Strelok had reappeared. Strelok's a local legend of sorts. He explored every nook and cranny of the Zone, disabled the psy-installations and fought the Monolith. Some say he visited the Wish Granter several times. Some of that's folklore, some of that's been already confirmed by our people. If at least a half of the things they say about him's true, then he's got some pretty valuable knowledge to share. All I want you to do is to find him and encourage him to share that knowledge. No, no need to get violent... I know, right. Anyway, I'll pay you premium for your effort. Interested?</text>
+	</string>
+	<string id="dushman_living_legend_2">
+		<text>Now that sounds like a solid mission.</text>
+	</string>
+	<string id="dushman_living_legend_21">
+		<text>Sorry, not interested right now.</text>
+	</string>
+	<string id="dushman_living_legend_3">
+		<text>Ah, right, here's a thing. Free stalkers and mercs aren't exactly best pals, as you might know. Find a good disguise and pretend you're a friend. Earn their trust before you reveal your true colours, or don't reveal them at all. Make sure you get the intel before they start shooting you in the face. Understood?</text>
+	</string>
+	<string id="dushman_living_legend_4">
+		<text>Undercover work, huh? I'll take up the challenge.</text>
+	</string>
+	<string id="dushman_living_legend_5">
+		<text>I knew you'd like it. Go find Strelok's old friend, Doctor. Cold sold the old man's coordinates to us. Don't worry, they're accurate. Expensive, but Doctor's the best lead we could get. Take your wits, take some anti-rads, bring back the intel. Good hunting.</text>
+	</string>
+	
+	<string id="dushman_living_legend_finish_0">
+		<text>Mission accomplished.</text>
+	</string>
+	<string id="dushman_living_legend_finish_1">
+		<text>You made it, huh? I knew you're a tough cookie. Okay, tell me what you've got.</text>
+	</string>
+	<string id="dushman_living_legend_finish_2">
+		<text>Aside from nightmare material for several years? I accompanied Strelok and his men on their quest into the Sarcophagus. In the meantime, I discovered quite a lot about the Zone. Found some top secret documents in clandestine labs. Strelok took them, but he told me a lot. And gave me this pendrive. It contains a few dozen encrypted gigabytes of info about the Zone's dirty little secrets.</text>
+	</string>
+	<string id="dushman_living_legend_finish_3">
+		<text>That's definitely something I can work with. Good job. Our client'll know what to do with this.</text>
+	</string>
+	<string id="dushman_living_legend_finish_4">
+		<text>Uhm, can we trust our client with all that info?</text>
+	</string>
+	<string id="dushman_living_legend_finish_5">
+		<text>Trust? What are you talking about? Don't worry, we aren't selling this to any dictator or anything. We'd all like to earn some money but without blowing up the planet in the process, right? Speaking of money, you deserve a reward. If you get any nightmares, just use the money as a pillow. It should help.</text>
+	</string>
+	
+	<string id="sidorovich_living_legend_0">
+		<text>Wait, what's this commotion about Strelok?</text>
+	</string>
+	<string id="sidorovich_living_legend_1">
+		<text>You see, back in 2012 Barkeep and I organised a campaign to gain access to the centre of the Zone. A stalker called Marked One, or rather Strelok, helped us a lot, he disabled the Brain Scorcher. The thing is, he's never returned from the CNPP. We thought he got swallowed up by a spatial anomaly, or kidnapped by Spetsnaz. But apparently Strelok's back in the Zone, more active than ever. And I bet he's now privy to some top secret knowledge. Valuable knowledge. How about you investigate the rumours of his return, find him and obtain that knowledge?</text>
+	</string>
+	<string id="sidorovich_living_legend_2">
+		<text>Sounds exciting. Alrighty, I'll try to track him down.</text>
+	</string>
+	<string id="sidorovich_living_legend_21">
+		<text>Wow, that sounds like a lot of hassle. I don't think I'm ready right now.</text>
+	</string>
+	<string id="sidorovich_living_legend_3">
+		<text>Good, good. I can almost see the dollar bills in your eyes. If you're serious, go see Doctor, Strelok's old friend. Spore says he lives in a secluded part of the Great Swamps. A part many people assume to be completely fenced off. They're wrong, of course. Take some extra precautions against radiation, then follow up on our lead. Hopefully things will be clear to you from there.</text>
+	</string>
+	
+	<string id="sidorovich_living_legend_finish_0">
+		<text>Hey, Sid. Long time no see.</text>
+	</string>
+	<string id="sidorovich_living_legend_finish_1">
+		<text>So, you've finally come back, unlike a certain someone. Did you meet the Marked One?</text>
+	</string>
+	<string id="sidorovich_living_legend_finish_2">
+		<text>I sure did. Even joined his team for a while. He told me many things and I saw a lot with my own eyes, too. I was in the Sarcophagus with him. Turns out the Wish Granter is a fly trap for naive stalkers. Yes, it does exist, but only to lure people into the heart of the Zone, so they can be brainwashed and become zombies or Monolithians. Not a dream but a damn nightmare.</text>
+	</string>
+	<string id="sidorovich_living_legend_finish_3">
+		<text>Oh, I see. Sounds about right. There must've been a reason no stalker has suddenly become the most powerful or the wealthiest man on the planet yet. It'll be easier to discourage rookies from that bullshit with actual proof to back this up. Because you've got some proof, stalker. Right?</text>
+	</string>
+	<string id="sidorovich_living_legend_finish_4">
+		<text>Yeah, not just my word. Strelok gave me a pendrive with a lot of encrypted data. The copy of his findings. Here.</text>
+	</string>
+	<string id="sidorovich_living_legend_finish_5">
+		<text>Excellent job, stalker. You managed to finish what the Marked One had started a few years ago. The Brain Scorcher is inactive again, so we can access the north. And now we know that the Wish Granter is a bait. That should help everyone focus on the real treasures in the depths of the Zone. Great. By the way, here's a reward for you.</text>
+	</string>
+	
+	<string id="cold_living_legend_0">
+		<text>I'm interested in helping you find Strelok. However, I need to know why this is so important to you.</text>
+	</string>
+	<string id="cold_living_legend_1">
+		<text>You see, there's some unfinished business we finally might be able to deal with. When Lebedev decided to conduct the fateful raid on the Chernobyl NPP a few years ago, it was because he thought he'd discovered who was responsible for the sudden increase in emissions. That was Strelok, a mysterious stalker who'd allegedly found a way to the heart of the Zone that bypassed the Brain Scorcher. Clear Sky followed to stop him, and most of them never came back. Thing is, we don't know what exactly happened in there and who was responsible for what. We survivors tried to move on, but there've been rumours recently that Strelok unexpectedly returned. I don't really want to distract you with chasing a ghost, though some of us sure would like a couple of answers.</text>
+	</string>
+	<string id="cold_living_legend_2">
+		<text>Alright, I understand the need for closure. I'd also like to find out more about those events myself.</text>
+	</string>
+	<string id="cold_living_legend_21">
+		<text>I'm not sure, Cold. Maybe it'd be best to simply let Strelok be. I'll think about this.</text>
+	</string>
+	<string id="cold_living_legend_3">
+		<text>Thanks, I appreciate that. Try to find Doctor first, he's Strelok's old companion. I don't like to disturb the old man, but he's our best shot at finding Strelok again. He lives in a remote corner of our swamps, through a hole in what looks like a fenced area. A warning: the radiation there can be nasty if you misstep, so bring something to help deal with that. You wouldn't make it back to Kalancha in time otherwise.</text>
+	</string>
+	
+	<string id="cold_living_legend_finish_0">
+		<text>Hey, Cold. I'm finally back. I think I really understand why most of our guys didn't manage to return from the CNPP campaign. Still, here I am.</text>
+	</string>
+	<string id="cold_living_legend_finish_1">
+		<text>Long time no see. I'm glad you've made it. Have you got any answers?</text>
+	</string>
+	<string id="cold_living_legend_finish_2">
+		<text>Yes. I met and talked with Strelok. He told me that emissions used to be the Zone's defence mechanism. Lebedev was right that Strelok's excursions into the heart of the Zone caused the increase in frequency. Unfortunately, Clear Sky's assault on the CNPP was bound to trigger an even stronger reaction. Basically, they brought their fate upon themselves.</text>
+	</string>
+	<string id="cold_living_legend_finish_3">
+		<text>Oh, I see. We thought we knew so much about the Zone that we could act like its professional wardens... But the Zone defends itself and doesn't want any help. We really got our fingers burnt back then. At least, I'm glad that our current attitude seems to be the correct one. Did you discover anything else?</text>
+	</string>
+	<string id="cold_living_legend_finish_4">
+		<text>Quite a lot, actually. Failed experiments, psychic fields, reality warping, underground labs, all that crazy stuff. Strelok gave me this pendrive. It contains a lot of encrypted data he's collected throughout the years.</text>
+	</string>
+	<string id="cold_living_legend_finish_5">
+		<text>I'm very grateful, stalker. I'm gonna invite the veterans, so we can discuss this properly, preferably with a crate or two of vodka to assuage our grief. I'll hand the pendrive to Kalancha, he'll know what to do. Anyway, here's your reward. We owe you a lot.</text>
+	</string>
+	
+	<string id="lukash_living_legend_0">
+		<text>Okay, so what's this thing about Strelok?</text>
+	</string>
+	<string id="lukash_living_legend_1">
+		<text>A living legend is back among us puny mortals. Strelok's a machine with balls of steel. A few years ago he fought the Monolith maniacs for access to the deep Zone and won. At least for a while, that is. The previous status quo is back, but now he is as well. There're plenty of intriguing stories about the Chernobyl reactor, the Wish Granter and many other things from the centre of the Zone. I'd really like to know what Strelok saw there. The Zone's got a lot to offer, and he must've seen the best of it. So, are you in?</text>
+	</string>
+	<string id="lukash_living_legend_2">
+		<text>That sounds awesome, count me in!</text>
+	</string>
+	<string id="lukash_living_legend_21">
+		<text>Oh, wow. Sorry man, I need to think more about this.</text>
+	</string>
+	<string id="lukash_living_legend_3">
+		<text>That's the spirit. Alrighty, I think talking to Doctor first is a good idea. He used to be one of Strelok's buddies, and the best part is Clear Sky just up and told us where his retirement home is! Find Doctor in the extreme north-west of the Great Swamps and ask him for some pointers on finding Strelok. Pack some drinks and smokes for the road, too. I heard the radioactive anomalies around Doctor are especially rough. Guess he doesn't like being disturbed.</text>
+	</string>
+	
+	<string id="lukash_living_legend_finish_0">
+		<text>Hey Lukash, I'm home.</text>
+	</string>
+	<string id="lukash_living_legend_finish_1">
+		<text>Oh, you're back! Did you have fun on your adventure?</text>
+	</string>
+	<string id="lukash_living_legend_finish_2">
+		<text>Holy shit, man. Sure, I had plenty of fun, especially of the "pissing in my pants" kind of fun. I killed like a hundred Monolith dudes and went with Strelok and his team to the CNPP. I'll be glowing in the dark for weeks. I may even grow a second head or something.</text>
+	</string>
+	<string id="lukash_living_legend_finish_3">
+		<text>Sounds awesome. Did he tell you anything cool about the Zone?</text>
+	</string>
+	<string id="lukash_living_legend_finish_4">
+		<text>Yeah, lots of stuff. Turns out the Zone's some sorta failed experiment thing. A bunch of scientists wanted to make the whole world happy, apparently, but it blew up in their faces spectacularly. Here, he gave me this pendrive with scientific stuff on it.</text>
+	</string>
+	<string id="lukash_living_legend_finish_5">
+		<text>Really? Well, the Zone's making us happy, so it worked anyway. Hell, I can already imagine the government fuming when we publish everything. Great job, bro. You deserve a medal, and this.</text>
+	</string>
+	
+	<string id="sakharov_living_legend_0">
+		<text>Tell me more about the situation with Strelok, Professor.</text>
+	</string>
+	<string id="sakharov_living_legend_1">
+		<text>That brave man helped us immensely several years ago. He managed to deactivate the Miracle Machine on his own, so that we were no longer threatened by its psychic emanations. He even worked as our Chief Scientist Consultant for some time, but sadly that was not to last. Regardless, Strelok was to the centre of the Zone. I shudder to imagine the things he witnessed and experienced in there. He must possess great knowledge about the inner workings of the Zone, perhaps its true origin as well. Young man, do you know what that would mean for the scientific community?</text>
+	</string>
+	<string id="sakharov_living_legend_2">
+		<text>That could be Nobel Prize material. Do you want me to find him?</text>
+	</string>
+	<string id="sakharov_living_legend_21">
+		<text>I apologise Professor, I'm not ready to undertake such a difficult mission right now.</text>
+	</string>
+	<string id="sakharov_living_legend_3">
+		<text>That would be excellent. Professor Kalancha was similarly eager to help in this search. Sadly he couldn't help long, but he suggests we first visit Doctor, Strelok's old companion, to gather more clues on our living legend's whereabouts. Doctor lives in a remote corner of the Great Swamps, which I'll mark for you. Professor Kalancha also said to bring some good radiation protection; Doctor doesn't like being disturbed these days, and his environment reflects that. Let us hope he knows of our old friend's return.</text>
+	</string>
+	
+	<string id="sakharov_living_legend_finish_0">
+		<text>I'm back, Professor.</text>
+	</string>
+	<string id="sakharov_living_legend_finish_1">
+		<text>I am glad you have finally returned. I realise that must have been a great ordeal. I wonder, were you successful on your quest?</text>
+	</string>
+	<string id="sakharov_living_legend_finish_2">
+		<text>Yes. I met and talked with Strelok. After I helped him defeat Monolith forces and raid the CNPP, he told me about the Zone's secrets. Evidently, the Zone is the result of a failed secret experiment that was intended to influence a psychic field that envelops our planet. It was conducted by a group of scientists who had become a collective named Common Consciousness. Their failure caused a rift in the psychic field that spawned the anomalies of the Zone.</text>
+	</string>
+	<string id="sakharov_living_legend_finish_3">
+		<text>I see. We suspected the Zone was man's doing. Some of the information Strelok uncovered a few years ago supported our hypothesis, and now we finally receive a confirmation. Have you got anything concrete to prove this, though?</text>
+	</string>
+	<string id="sakharov_living_legend_finish_4">
+		<text>Yes. Here is the pendrive Strelok gave me. It contains a copy of his many findings, collected from several clandestine labs and secret documents.</text>
+	</string>
+	<string id="sakharov_living_legend_finish_5">
+		<text>Very well. We will analyse and evaluate the data. More than that, we will also consider the way we should handle this information afterward. Nevertheless, you have been of immense help to us. Owing to you we made a great leap toward understanding the Zone.</text>
+	</string>
+	
+	<string id="doctor_living_legend_0">
+		<text>I've heard that Strelok is still alive. Do you know where he is?</text>
+	</string>
+	<string id="doctor_living_legend_1">
+		<text>Strelok? Are you sure?</text>
+	</string>
+	<string id="doctor_living_legend_2">
+		<text>Quite certain. The entire Zone can't stop talking about him. I need to find him. Have you got any ideas where he might be?</text>
+	</string>
+	<string id="doctor_living_legend_3">
+		<text>Well, well, even after all these years... regrettably, I do not know for certain. The man is like a ghost. But if there is one place he would visit somewhat frequently, it would be his hideout in the Agroprom Underground. You may be able to find him there, or at least some clues. To get there, enter via a manhole somewhere around the northern complex, then check the walls underground for any large circular openings you could climb into. One of them will lead into his hideout.</text>
+	</string>
+	<string id="doctor_living_legend_4">
+		<text>Okay, thanks for the info. I suppose it's time for an adventure.</text>
+	</string>
+	<string id="doctor_living_legend_5">
+		<text>If you find him... please tell him to visit an old friend every once in a while.</text>
+	</string>
+	<string id="doctor_living_legend_6">
+		<text>Will do. See you.</text>
+	</string>
+	
+	<string id="doctor_living_legend_strelok_0">
+		<text>Hey, Doc. I met Strelok. I told him about your request.</text>
+	</string>
+	<string id="doctor_living_legend_strelok_1">
+		<text>Thank you. I wonder if he will listen, though.</text>
+	</string>
+	<string id="doctor_living_legend_strelok_2">
+		<text>He seemed rather busy, I admit. He's still trying to figure out the Zone.</text>
+	</string>
+	<string id="doctor_living_legend_strelok_3">
+		<text>Well, I hope he will succeed eventually. Both of us shall carry on, then. At least I'm glad he's still alive. And, once again, thank you.</text>
+	</string>
+	
+	<string id="barkeep_living_legend_0">
+		<text>Hey, Barkeep, I need information. I have a reason to believe Strelok stopped by here. Is he still around?</text>
+	</string>
+	<string id="barkeep_living_legend_1">
+		<text>What, here in the Bar? No, you narrowly missed him. He passed by yesterday. I told him that a lot of people were looking for him, but he was adamant that he couldn't stay to chat. He was with four other stalkers, headed north. I reminded him that the Brain Scorcher is active again, but he didn't seem to mind. Bought up half the food in my kitchen and off they went. I'd call him a fool if he hadn't already survived all those years in the most dangerous parts of the Zone.</text>
+	</string>
+	<string id="barkeep_living_legend_2">
+		<text>You say he wasn't alone?</text>
+	</string>
+	<string id="barkeep_living_legend_3">
+		<text>He had a few companions with him. Tough, experienced stalkers from the looks of it, not a bunch of greenhorns for sure. Part the reason I didn't really try to stop them. They all seemed to know what they were doing.</text>
+	</string>
+	<string id="barkeep_living_legend_4">
+		<text>So Strelok was last seen going past the Barrier? I'm on a mission to find him, and it seems it just got that much harder...</text>
+	</string>
+	<string id="barkeep_living_legend_5">
+		<text>Hehehe, that's what you get when you try to pursue a legend. I bet he set his sights on the Chernobyl NPP again. Getting there will be quite an ordeal, especially with the Brain Scorcher in the way. I wouldn't go there without some sort of advanced psy protection. When you get that covered talk with Gatekeeper, he's a walking slab of single-minded grit who helps defend the Barrier. He might help you out later on.</text>
+	</string>
+	<string id="barkeep_living_legend_51">
+		<text>Hehehe, that's what you get when you try to pursue a legend. I bet he set his sights on the Chernobyl NPP again. Getting there will be quite an ordeal, especially with the Brain Scorcher in the way. I wouldn't go there without some sort of advanced psy protection. When you get that covered talk with Gatekeeper, he's a walking slab of single-minded grit who helps defend the Barrier. He might help you out later on. Oh, but watch out for the local Freedom force near him. They focus on fending off Monolith attacks, but they won't be happy to see a Duty member prowling about.</text>
+	</string>
+	<string id="barkeep_living_legend_6">
+		<text>It's very important, so I'll do my best. Thanks for the info, Barkeep.</text>
+	</string>
+	<string id="barkeep_living_legend_7">
+		<text>No problem, man. Good luck.</text>
+	</string>
+	
+	<string id="aslan_living_legend_0">
+		<text>Hey, Aslan. I've been following the trail of a stalker named Strelok. He's headed north. Any ideas how can I get there?</text>
+	</string>
+	<string id="aslan_living_legend_1">
+		<text>Huh? Ah, right. Strelok. I recognise that name. Guy knows the Zone like the back of his hand. He's got quite a few achievements to his credit, too. Anyway, you wanna go north? You're finally ready to bid farewell to this cruel world?</text>
+	</string>
+	<string id="aslan_living_legend_2">
+		<text>Come on, I can manage just fine. Just tell me what'd be the best course of action.</text>
+	</string>
+	<string id="aslan_living_legend_3">
+		<text>The best? Don't go there. The second best? I suppose you should visit the eggheads in Yantar and get some device to shield you from the psy-field. Then, talk with Gatekeeper. The bastard eats Monolith fanatics for breakfast. He helps hold the Barrier and repeatedly fends off their southward incursions. Radar is the only semi-sensible route you'd want to take if you wish to go north. But be prepared for packs of vicious mutants, labyrinthine anomalies, extreme radiation levels, and well-armed Monolith soldiers guarding the way.</text>
+	</string>
+	<string id="aslan_living_legend_4">
+		<text>Doesn't sound great, but I don't intend to abandon my mission.</text>
+	</string>
+	<string id="aslan_living_legend_5">
+		<text>That's your choice, of course. Some adventurous stalkers do make it now and then. No pain, no gain... as the kids say. Anyway, Gatekeeper will know more about this, so he's your next stop.</text>
+	</string>
+	<string id="aslan_living_legend_6">
+		<text>Thanks, Aslan. I'll be going now.</text>
+	</string>
+	<string id="aslan_living_legend_7">
+		<text>No problem. Good hunting, merc.</text>
+	</string>
+	<string id="aslan_living_legend_71">
+		<text>No problem. Good hunting, stalker.</text>
+	</string>
+	
+	<string id="stalker_gatekeeper_dialog_0">
+		<text>What brings you to the end of the world, stalker?</text>
+	</string>
+	
+	<string id="stalker_gatekeeper_st_1">
+		<text>Sure, things are quiet right now anyways. You can call me Gatekeeper. I took part in the Pripyat raid, way back in 2012. Now, I spend my days watching over this little stretch of road they call the Barrier.\n \nWhat? Most volunteers don't stick around long, so someone has to. About a year ago, stalkers in the north began disappearing without a trace. We suspected it was because of a new cult, perhaps hiding out in the forests, even around the NPP... but then the Monolith hit.\n \nWe couldn't believe it at first. Monolith hadn't been seen in six years, yet there they were, plain as day. Comrades presumed dead for years were found wearing the colours of the Wish Granter, fighting like fanatics. I was too late to stop them retaking Pripyat, retaking Radar. But it's not too late for the rest.\n \nSo here I stand, guarding the Barrier. While I breathe, not one fanatic will get south of the Warehouses, I swear.</text>
+	</string>
+	
+	<string id="stalker_gatekeeper_breakthrough_0">
+		<text>Gatekeeper, I've been following a stalker named Strelok. Did he pass by a week or so ago?</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_1">
+		<text>Strelok? I know him. We met a couple of times during our deep-Zone excursions. He actually came along a few days ago and asked me about the situation. Then he and his team helped us repel another Monolith incursion. We can usually manage on our own, but they really did a good job. Damn fanatics got slaughtered in record time.</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_2">
+		<text>Alright, so you saw them cross the Barrier, then?</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_3">
+		<text>Yeah, that's right. They were armed with psy-helmets to a man. For all I know, they might be scouring Lab X-19 for some sort of treasure. I wouldn't put it past them for sure.</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_4">
+		<text>Damn, there's no way around it. I have to make it on my own there.</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_5">
+		<text>Seems so. But, if you've got something to protect you from the psychic emanations, you could try to catch up with them, and even deactivate the Brain Scorcher. Strelok achieved that on his own a few years ago. If you're so determined that you want to follow him to the north, you might manage as well. Or return as a zombie, who knows.</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_6">
+		<text>Thanks for the vote of confidence, Gatekeeper. Anyway...</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_7">
+		<text>Shh! Do you hear that? The Monolith strikes again! Come with me, we have to fend them off or nobody will be going north any time soon. Let's go!</text>
+	</string>
+	<string id="stalker_gatekeeper_breakthrough_8">
+		<text>Got it!</text>
+	</string>
+	
+	<string id="stalker_gatekeeper_brainscorcher_0">
+		<text>Hell, that was a close call.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_1">
+		<text>Really? I call this about average. Anyway, thanks for the help. We haven't got a limitless supply of manpower, so any assistance we get is appreciated.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_2">
+		<text>I suppose now's the best time to raid the Scorcher?</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_3">
+		<text>Yes, they won't be sending another assault for quite some time. You could use that window to make things a bit easier.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_4">
+		<text>Any other advice for me?</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_5">
+		<text>Sure. Don't die. You're still up against anomalies, radiation, mutants and Monolith patrols. Also, if you actually manage to shut down the Scorcher, I suggest going to Zaton next. There's this old wreckage called Skadovsk there that's a meeting place for local stalkers. If you don't find him on your own, they'll be your best bet in tracking down Strelok. Tell Beard that Gatekeeper sends his regards.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_6">
+		<text>Better than nothing. Thank you, and goodbye.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_7">
+		<text>Good hunting, stalker.</text>
+	</string>
+	<string id="stalker_gatekeeper_brainscorcher_71">
+		<text>Good hunting, merc.</text>
+	</string>
+	
+	<string id="beard_living_legend_0">
+		<text>Hey, Beard. Gatekeeper sends his regards.</text>
+	</string>
+	<string id="beard_living_legend_1">
+		<text>Haha, so that old rascal's still alive! Glad to hear it. Tell him that... wait! So, you came from the south. Did a guide bring you up here, or did you slip past the Scorcher yourself?</text>
+	</string>
+	<string id="beard_living_legend_2">
+		<text>I didn't slip past the Brain Scorcher. I disabled it.</text>
+	</string>
+	<string id="beard_living_legend_3">
+		<text>Wow. Great job, stalker! That damn machine really was a pain in the ass. After several years of healthy influx of stalkers from the south those damn Monolith bastards just had to reactivate their psychic thingamajig. They're that obstinate, y'know. Anyway, here, let me pour you a cold one. On the house for our hero. But here I'm babbling again. You probably want something from the old Beard, right?</text>
+	</string>
+	<string id="beard_living_legend_4">
+		<text>Thanks. And yes, I've been pursuing a stalker named Strelok. I heard that he reached the north some time ago. Do you know anything about his current whereabouts?</text>
+	</string>
+	<string id="beard_living_legend_5">
+		<text>I see. A rising star wants to converse with the living legend? Yeah, he visited Skadovsk with his friends over a week ago. We talked about the situation here which is, or hopefully was, not that good. It may become better quickly with the Brain Scorcher out of the way.</text>
+	</string>
+	<string id="beard_living_legend_6">
+		<text>Alright. Did he tell you anything about his goal?</text>
+	</string>
+	<string id="beard_living_legend_7">
+		<text>Nothing specific, the man's a walking mystery. One day he left and that was the last I saw him. But! One of his companions came back yesterday. The taciturn one, I think his name was Rogue. Didn't tell me much, but you might be able to extract some info from him. Give it a try.</text>
+	</string>
+	<string id="beard_living_legend_8">
+		<text>Where can I find him?</text>
+	</string>
+	<string id="beard_living_legend_9">
+		<text>He's that brusque fellow who wears a camo Sunrise suit and M40 gas mask to your right. Just try not to make him angry. He looks like he could punch a bloodsucker's head off on a bad day.</text>
+	</string>
+	<string id="beard_living_legend_10">
+		<text>Thanks for the help. I'll go talk to him.</text>
+	</string>
+	<string id="beard_living_legend_11">
+		<text>No problem. And by the way, here's a reward for our hero. Take it, a share of my future profits. Good luck!</text>
+	</string>
+	
+	<string id="stalker_rogue_dialog_0">
+		<text>Get lost.</text>
+	</string>
+	<string id="stalker_rogue_dialog2_0">
+		<text>What?</text>
+	</string>
+	<string id="stalker_rogue_dialog_underpass_0">
+		<text>Let's go.</text>
+	</string>
+	<string id="stalker_rogue_dialog_revenge_0">
+		<text>When I'm done with him there'll be nothing left to bury.</text>
+	</string>
+	<string id="stalker_rogue_dialog_raid_0">
+		<text>This is gonna be rough.</text>
+	</string>
+	
+	<string id="stalker_rogue_living_legend_start_0">
+		<text>Hey, Rogue. I'd like to talk.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_1">
+		<text>I wouldn't. Now leave me alone, stalker.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_111">
+		<text>I wouldn't. Now leave me alone, merc.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_2">
+		<text>Come on, I didn't fight my way through Radar only for you to turn me away like that!</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_3">
+		<text>You did what? How the hell did you get past the Brain Scorcher?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_4">
+		<text>I got a psy-helmet from Professor Sakharov, and then shut down the Brain Scorcher on my way through for good measure.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_5">
+		<text>You... you're not bullshitting. Okay, so you're a tough guy, alright. What do you want?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_6">
+		<text>I was told that you're one of Strelok's companions. I am on a mission to find him.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_71">
+		<text>You're from Clear Sky. I... don't know what you would want from him.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_81">
+		<text>Just some answers, nothing more.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_72">
+		<text>What are you after, stalker? Money, info, a hit?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_82">
+		<text>Sidorovich sent me. He wants to know about Strelok's discoveries in the heart of the Zone.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_73">
+		<text>Eggheads, huh? Strelok's already told you lot he doesn't want that Flesh-eye prosthetic implanted onto him.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_83">
+		<text>No, no, I've only come to obtain at least some of his intimate knowledge of the Zone's workings.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_74">
+		<text>You mercs aren't trustworthy. I won't help you collect a bounty on my friend's head.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_84">
+		<text>Not an assassination this time. My superiors only want me to extract some valuable info from him, no need for violence.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_75">
+		<text>Ah, Duty wants to discover the way to destroy the Zone. I'm afraid that ain't so easy, tough guy.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_85">
+		<text>What I want is to discover the way to talk to Strelok. What he shares is up to him.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_76">
+		<text>Go smoke pot somewhere else, Freedom hippie.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_86">
+		<text>You're a funny man. Very funny. But I'm sworn off pot until I finish my mission. I'm not gonna budge.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_9">
+		<text>Alright, tough guy. I came here to fetch something for my team. Was able to get some intel and was about to leave, but... Here you are. There's an abandoned military installation to the south-west. I have good reasons to believe there's an experimental weapon left in there. Bring that weapon to me if you find it, and then we'll talk about this seriously. Got it?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_10">
+		<text>I'll do it. What does this weapon look like?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_start_11">
+		<text>I'm sure you'll recognise the gun. Damn thing looks like some science-fiction gadget, doesn't even accept bullets. Now go, before I change my mind.</text>
+	</string>
+	
+	<string id="stalker_rogue_living_legend_fetch_complete_0">
+		<text>Take a look at this.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_fetch_complete_1">
+		<text>Hmph, that's the gun. Not bad. I half-expected you to disappear without a trace. Okay, what exactly do you want?</text>
+	</string>
+	<string id="stalker_rogue_living_legend_fetch_complete_2">
+		<text>Just a good, meaningful conversation with Strelok. A man like him has many stories, and has learned many things. Things which'd help make sense of this whole place. I won't try anything funny, you have my word.</text>
+	</string>
+	<string id="stalker_rogue_living_legend_fetch_complete_3">
+		<text>You'd better not. I'll think about this.</text>
+	</string>
+	
+	<string id="stalker_rogue_st_1">
+		<text>Curiosity killed the cat. But let's say I'll stomach you for a while. My buddy and I used to be soldiers. We were excited at first when they assigned us to the Zone. Didn't take us long to realise the conditions were horrible, and the pay laughable. Then we saw some of our commanders making deals with common stalkers. We thought they were better off, so one day we wandered off on a patrol, fully equipped and all of our stuff in backpacks. We joined the stalkers in the Rookie Village and began our little adventure from there. Really, these days I'm just like any other stalker. Only with discipline and combat training.</text>
+	</string>
+	
+	<string id="stalker_rogue_st_team_0">
+		<text>You mentioned a friend, and you're one of Strelok's group. Where's the rest?</text>
+	</string>
+	<string id="stalker_rogue_st_team_1">
+		<text>Both Strelok and Stitch stayed behind in our hideout on the outskirts of Pripyat. I came here alone to find a powerful weapon.</text>
+	</string>
+	<string id="stalker_rogue_st_team_2">
+		<text>You came here from Pripyat alone? I heard the place is a goddamn death zone.</text>
+	</string>
+	<string id="stalker_rogue_st_team_3">
+		<text>That it is. Wasn't easy but I managed. There're few things that don't fall apart when my LMG starts talking.</text>
+	</string>
+	<string id="stalker_rogue_st_team_4">
+		<text>I see. But there are only three of you?</text>
+	</string>
+	<string id="stalker_rogue_st_team_5">
+		<text>There used to be five.</text>
+	</string>
+	<string id="stalker_rogue_st_team_6">
+		<text>Hang on. Gatekeeper said you did great fighting the Monolith near the Barrier. What happened after that?</text>
+	</string>
+	<string id="stalker_rogue_st_team_7">
+		<text>Ugh. Alright. With Strelok's knowledge of the Zone and Wayfarer's ability to find a safe path through anomalies, we were all able to reach Pripyat. Neither mutants nor Monolith could stop us. But then shit hit the fan. We were making our way north-west when we had another skirmish with Monolith forces. The four of us sought cover behind wrecked cars on the street while my buddy, Scope, covered us with sniper fire from a rooftop. We were about to finish off the enemy when I heard assault rifle fire from his position. I looked up and saw him falling from the rooftop of a five-storey building. And there was that fucker...</text>
+	</string>
+	<string id="stalker_rogue_st_team_8">
+		<text>One of the Monolith ambushed your friend?</text>
+	</string>
+	<string id="stalker_rogue_st_team_9">
+		<text>Not a simple fanatic. The guy stood there, glaring at us, in his weird patchwork armour. I turned to put a few bullets in his head, but he disappeared. I knew Scope became a bloody pancake, so I focussed on our fight. The Monolith got a second wind and Strelok told us to withdraw. I killed a few of them with suppressive fire, but then that guy came out of nowhere again. Walked through gunfire chanting his nonsense. "I am Eidolon, chosen of the Monolith, the bane of infidels". He kept repeating that over and over again.</text>
+	</string>
+	<string id="stalker_rogue_st_team_10">
+		<text>Eidolon, huh?</text>
+	</string>
+	<string id="stalker_rogue_st_team_11">
+		<text>We eventually killed the rest of the force, but that bastard refused to die. There was a moment our whole group had their guns trained on him. But he simply kept advancing. The bullets looked like they couldn't quite reach him. He shot me in the arm. Wayfarer wanted to get him, but the fucker picked him off. Strelok tossed a grenade at him and together with Stitch they dragged me away.</text>
+	</string>
+	<string id="stalker_rogue_st_team_12">
+		<text>Damn. Did Strelok get that Eidolon guy?</text>
+	</string>
+	<string id="stalker_rogue_st_team_13">
+		<text>He didn't. The fucker didn't pursue us any further but I saw him through the smoke, still standing. That wasn't normal. I get he had some sort of hybrid rad-suit on him, but nobody should be able to absorb that amount of damage. Maybe he had some rare artefact on him, I don't know.</text>
+	</string>
+	<string id="stalker_rogue_st_team_14">
+		<text>So, your group found a hideout and Strelok sent you to find a weapon that can finish that guy off?</text>
+	</string>
+	<string id="stalker_rogue_st_team_15">
+		<text>Exactly. We tried to move further into Pripyat a few times, but the Monolith kept fending us off. Like they knew where we were going every time. We withdrew to the Outskirts and you know the rest.</text>
+	</string>
+	<string id="stalker_rogue_st_team_16">
+		<text>Okay, I see. I can help you with that in exchange for Strelok's knowledge of the Zone. How does this sound?</text>
+	</string>
+	<string id="stalker_rogue_st_team_17">
+		<text>Like a fair trade. Deal. I'll be heading back to Pripyat soon. Stock yourself up on gear, and tell me when you're ready.</text>
+	</string>
+	
+	<string id="stalker_rogue_join_0">
+		<text>I'm ready.</text>
+	</string>
+	<string id="stalker_rogue_join_1">
+		<text>Alright. We'll go through Jupiter Underground, that's the safest path to the hideout I know.</text>
+	</string>
+	
+	<string id="stalker_rogue_underpass_0">
+		<text>The path isn't really that safe, huh?</text>
+	</string>
+	<string id="stalker_rogue_underpass_1">
+		<text>Fuck, they must've followed me. Saw me enter and set up sentries to defend the passage. Was still safer than going through Pripyat directly, I'll tell you that.</text>
+	</string>
+	<string id="stalker_rogue_underpass_2">
+		<text>What's next, Rogue?</text>
+	</string>
+	<string id="stalker_rogue_underpass_3">
+		<text>We carry on. Those were just some small fry. Still need to prepare for the invincible fanatic.</text>
+	</string>
+	<string id="stalker_rogue_underpass_4">
+		<text>I'm giddy with anticipation.</text>
+	</string>
+	<string id="stalker_rogue_underpass_5">
+		<text>You're almost funny. Now, let's go.</text>
+	</string>
+	
+	<string id="living_legend_rogue_titan_0">
+		<text>How can I help you prepare for Eidolon?</text>
+	</string>
+	<string id="living_legend_rogue_titan_1">
+		<text>Local stalkers reported an aggressive pseudogiant roaming the area. It's difficult to plan anything when that thing's wandering about, just waiting to barge in at the worst moment possible. We can't afford any distractions. Here, I've uploaded its last known location to your PDA. Go kill it.</text>
+	</string>
+	
+	<string id="living_legend_rogue_titan_complete_0">
+		<text>I did it. The pseudogiant's gone.</text>
+	</string>
+	<string id="living_legend_rogue_titan_complete_1">
+		<text>Good job. Now we can focus on the Monolith.</text>
+	</string>
+	
+	<string id="stalker_rogue_join_eidolon_0">
+		<text>We're ready. Let's go.</text>
+	</string>
+	<string id="stalker_rogue_join_eidolon_1">
+		<text>Got it. Here, take this weapon and some ammo from Cardan. You'll need it to defeat Eidolon. Remember, he's the guy who wears a rad-suit with a screen helmet. Keep your distance and aim for his head, that's our only chance.</text>
+	</string>
+	
+	<string id="lost_stalker_strelok_dialog_0">
+		<text>...</text>
+	</string>
+	
+	<string id="living_legend_strelok_start_0">
+		<text>Strelok, I presume?</text>
+	</string>
+	<string id="living_legend_strelok_start_1">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone, although a member of Duty is a pretty reasonable choice.</text>
+	</string>
+	<string id="living_legend_strelok_start_11">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone, let alone hire a mercenary.</text>
+	</string>
+	<string id="living_legend_strelok_start_12">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone. We could use a fellow stalker's help, at any rate.</text>
+	</string>
+	<string id="living_legend_strelok_start_13">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone. If only he knew the trouble Clear Sky had caused me in the past...</text>
+	</string>
+	<string id="living_legend_strelok_start_14">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone, let alone a Freedomer.</text>
+	</string>
+	<string id="living_legend_strelok_start_15">
+		<text>Yes. I wasn't expecting Rogue to recruit anyone, let alone an Ecologist.</text>
+	</string>
+	<string id="living_legend_strelok_start_2">
+		<text>We struck a deal. Anyway, I need to talk to you.</text>
+	</string>
+	<string id="living_legend_strelok_start_3">
+		<text>Talk? Let me guess. Your leader wants to extract secrets of the Zone from me.</text>
+	</string>
+	<string id="living_legend_strelok_start_4">
+		<text>Exactly.</text>
+	</string>
+	<string id="living_legend_strelok_start_5">
+		<text>Everything's got its price, and I paid dearly to obtain the knowledge I now possess. I'm not exactly eager to share that knowledge. In part because there's still so much I'm uncertain of.</text>
+	</string>
+	<string id="living_legend_strelok_start_6">
+		<text>Well, I agreed to assist you against the Monolith problem in exchange for your knowledge. Rogue said it's a fair trade.</text>
+	</string>
+	<string id="living_legend_strelok_start_7">
+		<text>Maybe. But I must find some answers myself. Answers only the heart of the Zone may provide. I urgently need to return there, but we've been stalked by an unusual Monolith soldier. We can't get past him.</text>
+	</string>
+	<string id="living_legend_strelok_start_8">
+		<text>Yeah, Rogue told me about Eidolon. We've got the experimental weapon that should kill him. The only thing that's left is to find him and waste him.</text>
+	</string>
+	<string id="living_legend_strelok_start_9">
+		<text>I see. With some additional firepower we can prepare for the final push. However, we'll confront Eidolon only when we're completely ready. All three of us need some work to be done first.</text>
+	</string>
+	
+	<string id="stalker_strelok_st_1">
+		<text>I'm just a stalker. I've been prowling the Zone for several years in search of solutions to its mysteries. Along with Fang and Ghost I was the first to reach the CNPP since the 2006 disaster. But that was long ago, and my memories are hazy. There are empty spaces and incomprehensible images that plague me whenever I try to recall those times. I know Fang and Ghost met their ends. And as for me? Pursuit, cataclysm, voices in my head... For some time I was known as the Marked One, an amnesiac who'd been accidentally sent on a quest to kill himself. By whom? I may tell you later. Suffice to say that I uncovered some of the Zone's greatest secrets, and had to make stark choices I'm not sure were right.</text>
+	</string>
+	
+	<string id="stalker_strelok_doctor_0">
+		<text>By the way, here are your notes, I found them in your old hideout. And I almost forgot, Doctor wants you to pay him a visit sometime.</text>
+	</string>
+	<string id="stalker_strelok_doctor_1">
+		<text>Thank you. So, he's still alive. My only remaining friend from the old days. I hope I'll be able to find the time.</text>
+	</string>
+	
+	<string id="living_legend_strelok_x8_0">
+		<text>How can I help you prepare for the battle with Eidolon?</text>
+	</string>
+	<string id="living_legend_strelok_x8_1">
+		<text>There's a secret underground lab located in this part of the city. I haven't visited the place yet, but I suspect it may contain another piece of the puzzle. Go there and seek any documents that might've been left behind.</text>
+	</string>
+	
+	<string id="living_legend_strelok_preparations_0">
+		<text>I've done everything you wanted.</text>
+	</string>
+	<string id="living_legend_strelok_preparations_1">
+		<text>Good. We're almost ready now. Come back to me when you're also ready.</text>
+	</string>
+	
+	<string id="living_legend_strelok_eidolon_0">
+		<text>I'm ready.</text>
+	</string>
+	<string id="living_legend_strelok_eidolon_1">
+		<text>The Monolith have finally found my hideout. There's a recon squad approaching us as we speak. Once we deal with them we'll head to the centre of Pripyat. The plan is to assault the Palace of Culture and lure Eidolon out. Take him out as soon as he shows up. Let's go.</text>
+	</string>
+	
+	<string id="living_legend_strelok_objective_0">
+		<text>On a scale from "average" to "close call"...?</text>
+	</string>
+	<string id="living_legend_strelok_objective_1">
+		<text>Close enough. Seems Eidolon had an extremely rare artefact on him... Keep it if you want. Consider that a bonus for your help.</text>
+	</string>
+	<string id="living_legend_strelok_objective_2">
+		<text>Thanks, Strelok. Now that we've wiped out about half the Monolith forces in the Zone, can you tell me what you're looking for this far north?</text>
+	</string>
+	<string id="living_legend_strelok_objective_3">
+		<text>Answers. Like you, I seek answers. In order to get them we must raid the Chernobyl NPP, and find a shard of the Wish Granter.</text>
+	</string>
+	<string id="living_legend_strelok_objective_4">
+		<text>Okay... no, hang on. Are you insane? Raid the Power Plant? Wish Granter? It's real after all? I heard legends, but...</text>
+	</string>
+	<string id="living_legend_strelok_objective_5">
+		<text>There's a grain of truth in every legend, stalker. The Wish Granter exists, I've seen it with my own eyes. And don't worry. We've managed to defeat Eidolon and his forces. I was able to fight my way into the Power Plant myself a few years ago. With your help we'll manage again.</text>
+	</string>
+	<string id="living_legend_strelok_objective_51">
+		<text>There's a grain of truth in every legend, merc. The Wish Granter exists, I've seen it with my own eyes. And don't worry. We've managed to defeat Eidolon and his forces. I was able to fight my way into the Power Plant myself a few years ago. With your help we'll manage again.</text>
+	</string>
+	<string id="living_legend_strelok_objective_6">
+		<text>This is insane. How do you plan to attack it?</text>
+	</string>
+	<string id="living_legend_strelok_objective_7">
+		<text>We'll do it the old-fashioned way, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_objective_71">
+		<text>We'll do it the old-fashioned way, merc.</text>
+	</string>
+	<string id="living_legend_strelok_objective_8">
+		<text>I can't wait to see what knowledge is worth all of this.</text>
+	</string>
+	<string id="living_legend_strelok_objective_9">
+		<text>Patience. Accompany us into the depths of the Sarcophagus and you'll find many of the answers you seek in the process. When we obtain the shard, I'll reveal anything else you may wish to know. I promise.</text>
+	</string>
+	<string id="living_legend_strelok_objective_10">
+		<text>Fair enough. I'll go with you.</text>
+	</string>
+	<string id="living_legend_strelok_objective_11">
+		<text>Good. Prepare for the adventure of a lifetime.</text>
+	</string>
+	
+	<string id="living_legend_strelok_answers_0">
+		<text>Alright, Strelok, I've done what you wanted. Take the shard. Your answers for mine.</text>
+	</string>
+	<string id="living_legend_strelok_answers_1">
+		<text>Very well. I'm grateful for your help. Ask, and I'll do my best to answer.</text>
+	</string>
+	<string id="living_legend_strelok_answers_21">
+		<text>What exactly is the Zone?</text>
+	</string>
+	<string id="living_legend_strelok_answers_211">
+		<text>The Zone is neither a miracle nor a manifestation of evil. It isn't a natural phenomenon either. Over 10 years ago a group of scientists conducted a secret experiment. They discovered that a mysterious psychic field, called noosphere, enveloped the Earth. They thought that by influencing the field they could influence the world's population. They wanted to remove violence and selfishness from people's minds. No single person could achieve that, so they joined their minds to become Common Consciousness, wired to a set of extremely powerful generators. Predictably, things went awry and the experiment caused a rift in the noosphere. Emanations, or rather the First Emission of uncontrolled psychic energy created the Zone.</text>
+	</string>
+	<string id="living_legend_strelok_answers_212">
+		<text>Who or what were the Common Consciousness?</text>
+	</string>
+	<string id="living_legend_strelok_answers_213">
+		<text>They were a coterie of overly ambitious scientists. They thought they could fix humanity by exploiting something they barely understood. They didn't know it, but they were paving their own road into Hell. In order to achieve their goal of "saving" humanity they turned themselves into an artificial hivemind. They accidentally created the Zone. They were responsible for emissions, the Miracle Machine, the Brain Scorcher, zombies and the Monolith, which were all part of their defence network. And they were the ones who placed the Wish Granter inside the Sarcophagus. I had a chance to kill them... so I did.</text>
+	</string>
+	<string id="living_legend_strelok_answers_214">
+		<text>What is the true nature of the Wish Granter?</text>
+	</string>
+	<string id="living_legend_strelok_answers_215">
+		<text>The Wish Granter, also known as the Monolith, is a sham. It was made to lure naive stalkers into the heart of the Zone, so that the C-Consciousness could seize, brainwash and turn them into its obedient soldiers. I saw it with my own eyes and I'm not sure, but... I may have wished for something. I don't remember, my memories are still hazy. I was able to resist its call when I came back here in 2012, and I don't want to confront it ever again. But I was curious if the psychic backlash after the death of the C-Consciousness had any effect on it. Then I heard the rumours about the Shard of the Monolith.</text>
+	</string>
+	<string id="living_legend_strelok_answers_216">
+		<text>What kind of artefact is the Shard of the Monolith?</text>
+	</string>
+	<string id="living_legend_strelok_answers_217">
+		<text>That's somewhat self-explanatory. Legends say that when the C-Consciousness died, the Wish Granter was damaged. A part of it broke off. Some stalker visited the CNPP in the aftermath and found the Shard. Clearly, his snooping incurred the wrath of Monolith forces returning to secure the power plant again, and he had to escape quickly, leaving the Shard behind to discourage pursuit. Although sounding apocryphal, the story spread quickly. I knew that it could at least be partly true, so I wanted to investigate. The Shard might hold answers that no old document could reveal.</text>
+	</string>
+	<string id="living_legend_strelok_answers_22">
+		<text>What do you know about emissions?</text>
+	</string>
+	<string id="living_legend_strelok_answers_221">
+		<text>The rift in the noosphere which produced the Zone as we know it today overflows with excess psychic energy. This energy is what forms the emissions, like how water vapour can condense into a thunderstorm. The energy used to be controlled and discharged deliberately, but without the guidance of the C-Consciousness it simply builds up until it overflows in a wave across the entire Zone. Instead of rare but devastating emissions that were supposed to eliminate a specific threat, nowadays we get relatively weak but frequent emissions that sweep and kill indiscriminately. I'm not sure if that's a fair trade.</text>
+	</string>
+	<string id="living_legend_strelok_answers_23">
+		<text>What do you know about anomalies?</text>
+	</string>
+	<string id="living_legend_strelok_answers_231">
+		<text>They're miniature cracks in the noosphere. Or small patches of reality affected by psychic energies so strong that they bend the laws of physics. I'm not entirely sure. Each time an emission occurs, old anomalies shift or disappear while new ones emerge. And the artefacts... many of them used to be normal objects, or are a collection of normal objects changed by those incomprehensible energies. Sometimes I think they're born from the wishes of local stalkers, although it's possible they're shaped by the fears, insecurities and desires of humanity across the world.</text>
+	</string>
+	<string id="living_legend_strelok_answers_24">
+		<text>What do you know about mutants?</text>
+	</string>
+	<string id="living_legend_strelok_answers_241">
+		<text>Don't be fooled by the theories that they're the result of radiation. The dogs and cats, maybe, but others... chimeras, controllers, burers, pseudogiants, even fleshes... Most of them are actually man-made. The scientists who'd later become the C-Consciousness conducted many experiments in their underground labs. Not just genetic, but ones that involved the psychic energies of the noosphere. This means that the mutants possess a strong connection to the Zone. Like emissions, they're one of the many defence mechanisms that protect its secrets.</text>
+	</string>
+	<string id="living_legend_strelok_answers_25">
+		<text>What happened during the Clear Sky raid on the CNPP?</text>
+	</string>
+	<string id="living_legend_strelok_answers_251">
+		<text>Clear Sky... they knew more about the Zone than anyone else. Evidently, they didn't know enough. They realised my attempts to break into the heart of the Zone were the cause for more frequent emissions. They tried to stop me by doing the same, only on a much larger scale. That was the greatest Chernobyl raid I've ever seen. Doomed from the start. They pursued me through Limansk, all the way to the Power Plant, and they almost got me there. But the C-Consciousness noticed them and wiped them out with a powerful emission. That's the last thing I remember before everything went red. In short, they bit off more than they could chew and choked on their aspirations.</text>
+	</string>
+	<string id="living_legend_strelok_answers_26">
+		<text>Is there any way to destroy the Zone and stop this madness?</text>
+	</string>
+	<string id="living_legend_strelok_answers_261">
+		<text>I'd already tried and only made things worse as a result. I thought that killing the C-Consciousness would be enough. However, the emissions are more frequent than ever. Mutants, anomalies, the Monolith remain. I discovered the Zone's origin but not the means to destroy it. Nobody knows how to accomplish that. But I'll keep trying. Perhaps the Shard of the Monolith will reveal more. Or documents from other secret installations. Or the actual heart of the Zone... For now, we don't know enough.</text>
+	</string>
+	<string id="living_legend_strelok_answers_27">
+		<text>I know that back in 2011 Clear Sky employed a merc called Scar to pursue you. Do you remember what happened to him?</text>
+	</string>
+	<string id="living_legend_strelok_answers_271">
+		<text>Scar... Yes, I think I remember. At least some parts. Clear Sky thought they should prevent me from entering the Zone's centre ever again, so they sent him after me. He caught up with me in the Red Forest, but I managed to escape. Fang wasn't so lucky, though... Scar and Clear Sky reached the CNPP right after me. He disabled my psy-protection device with an EM weapon and then... and then... Everything went red. There was a powerful emission. He was probably killed, but I'm not entirely sure. He might've been turned into a zombie, or a Monolith warrior. I've never seen him since.</text>
+	</string>
+	<string id="living_legend_strelok_answers_28">
+		<text>Back when everyone called you the Marked One you collaborated with Sidorovich and Barkeep. Why didn't you return to them?</text>
+	</string>
+	<string id="living_legend_strelok_answers_281">
+		<text>I reached the CNPP, I saw the Monolith, I talked with the C-Consciousness... and then, after an extremely difficult battle, I killed them. The experience left me exhausted and empty. I'm not sure what happened right afterward. I was wandering the Zone's centre for some time, though I can't tell for how long. Then, I helped the remnants of a military operation in Pripyat. They recruited me as an advisor for a while. But ultimately I couldn't resist the Zone's call, and I abandoned them later. Questions and doubt still plague me... I was too busy trying to find the answers.</text>
+	</string>
+	<string id="living_legend_strelok_answers_29">
+		<text>I can scarcely believe that the Zone is man-made. I've seen the Miracle Machine and the Brain Scorcher, but this... How did they manage to achieve that?</text>
+	</string>
+	<string id="living_legend_strelok_answers_291">
+		<text>With something far more powerful. I believe that the Power Plant is somehow connected to this. Maybe one or more of the reactors used to work even after the incident in 1986. But that'd be only the possible power source. I heard rumours that there's a top secret installation even further north. An area so deep within the Zone that reality itself collapses in there. Vicious mutants, countless anomalies, Monolith troops... and a set of generators that were used in the failed experiment in 2006. They're mentioned in the documents you brought me. I might be able to find them one day.</text>
+	</string>
+	<string id="living_legend_strelok_answers_3">
+		<text>Wow. This is a lot to process. This definitely changes my perspective on many things.</text>
+	</string>
+	<string id="living_legend_strelok_answers_4">
+		<text>All I can offer you is this fragmentary knowledge. Top secret documents, abandoned underground laboratories, complex devices, personal experience and observations... The Zone isn't and will never be easy to understand. We're like the first caveman who scraped two stones against each other and accidentally kindled a blaze. We aren't sure what happened and what we are looking at while the fire's spreading, consuming everything around it...</text>
+	</string>
+	<string id="living_legend_strelok_answers_5">
+		<text>Thank you, this is possibly more than I could've hoped for. I'll return to my base. What about you?</text>
+	</string>
+	<string id="living_legend_strelok_answers_6">
+		<text>I've got a goal that moves away from me the further I manage to progress. There are some secrets to discover beyond even the CNPP, and plenty of uncharted areas that may reveal even more. Or produce even more questions, who knows. I'm not sure if it's worth all the lives that have been lost on the way there... and I may never be.</text>
+	</string>
+	<string id="living_legend_strelok_answers_71">
+		<text>I don't think the guys back at Hidden Base will be happy to hear the truth about the raid on the CNPP. It was all in vain, after all.</text>
+	</string>
+	<string id="living_legend_strelok_answers_711">
+		<text>The Zone played a cruel joke on all of us. There's no reason for any animosity between us, only a lesson to be learned. If you value knowledge then that's a little blessing in disguise for you, for what it's worth.</text>
+	</string>
+	<string id="living_legend_strelok_answers_712">
+		<text>I suppose you're right. Cold and guys wanted to know. Anyway, we'll never launch another military campaign like that. We aren't Duty. We'll continue focusing on research instead of conflict.</text>
+	</string>
+	<string id="living_legend_strelok_answers_72">
+		<text>I know a few people in the Rookie Village who won't be happy about the Wish Granter being a fly trap. But it's better they won't try to reach the CNPP at all. And Sidorovich will finally get some answers, too.</text>
+	</string>
+	<string id="living_legend_strelok_answers_721">
+		<text>This revelation's been definitely long overdue. We don't need any more Monolith soldiers than we already get, especially ones such as Eidolon. There are other, much less dangerous aspects of the Zone they can exploit if they're really so desperate for personal gain.</text>
+	</string>
+	<string id="living_legend_strelok_answers_722">
+		<text>Or an adventure, Strelok, don't forget about that. Not all of us are obsessed treasure hunters. We set the place ablaze so we might as well sit down, warm our hands and tell a few stories, right?</text>
+	</string>
+	<string id="living_legend_strelok_answers_73">
+		<text>Well, well, all of that info seems very valuable. But I'll think about selling the info to the right people, not just the wealthiest ones.</text>
+	</string>
+	<string id="living_legend_strelok_answers_731">
+		<text>That's a sensible decision. This isn't the kind of information that should be made public. And there are people who definitely mustn't know about this. Pick your client carefully, merc. No amount of money's worth a world-wide cataclysm.</text>
+	</string>
+	<string id="living_legend_strelok_answers_732">
+		<text>Unless it's enough to buy me a private island somewhere on the Pacific, right? Okay, I'm just joking. You've got yourself a deal, Strelok.</text>
+	</string>
+	<string id="living_legend_strelok_answers_74">
+		<text>Well, the things you've told me certainly shed a new light on many phenomena we encounter in the Zone. Professor Sakharov will be elated to receive all of that knowledge.</text>
+	</string>
+	<string id="living_legend_strelok_answers_741">
+		<text>Yes. The Ecologists can finally publish something substantial after all these years. Be careful, though. If you reveal too much too fast, or at the wrong time, the consequences might be terrible. I doubt humanity is ready to discover the Zone's dirty little secrets. Consider your actions and decisions.</text>
+	</string>
+	<string id="living_legend_strelok_answers_742">
+		<text>I'm positive the Professor will know how to handle this data. We've suspected some of the things you told me for a long time, and we certainly don't want to endanger the outside world because of something... controversial that we discovered. We'll be careful.</text>
+	</string>
+	<string id="living_legend_strelok_answers_75">
+		<text>Now that shit is bonkers, man. Imagine all the stories I'll be able to tell people back in the base. Just don't try too hard to destroy the Zone, okay? Play nice and it might return the favour.</text>
+	</string>
+	<string id="living_legend_strelok_answers_751">
+		<text>You remain optimistic even after all the things you've personally experienced? Okay, I can promise to rethink my approach. I'm afraid some of the greatest local calamities were caused by my own recklessness. I might avoid repeating my mistakes if I act more cautiously.</text>
+	</string>
+	<string id="living_legend_strelok_answers_752">
+		<text>That's all I'm asking for, man. Let's enjoy the Zone and may it start enjoying our presence, too!</text>
+	</string>
+	<string id="living_legend_strelok_answers_76">
+		<text>Knowledge is half the battle. I'll report to General Voronin as soon as possible. One day we might launch a large campaign to strike right into the heart of the Zone and get rid of its vile spawn once and for all.</text>
+	</string>
+	<string id="living_legend_strelok_answers_761">
+		<text>Remember that Clear Sky did try to achieve a similar goal, and they failed miserably. The Zone isn't something that can be destroyed with machine guns and hand grenades. There's still a lot to learn about its secrets, and we may never get to know everything that's required to accomplish that goal.</text>
+	</string>
+	<string id="living_legend_strelok_answers_762">
+		<text>Our resolve won't waver, no matter the hardships. But I'll take your advice into account, Strelok.</text>
+	</string>
+	<string id="living_legend_strelok_answers_81">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_answers_82">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_answers_83">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, merc.</text>
+	</string>
+	<string id="living_legend_strelok_answers_84">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_answers_85">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_answers_86">
+		<text>Good. Take this as a token of gratitude and a reward for your assistance. We should go on our separate ways now, but I hope we'll meet again, someday. Farewell, stalker.</text>
+	</string>
+	<string id="living_legend_strelok_answers_9">
+		<text>See you, Strelok.</text>
+	</string>
+	
+	<string id="stalker_stitch_dialog_0">
+		<text>Oh no, it's you again. Hah, joking!</text>
+	</string>
+	<string id="stalker_stitch_dialog_revenge_0">
+		<text>I'll put two bullets in his head. One for Scope, one for Wayfarer. He'll never know what hit him!</text>
+	</string>
+	<string id="stalker_stitch_dialog_raid_0">
+		<text>Oh boy, now that's some serious business. Better bring my A game, hehe.</text>
+	</string>
+	
+	<string id="stalker_stitch_dialog_meet_0">
+		<text>You're Stitch, right? Nice to meet you.</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_1">
+		<text>Oh hey, it's a Duty tough guy. You've come with Rogue, eh? That guy doesn't make friends easily. What, did you also defect from the military or something?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_11">
+		<text>You've come with Rogue, eh? That guy doesn't make friends easily, especially with soldiers of fortune. What, did you threaten his family? Just joking. He doesn't have one.</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_12">
+		<text>Another stalker all the way here? You've come with Rogue, eh? That guy doesn't make friends easily. What did you do to him? Mind control?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_13">
+		<text>Oh, look, it's one of the secretive blue guys. You've come with Rogue, eh? That guy doesn't make friends easily. What did you do to him? Mind control?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_14">
+		<text>Seems we're about to have a party. You've come with Rogue, eh? That guy isn't fond of Freedom. What did you do to him? Mind control?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_15">
+		<text>Wow, a nerd managed to come all the way to Pripyat? With Rogue, of all people. That guy doesn't make friends easily. What did you do to him? Mind control?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_2">
+		<text>Uhm, no, just good ol' favour for a favour kind of thing.</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_3">
+		<text>Fair enough. I hope you aren't a Controller in disguise, though. Are you?</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_4">
+		<text>No...</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_5">
+		<text>I'll be watching you. And yes, I'm Stitch, combat medic extraordinaire. I can stitch you up as long as I've got all the parts necessary. I'm an expert with a needle but I keep losing them... ah, there, here's one.</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_6">
+		<text>I'll be going now.</text>
+	</string>
+	<string id="stalker_stitch_dialog_meet_7">
+		<text>Hey, don't go!</text>
+	</string>
+	
+	<string id="stalker_stitch_st_1">
+		<text>What can I say? I try to keep a good, even spirit out here. Y'see, when others contract a sudden case of bullets, I'm the one who stays behind and does his magic to cure them. I used to be a nurse before I came to the Zone. Huh? What's so funny about that? Anyway, I hold my own during a gunfight just fine. Got this little buddy to help me out in case someone wants to shoot the medic. Or mind control, or trample, or eat, you know the deal. I met Strelok in Agroprom some time ago. Poor guy's always getting into trouble, so I tag along to patch him and Rogue up in the aftermath. Eh, too bad I couldn't save Scope and Wayfarer... Let's drink to them.</text>
+	</string>
+	
+	<string id="living_legend_stitch_supplies_0">
+		<text>Is there any work you want done?</text>
+	</string>
+	<string id="living_legend_stitch_supplies_1">
+		<text>You see, I never run out of bullet wounds and lacerations to treat, but I haven't got an infinite supply of stuff to treat them with. We're gonna need more medical supplies. Can I count on you?</text>
+	</string>
+	
+	<string id="living_legend_stitch_supplies_complete_0">
+		<text>Here, I brought the medical supplies.</text>
+	</string>
+	<string id="living_legend_stitch_supplies_complete_1">
+		<text>Hah, that's great! In case you get roughed up a bit, I'll patch you right up, I promise!</text>
+	</string>
+	
+	<string id="stalker_stitch_join_eidolon_0">
+		<text>We're ready. Let's go.</text>
+	</string>
+	<string id="stalker_stitch_join_eidolon_1">
+		<text>All right, bring it on!</text>
+	</string>
+	
+	<string id="stalker_stitch_heal_0">
+		<text>I need medical attention.</text>
+	</string>
+	<string id="stalker_stitch_heal_1">
+		<text>Alrighty, let me take a look.</text>
+	</string>
+	<string id="stalker_stitch_heal_2">
+		<text>Got a paper cut or something? You're fine.</text>
+	</string>
+	<string id="stalker_stitch_heal_3">
+		<text>[Continue...]</text>
+	</string>
+	<string id="stalker_stitch_heal_4">
+		<text>Good to go.</text>
+	</string>
+	
+	<string id="stalker_scope_dialog_0">
+		<text>Eh, what do you want?</text>
+	</string>
+	
+	<string id="stalker_wayfarer_dialog_0">
+		<text>I think I can sense something...</text>
+	</string>
+</string_table>

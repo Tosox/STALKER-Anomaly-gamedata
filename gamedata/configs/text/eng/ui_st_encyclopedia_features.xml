@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_features">
+		<text>Features</text>
+	</string>
+	
+	<string id="encyclopedia_features_azazel_mode">
+		<text>Azazel mode</text>
+	</string>
+	<string id="encyclopedia_features_azazel_mode_text">
+		<text>
+			%c[pda_white]Azazel mode%c[ui_gray_1] allows you to continue playing as another character after death.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nIn Azazel mode death is not the end - upon the demise of your character you will posses the body of a random stalker who was previously controlled by the AI.\n
+			\nShould you have companions at the time of your death, they will be given priority and you will continue playing as one of them instead.\n
+			\nThis mode can only be enabled from the character creation screen.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_ironman_mode">
+		<text>Ironman mode</text>
+	</string>
+	<string id="encyclopedia_features_ironman_mode_text">
+		<text>
+			%c[pda_white]Ironman mode%c[ui_gray_1] adds an indirect layer of difficulty to gameplay, whereby all of your saved games for a character are deleted upon their death.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nYou can customize your Ironman run on new game setup, such as the maximum number of deaths before your save games get deleted.
+			\nThe life granting feature has an opposite effect: every cycle will revert one death count, so that player can have a chance to survive more deaths over time.
+			\nShould Azazel mode be enabled at the same time you will be allowed to continue playing as whoever you switched to, but saves made as your deceased character will be deleted as per usual.\n
+			\nWhen playing with this mode enabled all the saves you make will be uniquely tagged as its own Ironman playthrough, as such it is impossible for unrelated saves to be deleted by mistake.\n
+			\nThis mode can only be enabled from the character creation screen.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_story_mode">
+		<text>Story mode</text>
+	</string>
+	<string id="encyclopedia_features_story_mode_text">
+		<text>
+			%c[pda_white]Story mode%c[ui_gray_1] introduces the player to "Lost of the Zone" storylines, in addition to faction questlines that can be completed separately.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nTalk to your faction leader about the recent events in the Zone, and he should give you info and leads.\n
+			\nThis mode can only be enabled from the character creation screen.\n
+			\n%c[pda_blue]Availability%c[ui_gray_1]
+			\n• Clear Sky\n• Duty\n• Ecologist\n• Freedom\n• Loner\n• Mercenary\n
+			\n%c[pda_blue]Notes%c[ui_gray_1]
+			\nFaction questlines can be done for all factions, as long as Story mode is active.
+			\nPlayers of bonus factions can complete those questlines by speaking to the leader of a friendly faction, if found.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_warfare">
+		<text>Warfare</text>
+	</string>
+	<string id="encyclopedia_features_warfare_text">
+		<text>
+			%c[pda_white]Warfare%c[ui_gray_1] simulates a dynamic war as each faction struggles to dominate the Zone.
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nWarfare lets the player assume control of their faction. This is done at run time, and the player can choose between either the dynamic expansion system or the manual expansion system. The dynamic expansion system will adapt to any bases you captured in manual expansion mode when you switch back.
+			\nWith an offline combat simulator, squads can intercept other squads arbitrarily, so the Zone will be much more dynamic and large scale war will rage at the far corners of the map.
+			\nA dynamic expansion system adapts to changes on the simulation board and ensures no playthrough will be entirely the same.
+			\n \n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\nThe mode was originally created by "werejew" for Call of Chernobyl.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_survival_mode">
+		<text>Survival mode</text>
+	</string>
+	<string id="encyclopedia_features_survival_mode_text">
+		<text>
+			%c[pda_white]Survival mode%c[ui_gray_1] turns the Zone into a hunting ground - where you are the prey.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nWith this mode enabled all spawns are replaced with zombified stalkers and mutants, who will slowly stumble towards your location in an attempt to kill you.\n
+			\nFeaturing a more prominent role are zombies themselves, the last devolution of zombified stalkers who have lost the ability to operate mechanical devices such as firearms.\n
+			\nOnly a few traders and stalker squads can be found, meaning you will have to survive off of what you can scavenge in the world.\n
+			\nThis mode can only be enabled from the character creation screen.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_campfire_mode">
+		<text>Campfire mode</text>
+	</string>
+	<string id="encyclopedia_features_campfire_mode_text">
+		<text>
+			%c[pda_white]Campfire save mode%c[ui_gray_1] prevents you from saving your progress unless you're standing close to a campfire.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nTo save your progress in Campfire mode, approach a nearby campfire, then save your game as usual.
+			\n \nCampfire mode is automatically disabled in underground levels due to their nature.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_agony_mode">
+		<text>Agony mode</text>
+	</string>
+	<string id="encyclopedia_features_agony_mode_text">
+		<text>
+			%c[pda_white]Agony mode%c[ui_gray_1] adds another layer of difficulty by preventing you from saving your progress based on certain criteria.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nYou can't save your progress in Agony mode if you're:
+			\n%c[200,200,200,50]• %c[0,150,150,150]Injured
+			\n%c[200,200,200,50]• %c[0,150,150,150]Bleeding
+			\n%c[200,200,200,50]• %c[0,150,150,150]Irradiated
+			\n%c[200,200,200,50]• %c[0,150,150,150]In combat with enemies
+			\n%c[200,200,200,50]• %c[0,150,150,150]Under circumstances of an emission or psi-storm
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_timer_mode">
+		<text>Timer mode</text>
+	</string>
+	<string id="encyclopedia_features_timer_mode_text">
+		<text>
+			%c[pda_white]In Timer mode%c[ui_gray_1], you can save your progress every specific amount of time. 
+			\nOnce you save, you cannot make another until the timer is over.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_companions">
+		<text>Companions</text>
+	</string>
+	<string id="encyclopedia_features_companions_text">
+		<text>
+			%c[pda_white]Companions%c[ui_gray_1] are stalkers who can be recruited to your side, similar to followers and familiars in other games.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nWith the Zone being as dangerous as it is, most stalkers can be found exploring in small groups, usually in size of around 3 to 4 individuals.\n
+			\nThis feature allows you to do the same, as by talking to the leader of one of these groups you may be able to convince them to explore the Zone together with you.\n
+			\nThe only requirements are that the squad's leader must have friendly relations with you, that his rank be no more than a single tier above yours, and that you haven't got too many stalkers already following you.\n
+			\nIn very special cases, some characters may be used as companions to help complete certain tasks, having their own unique set of requirements, and not counting towards your squad limit.\n
+			\nInformation about your companions can be viewed in the Relations tab of the PDA, where you can also issue them orders as a group or individually, as well as change their behaviour. An option is available to show Companions info on HUD.\n
+			\nThis can also be done through key bindings, which can be set via the Controls options menu.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_guide">
+		<text>Guide</text>
+	</string>
+	<string id="encyclopedia_features_guide_text">
+		<text>
+			The %c[pda_white]Guide%c[ui_gray_1] is a resource to help teach you about the game and its contents.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThis feature was added at much request by players to help explain features and gameplay mechanics, as well as to add a more visual representation of your progression.\n
+			\nArticles are sorted by category, with all tutorial-esque and important content being unlocked right from creating your own character.\n
+			\nWhen you unlock an article its name and category are displayed in the message, allowing you to find the content with relative ease.\n
+			\n%c[pda_yellow]Disclaimer%c[ui_gray_1]
+			\nFor the first time since S.T.A.L.K.E.R.: Shadow of Chernobyl a serious attempt is being made at reintroducing a complete in-game user guide to all available content.\n
+			\nAlthough this feature is mostly complete in function, it is still in an early work-in-progress stage, and as such only a small percentage of articles has been written.\n
+			\nBecause of the magnitude of such a task there is much more yet to be added, with many missing and incomplete categories, and the interactive unlock system not yet being fully integrated.\n
+			\nBy introducing new articles with further updates and patches the guide will eventually be completed but it will take quite some time.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_hud">
+		<text>HUD</text>
+	</string>
+	<string id="encyclopedia_features_hud_text">
+		<text>
+			The %c[pda_white]HUD%c[ui_gray_1] displays various indicators regarding the state of your health and equipment.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\n%c[pda_white]State%c[ui_gray_1] indicators display the current state of your health and equipment. A grey indicator is shown if the state is slightly bad, while yellow indicates a cause for concern. Orange and red denote critical states.
+			\n%c[pda_white]Danger%c[ui_gray_1] indicators are shown when you enter a dangerous zone, which has a direct effect on your health or equipment. The more critical the colour, the more severe the health drain you'll experience.
+			\n%c[pda_white]Boosting%c[ui_gray_1] indicators are shown as long as you're under the effect of a consumable's positive effects. Typically, these effects will be some form of healing, protection or regeneration. All indicators disappear when the related effect wears off.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_map_spots">
+		<text>Map spots</text>
+	</string>
+	<string id="encyclopedia_features_map_spots_text">
+		<text>
+			%c[pda_white]Map spots%c[ui_gray_1] are icons which appear on the map to highlight points of particular interest.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nMany locations and entities have map spots associated with them, making it easier to read the map at a glance without having to worry about remembering tons of information.\n
+			\n%c[pda_blue]Toggles%c[ui_gray_1]
+			\nAnomalous areas, important people and objects (traders, technicians, beds, etc.), stashes, and task waypoints can be toggled within the PDA by pressing the aptly named buttons at the top of the map tab.\n
+			\nRegardless of these settings, those which are attributed to stalkers and other moving objects are always visible on your minimap - as there is no guarantee they will remain stationary and in a single location.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_rank">
+		<text>Rank</text>
+	</string>
+	<string id="encyclopedia_features_rank_text">
+		<text>
+			%c[pda_white]Rank%c[ui_gray_1] is a score system based on what a stalker has accomplished in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nActions which you perform throughout your playthrough are recorded and each grants a varying number of points depending on the action in question.\n
+			\nAs you accumulate more and more points your rank will gradually change as you pass through every milestone, with each requiring an additional 1,000 points on top of the requirements of its predecessor.\n
+			\nMost of these actions are logged in the statistics tab of the PDA, which also contains an in-game leaderboard that keeps track of the current 100 highest-ranking stalkers.\n
+			\nThe higher your rank, the more gravity you will have amongst common stalkers. While this means you can recruit more skilled companions, it also means those who oppose you will start sending others to ensure you are...taken care of. Beware.
+			\n%c[pda_blue]Ranks%c[ui_gray_1]
+			\n• Rookie: 0\n• Trainee: 2,000\n• Experienced: 4,000\n• Professional: 7,000\n• Veteran: 10,000\n• Expert: 15,000\n• Master: 21,000\n• Legend: 28,000
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_reputation">
+		<text>Reputation</text>
+	</string>
+	<string id="encyclopedia_features_reputation_text">
+		<text>
+			%c[pda_white]Reputation%c[ui_gray_1] is a representation of how a stalker interacts with others.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nReputation is similar to rank but differs in that it isn't quite so linear - being able to both increase or decrease - and that it is based on your interactions with other stalkers rather than the environment.\n
+			\nThe easiest ways to increase reputation are by completing tasks, providing first-aid, and killing your faction's enemies, whilst inversely the easiest ways to lose it are by cancelling or failing tasks, and killing neutral or friendly stalkers.\n
+			\nIt should be noted that whilst it is used by some features, reputation is largely immersion-focused and should not be confused with goodwill.\n
+			\nThe lower your reputation, the more other members of your faction and their friends will hate you. In extreme cases, they might even begin plotting your death.
+			\n%c[pda_blue]Reputations%c[ui_gray_1]
+			\n• Terrible: -2,000\n• Dreary: -1,500\n• Awful: -1,000\n• Bad: -500\n• Neutral: 0\n• Good: 500\n• Great: 1,000\n• Brilliant: 1,500\n• Excellent: 2,000
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_stashes">
+		<text>Stashes</text>
+	</string>
+	<string id="encyclopedia_features_stashes_text">
+		<text>
+			%c[pda_white]Stashes%c[ui_gray_1] are items stored by stalkers in often well-hidden locations.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nMost stalkers in the Zone store spare ammunition, food, and medicines in containers, backpacks, and other hidden objects with the intent to retrieve them later.\n
+			\nFrequently the information as to their whereabouts dies with the stalker who hid them, resulting in numerous stashes full of unused items strewing the landscape waiting to be discovered at any time.\n
+			\nInformation brokers and traders often give coordinates to stashes as a bonus payment for those who have done good work for them, whereas those in a tight pinch might try to use their own personal stashes to barter for their survival.\n
+			\nYou can create your own stashes by right-clicking and selecting the appropriate option on any backpack in your inventory.\n
+			\nStashes which you create are never looted by other stalkers, so your items will always be safe.\n
+			\n%c[pda_blue]Identification%c[ui_gray_1]
+			\nThe type and/or status of a stash can be easily determined by looking at its icon on the map or by hovering your mouse cursor over it.\n
+			\n• Green: Untouched\n• Purple: Unique\n• Red: Emergency\n• Yellow: Player-owned
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_workshop">
+		<text>Workshop</text>
+	</string>
+	<string id="encyclopedia_features_workshop_text">
+		<text>
+			%c[pda_white]Mechanic's Workshop%c[ui_gray_1] allows the player to repair/upgrade and craft equipment by their own.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nEvery mechanic in the Zone use their workshop/vice for proper repair and upgrade services. Some experienced stalkers prefer to do such work on their own. Therefore, many rent a workshop from its owner temporarly to tweak their own equipment. And you're no exception.
+			\nWith an unbusy workshop and proper tools, you can do the following:
+			\n%c[pda_white]• Repair (part replacement): %c[ui_gray_1]Every weapon or outfit made of specific parts and components. When they get damaged, you can use counterparts to replace the old, damaged ones and improve the condition of your equipment.
+			\n%c[pda_white]• Upgrade:  %c[ui_gray_1]the right tools, you can install upgrades for your equipment and improve its states.
+			\n%c[pda_white]• Craft: %c[ui_gray_1]with the right components/parts and enough knowledge, it's possible to craft a variaty of items.
+			
+			\n \nWhen you use a workshop, a list of main tools will be shown along with their availability (your possession, or by mechanics). These tools are required for crafting and upgrading.
+			\nAn info bar is shown at the bottom to assist the player with necessary steps to work on the workshop.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_workshop_repair">
+		<text>Workshop (Repair / Parts)</text>
+	</string>
+	<string id="encyclopedia_features_workshop_repair_text">
+		<text>
+			%c[pda_white]Mechanic's Workshop%c[ui_gray_1] can be used to repair damaged weapon or outfit by replacing damaged parts with counterparts of better condition.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nEach weapon or outfit made of a set of components/parts. The total condition of an equipment is summed by the condition of its individual parts.
+			\nParts in general have 4 states of condition:
+			\n• Weapon parts condition from worst to best: %c[d_red]Deformed%c[ui_gray_1], %c[d_orange]Damaged%c[ui_gray_1], %c[0,250,250,0]Scratched%c[ui_gray_1], %c[d_green]Functional%c[ui_gray_1]
+			\n• Outfit parts condition from worst to best: %c[d_red]Torn%c[ui_gray_1], %c[d_orange]Damaged%c[ui_gray_1], %c[0,250,250,0]Scratched%c[ui_gray_1], %c[d_green]Clean%c[ui_gray_1]
+			\n\nTo repair an equipment, you need the following items to be in your possession:
+			\n %c[pda_white]• Suitable repair toolkits%c[ui_gray_1] (depends on the weapon/outfit you're trying to repair): such toolkits are sold by the mechanics directly.
+			\n %c[pda_white]• Identical counterparts with better condition%c[ui_gray_1] than the ones your equipment has. Those can be acquired by disassembling weapons and outfits.
+			
+			\n \n%c[pda_blue]Repair procedures%c[ui_gray_1]
+			\n1• Check the requirements to repair your equipment first. When you have the tools and one better counterpart at least, the part buttons will be active.
+			\n2• Click on one of the highlighted parts. The part pickup list will be updated with the counterparts you have in your inventory.
+			\n3• Inside the part pickup list, click on one of the counterpart with better condition. The main part will be replaced and updated with the new one along with condition, and it will reflect back on the total condition of your equipment.
+			\n4• Repeat the process as long as you have more parts to replace, and enough toolkits.
+			\n5• When you're finally done, press the "Repair" button.
+			
+			\n \n%c[pda_yellow]Notes:%c[ui_gray_1]
+			\n• Grayed parts mean that you don't have replacement counterparts of better condition in your inventory, thus you can't interact with it.
+			\n• If you have counterparts to use in replacing your equipment parts, but their condition is not enough, you can use specific toolkits to repair these parts first before using the workshop such as: %c[pda_white]Multitool, File, Ramrod, Basic sewing thread, Field armour kit w/ kevlar thread%c[ui_gray_1]
+			\n• Every part replacement requires one use of the suitable repair kit.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_workshop_upgrade">
+		<text>Workshop (Upgrade)</text>
+	</string>
+	<string id="encyclopedia_features_workshop_upgrade_text">
+		<text>
+			%c[pda_white]Mechanic's Workshop%c[ui_gray_1] can be used to upgrade your weapon or outfit by having the proper tools for the job, instead of spending money for mechanics to do the job.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nThe way to upgrade your equipment is similar to any mechanic's upgrading system, but with the requirement of additional tools. 
+			\n\nTo Upgrade an item, you need the following items to be in your possession:
+			\n %c[pda_white]• Suitable repair toolkits%c[ui_gray_1] (depends on the weapon/outfit you're trying to repair): such toolkits are sold by the mechanics directly.
+			\n %c[pda_white]• Upgrade toolkits%c[ui_gray_1] (depends on the upgrade you want to install and its tier): these tools can be found in possession of other stalkers who have collected them for their own needs.
+			\n %c[pda_white]• Main tools%c[ui_gray_1] (depends on the upgrade tier): such toolkits are rare to come by, as mechanics always need such tools for installing upgrades. Same goes for this case. They might be found around if you'll willing to search.
+			
+			\n \n%c[pda_blue]Repair procedures%c[ui_gray_1]
+			\n1• Check the requirements to upgrade your equipment first. When you have the correct repair kit you can proceed.
+			\n2• Click on an item you wish to upgrade, the upgrade tree will appear along with any installed upgrades it has already.
+			\n3• Each upgrade requires specific upgrade toolkit, as shown next the upgrade itself. Also a main toolkit is need to be available for the upgrade (depends)
+			\n4• If an upgrade is available to install, click on it. Repeat the same procedure if you wish to.
+			\n5• When you're finally done, press the "Upgrade" button to install all upgrades you picked.
+			
+			\n \n%c[pda_yellow]Notes:%c[ui_gray_1]
+			\n• Main tools are required to be available for the work, they won't be consumed in the process.
+			\n• List of usable main tools: %c[pda_white]Basic tools, Advanced tools, Expert tools.%c[ui_gray_1]
+			\n• Hover over an upgrade to see all details regarding its properties. It will also show additionl requirements if the upgrade is not available.
+			\n• Every upgrade requires one use of the suitable repair kit.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_workshop_craft">
+		<text>Workshop (Craft)</text>
+	</string>
+	<string id="encyclopedia_features_workshop_craft_text">
+		<text>
+			%c[ui_gray_1]With the right components/parts and enough knowledge, %c[pda_white]Mechanic's Workshop%c[ui_gray_1] can be used to craft a variety of items.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nSometimes it's hard to come by some equipment in the Zone for all different reasons. Thus, different materials around might come in handy to craft useful equipment.
+			\n\nTo Craft an equipment, you need the following items to be in your possession (depends on the item you're trying to craft):
+			\n %c[pda_white]• Main tools:%c[ui_gray_1] such toolkits are rare to come by, as mechanics always need such tools for extra improvements. They might be found around if you'll willing to search.
+			\n %c[pda_white]• Guidebooks and recipes:%c[ui_gray_1] proper crafting comes with knowledge. Many stalkers might have useful recipes or guidebooks for all kind of stuff.
+			\n %c[pda_white]• Components:%c[ui_gray_1] Each item is made of different materials and components. Such materials can be acquired by disassembling all kinds of items around.
+			
+			\n \n%c[pda_blue]Repair procedures%c[ui_gray_1]
+			\n1• Choose a craft entry of your choice. Entries are listed by item type, each will show a list of related items to pick from.
+			\n2• If the item you want to craft is highlighted, it means you know the recipes. Click on it to proceed.
+			\n3• A list of components along with the required toolkit will be shown. The minimum amount of component is shown under the component icon. 
+			\n4• If you're missing the main toolkit, or some conponent doesn't meet the minimum amount, crafting can't be done.
+			\n5• Otherwise, click on "Craft" button to craft the item you're seeking.
+			
+			\n \n%c[pda_yellow]Notes:%c[ui_gray_1]
+			\n• Main tools are required to be available for the work, they won't be consumed in the process.
+			\n• List of usable main tools: %c[pda_white]Basic tools, Advanced tools, Expert tools, Drug-making kit, Gunsmithing tools.%c[ui_gray_1]
+			\n• If you've brought toolkits to a mechanic before, they will available at the workshop to use right away.
+			\n• Disassembly can be done using specific tools, see the related article.
+			\n• All recipes will be shown in the corner. Only known recipes will be highlighted.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_disassembly">
+		<text>Item disassembly</text>
+	</string>
+	<string id="encyclopedia_features_disassembly_text">
+		<text>
+			You can %c[pda_white]disassemble%c[ui_gray_1] various types of items to acquire basic parts out of them.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nDisassembly helps with recycling unwanted items to acquire parts that can be used for other meaningful purposes such as repairing or crafting other items at the workshop.
+			\nIt can be done by using one of those three tools:
+			\n• %c[pda_white]Swiss knife%c[ui_gray_1] (except weapons)
+			\n• %c[pda_white]Grooming kit%c[ui_gray_1] (except weapons)
+			\n• %c[pda_white]Multitool%c[ui_gray_1]
+			
+			\n \n%c[pda_blue]Procedure%c[ui_gray_1]
+			\nItems that can be disassembled will show (disassemble [!]) option when you click on them in your inventory.
+			\nTo disassemble an item, make sure that you have a suitable disassembling tool, then hold Left ALT button and click on your item and choose (disassemble [!])
+			
+			\n \n%c[pda_yellow]Note%c[ui_gray_1]
+			\nLeft ALT button acts as a safety procedure to prevent accidental disassembly. It can be disabled in the settings.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_battery">
+		<text>Devices and batteries</text>
+	</string>
+	<string id="encyclopedia_features_battery_text">
+		<text>
+			Every device has its own battery, and they won't function without them.
+			
+			\n \n%c[pda_green]Information%c[ui_gray_1]
+			\nDevice power is represented by a small, blue bar under its icon. When using a device, it will drain electric power constantly. Once the batteries get completely drained, the device will no longer function.
+			\nYou can pack and unpack batteries from devices. If you have an important device that's low on power, you can always unpack batteries from other unused devices and make a good use out of them.
+			\nPower consumption varies between devices, high-end devices tend to drain power faster than lesser types.
+			\nAlways keep an eye on the devices in your inventory, it's advised to keep extra batteries in your pocket. You never know when you really need them.
+			
+			\n \n%c[pda_blue]Procedure%c[ui_gray_1]
+			\n• To put a pack of batteries in a device, simply drag and drop the batteries on the device
+			\n• To unpack batteries from devices, right-click on the device in your inventory then choose %c[pda_white]unpack batteries%c[ui_gray_1] option
+			
+			\n \n%c[pda_yellow]Note%c[ui_gray_1]
+			\nLeft ALT button acts as a safety procedure to prevent accidental disassembly. It can be disabled in the options.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_economy_difficulty">
+		<text>Progression Difficulty</text>
+	</string>
+	<string id="encyclopedia_features_economy_difficulty_text">
+		<text>
+			%c[pda_white]Progression Difficulty%c[ui_gray_1] establishes how harsh is the economy of the Zone. And directly influences the progress of your playthough.\n
+			
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThe Progression difficulty has a big impact on the economy, which affects the player's progression during their journey in the Zone.
+			\nAspects affected by this range from sell/buy prices with traders, repair/upgrade prices with mechanics, rarity of loots, money and goodwill earned by completing tasks and more.\n
+			
+			\n%c[pda_blue]Details%c[ui_gray_1]
+			\nAnomaly allows you to customise all aspects of Progression Difficulty, here's a list of all available options:
+			\n%c[200,200,50,50]• %c[pda_white]Earned goodwill factor: %c[ui_gray_1]multiplier for the amount of goodwill earned upon completing tasks.
+			\n%c[200,200,50,50]• %c[pda_white]Money rewards factor: %c[ui_gray_1]multiplier for the amount of money earned upon completing tasks.
+			\n%c[200,200,50,50]• %c[pda_white]Repair costs coefficient: %c[ui_gray_1]multiplier for the cost of repair services offered by mechanics.
+			\n%c[200,200,50,50]• %c[pda_white]Upgrade costs factor: %c[ui_gray_1]multiplier for the cost of upgrade services offered by mechanics.
+			\n%c[200,200,50,50]• %c[pda_white]Trade prices (buy) factor: %c[ui_gray_1]multiplier for the prices of items that traders sell to you.
+			\n%c[200,200,50,50]• %c[pda_white]Trade prices (sell) factor: %c[ui_gray_1]multiplier for the prices of items that traders buy from you.
+			\n%c[200,200,50,50]• %c[pda_white]Loots (items) chance factor: %c[ui_gray_1]multiplier for the chance of finding items on corpses.
+			\n%c[200,200,50,50]• %c[pda_white]Loots (money) factor: %c[ui_gray_1]multiplier for the amount of money found on corpses.
+			\n%c[200,200,50,50]• %c[pda_white]Full-percentage system for parts: %c[ui_gray_1]when enabled, the parts disassembled from weapons/outfits will have numric condition. Thus making the system more complicated.
+			\n%c[200,200,50,50]• %c[pda_white]Chance of discovering stashes: %c[ui_gray_1]controls the chance of finding stash locations in PDAs.
+			\n%c[200,200,50,50]• %c[pda_white]Weapon degradation factor: %c[ui_gray_1]multiplier for degradation rate of your weapons.
+			\n%c[200,200,50,50]• %c[pda_white]Battery power consumption factor: %c[ui_gray_1]multiplier for the amount of power consumed from devices on use.
+			\n%c[200,200,50,50]• %c[pda_white]Enable limited amount of bolts: %c[ui_gray_1]as the name suggests, your bolts storage is limited.
+			\n%c[200,200,50,50]• %c[pda_white]Enable artefact degradation: %c[ui_gray_1]arterfacts can degrade when they protect their users from relative anomolous damager. Degradation affects artefact price.
+			\n%c[200,200,50,50]• %c[pda_white]Artefact respawn chance: %c[ui_gray_1]chance of artefacts to appear in anomolous fields.
+			\n%c[200,200,50,50]• %c[pda_white]Traders restock cycle (hours): %c[ui_gray_1]Hours until traders restock again.
+	
+			\n \n \n%c[200,200,50,50]ATTENTION%c[ui_gray_1]
+			\n• Economy factors are configured per current playthrough.
+			\n• Progression factors are only accessible through loaded saves. You can tweak them inside the settings menu.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_gameplay_difficulty">
+		<text>Gameplay Difficulty</text>
+	</string>
+	<string id="encyclopedia_features_gameplay_difficulty_text">
+		<text>
+			%c[pda_white]Gameplay Difficulty%c[ui_gray_1] establishes how easy or hard the game should be to play.\n
+			
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nGameplay difficulty affects aspects related to the player such as protection against damage sources, stamina loss and carry weight. In addition to extra aspects such as water and sleep deprivation.\n
+			
+			\n%c[pda_blue]Details%c[ui_gray_1]
+			\nAnomaly allows you to customise all aspects of Gameplay difficulty, here's a list of all available options:
+			\n%c[200,200,50,50]• %c[pda_white]Player's protection: %c[ui_gray_1]A list of four choices that detemine player's base protection against damage sources.
+			\n%c[200,200,50,50]• %c[pda_white]Bullet hit power factor: %c[ui_gray_1]Multiplier for the amount of damage dealt by bullets from all weapons. Higher values means higher damage, and faster kills.
+			\n%c[200,200,50,50]• %c[pda_white]Stamina loss factor: %c[ui_gray_1]multiplier for the amount of stamina lost by movement/carry weight.
+			\n%c[200,200,50,50]• %c[pda_white]Max carry weight: %c[ui_gray_1]controls the max amount of weight you can carry.
+			\n%c[200,200,50,50]• %c[pda_white]Enable water deprivation: %c[ui_gray_1]activates thirst simulation, which means your character has to drink from time to time.
+			\n%c[200,200,50,50]• %c[pda_white]Enable sleep deprivation: %c[ui_gray_1]allows the passage of time and use of consumables to gradually exhaust your character.
+			\n%c[200,200,50,50]• %c[pda_white]Enable radiation in daytime: %c[ui_gray_1]going outside during the day will expose your character to high, constant doses of radiation. A suitable outfit and helmet can provide you enough protection against the radioactive particles, as long as they are maintained properly.
+			\n%c[200,200,50,50]• %c[pda_white]Play radiation clicks from geiger only: %c[ui_gray_1]When enabled, radiation clicks can be heard only if you possess a Geiger counter in your inventory with enough battery power.
+			\n%c[200,200,50,50]• %c[pda_white]Enable anomaly detector: %c[ui_gray_1]The default beeping sound that plays when player approach anomolous fields.
+	
+	
+			\n \n \n%c[200,200,50,50]ATTENTION%c[ui_gray_1]
+			\n• Gameplay difficulty factors are configured per current playthrough.
+			\n• Gameplay difficulty factors are only accessible through loaded saves. You can tweak them inside the settings menu.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_disguise">
+		<text>Disguise system</text>
+	</string>
+	<string id="encyclopedia_features_disguise_text">
+		<text>
+			You can %c[pda_white]disguise%c[ui_gray_1] yourself as a stalker from another faction to keep your true identity hidden for a variety of purposes.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nTo disguise as a member of a specific faction, you need to wear an appropriate outfit.
+			\nWhile disguised, you can walk among faction members and act as one of them, even if they're hostile under normal circumstances.
+			\nWhile in their presence, they will observe you and your behaviour. A "suspiciousness" meter will appear on the HUD to indicate how suspicious you are in real time.
+			\nMany factors play a role in the effectiveness of your disguise, and affect the suspiciousness surrounding your character.
+			\nPay attention to the equipment you wear and its condition. Act normally and don't make any surprising moves to ensure that you don't draw unwanted attention.
+			\nYou can't disguise as a Monolith member, as they identify themselves through unknown means.
+			
+			\n \n%c[pda_blue]Options%c[ui_gray_1]
+			\n• You can tweak the disguise factors through a variety of options inside the settings menu.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_fast_travel">
+		<text>Fast travel</text>
+	</string>
+	<string id="encyclopedia_features_fast_travel_text">
+		<text>
+			%c[pda_white]Fast and Backpack Travel%c[ui_gray_1] allows you to travel to locations you have previously discovered by using your PDA's map.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nMany locations are discovered as you travel, thus putting a marker on the map that allows you to click on it and fast travel to said location later.
+			\nBackpack Travel does the same, but depends on stashes that you've created.
+			\nYou can't fast travel if you're in combat, encumbered, heavily wounded, or during emissions.
+			
+			\n \n%c[pda_blue]Options%c[ui_gray_1]
+			\n• You can control fast and backpack travel through a variety of options inside the settings menu.
+		</text>
+	</string>
+</string_table>

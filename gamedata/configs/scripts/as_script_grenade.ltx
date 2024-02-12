@@ -1,0 +1,17 @@
+[logic]
+active = ph_idle@click
+
+[ph_idle@click]
+nonscript_usable = false
+on_info = %=script(xr_wounded:as_play_sound)% ph_idle@delay
+
+[ph_idle@delay]
+nonscript_usable = false
+on_timer = 2000 | ph_idle@explode
+
+[ph_idle@explode]
+nonscript_usable = false
+on_info = %=script(xr_wounded:as_self_explode)% ph_idle@idle
+
+[ph_idle@idle]
+nonscript_usable = false

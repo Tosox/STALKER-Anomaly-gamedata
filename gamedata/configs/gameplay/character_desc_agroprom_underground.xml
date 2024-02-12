@@ -1,0 +1,47 @@
+﻿<?xml version='1.0' encoding="windows-1251"?>
+<!--	CoC 1.4.10 - DoctorX Questlines 1.6 -->
+<xml>
+
+<!-- Bandit squad leader in Agroprom underground-->
+	<specific_character id="agr_u_bandit_boss" team_default="1">
+		<name>agr_u_bandit_boss_name</name>
+		<icon>ui_inGame2_bandit_4abc</icon>
+		<map_icon x="1" y="0"></map_icon>
+		<bio>An experienced stalker. No detailed information is available.</bio>
+		
+		<class>agr_u_bandit_boss</class>
+		<community>bandit</community> 
+		<terrain_sect>stalker_terrain</terrain_sect>
+		<snd_config>characters_voice\human\bandit_1\</snd_config>
+		
+		<rank>500</rank>
+		<money min="500" max="1750" infinitive="0"/>
+		<reputation>-200</reputation>
+		
+		<visual>actors\stalker_bandit\stalker_bandit4b</visual>
+		<supplies>
+		
+		[spawn] \n
+		wpn_mossberg590 \n
+		ammo_12x70_buck = 1 \n
+
+#include "gameplay\supplies\character_items.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals.xml"
+		<start_dialog>dm_agr_u_bandit_boss_start</start_dialog>
+		<actor_dialog>dm_agr_u_bandit_boss_ask</actor_dialog>
+		<actor_dialog>dm_agr_u_bandit_boss_reask</actor_dialog>
+		<actor_dialog>dm_agr_u_bandit_boss_give_docs</actor_dialog>
+		<actor_dialog>dm_agr_u_bandit_boss_arrived</actor_dialog>
+		
+		<actor_dialog>friendly_companion_dialog</actor_dialog>
+		<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+		<actor_dialog>dm_companion_patrol</actor_dialog>
+		<actor_dialog>dm_companion_leave</actor_dialog>
+		
+		<actor_dialog>actor_break_dialog</actor_dialog>
+	</specific_character>
+
+</xml>

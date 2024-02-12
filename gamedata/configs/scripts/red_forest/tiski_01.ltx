@@ -1,0 +1,14 @@
+[logic]
+active = ph_idle@close
+
+[ph_idle@close]
+tips = st_tiski_no_info
+nonscript_usable = false
+on_info = {+awr_m_lesnik_access} ph_idle@open
+
+[ph_idle@open]
+tips = st_tiski
+on_info = {-awr_m_lesnik_access} ph_idle@close
+
+[collide] 
+ignore_static

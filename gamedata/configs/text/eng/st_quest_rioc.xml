@@ -1,0 +1,202 @@
+<string_table>
+	<string id="st_rioc_sid_desc">
+		<text>A sealed container you found on a dead stalker, it must be the shipment Sidorovich was talking about.</text>
+	</string>
+
+	<string id="st_rioc_sid">
+		<text>Sidorovich's supplies</text>
+	</string>
+
+	<string id="st_rioc_duty_desc">
+		<text>This PDA confirms Petrenko's missing soldier is dead after all. Looks like he gave as good as he got.</text>
+	</string>
+
+	<string id="st_rioc_duty">
+		<text>Fallen Duty PDA</text>
+	</string>
+
+	<string id="st_rioc_ecolog_desc">
+		<text>A computer encased in a reinforced container, according to the scientists this is a brand new detector prototype destined to change the world of artefact hunting. Unfortunately none of the graphs and numbers make any sense to you.</text>
+	</string>
+
+	<string id="st_rioc_ecolog">
+		<text>Prototype detector</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_d">
+		<text>One stalker was supposed to bring me some special supplies from another trader but I haven't heard anything from him for some days, at first I thought he just ran away with the stuff but he hasn't hidden his location and didn't move for a while either. Maybe he just lost his PDA or even got killed, anyway I need someone to go there and check what happened. If he died and by chance still got the stuff bring it back.</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_t">
+		<text>Recover Sidorovich's shipment</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_t">
+		<text>Recover the detector prototype</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_d">
+		<text>We are in a bit of a problem right now, one of our teams went out to perform some anomalous scans but hasn't returned yet. We've tried to contact them but we didn't get any response. When we brought this up with the State Security Service, they said they can't spare the resources or the manpower to go and find our team right now. It currently holds something vital to our research. One of the team members was equipped with a prototype detector, something we rarely take out of the base to use. If you could go to their last known location and find the prototype or the team, we will pay you for your services. I'll mark the position on your PDA when we lost contact.</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_end">
+		<text>Thank god, you do not know how appreciated I am to see this device back in our hands! Losing the team was saddening but this device would of set back our research by almost a year. Thank you for your help, here's some payment for your services.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_t">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_d">
+		<text>Earlier today, a light Duty patrol responded to a distress call from neutrals. They arrived in time to evacuate some stalkers and scientists caught in a major mutant attack, but one of the Dutyers had to stay behind to ensure the escape. The rest of his squad now lists him as missing in action. I'd like you to investigate the site of the attack and confirm his status. If he's alive, heal him as best you can then bring him back. If he cannot be saved, bring back his PDA instead; a martyr's records should be saved for posterity.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_end">
+		<text>He's dead, then? He was a good man, but the Zone can be relentless in its hatred of such people. Here, let me take a look at his PDA... hm, interesting. On behalf of Duty, you have our gratitude. Here, you have more than earned this payment.</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_agroprom_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_pol_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_garbage_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_wt_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_aw_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_trucc_0">
+		<text>Find Sidorovich's shipment</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_agroprom_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_pol_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_garbage_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_wt_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_aw_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_trucc_1">
+		<text>Return the box to Sidorovich</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_agroprom_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_pol_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_garbage_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_wt_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_aw_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_trucc_0">
+		<text>Find the prototype detector</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_agroprom_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_pol_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_garbage_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_wt_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_aw_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_trucc_1">
+		<text>Return the detector to the scientists</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_agroprom_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_pol_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_garbage_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_wt_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_aw_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_trucc_0">
+		<text>Find the Missing Duty Soldier</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_agroprom_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_pol_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_garbage_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_wt_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_aw_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_trucc_1">
+		<text>Return the PDA to Petrenko</text>
+	</string>
+
+</string_table>

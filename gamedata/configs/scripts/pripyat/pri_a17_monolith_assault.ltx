@@ -1,0 +1,51 @@
+[logic@pri_a17_monolith_leader]
+active = walker@pri_a17_monolith_leader
+suitable = {=check_npc_name(pri_a17_monolith_leader)} true
+prior = 200
+
+[walker@pri_a17_monolith_leader]
+path_walk = mon_amb_3
+path_look = mon_amb_3_look
+def_state_moving = assault
+commander = true
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false 
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+out_restr = pri_a17_monolith_attack_zone
+wounded = wounded
+
+[logic@pri_a17_monolith_trooper]
+active = walker@pri_a17_monolith_trooper
+suitable = {=check_npc_name(pri_a17_monolith_trooper)} true
+prior = 200
+
+[walker@pri_a17_monolith_trooper]
+path_walk = mon_amb_4
+path_look = mon_amb_4_look
+def_state_moving = assault
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false 
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+out_restr = pri_a17_monolith_attack_zone
+wounded = wounded
+
+[logic@pri_a17_monolith_trooper2]
+active = walker@pri_a17_monolith_trooper2
+suitable = {=check_npc_name(pri_a17_monolith_trooper2)} true
+prior = 200
+
+[walker@pri_a17_monolith_trooper2]
+path_walk = mon_amb_10
+path_look = mon_amb_10_look
+def_state_moving = assault
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false 
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+out_restr = pri_a17_monolith_attack_zone
+wounded = wounded

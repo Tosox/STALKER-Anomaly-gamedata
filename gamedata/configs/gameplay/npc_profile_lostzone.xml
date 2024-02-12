@@ -1,0 +1,174 @@
+﻿<?xml version='1.0' encoding="UTF-8"?>
+
+<xml>
+	<!-- Lost to the Zone: Living Legend Characters -->
+	<character id="monolith_eidolon">
+		<class>monolith_eidolon</class>
+	</character>
+	<character id="stalker_gatekeeper">
+		<class>stalker_gatekeeper</class>
+	</character>
+	<character id="lost_stalker_strelok">
+		<class>lost_stalker_strelok</class>
+	</character>
+	<character id="stalker_rogue">
+		<class>stalker_rogue</class>
+	</character>
+	<character id="stalker_stitch">
+		<class>stalker_stitch</class>
+	</character>
+	<character id="stalker_scope">
+		<class>stalker_scope</class>
+	</character>
+	<character id="stalker_wayfarer">
+		<class>stalker_wayfarer</class>
+	</character>
+	
+	<character id="sim_default_phantom_1">
+		<class>sim_default_phantom_1</class>
+	</character>
+	<character id="sim_default_phantom_2">
+		<class>sim_default_phantom_2</class>
+	</character>
+	<character id="sim_default_phantom_3">
+		<class>sim_default_phantom_3</class>
+	</character>
+	
+	<!-- Lost to the Zone: Mortal Sin Characters -->
+	<character id="greh_envoy">
+		<class>greh_envoy</class>
+	</character>
+	<character id="greh_squad_leader">
+		<class>greh_squad_leader</class>
+	</character>
+	<character id="stalker_stitch_ms">
+		<class>stalker_stitch_ms</class>
+	</character>
+	<character id="stalker_rogue_ms">
+		<class>stalker_rogue_ms</class>
+	</character>
+	<character id="greh_castigator_1">
+		<class>greh_castigator_1</class>
+	</character>
+	<character id="greh_castigator_2">
+		<class>greh_castigator_2</class>
+	</character>
+	<character id="greh_castigator_3">
+		<class>greh_castigator_3</class>
+	</character>
+	<character id="greh_prisoner">
+		<class>greh_prisoner</class>
+	</character>
+	<character id="lim_stalker_scout">
+		<class>lim_stalker_scout</class>
+	</character>
+	<character id="kat_greh_sabaoth">
+		<class>kat_greh_sabaoth</class>
+	</character>
+	<character id="greh_castigator_4">
+		<class>greh_castigator_4</class>
+	</character>
+	<character id="gen_greh_sabaoth">
+		<class>gen_greh_sabaoth</class>
+	</character>
+	<character id="greh_castigator_5">
+		<class>greh_castigator_5</class>
+	</character>
+	<character id="greh_castigator_6">
+		<class>greh_castigator_6</class>
+	</character>
+	<character id="sar_greh_sabaoth">
+		<class>sar_greh_sabaoth</class>
+	</character>
+	<character id="greh_castigator_7">
+		<class>greh_castigator_7</class>
+	</character>
+	<character id="lazarus_dolg">
+		<class>lazarus_dolg</class>
+	</character>
+	<character id="lazarus_killer">
+		<class>lazarus_killer</class>
+	</character>
+	<character id="lazarus_stalker">
+		<class>lazarus_stalker</class>
+	</character>
+	<character id="lazarus_csky">
+		<class>lazarus_csky</class>
+	</character>
+	<character id="lazarus_freedom">
+		<class>lazarus_freedom</class>
+	</character>
+	<character id="lazarus_ecolog">
+		<class>lazarus_ecolog</class>
+	</character>
+	
+	<!-- Lost to the Zone: Operation Afterglow Characters -->
+	<character id="army_degtyarev">
+		<class>army_degtyarev</class>
+	</character>
+	<character id="sim_default_anpc_1">
+		<class>sim_default_anpc_1</class>
+	</character>
+	<character id="sim_default_anpc_2">
+		<class>sim_default_anpc_2</class>
+	</character>
+	<character id="isg_squad_leader">
+		<class>isg_squad_leader</class>
+	</character>
+	<character id="army_degtyarev_jup">
+		<class>army_degtyarev_jup</class>
+	</character>
+	<character id="army_lt_jup">
+		<class>army_lt_jup</class>
+	</character>
+	<character id="army_isg_spy">
+		<class>army_isg_spy</class>
+	</character>
+	<character id="stalker_strelok_oa">
+		<class>stalker_strelok_oa</class>
+	</character>
+	<character id="pri_a17_monolith_leader">
+		<class>pri_a17_monolith_leader</class>
+	</character>
+	<character id="pri_a17_monolith_trooper">
+		<class>pri_a17_monolith_trooper</class>
+	</character>
+	<character id="pri_a17_monolith_trooper2">
+		<class>pri_a17_monolith_trooper2</class>
+	</character>
+	<character id="stalker_rogue_oa">
+		<class>stalker_rogue_oa</class>
+	</character>
+	<character id="stalker_stitch_oa">
+		<class>stalker_stitch_oa</class>
+	</character>
+	<character id="army_tarasov">
+		<class>army_tarasov</class>
+	</character>
+	<character id="pri_b35_army_1">
+		<class>pri_b35_army_1</class>
+	</character>
+	<character id="pri_b35_army_2">
+		<class>pri_b35_army_2</class>
+	</character>
+	<character id="pri_b35_army_3">
+		<class>pri_b35_army_3</class>
+	</character>
+	<character id="pri_b35_army_4">
+		<class>pri_b35_army_4</class>
+	</character>
+	
+	<!-- Lost to the Zone: Hollow Boundaries Characters -->
+	<character id="ds_domik_isg_leader">
+		<class>ds_domik_isg_leader</class>
+	</character>
+	<character id="jup_depo_isg_leader">
+		<class>jup_depo_isg_leader</class>
+	</character>
+	<character id="jup_depo_isg_tech">
+		<class>jup_depo_isg_tech</class>
+	</character>
+	<character id="stalker_strelok_hb">
+		<class>stalker_strelok_hb</class>
+	</character>
+</xml>

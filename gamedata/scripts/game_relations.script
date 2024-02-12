@@ -1,0 +1,1044 @@
+--[[
+ ============================================================
+
+ Game Relation Functions  (game_relations.script)
+	DoctorX Dynamic Faction Relations 1.8
+
+	Modified by: DoctorX, av661194
+	Last revised: February 16, 2016
+
+ ============================================================
+
+	Modified by: Tronex
+	2018/7/7 - Relation changes are done by calculating ranks and reputation of victim and killer npcs
+	2018/8/3 - Added a limiter that switch off relation changes for factions with critical relations
+
+ ============================================================
+
+	-- the ratio of the character to the actor (or other NPC) is calculated by the formula:
+	-- attitude = personal_goodwill + 				- personal attitude of the character to the actor (if not previously met, then 0)
+	-- community_goodwill + 						- the relation of the grouping of the character to the actor personally (if there were no contacts before, 0)
+	-- community_to_community + 					- the relation of the grouping of the character to the grouping of the actor from [communities_relations]
+	-- reputation_goodwill + 						- the relation of the character's reputation to the reputation of the actor from [reputation_relations]
+	-- rank_goodwill 								- the relation of rank of the character to the rank of the actor from [rank_relations]
+
+--]]
+
+
+--========================================< Controls >========================================--
+local ini_r = ini_file("plugins\\dynamic_faction_relations.ltx")
+local ini_g = ini_file("creatures\\game_relations.ltx")
+factions_table = {"stalker","bandit","csky","dolg","freedom","killer","army","ecolog","monolith","renegade","greh","isg"}
+factions_table_all = {"actor","bandit","dolg","ecolog","freedom","killer","army","monolith","monster","stalker","zombied","csky","renegade","greh","isg","trader","actor_stalker","actor_bandit","actor_dolg","actor_freedom","actor_csky","actor_ecolog","actor_killer","actor_army","actor_monolith","actor_renegade","actor_greh","actor_isg","actor_zombied","arena_enemy"}
+-- ATTENTION! (factions_table_all) table must follow the same order of [communities_relations] section in game_relations.ltx file
+ FRIENDS = 1000
+ NEUTRALS = 0
+ ENEMIES = -1000
+ friend_limit = ini_r:r_float_ex ("controls" ,"friend_limit") or 4100
+ enemy_limit = ini_r:r_float_ex ("controls" ,"enemy_limit") or -5000
+ local death_value = ini_r:r_float_ex ("controls" ,"death_value") or 150
+ local friend_count_limit = ini_r:r_float_ex ("controls" ,"friend_count_limit") or 3
+ local enemy_count_limit = ini_r:r_float_ex ("controls" ,"enemy_count_limit") or 3
+ 
+default_sympathy = 0.01
+game_relations_by_num = {	[0] = "friend",
+							[1] = "neutral",
+							[2] = "enemy",
+}
+temp_goodwill_table = {}
+
+local ignore = {
+	["monster"] = true,
+	["zombied"] = true,
+}
+
+-- Table of factions of unaffected relations
+local blacklist = {}
+local n = ini_r:line_count("unaffected_factions") or 0
+for i=0, n-1 do
+	local result, id, value = ini_r:r_line("unaffected_factions", i , "", "")
+	blacklist[id] = true
+	--printf("Relations: blacklist[" .. id .. "] = true")
+end
+
+-- Table of faction pairs of unaffected relations
+local blacklist_pair = {}
+n = ini_r:line_count("unaffected_pairs") or 0
+for i=0, n-1 do
+	local result, id, value = ini_r:r_line("unaffected_pairs", i , "", "")
+	local val = tostring(value)
+	local tbl = str_explode(val,",")
+	if tbl[1] and tbl[2] then
+		blacklist_pair[#blacklist_pair+1] = {tbl[1],tbl[2]}
+		--printf("Relations: blacklist_pair[" .. #blacklist_pair .. "] = {" .. tbl[1] .. "," .. tbl[2] .. "}")
+	end
+end
+
+-- Bad reputation table, only critically bad rep have impact
+local rep_enemy_table = {
+	["terrible"] = 1.3,
+	["really_bad"] = 1.2,
+	["very_bad"] = 1.1,
+	["bad"] = 1,
+	["neutral"] = 1,
+	["good"] = 1,
+	["very_good"] = 1,
+	["really_good"] = 1,
+	["excellent"] = 1
+}
+
+-- Good reputation table, only critically good rep have impact
+local rep_friend_table = {
+	["terrible"] = 1,
+	["really_bad"] = 1,
+	["very_bad"] = 1,
+	["bad"] = 1,
+	["neutral"] = 1,
+	["good"] = 1,
+	["very_good"] = 1.1,
+	["really_good"] = 1.2,
+	["excellent"] = 1.3
+}
+
+-- Rank table, lower to higher, higher ranks have higher impact
+local rank_table = {
+	["novice"] = 0.1,
+	["trainee"] = 0.2,
+	["experienced"] = 0.4,
+	["professional"] = 0.5,
+	["veteran"] = 0.7,
+	["expert"] = 1,
+	["master"] = 1.7,
+	["legend"] = 3
+}
+
+
+--========================================< Utility >========================================--
+function is_faction_unaffected(fac)
+	if blacklist[fac] then
+		return true
+	end
+	return false
+end
+
+function is_faction_pair_unaffected(fac1, fac2)
+	if (not fac1) or (not fac2) then
+		return false
+	end
+	
+	for i=1,#blacklist_pair do
+		if (blacklist_pair[i][1] == fac1) and (blacklist_pair[i][2] == fac2) then
+			return true
+		elseif (blacklist_pair[i][2] == fac1) and (blacklist_pair[i][1] == fac2) then
+			return true
+		end
+	end
+	return false
+end
+
+function send_news (faction_1 , faction_2 , text , icon) -- Send news upon relation major changes
+	local faction_1_str = game.translate_string( faction_1 )
+	local faction_2_str = game.translate_string( faction_2 )
+	local relation_str = game.translate_string( text )
+	local str = faction_1_str .. " " .. game.translate_string("st_relations_and") .. " " .. faction_2_str .. " " .. relation_str
+	news_manager.send_tip( db.actor, str, nil, icon, nil, nil )
+end
+
+function reset_goodwill (faction_1 , faction_2) -- Reset the goodwill for actors of both factions
+	if ui_options.get("alife/general/war_goodwill_reset") then
+		if ( character_community( db.actor ) == faction_1 or ("actor_" .. faction_1) ) then
+			relation_registry.set_community_goodwill( faction_2, AC_ID, 0 )
+		elseif ( character_community( db.actor ) == faction_2 or ("actor_" .. faction_2) ) then
+			relation_registry.set_community_goodwill( faction_1, AC_ID, 0 )
+		end
+	end
+end
+
+function is_relation_allowed (faction_1 , faction_2) -- Check if the relation between both factions is changeable 
+	-- Check blacklisted factions
+	if blacklist[faction_1] or blacklist[faction_2] then
+		return false
+	end
+	
+	-- Check blacklisted pairs 
+	for i = 1, #blacklist_pair do
+		if (blacklist_pair[i][1] == faction_1) and (blacklist_pair[i][2] == faction_2) then
+			return false
+		elseif (blacklist_pair[i][2] == faction_1) and (blacklist_pair[i][1] == faction_2) then
+			return false
+		end
+	end
+	
+	return true
+end
+
+function give_range ( value , range , up ) -- shift value randomly based on range
+	if (range >= 1) then
+		return value
+	end
+	
+	local a = value
+	local po = 1
+	while (a < 10) do
+		a = a * 10
+		po = po * 10
+	end
+	
+	if up then -- only give higher values
+		a = math.random ( a , math.floor(a + (a * range )) )
+		if (value == 1) then -- return (1) values
+			a = po
+		end
+	else
+		a = math.random ( math.ceil(a - (a * range )) , math.floor(a + (a * range )) )
+	end
+	a = a / po
+	
+	return a
+end
+
+function save_relation (faction_1 , faction_2 , relation) -- Save the relation between both factions
+	set_factions_community_num( faction_1, faction_2, relation )
+	save_var( db.actor, ("drx_df_" .. faction_1 .. "_" .. faction_2 .. "_relations"), relation )
+	set_factions_community_num( faction_2, faction_1, relation )
+	save_var( db.actor, ("drx_df_" .. faction_2 .. "_" .. faction_1 .. "_relations"), relation )
+end
+
+function load_relation (faction_1 , faction_2 ) -- Load the relation between both factions
+	local relation
+	relation = load_var( db.actor, ("drx_df_" .. faction_1 .. "_" .. faction_2 .. "_relations"), nil )
+	if ( relation ~= nil ) then
+		set_factions_community_num( faction_1, faction_2, relation )
+	end
+	relation = load_var( db.actor, ("drx_df_" .. faction_2 .. "_" .. faction_1 .. "_relations"), nil )
+	if ( relation ~= nil ) then
+		set_factions_community_num( faction_2, faction_1, relation )
+	end
+end
+
+function change_faction_relations ( faction_1, faction_2, delta , force) -- Change the relation between both factions by (delta)
+
+	-- Get old faction relations:
+	local old_1_2_relations = get_factions_community( faction_1, faction_2 )
+	local old_2_1_relations = get_factions_community( faction_2, faction_1 )
+	if ( (math.abs( old_2_1_relations )) > (math.abs( old_1_2_relations )) ) then
+		old_1_2_relations = old_2_1_relations
+	end
+	local old_a1_2_relations = get_factions_community( ("actor_" .. faction_1), faction_2 )
+	local old_2_a1_relations = get_factions_community( faction_2, ("actor_" .. faction_1) )
+	if ( (math.abs( old_2_a1_relations )) > (math.abs( old_a1_2_relations )) ) then
+		old_a1_2_relations = old_2_a1_relations
+	end
+	local old_a2_1_relations = get_factions_community( ("actor_" .. faction_2), faction_1 )
+	local old_1_a2_relations = get_factions_community( faction_1, ("actor_" .. faction_2) )
+	if ( (math.abs( old_1_a2_relations )) > (math.abs( old_a2_1_relations )) ) then
+		old_a2_1_relations = old_1_a2_relations
+	end
+
+	-- Calculate new faction relation value, randomly reset if pegged:
+	local relation = force and delta or (old_1_2_relations + delta)
+	if ( relation > friend_limit ) then
+		if ( math.random( 100 ) < 50 ) then
+			relation = 0
+		else
+			relation = friend_limit
+		end
+	elseif ( relation < enemy_limit ) then
+		if ( math.random( 100 ) < 50 ) then
+			relation = 0
+		else
+			relation = enemy_limit
+		end
+	end
+
+	-- Save new relation changes
+	save_relation ( faction_1 , faction_2 , relation ) -- Save overall faction relations:
+	save_relation ( "actor_" .. faction_1 , faction_2 , relation ) -- Save actor faction / faction 2 relations:
+	save_relation ( faction_1 , "actor_" .. faction_2 , relation ) -- Save actor faction / faction 1 relations:
+	
+	--------------------( Send news / Reset goodwill if necessary )--------------------
+	
+	-- Check if faction war footing has changed to hostile:
+	if ( (old_1_2_relations > ENEMIES) and (get_factions_community( faction_1, faction_2 ) <= ENEMIES) ) then
+		send_news (faction_1 , faction_2 , "st_relations_declared_war" , "patriarch")
+		reset_goodwill (faction_1 , faction_2) -- only when they go hostile
+	
+	-- Check if faction war footing has changed to allied:
+	elseif ( (old_1_2_relations < FRIENDS) and (get_factions_community( faction_1, faction_2 ) >= FRIENDS) ) then
+		send_news (faction_1 , faction_2 , "st_relations_alliance" , "completionist")
+	
+	-- Check if faction war footing has changed from allied to neutral:
+	elseif ( (old_1_2_relations >= FRIENDS) and (get_factions_community( faction_1, faction_2 ) < FRIENDS) and (get_factions_community( faction_1, faction_2 ) > ENEMIES) ) then
+		send_news (faction_1 , faction_2 , "st_relations_deteriorating" , "silver_or_lead")
+	
+	-- Check if faction war footing has changed from hostile to neutral:
+	elseif ( (old_1_2_relations <= ENEMIES) and (get_factions_community( faction_1, faction_2 ) < FRIENDS) and (get_factions_community( faction_1, faction_2 ) > ENEMIES) ) then
+		send_news (faction_1 , faction_2 , "st_relations_cease_fire" , nil)
+	end
+
+end
+
+function reset_all_relations()
+	local tbl = {}
+	for i=1, #factions_table_all do
+		local value = ini_g:r_string_ex("communities_relations" , factions_table_all[i])
+		tbl[factions_table_all[i]] = str_explode(value,",")
+	end
+	
+	for i=1,#factions_table_all do
+		for j=1,#factions_table_all do
+			set_factions_community_num( factions_table_all[i] , factions_table_all[j] , tonumber(tbl[factions_table_all[i]][j]) )
+			--printf("TRX - " .. factions_table_all[i] .. " + " .. factions_table_all[j] .. " = " .. tonumber(tbl[factions_table_all[i]][j]))
+		end
+	end
+end
+
+function calculate_relation_change( victim_tbl, killer_tbl)
+
+	if (_G.WARFARE == true) then
+		if (warfare_options.options.fog_of_war) then
+			return
+		end
+		friend_count_limit = -1
+		enemy_count_limit = -1
+	end
+	
+	-- Victim props
+	local victim_faction = victim_tbl.comm
+	local victim_rank = victim_tbl.rank
+	local victim_rep = victim_tbl.rep
+	
+	-- Killer props
+	local killer_faction = killer_tbl.comm
+	local killer_rank = killer_tbl.rank
+	local killer_rep = killer_tbl.rep
+	
+		
+	-- Prepare reputation
+	local victim_rep_bad_value = rep_enemy_table[victim_rep] or 1
+	local victim_rep_good_value = rep_friend_table[victim_rep] or 1
+	local killer_rep_bad_value = rep_enemy_table[killer_rep] or 1
+	local killer_rep_good_value = rep_friend_table[killer_rep] or 1
+	-- Prepare rank
+	local victim_rank_value = rank_table[victim_rank] or 0.5
+	local killer_rank_value = rank_table[killer_rank] or 0.5
+	
+	-- factions relations to victim faction
+	local enemy_num = 0
+	local natural_num = 0
+	local friend_num = 0
+	for i=1,#factions_table do
+		if (victim_faction ~= factions_table[i]) then
+			local rel = get_factions_community( victim_faction , factions_table[i] )
+			if (rel <= -1000) then
+				enemy_num = enemy_num + 1
+			elseif (rel > -1000) and (rel < 1000) then
+				natural_num = natural_num + 1
+			elseif (rel > -1000) and (rel < 1000) then
+				friend_num = friend_num + 1
+			end
+		end
+	end
+	
+	-- return if killer and victim are from the same faction
+	if (killer_faction == victim_faction) then
+		return
+	end
+
+	-- If killed NPC was enemy of faction, raise relation toward killer faction:
+	if ( math.random( 100 ) > 50 ) then
+		for i = 1, #factions_table do
+			if ( factions_table[i] ~= killer_faction ) then
+				if ( is_factions_enemies( factions_table[i], victim_faction ) ) then
+					if ( math.random( 100 ) > 50 ) then -- random faction picker
+						
+						-- Relation calculation:
+						-- 1. Big impact: Rank of victim
+						-- 2. Avergae impact: Reputation of victim (if it was bad enough)
+						-- 2. Small impact: Rank of killer
+						-- 3. Slight impact: reputation of killer (if it was good enough)
+						
+						local v_rep_bad = give_range( victim_rep_bad_value , 0.1 , true )
+						local v_rep_good = give_range( victim_rep_good_value , 0.1 , true )
+						local v_rank = give_range(victim_rank_value , 0.25)
+						
+						local k_rep_bad = (v_rep_good > 1) and give_range( killer_rep_bad_value , 0.1 , true ) or 0 -- disable if victim reputation is not remarkable
+						local k_rep_good = (v_rep_bad > 1) and give_range( killer_rep_good_value , 0.1 , true ) or 0 -- disable if victim reputation is not remarkable
+						local k_rank = give_range( killer_rank_value , 0.25 )
+						
+						local value = math.floor( death_value * ( v_rank + ( k_rank / 5 ) ) * ( v_rep_bad + ( k_rep_good / 10 ) ) )
+						
+						if is_relation_allowed( factions_table[i] , killer_faction ) and ( natural_num + friend_num > friend_count_limit ) then
+							change_faction_relations( factions_table[i], killer_faction, value )
+							--printf("- Relations: Relations positive change | " .. factions_table[i] .. " <-> " .. killer_faction .. " relation change = " .. value)
+						else
+							--printf("% Relations: Relations change | " .. factions_table[i] .. " <-> " .. killer_faction .. " relation can't be changed!")
+						end
+						--printf("% Relations: Victim | Faction: " .. victim_faction .. " | Rank: " .. victim_rank .. " | Reputation: " .. victim_rep)
+						--printf("% Relations: Killer | Faction: " .. killer_faction .. " | Rank: " .. killer_rank .. " | Reputation: " .. killer_rep)
+						--printf("% Relations: Numbers | k_rank:"..k_rank.." | v_rank:"..v_rank.." | v_rep_bad:"..v_rep_bad.." | k_rep_good:"..k_rep_good)
+						--printf("% Relations: Calculations | " .. value .. " = math.floor( "..death_value.." * ( "..v_rank.." + ( "..k_rank.." / 5 ) ) * ( "..v_rep_bad.." + ( "..k_rep_good.." / 10) ) )")
+						--printf("---------------------------------------------------------------------------------")
+					end
+				end
+			end
+		end
+
+	-- If killed NPC was friend or neutral to faction, lower relation toward killer faction:
+	else
+		for i = 1, #factions_table do
+			if ( factions_table[i] ~= killer_faction ) then
+				if ( not is_factions_enemies( factions_table[i], victim_faction ) ) then
+					if ( math.random( 100 ) > 50 ) then -- random faction picker
+					
+						-- Relation calculation:
+						-- 1. Big impact: Rank of victim
+						-- 2. Avergae impact: Reputation of victim (if it was good enough)
+						-- 2. Small impact: Rank of killer
+						-- 3. Slight impact: reputation of killer (if it was bad enough)
+						
+						local v_rep_bad = give_range( victim_rep_bad_value , 0.1 , true )
+						local v_rep_good = give_range( victim_rep_good_value , 0.1 , true )
+						local v_rank = give_range(victim_rank_value , 0.25)
+						
+						local k_rep_bad = (v_rep_good > 1) and give_range( killer_rep_bad_value , 0.1 , true ) or 0 -- disable if victim reputation is not remarkable
+						local k_rep_good = (v_rep_bad > 1) and give_range( killer_rep_good_value , 0.1 , true ) or 0 -- disable if victim reputation is not remarkable
+						local k_rank = give_range( killer_rank_value , 0.25 )
+						
+						local value = math.floor( death_value * ( v_rank + ( k_rank / 5 ) ) * ( v_rep_good + ( k_rep_bad / 10 ) ) )
+
+						if is_relation_allowed( factions_table[i] , killer_faction ) and ( enemy_num > enemy_count_limit ) then
+							change_faction_relations( factions_table[i], killer_faction, -(value) )
+							--printf("- Relations: Relations negative change | " .. factions_table[i] .. " <-> " .. killer_faction .. " relation change = " .. -(value))
+						else
+							--printf("% Relations: Relations change | " .. factions_table[i] .. " <-> " .. killer_faction .. " relation can't be changed!")
+						end
+						--printf("% Relations: Victim | Faction: " .. victim_faction .. " | Rank: " .. victim_rank .. " | Reputation: " .. victim_rep)
+						--printf("% Relations: Killer | Faction: " .. killer_faction .. " | Rank: " .. killer_rank .. " | Reputation: " .. killer_rep)
+						--printf("% Relations: Numbers | k_rank:"..k_rank.." | v_rank:"..v_rank.." | v_rep_good:"..v_rep_good.." | k_rep_bad:"..k_rep_bad)
+						--printf("% Relations: Calculations | " .. -(value) .. " = math.floor( "..death_value.." * ( "..v_rank.." + ( "..k_rank.." / 5 ) ) * ( "..v_rep_bad.." + ( "..k_rep_good.." / 10) ) )")
+						--printf("---------------------------------------------------------------------------------")
+					end
+				end
+			end
+		end
+	end
+end
+
+local rnd_enemy = {}
+function get_random_enemy_faction(comm)
+	empty_table(rnd_enemy)
+	for i = 1, #factions_table do
+		if (comm ~= factions_table[i]) and is_factions_enemies(factions_table[i], comm) and is_relation_allowed(factions_table[i] , comm) then
+			rnd_enemy[#rnd_enemy + 1] = factions_table[i]
+		end
+	end
+	return (#rnd_enemy > 0) and rnd_enemy[math.random(#rnd_enemy)] or nil
+end
+
+local rnd_natural = {}
+function get_random_natural_faction(comm)
+	empty_table(rnd_natural)
+	for i = 1, #factions_table do
+		if (comm ~= factions_table[i]) and (not is_factions_enemies(factions_table[i], comm)) and is_relation_allowed(factions_table[i] , comm) then
+			rnd_natural[#rnd_natural + 1] = factions_table[i]
+		end
+	end
+	return (#rnd_natural > 0) and rnd_natural[math.random(#rnd_natural)] or nil
+end
+
+
+--========================================< Callbacks >========================================--
+function offline_npc_on_death( victim_se, killer_se ) -- server objects! called from offline_combat_simulator
+	
+	-- Return if Dynamic Relations option is off
+	if (not (ui_options.get("alife/general/dynamic_relations"))) then
+		return
+	end
+	
+	-- Return if server objects don't exist
+	if not (victim_se and killer_se) then
+		return
+	end
+	
+	local victim_tbl = {}
+	local killer_tbl = {}
+	
+	-- Community
+	killer_tbl.comm = alife_character_community(killer_se)
+	victim_tbl.comm = alife_character_community(victim_se)
+
+	-- Return if factions are non-humans
+	if ignore[killer_tbl.comm] or ignore[victim_tbl.comm] then
+		return
+	end
+	
+	--if is_faction_unaffected(killer_tbl.comm) or is_faction_unaffected(victim_tbl.comm) then
+		--return
+	--end
+	
+	-- Rank
+	killer_tbl.rank = ranks.get_se_obj_rank_name(killer_se)
+	victim_tbl.rank = ranks.get_se_obj_rank_name(victim_se)
+	
+	-- Reputation
+	killer_tbl.rep = string.gsub( utils_obj.get_reputation_name(killer_se:reputation()) , "st_reputation_" , "" )
+	victim_tbl.rep = string.gsub( utils_obj.get_reputation_name(victim_se:reputation()) , "st_reputation_" , "" )
+	
+	calculate_relation_change( victim_tbl, killer_tbl)
+end
+
+function online_npc_on_death ( victim, killer ) -- NPC killed callback - raises or lowers faction relations when an NPC is killed
+
+	-- Return if Dynamic Relations option is off
+	if (not (ui_options.get("alife/general/dynamic_relations"))) then
+		return
+	end
+	
+	-- Return if factions are non-humans
+	if (not IsStalker(victim)) or (not IsStalker(killer)) then
+		return
+	end
+	
+	local victim_tbl = {}
+	local killer_tbl = {}
+	
+	-- Victim
+	local victim_id = victim:id()
+	local victim_db = db.storage[victim_id] and db.storage[victim_id].object
+	if (not victim_db) then return end
+	victim_tbl.comm = string.gsub( victim_db:character_community(), "actor_", "" )
+	victim_tbl.rep = string.gsub( utils_obj.get_reputation_name(victim_db:character_reputation()) , "st_reputation_" , "" )
+	victim_tbl.rank = ranks.get_obj_rank_name(victim_db)
+	
+	-- Killer
+	local killer_id = killer:id()
+	local killer_db = db.storage[killer_id] and db.storage[killer_id].object
+	if (not killer_db) then return end
+	killer_tbl.comm = string.gsub( killer_db:character_community(), "actor_", "" )
+	killer_tbl.rep = string.gsub( utils_obj.get_reputation_name(killer_db:character_reputation()) , "st_reputation_" , "" )
+	killer_tbl.rank = ranks.get_obj_rank_name(killer_db)
+	
+	if is_faction_unaffected(killer_tbl.comm) or is_faction_unaffected(victim_tbl.comm) then
+		return
+	end
+	
+	calculate_relation_change( victim_tbl, killer_tbl)
+end
+
+local function on_game_load() -- Restore faction relations
+
+	if (USE_MARSHAL) then
+		if 	(alife_storage_manager.get_state().new_game_relations) then
+			-- Restore relations for each faction:
+			for i = 1, #factions_table do
+				for j = (i + 1), #factions_table do
+					local faction_1 = factions_table[i]
+					local faction_2 = factions_table[j]
+					
+					load_relation ( faction_1 , faction_2 ) -- load and set overall faction relations:
+					load_relation ( "actor_" .. faction_1 , faction_2 ) -- load and set actor faction 1 / faction 2 relations:
+					load_relation ( faction_1 , "actor_" .. faction_2 ) -- load and set actor faction 2 / faction 1 relations:
+				end
+			end
+		else
+			reset_all_relations()
+			alife_storage_manager.get_state().new_game_relations = true
+		end
+	end
+end
+
+function on_game_start() -- Register NPC killed callback and restore faction relations:
+	RegisterScriptCallback( "npc_on_death_callback", online_npc_on_death )
+	RegisterScriptCallback( "on_game_load", on_game_load )
+end
+
+
+-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+function set_factions_community(faction, faction_to, new_community)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		local community = tonumber(new_community) or new_community=="enemy" and -5000 or new_community=="friend" and 5000 or 0
+		set_factions_community_num(faction, faction_to, community)
+	else
+		--printf("No such faction community: "..tostring(faction))
+	end
+end
+
+function set_factions_community_num(faction, faction_to, new_community_num)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		relation_registry.set_community_relation(faction, faction_to, new_community_num)
+	else
+		--printf("No such faction community: "..tostring(faction))
+	end
+end
+
+function change_factions_community_num(faction_name, obj_id, delta)
+	if(faction_name~=nil) and (faction_name~="none") and (obj_id ~= nil) then
+		relation_registry.change_community_goodwill(faction_name, obj_id, delta)
+	else
+		--printf("No such faction community: "..tostring(faction))
+	end
+end
+
+function get_factions_community(faction, faction_to)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		return relation_registry.community_relation(faction, faction_to)
+	else
+		--printf("No such faction community: "..tostring(faction))
+		return nil
+	end
+end
+
+function is_factions_friends(faction, faction_to)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		return relation_registry.community_relation(faction, faction_to)>=FRIENDS
+	else
+		--printf("No such faction community: "..tostring(faction))
+		return false
+	end
+end
+
+function is_factions_enemies(faction, faction_to)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		return relation_registry.community_relation(faction, faction_to)<=ENEMIES
+	else
+		--printf("No such faction community: "..tostring(faction))
+		return false
+	end
+end
+
+function is_factions_neutrals(faction, faction_to)
+	if(faction~=nil) and (faction~="none") and (faction_to~="none") then
+		return (
+			(relation_registry.community_relation(faction, faction_to) < FRIENDS)
+			and (relation_registry.community_relation(faction, faction_to) > ENEMIES)
+		)
+	else
+		--printf("No such faction community: "..tostring(faction))
+		return false
+	end
+end
+
+function get_npcs_relation(npc1, npc2)
+	return npc1 and npc2 and npc1:relation(npc2)
+end
+
+function set_npcs_relation(npc1, npc2, new_relation)
+	local goodwill = tonumber(new_relation) or new_relation == "enemy" and -1000 or new_relation == "friend" and 1000 or 0
+	if npc1 and npc2 then
+		npc1:force_set_goodwill(goodwill, npc2)
+	else
+		printf("Npc not set in goodwill function!!!")
+	end
+end
+
+function get_npc_sympathy(npc)
+	return npc:sympathy()
+end
+
+function set_npc_sympathy(npc, new_sympathy)
+	if(new_sympathy<0) then
+		new_sympathy = 0
+	elseif(new_sympathy>1) then
+		new_sympathy = 1
+	end
+	if npc then
+		npc:set_sympathy(new_sympathy)
+	else
+		printf("Npc not set in sympathy function!!!")
+	end
+end
+
+function set_squad_goodwill(squad_id, new_goodwill)
+	printf("Applying new game relation [%s] between squad [%s] and npc [%s] !", new_goodwill, squad_id, "actor")
+	local squad = get_story_squad(squad_id)
+	if squad == nil then
+		if type(squad_id) == "string" then
+			printf("there is no story squad with id [%s]", squad_id)
+			return
+		else
+			squad = alife_object(squad_id)
+		end
+	end
+	if squad then
+		squad:set_squad_relation(new_goodwill)
+	else
+		printf("There is no squad [%s] in sim_board", squad_id)
+	end
+end
+
+function set_squad_goodwill_to_npc(npc, squad_id, new_goodwill)
+	if not (npc) then
+		return
+	end
+	local goodwill = tonumber(new_relation) or new_relation == "enemy" and -1000 or new_relation == "friend" and 1000 or 0
+	local squad = squad_id and (get_story_squad(squad_id) or alife_object(squad_id))
+	if squad then
+		local sim = alife()
+		local se_npc = sim:object(npc:id())
+		if not (se_npc) then
+			return
+		end
+		for k in squad:squad_members() do
+			local se_obj = k.object or k.id and sim:object(k.id)
+			if (se_obj) then
+				se_obj:force_set_goodwill(goodwill, npc:id())
+				se_npc:force_set_goodwill(goodwill, k.id)
+			end
+		end
+	else
+		printf("There is no squad [%s] in sim_board", squad_id)
+	end
+end
+
+function set_squad_community_goodwill(squad_id, community, new_goodwill) -->> fixed
+	local goodwill = tonumber(new_goodwill) or new_goodwill == "enemy" and -1000 or new_goodwill == "friend" and 1000 or 0
+	local squad = squad_id and (get_story_squad(squad_id) or alife_object(squad_id))
+	if squad then
+		for k in squad:squad_members() do
+			local obj = db.storage[k.id] and db.storage[k.id].object or level.object_by_id(k.id)
+			if(obj) then
+				obj:set_community_goodwill(community, goodwill)
+			end
+		end
+	else
+		printf("There is no squad [%s] in sim_board", squad_id)
+	end
+end
+
+function set_level_faction_community(obj)
+	if(temp_goodwill_table.communities~=nil) then
+		for k,v in pairs(temp_goodwill_table.communities) do
+			if(character_community(obj)==k) then
+				for kk,vv in pairs(v) do
+					if(kk==obj:id()) and db.actor then
+						relation_registry.set_community_goodwill(k, AC_ID, vv)
+--	run_string xr_effects.set_level_faction_community(nil, nil, {"bandit", "peacemaker_selo", "friend"})
+						obj:force_set_goodwill(vv, db.actor)
+						v[kk] = nil
+					end
+				end
+			end
+		end
+	end
+end
+
+function set_community_goodwill_for_faction(faction)
+	local communities = utils_obj.get_communities_list()
+	for i,community in pairs(communities) do
+		relation_registry.set_community_goodwill(community, 0, relation_registry.community_relation(community,faction))
+	end
+end
+
+function is_valid(faction)
+	local communities = utils_obj.get_communities_list_key()
+	return communities[faction] ~= nil
+end
+
+function check_all_squad_members(squad_name, relation)
+	local squad = get_story_squad(squad_name)
+	if squad == nil then return false end
+	if db.actor == nil then return false end
+	local goodwill = tonumber(relation) or relation == "enemy" and -1000 or relation == "friend" and 1000 or 0
+	local is_enemy
+	for k in squad:squad_members() do
+		is_enemy = nil
+		local obj = db.storage[k.id] and db.storage[k.id].object or level.object_by_id(k.id)
+		if (goodwill == -1000) then
+			is_enemy = obj and obj:general_goodwill(db.actor)<=ENEMIES
+		else
+			is_enemy = obj and obj:general_goodwill(db.actor)>=FRIENDS
+		end
+		if is_enemy then
+			return true
+		end
+	end
+	return false
+end
+
+function get_squad_goodwill_to_actor_by_id(squad_id)
+	local squad = alife_object(squad_id)
+	if(squad==nil) then
+		printf("No such squad %s in board", tostring(squad_id))
+		return false
+	end
+	if(squad.relationship~=nil) then
+		printf(" squad_relation %s", tostring(squad.relationship))
+		return squad.relationship
+	else
+		if (is_squad_monster[squad.player_id]) then
+			return "enemy"
+		end
+		local goodwill = "neutral"
+		if(relation_registry.community_relation(squad:get_squad_community(), alife():actor():community())>=FRIENDS) then
+			goodwill = "friend"
+		elseif(relation_registry.community_relation(squad:get_squad_community(), alife():actor():community())<=ENEMIES) then
+			goodwill = "enemy"
+		end
+		return goodwill
+	end
+end
+
+
+function get_squad_goodwill_to_actor(squad_name)
+	local squad = get_story_squad(squad_name)
+	if(squad==nil) then
+		printf("No such squad %s in board", tostring(squad_name))
+		return false
+	end
+	if(squad.relationship~=nil) then
+		--printf(" squad_relation %s", tostring(squad.relationship))
+		return squad.relationship
+	else
+		if (is_squad_monster[squad.player_id]) then
+			return "enemy"
+		end
+		local goodwill = "neutral"
+		if(relation_registry.community_relation(squad:get_squad_community(), alife():actor():community())>=FRIENDS) then
+			goodwill = "friend"
+		elseif(relation_registry.community_relation(squad:get_squad_community(), alife():actor():community())<=ENEMIES) then
+			goodwill = "enemy"
+		end
+		return goodwill
+	end
+end
+
+function is_squad_enemy_to_actor(squad_name)
+	return get_squad_goodwill_to_actor(squad_name)=="enemy"
+end
+
+function is_squad_friend_to_actor(squad_name)
+	return get_squad_goodwill_to_actor(squad_name)=="friend"
+end
+
+function is_squad_neutral_to_actor(squad_name)
+	return get_squad_goodwill_to_actor(squad_name)=="neutral"
+end
+
+function set_gulag_relation_actor(smart_name, relation)
+	local gulag = xr_gulag.get_gulag_by_name(smart_name)
+	local goodwill = tonumber(relation) or relation == "enemy" and -1000 or relation == "friend" and 1000 or 0
+	local object
+	for k,v in pairs(gulag.npc_info) do
+		object = db.storage[v.se_obj.id] and db.storage[v.se_obj.id].object or level.object_by_id(v.se_obj.id)
+		if(object) then
+			object:force_set_goodwill(goodwill, db.actor)
+			object:set_community_goodwill(character_community(db.actor), goodwill)
+		end
+	end
+end
+
+function get_gulag_relation_actor(smart_name, relation)
+	local gulag = xr_gulag.get_gulag_by_name(smart_name)
+	if gulag then
+		local goodwill = 0
+		local npc_count = 0
+		local object
+		for k,v in pairs(gulag.npc_info) do
+			object = db.storage[v.se_obj.id] and db.storage[v.se_obj.id].object or level.object_by_id(v.se_obj.id)
+			if object and db.actor then
+				goodwill = goodwill + object:general_goodwill(db.actor)
+				npc_count = npc_count + 1
+			end
+		end
+		if npc_count ~= 0 then
+			local delta = goodwill/npc_count
+			relation = tonumber(relation) or relation == "enemy" and -1000 or relation == "friend" and 1000 or 0
+			if relation == -1000 and delta <= ENEMIES then
+				return true
+			elseif relation == 1000 and delta >= FRIENDS then
+				return true
+			elseif relation == 0 and delta < FRIENDS and delta > ENEMIES then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function get_squad_relation_to_actor_by_id(squad_id)
+	local squad = alife_object(squad_id)
+	if(squad==nil) then
+		--printf("No such squad %s in board", tostring(squad_id))
+	end
+
+	if (is_squad_monster[squad.player_id]) then
+		return "enemy"
+	end
+
+    local goodwill = 0
+    local npc_count = 0
+	local object
+	for k in squad:squad_members() do
+		object = db.storage[k.id] and db.storage[k.id].object or level.object_by_id(k.id)
+        if object and db.actor then
+            goodwill = goodwill + object:general_goodwill(db.actor)
+            npc_count = npc_count + 1
+        end
+    end
+    if npc_count ~= 0 then
+        local delta = goodwill/npc_count
+        if delta <= ENEMIES then
+            return "enemy"
+        elseif delta >= FRIENDS then
+            return "friends"
+        elseif delta < FRIENDS and delta > ENEMIES then
+            return "neutral"
+        end
+    end
+	return "enemy"
+end
+
+local rank_relation
+function get_rank_relation(obj_1, obj_2)
+	if (not rank_relation) then
+		rank_relation = {}
+		
+		local rn = utils_obj.get_rank_list()
+		for i=1,#rn do
+			rank_relation[rn[i]] = {}
+			local t = parse_list(ini_sys,"rank_relations",rn[i])
+			for j,num in ipairs(t) do
+				rank_relation[rn[i]][rn[j]] = tonumber(num)
+				--printf("-rank [%s][%s] = %s", rn[i], rn[j], tonumber(num))
+			end
+		end
+	end
+	
+	local rank_1 = ranks.get_obj_rank_name(obj_1)
+	local rank_2 = ranks.get_obj_rank_name(obj_2)
+	
+	return rank_relation[rank_1][rank_2]
+end
+
+local reputation_relation
+function get_reputation_relation(obj_1, obj_2)
+	if (not reputation_relation) then
+		reputation_relation = {}
+		
+		local rn = utils_obj.get_reputation_list()
+		for i=1,#rn do
+			reputation_relation[rn[i]] = {}
+			local t = parse_list(ini_sys,"reputation_relations",rn[i])
+			for j,num in ipairs(t) do
+				reputation_relation[rn[i]][rn[j]] = tonumber(num)
+				--printf("-rep [%s][%s] = %s", rn[i], rn[j], tonumber(num))
+			end
+		end
+	end
+	
+	local rep_1 = utils_obj.get_reputation_name(obj_1:character_reputation())
+	rep_1 = string.gsub(rep_1,"st_reputation_","")
+	local rep_2 = utils_obj.get_reputation_name(obj_2:character_reputation())
+	rep_2 = string.gsub(rep_2,"st_reputation_","")
+	
+	return reputation_relation[rep_1][rep_2]
+end
+
+
+--	=============================================================================
+--						Tronex (2019/9/25)
+--					Tutorial: Goodwill / Relations
+--	=============================================================================
+--[[
+	Keep in mind that "relation" is misleading term to represet stalkers relations between themselves, "goodwill" is the universal one (engine)
+	Overall goodwill between 2 stalkers is determined by 5 goodwill factors (pr stalker_1 overall goodwill towards stalker_2, in case of checking one side):
+		1. presonal_goodwill
+		2. reputation_goodwill
+		3. rank_goodwill
+		4. community_goodwill
+		5. community_to_community
+		
+	Enemy/friend thresholds are determined by:
+		- attitude_neutal_threshold (goodwill lower than this is enemy territory)
+		- attitude_friend_threshold (goodwill higher than this is friend territory)
+		in-between numbers are considered as neutral
+		defined in game_relations.ltx under [game_relations] section
+		
+	getter:
+		- npc_1:general_goodwill(npc_2)
+		
+	-------------------------------------------------------------------------------
+	1. presonal_goodwill:
+		Raw goodwill between 2 stalkers (stalker_1 towards stalker_2)
+		This is what you should mess with if you want to set relation/goodwill between 2 entities
+		
+		- npc_1:set_relation(type, npc_2);
+			type can be:
+				- game_object.friend (1)
+				- game_object.neutral (0)
+				- game_object.enemy (-1)
+			type effect on personall goodwill is determined by these 3 parameters in game_relations.ltx:
+				goodwill_enemy  = -1000
+				goodwill_neutal = 0
+				goodwill_friend = 1000
+			So npc_1:set_relation(game_object.friend, npc_2) will set personal goodwill of npc_1 to 1000 towards npc_2
+			
+		getter:
+			- npc_1:relation(npc_2)
+			NOTE: you get relation type here (0, 1, -1 etc..), see above
+			
+		getter (actual value):
+			- npc_1:goodwill(npc_2)
+			
+		setter:
+			- npc_1:set_goodwill(goodwill, npc_2)
+			NOTE: This method make sure that goodwill change doesn't exceed "personal_goodwill_limits" in [action_points] section
+			
+		setter:
+			- npc_1:force_set_goodwill(goodwill, npc_2)
+			No limit
+			
+		changer:
+			- npc_1:change_goodwill(goodwill, npc_2)
+			NOTE: This method make sure that goodwill change doesn't exceed "personal_goodwill_limits" in [action_points] section
+		
+	-------------------------------------------------------------------------------
+	2. reputation_goodwill:
+		goodwill between reputation of 2 stalkers (stalker_1's reputation towards stalker_2's reputation)
+		determined by [rank_relations] section in game_relations.ltx
+		STATIC GOODWILL, I made a function here to get this goodwill between 2 stalkers
+		
+	-------------------------------------------------------------------------------
+	3. rank_goodwill:
+		goodwill between ranks of 2 stalkers (stalker_1's rank towards stalker_2's rank)
+		determined by [reputation_relations] section in game_relations.ltx
+		STATIC GOODWILL, I made a function here to get this goodwill between 2 stalkers
+		
+	-------------------------------------------------------------------------------
+	4. community_goodwill:
+		goodwill of community towards a stalker (stalker_1's community towards stalker_2)
+		NOTE: goodwill changes here don't exceed "community_goodwill_limits" in [action_points] section
+		This is the goodwill type used in trading stock upgrades
+		
+		getter (npc towards faction):
+			- npc:community_goodwill(faction)
+			
+		getter (faction towards npc):
+			- relation_registry.community_goodwill(faction, stalker_id)
+			
+			
+		setter (npc towards faction):
+			- npc:set_community_goodwill(faction, goodwill)
+			
+		setter (faction towards npc):
+			- relation_registry.set_community_goodwill( faction, stalker_id, goodwill )
+			
+			
+		changer (addition to old value) (faction towards npc):
+			- relation_registry.change_community_goodwill( faction, stalker_id, goodwill )
+		
+	-------------------------------------------------------------------------------
+	5. community_to_community:
+		goodwill/relation between 2 communities (stalker_1's community towards stalker_2's community)
+		
+		getter:
+			- relation_registry.community_relation(faction, faction_to)
+			
+		setter:
+			- relation_registry.set_community_relation(faction, faction_to, goodwill)
+			
+	=============================================================================
+--]]

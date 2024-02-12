@@ -1,0 +1,21 @@
+[logic]
+active = mob_walker
+on_death = mob_death
+
+[mob_walker]
+path_walk = left_mlr_1_walk_2
+path_look = mlr_all_point_look
+actor_friendly = true
+on_info = mob_walker@1
+out_restr = bar_arena_restrictor 
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} true, {=check_enemy_name(bar_arena_manager)} true, {=check_enemy_name(bar_arena_guard)} true
+
+[mob_walker@1]
+path_walk = bar_arena_walk_attack
+path_look = mlr_all_point_look
+out_restr = bar_arena_restrictor
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} true, {=check_enemy_name(bar_arena_manager)} true, {=check_enemy_name(bar_arena_guard)} true
+actor_friendly = true
+
+[mob_death]
+on_info = %+total_burer_with_two_soldiers_death +total_fight_is_over%

@@ -1,0 +1,310 @@
+#include "presets\trade_discounts.ltx"
+#include "presets\trade_presets.ltx"
+
+[trader]
+buy_condition =  trade_generic_buy
+sell_condition = trade_generic_sell
+buy_supplies = {=actor_goodwill_ge(army:2000)} supplies_5, {=heavy_pockets_functor()} supplies_5, {=actor_goodwill_ge(army:1500)} supplies_4, {=actor_goodwill_ge(army:1000)} supplies_3, {=actor_goodwill_ge(army:500)} supplies_2,  supplies_1
+buy_item_condition_factor = 0.50		;0.40
+buy_item_exponent = 2.25
+sell_item_exponent = 0.75
+
+discounts = discount_supplier
+
+[trade_generic_buy]:merchant
+
+[trade_generic_sell]:merchant
+
+
+[supplies_1]:common_stock
+swiss_knife			= 2, 1
+detector_radio             = 1, 1
+detector_geiger             = 1, 1
+device_pda_1				= 1, 1
+bolts_pack				= 2, 1
+cooking               = 1, 1
+fieldcooker             = 1, 1
+kerosene                = 1, 1
+charcoal                = 1, 1
+explo_balon_gas         = 1, 1
+explo_jerrycan_fuel     = 1, 1
+itm_tent                = 1, 1
+
+;food
+meat_tushkano			= 6, 1
+meat_dog				= 6, 1
+meat_pseudodog			= 4, 1
+meat_flesh				= 4, 1
+meat_boar				= 4, 1
+meat_bloodsucker		= 2, 1
+meat_snork				= 4, 1
+meat_chimera			= 1, 1
+bread					= 4, 1
+breadold				= 6, 1
+kolbasa					= 4, 1
+tushonka                = 4, 1
+conserva				= 4, 1
+tomato					= 2, 1
+sausage					= 2, 1
+corn					= 2, 1
+beans			        = 2, 1
+chili                   = 2, 1
+salmon                  = 2, 1
+raisins                 = 2, 1
+chocolate               = 2, 1
+nuts                    = 2, 1
+mre                   = 1, 1
+ration_ru             = 1, 1
+ration_ukr			= 1, 1
+mint					= 4, 1
+mineral_water			= 2, 1
+caffeine				= 2, 1
+hand_rolling_tobacco  = 2, 1
+cigar                   = 1, 1
+cigarettes_lucky      = 3, 1
+cigarettes_russian    = 3, 1
+beer                    = 3, 1
+vodka                 = 3, 1
+vodka2                = 3, 1
+energy_drink            = 3, 1
+water_drink           = 2, 1
+cigarettes            = 4, 1
+tea                   = 2, 1
+akvatab               = 3, 1
+flask                 = 2, 1
+bottle_metal          = 2, 1
+vodka_quality         = 2, 1
+tobacco               = 2, 1
+marijuana               = 1, 1
+cigar1                = 2, 1
+cigar2                = 2, 1
+cigar3                = 2, 1
+glucose_s				= 3, 1
+glucose					= 2, 1
+drug_sleepingpills	= 3, 1
+bandage					= 4, 1
+medkit					= 3, 1
+medkit_ai1				= 3, 1
+medkit_ai2				= 3, 1
+medkit_ai3				= 3, 1
+antirad_cystamine		= 3, 1
+antibio_chlor			= 3, 1
+jgut					= 3, 1
+yadylin					= 3, 1
+analgetic				= 3, 1
+antirad_kalium			= 3, 1
+antibio_sulfad			= 3, 1
+antiemetic   			= 3, 1
+medkit_army				= 2, 1
+medkit_scientic			= 2, 1
+antirad					= 2, 1
+stimpack				= 3, 1
+stimpack_army			= 2, 1
+stimpack_scientic		= 1, 1
+caffeine				= 3, 1
+protein					= 2, 1
+survival_kit			= 1, 1
+akvatab				= 3, 1
+cocaine					= 3, 1
+tetanus					= 2, 1
+adrenalin				= 2, 1
+salicidic_acid			= 4, 1
+morphine				= 3, 1
+drug_anabiotic			= 2, 1
+drug_booster			= 2, 1
+drug_coagulant		= 3, 1
+drug_antidot			= 3, 1
+drug_radioprotector	= 2, 1
+drug_psy_blockade		= 2, 1
+
+;items
+batteries_dead			= 6, 1
+itm_sleepbag			= 1, 1
+compression_bag			= 1, 1
+itm_actor_backpack		= 1, 1
+itm_backpack			= 1, 1
+device_flashlight		= 1, 1
+device_torch_dummy		= 1, 1
+
+;pistol
+wpn_aps                 = 1, 0.88
+wpn_fort                = 1, 0.88
+wpn_gsh18               = 1, 0.88
+wpn_oc33                = 1, 0.88
+wpn_pm                  = 1, 0.88
+wpn_pb                  = 1, 0.88
+wpn_tt33	            = 1, 0.88
+
+;rifle
+wpn_ak74u               = 1, 0.88
+wpn_akms_alt              = 1, 0.88
+wpn_aek              = 1, 0.88
+wpn_akm               = 1, 0.88
+wpn_ak74                = 1, 0.88
+wpn_aks74                = 1, 0.88
+wpn_aks74_new                = 1, 0.88
+wpn_ak74m_alt                = 1, 0.88
+wpn_ak105               = 1, 0.88
+wpn_groza               = 1, 0.88
+wpn_vsk94               = 1, 0.88
+
+;misc
+wpn_knife               = 1, 1
+wpn_knife2              = 1, 1
+mine_new                    = 3, 1
+ied_rpg_new                 = 3, 1
+ied_new                     = 3, 1
+wpn_binoc_inv           = 1, 1
+
+;Ѕроники
+helm_bandana            = 1, 1
+helm_rp_bala            = 1, 1
+helm_cloth_mask			= 1, 1
+helm_respirator 		= 1, 1
+helm_respirator_old     = 1, 1
+helm_respirator_gp5     = 1, 1
+army_outfit				= 1, 1
+helm_ach7				= 1, 1
+
+;јммуници¤
+ammo_9x18_fmj                   = 16, 0.66
+ammo_9x18_ap                    = 14, 0.66
+ammo_9x18_pmm                   = 10, 0.66
+ammo_9x19_fmj                   = 14, 0.66
+ammo_9x19_ap                    = 12, 0.66
+ammo_9x19_pbp                   = 8, 0.66
+ammo_11.43x23_fmj               = 12, 0.66
+ammo_11.43x23_hydro             = 8, 0.66
+ammo_12x70_buck                 = 12, 0.66
+ammo_12x76_zhekan               = 9, 0.66
+ammo_5.45x39_fmj                = 21, 0.66
+ammo_5.45x39_ep					= 17, 0.66
+ammo_5.45x39_ap                 = 15, 0.66
+ammo_5.56x45_fmj				= 3, 0.66	
+ammo_5.56x45_ss190              = 3, 0.66
+ammo_5.56x45_ap                 = 3, 0.66
+ammo_7.62x39_fmj                = 12, 0.66
+ammo_7.62x39_ap                 = 10, 0.66
+ammo_7.62x51_fmj                = 4, 0.66
+ammo_7.62x51_ap                 = 4, 0.66
+ammo_7.62x25_p                  = 12, 0.66
+ammo_7.62x25_ps                 = 10, 0.66
+ammo_9x39_pab9                  = 18, 0.66
+ammo_9x39_ap                    = 15, 0.66
+ammo_7.62x54_ap                 = 6, 0.66
+ammo_7.62x54_7h1                = 4, 0.66
+ammo_7.62x54_7h14               = 3, 0.66
+ammo_357_hp_mag                 = 4, 0.66
+ammo_magnum_300                 = 6, 0.66
+ammo_12.7x55_fmj                        = 3, 0.66
+ammo_12.7x55_ap         = 2, 0.66
+grenade_rgd5                    = 5, 0.66
+grenade_gd-05                   = 5, 0.66
+grenade_smoke                   = 3, 0.66
+grenade_f1                              = 5, 0.66
+ammo_og-7b                              = 1, 0.88
+ammo_vog-25                             = 7, 0.66
+ammo_m209                               = 3, 0.66
+
+;јддоны
+wpn_sil_9mm				= 1, 0.88
+wpn_sil_pbs1				= 1, 0.88
+wpn_sil_pbs4				= 1, 0.88
+wpn_sil_tgp-a				= 1, 0.88
+wpn_sil_kzrzp				= 1, 0.88
+wpn_sil_atg				= 1, 0.88
+wpn_sil_aps				= 1, 0.88
+wpn_sil_9a91				= 1, 0.88
+wpn_sil_6p9				= 1, 0.88
+wpn_sil_vihr				= 1, 0.88
+
+;ѕредметы
+kit_hunt				= 1, 1
+box_matches           = 3, 1
+
+[supplies_2]:supplies_1
+device_torch_nv_1		= 1, 1
+equ_small_pack          = 1, 1
+
+wpn_aek               = 1, 0.88
+wpn_abakan          = 1, 0.88
+wpn_ak74_alt            = 1, 0.88
+wpn_ak74m_camo        = 1, 0.88
+wpn_ak103        = 1, 0.88
+wpn_val                 = 1, 0.88
+wpn_vintorez            = 1, 0.88
+wpn_svd                 = 1, 0.88
+wpn_sv98             = 1, 0.88
+wpn_svu                 = 1, 0.88
+wpn_rpk74               = 1, 0.88
+wpn_pkm                 = 1, 0.88
+
+wpn_knife3              = 1, 1
+wpn_axe                 = 1, 1
+wpn_axe2                = 1, 1
+
+wpn_addon_scope_po4x34				= 1, 0.88
+1p29				= 1, 0.88
+kobra				= 1, 0.88
+ps01				= 1, 0.88
+pso1m21				= 1, 0.88
+
+af_kevlar				= 1, 1
+af_plates				= 1, 1
+af_frames				= 1, 1
+af_camelbak				= 1, 1
+
+detector_advanced		= 1, 1
+army_bowler             = 1, 1
+
+;Броня
+helm_m40				= 1, 1
+helm_hardhat			= 1, 1
+specops_outfit			= 1, 1
+helm_ach7ex				= 1, 1
+
+[supplies_3]:supplies_2
+device_torch_nv_2		= 1, 1
+equ_small_military_pack = 1, 1
+device_pda_2			= 1, 1
+
+wpn_rg-6				= 1, 1
+wpn_rpg7				= 1, 1
+
+wpn_knife4              = 1, 1
+
+wpn_addon_grenade_launcher				= 1, 0.88
+
+;Броня
+military_outfit			= 1, 1
+light_voen_outfit       = 1, 1
+helm_metro              = 1, 1
+helm_tactic				= 1, 1
+helm_battle				= 1, 1
+
+[supplies_4]:supplies_3
+device_torch_nv_3		= 1, 1
+equ_military_pack       = 1, 1
+device_pda_3			= 1, 1
+
+wpn_knife5              = 1, 1
+wpn_m82					= 1, 0.88
+
+;Броня
+military_proto_exo_outfit = 1, 1
+military_exolight_outfit = 1, 1
+helm_exo                = 1, 1
+helm_protective			= 1, 1
+
+test_container          = 1, 1
+
+[supplies_5]:supplies_4
+
+equ_tourist_pack      = 1, 1
+
+wpn_rg-6				= 1, 1
+wpn_rpg7				= 1, 1
+
+;Броня
+military_exo_outfit		= 1, 1
+ghillie_outfit          = 1, 1

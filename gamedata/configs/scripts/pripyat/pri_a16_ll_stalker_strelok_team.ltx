@@ -1,0 +1,137 @@
+[logic@lost_stalker_strelok]
+active = animpoint@lost_stalker_strelok
+suitable = {=check_npc_name(lost_stalker_strelok)} true
+prior = 205
+   
+[animpoint@lost_stalker_strelok]
+cover_name = pri_a20_sc_kovalski_radio_anim
+avail_animations = pri_a20_colonel_radio
+use_camp = false 
+combat_ignore_cond = {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+on_info = {=actor_has_item(x8_documents)} walker@lost_stalker_strelok
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+reach_movement = patrol
+meet = meet
+
+[walker@lost_stalker_strelok]
+def_state_standing = ward
+def_state_moving = patrol
+path_walk = taras_base_stay
+path_look = taras_base_look
+use_camp = false 
+combat_ignore_cond = {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+meet = meet2
+
+[meet]
+close_anim 		= ward
+close_victim 	= actor
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 3
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[meet2]:meet
+close_anim 		= nil
+close_victim 	= nil
+close_distance  = 0
+
+[logic@pri_a16_stalker_rogue]
+active = animpoint@stalker_rogue 
+suitable = {=check_npc_name(stalker_rogue)} true
+prior = 205
+
+[animpoint@stalker_rogue]
+cover_name = pri_a16_animp_vano
+avail_animations = animpoint_stay_wall
+use_camp = false 
+combat_ignore_cond = {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+reach_movement = patrol
+meet = meet_rogue
+
+[meet_rogue]
+close_anim 		= guard
+close_victim 	= actor
+far_anim 		= 0
+far_victim 		= 0
+close_distance  = 3
+far_distance 	= 0
+use = {=actor_enemy} false, true
+allow_break 	= false
+trade_enable = false
+meet_on_talking = false
+
+[logic@stalker_stitch]
+active = animpoint@stalker_stitch
+suitable = {=check_npc_name(stalker_stitch) -pri_a28_stitch_inside} true
+prior = 205
+   
+[animpoint@stalker_stitch]
+reach_movement = patrol
+cover_name = pri_a16_animp_sokolov
+avail_animations = animpoint_sit_high
+use_camp = false 
+combat_ignore_cond = {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+on_info = {+living_legend_strelok_preparations} walker@stalker_stitch
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = true
+corpse_detection_enabled = false
+meet = meet_stitch
+
+[walker@stalker_stitch]
+path_walk = pri_a20_sokolov_walk
+path_look = pri_a20_sokolov_look
+def_state_standing = wait
+def_state_moving = patrol
+use_camp = false 
+combat_ignore_cond = {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = true
+corpse_detection_enabled = false
+meet = meet_stitch2
+
+[meet_stitch]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[meet_stitch2]:meet
+close_anim 		= wait
+close_victim 	= actor
+far_anim 		= hello
+far_victim 		= actor
+close_distance  = 3
+far_distance 	= 5

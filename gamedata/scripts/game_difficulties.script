@@ -1,0 +1,201 @@
+-- =======================================================================================
+-- Tronex
+-- 2018/8/10
+-- Economy and gameplay difficulty factors
+
+-- Set by options or new game (ui_mm_faction_select)
+-- Called by other scripts for gathering required values
+-- =======================================================================================
+
+local ini_diff = ini_file("plugins\\difficulty.ltx")
+
+local eco_num = 1
+local economy = {}
+local factors_eco = {}
+
+local game_num = 1
+local gameplay = {}
+local factors_game = {}
+
+local vanilla_diff = {
+	[1] = "gd_novice",
+	[2] = "gd_stalker",
+	[3] = "gd_veteran",
+	[4] = "gd_master",
+}
+
+function setup_game_factors(diff)
+	factors_game["type"]				= gameplay["type"] or game_num
+	factors_game["actor_immunities"]	= gameplay["actor_immunities"] or ini_diff:r_float_ex("gdiff_" .. diff , "actor_immunities") or 1
+	factors_game["hit_power"]			= gameplay["hit_power"] or ini_diff:r_float_ex("gdiff_" .. diff , "hit_power") or 1
+	factors_game["dispersion_base"]		= gameplay["dispersion_base"] or ini_diff:r_float_ex("gdiff_" .. diff , "dispersion_base") or 1
+	factors_game["dispersion_factor"]	= gameplay["dispersion_factor"] or ini_diff:r_float_ex("gdiff_" .. diff , "dispersion_factor") or 1
+	factors_game["power_loss_bias"]		= gameplay["power_loss_bias"] or ini_diff:r_float_ex("gdiff_" .. diff , "power_loss_bias") or 0.2
+	factors_game["weight"]			    = gameplay["weight"] or ini_diff:r_float_ex("gdiff_" .. diff , "max_weight") or 25
+	factors_game["thirst"]				= gameplay["thirst"] or ((gameplay["thirst"] ~= false) and ini_diff:r_bool_ex("gdiff_" .. diff , "thirst")) or false
+	factors_game["sleep"]				= gameplay["sleep"] or ((gameplay["sleep"] ~= false) and ini_diff:r_bool_ex("gdiff_" .. diff , "sleep")) or false
+	factors_game["radiation_day"]		= gameplay["radiation_day"] or ((gameplay["radiation_day"] ~= false) and ini_diff:r_bool_ex("gdiff_" .. diff , "radiation_day")) or false
+	factors_game["notify_geiger"]		= gameplay["notify_geiger"] or ((gameplay["notify_geiger"] ~= false) and ini_diff:r_bool_ex("gdiff_" .. diff , "notify_geiger")) or false
+	factors_game["notify_anomaly"]		= gameplay["notify_anomaly"] or ((gameplay["notify_anomaly"] ~= false) and ini_diff:r_bool_ex("gdiff_" .. diff , "notify_anomaly")) or false
+end
+
+function setup_eco_factors(eco)
+	factors_eco["type"]				    = economy["type"] or eco_num
+	factors_eco["goodwill"]			    = economy["goodwill"] or ini_diff:r_float_ex("econ_" .. eco , "goodwill") or 1
+	factors_eco["rewards"]			    = economy["rewards"] or ini_diff:r_float_ex("econ_" .. eco , "rewards") or 1
+	factors_eco["repair"]			    = economy["repair"] or ini_diff:r_float_ex("econ_" .. eco , "repair") or 1
+	factors_eco["upgrade"]			    = economy["upgrade"] or ini_diff:r_float_ex("econ_" .. eco , "upgrade") or 1
+	factors_eco["buy"]				    = economy["buy"] or ini_diff:r_float_ex("econ_" .. eco , "buy") or 1
+	factors_eco["sell"]				    = economy["sell"] or ini_diff:r_float_ex("econ_" .. eco , "sell") or 1
+	factors_eco["artefact"]			    = economy["artefact"] or ini_diff:r_float_ex("econ_" .. eco , "artefact") or 1
+	factors_eco["loots"]			    = economy["loots"] or ini_diff:r_float_ex("econ_" .. eco , "loots") or 1
+	factors_eco["money_loots"]		    = economy["money_loots"] or ini_diff:r_float_ex("econ_" .. eco , "money_loots") or 1
+	factors_eco["stash_chance"]		    = economy["stash_chance"] or ini_diff:r_float_ex("econ_" .. eco , "stash_chance") or 0.4
+	factors_eco["weapon_degradation"]	= economy["weapon_degradation"] or ini_diff:r_float_ex("econ_" .. eco , "weapon_degradation") or 1
+	factors_eco["battery_consumption"]	= economy["battery_consumption"] or ini_diff:r_float_ex("econ_" .. eco , "battery_consumption") or 1
+	factors_eco["random_items"]			= economy["random_items"] or ini_diff:r_float_ex("econ_" .. eco , "random_items") or 0.5
+	factors_eco["scope_chance"]			= economy["scope_chance"] or ini_diff:r_float_ex("econ_" .. eco , "scope_chance") or 0.15
+	factors_eco["arty_chance"]			= economy["arty_chance"] or ini_diff:r_float_ex("econ_" .. eco , "arty_chance") or 0.25
+	factors_eco["restock"]				= economy["restock"] or ini_diff:r_float_ex("econ_" .. eco , "restock") or 24
+	factors_eco["percentage_parts"]	    = economy["percentage_parts"] or ((economy["percentage_parts"] ~= false) and ini_diff:r_bool_ex("econ_" .. eco , "percentage_parts")) or false
+	factors_eco["limited_bolts"]		= economy["limited_bolts"] or ((economy["limited_bolts"] ~= false) and ini_diff:r_bool_ex("econ_" .. eco , "limited_bolts")) or false
+	factors_eco["arty_degradation"]		= economy["arty_degradation"] or ((economy["arty_degradation"] ~= false) and ini_diff:r_bool_ex("econ_" .. eco , "arty_degradation")) or false
+	factors_eco["bkpk_degradation"]		= economy["bkpk_degradation"] or ((economy["bkpk_degradation"] ~= false) and ini_diff:r_bool_ex("econ_" .. eco , "bkpk_degradation")) or false
+	factors_eco["outfit_drops"]			= economy["outfit_drops"] or ini_diff:r_float_ex("econ_" .. eco , "outfit_drops") or 2
+end
+
+function set_game_factor(key, val)
+	if (gameplay[key] ~= val) and (not has_alife_info("diff_gameplay_flag_change")) then
+		give_info("diff_gameplay_flag_change")
+		printf("~ Gameplay difficulty | player changed something!")
+	end
+	
+	alife_storage_manager.get_state().diff_game[key] = val
+	gameplay[key] = val
+	setup_game_factors(game_num)
+	if (key == "actor_immunities") then set_actor_immunities()
+	elseif (key == "hit_power") then set_hit_power()
+	elseif (key == "dispersion_base") then set_dispersion_base()
+	elseif (key == "dispersion_factor") then set_dispersion_factor()
+	elseif (key == "power_loss_bias") then set_actor_stamina()
+	elseif (key == "weight") then set_actor_weight()
+	elseif (key == "thirst") then actor_status_thirst.toggle_feature(val)
+	elseif (key == "sleep") then actor_status_sleep.toggle_feature(val)
+	end
+	printdbg("# Gameplay difficulty factor saved: [" .. key .. "] = " .. tostring(val))
+end
+
+function set_eco_factor(key, val)
+	if (economy[key] ~= val) and (not has_alife_info("diff_economy_flag_change")) then
+		give_info("diff_economy_flag_change")
+		printf("~ Progression difficulty | player changed something!")
+	end
+	
+	alife_storage_manager.get_state().diff_eco[key] = val
+	economy[key] = val
+	setup_eco_factors(eco_num)
+	if (key == "weapon_degradation") then set_weapon_degradation()
+	elseif (key == "arty_degradation") or (key == "bkpk_degradation") then item_artefact.toggle_feature_arty_degradation(val)
+	end
+	printdbg("# Progression difficulty factor saved: [" .. key .. "] = " .. tostring(val))
+end
+
+function get_game_factor(key)
+	--printf("Gameplay difficulty factor requested: [" .. key .. "] = " .. tostring(factors_game[key]))
+	return factors_game[key]
+end
+
+function get_eco_factor(key)
+	--printf("Progression difficulty factor requested: [" .. key .. "] = " .. tostring(factors_eco[key]))
+	return factors_eco[key]
+end
+
+
+--==================================================
+function set_actor_immunities()
+	local immunities = get_game_factor("actor_immunities") or 1
+	local pick = vanilla_diff[immunities]
+	exec_console_cmd("g_game_difficulty " .. pick)
+	printdbg("g_game_difficulty " .. pick)
+end
+
+function set_hit_power()
+	local hit_power = get_game_factor("hit_power") or 1
+	exec_console_cmd("g_hit_pwr_modif " .. hit_power)
+	printdbg("g_hit_pwr_modif " .. hit_power)
+end
+
+function set_dispersion_base()
+	local dispersion_base = get_game_factor("dispersion_base") or 1
+	exec_console_cmd("g_dispersion_base " .. dispersion_base)
+	printdbg("g_dispersion_base " .. dispersion_base)
+end
+
+function set_dispersion_factor()
+	local dispersion_factor = get_game_factor("dispersion_factor") or 1
+	exec_console_cmd("g_dispersion_factor " .. dispersion_factor)
+	printdbg("g_dispersion_factor " .. dispersion_factor)
+end
+
+function set_actor_stamina()
+	local pwb = get_game_factor("power_loss_bias") or 0.2
+	exec_console_cmd("power_loss_bias " .. tostring(pwb))
+end
+
+function set_actor_weight()
+	-- Set up maximum carry weight 
+	local cw = get_game_factor("weight") or 20
+	local mww = cw + (math.ceil(cw / 5) * 2)
+	if (cw ~= db.actor:get_actor_max_weight()) then
+		db.actor:set_actor_max_weight(cw)
+		db.actor:set_actor_max_walk_weight(mww)
+	end
+end
+
+function set_weapon_degradation()
+	local val = get_eco_factor("weapon_degradation") or 1
+	exec_console_cmd("wpn_degradation " .. tostring(val))
+end
+
+--=======================================< Callbacks >=======================================--
+local function on_game_load()
+	exec_console_cmd("ai_die_in_anomaly 0") -- disabled cause AI get fucked with it
+	
+	-- Prepare progression difficulty factors
+	economy = alife_storage_manager.get_state().diff_eco
+	if not (type(economy) == "table") then -- for old saves
+		alife_storage_manager.get_state().diff_eco = {}
+		alife_storage_manager.get_state().diff_eco["type"] = eco_num
+		economy = alife_storage_manager.get_state().diff_eco
+	end
+	eco_num = economy["type"] or eco_num
+	setup_eco_factors(eco_num)
+	
+	
+	-- Prepare gameplay difficulty factors
+	gameplay = alife_storage_manager.get_state().diff_game
+	if not (type(gameplay) == "table") then -- for old saves
+		alife_storage_manager.get_state().diff_game = {}
+		alife_storage_manager.get_state().diff_game["type"] = game_num
+		gameplay = alife_storage_manager.get_state().diff_game
+	end
+	game_num = gameplay["type"] or game_num
+	setup_game_factors(game_num)
+	
+	
+	set_actor_immunities() -- prepare actor immunities
+	set_hit_power() -- prepare hit_power
+	set_dispersion_base() -- prepare dispersion_base
+	set_dispersion_factor() -- prepare dispersion_factor
+	set_actor_weight() -- prepare weight
+	set_actor_stamina() -- prepare power loss bias
+	set_weapon_degradation() -- weapon degradation
+	actor_status_thirst.toggle_feature(factors_game["thirst"]) -- prepare thirst
+	actor_status_sleep.toggle_feature(factors_game["sleep"]) -- prepare sleep
+	item_artefact.toggle_feature_arty_degradation(factors_eco["arty_degradation"]) -- prepare artefact degradation
+	item_artefact.toggle_feature_arty_degradation(factors_eco["bkpk_degradation"]) -- prepare backpack degradation
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_game_load",on_game_load)
+end

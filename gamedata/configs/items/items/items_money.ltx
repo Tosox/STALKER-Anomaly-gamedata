@@ -1,0 +1,248 @@
+
+[tch_money]:booster ;;-- (technical)
+$spawn                                   = "tch_money"
+kind								 = i_tool
+visual                                   = dynamics\money\money.ogf
+description                              = st_roubles_descr
+inv_name                                 = st_conserva
+inv_name_short                           = st_conserva
+inv_weight                               = 0.001
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 68
+cost                                     = 0
+;boost_time                               = 50.0
+;boost_health_restore                     = 0.0002
+;eat_satiety                              = 1
+;eat_alcohol                              = -0.05
+attach_angle_offset                      = 0.440521, 1.378287, -0.644026
+attach_position_offset                   = 0.104196, -0.010821, 0.076969
+attach_bone_name                         = bip01_r_hand
+auto_attach                              = false
+can_trade                                = false
+bone_name                                = bip01_r_hand
+position_offset                          = 0.0,0.0,0.0
+angle_offset                             = 1.570790,1.570790,3.92699
+use_sound                                = interface\items\inv_items_money_paper
+snd_on_take								 = paper
+
+
+;;--===========================================================
+
+[cash]:identity_immunities
+GroupControlSection                      = spawn_group 
+discovery_dependency                     = 
+$spawn                                   = "cash"
+class 									 = II_ATTCH
+kind								 = i_tool
+cform									 = skeleton
+inv_name                                 = st_cash_name
+inv_name_short                           = st_cash_name
+description                              = st_cash_descr
+inv_weight                               = 0.05
+cost                                     = 0
+inv_grid_x                               = 0
+inv_grid_y                               = 68
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+visual                                   = dynamics\money\money_500.ogf
+quest_item                               = true
+can_trade                                = false
+attach_angle_offset                      = 0.440521, 1.378287, -0.644026
+attach_position_offset                   = 0.104196, -0.010821, 0.076969
+attach_bone_name                         = bip01_r_hand
+auto_attach                              = false
+bone_name                                = bip01_r_hand
+position_offset                          = 0.0,0.0,0.0
+angle_offset                             = 1.570790,1.570790,3.92699
+snd_on_take								 = generic
+use1_functor         		             = txr_money.menu_money_100
+use1_action_functor  		             = txr_money.use_money_100
+use2_functor         		             = txr_money.menu_money_500
+use2_action_functor  		             = txr_money.use_money_500
+use3_functor         		             = txr_money.menu_money_1000
+use3_action_functor  		             = txr_money.use_money_1000
+use4_functor         		             = txr_money.menu_money_5000
+use4_action_functor  		             = txr_money.use_money_5000
+
+
+[roubles]:tch_money
+visual				                     = dynamics\equipments\dev_money.ogf
+description			                     = st_roubles_descr
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+inv_grid_width			                 = 1
+inv_grid_height			                 = 1
+inv_grid_x			                     = 1
+cost				                     = 9
+inv_weight			                     = 0.004
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset	                 = 0.096910, -0.013594, 0.107925
+money_amount							 = 1,9
+use_sound                                = interface\items\inv_items_money_coin_2
+snd_on_take								 = coin
+tier = 1
+
+[money_10]:tch_money
+$spawn                                   = "money_10"
+inv_name                                 = st_roubles_10_name
+inv_name_short                           = st_roubles_10_name
+description                              = st_roubles_10_descr
+cost                                     = 10
+inv_grid_x                               = 2
+visual                                   = dynamics\money\money_10.ogf
+can_trade								 = false
+money_amount							 = 10
+tier = 1
+
+[money_10_50]:tch_money,money_10
+money_amount							 = 10,50
+inv_grid_x                               = 8
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_50]:tch_money
+$spawn                                   = "money_50"
+inv_name                                 = st_roubles_50_name
+inv_name_short                           = st_roubles_50_name
+description                              = st_roubles_50_descr
+cost                                     = 50
+inv_grid_x                               = 5
+visual                                   = dynamics\money\money_50.ogf
+can_trade								 = false
+money_amount							 = 50
+tier = 1
+
+[money_50_100]:tch_money,money_50
+money_amount							 = 50,100
+inv_grid_x                               = 9
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_100]:tch_money
+$spawn                                   = "money_100"
+inv_name                                 = st_roubles_100_name
+inv_name_short                           = st_roubles_100_name
+description                              = st_roubles_100_descr
+cost                                     = 100
+inv_grid_x                               = 3
+visual                                   = dynamics\money\money_100.ogf
+can_trade								 = false
+money_amount							 = 100
+tier = 1
+
+[money_100_200]:tch_money,money_100
+money_amount							 = 100,200
+inv_grid_x                               = 10
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_200_300]:tch_money,money_100
+money_amount							 = 200,300
+inv_grid_x                               = 10
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_300_400]:tch_money,money_100
+money_amount							 = 300,400
+inv_grid_x                               = 10
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_400_500]:tch_money,money_100
+money_amount							 = 400,500
+inv_grid_x                               = 10
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 1
+
+[money_500]:tch_money
+$spawn                                   = "money_500"
+inv_name                                 = st_roubles_500_name
+inv_name_short                           = st_roubles_500_name
+description                              = st_roubles_500_descr
+cost                                     = 500
+inv_grid_x                               = 6
+visual                                   = dynamics\money\money_500.ogf
+can_trade								 = false
+money_amount							 = 500
+tier = 1
+
+[money_500_600]:tch_money,money_500
+money_amount							 = 500,600
+inv_grid_x                               = 11
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 2
+
+[money_600_700]:tch_money,money_500
+money_amount							 = 600,700
+inv_grid_x                               = 11
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 2
+
+[money_700_800]:tch_money,money_500
+money_amount							 = 700,800
+inv_grid_x                               = 11
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 2
+
+[money_800_900]:tch_money,money_500
+money_amount							 = 800,900
+inv_grid_x                               = 11
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 2
+
+[money_900_1000]:tch_money,money_500
+money_amount							 = 900,1000
+inv_grid_x                               = 11
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 2
+
+[money_1000]:tch_money
+$spawn                                   = "money_1000"
+inv_name                                 = st_roubles_1000_name
+inv_name_short                           = st_roubles_1000_name
+description                              = st_roubles_1000_descr
+cost                                     = 1000
+inv_grid_x                               = 4
+visual                                   = dynamics\money\money_1000.ogf
+can_trade								 = false
+money_amount							 = 1000
+tier = 2
+
+[money_1000_5000]:tch_money,money_500
+money_amount							 = 1000,5000
+inv_grid_x                               = 12
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 3
+
+[money_5000]:tch_money
+$spawn                                   = "money_5000"
+inv_name                                 = st_roubles_5000_name
+inv_name_short                           = st_roubles_5000_name
+description                              = st_roubles_5000_descr
+cost                                     = 5000
+inv_grid_x                               = 7
+visual                                   = dynamics\money\money_5000.ogf
+can_trade								 = false
+money_amount							 = 5000
+tier = 4
+
+[money_5000_end]:tch_money,money_5000
+money_amount							 = 5000,10000
+inv_grid_x                               = 13
+inv_name			                     = st_roubles
+inv_name_short			                 = st_roubles
+tier = 5

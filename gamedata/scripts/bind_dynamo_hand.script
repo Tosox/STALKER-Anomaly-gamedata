@@ -1,0 +1,233 @@
+--[[
+Автор: O.Faustle
+Мод: Call of Misery 1.0c
+--]]
+
+local dynamo_handable = {}
+local pre_timer = nil
+
+function read_net_packet(obj) 
+	local upgrades = {} 
+	local s_obj = alife_object( obj:id() ) 
+	local pac = net_packet() 
+	pac:w_begin( 0 ) 
+	s_obj:STATE_Write( pac ) 
+	pac:r_seek( 2 ) 
+	local game_vertex_id         = pac:r_u16() 
+	local distance          = pac:r_float() 
+	local direct_control         = pac:r_s32() 
+	local level_vertex_id         = pac:r_s32() 
+	local object_flags  = pac:r_s32() 
+	local custom_data  = pac:r_stringZ() 
+	local story_id   = pac:r_s32() 
+	local spawn_story_id         = pac:r_s32() 
+	local visual_name  = pac:r_stringZ() 
+	local visual_flags  = pac:r_u8() 
+	local condition   = pac:r_float() 
+	local upgrade_count  = pac:r_u32() 
+	for i = 1, upgrade_count do 
+		upgrades[ i ] = pac:r_stringZ() 
+		if (upgrades[ i ] == "up_firste_dynamo_hand") then	-- Проверяем наличие апдейта
+			return upgrades[ i ]
+		end
+	end 
+end
+
+function a_timer()
+    pre_timer = nil
+end
+ 
+function s_timer()
+	pre_timer = 1
+    local iTimer = time_global() + 2000	-- timer for save-scam blocking
+
+    local function chk_timer()
+		return time_global() > iTimer
+    end
+ 
+    level.add_call(chk_timer, a_timer)
+end
+
+function init(obj)
+	local new_binder = dynamo_hand_binder(obj)
+	obj:bind_object(new_binder)
+end
+
+class "dynamo_hand_binder" (object_binder)
+function dynamo_hand_binder:__init(obj) super(obj)
+	self.initialized = false
+	self.loaded = false
+end 
+
+function dynamo_hand_binder:reload(section)
+	object_binder.reload(self, section)
+	self.ammo_max = ini_sys:r_u32(section, "ammo_mag_size")
+	self.sound_fire = sound_object([[weapons\dynamo_hand\dynamo_hand_shoot]])
+	self.nofire_stop_time = 0
+end
+
+function dynamo_hand_binder:reinit()
+	object_binder.reinit(self)
+end
+
+function dynamo_hand_binder:net_spawn(se_abstract)
+	if not object_binder.net_spawn(self, se_abstract) then
+		return false
+	end
+	self.lbutton_pressed = false
+	self.rbutton_pressed = false
+	self.first_update = true
+	self.last_ammo_elapsed = 0
+	self.last_in_slot = false
+	return true
+end
+
+function dynamo_hand_binder:update(delta)
+	object_binder.update(self, delta)
+	local ammo_elapsed = self.object:get_ammo_in_magazine()
+	local pos = vector()
+	pos:mad(device().cam_pos,device().cam_dir,0.75)
+	pos:mad(pos,device().cam_top,-0.3)
+	pos:mad(pos,device().cam_right,0.3)
+	self.gun_end_pos = vector():set(pos.x,pos.y,pos.z)
+
+	if self.first_update then
+		self.first_update = false
+		self.last_ammo_elapsed = ammo_elapsed
+		return
+	end
+	
+	local active_item = db.actor:active_item()
+	local qwerty = active_item and (self.object:id() == active_item:id())
+	if qwerty then 
+		if not self.last_in_slot then
+			self.last_in_slot = true
+		else 
+			self:OnHold(delta)
+		end
+	else
+		if self.last_in_slot then 
+			self.last_in_slot = false
+			self:OnRemove()
+		end
+		return 
+	end
+
+	local da = self.last_ammo_elapsed - ammo_elapsed
+	if da > 0 then 
+		if not self.lbutton_pressed then 
+			self:OnLButtonDown()
+			self.lbutton_pressed = true
+		end
+	elseif self.lbutton_pressed then
+		self:OnLButtonUp()
+		self.lbutton_pressed = false
+	end
+	self.last_ammo_elapsed = ammo_elapsed
+
+end
+
+function dynamo_hand_binder:net_destroy()
+	self.rbutton_pressed = false
+	self.lbutton_pressed = false
+	dynamo_handable = {}
+	object_binder.net_destroy(self)
+end
+
+function dynamo_hand_binder:save(packet)
+	object_binder.save(self, packet)
+end
+
+function dynamo_hand_binder:load(reader)
+	self.loaded = true
+	object_binder.load(self, reader)
+end
+
+
+function dynamo_hand_binder:sound_particle_fastcall()
+	if self.rbutton_pressed or self.lbutton_pressed then
+		local pos = vector()
+		self.gun_end_pos = vector():set(pos.x,pos.y,pos.z)
+
+		if self.sound_fire:playing() then
+			self.sound_fire:set_position(self.gun_end_pos)
+		end
+		
+		return false
+	else
+		return true
+	end
+
+end
+
+function dynamo_hand_binder:OnLButtonDown()
+	if not db.actor:has_info("inventory_wnd_open") and not db.actor:has_info("trade_wnd_open") and not db.actor:has_info("upgrade_wnd_open") and not db.actor:has_info("body_search_wnd_open") then
+		self.sound_fire:play_at_pos(db.actor, self.gun_end_pos)
+		if true then -- just get rid of this script
+			return
+		end
+		
+		local upd = db.actor:object("wpn_upd")
+
+		if (upd) then
+			local con = upd:condition()
+			local power
+			local bb,bp,bp_val
+			local active_item = db.actor:active_item()
+			
+			if (read_net_packet(active_item) == "up_firste_dynamo_hand") then
+				power = 0.0125		-- Коэффициент заряда с апдейтом
+			else
+				power = 0.00625		-- Коэффициент заряда без апдейта
+			end
+			
+			bp = con + power
+			bp_val = math.floor(bp * 100)
+
+			if bp > 1 then
+				bp = 1
+			end
+
+			if (bp_val % 5 == 0 and bp_val < 100 and pre_timer == nil) then
+				news_manager.send_tip(db.actor, "%c[green]"..game.translate_string("st_charging").."\n%c[default]%c[red] "..string.format("%s%%", bp_val).."\n%c[default]", nil, nil, nil, 1000)
+				s_timer()
+			end
+			
+			upd:set_condition(bp)
+			db.actor:transfer_item(upd,db.actor)
+		end
+	end
+end
+
+function dynamo_hand_binder:OnLButtonUp()
+	if not db.actor:has_info("inventory_wnd_open") and not db.actor:has_info("trade_wnd_open") and not db.actor:has_info("upgrade_wnd_open") and not db.actor:has_info("body_search_wnd_open") then
+		local upd = db.actor:object("wpn_upd")
+		
+		if (upd) then
+			if upd:condition() == 1 then
+				news_manager.send_tip(db.actor, "%c[green]"..game.translate_string("st_charging").."\n%c[default]%c[red] 100%\n%c[default]", nil, nil, nil, nil)
+			end
+		else
+			local text = game.translate_string("st_upd_disconnected")
+			actor_menu.set_msg(1, text,3)
+		end
+	end
+end
+
+function dynamo_hand_binder:OnHold(delta)
+	local ammo = self.object:get_ammo_in_magazine()
+	if ammo < self.ammo_max then ammo = ammo + 1 end
+	self.object:set_ammo_elapsed(ammo)
+end
+
+function dynamo_hand_binder:OnRemove()
+	self.rbutton_pressed = false
+	self.lbutton_pressed = false
+end
+
+function check_on_level(pos)
+	if pos.y > level.get_bounding_volume().min.y
+	then return true
+	else return false
+	end
+end

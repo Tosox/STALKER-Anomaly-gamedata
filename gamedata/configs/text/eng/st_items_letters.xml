@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Notes + Recipes
+-->
+
+<string_table>
+
+	<string id="st_recipe_basic_1">
+		<text>Survival guide (issue #1)</text>
+	</string>
+	<string id="st_recipe_basic_2">
+		<text>Survival guide (issue #2)</text>
+	</string>
+	<string id="st_recipe_basic_3">
+		<text>Survival guide (issue #3)</text>
+	</string>
+	<string id="st_recipe_basic_4">
+		<text>Survival guide (issue #4)</text>
+	</string>
+	<string id="st_recipe_basic_descr">
+		<text>This guide details basic survival skills, and provides an overview of common survival kits. The later chapters describe the creation of basic gear out of common materials.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] craft recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_recipe_advanced_1">
+		<text>Mechanics manual (1st edition)</text>
+	</string>
+	<string id="st_recipe_advanced_2">
+		<text>Mechanics manual (2nd edition)</text>
+	</string>
+	<string id="st_recipe_advanced_3">
+		<text>Mechanics manual (3rd edition)</text>
+	</string>
+	<string id="st_recipe_advanced_4">
+		<text>Mechanics manual (4th edition)</text>
+	</string>
+	<string id="st_recipe_advanced_descr">
+		<text>Manual of mechanical engineering. Some people read such books to expand their expertise and learn more about the facilities and factories in the Zone. Contains details about basic mechanical and electrical equipments.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] craft recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_recipe_expert_1">
+		<text>Engineering manual (1st edition)</text>
+	</string>
+	<string id="st_recipe_expert_2">
+		<text>Engineering manual (2nd edition)</text>
+	</string>
+	<string id="st_recipe_expert_3">
+		<text>Engineering manual (3rd edition)</text>
+	</string>
+	<string id="st_recipe_expert_4">
+		<text>Engineering manual (4th edition)</text>
+	</string>
+	<string id="st_recipe_expert_descr">
+		<text>Manual of industrial engineering. Quite informative. It describes the operation of modern electronics: operational amplifiers, semiconductor diodes, bipolar junction transistors, and field effect transistors. The second part of this manual deals with troubleshooting electrical devices.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] craft recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_recipe_drug_1">
+		<text>Drug recipe #1</text>
+	</string>
+	<string id="st_recipe_drug_2">
+		<text>Drug recipe #2</text>
+	</string>
+	<string id="st_recipe_drug_3">
+		<text>Drug recipe #3</text>
+	</string>
+	<string id="st_recipe_drug_4">
+		<text>Drug recipe #4</text>
+	</string>
+	<string id="st_recipe_drug_descr">
+		<text>A couple of pages torn off from a book. Handwritten in blue ink that got smudgy due to the effect of environmental factors, which makes the text extremely hard to make out. The written notes describe the creation of various types of drugs and medicines using common medical supplies.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] craft recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_recipe_ammo_1">
+		<text>Safety guide to ammunition (1st edition)</text>
+	</string>
+	<string id="st_recipe_ammo_2">
+		<text>Safety guide to ammunition (2nd edition)</text>
+	</string>
+	<string id="st_recipe_ammo_3">
+		<text>Safety guide to ammunition (3rd edition)</text>
+	</string>
+	<string id="st_recipe_ammo_4">
+		<text>Safety guide to ammunition (4th edition)</text>
+	</string>
+	<string id="st_recipe_ammo_descr">
+		<text>Every stalker should learn to choose a gun, but also know how to choose ammunition for it. This guide provides informations about various types of ammunition, plus an in-depth view about the basic components of cartridges.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] craft recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_recipe_cooking_1">
+		<text>Chef's notes</text>
+	</string>
+	<string id="st_recipe_cooking_descr">
+		<text>A couple of handwritten pages, contains detailed recipes regarding marinating mutant meat in alcohol by certain tempretures. According to the notes, it reduces the harming effects of radiated meat. Seems like the author is an experienced zoner.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] informative\n
+		%c[d_blue] • %c[ui_gray_2] cooking recipe\n
+		%c[d_blue] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="st_memoirs_1_of_2_name">
+		<text>A stalker's journal (part 1 of 2)</text>
+	</string>
+	<string id="st_memoirs_1_of_2_desc">
+		<text>An old, faded notebook slipped into a card sleeve in order to protect it from wear and tear. However, it didn't withstand the passage of time well and only a small part of the text is legible.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_memoirs_2_of_2_name">
+		<text>A stalker's journal (part 2 of 2)</text>
+	</string>
+	<string id="st_memoirs_2_of_2_desc">
+		<text>An old, faded notebook slipped into a card sleeve in order to protect it from wear and tear. However, it didn't withstand the passage of time well and only a small part of the text is legible.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_freedom_manual_1_of_2_name">
+		<text>Interrogation techniques: the basics (part 1 of 2)</text>
+	</string>
+	<string id="st_freedom_manual_1_of_2_desc">
+		<text>An instructional leaflet with a large Freedom emblem at the upper right corner and a simple drawing of a hand-gun pointing at a kneeling human figure. It is titled "Interrogation techniques: The basics" and is written in a typical, laid-back slang of the faction.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_freedom_manual_2_of_2_name">
+		<text>Interrogation techniques: the basics (part 2 of 2)</text>
+	</string>
+	<string id="st_freedom_manual_2_of_2_desc">
+		<text>An instructional leaflet with a large Freedom emblem at the upper right corner and a simple drawing of a hand-gun pointing at a kneeling human figure. It is titled "Interrogation techniques: The basics" and is written in a typical, laid-back slang of the faction.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_stalker_letter_1_of_2_name">
+		<text>Memoir (part 1 of 2)</text>
+	</string>
+	<string id="st_stalker_letter_1_of_2_desc">
+		<text>A couple of pages torn off from a memoir. Handwritten in blue ink that got smudgy due to the effect of environmental factors, which makes the text extremely hard to make out. Author unknown.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_stalker_letter_2_of_2_name">
+		<text>Memoir (part 2 of 2)</text>
+	</string>
+	<string id="st_stalker_letter_2_of_2_desc">
+		<text>A couple of pages torn off from a memoir. Handwritten in blue ink that got smudgy due to the effect of environmental factors, which makes the text extremely hard to make out. Author unknown.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_ecologist_report_1_of_3_name">
+		<text>Walking Dead Findings field report 39B rev. 2 (part 1 of 3)</text>
+	</string>
+	<string id="st_ecologist_report_1_of_3_desc">
+		<text>A machine-typed document stamped with the Ecologist research team emblem. Classified as strictly confidential and signed by: %c[ui_gray_1]Arkady Cvetkovsky.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] scientific item\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_ecologist_report_2_of_3_name">
+		<text>Walking Dead Findings field report 39B rev. 2 (part 2 of 3)</text>
+	</string>
+	<string id="st_ecologist_report_2_of_3_desc">
+		<text>A machine-typed document stamped with the Ecologist research team emblem. Classified as strictly confidential and signed by: %c[ui_gray_1]Arkady Cvetkovsky.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] scientific item\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_ecologist_report_3_of_3_name">
+		<text>Walking Dead Findings field report 39B rev. 2 (part 3 of 3)</text>
+	</string>
+	<string id="st_ecologist_report_3_of_3_desc">
+		<text>A machine-typed document stamped with the Ecologist research team emblem. Classified as strictly confidential and signed by: %c[ui_gray_1]Arkady Cvetkovsky.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] scientific item\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_monolith_prayer_1_of_3_name">
+		<text>Monolith prayer (part 1 of 3)</text>
+	</string>
+	<string id="st_monolith_prayer_1_of_3_desc">
+		<text>An untitled document comprising a few paragraphs one below another. Frequent references to the Monolith indicate a religious nature of the written text. The paper is preserved very well, which suggests that it has been treated with great care and respect so that its condition doesn't deteriorate.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_monolith_prayer_2_of_3_name">
+		<text>Monolith prayer (part 2 of 3)</text>
+	</string>
+	<string id="st_monolith_prayer_2_of_3_desc">
+		<text>An untitled document comprising a few paragraphs one below another. Frequent references to the Monolith indicate a religious nature of the written text. The paper is preserved very well, which suggests that it has been treated with great care and respect so that its condition doesn't deteriorate.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_monolith_prayer_3_of_3_name">
+		<text>Monolith prayer (part 3 of 3)</text>
+	</string>
+	<string id="st_monolith_prayer_3_of_3_desc">
+		<text>An untitled document comprising a few paragraphs one below another. Frequent references to the Monolith indicate a religious nature of the written text. The paper is preserved very well, which suggests that it has been treated with great care and respect so that its condition doesn't deteriorate.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_monolithian_thoughts_name">
+		<text>Monolithian's journal</text>
+	</string>
+	<string id="st_monolithian_thoughts_desc">
+		<text>A hand-written sheet of paper. At the beginning, the writing of the note is extremely chaotic and untidy as if the person writing it was suffering from a severe mental disorder. Interestingly, the further down the sheet, the text becomes plainer, letters much clearer and the last words are written with an almost perfect, machine-like precision.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_letter_to_outside_name">
+		<text>A letter to Natalie</text>
+	</string>
+	<string id="st_letter_to_outside_desc">
+		<text>A letter apparently written by one of the stalkers to someone outside the Zone, most probably his wife or lover. The fact that you hold it in your hands suggests that it never reached the intended recipient.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_letter_military_stalker_name">
+		<text>Military stalker's note</text>
+	</string>
+	<string id="st_letter_military_stalker_desc">
+		<text>A note found in a stash. Looks like someone was killing time during a long and boring night and then decided to leave the result of his work behind rather than throw it into the campfire.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_letter_mercenary_name">
+		<text>Mercenary's note</text>
+	</string>
+	<string id="st_letter_mercenary_desc">
+		<text>A note written by one of the Mercenaries. Looks like he decided to write down some thoughts concerning his activities in the Zone. The purpose of it is unclear.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_letter_military_log_name">
+		<text>Communication log / MSRC operation / 05.04.2014 18:36:21</text>
+	</string>
+	<string id="st_letter_military_log_desc">
+		<text>A printed transcription of the radio transmission between military units stationed in the Zone. The fact that it was in possession of one of the SKAT unit members indicates that he must have been involved in a clandestine operation, most probably concerned with the extraction of surveillance data.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] military item\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+	<string id="st_letter_stalker_letter_3_name">
+		<text>Letter to Nikolai</text>
+	</string>
+	<string id="st_letter_stalker_letter_3_desc">
+		<text>A hand-written letter addressed to Nikolai. Most probably a part of a longer written conversation between two stalkers. Although correspondence in the Zone is conducted mainly by means of PDA messages, some prefer a traditional manner of communication, especially in case of most private matters and between friends. These letters are then handed to couriers who, like guides, are entrusted with some of the most difficult and dangerous tasks. It often takes a few days before a letter reaches its recipient, but still the probability of intercepting the message is much lower than in case of PDA communication. The courier profession is highly regarded among fellow stalkers and entails a position of significant influence in the stalker community.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] personal belongings\n
+		</text>
+	</string>
+</string_table>

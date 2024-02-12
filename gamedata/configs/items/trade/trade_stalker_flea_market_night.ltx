@@ -1,0 +1,122 @@
+#include "presets\trade_discounts.ltx"
+#include "presets\trade_presets.ltx"
+
+[trader]
+buy_condition                            = trade_generic_buy
+buy_item_condition_factor                = 0.40		;0.40
+buy_item_exponent = 2.25
+sell_item_exponent = 0.75
+buy_supplies                             = supplies_generic
+price_profile                            = default
+sell_condition                           = trade_generic_sell
+discounts = discount_supplier
+
+[trade_generic_buy]:trasher
+
+[trade_generic_sell]
+itm_pda_common ;NO TRADE
+itm_pda_rare ;NO TRADE 
+itm_pda_uncommon ;NO TRADE 
+itm_actor_backpack = 0.6, 0.9
+af_baloon = 0.7, 0.9
+af_blood = 0.7, 0.9
+af_electra_sparkler = 0.7, 0.9
+af_electra_flash = 0.7, 0.9
+af_cristall = 0.7, 0.9
+af_dummy_dummy = 0.7, 0.9
+af_mincer_meat = 0.7, 0.9
+af_medusa = 0.7, 0.9
+af_night_star = 1, 2
+af_gravi = 1, 2
+
+ammo_9x18_fmj = 1, 0.8
+ammo_9x18_pmm = 1, 2
+ammo_9x19_fmj = 1, 0.8
+ammo_5.45x39_fmj = 1.2, 0.8
+ammo_12x76_zhekan = 1, 2
+ammo_12x70_buck = 1, 0.8
+
+trenchcoat_outfit = 0.6, 1
+dolg_novice_outfit = 0.6, 1
+bandit_novice_outfit = 0.6, 1
+novice_outfit = 0.5, 0.9
+cs_novice_outfit = 1, 0.7.2
+helm_respirator = 0.5, 0.9
+
+wpn_bm16 = 0.8, 0.5
+wpn_toz34 = 0.6, 1
+wpn_fort = 0.8, 0.5
+wpn_mp5 = 0.5, 1
+wpn_pm = 0.8, 0.5
+wpn_toz34_mark4 = 1.6, 1.6
+
+detector_simple = 0.6, 0.4
+detector_advanced = 0.7, 0.9
+
+trenchcoat_outfit = 1, 1
+dolg_novice_outfit = 1, 1
+bandit_novice_outfit = 1, 1
+novice_outfit = 1, 1
+cs_novice_outfit = 1, 1
+helm_respirator = 1, 1
+
+itm_sleepbag = 0.6, 0.4
+itm_backpack = 0.6, 0.4
+box_matches     = 3, 1
+
+bread = 1, 0.7.2
+kolbasa = 1, 0.7.2
+conserva = 1, 0.7.2
+vodka = 1, 0.7.2
+guitar_a = 1, 0.7.2
+harmonica_a = 1, 0.7.2
+energy_drink = 1, 0.7.2
+bandage = 1, 0.7.2
+antirad = 1.5, 2
+medkit = 1.2, 1.8
+
+[supplies_generic]
+travel_outfit = 1, 0.8
+itm_actor_backpack = 3, 1
+af_baloon = 0.7, 0.9
+af_blood = 0.7, 0.9
+af_electra_sparkler = 0.7, 0.9
+af_electra_flash = 0.7, 0.9
+af_cristall = 0.7, 0.9
+af_dummy_dummy = 0.7, 0.9
+af_mincer_meat = 0.7, 0.9
+af_medusa = 0.7, 0.9
+af_night_star = 1, 0.5
+af_gravi = 1, 0.5
+
+ammo_9x18_fmj = 3, 1
+ammo_9x18_pmm = 3, 0.5
+ammo_9x19_fmj = 3, 1
+ammo_5.45x39_fmj = 4, 0.7
+ammo_12x76_zhekan = 5, 0.7
+ammo_12x70_buck = 5, 1
+
+wpn_bm16 = 2, 1
+wpn_toz34 = 1, 0.8
+wpn_fort = 3, 1
+wpn_mp5 = 1, 0.8
+wpn_pm = 3, 1
+wpn_toz34_mark4 = 1, 0.8
+
+detector_simple = 1, 1
+detector_advanced = 1, 0.7
+
+itm_sleepbag = 1, 1
+itm_backpack = 2, 1
+box_matches      = 3, 1
+
+bread = 3, 1
+kolbasa = 3, 1
+conserva = 3, 1
+vodka = 5, 1
+guitar_a = 1, 1
+harmonica_a = 2, 1
+energy_drink = 3, 1
+bandage = 5, 1
+antirad = 3, 0.6
+medkit = 3, 0.7

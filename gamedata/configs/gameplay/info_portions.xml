@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<!--===========================================================
+<
+< INFO PORTIONS
+<	CoC 1.4.10 - DoctorX Questlines 1.6
+<
+<	Modified by: DoctorX
+<	Last revised: October 14, 2016
+<
+<===========================================================-->
+
+
+<game_information_portions>
+
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- DRX Storyline Infoportions
+	<!--
+	<!--	Modified by DoctorX
+	<!--	for DoctorX Questlines 1.6
+	<!--	October 14, 2016
+	<!--
+	<!-- ----------------------------------------------------------------------------------------  -->
+
+	<!-- --------------------------------------- -->
+	<!-- GENERAL INFOPORTIONS -->
+
+	<!-- Dummy info portion (never given) -->
+	<info_portion id="drx_sl_dummy_info"></info_portion>
+
+	<!-- On Find Wish Granter task -->
+	<info_portion id="drx_sl_on_find_wish_granter"></info_portion>
+
+	<!-- On Change Factions task -->
+	<info_portion id="drx_sl_on_cf_task"></info_portion>
+
+	<!-- Quest item task 1 -->
+	<info_portion id="drx_sl_quest_item_task_1_started"></info_portion>
+
+	<!-- Quest item task 2 -->
+	<info_portion id="drx_sl_quest_item_task_2_started"></info_portion>
+
+	<!-- Quest item task 3 -->
+	<info_portion id="drx_sl_quest_item_task_3_started"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- LONER HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Sidorovich -->
+	<info_portion id="drx_sl_start_game_esc_m_trader"></info_portion>
+
+	<!-- Meet with Sidorovich -->
+	<info_portion id="drx_sl_meet_honcho_esc_m_trader"></info_portion>
+
+	<!-- Meet with Xenotech -->
+	<info_portion id="drx_sl_meet_honcho_esc_smart_terrain_5_7_loner_mechanic_stalker"></info_portion>
+
+	<!-- Meet with Beard -->
+	<info_portion id="drx_sl_meet_honcho_zat_a2_stalker_barmen"></info_portion>
+
+	<!-- Meet with Noah -->
+	<info_portion id="drx_sl_meet_honcho_zat_b18_noah"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- DUTY HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Petrenko -->
+	<info_portion id="drx_sl_start_game_bar_dolg_general_petrenko_stalker"></info_portion>
+
+	<!-- Meet with Petrenko -->
+	<info_portion id="drx_sl_meet_honcho_bar_dolg_general_petrenko_stalker"></info_portion>
+
+	<!-- Meet with Mangun -->
+	<info_portion id="drx_sl_meet_honcho_bar_visitors_stalker_mechanic"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- FREEDOM HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Lukash -->
+	<info_portion id="drx_sl_start_game_mil_smart_terrain_7_7_freedom_leader_stalker"></info_portion>
+
+	<!-- Meet with Lukash -->
+	<info_portion id="drx_sl_meet_honcho_mil_smart_terrain_7_7_freedom_leader_stalker"></info_portion>
+
+	<!-- Meet with Loki -->
+	<info_portion id="drx_sl_meet_honcho_jup_a6_freedom_leader"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- CLEAR SKY HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Cold -->
+	<info_portion id="drx_sl_start_game_mar_smart_terrain_base_stalker_leader_marsh"></info_portion>
+
+	<!-- Meet with Cold -->
+	<info_portion id="drx_sl_meet_honcho_mar_smart_terrain_base_stalker_leader_marsh"></info_portion>
+
+	<!-- Meet with Librarian -->
+	<info_portion id="drx_sl_meet_honcho_mar_base_stalker_barmen"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- ECOLOGIST HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Sakharov -->
+	<info_portion id="drx_sl_start_game_yan_stalker_sakharov"></info_portion>
+
+	<!-- Meet with Sakharov -->
+	<info_portion id="drx_sl_meet_honcho_yan_stalker_sakharov"></info_portion>
+
+	<!-- Meet with Tukarev -->
+	<info_portion id="drx_sl_meet_honcho_jup_b6_scientist_tech"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- MERCENARY HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Dushman -->
+	<info_portion id="drx_sl_start_game_cit_killers_merc_trader_stalker"></info_portion>
+
+	<!-- Meet with Dushman -->
+	<info_portion id="drx_sl_meet_honcho_cit_killers_merc_trader_stalker"></info_portion>
+
+	<!-- Meet with Hog -->
+	<info_portion id="drx_sl_meet_honcho_cit_killers_merc_mechanic_stalker"></info_portion>
+	
+	<!-- Meet with Vector -->
+	<info_portion id="drx_sl_meet_honcho_zat_stancia_trader_merc"></info_portion>
+	
+	<!-- Meet with Griffith -->
+	<info_portion id="drx_sl_meet_honcho_merc_pri_grifon_mlr"></info_portion>
+	
+
+	<!-- --------------------------------------- -->
+	<!-- MILITARY HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Kuznetsov -->
+	<info_portion id="drx_sl_start_game_agr_smart_terrain_1_6_near_2_military_colonel_kovalski"></info_portion>
+
+	<!-- Meet with Kuznetsov -->
+	<info_portion id="drx_sl_meet_honcho_agr_smart_terrain_1_6_near_2_military_colonel_kovalski"></info_portion>
+
+	<!-- Meet with Kirilov -->
+	<info_portion id="drx_sl_meet_honcho_agr_smart_terrain_1_6_army_mechanic_stalker"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- BANDIT HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Sultan -->
+	<info_portion id="drx_sl_start_game_zat_b7_bandit_boss_sultan"></info_portion>
+
+	<!-- Meet with Sultan -->
+	<info_portion id="drx_sl_meet_honcho_zat_b7_bandit_boss_sultan"></info_portion>
+
+	<!-- Meet with Olivius -->
+	<info_portion id="drx_sl_meet_honcho_val_smart_terrain_7_4_bandit_trader_stalker"></info_portion>
+	
+	<!-- Meet with Klenov -->
+	<info_portion id="drx_sl_meet_honcho_jup_cont_trader_bandit"></info_portion>
+
+	<!-- --------------------------------------- -->
+	<!-- MONOLITH HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Rabbit -->
+	<info_portion id="drx_sl_start_game_pri_monolith_monolith_trader_stalker"></info_portion>
+
+	<!-- Meet with Rabbit -->
+	<info_portion id="drx_sl_meet_honcho_pri_monolith_monolith_trader_stalker"></info_portion>
+
+	<!-- Meet with Cleric -->
+	<info_portion id="drx_sl_meet_honcho_pri_monolith_monolith_mechanic_stalker"></info_portion>
+	
+	<!-- Meet with Olivar -->
+	<info_portion id="drx_sl_meet_honcho_trader_monolith_kbo"></info_portion>
+	
+	<!-- --------------------------------------- -->
+	<!-- SIN HONCHO INFOPORTIONS -->
+
+	<!-- Starting game at Rabbit -->
+	<info_portion id="drx_sl_start_game_red_greh_trader"></info_portion>
+
+	<!-- Meet with Rabbit -->
+	<info_portion id="drx_sl_meet_honcho_red_greh_trader"></info_portion>
+
+	<!-- Meet with Cleric -->
+	<info_portion id="drx_sl_meet_honcho_red_greh_tech"></info_portion>
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+
+
+  <info_portion id="global_dialogs">
+    <dialog>actor_break_dialog</dialog>
+<!--    <dialog>actor_help_wounded</dialog>   -->
+  </info_portion>
+
+  <!-- special info portion that sends to actor when it
+    use in-game UI (PDA, Inventory, etc)-->
+
+    <info_portion id="ui_pda">
+		<disable>ui_pda_hide</disable>
+    </info_portion>
+    <info_portion id="ui_pda_hide">
+		<disable>ui_pda</disable>
+    </info_portion>
+
+
+   <info_portion id="ui_inventory">
+		<disable>ui_inventory_hide</disable>
+   </info_portion>
+   <info_portion id="ui_inventory_hide">
+		<disable>ui_inventory</disable>
+   </info_portion>
+
+    <info_portion id="ui_talk">
+		<disable>ui_talk_hide</disable>
+    </info_portion>
+    <info_portion id="ui_talk_hide">
+		<disable>ui_talk</disable>
+    </info_portion>
+
+    <info_portion id="ui_trade">
+		<disable>ui_trade_hide</disable>
+    </info_portion>
+    <info_portion id="ui_trade_hide">
+		<disable>ui_trade</disable>
+    </info_portion>
+
+    <info_portion id="ui_car_body">
+		<disable>ui_car_body_hide</disable>
+    </info_portion>
+    <info_portion id="ui_car_body_hide">
+		<disable>ui_car_body</disable>
+    </info_portion>
+
+    <info_portion id="arena_first_battle_begin"></info_portion>
+    <info_portion id="arena_camera_begin"></info_portion>
+    <info_portion id="arena_final_battle"></info_portion>
+    <info_portion id="arena_rupor_off"></info_portion>
+    <info_portion id="arena_fourth_battle"></info_portion>
+
+ 	<info_portion id="a"></info_portion>
+</game_information_portions>

@@ -1,0 +1,76 @@
+<w>
+	<main x="0" y="0" width="375" height="768">
+	    <auto_static x="0" y="0" width="375" height="768" stretch="1">
+		    <texture>ui_inGame2_repair_panel_16</texture>
+	    </auto_static>
+	</main>
+	<back x="0" y="0" width="375" height="768"/>
+	<scheme x="67" y="291" width="232" height="453" />
+	<item_static x="183" y="218" width="249" height="135" stretch="1" align="c" alignment="c"/>
+	<repair_button x="228" y="115" width="68" height="29" hint="ui_repair_button_hint" stretch="1">
+		<window_name>repair_button</window_name>
+		<texture>ui_inGame2_repair_button</texture>
+<!-- 		<text align="c" font="letterica18" r="200" g="200" b="200">ui_st_inv_repair</text> -->
+	</repair_button>
+	<cell_states>
+	    <state>
+	        <type>enabled</type>
+	        <back_texture></back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>highlight</type>
+	        <back_texture>ui_inGame2_upgrade_on_icon_lamp_yellow_highlighted</back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_yellow_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>touched</type>
+	        <back_texture>ui_inGame2_upgrade_on_icon_lamp_yellow_highlighted</back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_yellow_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>selected</type>
+	        <back_texture>ui_inGame2_upgrade_on_icon_lamp_green_upgraded</back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_green_upgraded</point_texture>
+	    </state>
+	    <state>
+	        <type>unknown</type>
+	        <back_texture>ui_inGame2_upgrade_on_icon_lamp_red_disabled</back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_red_disabled</point_texture>
+	    </state>
+	    <state>
+	        <type>disabled_parent</type>
+	        <back_texture></back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>disabled_group</type>
+	        <back_texture>ui_inGame2_upgrade_on_icon_lamp_red_disabled</back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_red_disabled</point_texture>
+	    </state>
+	    <state>
+	        <type>disabled_money</type>
+	        <back_texture></back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>disabled_quest</type>
+	        <back_texture></back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted</point_texture>
+	    </state>
+	    <state>
+	        <type>disabled_highlight</type>
+	        <back_texture></back_texture>
+	        <point_texture>ui_inGame2_upgrade_on_weapon_lamp_empty_highlighted</point_texture>
+	    </state>
+	</cell_states>
+
+	<templates>
+		<cell_item x="0" y="0" width="90" height="44"/>
+<!-- outfit upgrade schemes -->
+#include "ui\inventory_upgrade_outfit_16.xml"
+		  
+<!-- weapons upgrade schemes -->
+#include "ui\inventory_upgrade_weapons_16.xml"
+	</templates>
+</w>

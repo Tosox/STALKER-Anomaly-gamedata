@@ -1,0 +1,19 @@
+#include "common.h"
+#include "img_corrections.h"
+
+struct 	v2p
+{
+ 	float2 	tc0: 		TEXCOORD0;
+};
+
+uniform sampler2D 	s_image;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Pixel
+float4 	main	( v2p I )	: COLOR
+{
+	float3 img	= tex2D(s_image, I.tc0);
+	img = img_corrections(img);
+	
+	return  float4(img,1.h);
+}

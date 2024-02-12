@@ -1,0 +1,548 @@
+
+[up_sect_firsta_vsk94]
+cost                                     = 4460
+value                                    = +10
+
+condition_queue_shot_dec                 = -0.0001
+condition_shot_dec                       = -0.0001
+misfire_start_prob                       = -0.0008
+misfire_end_prob                         = -0.008
+inv_weight                               = +0.15
+
+[up_sect_firstc_vsk94]
+cost                                     = 4440
+value                                    = -10
+cam_dispersion                           = -0.084
+cam_dispersion_inc                       = 0.0 ;-0.073
+cam_step_angle_horz                      = -0.061 
+zoom_cam_dispersion                      = -0.079
+zoom_cam_dispersion_inc                  = 0.0 ; -0.067
+zoom_cam_step_angle_horz                 = -0.043
+inv_weight                               = +0.05
+
+[up_sect_firstd_vsk94]
+cost                                     = 4440
+value                                    = +20
+bullet_speed                             = +60
+fire_distance                            = +50
+fire_dispersion_base                     = -0.01
+inv_weight                               = +0.15
+
+[up_sect_firste_vsk94]
+cost                                     = 4680
+value                                    = +5
+rpm                                      = +35
+inv_weight                               = +0.1
+
+[up_sect_firstf_vsk94]
+cost                                     = 4560
+value                                    = +20
+fire_dispersion_base                     = -0.043
+
+inv_weight                               = +0.1
+
+[up_sect_secona_vsk94]
+cost                                     = 4640
+value                                    = -5
+cam_dispersion                           = -0.042
+cam_dispersion_inc                       = 0.0 ;-0.036
+cam_step_angle_horz                      = -0.031 
+zoom_cam_dispersion                      = -0.039
+zoom_cam_dispersion_inc                  = 0.0 ; -0.033
+zoom_cam_step_angle_horz                 = -0.021
+inv_weight                               = +0.05
+
+[up_sect_seconc_vsk94]
+cost                                     = 4180
+value                                    = +15
+crosshair_inertion                       = -0.7
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.35
+PDM_disp_accel_factor                    = -0.35
+inv_weight                               = +0.025
+
+[up_sect_secone_vsk94]
+cost                                     = 4640
+value                                    = +25
+crosshair_inertion                       = -1.0
+PDM_disp_base                            = -0.15
+PDM_disp_vel_factor                      = -0.4
+PDM_disp_accel_factor                    = -0.4
+inv_weight                               = +0.025
+
+[up_sect_seconf_vsk94]
+cost                                     = 5120
+value                                    = -10
+cam_dispersion                           = -0.084
+cam_dispersion_inc                       = 0.0 ;-0.073
+cam_step_angle_horz                      = -0.061 
+zoom_cam_dispersion                      = -0.079
+zoom_cam_dispersion_inc                  = 0.0 ; -0.067
+zoom_cam_step_angle_horz                 = -0.043
+inv_weight                               = +0.1
+
+[up_sect_thirda_vsk94]
+cost                                     = 5520
+value                                    = +20
+bullet_speed                             = +60
+fire_distance                            = +50
+fire_dispersion_base                     = -0.01
+inv_weight                               = +0.05
+
+[up_sect_thirdc_vsk94]
+cost                                     = 5740
+value                                    = +20
+
+condition_queue_shot_dec                 = -0.0002
+condition_shot_dec                       = -0.0002
+misfire_start_prob                       = -0.0018
+misfire_end_prob                         = -0.014
+inv_weight                               = +0.1
+
+[up_sect_thirdd_vsk94]
+cost                                     = 4980
+value                                    = +20
+fire_dispersion_base                     = -0.043
+
+inv_weight                               = +0.05
+
+[up_sect_thirde_vsk94]
+cost                                     = 5720
+value                                    = +5
+rpm                                      = +35
+inv_weight                               = +0.1
+
+[up_sect_thirdf_vsk94]
+cost                                     = 5580
+value                                    = +20
+bullet_speed                             = +60
+fire_distance                            = +50
+fire_dispersion_base                     = -0.01
+inv_weight                               = +0.1
+
+[up_sect_fourta_vsk94]
+cost                                     = 5940
+value                                    = +5
+rpm                                      = +35
+inv_weight                               = +0.15
+
+[up_sect_fourtc_vsk94]
+cost                                     = 4650
+value                                    = +15
+
+condition_queue_shot_dec                 = -0.00015
+condition_shot_dec                       = -0.00015
+misfire_start_prob                       = -0.0018
+misfire_end_prob                         = -0.014
+inv_weight                               = +0.1
+
+[up_sect_fourte_vsk94]
+cost                                     = 4920
+value                                    = +20
+fire_dispersion_base                     = -0.043
+
+inv_weight                               = +0.05
+
+[up_sect_fourtf_vsk94]
+cost                                     = 6320
+value                                    = -10
+cam_dispersion                           = -0.084
+cam_dispersion_inc                       = 0.0 ;-0.073
+cam_step_angle_horz                      = -0.061 
+zoom_cam_dispersion                      = -0.079
+zoom_cam_dispersion_inc                  = 0.0 ; -0.067
+zoom_cam_step_angle_horz                 = -0.043
+inv_weight                               = +0.1
+
+[up_sect_fiftha_vsk94]
+cost                                     = 4890
+
+fire_modes                               = 1, 3, -1
+cam_dispersion                           = -0.038 
+cam_dispersion_inc                       = 0.0 ;-0.044 
+cam_step_angle_horz                      = -0.025 
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_vsk94]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_vsk94
+section                                  = up_sect_firsta_vsk94
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_a2_name
+description                              = st_up_auto_a2_descr
+icon                                     = ui_inGame2_upgrade_Vintar_VS_1
+
+[up_firstc_vsk94]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_vsk94
+section                                  = up_sect_firstc_vsk94
+property                                 = prop_recoil
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c1_name
+description                              = st_up_auto_c1_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_2
+
+[up_firstd_vsk94]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_vsk94
+section                                  = up_sect_firstd_vsk94
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_b2_name
+description                              = st_up_auto_b2_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_3
+
+[up_firste_vsk94]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_vsk94
+property                                 = prop_rpm
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c3_name
+description                              = st_up_auto_c3_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_4
+
+[up_firstf_vsk94]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstf_vsk94
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c5_name
+description                              = st_up_auto_c5_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_5
+
+[up_secona_vsk94]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_vsk94
+section                                  = up_sect_secona_vsk94
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_pri_a1_name
+description                              = st_up_pri_a1_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_6
+
+[up_seconc_vsk94]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_vsk94
+section                                  = up_sect_seconc_vsk94
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_pri_b2_name
+description                              = st_up_pri_b2_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_7
+
+[up_secone_vsk94]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_vsk94
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here_h
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_pri_c3_name
+description                              = st_up_pri_c3_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_8
+
+[up_seconf_vsk94]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconf_vsk94
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_pri_c1_name
+description                              = st_up_pri_c1_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_9
+
+
+[up_thirda_vsk94]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_vsk94
+section                                  = up_sect_thirda_vsk94
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a1_name
+description                              = st_up_ret_a1_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_10
+
+[up_thirdc_vsk94]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  = up_gr_thirdef_vsk94
+section                                  = up_sect_thirdc_vsk94
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b1_name
+description                              = st_up_ret_b1_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_11
+
+
+[up_thirdd_vsk94]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_vsk94
+section                                  = up_sect_thirdd_vsk94
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c5_name
+description                              = st_up_auto_c5_descr
+icon                                     = ui_inGame2_upgrade_Vintar_VS_5
+
+[up_thirde_vsk94]
+scheme_index                             = 2, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_vsk94
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_c2_name
+description                              = st_up_ret_c2_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_13
+
+[up_thirdf_vsk94]
+scheme_index                             = 2, 5
+effects                                  =
+section                                  = up_sect_thirdf_vsk94
+property                                 = prop_bullet_speed
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a1_name
+description                              = st_up_ret_a1_descr
+icon                                     = ui_inGame2_upgrade_Vintar_VS_6
+
+[up_fourta_vsk94]
+scheme_index                             = 0, 3
+effects                                  = up_gr_fourtcd_vsk94
+section                                  = up_sect_fourta_vsk94
+property                                 = prop_rpm
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a3_name
+description                              = st_up_zat_a3_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_15
+
+
+[up_fourtc_vsk94]
+scheme_index                             = 1, 5
+effects                                  = up_gr_fourtef_vsk94
+section                                  = up_sect_fourtc_vsk94
+property                                 = prop_reliability
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b1_name
+description                              = st_up_ret_b1_descr
+icon                                     = ui_inGame2_upgrade_Vintar_VS_7
+
+[up_fourte_vsk94]
+scheme_index                             = 2, 6
+effects                                  =
+section                                  = up_sect_fourte_vsk94
+property                                 = prop_dispersion
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_c5_name
+description                              = st_up_zat_c5_descr
+icon                                     = ui_inGame2_upgrade_SA_Lavina_17
+
+
+[up_fourtf_vsk94]
+scheme_index                             = 2, 7
+effects                                  =
+section                                  = up_sect_fourtf_vsk94
+property                                 = prop_recoil
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_pri_a1_name
+description                              = st_up_pri_a1_descr
+icon                                     = ui_inGame2_upgrade_Vintar_VS_10
+
+[up_fiftha_vsk94]
+scheme_index                             = 0, 4
+effects                                  =
+section                                  = up_sect_fiftha_vsk94
+property                                 = prop_3xfire
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_c7_name
+description                              = st_up_zatp_c7_descr
+icon                                     = ui_inGame2_upgrade_Volker_P9M_4
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_vsk94]
+elements                                 = up_firsta_vsk94
+
+[up_gr_firstcd_vsk94]
+elements                                 = up_firstc_vsk94, up_firstd_vsk94
+
+[up_gr_firstef_vsk94]
+elements                                 = up_firste_vsk94, up_firstf_vsk94
+
+[up_gr_seconab_vsk94]
+elements                                 = up_secona_vsk94
+
+[up_gr_seconcd_vsk94]
+elements                                 = up_seconc_vsk94
+
+[up_gr_seconef_vsk94]
+elements                                 = up_secone_vsk94, up_seconf_vsk94
+
+[up_gr_thirdab_vsk94]
+elements                                 = up_thirda_vsk94
+
+[up_gr_thirdcd_vsk94]
+elements                                 = up_thirdc_vsk94, up_thirdd_vsk94
+
+[up_gr_thirdef_vsk94]
+elements                                 = up_thirde_vsk94, up_thirdf_vsk94
+
+[up_gr_fourtab_vsk94]
+elements                                 = up_fourta_vsk94
+
+[up_gr_fourtcd_vsk94]
+elements                                 = up_fourtc_vsk94
+
+[up_gr_fourtef_vsk94]
+elements                                 = up_fourte_vsk94, up_fourtf_vsk94
+
+[up_gr_fifthab_vsk94]
+elements                                 = up_fiftha_vsk94

@@ -1,0 +1,107 @@
+-- ============================================================
+--
+-- Script Functions for Task Dialogs in Great Swamp (dialogs_marsh.script)
+--	CoC 1.4.14 - DoctorX Questlines 1.9
+--
+--	Modified by: DoctorX
+--	Last revised: October 29, 2016
+--
+-- ============================================================
+
+
+------ ecolog_companion_task_1
+
+function ecolog_companion_task_1_complete(a,b)
+	-- xQd change the smart terrain where you have to escort the npcs back to if warfare escort task is active
+	local warfare_task = db.actor and load_var(db.actor,"warfare_escort_task_smart")
+	if warfare_task then
+		return xr_conditions.has_task_target_anomaly() ~= true and xr_conditions.check_nearest_smart_dist_le(nil,nil,{40,warfare_task}) or false
+	else
+		return xr_conditions.has_task_target_anomaly() ~= true and xr_conditions.check_nearest_smart_dist_le(nil,nil,{40,"mar_smart_terrain_base"}) or false
+	end
+	-- xQd end
+end
+
+function ecolog_companion_task_1_not_complete(a,b)
+	return not ecolog_companion_task_1_complete(a,b)
+end
+
+function ecolog_companion_task_1_complete_task(a,b)
+	-- xQd
+	local tm = task_manager.get_task_manager()
+	local task_info = tm.task_info
+	if (task_info) then
+		if (task_info["sim_default_csky_trader_task_3"]) then 
+			task_manager.get_task_manager():set_task_completed("sim_default_csky_trader_task_3")
+		elseif (task_info["mar_base_owl_stalker_trader_task_3"]) then 
+			task_manager.get_task_manager():set_task_completed("mar_base_owl_stalker_trader_task_3")
+		end
+	end
+	-- if db.actor and load_var(db.actor,"warfare_escort_task_smart") then
+		-- task_manager.get_task_manager():set_task_completed("sim_default_csky_trader_task_3")
+	-- else
+		-- task_manager.get_task_manager():set_task_completed("mar_base_owl_stalker_trader_task_3")
+	-- end
+	-- xQd end
+	a:stop_talk()
+	b:stop_talk()
+end
+
+function ecolog_companion_task_1_give_reward(a,b)
+	dialogs.relocate_money(db.actor,math.random(4500,7000),"in")
+	if ((math.random(1,100)/100) <= 0.5) then
+		treasure_manager.create_random_stash()
+	end
+	xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"ecolog", 50})
+	xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"csky", 25})
+	xr_effects.inc_faction_goodwill_to_actor(db.actor, nil, {"killer", 25})
+end
+
+
+-- ////////////////////////////////////////////////////////////////////////////////////////////////
+--
+-- take_key function
+--
+-- ------------------------------------------------------------------------------------------------
+--
+--	Description:
+--		- Gives actor Pripyat room key and story tasks
+--
+--	Usage:
+--		take_key( )
+--
+--	Parameters:
+--		none
+--
+--	Return value (type: none):
+--		none
+--
+-- ------------------------------------------------------------------------------------------------
+--	Modified by DoctorX
+--	for DoctorX Questlines 1.9
+--	Last modified October 11, 2016
+-- ------------------------------------------------------------------------------------------------
+
+-- Give actor Pripyat room key and story tasks:
+function take_key( first_speaker, second_speaker )
+
+	-- Give actor Pripyat room key:
+    dialogs.relocate_item_section_to_actor( first_speaker, second_speaker, "cit_doctors_key" )
+
+	-- Give actor Pripyat room task:
+	task_manager.get_task_manager( ):give_task( "cit_doctor_task" )
+
+	-- Give actor story tasks if in story mode:
+	if ( not has_alife_info( "story_mode_disabled" ) ) then
+		task_manager.get_task_manager( ):give_task( "main_1_search_agr_ug" )
+		task_manager.get_task_manager( ):give_task( "main_2_search_labx18" )
+		task_manager.get_task_manager( ):give_task( "main_3_search_labx16" )
+		task_manager.get_task_manager( ):give_task( "main_4_search_labx10" )
+		task_manager.get_task_manager( ):give_task( "main_5_search_labx8" )
+		task_manager.get_task_manager( ):give_task( "main_6_search_jup_ug" )
+		task_manager.get_task_manager( ):give_task( "main_7_search_mon_con" )
+	end
+
+end
+
+-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

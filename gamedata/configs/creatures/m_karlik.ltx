@@ -1,0 +1,97 @@
+;--=======================================================================
+;								Karlik
+;--=======================================================================
+[m_karlik_e]:m_tushkano_e
+$spawn				= "monsters\karlik"
+visual				= monsters\karlik\karlik
+corpse_visual		= monsters\karlik\karlik
+icon				= ui_npc_monster_karlik
+attack_params		= m_karlik_attack_params_u
+immunities_sect		= m_karlik_immunities_u
+step_params			= m_karlik_step_params_u
+
+spawn_phantom 		= m_phantom
+can_spawn_phantom	= true
+
+rank				= 401
+spec_rank			= normal
+community			= karlik
+panic_threshold		= 0.0	;0.05
+
+kind                = SM_KARLIK		; Fake class
+
+;------------------------------------------------------------------------
+; Influences
+;------------------------------------------------------------------------
+
+fire_max_distance		=	0
+fire_max_power			=	5
+fire_linear_factor		=	0
+fire_quadratic_factor	=	0.025
+
+psy_linear_factor		=	0.3		;0.4
+psy_quadratic_factor	=	0.0
+psy_max_distance		=	25.0
+psy_max_power			=	0.25
+psy_sound				=	monsters\karlik\karlik_psi		;monsters\controller\controller_presence_l
+psy_pp_effector_name	= 	psy_antenna 				;postprocess_psi
+psy_pp_highest_at		= 	0.1
+
+
+radiation_max_distance		=	0.0	;5
+radiation_max_power			=	0.1	;0.035
+radiation_linear_factor		=	1
+radiation_quadratic_factor	=	0.005	;1
+radiation_pp_effector_name	= 	postprocess_rad
+radiation_sound			= 	detectors\da-2_beep1
+radiation_pp_highest_at		= 	0.05
+
+
+sound_idle			= monsters\karlik\karlik_idle_ 
+sound_eat			= monsters\karlik\karlik_eat_
+sound_aggressive	= monsters\karlik\karlik_attack_
+sound_attack_hit	= monsters\karlik\karlik_hit_
+sound_take_damage	= monsters\karlik\karlik_hit_
+sound_die			= monsters\karlik\karlik_die_
+sound_panic		= monsters\karlik\karlik_eat_
+sound_die_in_anomaly = monsters\karlik\karlik_die_
+
+idle_sound_delay				=	10000
+eat_sound_delay					=	3000
+attack_sound_delay				=	10000
+
+sound_distant_idle			= monsters\karlik\karlik_idle_
+distant_idle_sound_delay		=	80000
+distant_idle_sound_range		=	100.0
+
+SoundThreshold					=	0.06
+
+max_hear_dist					=	75
+
+[m_karlik_attack_params_u]
+;--------------------------------------------------------------------------------------------------------------------
+;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
+;-------------------------------------------------------------------------------------------------------------------
+stand_attack_0 = 0.35, 0.5, 100, 0.0, 1.0, 0.0, -1.2, 1.2, -1.6, 1.6, 1.0
+stand_attack_1 = 0.35, 0.5, 100, 0.0, 1.0, 0.0, -1.2, 1.2, -1.6, 1.6, 1.0
+stand_attack_2 = 0.35, 0.5, 100, 0.0, 1.0, 0.0,	-1.2, 1.2, -1.6, 1.6, 1.0
+
+[m_karlik_immunities_u]
+burn_immunity					=	1.0				 
+strike_immunity					=	0.5
+shock_immunity					=	0.5
+wound_immunity					=	0.5
+radiation_immunity				=	0.0
+telepatic_immunity				=	0.0
+chemical_burn_immunity			=	0.5
+explosion_immunity				=	0.75
+fire_wound_immunity				=	0.75
+
+[m_karlik_step_params_u]
+;---------------------------------------------------------------------------
+;	anim			| Cycles | time1 | power1 | time2 | power2 |
+;---------------------------------------------------------------------------
+stand_walk_fwd_0 	=	1,	   0.1,     0.5,     0.7,    1,   
+stand_run_0	 		=	1,	   0.35,     1,	    0.25,    1,  
+;R.P.A.mod  
+

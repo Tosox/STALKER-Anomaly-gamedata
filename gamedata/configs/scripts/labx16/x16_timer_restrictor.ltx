@@ -1,0 +1,7 @@
+[logic]
+active = sr_idle
+ 
+[sr_idle]
+on_actor_inside = {+yan_labx16_switcher_primary_off} sr_idle@nil, {=actor_has_item(good_psy_helmet)} sr_idle@nil, %=kill_actor%
+
+[sr_idle@nil]

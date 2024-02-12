@@ -1,0 +1,53 @@
+
+[up_sect_firsta_helm_resp_1]:up_sect_prop_stamina_2
+
+[up_sect_firstc_helm_resp_1]:up_sect_prop_radiation_10
+
+;---------------------------------------------------------------------------------------------
+
+[up_firsta_helm_resp_1]
+scheme_index            = 0, 0
+known                   = 1
+effects                 = up_gr_firstcd_helm_resp_1
+section                 = up_sect_firsta_helm_resp_1
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+
+property                = prop_power
+name                    = st_up_helm_stamina_1_name
+description             = st_up_helm_stamina_1_descr
+icon                    = ui_inGame2_upgrade_helm_stamina_1
+
+[up_firstc_helm_resp_1]
+scheme_index            = 1, 0
+known                   = 1
+effects                 =   
+section                 = up_sect_firstc_helm_resp_1
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+
+property                = prop_radio
+name                    = st_up_helm_rad_1_name
+description             = st_up_helm_rad_1_descr
+icon                    = ui_inGame2_upgrade_helm_rad_1
+
+;---------------------------------------------------------------------------------------------
+
+[up_gr_firstab_helm_resp_1]
+elements                = up_firsta_helm_resp_1
+
+[up_gr_firstcd_helm_resp_1]
+elements                = up_firstc_helm_resp_1
+

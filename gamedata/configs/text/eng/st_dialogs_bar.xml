@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Barkeep -->
+	<string id="bar_visitors_barman_stalker_trader_start_dialog_11">
+		<text>Oh, hello. What's up, man?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_start_dialog_12">
+		<text>What do you need, stalker?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_start_dialog_13">
+		<text>Hey, stalker. Need a drink? Maybe it'll get that sour look off your face.</text>
+	</string>
+	
+	<string id="barkeep_100rads_0">
+		<text>Tell me about this place.</text>
+	</string>
+	<string id="barkeep_100rads_1">
+		<text>Welcome to the 100 Rads bar, my little oasis in this slice of hell. This neighbourhood is among the safest in the Zone, thanks to Duty. You'll be safe too as long as you keep a cool head. Stalkers from all over travel here to eat, rest, talk, find information or seek work. So, what are you after? What can old Barkeep do for you today?</text>
+	</string>
+	
+	<string id="information_about_stash_barmen_0">
+		<text>Any stash information for sale?</text>
+	</string>
+	<string id="information_about_stash_barmen_1">
+		<text>Heh, yeah... Sometimes, when stalkers around here grab a bottle, they drunkenly slip info on their stashes. Don't know what they keep in there, but what I do know is the value. Seven thousand and it's all yours.</text>
+	</string>
+
+	<string id="information_about_stash_barmen1_0">
+		<text>Sure. Here. %c[d_orange][7000 RU]</text>
+	</string>
+	<string id="information_about_stash_barmen1_1">
+		<text>Much appreciated.</text>
+	</string>
+	
+	<string id="devushka_4_help_0">
+		<text>Hello Barkeep. I have brought someone you might want to see.</text>
+	</string>
+	<string id="devushka_4_help_1">
+		<text>Uh-huh. Ah, Hip. Here, friend, have a drink on the house while I talk to her privately.</text>
+	</string>
+	
+	<string id="devushka_help_0">
+		<text>Thanks. I'll wait...</text>
+	</string>
+	<string id="devushka_help_1">
+		<text>...Alright. Hip now knows what she needs to do, and wanted me to tell you while she readies up; she'll be going past the Barrier to Zaton, to drop off some artefact containers for Beard. Artefacts are the lifeblood of the Skadovsk, as you may have heard. Oh, and apparently Hip refuses to make this delivery without you. So, are you ready?</text>
+	</string>
+	<string id="devushka_help_2">
+		<text>Yeah, I'm ready. We'll take the containers now.</text>
+	</string>
+	<string id="devushka_help_3">
+		<text>Almost, I just need a few minutes to get everything together.</text>
+	</string>
+	
+	
+<!-- GARIK -->
+	<string id="request_go_to_nimble_0">
+		<text>I need to pass through.</text>
+	</string>
+	
+	
+<!-- Voronin (Duty Leader) -->
+	<string id="story_dolg_0">
+		<text>What's the current situation, sir?</text>
+	</string>
+	<string id="story_dolg_1">
+		<text>At the moment we have four operational enemies; Freedom, Monolith, mercenaries and bandits. Out of those four, the two most worrying are the Monolith and bandits - the latter is becoming more and more organized each day. This could pose a serious threat, given their numbers as well as their general lack of humanity.\n \nAs for the Monolith, they've recently returned with surprising swiftness. Their resurgence earlier this year crippled our presence in Yanov, and we had to commit some grave sacrifices to ensure the overall security of Rostok.\n \nNow, as far as Freedom and the Blue Man Group go, things are comfortable. Do not misunderstand -  they are respectable adversaries, and our spies must keep a close watch on them. However, they aren't moving to oppose us or our allies directly at this time, which gives us some breathing room. </text>
+	</string>
+	<string id="story_dolg_2">
+		<text>How's Duty doing, sir?</text>
+	</string>
+	<string id="story_dolg_3">
+		<text>You mean Duty's latest recruits? I'd say a solid three out of five - not great, but not terrible. Thanks to Petrenko, we're pulling in a healthy influx of fresh fighters, though I will admit I'm a little disappointed in the lack of common sense they've displayed so far.\n \nDiscipline could be better, and we're currently short on officers who can drill that stupid gung-ho grunt behaviour out of our junior members. In time, I expect Duty to make a full recovery... but it will take time.</text>
+	</string>
+	<string id="story_dolg_4">
+		<text>May I ask how we lost Yanov, sir?</text>
+	</string>
+	<string id="story_dolg_5">
+		<text>... I guess there's no need to hide it. We had a weak link. A traitor. A foolish officer by the name of Morgan. He was found selling weapons to the very bandits we're trying to exterminate. And as if that situation wasn't bad enough, it was a group of neutrals who managed to catch him in the act, rather than our Duty officers. As a result, it took years of effort to regain the trust we had lost. All because of the fault of one man.\n \nThis left us in a terrible position for countering the Monolith's recent return. The brave commanding officer I appointed to Yanov, Lieutenant-Colonel Shulga, had to make a series of grim sacrificies that ultimately cost him his life. Out of the entire contingent he led, only Gavrilenko managed to make his way back to Rostok in one piece.\n \nEven then, the poor man could barely speak when he first arrived, and what he eventually reported was... unnerving. If you see him, I advise you to leave him be.</text>
+	</string>
+	<string id="story_dolg_6">
+		<text>Very well sir. I understand.</text>
+	</string>
+	
+	<string id="st_bar_dolg_leader_life_ask">
+		<text>I'd like to know more about Duty. What can you tell me about them?</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_1">
+		<text>Let's see, what can I tell you? Well, not everyone who works for us wears the uniform, or carries the badge. Duty often hires neutral stalkers as auxiliaries or informants. Although our goals are far-reaching, there are only so many of us, and it'd be arrogance to think we can be everywhere at once. No matter their stripe, all stalkers need to eat. If working with us to protect humanity's future is how they want to earn their bread, then all the better.\n \nIf you know anyone looking for work,  be sure to direct them towards Colonel Petrenko. He'd be more than happy to help them earn an honourable living.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_2">
+		<text>Although it might seem counterintuitive given our hatred for the Zone, Duty maintains a special relationship with the Ecologists. We fight an enemy unlike any other; an enemy that exists not as an army, but as an abominable force of nature. One cannot win any war without knowledge, let alone a war like this, and who knows our enemy better than the Ecologists themselves? Right now, they naively seek to use the Zone for mankind's betterment, but they're not deluded the same way Freedom is: one day, they'll realize that destroying it is the only real option. Their immense knowledge, backed by Duty's bravery and skill, will certainly be the Zone's end on that day.\n \n In the meantime, it is in humanity's interest to provide the scientists with anything they might need, whether through boxes of donated artefacts for them to study, or through armed guards to protect them from criminals. Things may be quiet now, but back in the day Freedom and mercs would take potshots at government scientists whenever they could. It's only the threat of Duty retaliation that maintains peace between these three groups today.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_3">
+		<text>Hmm, I suppose you're wondering about our uniforms, aren't you?\n \nWondering why any soldier in their right mind would walk into battle wearing black and red. I'd like you to take a moment and consider who our true enemies are. The mercs? No. Bandits? A constant nuisance, but no. Freedom? They're dangerous fools, but still no. Not even the Monolith are our true enemies. The true enemy is the Zone itself.\n \nTell me, do you think camouflage is going to fool a Bloodsucker, who can feel the pulse of your heart through the air? What about dogs, who use smell and echolocation? Or Controllers, who only need to read your thoughts?\n \nAgainst our true enemies, camouflage is useless. In these cases, I'd rather dress the men in stark colours that help them see their comrades.... black and red especially make them fight more bravely, more fiercely. Compared to the mutants, everything else is just a walk in the park.\n \nSo, when fighting human foes, some might reason camouflage is good because you cannot kill what you cannot see. After the hell we've been through, Duty believes that what criminals can see, they'll soon learn to fear.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_4">
+		<text>Let me tell you a short story, to teach you the difference between Freedom and Duty.\n \nIn 2006, Rostok was a wild place. It'd make the Wild Territory of today look tame in comparison. Yet this is where Duty chose to camp, because we knew Rostok was once an industrial plant, and we were adamant to restore it.\nWhen we arrived, we found a stalker, limping away from a pack of hounds, desperately clinging to life. We saved him, patched him up, and I asked him, "Son, what is a young man like you doing in a place like this?"\n And he tells me, "Well, sir, I used to be a bartender, but I got run out by the racketeers. So I came here to escape them, to try to survive."\n \nAnd I look at this boy, see how his hands shake too much to even hold a gun any more, and I tell him, "Well, you're in the right place."\n This boy would go on to become Barkeep, and together he and I would restore Rostok to what it is today. We work with stalkers, bringing out their best skills to reclaim what little good still remains in the Zone.\n \nAh, but you're wondering where Freedom comes in to all this. Well, in 2011, Freedom had already run their old base into the dirt, so they decided to go out and steal a new one.\nThey waited until anomalies cut Rostok off from the rest of the Zone, and used the opportunity to assault the Army Warehouses – sovereign government territory – and wrest it out the hands of its rightful owners. And what has become of the Warehouses since then? Since Freedom took control, that once-proud bastion has devolved into nothing but bullets and anarchy, and the exploratory vehicles that used to brave the unknown have long since decayed into rust.\n \nFreedom promises liberty, but in the long run they bring only ruin. It's only a matter of time before they burn out too.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_5">
+		<text>I suppose I can give you some insight into Duty's oath. It's really quite simple.\n \n"I, a stalker known as Voronin,\nSwear to defend the goals and ideals of Duty.\nTo protect the Earth from the dangers of the Zone, to seek out and destroy anything it spawns within and beyond its borders.\nTo fight any nonconformists, be they individual stalkers or groups.\nAnd to give my life in the name of justice and order on Earth!"\n \nThose are the words I swore, along with Petrenko, when I first joined all those years ago. It's why we don't seek artefacts for our own benefit, instead giving them to Barkeep or the Ecologists, who are the only ones we can trust to handle the artefact trade responsibly. It's why we battle against bandits, mercs and Freedom, who all seek to exploit the innocent or naively spread the Zone's "gifts" without precaution or forethought. Although we do not exempt common stalkers from such crimes, in their case we believe in innocence until guilt is proven, unlike the trigger-happy dogs under Kuznetsov's command.\n \nBut battling against the misguided is only secondary to our true goal: contain the Zone, and push it back. This means killing the mutants it creates, destroying its most dangerous artefacts, and dissipating its anomalies when we can.\n \nFor the sake of future generations, we help willing traders uphold standards to moderate artefact-handling and reduce risk... standards that corner-cutting mercs ignore for the sake of profit.\n \n The final part of our code emphasizes the individual's place within humanity's greater whole; we are all working towards a higher cause in Duty, and it is sweet and fitting to give one's life in service to humanity's defence.\n \nLieutenant-Colonel Shulga understood that last part better than anyone.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_6">
+		<text>Unlike the anarchists north of us, Duty understands the value of self-policing, and all members hoping for promotions are instilled with a firm belief in discipline and internal integrity.\n \nIn our eyes, a bad act does not wash out the good... nor a good the bad. They exist alongside one another, and we must judge each for what they are.\n \nSo, when we stumble and fail to police ourselves, such as with this one shameful case in Zaton many years ago, we make amends and hold ourselves accountable as best we can.\n \nIn some cases, even to our enemies. Many years ago, a talented Duty squad took a young-ish Freedom group prisoner, and marched them back into Rostok for interrogation. The Dutyers involved were to be commended for their cunning... that is, until our faction's investigators uncovered gross misconduct within the squad. Yes, Duty and Freedom are at war, but what that squad did to their prisoners... what those maggots had done was inexcusable.\n \nEach Dutyer involved was dishonourably discharged, we did our best to scrub the deceitful smut they'd recorded of their prisoners off the PDA network, and justice was served. Duty occupies a position of trust, and it is a position we earn through our will to do what is right, even if at times it means sacrificing strategic expedience. The Zone is a reflection of the evils within all of us. We cannot fight it if we also choose to feed it.</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_7">
+		<text>Occasionally, I hear cynics muttering, asking why Duty still needs fighters... why we're still needed in this world. Whenever I hear this question, I always give the same answer...\n \nBefore, the most dangerous mutants only stalked underground; they were just the stuff of legends. Now, I have reports of Snorks in Dark Valley, Controllers walking the surface, even the occasional Bloodsucker in Cordon. The Zone is growing and, unless its expansion is curbed, its horrors will spread across the globe, like a disease.\n \nThe military has sworn to ensure nothing breaches the Zone's current borders, yet most of the soldiers waste their time harassing harmless stalkers instead of battling the true threat. With our nation's defence force becoming increasingly misguided and corrupt, the burden of protecting the world from the Zone has fallen squarely to us. If not us, then who else?</text>
+	</string>
+	<string id="st_bar_dolg_leader_life_end">
+		<text>There's nothing more I wish to divulge to you at this time.</text>
+	</string>
+
+	
+<!-- Mangun (Duty Mechanic) -->
+	<string id="story_dolg_m_0">
+		<text>Tell me about yourself.</text>
+	</string>
+	<string id="story_dolg_m_1">
+		<text>Hm, yeah, alright. Why not?\n \nI used to be stationed at the Agroprom Research Institute, back before I got my promotion. Before that, before the Zone came into existence, I was a car mechanic. Duty noticed my skills as a handyman after I had been around for a while, so eventually they decided to assign me as the technician here. I prefer tinkering with heavy firearms and assault weapons...I hate working on snipers, especially NATO ones.</text>
+	</string>
+	<string id="story_dolg_m_2">
+		<text>And what's that smell? Didn't think Duty allowed heavy drinking.</text>
+	</string>
+	<string id="story_dolg_m_3">
+		<text>Man, it's hard getting by without a drink. Or a few. I wish I could've helped out at Yanov when the Monolith hit... but, then again, I probably wouldn't be alive if I wasn't ordered to stay put here. So many good men were lost defending that place...Huh, looks like we've gone way off topic. Anyway, don't be shy, now - show me your toys if you need 'em fixed.</text>
+	</string>
+	<string id="story_dolg_m_4">
+		<text>I'll see if I have anything.</text>
+	</string>
+
+	
+<!-- Snitch (Informer) at the Bar -->
+	<string id="talk_to_inf_trader_0">
+		<text>Who are you?</text>
+	</string>
+	<string id="talk_to_inf_trader_1">
+		<text>I'm a local informant, and I can offer you all kinds of services. At the moment, I have different types of information and maps with routes to various locations. My sources are some of the most reliable in the Zone, but they'll also kill to preserve their secrecy, so don't go asking where I learn this stuff - the answer isn't pretty.</text>
+    </string>
+	
+	<string id="talk_to_maps_0">
+		<text>Any free info can you share about the surrounding area?</text>
+	</string>
+	<string id="talk_to_maps_1">
+		<text>Usually info is how I make a living, but since everything's quiet anyway, I can give you a bit of an insight. On the house.</text>
+	</string>
+	<string id="talk_to_maps_2">
+		<text>I'm all ears.</text>
+	</string>
+	<string id="talk_to_maps_3">
+		<text>Well, you're probably already familiar with everything south of here. Right now, you're in Rostok. It's completely safe if you're on good terms with Duty. East is the Truck Cemetery - like the Garbage, but much bigger, much more radioactive and much, much more dangerous. West is the Wild Territory - the parts of Rostok that Duty can't patrol regularly. That place is an absolute nightmare, and most stalkers recommend avoiding it unless you need to get to Yantar. North are the Army Warehouses, owned by Duty's "best friend", Freedom. Further north than that quickly becomes Monolith territory, defended by ruthless fanatics and brain-melting anomalous fields.</text>
+	</string>
+	<string id="talk_to_maps_4">
+		<text>What can you tell me about the Monolith?</text>
+	</string>
+	<string id="talk_to_maps_5">
+		<text>Allegedly, they are the guardians of an ancient alien crystal known as the "Wish Granter". The Monolith believe this crystal created the Zone, and that it will grant wishes to those it finds worthy. To this end, they'll fiercely defend it from anyone who dares step further than the northern Barrier at Army Warehouses. Of course, there are legends of people being found worthy of the Wish Granter, but it's all bullshit. There are easier ways to get rich, and you'd think by now someone would've wished for the mutants here to disappear, or for an end to disease, or even world peace - ha! But... I guess by the time you reach the Wish Granter, you don't give a shit about anyone else.  </text>
+	</string>
+	<string id="talk_to_maps_6">
+		<text>Thanks for the info.</text>
+	</string>
+
+	<string id="buy_information_from_trader_0">
+		<text>Got any fresh information?</text>
+	</string>
+	<string id="buy_information_from_trader_1">
+		<text>I've got information about the swamp doctor. You know, the crazy old man with the legendary healing powers? That's what they say, at least. I can tell you the truth, for seven thousand.</text>
+	</string>
+		<string id="buy_information_from_trader_6">
+			<text>I'm listening.</text>
+		</string>
+		<string id="buy_information_from_trader_11">
+			<text>As you might know, he lives in the Great Swamp. What you might not know is why he's there. He's waiting for his old friend, Strelok. With Strelok's rumoured return, many people want to meet the Doctor, but few ever find him. It's quite easy though - look for a breach in the fence along the northwest of the swamp, and watch out for the rads and anomalies along the way. </text>
+		</string>
+		<string id="buy_information_from_trader_2">
+			<text>Got information about some stalker who recently raided the CNPP, for ten grand.</text>
+		</string>
+		<string id="buy_information_from_trader_7">
+			<text>I'm all ears.</text>
+		</string>
+		<string id="buy_information_from_trader_12">
+			<text>So, before the Monolith got all angry and rose up in earnest once again, this stalker was exploring the Sarcophagus for loot and - get this - he comes across a completely unique artefact! Apparently it's a shard of the Wish Granter itself! The Monolith didn't like that though, and he was forced to leave it behind to stop pursuit. One can only wonder what it is worth...</text>
+		</string>
+		<string id="buy_information_from_trader_3">
+			<text>I have information that sheds light on Strelok's group, but only for fifteen grand.</text>
+		</string>
+		<string id="buy_information_from_trader_8">
+			<text>Gimme.</text>
+		</string>
+		<string id="buy_information_from_trader_13">
+			<text>Everyone knows Strelok recently managed to assemble a new team, but no one knows who they are. They're a band of uniquely skilled individuals - Stitch, Pathfinder, Rogue and Scope. A combat medic, a gifted guide, a military deserter and a top-tier sniper respectively. One can only wonder where they are now, or what they are up to.</text>
+		</string>
+		<string id="buy_information_from_trader_4">
+			<text>I can reveal information about the adventures of a mysterious stalker who explored the Generators for twenty-four thousand.</text>
+		</string>
+		<string id="buy_information_from_trader_9">
+			<text>Pass it.</text>
+		</string>
+		<string id="buy_information_from_trader_14">
+			<text>Have you heard much about the Generators? Until recently, they were only considered a myth... but after Strelok's second campaign to the center of the Zone, there's no doubt they're real. There have been constant disputes about what they are, but old satellite imagery suggests some kind of weird infrastructure, in whose honor the entire area was named. Apparently, that's the place where Monolith carry out their orders and all important processes on the territory of the Zone. So, the stalker's already gone there and I think he's serious - his intervention might have a major impact on the Zone. The leaders of a few groups have already expressed their discontent regarding this information.</text>
+		</string>
+	<string id="buy_information_from_trader_5">
+		<text>Not at the moment.</text>
+	</string>
+	<string id="buy_information_from_trader_10">
+		<text>Not interested.</text>
+	</string>
+
+	<string id="st_top_10_task_about_dialog_0">
+		<text>So, what do you do here for fun?</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_1">
+		<text>Fun? This place can get boring fast, man. Customers nowadays barely seek anything interesting. Just a bunch of amateurs who want to get their hands on artefacts and such, you know what I mean?</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_2">
+		<text>That's just the way it goes, isn't it?</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_3">
+		<text>Yeah, but don't any of them ever dream of doing something epic, something legendary? Like you, for instance - you seem experienced. Don't you want to accomplish something that people will never forget? </text>
+	</string>
+	<string id="st_top_10_task_about_dialog_4">
+		<text>Go on...</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_5">
+		<text>I have a very special contact who is offering a huge reward for taking down ten stalkers. Fifty grand, plus sweets. Sounds like great cash for a simple list of bounties, right? Here's the interesting part: your targets just happen to be the top ten stalkers in the entire Zone. This means you could be hunting down regulars, Dutyers, mercs or even the fucking Monolith themselves! You can see the list on your PDA if you want. This guy wants them dead, doesn't matter how.</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_61">
+		<text>What? That's insane! Why would anyone want this?</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_62">
+		<text>Count me in.</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_63">
+		<text>No thanks, I'm out of this.</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_7">
+		<text>I asked my contact something similar. Well, he said he's tired of walking dreadnoughts vaccuuming up all the loot with their fancy rifles and expensive suits. He wants to give the common man more of a chance. Anyways, the pay will be incredible, so who cares?</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_8">
+		<text>Fantastic! I will upload the location of your first target onto your PDA. Every time you kill one of them, you get the location of the next guy. Have fun.</text>
+	</string>
+	<string id="st_top_10_task_about_dialog_9">
+		<text>Suit yourself. The offer is still there if you change your mind.</text>
+	</string>
+	
+	<string id="st_top_10_task_finish_dialog_0">
+		<text>Okay Snitch. It's done. Those ten targets are as good as dead.</text>
+	</string>
+	<string id="st_top_10_task_finish_dialog_1">
+		<text>Splendid work, pal! Our client is very happy with your results. As promised, here's your reward. Glad you were up to it after all - even now, I can hear people talking about your deeds. The killer of legends! This is gonna shake things up a bit, hehe...</text>
+	</string>
+	
+<!-- modified by Tronex -->
+	<string id="inf_trader_buy_transitions_0">
+		<text>I'd like to buy intel on a few routes.</text>
+	</string>
+	<string id="inf_trader_buy_transitions_1">
+		<text>Certainly. Here's what I've got.</text>
+	</string>
+	<string id="inf_trader_buy_transitions_2">
+		<text>From the Army Warehouses to Radar %c[d_orange][7000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_9">
+			<text>So, do you have the money for it?</text>
+		</string>
+		<string id="inf_trader_buy_transitions_11">
+			<text>Yes, here you are.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_3">
+		<text>From Radar to the bunker below it. %c[d_orange][11,000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_12">
+			<text>Got the dough?</text>
+		</string>
+		<string id="inf_trader_buy_transitions_13">
+			<text>Of course. Here.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_4">
+		<text>From Radar to Pripyat. %c[d_orange][9000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_14">
+			<text>Have you got the cash?</text>
+		</string>
+		<string id="inf_trader_buy_transitions_15">
+			<text>Here you go.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_5">
+		<text>From central Pripyat to the Outskirts. %c[d_orange][9000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_16">
+			<text>I'll need the paper, first.</text>
+		</string>
+		<string id="inf_trader_buy_transitions_17">
+			<text>Yeah, here it is.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_6">
+		<text>From Pripyat to the Chernobyl NPP. %c[d_orange][30,000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_18">
+			<text>Have you got any money with you?</text>
+		</string>
+		<string id="inf_trader_buy_transitions_19">
+			<text>Yes, there you go.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_7">
+		<text>Between the southern and northern parts of the Chernobyl NPP. %c[d_orange][35,000 RU]</text>
+	</string>
+		<string id="inf_trader_buy_transitions_20">
+			<text>Money first.</text>
+		</string>
+		<string id="inf_trader_buy_transitions_21">
+			<text>Here you are.</text>
+		</string>
+	<string id="inf_trader_buy_transitions_10">
+		<text>I don't have the money.</text>
+	</string>
+	<string id="inf_trader_buy_transitions_8">
+		<text>I've changed my mind.</text>
+	</string>
+
+
+<!-- Guide -->
+	<string id="meet_guid_bar_0">
+		<text>Are you a guide?</text>
+	</string>
+	<string id="meet_guid_bar_1">
+		<text>Yep, Navigator's the name. I can take you to a few places for a modest fee. Rookies are my customers most of the time, but I can lead any experienced stalker as well - no shame in it. I'll break it down: you pay, I get you wherever you want to go and I return here. I can take you to Yantar, the Great Swamp, the Army Warehouses, the Garbage, the Cordon and Jupiter.</text>
+	</string>
+
+	<string id="meet_guid_bar_list_0">
+		<text>Sorry, where can you escort me?</text>
+	</string>
+	<string id="meet_guid_bar_list_1">
+		<text>To the the Garbage for seven hundred, the Army Warehouses for one thousand, the Rookie Village in the Cordon for three thousand, Yantar for thirty-five hundred, Yanov station in Jupiter for six thousand and the Great Swamp, also for six thousand.</text>
+	</string>
+
+	<string id="travel_guid_bar_0">
+		<text>I need to be led somewhere.</text>
+	</string>
+	<string id="travel_guid_bar_1">
+		<text>Yeah, where?</text>
+	</string>
+	<string id="travel_guid_bar_2">
+		<text>To the Cordon. %c[d_orange][3000 RU]</text>
+	</string>
+	<string id="travel_guid_bar_3">
+		<text>To the Garbage. %c[d_orange][700 RU]</text>
+	</string>
+	<string id="travel_guid_bar_4">
+		<text>To the Army Warehouses. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_bar_5">
+		<text>To Yantar. %c[d_orange][3500 RU]</text>
+	</string>
+	<string id="travel_guid_bar_6">
+		<text>To Jupiter. %c[d_orange][6000 RU]</text>
+	</string>
+	<string id="travel_guid_bar_7">
+		<text>To the Great Swamp. %c[d_orange][6000 RU]</text>
+	</string>
+	<string id="travel_guid_bar_8">
+		<text>I've changed my mind.</text>
+	</string>
+
+<!-- Medic -->
+	<string id="bar_dolg_medic_talking_0">
+		<text>Who are you?</text>
+	</string>
+	<string id="bar_dolg_medic_talking_1">
+		<text>I'm the local sawbones, although I used to just be a paramedic. Lieutenant Sostradov's the name, but the stalkers around here call me Aspirin. Yeah, really. I've gotten quite good at treating a wide range of illnesses and injuries over the years. I also act as the resident pharmacist - after all, you need some meds with you in the field if you hope to return alive for proper treatment. </text>
+	</string>
+	<string id="bar_dolg_medic_talking_2">
+		<text>How did you come to be a medic for Duty?</text>
+	</string>
+	<string id="bar_dolg_medic_talking_3">
+		<text>How does anyone come to be in Duty? The Zone takes something from you. And then it takes again, and then again. Until you have nothing left but the Zone itself. Medic or no, that's how a stalker comes to be in Duty.\n \nWe're the ones who lost everything to this hellhole, yet stuck around to keep others from suffering the same fate. Of course, most Dutyers choose to protect people by trying to kill the Zone. That's not me.\n \nI'm here to undo all the injuries it leaves on people. To make sure the stalkers of this town get to live another day when their friends drag their bloodied bodies through the streets from whatever fool expedition they went on.\n \nAs long as you get yourself back here alive, I'll make you feel good as new. I won't even overcharge you, unlike some other traders around here.</text>
+	</string>
+	<string id="bar_dolg_medic_talking_4">
+		<text>Thanks, Aspirin.</text>
+	</string>
+	
+<!-- ARENA -->
+	<string id="bar_arena_man_job_0">
+		<text>Who do you have for me to fight?</text>
+	</string>
+	<string id="bar_arena_man_job_11">
+		<text>So, your first fight? Your opponent is a piece of meat just like you. He's here because of his debts and he only has two options: to come out and fight, or to land himself in the nearest anomaly. He's gonna fight like a cornered animal. Equipment for today... Lemme think... How about you two use basic pistols, two boxes of ammo should be plenty. Either kick his ass or we feed you to the dogs - not much of a choice. Go on now.</text>
+	</string>
+	<string id="bar_arena_man_job_111">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_112">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_12">
+		<text>Your last fight didn't mean shit, you're still the same piece of meat you were before and no self-respecting person will bet a single mag on you. If you wanna earn some proper cash you're gonna have to make a few more appearances in the arena. Your new opponent also got through the first round, and his fight was a lot harder than yours. I don't like him, to be honest - he kills too quickly and the crowd doesn't like that. So, go and show us what you can do! The stakes will increase after this fight - all you gotta do is stay alive. Move it!</text>
+	</string>
+	<string id="bar_arena_man_job_121">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_122">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_13">
+		<text>Well, well... You're not as much of a pussy as you first seemed. Now it's time to test you out in a real fight. You're up against two guys. The first one's called Swede and I don't remember the second one's name. They were paired up intentionally as they hate each other's guts so don't worry about them working as a team - they're more likely to shoot each other. Today is rifle day so don't let them get too close or we'll have to pick you up piece by piece. The odds are 10:1 so if you win you'll make a fair amount. Off you go!</text>
+	</string>
+	<string id="bar_arena_man_job_131">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_132">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_14">
+		<text>Well, now I can safely say that you're a fighter, a real fighter. Now it's time for a team fight. You get to fight with two rookies - two brothers - on your side. They haven't fought yet but they're brothers, so I had to put them into a team fight. I wouldn't expect any real help from them if I were you. You're fighting an experienced team, they're contenders for the final this season. A dangerous lot. They use different weapons but one has an automatic shotgun - be very careful with him. Good luck, pal... You're gonna need it.</text>
+	</string>
+	<string id="bar_arena_man_job_141">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_142">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_15">
+		<text>You've got a special fight today. Even the army has heard about you! Don't be surprised, they fight here too - there's even a general in the crowd. These guys are from the Spetsnaz or OMON. They're well armed and their armour is as good as you'd expect. Don't worry though, I ain't gonna leave you out in the rain, either. You'll get a vest used by Freedom - it's light so it won't slow you down. Go on, show them that stalkers ain't no whipping boys. Good luck!</text>
+	</string>
+	<string id="bar_arena_man_job_151">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_152">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_16">
+		<text>Time for you to show what you can do. Duty captured a group of bandits that had been causing problems for stalkers near Rostok. Duty took 'em at night so most of the bandits were taken alive. They were all gonna be executed anyway so I convinced Duty to give them a chance. If any of them survive, they'll go in the can outside the Zone, which is better than dying here. They've been given good gear, and there's six of them, so watch yourself. Go on now!</text>
+	</string>
+	<string id="bar_arena_man_job_161">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_162">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_17">
+		<text>Well, you're almost in the final. Now you'll be fighting a real stalker. He's alone but he's got an assault rifle and he's inside a protective suit. Catch one burst and you're toast. There will be a surprise that I can't tell you about too... Here's my advice: be prepared, it's gonna be tough. The winner makes it through to the final. Fight to the death, go!</text>
+	</string>
+	<string id="bar_arena_man_job_171">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_172">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_job_18">
+		<text>Congratulations, you're in the final! One more to go and this one is to the death, every man for himself. There will be 4 other stalkers in the arena: all real pros in exoskeletons but it's a fair deal this time - you'll get exactly what they have. The only thing is, you don't get medkits or bandages in a fight to the death. Ready? Go prove you're the best, GO!</text>
+	</string>
+	<string id="bar_arena_man_job_181">
+		<text>I'm ready.</text>
+	</string>
+	<string id="bar_arena_man_job_182">
+		<text>I'm not ready.</text>
+	</string>
+	<string id="bar_arena_man_start_111112">
+		<text>Yo! You paid me for a fight but you just walked away!</text>
+	</string>
+	<string id="bar_arena_man_start_11">
+		<text>Yo! I've got a new fight for you.</text>
+	</string>
+	<string id="bar_arena_man_start_21">
+		<text>Go have a drink or something. The Arena ain't ready yet.</text>
+	</string>
+	<string id="bar_arena_man_start_31">
+		<text>You've already become a pro!!!</text>
+	</string>
+	<string id="bar_arena_man_start_41">
+		<text>You won! Here's your reward.</text>
+	</string>
+	<string id="bar_arena_man_start_51">
+		<text>You're not experienced enough for this fight.</text>
+	</string>
+	<string id="bar_arena_manager_game_0">
+		<text>What challenge do you have for me?</text>
+	</string>
+	<string id="bar_arena_manager_game_1">
+		<text>There is nothing to fight, come again later when we have some more mutants.</text>
+	</string>
+	<string id="bar_arena_manager_game_100">
+		<text>There's a fee for participation. 1,000 RU.</text>
+	</string>
+	<string id="bar_arena_manager_game_101">
+		<text>Fine, here's your money.</text>
+	</string>
+	<string id="bar_arena_manager_game_105">
+		<text>I don't have enough money.</text>
+	</string>
+	<string id="bar_arena_manager_game_1051">
+		<text>Then get out of here, stalker.</text>
+	</string>
+	<string id="bar_arena_manager_game_110">
+		<text>You owe me 2,000 RU for participation.</text>
+	</string>
+	<string id="bar_arena_manager_game_111">
+		<text>Fine, here's your money.</text>
+	</string>
+	<string id="bar_arena_manager_game_11111112">
+		<text>I already paid you!</text>
+	</string>
+	<string id="bar_arena_manager_game_115">
+		<text>I don't have enough money.</text>
+	</string>
+	<string id="bar_arena_manager_game_1151">
+		<text>Then stop asking so many questions.</text>
+	</string>
+	<string id="bar_arena_manager_game_120">
+		<text>Pay 3,000 RU for participation and the bloodsucker is yours.</text>
+	</string>
+	<string id="bar_arena_manager_game_121">
+		<text>Fine. Here's your money.</text>
+	</string>
+	<string id="bar_arena_manager_game_125">
+		<text>I don't have enough.</text>
+	</string>
+	<string id="bar_arena_manager_game_1251">
+		<text>Don't waste my time, stalker.</text>
+	</string>
+	<string id="bar_arena_manager_game_130">
+		<text>Not so fast. The price for participation is 5,000 RU.</text>
+	</string>
+	<string id="bar_arena_manager_game_131">
+		<text>Fine. Here's the money.</text>
+	</string>
+	<string id="bar_arena_manager_game_135">
+		<text>I don't have enough money.</text>
+	</string>
+	<string id="bar_arena_manager_game_1351">
+		<text>Don't try pretending to be a beggar.</text>
+	</string>
+	<string id="bar_arena_manager_game_140">
+		<text>The price for participating is 5,000 RU.</text>
+	</string>
+	<string id="bar_arena_manager_game_141">
+		<text>Fine. Here's your money.</text>
+	</string>
+	<string id="bar_arena_manager_game_145">
+		<text>I don't have enough money.</text>
+	</string>
+	<string id="bar_arena_manager_game_1451">
+		<text>Let me guess. Someone stole your roubles?</text>
+	</string>
+	<string id="bar_arena_manager_game_2">
+		<text>There's a pseudodog. A large specimen, but quite beaten up. On the other hand it's a very fierce one, just like my mother-in-law.</text>
+	</string>
+	<string id="bar_arena_manager_game_200">
+		<text>Deal. Before you fight you should place a stake on the time you need to make the kill. If you manage to pull it off you'll make yourself a little extra spending money.</text>
+	</string>
+	<string id="bar_arena_manager_game_201">
+		<text>30 seconds, triple win.</text>
+	</string>
+	<string id="bar_arena_manager_game_202">
+		<text>One and a half minutes, double win.</text>
+	</string>
+	<string id="bar_arena_manager_game_203">
+		<text>Without a time limit. A half-stake win.</text>
+	</string>
+	<string id="bar_arena_manager_game_204">
+		<text>I changed my mind.</text>
+	</string>
+	<string id="bar_arena_manager_game_2041">
+		<text>Tough shit. You've already paid.</text>
+	</string>
+	<string id="bar_arena_manager_game_21">
+		<text>I can do that. I'll fight your dog.</text>
+	</string>
+	<string id="bar_arena_manager_game_22">
+		<text>A dog? Is that all you have?</text>
+	</string>
+	<string id="bar_arena_manager_game_221">
+		<text>Aw, is our girl afraid of a little doggie? Don't be upset.</text>
+	</string>
+	<string id="bar_arena_manager_game_3">
+		<text>There is a freak in a gas-mask, called a snork. Thin and feeble-looking but quite agile.</text>
+	</string>
+	<string id="bar_arena_manager_game_300">
+		<text>Great, we'll get everything ready. Enter the arena.</text>
+	</string>
+	<string id="bar_arena_manager_game_31">
+		<text>Bring it on. I'll fight your snork.</text>
+	</string>
+	<string id="bar_arena_manager_game_32">
+		<text>They make my stomach turn. Hell no.</text>
+	</string>
+	<string id="bar_arena_manager_game_321">
+		<text>Scared by a half-rotten gas-masked freak?</text>
+	</string>
+	<string id="bar_arena_manager_game_4">
+		<text>This time we've gotten truly lucky. We caught a young bloodsucker. Still dumb, but already with bad manners.</text>
+	</string>
+	<string id="bar_arena_manager_game_41">
+		<text>Go ahead, get the bloodsucker ready.</text>
+	</string>
+	<string id="bar_arena_manager_game_42">
+		<text>A bloodsucker? Fuck that!</text>
+	</string>
+	<string id="bar_arena_manager_game_421">
+		<text>What? You love bloodsuckers now? When did you join Freedom?</text>
+	</string>
+	<string id="bar_arena_manager_game_5">
+		<text>This time we've a fat little midget in a black cloak - the locals call it a burer.</text>
+	</string>
+	<string id="bar_arena_manager_game_51">
+		<text>Fat and short? Easy. I'll do it.</text>
+	</string>
+	<string id="bar_arena_manager_game_52">
+		<text>I've heard all about those things. I'll pass.</text>
+	</string>
+	<string id="bar_arena_manager_game_521">
+		<text>He hardly reaches your waist in height. And he scares you?</text>
+	</string>
+	<string id="bar_arena_manager_game_6">
+		<text>Today is a special day. I don't know where they found... Him... But he's a real beast.</text>
+	</string>
+	<string id="bar_arena_manager_game_61">
+		<text>Deal. I'll put him out of his misery.</text>
+	</string>
+	<string id="bar_arena_manager_game_62">
+		<text>I don't feel like dying, find someone else.</text>
+	</string>
+	<string id="bar_arena_manager_game_621">
+		<text>Well, frankly even I find the beast scary. But I'm not fighting in the arena, so who cares?</text>
+	</string>
+	<string id="bar_arena_manager_info_0">
+		<text>Got a couple of questions.</text>
+	</string>
+	<string id="bar_arena_manager_info_1">
+		<text>Shoot.</text>
+	</string>
+	<string id="bar_arena_manager_info_10">
+		<text>Never mind.</text>
+	</string>
+	<string id="bar_arena_manager_info_11">
+		<text>What is this establishment?</text>
+	</string>
+	<string id="bar_arena_manager_info_111">
+		<text>This is the arena, my little business. A place where stalkers can test their mettle and earn their fame by fighting against the horrors of the Zone.</text>
+	</string>
+	<string id="bar_arena_manager_info_12">
+		<text>How do you get the mutants here?</text>
+	</string>
+	<string id="bar_arena_manager_info_121">
+		<text>We made a deal with Duty, instead of killing all the mutants they find they bring the weaker ones here in exchange for cash. Duty gets paid, the mutants get killed, and then I get paid. Everybody wins.</text>
+	</string>
+	<string id="bar_arena_manager_info_13">
+		<text>Where are you from?</text>
+	</string>
+	<string id="bar_arena_manager_info_131">
+		<text>I am from many places. I heard about this little backwater and understood that I could earn a good little penny here. So here I am.</text>
+	</string>
+	<string id="bar_arena_manager_rules_0">
+		<text>What are the rules?</text>
+	</string>
+	<string id="bar_arena_manager_rules_1">
+		<text>Oh, the rules are pretty simple. I invented them myself. For challenges, there's a cage, and a mutant is let inside the cage. You pay money and tell me the time you need to kill the monster. If you make it - you win, if you don't - I win.\nBut for the main course, bandits and the Zone's other degenerates captured by Duty fight in the arena for their crimes. Some are just stalkers who fancy a fight, and not actually criminals, but whoever leaves the arena in the least amount of pieces gets a sizeable reward. If they keep on winning fights, then more stalkers will come to watch, and the combatants win larger rewards.</text>
+	</string>
+	<string id="bar_arena_manager_start_11">
+		<text>Good to see you stalker, welcome to the arena.</text>
+	</string>
+	<string id="bar_arena_manager_start_21">
+		<text>So, what are you waiting for? Get into the cage.</text>
+	</string>
+	<string id="bar_arena_manager_start_31">
+		<text>Sorry, there's nothing to fight against yet. Wait for a day or two until we can catch a new mutant.</text>
+	</string>
+	<string id="bar_arena_manager_start_41">
+		<text>There you are! Well done! Here's your win. If you desire another fight for money then just drop in whenever.</text>
+	</string>
+	<string id="bar_arena_manager_start_51">
+		<text>Sorry, bro, but you lose. Come again next time if you want.</text>
+	</string>
+
+	<!-- bar_visitors_stalker_mechanic -->
+	<string id="bar_visitors_stalker_mechanic_start_dialog_1">
+		<text>Another stalker, here to visit old Mangun? Ugh, alright. Show me what's broken, and I'll fix it. Just hope you can pay for the parts. </text>
+	</string>
+</string_table>

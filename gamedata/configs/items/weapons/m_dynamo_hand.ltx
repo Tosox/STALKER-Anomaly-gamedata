@@ -1,0 +1,168 @@
+; UNUSED -- UPD is no longer used so no need of an item to recharge it, also this never worked iirc
+[wpn_dynamo_hand]:identity_immunities
+        GroupControlSection         = spawn_group
+        discovery_dependency        =
+        $npc                        = off
+        $prefetch                   = 8
+        $spawn                      = "weapons\pkm"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_SVD
+        slot                        = 2
+        animation_slot              = 2
+        ef_main_weapon_type         = 2
+        ef_weapon_type              = 6
+        hand_dependence             = 1
+        single_handed               = 0
+        
+        script_binding              = bind_dynamo_hand.init
+        show_ammo                   = false
+        
+        inv_grid_height             = 2
+        inv_grid_width              = 2
+        inv_grid_x                  = 18
+        inv_grid_y                  = 70
+        inv_name                    = st_dynamo_hand_name
+        inv_name_short              = st_dynamo_hand_name
+        description                 = st_dynamo_hand_descr
+        
+        inv_weight                  = 3
+        cost                        = 15000
+        weapon_class                = assault_rifle
+        
+        hud                         = wpn_dynamo_hand_hud
+        visual                      = dynamics\weapons\wpn_dynamo_hand\wpn_dynamo_hand.ogf
+        position                    = -0.026, -0.215, -0.03
+        orientation                 = 0, 0, 0
+        fire_point                  = 0.0, 0.27109, 0.87317
+        ph_mass                     = 5
+        
+        flame_particles             = weapons\generic_weapon03
+        
+        light_color                 = 0.0, 0.0, 0.0
+        light_range                 = 0.0
+        light_time                  = 0.0
+        light_var_color             = 0.0
+        light_var_range             = 0.0
+        
+        upgrades                    = up_gr_firstab_dynamo_hand, up_gr_firstcd_dynamo_hand, up_gr_firstef_dynamo_hand
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_dynamo_hand
+        upgr_icon_x                 = 1724
+        upgr_icon_y                 = 802
+        upgr_icon_width             = 167
+        upgr_icon_height            = 159
+        
+        ammo_class                  = ammo_dyno
+        ammo_elapsed                = 250
+        ammo_limit                  = 250
+        ammo_mag_size               = 1
+        
+        scope_status                = 0
+        scope_zoom_factor           = 90
+        
+        silencer_status             = 0
+        silencer_bullet_speed       = 600
+        silencer_fire_distance      = 250
+        silencer_hit_impulse        = 6
+        silencer_hit_power          = 0
+        
+        grenade_launcher_status     = 0
+        
+        hit_impulse                 = 0
+        hit_power                   = 0
+        hit_power_critical          = 0.0
+        hit_type                    = fire_wound
+        fire_distance               = 0
+        bullet_speed                = 1000
+        rpm                         = 53
+        
+        use_aim_bullet = false
+        use_first_bullet            = false
+        time_to_aim                 = 1.0
+        zoom_enabled                = false
+        control_inertion_factor     = 1.1
+        fire_dispersion_base        = 0.009
+        fire_dispersion_condition_factor = 0
+        
+        misfire_start_condition     = 0.3
+        misfire_start_prob          = 0.3
+        misfire_end_condition       = 0.3
+        misfire_end_prob            = 0.3
+        
+        condition_shot_dec          = 0.005
+        
+        cam_relax_speed             = 5.477
+        cam_dispersion              = 0.062
+        cam_dispersion_inc          = 0.012
+        cam_dispertion_frac         = 0.050
+        cam_max_angle               = 0.193
+        cam_max_angle_horz          = 0.193
+        cam_step_angle_horz         = 0.062
+        
+        PDM_disp_accel_factor       = 1.0
+        PDM_disp_base               = 0.58
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.0
+        
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 2.0
+        min_radius                  = 250
+        max_radius                  = 250
+        
+        snd_draw                    = weapons\generic_draw
+        snd_empty                   = weapons\generic\pistol_empty
+        snd_holster                 = weapons\generic\generic_holster
+        snd_on_take                 = other
+        snd_reload                  = weapons\dynamo_hand\dynamo_hand_reload
+        snd_shoot                   = none
+        snd_switch                  = none
+ 
+; UNUSED -- used in [wpn_dynamo_hand]
+[wpn_dynamo_hand_hud]
+        item_visual                 = dynamics\weapons\wpn_dynamo_hand\wpn_dynamo_hand_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = false
+        
+        item_position               = 0.000746, -0.000321, 0.003479
+        item_orientation            = 1.239378, -0.134046, -2.052052
+        position                    = 0, 0, 0
+        orientation                 = 0, 0, 0
+        
+        hands_position              = -0.008000, -0.244998, 0.371497
+        hands_position_16x9         = -0.008500, -0.250998, 0.319998
+        hands_orientation           = 5.450003, 2.649999, -1.200001
+        hands_orientation_16x9      = 5.850004, 5.450003, -0.950000
+        
+        aim_hud_offset_pos          = 0.000000, 0.000000, 0.000000
+        aim_hud_offset_pos_16x9     = 0.000000, 0.000000, 0.000000
+        aim_hud_offset_rot          = 0.000000, 0.000000, 0.000000
+        aim_hud_offset_rot_16x9     = 0.000000, 0.000000, 0.000000
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_pos_16x9      = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        gl_hud_offset_rot_16x9      = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_bore                    = dynamo_hand_reload
+        anm_hide                    = dynamo_hand_hide
+        anm_idle                    = dynamo_hand_idle
+        anm_idle_aim                = dynamo_hand_idle
+        anm_idle_moving             = dynamo_hand_moving_idle
+        anm_idle_sprint             = dynamo_hand_sprint_idle
+        anm_reload                  = dynamo_hand_reload
+        anm_shots                   = dynamo_hand_shoot
+        anm_show                    = dynamo_hand_draw
+        
+        shell_bone                  = wpn_body
+        shell_dir                   = 0.0, 1.0, 0.0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = wpn_body
+        fire_point                  = 0, 0, 0
+ 

@@ -1,0 +1,106 @@
+
+local M = {
+	queued = {
+		-- 123 = {
+			-- ini_filename = ...
+			-- logic_name = ...
+			-- section_name = ...
+		-- }
+	}
+}
+
+function on_game_start()
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+end
+
+function save_state(m_data)
+	m_data.logic_assign = M
+end
+
+function load_state(m_data)
+	if m_data.logic_assign then
+		M = m_data.logic_assign
+	else
+		M = {queued = {}}
+	end
+end
+
+function printl(frmt, ...)
+	-- printf(strformat('--logic enforcer: ' .. frmt, ...))
+end
+
+function assign(id,ini_filename,logic_name,section_name,tags)
+	printl('assign called for: %s, %s',id,section_name)
+	M.queued[id] = {
+		ini_filename = ini_filename,
+		logic_name   = logic_name,   
+		section_name = section_name, 
+		tags = tags or {},
+	}
+end
+
+function remove(id, tag)
+	if id then M.queued[id] = nil end
+	if tag then
+		for k,v in pairs(M.queued) do
+			if v.tags[tag] then
+				M.queued[k] = nil
+			end
+		end
+	end
+end
+
+
+function actor_on_update()
+	local to_remove = {}
+	local sim = alife()
+	for id,data in pairs(M.queued) do
+		local obj = level.object_by_id(id)
+		local st = db.storage[id]
+		if obj and st then
+			local active_filename = st.ini_filename
+			local active_logic = st.section_logic
+			local active_section = st.active_section
+			local filename_check = active_filename == data.ini_filename
+			local logic_check = active_logic == data.logic_name
+			local section_check = true
+			if data.section_name then
+				section_check = active_section == data.section_name
+			end
+			
+			if filename_check and logic_check and section_check then
+				-- if object has wanted logic remove from queue
+				printl('%s has wanted logic, removing from queue', obj:name())
+				to_remove[id] = true
+			else
+				-- apply logic
+				st.ini_filename = data.ini_filename
+				st.ini = ini_file(data.ini_filename)
+
+				st.section_logic = data.logic_name
+
+				local new_section = data.section_name or xr_logic.determine_section_to_activate(obj, st.ini, st.section_logic)
+
+				xr_logic.switch_to_section(obj, st.ini, new_section)
+				st.overrides = xr_logic.cfg_get_overrides(st.ini, new_section, obj)
+				printl('logic %s applied to %s', new_section, obj:name())
+			end
+		end
+		
+		-- if npc disappeared/died remove queued
+		local se_obj = sim:object(id)
+		if (se_obj and IsStalker(se_obj) and not se_obj:alive()) or (not se_obj) then
+			to_remove[id] = true
+		end
+		
+	end
+	
+	for id in pairs(to_remove) do
+		M.queued[id] = nil
+	end
+end
+
+
+

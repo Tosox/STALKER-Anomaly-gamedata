@@ -1,0 +1,210 @@
+
+[up_sect_firsta_toz34_obrez]
+cost                                     = 1640
+value                                    = +5
+fire_distance                            = +50
+bullet_speed                             = +30
+fire_dispersion_base                     = -0.01
+hit_impulse                              = +1
+inv_weight                               = +0.1
+
+[up_sect_firstc_toz34_obrez]
+cost                                     = 2160
+value                                    = -10
+cam_dispersion                           = -0.144 
+cam_dispersion_inc                       = 0.0 ;-0.332 
+cam_step_angle_horz                      = -0.10 
+zoom_cam_dispersion                      = -0.138
+zoom_cam_dispersion_inc                  = 0.0 ; -0.224
+zoom_cam_step_angle_horz                 = -0.10
+inv_weight                               = +0.11
+
+[up_sect_secona_toz34_obrez]
+cost                                     = 1340
+value                                    = +25
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.5
+PDM_disp_accel_factor                    = -0.5
+inv_weight                               = +0.1
+
+[up_sect_seconc_toz34_obrez]
+cost                                     = 2170
+value                                    = +20
+fire_dispersion_base                     = -0.1
+
+inv_weight                               = +0.1
+
+[up_sect_second_toz34_obrez]
+cost                                     = 1670
+value                                    = +25
+condition_shot_dec                       = -0.00035
+condition_queue_shot_dec                 = -0.0002
+
+[up_sect_thirda_toz34_obrez]
+cost                                     = 1130
+value                                    = +5
+condition_shot_dec                       = -0.0002
+condition_queue_shot_dec                 = -0.0001
+inv_weight                               = +0.08
+
+[up_sect_thirdc_toz34_obrez]
+cost                                     = 1520
+value                                    = -0.28
+inv_weight                               = -0.28
+crosshair_inertion                       = -0.15
+PDM_disp_vel_factor                      = -0.025
+PDM_disp_accel_factor                    = -0.025
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_toz34_obrez]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_toz34_obrez
+section                                  = up_sect_firsta_toz34_obrez
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_c2_name
+description                              = st_up_autd_c2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_12
+
+[up_firstc_toz34_obrez]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstc_toz34_obrez
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b4_name
+description                              = st_up_bard_b4_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_3
+
+
+[up_secona_toz34_obrez]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_toz34_obrez
+section                                  = up_sect_secona_toz34_obrez
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_c1_name
+description                              = st_up_bard_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_4
+
+[up_seconc_toz34_obrez]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconc_toz34_obrez
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_c2_name
+description                              = st_up_bard_c2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_5
+
+
+[up_second_toz34_obrez]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_second_toz34_obrez
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_c1_name
+description                              = st_up_autd_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_11
+
+
+[up_thirda_toz34_obrez]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_toz34_obrez
+section                                  = up_sect_thirda_toz34_obrez
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_a2_name
+description                              = st_up_autd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_9
+
+
+[up_thirdc_toz34_obrez]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdc_toz34_obrez
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_a1_name
+description                              = st_up_stvd_a1_descr
+icon                                     = ui_inGame2_upgrade_Obrez_3
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_toz34_obrez]
+elements                                 = up_firsta_toz34_obrez
+
+[up_gr_firstcd_toz34_obrez]
+elements                                 = up_firstc_toz34_obrez
+
+[up_gr_seconab_toz34_obrez]
+elements                                 = up_secona_toz34_obrez
+
+[up_gr_seconcd_toz34_obrez]
+elements                                 = up_seconc_toz34_obrez, up_second_toz34_obrez
+
+[up_gr_thirdab_toz34_obrez]
+elements                                 = up_thirda_toz34_obrez
+
+[up_gr_thirdcd_toz34_obrez]
+elements                                 = up_thirdc_toz34_obrez

@@ -1,0 +1,14 @@
+<w>
+	<bar_measurement x="0" y="420" width="1024" height="50">
+		<text complex_mode="1" r="0" g="250" b="100" align="c"  vert_align="c" font="letterica18" />
+	</bar_measurement>
+	
+	<hint_wnd x="0" y="0" width="300" height="100">
+	    <background x="0" y="0" width="300" height="100">
+		    <texture>ui_icons_PDA_tooltips</texture>
+	    </background>
+	    <text x="20" y="20" width="275" height="100">
+	    	<text font="letterica16" r="140" g="140" b="140" complex_mode="1" align="l" vert_align="t"/>
+	    </text>
+	</hint_wnd>
+</w>

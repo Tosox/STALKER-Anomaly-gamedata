@@ -1,0 +1,116 @@
+printd = warfare.printd
+
+flaggedObjectID = nil
+spot = nil
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_unselect_squad")
+	str_wrfr[2] = game.translate_string("st_wrfr_select_squad")
+	str_wrfr[3] = game.translate_string("st_wrfr_unselect_point")
+	str_wrfr[4] = game.translate_string("st_wrfr_select_point")
+	str_wrfr[5] = game.translate_string("st_wrfr_select_obj")
+end
+
+-- Returns the object with id == flaggedObjectID
+function get_selected_object()
+    printd(0)
+    if (flaggedObjectID) then
+        local obj = alife_object(flaggedObjectID)
+        
+        printd(1)
+        return obj
+    end
+    
+    printd(2)
+    return nil
+end
+
+function get_selected_object_id()
+	return flaggedObjectID
+end
+
+function is_object_selected()
+	if (flaggedObjectID) then
+		return true
+	end
+	
+	return false
+end
+
+-- Clears the flaggedObjectID. Just have this function for aesthetic purposes really.
+function clear()
+    flaggedObjectID = nil
+end
+
+local function map_spot_menu_add_property(ui,id,lvl)
+    printd(0)
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+    -- Only allow squads and smart terrains for flagging.
+	if (obj:clsid() == clsid.online_offline_group_s) then
+		if (obj:get_squad_community() == warfare.actor_faction) then	
+			if obj.id == flaggedObjectID then
+				ui:AddItem(str_wrfr[1])
+			else
+				ui:AddItem(str_wrfr[2])
+			end
+		end
+	elseif (obj:clsid() == clsid.smart_terrain) then
+		if (obj.owning_faction == warfare.actor_faction) then	
+			if obj.id == flaggedObjectID then
+				ui:AddItem(str_wrfr[3])
+			else
+				ui:AddItem(str_wrfr[4])
+			end
+		end
+	end
+    
+    printd(2)
+end
+
+local function map_spot_menu_property_clicked(property_ui,id,level_name,prop)
+    printd(0)
+
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+    if (prop == str_wrfr[2] or prop == str_wrfr[4]) then
+		if (spot) then
+			level.map_remove_object_spot(flaggedObjectID, "warfare_selected_target")
+		end		
+		
+		level.map_add_object_spot(obj.id, "warfare_selected_target", str_wrfr[5])
+		spot = true
+        flaggedObjectID = obj.id
+    elseif (prop == str_wrfr[1] or prop == str_wrfr[3]) then
+		if (spot) then
+			level.map_remove_object_spot(flaggedObjectID, "warfare_selected_target")
+			spot = false
+		end
+		
+        flaggedObjectID = nil
+    end
+    
+    printd(2)
+end
+
+function on_game_start()
+	local function on_game_load()
+		if alife_storage_manager.get_state().enable_warfare_mode then
+			RegisterScriptCallback("map_spot_menu_add_property",map_spot_menu_add_property)
+			RegisterScriptCallback("map_spot_menu_property_clicked",map_spot_menu_property_clicked)
+		end
+	end
+	RegisterScriptCallback("on_game_load", on_game_load)
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+	
+	refresh_strings()
+end

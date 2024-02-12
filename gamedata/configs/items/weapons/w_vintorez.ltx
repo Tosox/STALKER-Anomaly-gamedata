@@ -1,0 +1,492 @@
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez]:identity_immunities,weapon_probability,default_weapon_params,wpn_vintorez_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = off
+$prefetch                                = 8
+$spawn                                   = "weapons\vintorez"
+scheduled                                = off
+cform                                    = skeleton
+parent_section                           = wpn_vintorez
+
+class                                    = WP_AK74
+slot                                     = 2
+animation_slot                           = 2
+ef_main_weapon_type                      = 3
+ef_weapon_type                           = 7
+hand_dependence                          = 1
+single_handed                            = 0
+
+default_to_ruck                          = false
+sprint_allowed                           = true
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 26
+inv_name                                 = st_wpn_vintorez
+inv_name_short                           = st_wpn_vintorez
+description                              = st_wpn_vintorez_descr
+
+kind                                     = w_rifle
+inv_weight                               = 2.59
+cost                                     = 40580
+repair_type                              = rifle_7
+weapon_class                             = sniper_rifle
+
+hud                                      = wpn_vintorez_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez.ogf
+position                                 = -0.026, -0.097, 0
+orientation                              = 0, 0, 0
+fire_point                               = 0, 0.137, 0.649
+fire_point2                              = 0, 0.097, 0.722
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.26, -0.11, 0.25
+strap_orientation                        = -15, -9, 110
+ph_mass                                  = 4
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point				                 = -0.02, 0.167, 0.082
+shell_dir					             = 0, 0, 0.4
+shell_particles         			     = weapons\9x39
+
+light_disabled                           = true
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 0.01
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_vintorez, up_gr_seconab_vintorez, up_gr_thirdab_vintorez, up_gr_fourtab_vintorez, up_gr_fourtcd_vintorez, up_gr_fourtef_vintorez
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_vintorez
+upgr_icon_x                              = 600
+upgr_icon_y                              = 900
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+fire_modes                               = 1, -1
+ammo_class                               = ammo_9x39_pab9, ammo_9x39_pab9_bad, ammo_9x39_pab9_verybad, ammo_9x39_ap, ammo_9x39_ap_bad, ammo_9x39_ap_verybad
+ammo_elapsed                             = 10
+ammo_mag_size                            = 10
+startup_ammo                             = 90
+
+scopes                                   = 1p29, kobra, pso1m21
+scope_status                             = 0
+scope_name                               = wpn_addon_scope
+scope_texture                            = 
+scope_x                                  = 78
+scope_y                                  = 0
+scope_zoom_factor                        = 0
+
+silencer_name                            = wpn_addon_silencer
+silencer_status                          = 1
+silencer_x                               = 221
+silencer_y                               = 16
+silencer_light_color                     = 0.6, 0.5, 0.3
+silencer_light_range                     = 0.01
+silencer_light_time                      = 0.2
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_smoke_particles                 = weapons\generic_shoot_00
+
+grenade_class                            = ammo_m209, ammo_m209_bad, ammo_m209_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 109
+grenade_launcher_y                       = 30
+launch_speed                             = 0
+
+hit_impulse                              = 35
+hit_power                                = 0.62, 0.62, 0.62, 0.62
+hit_type                                 = fire_wound
+fire_distance                            = 600
+bullet_speed                             = 500
+rpm                                      = 800
+rpm_empty_click                          = 200
+
+use_aim_bullet                           = false
+time_to_aim                              = 0.0 ;  1.0
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.25
+reload_dof                               = 0.0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 4.8
+fire_dispersion_base                     = 0.2
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.83
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.13
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0020
+condition_shot_dec                       = 0.0015
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 0.5
+cam_dispersion_frac                      = 0.9
+cam_dispersion_inc                       = 0.05
+cam_max_angle                            = 46.0
+cam_max_angle_horz                       = 46.0
+cam_step_angle_horz                      = 0.62
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 0.4
+zoom_cam_dispersion_frac                 = 0.9
+zoom_cam_dispersion_inc                  = 0.04
+zoom_cam_max_angle                       = 46.0
+zoom_cam_max_angle_horz                  = 46.0
+zoom_cam_step_angle_horz                 = 0.44
+
+PDM_disp_accel_factor                    = 1.745
+PDM_disp_base                            = 0.73
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 1.745
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 120.75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 2.0
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 98
+kill_msg_y                               = 0
+kill_msg_width                           = 78
+kill_msg_height                          = 25
+
+
+[wpn_vintorez_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = -0.052, -0.14, 0.15
+hands_position_16x9                      = -0.052, -0.14, 0.15
+hands_orientation                        = 2, 2, 0
+hands_orientation_16x9                   = 2, 2, 0
+
+aim_hud_offset_pos                       = -0.10365, 0.06853, -0.285
+aim_hud_offset_pos_16x9                  = -0.10365, 0.06853, -0.285
+aim_hud_offset_rot                       = 0.0304, 0.0341, -0.00865
+aim_hud_offset_rot_16x9                  = 0.0304, 0.0341, -0.00865
+
+gl_hud_offset_pos                        = 0, 0, 0
+gl_hud_offset_rot                        = 0, 0, 0
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = vintorez_holster
+anm_idle                                 = vintorez_idle
+anm_idle_aim                             = vintorez_idle_aim
+anm_idle_aim_moving                      = vintorez_idle_moving, idle, 0.75
+anm_idle_aim_moving_crouch               = vintorez_idle_crouch
+anm_idle_moving                          = vintorez_idle_moving
+anm_idle_moving_crouch                   = vintorez_idle_crouch
+anm_idle_sprint                          = lancew_sr3m_sprint
+anm_reload                               = vintorez_reload, reload
+anm_reload_empty                         = vintorez_reload_empty, reload_empty
+anm_shots                                = vintorez_shoot, shoot
+anm_show                                 = vintorez_draw
+
+shell_bone                               = gilza
+shell_dir                                = 0, 1, 0
+shell_point                              = 0, 0, 0
+
+fire_bone                                = muzzle
+fire_bone2                               = muzzle
+fire_point                               = 0, 0, 0
+fire_point2                              = 0, 0, 0
+
+grenade_bone                             = grenade
+
+freelook_z_offset_mul					 = 0.6
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_1p29]:wpn_vintorez
+1icon_layer                              = 1p29
+1icon_layer_x                            = 68
+1icon_layer_y                            = 5
+
+inv_weight                               = 3.41
+
+hud                                      = wpn_vintorez_1p29_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_1p29.ogf
+
+scope_status                             = 1
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_vintorez_1p29_hud]:wpn_vintorez_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_1p29_hud.ogf
+
+aim_hud_offset_pos                       = -0.1039, 0.0235, -0.25
+aim_hud_offset_pos_16x9                  = -0.1039, 0.0235, -0.25
+aim_hud_offset_rot                       = 0.01095, 0.03505, -0.01
+aim_hud_offset_rot_16x9                  = 0.01095, 0.03505, -0.01
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_kobra]:wpn_vintorez
+1icon_layer                              = kobra
+1icon_layer_x                            = 79
+1icon_layer_y                            = 8
+
+inv_weight                               = 2.98
+
+hud                                      = wpn_vintorez_kobra_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_kobra.ogf
+
+scope_status                             = 0
+scope_dynamic_zoom                       = off
+
+
+[wpn_vintorez_kobra_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_kobra_hud.ogf
+
+aim_hud_offset_pos                       = -0.104,0.0231,-0.25
+aim_hud_offset_pos_16x9                  = -0.104,0.0231,-0.25
+aim_hud_offset_rot                       = 0.01095, 0.03505, -0.01
+aim_hud_offset_rot_16x9                  = 0.01095, 0.03505, -0.01
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_1pn93]:wpn_vintorez
+parent_section                           = wpn_vintorez_1pn93
+
+inv_grid_x                               = 25
+inv_grid_y                               = 24
+description                              = st_wpn_vintorez_1pn93_descr
+
+inv_weight                               = 3.9
+cost                                     = 55880
+
+hud                                      = wpn_vintorez_1pn93_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_1pn93.ogf
+
+upgrades                                 = up_gr_firstab_vintorez_1pn93, up_gr_seconab_vintorez_1pn93, up_gr_thirdab_vintorez_1pn93, up_gr_fourtab_vintorez_1pn93, up_gr_fourtcd_vintorez_1pn93, up_gr_fourtef_vintorez_1pn93
+installed_upgrades                       =
+
+scopes                                   = none
+scope_status                             = 1
+scope_nightvision                        = scope_nightvision_2gen
+scope_texture                            = wpn_crosshair_1pn93
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_vintorez_1pn93_hud]:wpn_vintorez_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_1pn93_hud.ogf
+
+aim_hud_offset_pos                       = -0.1039, 0.0235, -0.25
+aim_hud_offset_pos_16x9                  = -0.1039, 0.0235, -0.25
+aim_hud_offset_rot                       = 0.01095, 0.03505, -0.01
+aim_hud_offset_rot_16x9                  = 0.01095, 0.03505, -0.01
+
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_pso1m21]:wpn_vintorez
+1icon_layer                              = pso1m21
+1icon_layer_x                            = 56
+1icon_layer_y                            = 7
+
+inv_weight                               = 3.22
+
+hud                                      = wpn_vintorez_pso1m21_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = on
+scope_texture                            = wpn_crosshair_vss
+scope_zoom_factor                        = 15
+
+
+[wpn_vintorez_pso1m21_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+;-- Alt
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt]:wpn_vintorez
+parent_section                           = wpn_vintorez_alt
+
+inv_grid_y                               = 24
+inv_name                                 = st_wpn_vintorez_alt
+inv_name_short                           = st_wpn_vintorez_alt
+
+cost                                     = 41860
+
+hud                                      = wpn_vintorez_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_sk1.ogf
+
+rpm                                      = 750
+
+fire_dispersion_base                     = 0.184
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.11
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.0021
+condition_shot_dec                       = 0.0016
+
+
+[wpn_vintorez_sk1_hud]:wpn_vintorez_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_1p29]:wpn_vintorez_alt
+1icon_layer                              = 1p29
+1icon_layer_x                            = 68
+1icon_layer_y                            = 5
+
+inv_weight                               = 3.41
+
+hud                                      = wpn_vintorez_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_vintorez_1p29_sk1_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_1p29_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_kobra]:wpn_vintorez_alt
+1icon_layer                              = kobra
+1icon_layer_x                            = 79
+1icon_layer_y                            = 8
+
+inv_weight                               = 2.98
+
+hud                                      = wpn_vintorez_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_kobra_sk1.ogf
+
+scope_status                             = 0
+scope_dynamic_zoom                       = off
+
+
+[wpn_vintorez_kobra_sk1_hud]:wpn_vintorez_kobra_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_kobra_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_pso1m21]:wpn_vintorez_alt
+1icon_layer                              = pso1m21
+1icon_layer_x                            = 56
+1icon_layer_y                            = 7
+
+inv_weight                               = 3.22
+
+hud                                      = wpn_vintorez_pso1m21_sk1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = on
+scope_texture                            = wpn_crosshair_pso1_ksvk
+scope_zoom_factor                        = 15
+
+
+[wpn_vintorez_pso1m21_sk1_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_sk1_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+;-- Nimble
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_nimble]:wpn_vintorez,wpn_vintorez_nimble_sounds
+$spawn                                   = "weapons\unique\vintorez_nimble"
+parent_section                           = wpn_vintorez_nimble
+
+inv_grid_x                               = 30
+inv_grid_y                               = 24
+inv_name                                 = st_wpn_vintorez_nimble
+description                              = st_wpn_vintorez_nimble_descr
+
+inv_weight                               = 3.28
+cost                                     = 51850
+weapon_class                             = sniper_rifle
+
+hud                                      = wpn_vintorez_nimble_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_nimble.ogf
+
+upgrades                                 = up_gr_firstab_vintorez_nimble, up_gr_seconab_vintorez_nimble, up_gr_thirdab_vintorez_nimble, up_gr_fourtab_vintorez_nimble, up_gr_fourtcd_vintorez_nimble, up_gr_fourtef_vintorez_nimble
+
+scopes                                   = none
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+hit_power                                = 0.64, 0.64, 0.64, 0.64
+rpm                                      = 774
+
+fire_dispersion_base                     = 0.16
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.0023
+condition_shot_dec                       = 0.0018
+
+
+[wpn_vintorez_nimble_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_nimble_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, -0.001
+item_orientation                         = -15.646272, -3.230760, 0.0
+
+hands_position                           = -0.06, -0.18, 0.2
+hands_position_16x9                      = -0.06, -0.18, 0.2
+hands_orientation                        = -2.1, 2.0, 2.0
+hands_orientation_16x9                   = -2.1, 2.0, 2.0
+
+aim_hud_offset_pos                       = -0.0795, 0.05, -0.25
+aim_hud_offset_pos_16x9                  = -0.0795, 0.05, -0.25
+aim_hud_offset_rot                       = 0.015, -0.047, -0.04
+aim_hud_offset_rot_16x9                  = 0.015, -0.047, -0.04
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = v1ntorez_holster
+anm_idle                                 = v1ntorez_idle
+anm_idle_aim                             = v1ntorez_idle_aim
+anm_idle_moving                          = v1ntorez_moving
+anm_idle_sprint                          = v1ntorez_sprint
+anm_reload                               = v1ntorez_reload, reload
+anm_shots                                = v1ntorez_shoot, shoot
+anm_show                                 = v1ntorez_draw
+
+shell_bone                               = wpn_body
+shell_dir                                = 0.0, 1.0, 0.0
+shell_point                              = 0.01, 0.05, 0.041
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0, 0.037, 0.626
+fire_point2                              = -0.014000, 0.010000, -0.037000
+

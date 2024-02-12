@@ -1,0 +1,207 @@
+-- Alundaio
+---------------------------------------------------------------------------------------------
+-- About: Only non-story objects with no items in the death_generic keep items list can be considered for removal.
+-- This table is also used by xr_corpse_detection.script
+
+local MIN_RELEASE_DISTANCE = 5625		-- dist*dist away from actor required before releasing
+local BODY_MAX_COUNT = 5				-- The max amount of corpses that can exist before checking for releasable corpses.
+local STAY_TIME = 180000				-- time corpse exists before removal if body max count and distance is met
+
+local RB_manager = nil
+function get_release_body_manager()
+	if(RB_manager==nil) then
+		RB_manager = Crelease_body()
+	end
+	return RB_manager
+end
+
+
+local function has_known_info(obj)
+	local spawn_ini = obj.spawn_ini and obj:spawn_ini()
+	local filename = spawn_ini and spawn_ini:r_string_ex("logic","cfg")
+
+	local st = db.storage[obj:id()]
+	local char_ini = filename and ini_file(filename) or st.ini
+
+	local known_info = st.section_logic and char_ini:r_string_ex(st.section_logic,"known_info") or "known_info"
+	if (char_ini and char_ini:section_exist(known_info)) then
+		return true
+	end
+
+	if (spawn_ini and spawn_ini:section_exist(known_info)) then
+		return true
+	end
+
+	return false
+end
+
+local function on_before_level_changing()
+	get_release_body_manager():clear(true,1)
+	printdbg("~ release_body_manager | cleaned all dead bodies")
+end
+
+local function update_settings()
+	local dist = ui_options.get("gameplay/general/corpse_min_dist")
+	MIN_RELEASE_DISTANCE	= dist*dist
+	BODY_MAX_COUNT = ui_options.get("gameplay/general/corpse_max_count")
+end
+
+function on_game_start()
+	local function on_game_load()
+		update_settings()
+	end
+	
+	--RegisterScriptCallback("on_key_release",on_key_release)
+	RegisterScriptCallback("on_game_load",on_game_load)
+	RegisterScriptCallback("on_before_level_changing",on_before_level_changing)
+	RegisterScriptCallback("on_option_change",update_settings)
+end
+
+
+class "Crelease_body"
+function Crelease_body:__init()
+	self.release_objects_table = {}
+	self.keep_items_table = {}
+	self.size = 0
+
+	local ltx = itms_manager.ini_death
+	if not ltx:section_exist("keep_items") then
+		--printf("There is no section [keep_items] in death_generic.ltx")
+	end
+	local n = ltx:line_count("keep_items")
+	local value = ""
+	for i = 0, n - 1 do
+		result, section, value  = ltx:r_line_ex("keep_items", i, "", "")
+		self.keep_items_table[section] = true
+	end
+end
+
+function Crelease_body:can_release(obj)
+	--utils_data.debug_write("Crelease_body:can_release")
+	-- Monsters aren't special ever, so put them in
+	if (IsMonster(obj)) then
+		return true
+	end
+
+	-- Never put story related NPCs in this list
+	if (has_known_info(obj) or get_object_story_id(obj:id())) then
+		return false
+	end
+
+	-- Avoid putting corpses with quest items in list
+	--[[
+	for k,v in pairs(self.keep_items_table) do
+		if (obj:object(k) == true) then
+			return false
+		end
+	end
+	--]]
+	
+	if utils_item.has_quest_item(obj) then
+		return false
+	end
+	
+	-- Leave NPCs with ids included in info portion (release_body_manager_exception_[id])
+	if se_load_var(obj:id(), obj:name(), "dont_release") then
+		return false
+	end
+
+	return true
+end
+
+function Crelease_body:add_corpse(obj)
+	--printf("% Crelease_body:add_corpse")
+	local id = obj and obj:id()
+	if not (id) then
+		abort("Crelease_body: CRITICAL ERROR obj and id should never be nil!")
+		return false
+	end
+
+	if (self:can_release(obj) ~= true) then
+		--printf("% Crelease_body:add_corpse(obj) - %s (%s) can't be released",obj:section(),id)
+		return false
+	end
+
+	if not (self.release_objects_table[id]) then
+		self.release_objects_table[id] = true
+		self.size = self.size + 1
+		--printf("% Crelease_body:add_corpse(obj) - %s (%s) is marked to release",obj:section(),id)
+		return true
+	end
+
+	return false
+end
+
+
+function Crelease_body:moving_dead_body(obj,net_spawn)
+	--utils_data.debug_write("moving_dead_body %s",obj and obj:name())
+	if (not net_spawn and self.size > BODY_MAX_COUNT) then
+		self:clear()
+	end
+	
+	self:add_corpse(obj)
+end
+
+local safety_time
+function Crelease_body:clear(all,dist)
+	--printf("% Crelease_body:clear all=%s dist=%s",all,dist)
+	
+	if not (db.actor) then
+		return
+	end
+
+	local sim = alife()
+	if not (sim) then
+		return
+	end
+
+	local pos = db.actor:position()
+	dist = dist or MIN_RELEASE_DISTANCE
+
+	local cls
+	for id, v in pairs(self.release_objects_table) do
+		if (all == nil) and (self.size < BODY_MAX_COUNT) then
+			--printf("% Crelease_body: self.size < %s | no pass", BODY_MAX_COUNT)
+			return
+		end
+
+		local se_obj = id and id ~= 0 and id ~= 65535 and sim:object(id)
+		cls = se_obj and se_obj:clsid()
+		if (cls) and (IsStalker(nil,cls) or IsMonster(nil,cls)) and not (se_obj:alive()) then
+			local obj = db.storage[id] and db.storage[id].object or level.object_by_id(id)
+			
+			-- Recheck inventory
+			if utils_item.has_quest_item(obj) then
+				--printf("% Crelease_body: removed NPC (%s) from the queue because it has a quest item", obj:name())
+				self.release_objects_table[id] = nil
+				self.size = self.size - 1
+				
+			elseif (all) then
+				--printf("% Crelease_body:clear all - added id (%s)",id)
+
+				safe_release_manager.release(se_obj)
+				self.release_objects_table[id] = nil
+				self.size = self.size - 1
+			elseif (pos:distance_to_sqr(se_obj.position) >= dist) then
+				if (obj and (time_global() - obj:death_time()) > STAY_TIME) then
+					--printf("% Crelease_body: releasing npc %s (%s) from the game - death_time: %s", se_obj:name(), id, obj:death_time())
+
+					safe_release_manager.release(se_obj)
+					self.release_objects_table[id] = nil
+					self.size = self.size - 1
+				end
+			end
+		else
+			self.release_objects_table[id] = nil
+			self.size = self.size - 1
+		end
+	end
+end
+
+function Crelease_body:save(packet)
+
+end
+
+function Crelease_body:load(reader)
+
+end

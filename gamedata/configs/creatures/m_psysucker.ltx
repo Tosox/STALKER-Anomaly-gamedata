@@ -1,0 +1,187 @@
+;--===========================================================================
+; 								Psysucker
+;--===========================================================================
+[m_psysucker_e]:bloodsucker_weak
+visual				= monsters\psysucker\psysucker_white
+corpse_visual		= monsters\psysucker\psysucker_white
+Predator_Visual 	= monsters\psysucker\psysucker_white_xray
+icon							= ui_npc_monster_psysucker
+can_spawn_phantom = true
+kind                = SM_PSYSUCKER 		; Fake class
+
+;-------------------------------------------------------------------------
+; Sounds
+;-------------------------------------------------------------------------
+sound_idle          = monsters\psysucker\idle_
+sound_eat         	= monsters\bloodsucker\eat_
+sound_aggressive    = monsters\psysucker\breath_
+sound_attack_hit    = monsters\psysucker\attack_hit_
+sound_take_damage   = monsters\psysucker\hit_
+sound_die         	= monsters\psysucker\die_
+sound_panic         = monsters\psysucker\hit_
+sound_die_in_anomaly = monsters\psysucker\die_
+
+sound_distant_idle  = monsters\psysucker\idle_
+distant_idle_sound_delay  = 80000
+distant_idle_sound_range  = 100.0
+
+;Frequency of sounds to be played
+idle_sound_delay      = 95000
+eat_sound_delay       = 3000
+attack_sound_delay      = 1000 ;6000
+
+Sound_Invisibility_Change_State   = monsters\psysucker\invisible_0
+Sound_Vampire_Grasp         = monsters\bloodsucker\vampire_grasp
+Sound_Vampire_Sucking       = monsters\bloodsucker\vampire_sucking
+Sound_Vampire_Hit         = monsters\psysucker\hit_
+Sound_Vampire_StartHunt       = monsters\bloodsucker\vampire_grasp
+Sound_Growl             = monsters\psysucker\hit_
+Sound_Alien             = monsters\psysucker\breath_
+
+SoundThreshold        = 0.05                 ; range [0..1]
+max_hear_dist       = 60
+
+
+;-------------------------------------------------------------------------
+; Vampire Ability
+;-------------------------------------------------------------------------
+
+Vampire_Delay      = 300000	;5000
+Vampire_Want_Speed = 0.1
+Vampire_Wound      = 0.2
+Vampire_GainHealth = 0.65 ; how many hp to restore?
+Vampire_Sufficient_Hits = 30	;5
+Vampire_Distance   = 1 ; may artifact when < 1
+
+attack_params       = m_psysucker_attack_params
+community     		= psysucker
+
+;===========================================================================
+; Attack Animation Parameters
+;===========================================================================
+[m_psysucker_attack_params]		;-->
+;---------------------------------------------------------------------------------------------------------------------------------------------
+; anim      | time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  | Field of hit_test  (left,right, top, bottom) |  Test Dist
+;---------------------------------------------------------------------------------------------------------------------------------------------
+;Left hand Strike
+stand_attack_0 =      0.30,   0.7,       50,        3.5, 2.0, 0.5,     -0.6, 0.6, -0.6, 0.6,          2.2
+;Both hands Strike
+stand_attack_1 =      0.30,   0.7,       50,        0.0, 2.0, 4.0,     -0.6, 0.6, -0.6, 0.6,          2.2
+;Right hand Strike
+stand_attack_2 =      0.30,   0.7,       50,       -4.0, 2.5, 0.50,    -0.6, 0.6, -0.6, 0.6,          2.2
+;Right hand Strike
+vampire_2   =     	  0.60,   0.7,       50,        0.0, 2.5, 4.50,    -1.2, 1.2, -1.2, 1.2,	       4.5
+
+stand_run_attack_left_0  = 0.30,   0.7,       50,        3.5, 2.0, 0.5,     -1.0, 1.0, -1.0, 1.0,     2.5
+stand_run_attack_right_0 = 0.30,   0.7,       50,        3.5, 2.0, 0.5,     -1.0, 1.0, -1.0, 1.0,     2.5
+
+
+;--===========================================================================
+; 								Variants
+;--===========================================================================
+;---------------
+; White
+;---------------
+[psysucker_white]:m_psysucker_e
+$spawn        	= "monsters\bloodsuckers\bloodsucker_red_weak"
+visual				= monsters\psysucker\psysucker_white
+corpse_visual		= monsters\psysucker\psysucker_white
+Predator_Visual 	= monsters\psysucker\psysucker_white_xray
+
+;--Test
+;appear_effector		= psysucker_white_phantom_appear_effector
+;aura_effector		= psysucker_white_aura_effector
+;particles_appear	= monsters\pseudo_phantom_birth_00
+;particles_disappear	= monsters\pseudo_phantom_death_00
+;hit_type = telepatic 
+
+;sound_psy_attack		= monsters\pseudodog\psy_attack_
+
+;Phantoms_Count	= 2
+;Time_Phantom_Respawn = 5000
+;Max_Phantoms_Count	= 3
+;Min_Phantoms_Count	= 2
+;Time_Phantom_Appear = 3000
+
+;full_visibility_radius = 50 	;5
+;partial_visibility_radius = 51	;10
+;no_visibility_radius   = 100 	;15
+
+[psysucker_white_aura_effector]
+duality_h		= 0.00
+duality_v		= 0.00
+blur			= 10
+gray			= 0.0
+noise_intensity = 10.0
+noise_grain		= 1
+noise_fps		= 25
+color_base		= 0.9,0.9,1.0
+color_gray		= 0.33,0.330,0.33
+color_add		= 0.00,0.00,0.015
+
+[psysucker_white_phantom_appear_effector]
+duality_h		= 0.028	;0.31
+duality_v		= 0.028	;0.31
+blur			= 0.00
+gray			= 0	;0.5
+noise_intensity = 1
+noise_grain		= 0.1
+noise_fps		= 50
+color_base		= 0.5,0.5,0.5	;0.1,0.15,0.4
+color_gray		= 0.333,0.333,0.333	;0.333,0.333,0.333
+color_add		= 0.00,0.00,0.00
+time			= 0.5		;1.5
+time_attack		= 0.05	;0.5		; fade in
+time_release	= 0.3		; fade out
+
+; camera effects
+ce_time				= 0 ;0.2	;1.5
+ce_amplitude		= 0 ;1.0
+ce_period_number	= 0	;2.0
+ce_power			= 0 ;0.3 ;0.7
+
+
+[psysucker_1_weak]:psysucker_white
+MaxHealthValue         = 0.5              ; range [0..200]
+
+[psysucker_1_normal]:psysucker_white
+MaxHealthValue         = 0.75              ; range [0..200]
+
+[psysucker_1_strong]:psysucker_white
+MaxHealthValue         = 1.0              ; range [0..200]
+
+;---------------
+; Brown
+;---------------
+[psysucker_brown]:m_psysucker_e
+$spawn        	= "monsters\bloodsuckers\bloodsucker_red_weak"
+visual				= monsters\psysucker\psysucker_brown
+corpse_visual		= monsters\psysucker\psysucker_brown
+Predator_Visual 	= monsters\psysucker\psysucker_brown_xray
+
+[psysucker_2_weak]:psysucker_brown
+MaxHealthValue         = 0.5              ; range [0..200]
+
+[psysucker_2_normal]:psysucker_brown
+MaxHealthValue         = 0.75              ; range [0..200]
+
+[psysucker_2_strong]:psysucker_brown
+MaxHealthValue         = 1.0              ; range [0..200]
+
+;---------------
+; Black
+;---------------
+[psysucker_black]:m_psysucker_e
+$spawn        	= "monsters\bloodsuckers\bloodsucker_red_weak"
+visual				= monsters\psysucker\psysucker_black
+corpse_visual		= monsters\psysucker\psysucker_black
+Predator_Visual 	= monsters\psysucker\psysucker_black_xray
+
+[psysucker_3_weak]:psysucker_black
+MaxHealthValue         = 0.5              ; range [0..200]
+
+[psysucker_3_normal]:psysucker_black
+MaxHealthValue         = 0.75              ; range [0..200]
+
+[psysucker_3_strong]:psysucker_black
+MaxHealthValue         = 1.0              ; range [0..200]

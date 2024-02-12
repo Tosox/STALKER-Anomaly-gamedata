@@ -1,0 +1,585 @@
+;-------------------------------------
+;-- Tronex
+
+;-- Smart terrain defined here are inhabitable houses/buildings
+;-- The ones with "true" value includes special characters
+;-- Those smarts are used as a blacklist by some tasks to avoid targeting squads belong to them
+;-------------------------------------
+
+[populated_smarts]
+
+;-- Agroprom
+agr_smart_terrain_1_6               = true
+agr_smart_terrain_1_6_near_1        = true
+agr_smart_terrain_1_6_near_2        = true
+agr_smart_terrain_4_4               = false
+agr_smart_terrain_4_4_near_1        = false
+agr_smart_terrain_4_4_near_2        = false
+agr_smart_terrain_4_4_near_3        = false
+
+;-- Darkscape
+ds_kem2                             = false
+ds2_domik_st                        = true
+
+;-- Dark Valley
+val_smart_terrain_7_3               = true
+val_smart_terrain_7_4               = true
+val_smart_terrain_7_5               = true
+val_smart_terrain_8_6               = true
+val_smart_terrain_9_4               = true
+val_smart_terrain_9_6               = false
+val_smart_terrain_1_2               = false
+val_smart_terrain_4_0               = false
+
+;-- Dead City
+cit_killers                         = true
+cit_killers_vs_bandits              = false
+cit_bandits                         = false
+
+;-- Cordon
+esc_smart_terrain_2_12              = true
+esc_smart_terrain_3_16              = true
+esc_smart_terrain_5_7               = true
+
+;-- Garbage
+gar_smart_terrain_3_5               = false
+gar_smart_terrain_6_3               = false
+gar_smart_terrain_5_2               = false
+
+;-- Jupiter
+jup_b41                             = true
+jup_a6                              = true
+jup_a12                             = true
+depo_terrain                        = false
+jup_b204                            = false
+
+;-- Limansk
+lim_smart_terrain_8                 = false
+lim_smart_terrain_9                 = false
+lim_smart_terrain_10                = false
+
+;-- Great Swamps
+mar_smart_terrain_base              = true
+mar_smart_terrain_doc               = true
+mar_smart_terrain_doc_2             = false
+mar_smart_terrain_3_10              = false
+mar_smart_terrain_5_12              = false
+mar_smart_terrain_11_11             = false
+mar_smart_terrain_12_2              = false
+mar_smart_terrain_10_5              = false
+mar_smart_terrain_8_11              = false
+
+;-- Army Warehouses
+mil_smart_terrain_7_7               = true
+mil_smart_terrain_7_8               = true
+mil_smart_terrain_7_10              = true
+mil_smart_terrain_7_12              = true
+mil_smart_terrain_2_2               = false
+mil_smart_terrain_3_8               = false
+mil_smart_terrain_2_4               = false
+
+;-- Red Forest
+red_bridge_bandit_smart_skirmish    = false
+red_smart_terrain_bridge            = false
+red_smart_terrain_4_2               = false
+red_smart_terrain_3_1               = false
+
+;-- Rostok
+ros_smart_killers1                  = false
+ros_smart_stalker_killers1          = false
+ros_smart_stalker1                  = false
+
+;-- Truck Cemetery
+trc_sim_20                          = true
+
+;-- Yantar
+yan_smart_terrain_6_4               = true
+
+;-- Zaton
+zat_stalker_base_smart              = true
+zat_b40_smart_terrain               = true
+zat_b40_smart_terrain_2             = false
+zat_medic_home_smart                = true
+zat_b18                             = true
+
+
+;-- NOT USED YET
+;-- for warfare, to override smart props in simulation_objects_props.ltx
+[warfare_smart_props]
+        aes2_monolith_camp1                       = base:0, territory=1, resource=1
+        aes2_monolith_camp2                       = base:1, territory=1, resource=0
+        aes2_monolith_camp3                       = base:1, territory=1, resource=0
+        aes2_monolith_camp4                       = base:1, territory=1, resource=0
+        aes2_monolith_snipers_1                   = base:0, territory=1, resource=1
+        aes2_monolith_snipers_2                   = base:0, territory=1, resource=1
+        aes2_monolith_snipers_3                   = base:0, territory=1, resource=1
+        aes2_monsters1                            = base:0, territory=1, resource=0
+        aes2_monsters2                            = base:0, territory=1, resource=0
+        aes_smart_terrain_monolit_blockpost       = base:0, territory=1, resource=1
+        aes_smart_terrain_monolit_blockpost2      = base:0, territory=1, resource=1
+        aes_smart_terrain_monolit_blockpost4      = base:1, territory=1, resource=0
+        aes_smart_terrain_monsters1               = base:0, territory=0, resource=0
+        aes_smart_terrain_monsters2               = base:0, territory=0, resource=0
+        aes_smart_terrain_monsters3               = base:0, territory=1, resource=0
+        aes_smart_terrain_monsters4               = base:0, territory=1, resource=0
+        aes_smart_terran_soldier                  = base:0, territory=1, resource=1
+        aes_smart_terran_soldier2                 = base:0, territory=1, resource=0
+        agr_smart_terrain_1_2                     = base:0, territory=1, resource=0
+        agr_smart_terrain_1_3                     = base:0, territory=1, resource=1
+        agr_smart_terrain_1_6                     = base:1, territory=1, resource=0
+        agr_smart_terrain_1_6_near_1              = base:0, territory=1, resource=1
+        agr_smart_terrain_1_6_near_2              = base:1, territory=1, resource=0
+        agr_smart_terrain_2_2                     = base:0, territory=1, resource=0
+        agr_smart_terrain_4_4                     = base:1, territory=1, resource=0
+        agr_smart_terrain_4_4_near_1              = base:1, territory=1, resource=0
+        agr_smart_terrain_4_4_near_2              = base:0, territory=1, resource=1
+        agr_smart_terrain_4_4_near_3              = base:0, territory=1, resource=1
+        agr_smart_terrain_4_6                     = base:0, territory=1, resource=1
+        agr_smart_terrain_5_2                     = base:0, territory=1, resource=0
+        agr_smart_terrain_5_3                     = base:0, territory=1, resource=1
+        agr_smart_terrain_5_4                     = base:0, territory=1, resource=1
+        agr_smart_terrain_5_7                     = base:0, territory=1, resource=0
+        agr_smart_terrain_6_4                     = base:0, territory=1, resource=1
+        agr_smart_terrain_6_6                     = base:0, territory=1, resource=0
+        agr_smart_terrain_7_4                     = base:0, territory=1, resource=0
+        agr_smart_terrain_7_5                     = base:0, territory=1, resource=0
+        agr_u_bandits                             = base:0, territory=1, resource=0
+        agr_u_bloodsucker                         = base:0, territory=1, resource=0
+        agr_u_bloodsucker_2                       = base:0, territory=1, resource=0
+        agr_u_monsters                            = base:0, territory=1, resource=0
+        agr_u_soldiers                            = base:0, territory=1, resource=0
+        bar_dolg_bunker                           = base:1, territory=1, resource=0
+        bar_dolg_general                          = base:1, territory=1, resource=0
+        bar_visitors                              = base:1, territory=1, resource=0
+        bar_zastava                               = base:0, territory=1, resource=1
+        bar_zastava_2                             = base:0, territory=1, resource=1
+        bar_zastava_dogs_lair                     = base:0, territory=0, resource=0
+        bar_zastava_dogs_lair_2                   = base:0, territory=0, resource=0
+        bun2_st_bloodsucker                       = base:0, territory=1, resource=0
+        bun2_tushkano_lair                        = base:0, territory=1, resource=0
+        bun_krovosos_nest                         = base:0, territory=1, resource=0
+        cit_bandits                               = base:0, territory=1, resource=1
+        cit_bandits_2                             = base:0, territory=1, resource=1
+        cit_kanaliz1                              = base:0, territory=1, resource=0
+        cit_kanaliz2                              = base:0, territory=1, resource=0
+        cit_killers                               = base:1, territory=1, resource=0
+        cit_killers_2                             = base:0, territory=1, resource=1
+        cit_killers_vs_bandits                    = base:1, territory=1, resource=0
+        dar_angar                                 = base:0, territory=1, resource=0
+        dar_control_poltergeist                   = base:0, territory=1, resource=0
+        dar_military_scout                        = base:0, territory=1, resource=0
+        dar_poltergeist_ring                      = base:0, territory=1, resource=0
+        dar_poltergeist_tele                      = base:0, territory=1, resource=0
+        dar_poltergeist_tele_round                = base:0, territory=1, resource=0
+        dar_smart_snork                           = base:0, territory=1, resource=0
+        depo_terrain                              = base:0, territory=0, resource=0
+        ds2_domik_st                              = base:1, territory=1, resource=0
+        ds2_lager_st                              = base:1, territory=1, resource=0
+        ds2_st_dogs                               = base:0, territory=1, resource=1
+        ds2_st_hoofs                              = base:0, territory=1, resource=1
+        ds_boars_nest                             = base:0, territory=1, resource=0
+        ds_deb1                                   = base:0, territory=1, resource=1
+        ds_grverfer2                              = base:0, territory=1, resource=0
+        ds_kem1                                   = base:0, territory=1, resource=0
+        ds_kem2                                   = base:1, territory=1, resource=0
+        ds_kem3                                   = base:0, territory=1, resource=1
+        ds_ptr                                    = base:0, territory=1, resource=1
+        ds_ptr2                                   = base:0, territory=1, resource=0
+        ds_ptr3                                   = base:0, territory=1, resource=0
+        ds_ptr4                                   = base:0, territory=1, resource=1
+        esc_smart_terrain_1_11                    = base:0, territory=1, resource=1
+        esc_smart_terrain_2_12                    = base:1, territory=1, resource=0
+        esc_smart_terrain_2_14                    = base:0, territory=1, resource=0
+        esc_smart_terrain_3_16                    = base:1, territory=1, resource=0
+        esc_smart_terrain_3_7                     = base:0, territory=1, resource=0
+        esc_smart_terrain_4_11                    = base:0, territory=1, resource=1
+        esc_smart_terrain_4_13                    = base:0, territory=1, resource=1
+        esc_smart_terrain_4_9                     = base:0, territory=1, resource=0
+        esc_smart_terrain_5_12                    = base:0, territory=1, resource=0
+        esc_smart_terrain_5_2                     = base:0, territory=1, resource=1
+        esc_smart_terrain_5_4                     = base:0, territory=1, resource=0
+        esc_smart_terrain_5_6                     = base:0, territory=1, resource=0
+        esc_smart_terrain_5_7                     = base:1, territory=1, resource=0
+        esc_smart_terrain_5_9                     = base:0, territory=1, resource=1
+        esc_smart_terrain_6_6                     = base:0, territory=1, resource=1
+        esc_smart_terrain_6_8                     = base:0, territory=1, resource=1
+        esc_smart_terrain_7_11                    = base:1, territory=1, resource=0
+        esc_smart_terrain_8_10                    = base:0, territory=1, resource=0
+        esc_smart_terrain_8_9                     = base:0, territory=1, resource=0
+        esc_smart_terrain_9_10                    = base:0, territory=1, resource=1
+        esc_smart_terrain_9_7                     = base:0, territory=1, resource=0
+        gar_smart_terrain_1_5                     = base:0, territory=1, resource=1
+        gar_smart_terrain_1_7                     = base:0, territory=1, resource=0
+        gar_smart_terrain_2_4                     = base:0, territory=1, resource=1
+        gar_smart_terrain_3_5                     = base:1, territory=1, resource=0
+        gar_smart_terrain_3_7                     = base:0, territory=1, resource=1
+        gar_smart_terrain_4_2                     = base:0, territory=1, resource=0
+        gar_smart_terrain_4_5                     = base:0, territory=1, resource=1
+        gar_smart_terrain_5_2                     = base:0, territory=1, resource=1
+        gar_smart_terrain_5_4                     = base:0, territory=1, resource=1
+        gar_smart_terrain_5_5                     = base:0, territory=1, resource=0
+        gar_smart_terrain_5_6                     = base:0, territory=1, resource=1
+        gar_smart_terrain_5_8                     = base:0, territory=1, resource=0
+        gar_smart_terrain_6_1                     = base:0, territory=1, resource=0
+        gar_smart_terrain_6_3                     = base:1, territory=1, resource=0
+        gar_smart_terrain_6_6                     = base:0, territory=1, resource=0
+        gar_smart_terrain_6_7                     = base:0, territory=1, resource=1
+        gar_smart_terrain_7_4                     = base:0, territory=1, resource=1
+        gar_smart_terrain_8_3                     = base:0, territory=1, resource=0
+        gar_smart_terrain_8_5                     = base:0, territory=1, resource=0
+        gen_smart_terrain_cemetery                = base:0, territory=1, resource=1
+        gen_smart_terrain_forest                  = base:0, territory=1, resource=0
+        gen_smart_terrain_junk                    = base:0, territory=1, resource=1
+        gen_smart_terrain_lab_entrance            = base:1, territory=1, resource=0
+        gen_smart_terrain_lab_entrance_2          = base:1, territory=1, resource=0
+        gen_smart_terrain_military                = base:0, territory=1, resource=0
+        gen_smart_terrain_urod                    = base:0, territory=1, resource=0
+        hotel_poless_smart_alife                  = base:0, territory=0, resource=0
+        jup_a10_smart_terrain                     = base:1, territory=1, resource=0
+        jup_a12                                   = base:1, territory=1, resource=0
+        jup_a12_merc                              = base:0, territory=0, resource=0
+        jup_a6                                    = base:1, territory=1, resource=0
+        jup_a9                                    = base:0, territory=0, resource=0
+        jup_b1                                    = base:0, territory=1, resource=0
+        jup_b19                                   = base:1, territory=1, resource=0
+        jup_b200                                  = base:1, territory=1, resource=0
+        jup_b200_tushkan_smart_terrain            = base:0, territory=1, resource=0
+        jup_b202                                  = base:0, territory=1, resource=1
+        jup_b203                                  = base:0, territory=1, resource=1
+        jup_b204                                  = base:0, territory=1, resource=1
+        jup_b205_smart_terrain                    = base:0, territory=1, resource=1
+        jup_b205_smart_terrain_tushkano           = base:0, territory=0, resource=0
+        jup_b206                                  = base:0, territory=1, resource=1
+        jup_b207                                  = base:0, territory=1, resource=1
+        jup_b207_depot_attack                     = base:0, territory=0, resource=0
+        jup_b208                                  = base:1, territory=1, resource=0
+        jup_b209                                  = base:0, territory=1, resource=1
+        jup_b211                                  = base:0, territory=1, resource=0
+        jup_b212                                  = base:0, territory=1, resource=0
+        jup_b219                                  = base:0, territory=0, resource=0
+        jup_b25                                   = base:0, territory=1, resource=0
+        jup_b32                                   = base:0, territory=1, resource=1
+        jup_b4                                    = base:0, territory=1, resource=0
+        jup_b41                                   = base:0, territory=1, resource=1
+        jup_b46                                   = base:0, territory=1, resource=0
+        jup_b47                                   = base:0, territory=1, resource=0
+        jup_b6_anom_2                             = base:0, territory=1, resource=0
+        jup_b8_smart_terrain                      = base:0, territory=0, resource=0
+        jup_sim_1                                 = base:0, territory=1, resource=0
+        jup_sim_10                                = base:0, territory=1, resource=0
+        jup_sim_11                                = base:0, territory=1, resource=0
+        jup_sim_12                                = base:0, territory=1, resource=0
+        jup_sim_13                                = base:0, territory=1, resource=0
+        jup_sim_14                                = base:0, territory=1, resource=0
+        jup_sim_15                                = base:0, territory=1, resource=0
+        jup_sim_16                                = base:0, territory=1, resource=0
+        jup_sim_17                                = base:0, territory=1, resource=0
+        jup_sim_18                                = base:0, territory=1, resource=1
+        jup_sim_19                                = base:0, territory=1, resource=1
+        jup_sim_2                                 = base:0, territory=1, resource=0
+        jup_sim_20                                = base:0, territory=0, resource=0
+        jup_sim_21                                = base:0, territory=1, resource=0
+        jup_sim_3                                 = base:0, territory=1, resource=1
+        jup_sim_4                                 = base:0, territory=1, resource=0
+        jup_sim_5                                 = base:0, territory=1, resource=0
+        jup_sim_6                                 = base:0, territory=1, resource=0
+        jup_sim_7                                 = base:0, territory=1, resource=0
+        jup_sim_8                                 = base:0, territory=1, resource=0
+        jup_sim_9                                 = base:0, territory=1, resource=0
+        katacomb_smart_terrain                    = base:1, territory=1, resource=0
+        kbo_terrain                               = base:0, territory=0, resource=0
+        lim_smart_terrain_1                       = base:0, territory=1, resource=0
+        lim_smart_terrain_10                      = base:0, territory=1, resource=1
+        lim_smart_terrain_3                       = base:1, territory=1, resource=0
+        lim_smart_terrain_4                       = base:0, territory=1, resource=1
+        lim_smart_terrain_5                       = base:0, territory=1, resource=1
+        lim_smart_terrain_6                       = base:0, territory=1, resource=1
+        lim_smart_terrain_7                       = base:0, territory=1, resource=0
+        lim_smart_terrain_8                       = base:0, territory=1, resource=0
+        lim_smart_terrain_9                       = base:1, territory=1, resource=0
+        lx8_smart_terrain                         = base:0, territory=0, resource=0
+        mar_smart_terrain_10_10                   = base:0, territory=1, resource=0
+        mar_smart_terrain_10_5                    = base:1, territory=1, resource=0
+        mar_smart_terrain_10_7                    = base:0, territory=1, resource=0
+        mar_smart_terrain_11_11                   = base:0, territory=1, resource=1
+        mar_smart_terrain_11_3                    = base:0, territory=1, resource=0
+        mar_smart_terrain_12_2                    = base:1, territory=1, resource=1
+        mar_smart_terrain_3_10                    = base:0, territory=1, resource=0
+        mar_smart_terrain_3_3                     = base:1, territory=1, resource=0
+        mar_smart_terrain_3_7                     = base:0, territory=1, resource=0
+        mar_smart_terrain_4_5                     = base:0, territory=1, resource=1
+        mar_smart_terrain_4_7                     = base:0, territory=1, resource=0
+        mar_smart_terrain_5_12                    = base:0, territory=1, resource=1
+        mar_smart_terrain_5_8                     = base:1, territory=1, resource=0
+        mar_smart_terrain_6_10                    = base:0, territory=1, resource=0
+        mar_smart_terrain_6_11                    = base:0, territory=1, resource=1
+        mar_smart_terrain_6_4                     = base:0, territory=1, resource=1
+        mar_smart_terrain_6_7                     = base:0, territory=1, resource=1
+        mar_smart_terrain_6_8                     = base:0, territory=1, resource=0
+        mar_smart_terrain_7_3                     = base:0, territory=1, resource=0
+        mar_smart_terrain_7_7                     = base:0, territory=1, resource=0
+        mar_smart_terrain_8_11                    = base:1, territory=1, resource=0
+        mar_smart_terrain_8_4                     = base:0, territory=1, resource=0
+        mar_smart_terrain_8_8                     = base:0, territory=1, resource=1
+        mar_smart_terrain_8_9                     = base:0, territory=1, resource=0
+        mar_smart_terrain_base                    = base:1, territory=1, resource=0
+        mar_smart_terrain_doc                     = base:0, territory=1, resource=0
+        mar_smart_terrain_doc_2                   = base:0, territory=1, resource=1
+        mil_smart_terrain_2_1                     = base:0, territory=1, resource=0
+        mil_smart_terrain_2_10                    = base:0, territory=1, resource=1
+        mil_smart_terrain_2_2                     = base:0, territory=1, resource=0
+        mil_smart_terrain_2_4                     = base:1, territory=1, resource=0
+        mil_smart_terrain_2_6                     = base:0, territory=1, resource=0
+        mil_smart_terrain_3_8                     = base:0, territory=1, resource=1
+        mil_smart_terrain_4_2                     = base:0, territory=1, resource=1
+        mil_smart_terrain_4_3                     = base:0, territory=1, resource=1
+        mil_smart_terrain_4_5                     = base:0, territory=1, resource=1
+        mil_smart_terrain_4_7                     = base:0, territory=1, resource=1
+        mil_smart_terrain_4_8                     = base:1, territory=1, resource=0
+        mil_smart_terrain_7_10                    = base:0, territory=1, resource=1
+        mil_smart_terrain_7_12                    = base:1, territory=1, resource=0
+        mil_smart_terrain_7_4                     = base:1, territory=1, resource=0
+        mil_smart_terrain_7_7                     = base:1, territory=1, resource=0
+        mil_smart_terrain_7_8                     = base:0, territory=1, resource=1
+        mil_smart_terrain_8_3                     = base:0, territory=1, resource=0
+        mlr_terrain                               = base:0, territory=0, resource=0
+        monolith_snipers_smart_1_mlr              = base:0, territory=0, resource=0
+        pas_b400_canalisation                     = base:0, territory=1, resource=0
+        pas_b400_downstairs                       = base:0, territory=1, resource=0
+        pas_b400_elevator                         = base:0, territory=1, resource=0
+        pas_b400_fake                             = base:0, territory=1, resource=0
+        pas_b400_hall                             = base:0, territory=1, resource=0
+        pas_b400_track                            = base:0, territory=1, resource=0
+        pas_b400_tunnel                           = base:0, territory=1, resource=0
+        pas_b400_way                              = base:0, territory=1, resource=0
+        pol_sim_1                                 = base:0, territory=0, resource=0
+        pol_smart_terrain_1_1                     = base:0, territory=0, resource=0
+        pol_smart_terrain_1_2                     = base:0, territory=0, resource=0
+        pol_smart_terrain_1_3                     = base:0, territory=0, resource=1
+        pol_smart_terrain_2_1                     = base:0, territory=0, resource=0
+        pol_smart_terrain_2_2                     = base:0, territory=0, resource=0
+        pri_a15                                   = base:0, territory=1, resource=0
+        pri_a16                                   = base:1, territory=1, resource=0
+        pri_a17                                   = base:0, territory=1, resource=1
+        pri_a18_smart_terrain                     = base:1, territory=1, resource=0
+        pri_a20                                   = base:0, territory=1, resource=0
+        pri_a21_smart_terrain                     = base:0, territory=1, resource=1
+        pri_a22_smart_terrain                     = base:0, territory=1, resource=0
+        pri_a25_smart_terrain                     = base:0, territory=1, resource=1
+        pri_a28_arch                              = base:0, territory=0, resource=0
+        pri_a28_base                              = base:0, territory=0, resource=0
+        pri_a28_evac                              = base:0, territory=0, resource=0
+        pri_a28_heli                              = base:0, territory=0, resource=0
+        pri_a28_school                            = base:0, territory=0, resource=0
+        pri_a28_shop                              = base:0, territory=0, resource=0
+        pri_b301                                  = base:0, territory=1, resource=1
+        pri_b302                                  = base:0, territory=1, resource=0
+        pri_b303                                  = base:0, territory=1, resource=0
+        pri_b304                                  = base:0, territory=1, resource=0
+        pri_b304_monsters_smart_terrain           = base:0, territory=1, resource=1
+        pri_b305_dogs                             = base:0, territory=1, resource=0
+        pri_b306                                  = base:1, territory=1, resource=0
+        pri_b307                                  = base:0, territory=1, resource=1
+        pri_b35_mercs                             = base:0, territory=1, resource=1
+        pri_b35_military                          = base:0, territory=1, resource=1
+        pri_b36_smart_terrain                     = base:0, territory=1, resource=1
+        pri_depot                                 = base:1, territory=1, resource=0
+        pri_monolith                              = base:1, territory=1, resource=0
+        pri_sim_1                                 = base:1, territory=1, resource=0
+        pri_sim_10                                = base:0, territory=1, resource=0
+        pri_sim_11                                = base:0, territory=1, resource=0
+        pri_sim_12                                = base:0, territory=1, resource=0
+        pri_sim_2                                 = base:0, territory=1, resource=0
+        pri_sim_3                                 = base:0, territory=1, resource=0
+        pri_sim_4                                 = base:0, territory=1, resource=0
+        pri_sim_5                                 = base:0, territory=1, resource=0
+        pri_sim_6                                 = base:0, territory=1, resource=0
+        pri_sim_7                                 = base:0, territory=1, resource=0
+        pri_sim_8                                 = base:0, territory=1, resource=0
+        pri_sim_9                                 = base:0, territory=1, resource=0
+        pri_smart_bloodsucker_lair1               = base:0, territory=1, resource=0
+        pri_smart_controler_lair1                 = base:0, territory=1, resource=0
+        pri_smart_controler_lair2                 = base:0, territory=0, resource=0
+        pri_smart_giant_lair1                     = base:0, territory=1, resource=0
+        pri_smart_monolith_stalker2               = base:0, territory=1, resource=0
+        pri_smart_monolith_stalker3               = base:0, territory=1, resource=1
+        pri_smart_monolith_stalker4               = base:0, territory=1, resource=1
+        pri_smart_monolith_stalker6               = base:0, territory=1, resource=1
+        pri_smart_monster_lair1                   = base:0, territory=1, resource=0
+        pri_smart_neutral_stalker1                = base:0, territory=1, resource=0
+        pri_smart_pseudodog_lair1                 = base:0, territory=1, resource=0
+        pri_smart_snork_lair1                     = base:0, territory=1, resource=0
+        pri_smart_snork_lair2                     = base:0, territory=1, resource=1
+        pri_smart_tushkano_lair1                  = base:1, territory=1, resource=0
+        rad2_loner_0000                           = base:0, territory=1, resource=0
+        rad2_loner_0001                           = base:0, territory=1, resource=1
+        rad2_loner_0002                           = base:0, territory=1, resource=1
+        rad2_prip_teleport                        = base:1, territory=1, resource=0
+        rad2_rad_prip_road                        = base:0, territory=0, resource=0
+        rad_after_valley                          = base:0, territory=1, resource=1
+        rad_antenna_camper                        = base:1, territory=1, resource=0
+        rad_antenna_monolith                      = base:0, territory=1, resource=1
+        rad_antenna_patrol                        = base:1, territory=1, resource=0
+        rad_bloodsucker                           = base:0, territory=1, resource=0
+        rad_entrance                              = base:0, territory=1, resource=1
+        rad_freedom_vs_duty                       = base:0, territory=0, resource=0
+        rad_prip_road                             = base:0, territory=0, resource=0
+        rad_pseudodogs                            = base:0, territory=1, resource=0
+        rad_rusty_forest_center                   = base:0, territory=0, resource=0
+        rad_snork1                                = base:0, territory=1, resource=0
+        rad_snork2                                = base:0, territory=1, resource=0
+        rad_valley                                = base:1, territory=1, resource=0
+        rad_valley_dogs                           = base:0, territory=0, resource=0
+        rad_zombied1                              = base:0, territory=1, resource=0
+        rad_zombied2                              = base:0, territory=1, resource=0
+        red_bridge_bandit_smart_skirmish          = base:0, territory=1, resource=1
+        red_smart_terrain_3_1                     = base:0, territory=1, resource=1
+        red_smart_terrain_3_2                     = base:1, territory=1, resource=0
+        red_smart_terrain_3_3                     = base:0, territory=1, resource=0
+        red_smart_terrain_4_2                     = base:0, territory=1, resource=1
+        red_smart_terrain_4_3                     = base:0, territory=1, resource=0
+        red_smart_terrain_4_5                     = base:0, territory=1, resource=2
+        red_smart_terrain_5_5                     = base:0, territory=1, resource=0
+        red_smart_terrain_5_6                     = base:0, territory=1, resource=0
+        red_smart_terrain_6_3                     = base:0, territory=1, resource=2
+        red_smart_terrain_6_6                     = base:0, territory=1, resource=0
+        red_smart_terrain_bridge                  = base:1, territory=1, resource=0
+        red_smart_terrain_monsters                = base:0, territory=1, resource=2
+        red_smart_terrain_monsters_2              = base:0, territory=1, resource=0
+        red_smart_terrain_monsters_3              = base:0, territory=1, resource=0
+        ros_smart_killers1                        = base:1, territory=1, resource=0
+        ros_smart_monster4                        = base:0, territory=0, resource=1
+        ros_smart_monster5                        = base:0, territory=0, resource=1
+        ros_smart_monster7                        = base:0, territory=1, resource=1
+        ros_smart_poltergeist2                    = base:0, territory=0, resource=1
+        ros_smart_snork1                          = base:0, territory=0, resource=1
+        ros_smart_stalker1                        = base:0, territory=1, resource=0
+        ros_smart_stalker_killers1                = base:1, territory=1, resource=0
+        sar_monolith_bloodsuckers                 = base:0, territory=1, resource=0
+        sar_monolith_general                      = base:0, territory=1, resource=0
+        sar_monolith_guard                        = base:0, territory=1, resource=0
+        sar_monolith_poltergeists                 = base:0, territory=1, resource=0
+        sar_monolith_sklad                        = base:0, territory=1, resource=0
+        sar_monolith_zombies                      = base:0, territory=1, resource=0
+        trc_sim_1                                 = base:0, territory=1, resource=0
+        trc_sim_10                                = base:0, territory=1, resource=1
+        trc_sim_11                                = base:0, territory=1, resource=0
+        trc_sim_12                                = base:0, territory=1, resource=0
+        trc_sim_13                                = base:0, territory=1, resource=1
+        trc_sim_14                                = base:0, territory=1, resource=0
+        trc_sim_15                                = base:0, territory=1, resource=1
+        trc_sim_16                                = base:0, territory=1, resource=0
+        trc_sim_17                                = base:0, territory=1, resource=0
+        trc_sim_18                                = base:0, territory=1, resource=0
+        trc_sim_19                                = base:0, territory=1, resource=1
+        trc_sim_2                                 = base:0, territory=1, resource=0
+        trc_sim_20                                = base:1, territory=1, resource=0
+        trc_sim_21                                = base:0, territory=1, resource=0
+        trc_sim_3                                 = base:1, territory=1, resource=0
+        trc_sim_4                                 = base:0, territory=1, resource=2
+        trc_sim_5                                 = base:0, territory=1, resource=0
+        trc_sim_6                                 = base:0, territory=1, resource=0
+        trc_sim_7                                 = base:0, territory=1, resource=1
+        trc_sim_8                                 = base:0, territory=1, resource=0
+        trc_sim_9                                 = base:0, territory=1, resource=1
+        val_smart_terrain_1_2                     = base:1, territory=1, resource=0
+        val_smart_terrain_3_0                     = base:0, territory=1, resource=1
+        val_smart_terrain_4_0                     = base:1, territory=1, resource=0
+        val_smart_terrain_5_10                    = base:0, territory=1, resource=0
+        val_smart_terrain_5_7                     = base:0, territory=1, resource=1
+        val_smart_terrain_5_8                     = base:0, territory=1, resource=1
+        val_smart_terrain_6_4                     = base:0, territory=1, resource=1
+        val_smart_terrain_6_5                     = base:0, territory=1, resource=0
+        val_smart_terrain_7_11                    = base:0, territory=1, resource=1
+        val_smart_terrain_7_3                     = base:1, territory=1, resource=0
+        val_smart_terrain_7_4                     = base:1, territory=1, resource=0
+        val_smart_terrain_7_5                     = base:0, territory=1, resource=1
+        val_smart_terrain_7_8                     = base:0, territory=1, resource=0
+        val_smart_terrain_8_6                     = base:0, territory=1, resource=1
+        val_smart_terrain_8_7                     = base:0, territory=1, resource=1
+        val_smart_terrain_8_9                     = base:0, territory=1, resource=0
+        val_smart_terrain_9_10                    = base:0, territory=1, resource=1
+        val_smart_terrain_9_2                     = base:0, territory=1, resource=0
+        val_smart_terrain_9_4                     = base:0, territory=1, resource=1
+        val_smart_terrain_9_6                     = base:0, territory=1, resource=1
+        warlab_common_consciousness_smart_terrain = base:0, territory=0, resource=0
+        weak_lair                                 = base:0, territory=1, resource=0
+        x162_st_burer                             = base:0, territory=1, resource=0
+        x162_st_gigant                            = base:0, territory=1, resource=0
+        x162_st_poltergeist                       = base:0, territory=1, resource=0
+        x162_st_snork                             = base:0, territory=1, resource=0
+        yan_smart_terrain_1_6                     = base:0, territory=1, resource=1
+        yan_smart_terrain_2_4                     = base:0, territory=1, resource=0
+        yan_smart_terrain_2_5                     = base:0, territory=1, resource=1
+        yan_smart_terrain_3_4                     = base:0, territory=1, resource=1
+        yan_smart_terrain_3_6                     = base:0, territory=1, resource=1
+        yan_smart_terrain_4_2                     = base:0, territory=1, resource=1
+        yan_smart_terrain_4_4                     = base:0, territory=0, resource=0
+        yan_smart_terrain_4_5                     = base:0, territory=1, resource=0
+        yan_smart_terrain_5_3                     = base:0, territory=1, resource=1
+        yan_smart_terrain_5_5                     = base:0, territory=1, resource=1
+        yan_smart_terrain_6_2                     = base:0, territory=0, resource=0
+        yan_smart_terrain_6_4                     = base:1, territory=1, resource=0
+        yan_smart_terrain_snork_u                 = base:0, territory=1, resource=0
+        yan_smart_terrain_zombi_spawn             = base:1, territory=1, resource=0
+        zat_a1                                    = base:0, territory=1, resource=0
+        zat_a23_smart_terrain                     = base:0, territory=0, resource=0
+        zat_b100                                  = base:0, territory=1, resource=1
+        zat_b101                                  = base:0, territory=1, resource=0
+        zat_b103_merc_smart                       = base:1, territory=1, resource=0
+        zat_b104_zombied                          = base:0, territory=1, resource=1
+        zat_b106_smart_terrain                    = base:0, territory=1, resource=1
+        zat_b12                                   = base:0, territory=0, resource=0
+        zat_b14_smart_terrain                     = base:0, territory=1, resource=1
+        zat_b18                                   = base:0, territory=1, resource=1
+        zat_b20_smart_terrain                     = base:0, territory=1, resource=1
+        zat_b28                                   = base:0, territory=0, resource=0
+        zat_b33                                   = base:0, territory=0, resource=0
+        zat_b38                                   = base:1, territory=1, resource=0
+        zat_b38u                                  = base:0, territory=0, resource=0
+        zat_b39                                   = base:0, territory=1, resource=0
+        zat_b40_smart_terrain                     = base:1, territory=1, resource=0
+        zat_b42_smart_terrain                     = base:0, territory=1, resource=0
+        zat_b52                                   = base:0, territory=1, resource=1
+        zat_b53                                   = base:0, territory=1, resource=1
+        zat_b54                                   = base:0, territory=1, resource=0
+        zat_b55                                   = base:0, territory=1, resource=0
+        zat_b56                                   = base:0, territory=1, resource=1
+        zat_b5_smart_terrain                      = base:1, territory=1, resource=0
+        zat_b7                                    = base:0, territory=1, resource=1
+        zat_b7_stalker_raider                     = base:0, territory=0, resource=0
+        zat_medic_home_smart                      = base:0, territory=0, resource=0
+        zat_sim_1                                 = base:0, territory=1, resource=0
+        zat_sim_10                                = base:0, territory=1, resource=0
+        zat_sim_11                                = base:0, territory=1, resource=0
+        zat_sim_12                                = base:0, territory=1, resource=0
+        zat_sim_13                                = base:0, territory=1, resource=0
+        zat_sim_14                                = base:0, territory=1, resource=0
+        zat_sim_15                                = base:0, territory=1, resource=0
+        zat_sim_16                                = base:0, territory=1, resource=0
+        zat_sim_17                                = base:0, territory=1, resource=0
+        zat_sim_18                                = base:0, territory=1, resource=0
+        zat_sim_19                                = base:0, territory=1, resource=0
+        zat_sim_2                                 = base:0, territory=1, resource=0
+        zat_sim_20                                = base:0, territory=1, resource=0
+        zat_sim_21                                = base:0, territory=1, resource=0
+        zat_sim_22                                = base:0, territory=1, resource=0
+        zat_sim_23                                = base:0, territory=1, resource=0
+        zat_sim_24                                = base:0, territory=1, resource=0
+        zat_sim_25                                = base:0, territory=1, resource=0
+        zat_sim_26                                = base:0, territory=1, resource=1
+        zat_sim_27                                = base:0, territory=1, resource=0
+        zat_sim_28                                = base:0, territory=1, resource=0
+        zat_sim_29                                = base:0, territory=1, resource=0
+        zat_sim_3                                 = base:0, territory=1, resource=0
+        zat_sim_30                                = base:0, territory=1, resource=0
+        zat_sim_4                                 = base:0, territory=1, resource=0
+        zat_sim_5                                 = base:0, territory=1, resource=0
+        zat_sim_6                                 = base:0, territory=1, resource=0
+        zat_sim_7                                 = base:0, territory=1, resource=0
+        zat_sim_8                                 = base:0, territory=1, resource=0
+        zat_sim_9                                 = base:0, territory=1, resource=0
+        zat_stalker_base_smart                    = base:1, territory=1, resource=0
+        zombie_smart_ds_mlr_1                     = base:0, territory=1, resource=0
+        zombie_smart_ds_mlr_2                     = base:0, territory=1, resource=0
+ 

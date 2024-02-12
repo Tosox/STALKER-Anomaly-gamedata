@@ -1,0 +1,123 @@
+[logic@pri_a25_rogue]
+suitable = {=check_npc_name(stalker_rogue_oa) -stalker_rogue_dialog_oa_lost} true, {=check_npc_name(stalker_rogue_oa) -rogue_respawn_done} true
+active = beh@pain
+prior = 200
+
+[beh@general]
+sound_idle = state
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = panic
+jog_anim = panic
+run_anim = panic
+delay_anim = guard
+meet = meet
+combat_ignore_cond = {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+use_camp = false
+invulnerable = true
+
+
+[beh@pain]:beh@general
+pt1 = 86400000,psy_pain | pos:-108.32179260254,4.2107539176941,-101.5740737915 look:-107.68628358841,4.2107539176941,-102.34489518404
+path_end = loop
+meet = meet_psy
+on_info = {+stalker_rogue_dialog_oa_monolith} beh@psy
+on_info2 = {+pri_a18_rogue_healed} beh@healed
+
+[beh@psy]:beh@pain
+invulnerable = false
+meet = meet_psycho
+
+[beh@healed]:beh@general
+pt1 = 86400000,guard | pos:-108.32179260254,4.2107539176941,-101.5740737915 look:-107.68628358841,4.2107539176941,-102.34489518404
+meet = meet2
+on_info = {+pri_a18_rogue_healed_go} animpoint@stalker_rogue_healed_go
+
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[meet_psy]:meet
+close_anim 		= psy_pain
+close_victim 	= nil
+close_distance  = 10
+far_distance 	= 0
+
+[meet_psycho]:meet_psy
+close_anim 		= psy_shoot
+close_victim 	= actor
+close_distance  = 20
+far_distance 	= 0
+
+[meet2]:meet
+close_anim 		= guard
+close_victim 	= actor
+close_distance  = 20
+far_distance 	= 0
+
+
+; [walker@pri_a18_rogue]
+; def_state_standing = psy_pain
+; def_state_moving = panic
+; path_walk = pri_a18_monolith_1_walk
+; path_look = pri_a18_monolith_1_look
+; use_camp = false 
+; combat_ignore_cond = true
+; combat_ignore_keep_when_attacked = true
+; invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+; gather_items_enabled = false
+; help_wounded_enabled = false
+; corpse_detection_enabled = false
+
+; meet = meet_psy
+
+; [walker@stalker_rogue_psy]:walker@pri_a18_rogue
+; meet = meet_psycho
+
+; [walker@stalker_rogue_healed]:walker@pri_a18_rogue
+; def_state_standing = guard
+; def_state_moving = assault
+; on_info = {+pri_a18_rogue_healed_go} animpoint@stalker_rogue_healed_go
+; meet = meet2
+
+[animpoint@stalker_rogue_healed_go]
+cover_name = pri_a16_animp_vano
+avail_animations = animpoint_stay_wall
+use_camp = false 
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+invulnerable = false
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+reach_movement = assault
+meet = meet
+on_info = {=npc_in_zone(pri_surge_hide_a16)} %=remove_special_task_squad(stalker_rogue) +pri_a18_rogue_inside%
+meet = no_meet
+
+[animpoint@stalker_rogue_oa]:animpoint@stalker_rogue_healed_go
+reach_movement = patrol
+cover_name = pri_a16_animp_vano
+avail_animations = animpoint_stay_wall
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+out_restr = pri_a16_sr_noweap
+meet = meet

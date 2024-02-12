@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	New Artefacts
+-->
+
+<string_table>
+	<string id="st_af_cocoon_name">
+		<text>Cocoon</text>
+	</string>
+	<string id="st_af_cocoon_descr">
+		<text>A formation of gravitational nature. A useless trinket, yet is highly valued by collectors and jewellers. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_cell_name">
+		<text>Cell</text>
+	</string>
+	<string id="st_af_cell_descr">
+		<text>An artefact of gravitational nature. A useless trinket, yet is highly valued by collectors and jewellers. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_fountain_name">
+		<text>Fountain</text>
+	</string>
+	<string id="st_af_fountain_descr">
+		<text>An anomaly of presumably gravitational nature. It does not have any useful properties, but because of it's bizarre shape it is very valued by collectors. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_spaika_name">
+		<text>Spike</text>
+	</string>
+	<string id="st_af_spaika_descr">
+		<text>Looks much like a petrified formation. Is an anomaly of presumably gravitational nature. Has no useful properties, Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_signet_name">
+		<text>Signet</text>
+	</string>
+	<string id="st_af_signet_descr">
+		<text>Some stalkers call this artefact the "Amulet". Quite useless, yet some stalkers believe that this artefact brings good luck. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_repei_name">
+		<text>Thistle</text>
+	</string>
+	<string id="st_af_repei_descr">
+		<text>It is quite often spawned by anomalies of a gravitational nature. It has no valuable properties, but the absence of any harmful effects on the body makes it a must-have for many stalkers. Light, and very valued by jewellers and collectors. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_bat_name">
+		<text>Bat</text>
+	</string>
+	<string id="st_af_bat_descr">
+		<text>A very beautiful abnormal formation. Has no useful properties, Not radioactive and quite heavy. Valued by collectors.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_sun_name">
+		<text>Sun</text>
+	</string>
+	<string id="st_af_sun_descr">
+		<text>A rare specimen that is very much appreciated by collectors. Has no useful properties, but it is an inexhaustible source of light, very heavy. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_ear_name">
+		<text>Heart</text>
+	</string>
+	<string id="st_af_ear_descr">
+		<text>Artefact with a bizarre shape. Its core resembles a human body. Has no useful properties, Not radioactive. Valuable to collectors outside of the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_chelust_name">
+		<text>Chain</text>
+	</string>
+	<string id="st_af_chelust_descr">
+		<text>A very strange artefact. Generates a strong gravitational field while nothing touches it. Has no useful properties, very heavy. Valuable to collectors outside of the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_atom_name">
+		<text>Atom</text>
+	</string>
+	<string id="st_af_atom_descr">
+		<text>A rare and beautiful abnormal formation. Looks like an Atom. Is a weak source of heat. Has no useful properties, Not radioactive. Very valuable to collectors .\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_lighthouse_name">
+		<text>Beacon</text>
+	</string>
+	<string id="st_af_lighthouse_descr">
+		<text>A clot of superdense substance. Contains valuable materials that are used in production, so there is a huge demand for it in the area unaffected by the Zone. Not radioactive, Has no useful properties.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_fire_loop_name">
+		<text>Knot</text>
+	</string>
+	<string id="st_af_fire_loop_descr">
+		<text>A necessary condition for the generation of this artefact is the close impact of a thermal anomaly. It has a bizarre appearance and is therefore appreciated by collectors. Not radioactive, Has no useful properties.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_zhelch_name">
+		<text>Scar</text>
+	</string>
+	<string id="st_af_zhelch_descr">
+		<text>The artefact has a calming effect on the human nervous system. Also very valued by jewellers. Has no useful properties. Generates a very weak gravitational and electric field. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_sandstone_name">
+		<text>Sandstone</text>
+	</string>
+	<string id="st_af_sandstone_descr">
+		<text>An artefact, which is formed in zones with extreme temperatures. Has no useful properties and Not radioactive. Does not attract collectors or jewellers, but it contains a small amount of gold, so it has some value.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_kislushka_name">
+		<text>Sourpuss</text>
+	</string>
+	<string id="st_af_kislushka_descr">
+		<text>A hollow spherical formation resembling a transparent parchment of some sorts. Covered with a layer of film, pleasant to the touch. Has no useful properties, Not radioactive. Valued by collectors.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_black_angel_name">
+		<text>Black Angel</text>
+	</string>
+	<string id="st_af_black_angel_descr">
+		<text>A root-like artefact. When not in contact with anything, it lets out a bit of steam from it's surface. Very valued by collectors. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_grapes_name">
+		<text>Grapes</text>
+	</string>
+	<string id="st_af_grapes_descr">
+		<text>Amber-like substance of a slight greenish hue. As a result of powerful anomalies it is very heavy. Very valued by collectors. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_skull_miser_name">
+		<text>Miser's skull</text>
+	</string>
+	<string id="st_af_skull_miser_descr">
+		<text>Very light and fragile artefact. Has absolutely no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_star_phantom_name">
+		<text>Phantom star</text>
+	</string>
+	<string id="st_af_star_phantom_descr">
+		<text>Formed from an Anomaly. It is a plasma-like substance in a transparent pulsating shell. Generates a weak gravitational field. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_medallion_name">
+		<text>Medal</text>
+	</string>
+	<string id="st_af_medallion_descr">
+		<text>It is a small hoop with four embedded parts of a streamlined triangular shape, which have two pairs of opposite charges arbitrarily changing their location within the design. Valued by collectors. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_peas_name">
+		<text>Moon</text>
+	</string>
+	<string id="st_af_peas_descr">
+		<text>Crescent-shaped artefact. Generates a very dim light. Has no useful properties. Not radioactive. Has some value to collectors and jewellers.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_generator_name">
+		<text>Generator</text>
+	</string>
+	<string id="st_af_generator_descr">
+		<text>This artefact generates weak electric currents and an electromagnetic field. It is a source of energy and therefore very much valued outside the perimeter. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_ball_name">
+		<text>Ball</text>
+	</string>
+	<string id="st_af_ball_descr">
+		<text>There is no data on the conditions under which this round artefact is formed, hence the name, but practice shows that it is most often found in places of increased electrical activity. Very agile and bouncy artefact. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_fonar_name">
+		<text>Lamp</text>
+	</string>
+	<string id="st_af_fonar_descr">
+		<text>An artefact with electric properties. Emits some energy and glows. Has no useful properties. Not radioactive. Quite interesting for collectors.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_tapeworm_name">
+		<text>Tapeworm</text>
+	</string>
+	<string id="st_af_tapeworm_descr">
+		<text>This is pure silicon dioxide, if we exclusively take into account the atomic mass of matter. Displays strange behaviour. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_moh_name">
+		<text>Moss</text>
+	</string>
+	<string id="st_af_moh_descr">
+		<text>An electric artefact. Has no useful properties. Not radioactive. Has no value.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_serofim_name">
+		<text>Seraphim</text>
+	</string>
+	<string id="st_af_serofim_descr">
+		<text>An artefact of electric nature. Generates a temporary gravitational field. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_elektron_name">
+		<text>Electron</text>
+	</string>
+	<string id="st_af_elektron_descr">
+		<text>This artefact is a product of electrical anomalies. Very heavy. Has no useful properties. Not radioactive. Very valued beyond the perimeter.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_kogot_name">
+		<text>Claw</text>
+	</string>
+	<string id="st_af_kogot_descr">
+		<text>A beautiful glass-like formation from electrostatic anomalies. Has no useful properties. Not radioactive. Has no value beyond the perimeter.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_af_vaselisk_name">
+		<text>Basilisk</text>
+	</string>
+	<string id="st_af_vaselisk_descr">
+		<text>One of the few artefacts in the Zone, which copes well with all kinds of physical influences on its owner.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_geliy_name">
+		<text>Helium</text>
+	</string>
+	<string id="st_af_geliy_descr">
+		<text>A bright (literally) representative of the family of electrostatic artefacts. It gives off a gaseous substance that has a beneficial effect on the body. Due to its high efficiency, it is in large demand.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_gimlet_name">
+		<text>Gimlet </text>
+	</string>
+	<string id="st_af_gimlet_descr">
+		<text>Bowl-shaped petals of the artefact release a powerful gaseous stimulant. The result of which is a positive change in human hormones.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	<string id="st_af_dragon_eye_name">
+		<text>Dragon's eye</text>
+	</string>
+	<string id="st_af_dragon_eye_descr">
+		<text>The artefact is mostly formed in fiery anomalies and has the appearance of a reptile's eye. Has no useful properties. Not radioactive.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[ui_gray_2] junk\n
+		%c[d_cyan] • %c[ui_gray_2] can not be placed in a container</text>
+	</string>
+	
+	<string id="st_arty_save">
+		<text>Eye of the Noosphere</text>
+	</string>
+	<string id="st_arty_save_descr">
+		<text>One of the most mysterious artefacts in the Zone, the Eye of the Noosphere can transport its wielder back in time, even to escape death. A tight squeeze of the artefact activates its ability, creating a restoration point to go back to on activation or death. Frequent use can cause the artefact to change colour, but if discharged too frequently it may cease to function altogether. The Eye gradually restores its power over time, supposedly being fuelled by the anomalous energy of the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[ui_white] • %c[0,255,215,0] superartefact</text>
+	</string>
+</string_table>

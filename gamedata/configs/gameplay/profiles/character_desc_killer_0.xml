@@ -1,0 +1,19 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_killer_0</class>
+<community>killer</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="1000" max="3000" infinitive="0"/>
+<name>GENERATE_NAME_stalker</name>
+<rank min="2000" max="5000" />
+<reputation min="-1000" max="1500" />
+<supplies>
+#include "gameplay\loadouts\killer_base.ltx"
+#include "gameplay\loadouts\killer_tier_1.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

@@ -1,0 +1,508 @@
+-------------------------------------
+-- Made by Tronex
+-- Last modification: 2020/1/20
+
+-- Companions trade
+-------------------------------------
+
+
+local w_unit = game.translate_string("st_kg")
+local clr_r,clr_2,clr_d,clr_w,clr_o
+
+local item_order = {}
+function set_item_order()
+	local n = ini_sys:line_count("item_kind_order")
+	for i=0,n-1 do
+		local result, kind, order = ini_sys:r_line_ex("item_kind_order",i,"","")
+		if kind and order then
+			item_order[kind] = tonumber(order) or 30
+		end
+	end
+end
+
+function functor_inv(t,a,b)
+--[[
+	local w1 = ini_sys:r_float_ex(t[a],"inv_grid_width") or 1
+	local h1 = ini_sys:r_float_ex(t[a],"inv_grid_height") or 1
+	local w2 = ini_sys:r_float_ex(t[b],"inv_grid_width") or 1
+	local h2 = ini_sys:r_float_ex(t[b],"inv_grid_height") or 1
+	return (w1*h1 > w2*h2)
+--]]
+
+	local kind_1 = ini_sys:r_string_ex(t[a],"kind")
+	local kind_2 = ini_sys:r_string_ex(t[b],"kind")
+	local order_1 = item_order[kind_1] or 30
+	local order_2 = item_order[kind_2] or 30
+	
+	return (order_1 < order_2)
+end
+
+-------------------------------------------------------------------
+GUI = nil -- instance, don't touch
+function start(npc)
+	if (not npc) then
+		return
+	end
+	
+	hide_hud_inventory()
+	
+	if is_empty(item_order) then
+		set_item_order()
+	end
+	
+	if (not GUI) then
+		GUI = UICompanionInv()
+	end
+
+	if (GUI) and (not GUI:IsShown()) then
+		GUI:ShowDialog(true)
+		GUI:Reset(npc)
+		
+		Register_UI("UICompanionInv","ui_companion_inv")
+	end
+end
+
+
+-------------------------------------------------------------------
+class "UICompanionInv" (CUIScriptWnd)
+
+function UICompanionInv:__init() super()
+	self.npc_id = nil
+	self.highlight_player = nil
+	self.highlight_npc = nil
+	self.cells_player = {}
+	self.cells_npc = {}
+
+	self.overweight = nil -- set by first UpdateWeight
+	self.block_input = false
+	self.delay_time = 0.03
+	
+	clr_r = utils_xml.get_color("d_red")
+	clr_2 = utils_xml.get_color("ui_gray_1")
+	clr_d = utils_xml.get_color("ui_gray_2")
+	clr_w = utils_xml.get_color("pda_white")
+	clr_o = utils_xml.get_color("d_orange")
+
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function UICompanionInv:__finalize()
+end
+
+function UICompanionInv:InitControls()
+	self:SetWndRect(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	self:Enable(true)
+	
+	self.xml				= CScriptXmlInit()
+	local xml = self.xml
+	xml:ParseFile("ui_companion_inv.xml")
+	
+	self.dialog = xml:InitStatic("main", self)
+
+	-- Player
+	self.player_side        = xml:InitStatic("main:right_side", self.dialog)
+	xml:InitStatic("inventory:background", self.player_side)
+	self.player_inv         = xml:InitScrollView("inventory:scroll_inv", self.player_side)
+	self.player_info        = xml:InitStatic("inventory:ch_info", self.player_side)
+	self.player_name        = xml:InitTextWnd("inventory:ch_info:name_static", self.player_info)
+	self.player_community   = xml:InitTextWnd("inventory:ch_info:community_static", self.player_info)
+	self.player_icon        = xml:InitStatic("inventory:ch_info:icon", self.player_info)
+	self.player_money       = xml:InitTextWnd("inventory:money_static", self.player_side)
+	self.player_weight      = xml:InitTextWnd("inventory:weight", self.player_side)
+	xml:InitStatic("inventory:weight_caption", self.player_side)
+	self.btn_giveall 		= xml:Init3tButton("inventory:putall_button", self.player_side)
+	self:Register(self.btn_giveall, "give_all")
+	self.btn_giveall:Show(false)
+	
+	-- NPC
+	self.npc_side           = xml:InitStatic("main:left_side", self.dialog)
+	xml:InitStatic("inventory:background", self.npc_side)
+	self.npc_inv            = xml:InitScrollView("inventory:scroll_inv", self.npc_side)
+	self.npc_info           = xml:InitStatic("inventory:ch_info", self.npc_side)
+	self.npc_name           = xml:InitTextWnd("inventory:ch_info:name_static", self.npc_info)
+	self.npc_community      = xml:InitTextWnd("inventory:ch_info:community_static", self.npc_info)
+	self.npc_icon           = xml:InitStatic("inventory:ch_info:icon", self.npc_info)
+	self.npc_money          = xml:InitTextWnd("inventory:money_static", self.npc_side)
+	self.npc_weight         = xml:InitTextWnd("inventory:weight", self.npc_side)
+	xml:InitStatic("inventory:weight_caption", self.npc_side)
+	self.btn_takeall 		= xml:Init3tButton("inventory:takeall_button", self.npc_side)
+	self:Register(self.btn_takeall, "take_all")
+	
+	-- Hint Window
+	self.hint_wnd = xml:InitFrame("hint_wnd:background",self)
+	self.hint_wnd:SetAutoDelete(false)
+	self.hint_wnd_text = xml:InitTextWnd("hint_wnd:text",self.hint_wnd)
+	self.hint_wnd:Show(false)
+	
+	-- Message Window 
+	self.msg_wnd = xml:InitFrame("hint_wnd:background",self)
+	self.msg_wnd:SetAutoDelete(false)
+	self.msg_wnd_text = xml:InitTextWnd("hint_wnd:text",self.msg_wnd)
+	self.msg_wnd_text:SetTextAlignment(2)
+	
+	self.msg_wnd:Show(false)
+	self.msg_wnd:SetColor(GetARGB(255,0,0,0))
+end
+
+function UICompanionInv:InitCallBacks()
+	self:AddCallback("player_inv", ui_events.BUTTON_CLICKED, self.OnInvClicked_player, self)
+	self:AddCallback("npc_inv"  , ui_events.BUTTON_CLICKED, self.OnInvClicked_comp, self)
+	self:AddCallback("take_all"  , ui_events.BUTTON_CLICKED, self.OnBtn_TakeAll, self)
+	self:AddCallback("give_all"  , ui_events.BUTTON_CLICKED, self.OnBtn_GiveAll, self)
+end
+
+function UICompanionInv:Update()
+	CUIScriptWnd.Update(self)
+	
+	-- Warning messages timer 
+	if (self.msg_wnd_timer and time_global() > self.msg_wnd_timer) then 
+		self.msg_wnd_timer = nil
+		self.msg_wnd:Show(false)
+	end
+	
+	for id,v1 in pairs(self.cells_player) do
+		if (v1.btn and v1.btn:IsCursorOverWindow()) then
+			local name = ui_item.get_sec_name(v1.sec)
+			local str = clr_w .. name .. " \\n \\n"
+			str = str .. clr_o .. " • " .. clr_d .. game.translate_string("ui_total_weight") .. ": " .. clr_o .. tostring(v1.weight) .. " " .. w_unit
+			self:SetHint(str)
+			self.highlight_player = id
+			return
+		end
+	end
+	
+	for id,v1 in pairs(self.cells_npc) do
+		if (v1.btn and v1.btn:IsCursorOverWindow()) then
+			local name = ui_item.get_sec_name(v1.sec)
+			local str = clr_w .. name .. " \\n \\n"
+			str = str .. clr_o .. " • " .. clr_d .. game.translate_string("ui_total_weight") .. ": " .. clr_o .. tostring(v1.weight) .. " " .. w_unit
+			self:SetHint(str)
+			self.highlight_npc = id
+			return
+		end
+	end
+	
+	self.hint_wnd:Show(false)
+end 
+
+function UICompanionInv:SetMsg(text,tmr)
+	if (text == "") then 
+		return 
+	end
+	self.msg_wnd:Show(true)
+	self.msg_wnd_text:SetText(text)
+	self.msg_wnd_text:AdjustHeightToText()
+	self.msg_wnd_text:SetWndSize(vector2():set(820,self.msg_wnd_text:GetHeight()+10))
+	self.msg_wnd_text:SetWndPos(vector2():set(0,20))
+	
+	self.msg_wnd:SetWndSize(vector2():set(820,self.msg_wnd_text:GetHeight()+44))
+	self.msg_wnd:SetWndPos(vector2():set(0,80))
+
+	self.msg_wnd_timer = time_global() + 1000*tmr
+end
+
+function UICompanionInv:SetHint(text,pos)
+	if (text == "") then
+		return
+	end
+	self.hint_wnd:Show(true)
+	self.hint_wnd_text:SetText(text)
+	self.hint_wnd_text:AdjustHeightToText()
+	
+	local w = self.hint_wnd:GetWidth()
+	w = w >= 96 and w or 96
+	local h = self.hint_wnd_text:GetHeight()+44
+	h = h >= 96 and h or 96
+	self.hint_wnd:SetWndSize(vector2():set(w,h))
+	
+	pos = pos or GetCursorPosition()
+	pos.y = pos.y - self.hint_wnd:GetHeight()
+	pos.x = pos.x - self.hint_wnd:GetWidth()
+	self.hint_wnd:SetWndPos(pos)
+	
+	FitInRect(self.hint_wnd,Frect():set(0,0,1024,768),0,100)
+end
+
+---------------< Management >---------------
+function UICompanionInv:Reset(npc)
+	if (not npc) then
+		return
+	end
+	
+	self.npc_id = npc:id()
+	self.highlight_player = nil
+	self.highlight_npc = nil
+	self.block_input = false
+	
+	-- Player
+	local actor = db.actor
+	self.player_name:SetText( alife():actor():character_name() )
+	self.player_community:SetText( game.translate_string(actor:character_community()) )
+	self.player_icon:InitTexture( actor:character_icon() )
+	self.player_money:SetText( actor:money() .. " RU" )
+	
+	local player_inv = axr_companions.get_inventory_table(actor, AC_ID, 2)
+	self:InitInventoryCells(player_inv, self.player_inv, self.cells_player, "player_inv")
+	
+	-- NPC
+	self.npc_name:SetText( npc:character_name() )
+	self.npc_community:SetText( game.translate_string(npc:character_community()) )
+	self.npc_icon:InitTexture( npc:character_icon() )
+	self.npc_money:SetText( npc:money() .. " RU" )
+
+	local npc_inv = axr_companions.get_inventory_table(npc, npc:id(), 1)
+	self:InitInventoryCells(npc_inv, self.npc_inv, self.cells_npc, "npc_inv")
+	
+	-- update weight
+	self:ResetWeight(npc, player_inv)
+	
+	-- hide active item
+	actor_effects.toggle_active_slot(0) 
+	
+	-- sound effect
+	utils_obj.play_sound("interface\\inv_open")
+end
+
+function UICompanionInv:ResetWeight(npc, inv_table)
+	local over_weight, tot_weight, max_weight = axr_companions.is_overweight(npc, self.npc_id)
+	if not (tot_weight and max_weight) then
+		return
+	end
+	
+	-- NPC
+	self.overweight = over_weight
+	
+	local clr = over_weight and clr_r or ""
+	local str = clr .. tostring(round_100(tot_weight)) .. " / " .. tostring(max_weight) .. " " .. w_unit
+	self.npc_weight:SetText(str)
+	
+	-- Player
+	local actor_weight = db.actor:get_total_weight()
+	str = tostring(round_100(actor_weight))  .. " " .. w_unit
+	self.player_weight:SetText( str )
+	
+	-- Toggle give all button
+	local inv_weight = inv_table and axr_companions.get_inventory_weight(inv_table)
+	if inv_weight and (inv_weight <= (max_weight - tot_weight)) then
+		self.btn_giveall:Show(true)
+	else
+		self.btn_giveall:Show(false)
+	end
+end
+
+function UICompanionInv:InitInventoryCells(s_table, s_scroll, s_cells, callback)
+	local xml = self.xml
+
+	local function count_grids_num(t)
+		local cnt = 0
+		for _,sec in pairs(t) do
+			local w = ini_sys:r_float_ex(sec,"inv_grid_width") or 1
+			local h = ini_sys:r_float_ex(sec,"inv_grid_height") or 1
+			cnt = cnt + (w * h)
+		end
+		return cnt
+	end
+	
+	s_scroll:Clear()
+	empty_table(s_cells)
+	
+	local _st = xml:InitStatic("inventory:inv_form", nil)
+	
+	local m_ceil = math.ceil
+	local grid = xml:InitStatic("inv_grid", nil)
+	local grid_w = grid:GetWidth()
+	local grid_h = grid:GetHeight()
+	local tot_grid_w = math.floor(_st:GetWidth() / grid_w)
+	local tot_grid_h = math.floor(_st:GetHeight() / grid_h)
+	local tot_grid_num = math.max( count_grids_num(s_table) , (tot_grid_w * tot_grid_h))
+	local tot_grid_ind = {}
+	for i=1,tot_grid_num do
+		local row = m_ceil(i/tot_grid_w)
+		tot_grid_ind[row] = tot_grid_ind[row] or {}
+		tot_grid_ind[row][#tot_grid_ind[row] + 1] = true
+	end
+
+	for id,sec in spairs(s_table,functor_inv) do
+		local w = ini_sys:r_float_ex(sec,"inv_grid_width") or 1
+		local h = ini_sys:r_float_ex(sec,"inv_grid_height") or 1
+		s_cells[id] = {}
+		s_cells[id].ico_tmp = xml:InitStatic("inv_grid", _st)
+		s_cells[id].btn = xml:Init3tButton("inv_btn_" .. tostring(w) .. "_" .. tostring(h), _st)
+		s_cells[id].ico = xml:InitStatic("inv_grid", _st)
+		s_cells[id].sec = sec
+		
+		local weight = ini_sys:r_float_ex(sec,"inv_weight")
+		if IsItem("multiuse",sec) then
+			local obj = level.object_by_id(id)
+			if obj then
+				local empty_weight = ini_sys:r_float_ex(sec,"empty_weight")
+				local max_weight = ini_sys:r_float_ex(sec,"max_uses")
+				weight = ((obj:get_remaining_uses()/max_weight) * (weight - empty_weight)) + empty_weight
+			end
+		end
+		
+		s_cells[id].weight = weight
+		
+		tot_grid_h = utils_xml.set_grid_element(
+			{ id = id , sec = sec , g_w = grid_w , g_h = grid_h , w = w , h = h , g_row = tot_grid_w },
+			tot_grid_ind,
+			s_cells[id].btn, s_cells[id].ico, s_cells[id].ico_tmp
+		)
+		utils_xml.set_icon(sec, nil, s_cells[id].ico_tmp, s_cells[id].ico)
+		self:Register(s_cells[id].btn, callback)
+	end
+	
+	_st:SetWndSize(vector2():set(_st:GetWidth(),tot_grid_h * grid_h))
+	s_scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(false)
+end
+
+function UICompanionInv:Delay(npc, to_npc)
+	printf("npc: %s - to_npc: %s", npc and npc:name(), to_npc)
+	if (npc) then
+
+		-- update target inventory and weight
+		if to_npc then
+			local npc_inv = axr_companions.get_inventory_table(npc, npc:id(), 1)
+			self:InitInventoryCells(npc_inv, self.npc_inv, self.cells_npc, "npc_inv")
+			self:ResetWeight(npc)
+		else
+			local player_inv = axr_companions.get_inventory_table(db.actor, AC_ID, 2)
+			self:InitInventoryCells(player_inv, self.player_inv, self.cells_player, "player_inv")
+			self:ResetWeight(npc, player_inv)
+		end
+	end
+	
+	self.block_input = false
+	
+	return true
+end
+
+function UICompanionInv:OnInvClicked_player()
+	if (self.block_input) then return end
+	if self.overweight then return end
+	if (not self.highlight_player) then return end
+
+	local item_id = self.highlight_player
+	local npc_id = self.npc_id
+	local npc = get_object_by_id(npc_id)
+	if (not npc) then
+		return
+	end
+	
+	-- transfer item
+	axr_companions.transfer_item(item_id, db.actor, npc)
+	
+	-- hide icon
+	if self.cells_player[item_id] then
+		if self.cells_player[item_id].btn then
+			self.cells_player[item_id].btn:Show(false)
+		end
+		if self.cells_player[item_id].ico then
+			self.cells_player[item_id].ico:Show(false)
+		end
+		if self.cells_player[item_id].ico_tmp then
+			self.cells_player[item_id].ico_tmp:Show(false)
+		end
+	end
+	
+	self.block_input = true
+	CreateTimeEvent(0, "item_exchange", self.delay_time, self.Delay, self, npc, true)
+end
+
+function UICompanionInv:OnInvClicked_comp()
+	if (self.block_input) then return end
+	if (not self.highlight_npc) then return end
+
+	local item_id = self.highlight_npc
+	local npc_id = self.npc_id
+	local npc = get_object_by_id(npc_id)
+	
+	-- transfer item
+	axr_companions.transfer_item(item_id, npc, db.actor)
+	
+	-- hide icon
+	if self.cells_npc[item_id] then
+		if self.cells_npc[item_id].btn then
+			self.cells_npc[item_id].btn:Show(false)
+		end
+		if self.cells_npc[item_id].ico then
+			self.cells_npc[item_id].ico:Show(false)
+		end
+		if self.cells_npc[item_id].ico_tmp then
+			self.cells_npc[item_id].ico_tmp:Show(false)
+		end
+	end
+	
+	self.block_input = true
+	CreateTimeEvent(0, "item_exchange", self.delay_time, self.Delay, self, npc, false)
+end
+
+function UICompanionInv:OnBtn_TakeAll()
+	if (self.block_input) then return end
+	
+	local npc_id = self.npc_id
+	local npc = get_object_by_id(npc_id)
+	if (not npc) then
+		return
+	end
+	
+	local npc_inv = axr_companions.get_inventory_table(npc, npc:id(), 1)
+	if is_empty(npc_inv) then
+		return
+	end
+	
+	-- transfer all items
+	axr_companions.transfer_all_item(npc, db.actor)
+	
+	self.block_input = true
+	CreateTimeEvent(0, "item_exchange", self.delay_time, self.Delay, self, npc, false)
+	CreateTimeEvent(1, "item_exchange", self.delay_time, self.Delay, self, npc, true)
+end
+
+function UICompanionInv:OnBtn_GiveAll()
+	if (self.block_input) then return end
+	
+	local npc_id = self.npc_id
+	local npc = get_object_by_id(npc_id)
+	if (not npc) then
+		return
+	end
+	
+	local actor_inv = axr_companions.get_inventory_table(db.actor, AC_DC, 3)
+	if is_empty(actor_inv) then
+		return
+	end
+	
+	-- transfer all items
+	axr_companions.transfer_all_item(db.actor, npc)
+	
+	self.block_input = true
+	CreateTimeEvent(0, "item_exchange", self.delay_time, self.Delay, self, npc, false)
+	CreateTimeEvent(1, "item_exchange", self.delay_time, self.Delay, self, npc, true)
+end
+
+---------------< End >---------------
+function UICompanionInv:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		local bind = dik_to_bind(dik)
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+			if dik == DIK_keys.DIK_ESCAPE then
+				self:Close()
+			end
+		end
+	end
+	return res
+end
+
+function UICompanionInv:Close()
+	utils_obj.play_sound("interface\\inv_close")
+
+	self:HideDialog()
+	self:Show(false)
+	
+	Unregister_UI("UICompanionInv")
+end

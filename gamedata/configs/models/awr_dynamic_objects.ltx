@@ -1,0 +1,26 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	Advanced Weapon Repair Mod 0.3 by Faustle (2017)
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Modified by Tronex
+; 2019/5/5
+; Removed all sections for AWR disassembled weapons models, they are no longer used
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Наследуемся от класса O_PHYS_S для получения возможности работать с cse_abstract (se_item.script, class_register.script) для изменение direction объекта
+; Список оружия сгенерирован python-парсером (dyn_obj.py) в папке с дополнениями
+[awr_physic_object]
+GroupControlSection 			= spawn_group
+$spawn        					= "physics\object"
+$prefetch       				= 8
+class      			 			= O_PHYS_S
+remove_time     				= 60
+script_binding      			= bind_physic_object.init
+
+[awr_tiski]:awr_physic_object
+visual                     		= dynamics\workshop_room\awr_tiski.ogf
+script_binding					= bind_physic_object.init
+fixed_bones						= link

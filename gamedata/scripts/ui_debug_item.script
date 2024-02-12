@@ -1,0 +1,1803 @@
+
+--[[
+	Tronex
+	2019/10/4
+	
+	Item Editor
+
+	The item editor allows you to edit item configs and save/test your changes directly in-game.
+	The GUI is interactive and easy to use, supporting weapons/outfits/artefacts editing.
+	You can select a relative item in the list to compare its stats to your active item.
+	Modified values are cached temporarly for the item you're working on, you can return to it if you turn the editor off.
+	
+	Attention
+	Items configs must be unpacked before working with the editor, they must be in (gamedata/configs/items).
+	Don't forget to make a backup of the configs for reference.
+	
+	Keybinds
+	• Arrow keys: parameters navigation.
+	• Numpad 8/2: increase/reduce selected value.
+	• Numpad 9/3: increase/reduce all values of selected parameter.
+	• LShift (hold): x10 value step size / jump 2 parameters.
+	• LAlt (hold): x50 value step size / jump 3 parameters.
+	• Numpad 5: copy current stats.
+	• Numpad 6: paste stored stats.
+	• H: Show help window.
+	• Esc: turn off editor.
+--]]
+
+
+------------------------------------------------------------
+-- Settings
+------------------------------------------------------------
+local enable_debug = false
+
+-- Parameters by item type
+parameters = {
+--[[
+	index    = [number] parameter order on the UI
+	name     = [string] translated string to show on stats comparison
+	from     = [string] for parameters inside other section. Example: immunities parameters don't exist in item section, they exist in a section detemined by "immunities_sect" parameter, so you must use this parameter and script will automatically read the correct section
+	show     = [number 0-2] 0 = don't show this parameter in item comparison | 1 = show it as bar/percentage | 2 = show it as text
+	type     = [number 0-4] 0 = string | 1 = number | 2 = 3d vector | 3 = 4d vector | 
+	min      = [number] parameter minimum value
+	max      = [number] parameter maximum value
+	step     = [number] step size for changes by keybinds
+	reversed = [boolean] when this parameter will be shown as bar, progress will be in reverse to value applied
+--]]
+
+["weapon"] = {
+
+	-- Firepower
+	["hit_power"]             		  			= { index = 1.1		,type = 3		,def = {0,0,0,0}	,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 1	,name = "" 				        },
+	["hit_impulse"]               	  			= { index = 1.2		,type = 1		,def = {0}			,min = 0		,max = 200			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["fire_distance"]                 			= { index = 1.3		,type = 1		,def = {1}			,min = 1		,max = 4000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["bullet_speed"]               	  			= { index = 1.4		,type = 1		,def = {1}			,min = 1		,max = 2000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["rpm"]               	  		  			= { index = 1.5		,type = 1		,def = {1}			,min = 1		,max = 1000			,step = 1 			,from = nil			,show = 1	,name = "" 	        			},
+	["rpm_mode_2"]               	  		  	= { index = 1.6		,type = 1		,def = {1}			,min = 1		,max = 1000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["rpm_empty_click"]               			= { index = 1.7		,type = 1		,def = {1}			,min = 1		,max = 1000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+
+	-- Aim and Accuracy
+	["line_2"]                                  = { index = 2.0		,line = true },
+	["time_to_aim"]               	  			= { index = 2.1		,type = 1		,def = {0}			,min = 0		,max = 20			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_dof"]               	  				= { index = 2.2		,type = 2		,def = {0,0,0}		,min = 0		,max = 180			,step = 0.5 		,from = nil			,show = 0	,name = "" 	        			},
+	["reload_dof"]               	  			= { index = 2.3		,type = 3		,def = {0,0,0,0}	,min = 0		,max = 180			,step = 0.5 		,from = nil			,show = 0	,name = "" 	        			},
+	["control_inertion_factor"]            		= { index = 2.4		,type = 1		,def = {1}			,min = 1		,max = 3			,step = 0.01 		,float = true		,from = nil			,show = 0	,name = "" 	        			},
+	["crosshair_inertion"]      				= { index = 2.5		,type = 1		,def = {5.6}		,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["fire_dispersion_base"]              		= { index = 2.6		,type = 1		,def = {0}			,min = 0		,max = 1.5			,step = 0.001 		,from = nil			,show = 1	,name = "" 	        			},
+
+	-- Jamming
+	["line_3"]                                  = { index = 3.0		,line = true },
+--	["misfire_probability"]           			= { index = 3.1		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+	["misfire_start_condition"]       			= { index = 3.2		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+	["misfire_end_condition"]         			= { index = 3.3		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+	["misfire_start_prob"]            			= { index = 3.4		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+	["misfire_end_prob"]              			= { index = 3.5		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+
+	-- Condition loss
+	["line_4"]                                  = { index = 4.0		,line = true },
+	["condition_shot_dec"]            			= { index = 4.1		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.0001 		,from = nil			,show = 0	,name = "" 	        			},
+	["condition_queue_shot_dec"]      			= { index = 4.2		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.0001 		,from = nil			,show = 0	,name = "" 	        			},
+
+	-- Recoil
+	["line_5"]                                  = { index = 5.0		,line = true },
+	["cam_return"]                              = { index = 5.01	,type = 1		,def = {1}			,min = 0		,max = 1			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+--	["cam_return_stop"]                         = { index = 5.01	,type = 1		,def = {0}			,min = 0		,max = 1			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["cam_relax_speed"]                         = { index = 5.02	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["cam_dispersion"]                          = { index = 5.04	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["cam_dispersion_inc"]                      = { index = 5.05	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["cam_dispersion_frac"]                     = { index = 5.06	,type = 1		,def = {0.7}		,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["cam_max_angle"]                           = { index = 5.07	,type = 1		,def = {1}			,min = 1		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["cam_max_angle_horz"]                      = { index = 5.08	,type = 1		,def = {1}			,min = 1		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["cam_step_angle_horz"]                     = { index = 5.09	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+		
+	["zoom_cam_relax_speed"]                    = { index = 5.10	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_dispersion"]                     = { index = 5.11	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01		,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_dispersion_inc"]                 = { index = 5.12	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01		,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_dispersion_frac"]                = { index = 5.13	,type = 1		,def = {0.7}		,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_max_angle"]                      = { index = 5.14	,type = 1		,def = {1}			,min = 1		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_max_angle_horz"]                 = { index = 5.15	,type = 1		,def = {1}			,min = 1		,max = 180			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_step_angle_horz"]                = { index = 5.16	,type = 1		,def = {0}			,min = 0		,max = 180			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+
+	["PDM_disp_base"]                           = { index = 5.17	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 1	,name = "" 	        			},
+	["PDM_disp_vel_factor"]                     = { index = 5.18	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["PDM_disp_accel_factor"]                   = { index = 5.19	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["PDM_disp_crouch"]                         = { index = 5.20	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["PDM_disp_crouch_no_acc"]                  = { index = 5.21	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+--	["PDM_disp_buckshot"]                       = { index = 5.21	,type = 1		,def = {1}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 1	,name = "" 	        			},
+
+
+	["fire_dispersion_condition_factor"]        = { index = 5.22	,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+
+	-- AI Stats
+	["line_6"]                                  = { index = 6.0		,line = true },
+	["cam_relax_speed_ai"]                      = { index = 6.1		,type = 1		,def = {1}			,min = 1		,max = 360			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_cam_relax_speed_ai"]                 = { index = 6.2		,type = 1		,def = {1}			,min = 1		,max = 360			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["holder_range_modifier"]                   = { index = 6.3		,type = 1		,def = {0}			,min = 0		,max = 10			,step = 0.01 		,from = nil			,show = 0	,name = "" 	        			},
+	["min_radius"]                     			= { index = 6.4		,type = 1		,def = {0}			,min = 0		,max = 1000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	["max_radius"]                     			= { index = 6.5		,type = 1		,def = {0}			,min = 0		,max = 1000			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+	
+
+	-- Weapon properties
+	["line_7"]                                  = { index = 7.0		,line = true },
+	["zoom_enabled"]                            = { index = 7.1		,type = 0		,def = {""} 																,from = nil			,show = 0	,name = "" 	        			},
+	["zoom_rotate_time"]                        = { index = 7.2		,type = 1		,def = {0}			,min = 0		,max = 1			,step = 0.001 		,from = nil			,show = 0	,name = "" 	        			},
+	["scope_zoom_factor"]                       = { index = 7.3		,type = 1		,def = {50}			,min = 1		,max = 100			,step = 1 			,from = nil			,show = 0	,name = "" 	        			},
+
+	["ammo_elapsed"]            	  			= { index = 7.4		,type = 1		,def = {15}			,min = 1		,max = 200			,step = 1 			,from = nil			,show = 2	,name = "" 						                    },
+	["ammo_mag_size"]            	  			= { index = 7.5		,type = 1		,def = {15}			,min = 1		,max = 200			,step = 1 			,from = nil			,show = 2	,name = "" 						                    },
+
+	["cost"]            			  			= { index = 7.6		,type = 1		,def = {100}		,min = 1		,max = 1000000		,step = 10 			,from = nil			,show = 2	,name = "" 						                    },
+},
+
+["outfit"] = {
+	["burn_protection"]                         = { index = 1.1	,    type = 1		,def = {0}		    ,min = 0		,max = 1.15			,step = 0.0115 		,from = nil			,show = 1	,name = "" 	        			                    },
+	["shock_protection"]                        = { index = 1.2	,    type = 1		,def = {0}		    ,min = 0		,max = 4.0			,step = 0.04 		,from = nil			,show = 1	,name = "" 	    			                        },
+	["radiation_protection"]                    = { index = 1.3	,    type = 1		,def = {0}		    ,min = 0		,max = 0.055		,step = 0.00055 	,from = nil			,show = 1	,name = "" 				                            },
+	["chemical_burn_protection"]                = { index = 1.4	,    type = 1		,def = {0}		    ,min = 0		,max = 0.25			,step = 0.0025 		,from = nil			,show = 1	,name = "" 	    			                        },
+	["telepatic_protection"]                    = { index = 1.5	,    type = 1		,def = {0}		    ,min = 0		,max = 0.25			,step = 0.0025 		,from = nil			,show = 1	,name = "" 	        			                    },
+
+	["strike_protection"]                       = { index = 2.1	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01 		,from = nil			,show = 1	,name = "" 	    			                        },
+	["explosion_protection"]                    = { index = 2.2	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01 		,from = nil			,show = 1	,name = "" 				                            },
+	["wound_protection"]                        = { index = 2.3	,    type = 1		,def = {0}		    ,min = 0		,max = 2.2			,step = 0.022 		,from = nil			,show = 1	,name = "" 	    			                        },
+	["fire_wound_protection"]                   = { index = 2.4	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01 		,from = nil			,show = 0	,name = "" 				                            },
+	["hit_fraction_actor"]                      = { index = 2.5	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01 		,from = nil			,show = 2	,name = "" 				                            },
+
+	["burn_immunity"]                           = { index = 3.1	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = ""  			            },
+	["shock_immunity"]                          = { index = 3.2	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = ""				            },
+	["radiation_immunity"]                      = { index = 3.3	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = ""  			            },
+	["telepatic_immunity"]                      = { index = 3.4	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = ""				            },
+	["chemical_burn_immunity"]                  = { index = 3.5	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = "" 				            },
+	["wound_immunity"]                          = { index = 3.6	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = "" 				            },
+	["fire_wound_immunity"]                     = { index = 3.7	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = "" 				            },
+	["explosion_immunity"]                      = { index = 3.8	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = "" 				            },
+	["strike_immunity"]                         = { index = 3.9	,    type = 1		,def = {0}		    ,min = 0		,max = 1.0			,step = 0.01		,from = "immunities_sect"			,show = 1	,name = "" 				            },
+
+	["inv_weight"]            		            = { index = 4.1	,    type = 1		,def = {1}		    ,min = 1		,max = 200			,step = 0.1 		,from = nil			,show = 2	,name = "" 					                        },
+	["additional_inventory_weight"]             = { index = 4.2	,    type = 1		,def = {1}		    ,min = 1		,max = 200			,step = 0.1 		,from = nil			,show = 2	,name = "" 				                            },
+	["additional_inventory_weight2"]            = { index = 4.3	,    type = 1		,def = {1}		    ,min = 1		,max = 200			,step = 0.1 		,from = nil			,show = 0	,name = "" 				                            },
+	["power_loss"]            	 	            = { index = 4.4	,    type = 1		,def = {0}		    ,min = 0		,max = 1			,step = 0.01 		,from = nil			,show = 2	,name = "" 				                            },
+	["artefact_count"]            	            = { index = 4.5	,    type = 1		,def = {0}		    ,min = 0		,max = 5			,step = 1 			,from = nil			,show = 2	,name = "" 		                                    },
+
+	["cost"]            			            = { index = 5.1	,    type = 1		,def = {100}		,min = 1		,max = 1000000		,step = 10 			,from = nil			,show = 2	,name = "" 						                    },
+},
+
+["artefact"] = {
+	["health_restore_speed"]                    = { index = 1.1	,    type = 1		,def = {0}		    ,min = -1*(100/6600)	,max = (100/6600)	,step = (1/6600) 	,from = nil			                    ,show = 1	,name = ""  			            },
+	["radiation_restore_speed"]		            = { index = 1.2	,    type = 1		,def = {0}		    ,min = -1*(100/47000)	,max = (100/47000)	,step = (1/47000) 	,reversed = true	,from = nil			,show = 1	,name = ""  			            },
+	["satiety_restore_speed"]                   = { index = 1.3	,    type = 1		,def = {0}		    ,min = -1*1.0			,max = 1.0			,step = 0.01 		,from = nil			                    ,show = 1	,name = ""  			            },
+	["power_restore_speed"]      	            = { index = 1.4	,    type = 1		,def = {0}		    ,min = -1*(100/30000)	,max = (100/30000)	,step = (1/30000) 	,from = nil			                    ,show = 1	,name = ""  			            },
+	["bleeding_restore_speed"]                  = { index = 1.5	,    type = 1		,def = {0}		    ,min = -1*(100/15000)	,max = (100/15000)	,step = (1/15000) 	,from = nil			                    ,show = 1	,name = ""  			            },
+
+	["burn_immunity"]                           = { index = 2.1	,    type = 1		,def = {0}		    ,min = -1*(100/84800)	,max = (100/84800)	,step = (1/84800)	,from = "hit_absorbation_sect"			,show = 1	,name = ""  			            },
+	["shock_immunity"]                          = { index = 2.2	,    type = 1		,def = {0}		    ,min = -1*(100/8000)	,max = (100/8000)	,step = (1/8000)	,from = "hit_absorbation_sect"			,show = 1	,name = ""				            },
+	["radiation_immunity"]                      = { index = 2.3	,    type = 1		,def = {0}		    ,min = -1*(100/750)		,max = (100/750)	,step = (1/750) 	,from = "hit_absorbation_sect"			,show = 1	,name = ""  			            },
+	["telepatic_immunity"]                      = { index = 2.4	,    type = 1		,def = {0}		    ,min = -1*(100/5800)	,max = (100/5800)	,step = (1/5800)	,from = "hit_absorbation_sect"			,show = 1	,name = ""				            },
+	["chemical_burn_immunity"]                  = { index = 2.5	,    type = 1		,def = {0}		    ,min = -1*(100/19100)	,max = (100/19100)	,step = (1/19100)	,from = "hit_absorbation_sect"			,show = 1	,name = "" 				            },
+	["wound_immunity"]                          = { index = 2.6	,    type = 1		,def = {0}		    ,min = -1*(100/2500)	,max = (100/2500)	,step = (1/2500)	,from = "hit_absorbation_sect"			,show = 1	,name = "" 				            },
+	["fire_wound_immunity"]                     = { index = 2.7	,    type = 1		,def = {0}		    ,min = -1*(100/2500)	,max = (100/2500)	,step = (1/2500)	,from = "hit_absorbation_sect"			,show = 1	,name = "" 				            },
+	["explosion_immunity"]                      = { index = 2.8	,    type = 1		,def = {0}		    ,min = -1*(100/2500)	,max = (100/2500)	,step = (1/2500)	,from = "hit_absorbation_sect"			,show = 1	,name = "" 				            },
+	["strike_immunity"]                         = { index = 2.9	,    type = 1		,def = {0}		    ,min = -1*(100/2500)	,max = (100/2500)	,step = (1/2500)	,from = "hit_absorbation_sect"			,show = 1	,name = "" 				            },
+
+	["degrade_rate"]            	            = { index = 3.1	,    type = 1		,def = {0}		    ,min = 0		        ,max = 1			,step = 0.01 		,from = nil			                    ,show = 0	,name = ""  			            },
+	["additional_inventory_weight"]             = { index = 3.2	,    type = 1		,def = {0}		    ,min = 0		        ,max = 200			,step = 0.1 		,from = nil			                    ,show = 2	,name = ""  			            },
+	["additional_inventory_weight2"]            = { index = 3.3	,    type = 1		,def = {0}		    ,min = 0		        ,max = 200			,step = 0.1 		,from = nil			                    ,show = 0	,name = ""  			            },
+	["inv_weight"]            		            = { index = 3.4	,    type = 1		,def = {0}		    ,min = 1				,max = 200			,step = 0.1 		,from = nil								,show = 2	,name = ""  			            },
+
+	["jump_height"]            	  	            = { index = 4.1	,    type = 1		,def = {0}		    ,min = 0		        ,max = 1			,step = 0.01 		,from = nil			                    ,show = 0	,name = "" 				            },
+	["particles"]            	  	            = { index = 4.2	,    type = 0		,def = {""} 																		,from = nil			    				,show = 0	,name = "" 				            },
+	["det_show_particles"]                      = { index = 4.3	,    type = 0		,def = {""} 																		,from = nil			    				,show = 0	,name = "" 				            },
+	["det_hide_particles"]                      = { index = 4.4	,    type = 0		,def = {""} 																		,from = nil			    				,show = 0	,name = "" 				            },
+	["lights_enabled"]            	            = { index = 4.5	,    type = 0		,def = {""} 																		,from = nil			    				,show = 0	,name = "" 				            },
+	["trail_light_color"]                       = { index = 4.6	,    type = 2		,def = {0,0,0}	    ,min = 0		        ,max = 1			,step = 0.01 		,from = nil			                    ,show = 0	,name = "" 				            },
+	["trail_light_range"]                       = { index = 4.7	,    type = 1		,def = {0}		    ,min = 0		        ,max = 20			,step = 1 			,from = nil			                    ,show = 0	,name = "" 				            },
+
+	["cost"]            			            = { index = 5.1	,    type = 1		,def = {100}		,min = 1		        ,max = 1000000		,step = 10 			,from = nil			                    ,show = 2	,name = ""  			            },
+	["af_rank"]            	  		            = { index = 5.2	,    type = 1		,def = {0}		    ,min = 0		        ,max = 3			,step = 1 			,from = nil			                    ,show = 2	,name = "" 				            },
+},
+
+}
+
+-- Some parameters have unique calculations to represent as bars. If they are found here, their values will come from here
+local read_float = ui_wpn_params.read_float
+local functors = {
+	["weapon"] = {
+		["hit_power"] = function(self, section, from_ini)
+			local hit_power = from_ini and read_float(section, nil, "hit_power") or self.value_g["hit_power"][1]
+
+			if ini_sys:line_exist(section, "ammo_class") then
+				local ammo_list = ini_sys:r_string(section, "ammo_class")
+				if (ammo_list) then
+					local pos = string.find(ammo_list, ",", 1)
+					local ammo = (pos ~= nil) and string.sub(ammo_list, 1, pos-1) or ammo_list
+					local k_hit = ini_sys:r_float_ex(ammo, "k_hit") or 1
+					hit_power = (hit_power ~= 0) and (k_hit*hit_power) or k_hit
+				end
+			end
+			
+			return (normalize_100(hit_power, 0, 1.5) / 100)
+		end,
+		
+		["fire_dispersion_base"] = function(self, section, from_ini)
+			local fire_dispersion_base	= from_ini and read_float(section, nil, "fire_dispersion_base") or self.value_g["fire_dispersion_base"][1]
+			return (normalize_100(fire_dispersion_base, 1.5, 0) / 100)
+		end,
+		
+		["PDM_disp_base"] = function(self, section, from_ini)
+			local PDM_disp_base = from_ini and read_float(section, nil, "PDM_disp_base") or self.value_g["PDM_disp_base"][1]
+			local control_inertion_factor = from_ini and read_float(section, nil, "control_inertion_factor") or self.value_g["control_inertion_factor"][1]
+			return (((normalize_100(PDM_disp_base, 2.1, 0) + normalize_100(control_inertion_factor, 3, 1))/2) / 100)
+		end,
+	},
+}
+
+-- Directory for files to modify by item type
+local t_dir = {
+	["outfit"] = "items\\outfits\\",
+	["weapon"] = "items\\weapons\\",
+	["artefact"] = "items\\items\\",
+	["food"] = "items\\items\\",
+}
+
+
+------------------------------------------------------------
+-- Launcher
+------------------------------------------------------------
+GUI = nil -- instance, don't touch
+local last_item_type, last_section, last_section_2
+function start(owner, object, section, item_type, item_kinds)
+	if (not parameters[item_type]) then
+		printf("%s parameters list is missing from the script ui_debug_item")
+		ui_debug_launcher.resume()
+		return
+	end
+	
+	-- Hide the owner
+	if owner then
+		if (owner:IsShown()) then
+			print_dbg("~ hide owner")
+			owner:HideDialog()
+			owner:Show(false)
+		end
+	else
+		hide_hud_inventory()
+	end
+	
+	-- Show UI
+	if (not GUI) then
+		GUI = UIItemEditor(owner, object, section, item_type, item_kinds)
+	end
+	
+	if (GUI) and (not GUI:IsShown()) then
+		RegisterScriptCallback("on_key_release",on_key_release)
+		RegisterScriptCallback("on_key_hold",on_key_hold)
+		GUI:ShowDialog(true)
+		GUI.section = section
+		GUI.item_type = item_type
+		GUI.id = object:id()
+		
+		GUI:ResetList(item_type, item_kinds)
+		GUI:ResetParameters()
+		GUI:ResetComparison()
+		
+		last_item_type = item_type
+		last_section = section
+
+		Register_UI("UIItemEditor","ui_debug_item")
+	else
+		ui_debug_launcher.resume()
+		printe("! Ok... Something is fucked...")
+	end
+end
+function start_weapon(owner)
+	local item = db.actor:active_item()
+	local section = item and item:section()
+	local parent = section and ini_sys:r_string_ex(section,"parent_section")
+	if parent then
+		section = parent
+	end
+	
+	if section then
+		start(owner, item, section, "weapon", {["w_pistol"]=true,["w_shotgun"]=true,["w_smg"]=true,["w_rifle"]=true,["w_sniper"]=true} )
+	else
+		ui_debug_launcher.resume()
+		actor_menu.set_msg(1, "Hold the weapon you want to edit in your hands first!",5)
+	end
+end
+function start_outfit(owner)
+	local item = db.actor:item_in_slot(12) or db.actor:get_current_outfit()
+	local section = item and item:section()
+	
+	if section then
+		start(owner, item, section, "outfit", {["o_light"]=true,["o_medium"]=true,["o_heavy"]=true,["o_sci"]=true} )
+	else
+		ui_debug_launcher.resume()
+		actor_menu.set_msg(1, "Wear the outfit you want to edit first!",5)
+	end
+end
+function start_artfact(owner)
+	local item
+	
+	local function itr(obj)
+		if db.actor:is_on_belt(obj) then
+			item = obj
+			return true
+		end	
+	end
+	db.actor:inventory_for_each(itr)
+	
+	local section = item and item:section()
+	
+	if section then
+		start(owner, item, section, "artefact", {["i_arty"]=true} )
+	else
+		ui_debug_launcher.resume()
+		actor_menu.set_msg(1, "Put the artefact you want to edit on your belt first!",5)
+	end
+end
+
+
+------------------------------------------------------------
+-- Utilities
+------------------------------------------------------------
+local s_find = string.find
+local s_sub = string.sub
+local clr_o   = GetARGB(255, 250, 150, 75)
+local clr_g1  = GetARGB(255, 170, 170, 170)
+
+local key_timer = 0
+local jump_1 = 1
+local jump_2 = 10
+local jump_3 = 50
+local jump = jump_1
+
+local cache = { value = {} , type = "" , section = "" }
+
+function on_key_release(key)
+	jump = jump_1
+end
+
+function on_key_hold(key)
+	if ui then
+		if (key == DIK_keys["DIK_LSHIFT"]) then
+			jump = jump_2
+			key_timer = time_global() + 200
+		elseif (key == DIK_keys["DIK_LMENU"]) then
+			jump = jump_3
+			key_timer = time_global() + 200
+		end
+	end
+end
+
+function on_game_start()
+	local function on_localization_change()
+		ui = nil -- clear ui to force initing again
+	end
+	RegisterScriptCallback("on_localization_change",on_localization_change)
+end
+
+function print_dbg(...)
+	if enable_debug then
+		printf(...)
+	end
+end
+
+function reset_anim(anim_state)
+	actor_effects.set_animations(anim_state)
+	return true
+end
+
+
+--===========================================================
+--///////////////////////////////////////////////////////////
+--===========================================================
+------------------------------------------------------------
+-- List box
+------------------------------------------------------------
+class "list_element" (CUIListBoxItem)
+
+function list_element:__init(section, width) super(section, width)
+	self.section 				= section
+
+	self.text					= self:GetTextItem()
+	self.text:SetWndRect		(Frect():set(0,0,width,22))
+	self:SetTextColor			(GetARGB(255, 250, 175, 150))
+	self.text:SetFont			(GetFontLetterica16Russian())
+	self.text:SetWndSize		(vector2():set( width , 22 ))
+	self.text:SetWndPos			(vector2():set(0, 0))
+	self.text:SetEllipsis		(true)
+	self.text:SetText			(section)
+end
+
+
+------------------------------------------------------------
+-- Main
+------------------------------------------------------------
+class "UIItemEditor" (CUIScriptWnd)
+
+function UIItemEditor:__init(owner, object, section, item_type, item_kinds) super()
+	self.owner = owner
+	self.id = object:id()
+	self.section = section
+	self.item_type = item_type
+	self.cfg = ini_file("plugins\\debug\\item_editor.ltx")
+	self.show_help = false
+	
+	self:InitControls()
+	--self:InitCallbacks()
+end
+
+function UIItemEditor:__finalize() end
+
+function UIItemEditor:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	
+	if self.owner then
+		self.xml = self.owner.xml
+	else
+		self.xml = CScriptXmlInit()
+	end
+	
+	local xml = self.xml
+	if (not self.owner) then
+		xml:ParseFile			("ui_debug_launcher.xml")
+	end
+	
+	-- Stats
+	self.d1 = xml:InitStatic("dbg_itm_stats", self)
+	xml:InitFrame("dbg_itm_stats:background", self.d1)
+	xml:InitStatic("dbg_itm_stats:cap", self.d1)
+	
+	self.btn_copy = xml:Init3tButton("dbg_itm_stats:btn_copy", self.d1)
+	self:Register(self.btn_copy, "btn_copy")
+	
+	self.btn_paste = xml:Init3tButton("dbg_itm_stats:btn_paste", self.d1)
+	self:Register(self.btn_paste, "btn_paste")
+	
+	self.btn_apply = xml:Init3tButton("dbg_itm_stats:btn_apply", self.d1)
+	self:Register(self.btn_apply, "btn_apply")
+	
+	self.btn_reset = xml:Init3tButton("dbg_itm_stats:btn_reset", self.d1)
+	self:Register(self.btn_reset, "btn_reset")
+	
+	self.scroll_d1 		 = xml:InitScrollView("dbg_itm_stats:scroll", self.d1)
+	
+	-- List
+	self.d2 = xml:InitStatic("dbg_itm_list", self)
+	xml:InitFrame("dbg_itm_list:background", self.d2)
+	xml:InitStatic("dbg_itm_list:cap", self.d2)
+	xml:InitFrame("dbg_itm_list:frame_list", self.d2)
+	
+	self.list            = xml:InitListBox("dbg_itm_list:list", self.d2)
+	self.list:ShowSelectedItem(true)
+	self.list:Show(true)
+	self:Register(self.list, "itm_list")
+	
+	-- Comparison
+	self.d3 = xml:InitStatic("dbg_itm_show", self)
+	xml:InitFrame("dbg_itm_show:background", self.d3)
+	xml:InitStatic("dbg_itm_show:cap", self.d3)
+	
+	self.ico_1 = xml:InitStatic("dbg_itm_show:icon_1", self.d3)
+	self.ico_1_s = xml:InitStatic("dbg_itm_show:icon_1", self.d3)
+	self.ico_1_tmp = xml:InitStatic("dbg_itm_show:icon_1", self.d3)
+	self.ico_2 = xml:InitStatic("dbg_itm_show:icon_2", self.d3)
+	self.ico_2_s = xml:InitStatic("dbg_itm_show:icon_2", self.d3)
+	self.ico_2_tmp = xml:InitStatic("dbg_itm_show:icon_2", self.d3)
+	
+	self.name_1 = xml:InitTextWnd("dbg_itm_show:name_1",self.d3)
+	self.name_2 = xml:InitTextWnd("dbg_itm_show:name_2",self.d3)
+	
+	self.scroll_d3 		 = xml:InitScrollView("dbg_itm_show:scroll", self.d3)
+	
+	
+	-- Message Window 
+	self.msg_wnd_frame = xml:InitFrame("dbg_itm_stats:msg_frame",self.d1)
+	self.msg_wnd_text = xml:InitTextWnd("dbg_itm_stats:msg_text",self.d1)
+	self.msg_wnd_text:SetAutoDelete(false)
+	self.msg_wnd_text:Show(false)
+	self:Send_MSG("%c[pda_blue]Press (H) for help")
+	
+	-- Hint Window
+	self.hint_wnd = xml:InitFrame("hint_wnd:background",self)
+	self.hint_wnd:SetAutoDelete(false)
+	self.hint_wnd_text = xml:InitTextWnd("hint_wnd:text",self.hint_wnd)
+	self.hint_wnd:Show(false)
+	
+	self.hint_wnd_width = self.hint_wnd:GetWidth()
+	self.hint_wnd_height = self.hint_wnd:GetHeight()
+	self.hint_wnd_text_width = self.hint_wnd_text:GetWidth()
+	self.hint_wnd_text_height = self.hint_wnd_text:GetHeight()
+	
+	-- Help Window 
+	self.help_wnd = xml:InitFrame("help_wnd:background",self)
+	self.help_wnd:SetAutoDelete(false)
+	self.help_wnd_text = xml:InitTextWnd("help_wnd:text",self.help_wnd)
+	self.help_wnd_text:SetTextAlignment(3)
+	
+	self.help_wnd:Show(false)
+	self.help_wnd:SetColor(GetARGB(255,0,0,0))
+end
+
+function UIItemEditor:InitCallbacks()
+	self:AddCallback("itm_list", ui_events.WINDOW_LBUTTON_DB_CLICK, self.ResetComparison, self)
+	self:AddCallback("btn_copy", ui_events.BUTTON_CLICKED, self.OnButton_Copy, self)
+	self:AddCallback("btn_paste", ui_events.BUTTON_CLICKED, self.OnButton_Paste, self)
+	self:AddCallback("btn_apply", ui_events.BUTTON_CLICKED, self.OnButton_Apply, self)
+	self:AddCallback("btn_reset", ui_events.BUTTON_CLICKED, self.OnButton_Reset, self)
+	
+	for i=1,self.cnt do
+		if self.typ_i[i] == 0 then
+			self:AddCallback("par_" .. i, ui_events.LIST_ITEM_SELECT, self["OnInput_" .. i], self)
+		else
+			self:AddCallback("par_" .. i, ui_events.EDIT_TEXT_COMMIT, self["OnInput_" .. i], self)
+		end
+	end
+end
+
+
+------------------------------------------------------------
+-- Update
+------------------------------------------------------------
+local list_table = {}
+function UIItemEditor:ResetList(item_type, item_kinds)
+	-- Gather item sections
+	if (not list_table[item_type]) then
+		list_table[item_type] = {}
+		local ltx = ini_file("plugins\\spawner_blacklist.ltx")
+		ini_sys:section_for_each(function(section)
+			if (not ltx:line_exist("ignore_sections",section))
+			and (not s_find(section,"tch_"))
+			and (not s_find(section,"mp_"))
+			and (not s_find(section,"_base"))
+			then
+				local kind = ini_sys:r_string_ex(section,"kind") -- special class name for the sake of correct listing
+				if kind and item_kinds[kind] then
+					local parent_section = ini_sys:r_string_ex(section,"parent_section") or section
+					if (parent_section == section) then
+						list_table[item_type][#list_table[item_type] + 1] = section
+					end
+				end
+			end
+		end)
+	end
+	
+	-- Fill list
+	if (item_type ~= last_item_type) then
+		self.list:RemoveAll()
+		for i=1,#list_table[item_type] do
+			local _ele = list_element(list_table[item_type][i], self.list:GetWidth())
+			self.list:AddExistingItem(_ele)
+		end
+	end
+end
+
+function UIItemEditor:ResetParameters(force_def)
+	if (self.item_type ~= last_item_type) then
+		local xml = self.xml
+		self.scroll_d1:Clear()
+	
+		self.selected       	= 1
+		self.selected_group 	= 1
+		
+		self.cnt            	= 0
+		self.cnt_g          	= {} 		 -- parameters counter / index per parent parameter number
+		self.cnt_n          	= {} 		 -- parameters counter / parent parameter number per index
+		self.cnt_gn             = {} 	 	 -- parameters counter / index per parent parameter name
+		self.p  	        	= {} 	 	 -- parameter parent, useful for dealing with vector values (by index)
+		self.i   	        	= {}		 -- list parameter index, to trace list value
+			
+		self.name_i         	= {} 		 -- parameter name (by index)
+		self.typ_i          	= {} 	 	 -- parameter type (by index)
+		self.value_i        	= {}  	     -- parameter value (by index)
+		self.value_g        	= {}  	     -- parameter value (by parent)
+		self.value_tmp      	= {}  	 	 -- Address changed values, useful for parameters that require saving
+			
+		self.ele_i          	= {}         -- parameter element (by index)
+		self.ele_i_2          	= {}         -- parameter element for item 2 (by index)
+		self.cap_i          	= {}         -- parameter cap (by index)
+		self.hl_i           	= {}         -- parameter hightlighting (by index)
+		self.list_i         	= {}	     -- parameter list for lists (by index)
+		self.list_n         	= {}         -- parameter numbered list for lists (by index)
+	
+		local n = 0
+		local functor = function(t,a,b) return t[a].index < t[b].index end
+		for par,v in spairs(parameters[self.item_type],functor) do
+			local _st = xml:InitStatic("dbg_itm_stats:st", nil)
+
+			if v.line then
+				xml:InitStatic("dbg_itm_stats:parameter:line", _st)
+				
+			elseif v.type then
+				
+				n = n + 1
+				
+				-- Parameter name
+				self.cap_i[n] = xml:InitTextWnd("dbg_itm_stats:parameter:cap", _st)
+				self.cap_i[n]:SetText(par)
+				
+				-- Multi boxes for vectors
+				local num = ((v.type == 2) and 3) or ((v.type == 3) and 4) or 1
+				for i=1,num do
+					local ext = self:GetStringByType(i, v.type)
+					
+					self.cnt = self.cnt + 1
+					self.name_i[self.cnt] = par .. ext
+					self.typ_i[self.cnt] = v.type
+					self.p[self.cnt] = par
+					
+					self.cnt_g[n] = self.cnt_g[n] or {}
+					self.cnt_g[n][#self.cnt_g[n] + 1] = self.cnt
+					
+					self.cnt_gn[par] = self.cnt_gn[par] or {}
+					self.cnt_gn[par][#self.cnt_gn[par] + 1] = self.cnt
+					
+					self.cnt_n[self.cnt] = n
+					
+					-- Parameter element and hightlight texture
+					if v.type == 0 then
+						self.ele_i[self.cnt] = xml:InitComboBox("dbg_itm_stats:parameter:list", _st)
+						self:Register(self.ele_i[self.cnt],"par_" .. self.cnt)
+						
+						self.hl_i[self.cnt] = xml:InitStatic("dbg_itm_stats:parameter:hl_list", _st)
+					else
+						self.ele_i[self.cnt] = xml:InitEditBox("dbg_itm_stats:parameter:input" .. ext, _st)
+						self:Register(self.ele_i[self.cnt],"par_" .. self.cnt)
+						
+						self.hl_i[self.cnt] = xml:InitStatic("dbg_itm_stats:parameter:hl" .. ext, _st)
+					end
+					self.ele_i_2[self.cnt] = xml:InitTextWnd("dbg_itm_stats:parameter:comp" .. ext, _st)
+					
+					-- Hightlight first parameter only on start
+					if (self.cnt ~= 1) then
+						self.hl_i[self.cnt]:Show(false)
+					end
+				end
+			end
+			
+			self.scroll_d1:AddWindow(_st, true)
+			_st:SetAutoDelete(false)
+		end
+	
+		-- Callbacks declared after setting all elements
+		self:InitCallbacks()
+	end
+
+	-- Read and set parameters values from ini
+	if (force_def == true) or (self.section ~= last_section) then
+
+		local ini_cc = ui_debug_launcher.ini_cc
+		
+		for par,v in pairs(parameters[self.item_type]) do
+			if v.type then
+				local sec = v.from and ini_sys:r_string_ex(self.section, v.from) or self.section
+				local cache = force_def and ini_cc:r_value(sec, par)
+				if cache and (cache ~= "") then
+					self.value_g[par] = utils_data.parse_list_ex(ini_cc, sec, par)
+				else
+					self.value_g[par] = parse_list(ini_sys, sec, par)
+				end
+	
+				-- use default values if nothing is found
+				if (#self.value_g[par] == 0) then
+					copy_table(self.value_g[par], v.def)
+				end
+				
+				-- Convert to numbers if needed
+				for i=1,#self.value_g[par] do
+					if (v.type ~= 0) then
+						if v.float and (s_sub(self.value_g[par][i],-1) == "f") then
+							self.value_g[par][i]= s_sub(self.value_g[par][i],1,-2)
+							self.value_g[par][i] = tonumber(self.value_g[par][i])
+						else
+							self.value_g[par][i] = tonumber(self.value_g[par][i])
+						end
+					end
+				end
+			end
+		end
+		
+		-- Save original values to determine changed values later ()
+		if (not force_def) then
+			copy_table(self.value_tmp, self.value_g)
+		end
+	end
+
+	-- set values on UI
+	for i=1,self.cnt do
+		self.value_i[i] = self:GetParameterValue(i)
+
+		-- prepare lists when its different item type
+		if (self.item_type ~= last_item_type) and (self.typ_i[i] == 0) then
+			self.ele_i[i]:ClearList()
+			local n = self.cfg:line_count(self.p[i])
+			local result,id,val = "","",""
+			for j=0,n-1 do
+				result,id,val = self.cfg:r_line_ex(self.p[i],j,"","")
+				self.ele_i[i]:AddItem(id, j+1)
+				
+				if (not self.list_i[i]) then self.list_i[i] = {} end
+				if (not self.list_n[i]) then self.list_n[i] = {} end
+				
+				self.list_i[i][id] = true
+				self.list_n[i][#self.list_n[i] + 1] = id
+			end
+		end
+		
+		-- Set value in text box
+		self.ele_i[i]:SetText(self.value_i[i])
+		
+		-- Adjust text color for changed values
+		self:Update_Pending(i)
+	end
+end
+
+function UIItemEditor:ResetComparison(p)
+	local pick = self.list:GetSelectedItem()
+	local section_2 = pick and pick.section
+	local section_1 = self.section
+	
+	-- prepare bars 
+	if (self.item_type ~= last_item_type) then
+		self.bar_txt = {}
+		
+		self.bar = {}
+		self.bar_str = {}
+		self.bar_perc = {}
+
+		local xml = self.xml
+		self.scroll_d3:Clear()
+		
+		local functor = function(t,a,b) return t[a].index < t[b].index end
+		for par,v in spairs(parameters[self.item_type],functor) do
+			if v.show and (v.show == 1) then
+				local _st = xml:InitStatic("dbg_itm_show:st", nil)
+				
+				xml:InitStatic("dbg_itm_show:stats:bar_back", _st)
+				
+				self.bar_txt[par] = xml:InitTextWnd("dbg_itm_show:stats:txt", _st)
+				self.bar_txt[par]:SetText(par) --(par .. " (" .. v.name .. ")")
+				
+				self.bar_perc[par] = xml:InitTextWnd("dbg_itm_show:stats:perc", _st)
+				
+				self.bar[par] = {}
+				for i=1,2 do
+					self.bar[par][i] = {}
+					self.bar[par][i].n = xml:InitProgressBar("dbg_itm_show:stats:bar_n", _st)
+					self.bar[par][i].r = xml:InitProgressBar("dbg_itm_show:stats:bar_r", _st)
+					self.bar[par][i].g = xml:InitProgressBar("dbg_itm_show:stats:bar_g", _st)
+				end
+				
+				local diff = v.min + v.max
+				if diff < 0.001 then
+					xml:InitStatic("dbg_itm_show:stats:divider", _st)
+					xml:InitStatic("dbg_itm_show:stats:divider", _st)
+					xml:InitStatic("dbg_itm_show:stats:divider", _st)
+				end
+				
+				self.scroll_d3:AddWindow(_st, true)
+				_st:SetAutoDelete(false)
+				
+			elseif v.show and (v.show == 2) then
+				local _st = xml:InitStatic("dbg_itm_show:st", nil)
+				
+				self.bar_txt[par] = xml:InitTextWnd("dbg_itm_show:stats:txt", _st)
+				self.bar_txt[par]:SetText(par) --(par .. " (" .. v.name .. ")")
+				xml:InitStatic("dbg_itm_show:stats:str_background", _st)
+				
+				self.bar_str[par] = {}
+				for i=1,2 do
+					self.bar_str[par][i] = xml:InitTextWnd("dbg_itm_show:stats:str_" .. tostring(i), _st)
+				end
+			
+				self.scroll_d3:AddWindow(_st, true)
+				_st:SetAutoDelete(false)
+			end
+		end
+	end
+	
+	-- Update names and icons
+	if (section_1 ~= last_section) then
+		self.name_1:SetText( ui_item.get_sec_name(section_1) )
+		utils_xml.set_icon(section_1, nil, self.ico_1_tmp, self.ico_1, self.ico_1_s)
+	end
+	
+	if section_2 and (section_2 ~= last_section_2) then
+		last_section_2 = section_2
+		self.name_2:SetText( ui_item.get_sec_name(section_2) )
+		
+		utils_xml.set_icon(section_2, nil, self.ico_2_tmp, self.ico_2, self.ico_2_s)
+		self.ico_2:Show(true)
+		self.ico_2_s:Show(true)
+		self.ico_2_tmp:Show(true)
+	
+	elseif (self.item_type ~= last_item_type) then
+		self.name_2:SetText("")
+		self.ico_2:Show(false)
+		self.ico_2_s:Show(false)
+		self.ico_2_tmp:Show(false)
+	end
+	
+	-- Update comparison bars
+	local function update_bar(par, v)
+		local val_1 = self.value_g[par][1]
+		local val_2
+		
+		-- Get correct section
+		local section_2_ext = section_2
+		if section_2_ext and v.from then
+			section_2_ext = ini_sys:r_string_ex(section_2, v.from)
+		end
+		
+		-- Read value of section 2
+		if section_2_ext then
+			if v.float then
+				val_2 = ini_sys:r_string_ex(section_2_ext, par)
+				if (s_sub(val_2,-1) == "f") then
+					val_2 = s_sub(val_2,1,-2)
+				end
+				val_2 = tonumber(val_2)
+				
+			elseif v.type > 1 then
+				local tbl = parse_list(ini_sys, section_2_ext, par)
+				val_2 = tonumber(tbl[1])
+				
+			else
+				val_2 = ini_sys:r_float_ex(section_2_ext,par)
+			end
+		end
+		
+		
+		
+		-- If the parameter has functor, use it to calculate the value
+		local val_1_perc, val_2_perc
+		if functors[self.item_type] and functors[self.item_type][par] then
+			val_1_perc = functors[self.item_type][par](self, section_1) * 100
+			if val_2 then
+				val_2_perc = functors[self.item_type][par](self, section_2_ext, true) * 100
+			end
+		else
+			val_1_perc = val_1 and ( (val_1 - v.min) / (v.max - v.min) ) * 100
+			val_2_perc = val_2 and ( (val_2 - v.min) / (v.max - v.min) ) * 100
+		end
+		
+		-- Flip negative values
+		val_1_perc = (val_1_perc < 0) and (100 + val_1_perc) or val_1_perc
+		if val_2_perc then
+			val_2_perc = (val_1_perc < 0) and (100 + val_2_perc) or val_2_perc
+		end
+		
+		-- If the parameter is reversed, same goes to the bar
+		if v.reversed then
+			val_1_perc = 100 - val_1_perc
+			val_1 = v.max - val_1
+			if val_2_perc then
+				val_2_perc = 100 - val_2_perc
+				val_2 = v.max - val_2
+			end
+		end
+		
+		print_dbg("/ UIItemEditor | Progress bar for [%s] | perc_1: %s - perc_2: %s - reversed: %s", par, val_1_perc, val_2_perc, v.reversed or "false")
+		
+		-- 1 > 2
+		if val_2_perc and (val_1_perc > val_2_perc) and (val_1_perc >= 1) then
+			self.bar[par][1].g:SetProgressPos( val_1_perc )
+			self.bar[par][1].g:Show(true)
+			
+			self.bar[par][2].n:SetProgressPos( val_2_perc )
+			self.bar[par][2].n:Show(true)
+			
+			self.bar_perc[par]:SetText( "+" .. math.ceil(val_1_perc - val_2_perc) .. " %" )
+			self.bar_perc[par]:SetTextColor( GetARGB(255, 50, 255, 50) )
+			
+			self.bar[par][1].n:Show(false)
+			self.bar[par][1].r:Show(false)
+			
+			self.bar[par][2].r:Show(false)
+			self.bar[par][2].g:Show(false)
+			
+			self.bar_perc[par]:Show(true)
+			
+		-- 1 < 2
+		elseif val_2_perc and (val_1_perc < val_2_perc) and (val_2_perc >= 1) then
+			self.bar[par][1].r:SetProgressPos( val_2_perc )
+			self.bar[par][1].r:Show(true)
+			
+			self.bar[par][2].n:SetProgressPos( val_1_perc )
+			self.bar[par][2].n:Show(true)
+			
+			self.bar_perc[par]:SetText( "-" .. math.ceil(val_2_perc - val_1_perc) .. " %" )
+			self.bar_perc[par]:SetTextColor( GetARGB(255, 255, 50, 50) )
+			
+			self.bar[par][1].n:Show(false)
+			self.bar[par][1].g:Show(false)
+			
+			self.bar[par][2].r:Show(false)
+			self.bar[par][2].g:Show(false)
+		
+			self.bar_perc[par]:Show(true)
+			
+		-- 1 = 2
+		else
+			self.bar[par][1].n:SetProgressPos( val_1_perc )
+			self.bar[par][1].n:Show(true)
+			self.bar[par][1].r:Show(false)
+			self.bar[par][1].g:Show(false)
+		
+			self.bar[par][2].r:Show(false)
+			self.bar[par][2].g:Show(false)
+			self.bar[par][2].n:Show(false)
+			
+			self.bar_perc[par]:Show(false)
+		end
+	end
+	
+	-- Update comparison strings
+	local function update_str(par, v)
+		local val_1 = ""
+		for i=1,#self.value_g[par] do
+			val_1 = ( (i ~= 1) and (val_1 .. ",") or "" ) .. self.value_g[par][i]
+		end
+		self.bar_str[par][1]:SetText(val_1)
+		self.bar_str[par][1]:Show(true)
+			
+		if section_2 then
+			local val_2 = ini_sys:r_string_ex(section_2,par)
+			if val_2 then
+				self.bar_str[par][2]:SetText(val_2)
+				self.bar_str[par][2]:Show(true)
+			end
+		end
+	end
+	
+	-- Update stats of comparison item
+	local function update_stats_2(par, v)
+		local sec = v.from and ini_sys:r_string_ex(section_2, v.from) or section_2
+		local val_g = parse_list(ini_sys, sec, par)
+		
+		for i=1,#val_g do
+			if (v.type ~= 0) then
+				if v.float and (s_sub(val_g[i],-1) == "f") then
+					val_g[i]= s_sub(val_g[i],1,-2)
+					val_g[i] = tonumber(val_g[i])
+				else
+					val_g[i] = tonumber(val_g[i])
+				end
+			end
+		end
+		
+		for i=1,#self.cnt_gn[par] do
+			local cnt = self.cnt_gn[par][i]
+			self.ele_i_2[cnt]:SetText(val_g[i])
+		end
+	end
+	
+	-- Remove stats of comparison item
+	local function reset_stats_2(par)
+		for i=1,#self.cnt_gn[par] do
+			local cnt = self.cnt_gn[par][i]
+			self.ele_i_2[cnt]:SetText("")
+		end
+	end
+
+	---- Updater ----
+	if p then
+		if section_2 then
+			update_stats_2(p, parameters[self.item_type][p])
+		else
+			reset_stats_2(p)
+		end
+		
+		if self.bar[p] then 
+			update_bar(p, parameters[self.item_type][p])
+		elseif self.bar_str[p] then
+			update_str(p, parameters[self.item_type][p])
+		end
+	else
+		for par,v in pairs(parameters[self.item_type]) do
+			if v.type then 
+				if section_2 then
+					update_stats_2(par, v)
+				else
+					reset_stats_2(par)
+				end
+				
+				if self.bar[par] then
+					update_bar(par, v)
+				elseif self.bar_str[par] then
+					update_str(par, v)
+				end
+			end
+		end
+	end
+end
+
+function UIItemEditor:Update()
+	CUIScriptWnd.Update(self)
+
+	-- Trick for managing shift/ctrl hold
+	if time_global() > key_timer then
+		key_timer = time_global() + 200
+		jump = jump_1
+	end
+	
+	if (self.msg_wnd_timer and time_global() > self.msg_wnd_timer) then 
+		self.msg_wnd_timer = nil
+		--self.msg_wnd_text:Show(false)
+	end
+	
+	if self.ico_1 and self.ico_1:IsCursorOverWindow() then
+		local name = ui_item.get_sec_name(self.section)
+		local desc = ui_item.get_sec_desc(self.section)
+		local str = "%c[0,200,200,200]" .. name .. "\\n \\n%c[0,140,140,140]" .. desc
+		self:SetHint(str)
+		return
+	end
+	
+	if self.ico_2 and self.ico_2:IsCursorOverWindow() then
+		local pick = self.list:GetSelectedItem()
+		local section_2 = pick and pick.section
+		if section_2 then
+			local name = ui_item.get_sec_name(section_2)
+			local desc = ui_item.get_sec_desc(section_2)
+			local str = "%c[0,200,200,200]" .. name .. "\\n \\n%c[0,140,140,140]" .. desc
+			self:SetHint(str)
+			return
+		end
+	end
+	
+	--[[
+	if self.btn_copy and self.btn_copy:IsCursorOverWindow() then
+		self:SetHint( game.translate_string("ui_st_itm_editor_copy") )
+		return
+	end
+	if self.btn_paste and self.btn_paste:IsCursorOverWindow() then
+		self:SetHint( game.translate_string("ui_st_itm_editor_paste") )
+		return
+	end
+	if self.btn_apply and self.btn_apply:IsCursorOverWindow() then
+		self:SetHint( game.translate_string("ui_st_itm_editor_apply") )
+		return
+	end
+	if self.btn_reset and self.btn_reset:IsCursorOverWindow() then
+		self:SetHint( game.translate_string("ui_st_itm_editor_reset") )
+		return
+	end
+	
+	if self.msg_wnd_text and self.msg_wnd_text:IsCursorOverWindow() then
+		self:SetHint( game.translate_string("ui_st_itm_editor_logger") )
+		return
+	end
+	--]]
+	
+	-- Show parameter description
+	for n=1,#self.cap_i do
+		if self.cap_i[n] and self.cap_i[n]:IsCursorOverWindow() then
+			local par = self.cap_i[n]:GetText()
+			local str = game.translate_string("st_desc_" .. par)
+			if str ~= ("st_desc_" .. par) then 
+				local min_val = parameters[self.item_type][par].min
+				local max_val = parameters[self.item_type][par].max
+				local range = min_val and max_val and (min_val .. " - " .. max_val) or ""
+				str = utils_data.parse_string_keys( str , {["range"]=range} )
+				self:SetHint( str )
+				return
+			end
+		end
+	end
+
+	self.hint_wnd:Show(false)
+end
+
+function UIItemEditor:Update_Pending(cnt)
+	local n = self.cnt_n[cnt]
+	local par = self.p[cnt]
+	
+	for i=1,#self.value_g[par] do
+		if (self.value_g[par][i] ~= self.value_tmp[par][i]) then
+			self.cap_i[n]:SetTextColor(clr_o)
+			return
+		end
+	end
+	
+	
+	self.cap_i[n]:SetTextColor(clr_g1)
+end
+
+
+------------------------------------------------------------
+-- Utility
+------------------------------------------------------------
+local index_str = {
+	[1] = "_1",
+	[2] = "_2",
+	[3] = "_3",
+	[4] = "_4",
+}
+function UIItemEditor:GetStringByType(index, typ)
+	return ((typ == 0) or (typ == 1)) and "" or index_str[index]
+end
+
+function UIItemEditor:GetParameterValue(cnt)
+	local str = self.name_i[cnt]
+	local typ = self.typ_i[cnt]
+	local parent = self.p[cnt]
+	
+	if (typ == 0) or (typ == 1) then
+		return self.value_g[parent][1]
+	end
+	
+	if (s_sub(str,-2) == "_1") then return self.value_g[parent][1]
+	elseif (s_sub(str,-2) == "_2") then return self.value_g[parent][2]
+	elseif (s_sub(str,-2) == "_3") then return self.value_g[parent][3]
+	elseif (s_sub(str,-2) == "_4") then return self.value_g[parent][4]
+	end
+	printe("!ERROR no pass!")
+end
+
+function UIItemEditor:SetParameterValue(cnt,value)
+	local str = self.name_i[cnt]
+	local typ = self.typ_i[cnt]
+	local par = self.p[cnt]
+	
+	-- Clamp/Round the value, make sure it doesn't exceed the limit
+	if (typ ~= 0) then
+		local max_val = parameters[self.item_type][par].max
+		local min_val = parameters[self.item_type][par].min
+		local precision = parameters[self.item_type][par].precision or 10
+		value = clamp(value, min_val, max_val)
+		value = round_idp(value, precision)
+	end
+	
+	-- Validiate value
+	if self:IsInvalidValue(cnt,typ,value) then
+		self:Send_MSG("%c[pda_red]!ERROR nil value found for parameter [%s]", str)
+		return
+	end
+	
+	-- Set values
+	if (typ == 0) or (typ == 1) then
+		self.value_i[cnt] = value
+		self.value_g[par][1] = value
+		self.ele_i[cnt]:SetText(value)
+	else
+		local n = tonumber(s_sub(str,-1))
+		if n and (s_sub(str,-2) == ("_" .. n)) then
+			self.value_i[cnt] = value
+			self.value_g[par][n] = value
+			self.ele_i[cnt]:SetText(value)
+		end
+	end
+	
+	-- Update pending
+	self:Update_Pending(cnt)
+	
+	-- Update bars
+	self:ResetComparison(par)
+	
+	self:Send_MSG(self.name_i[cnt] .. " := " .. self.value_i[cnt], 4)
+end
+
+function UIItemEditor:IsInvalidValue(cnt,typ,value)
+
+	-- Strings
+	if (typ == 0) then
+		if value == "" then
+			return false
+		elseif value and self.list_i[cnt][value] then
+			return false
+		else
+			return true
+		end 
+		
+	-- Numbers
+	elseif not (value and value ~= "" and tonumber(value)) then
+		return true
+	end
+	
+	return false
+end
+
+function UIItemEditor:Send_MSG(text,...)
+	local str = strformat(text,...)
+	
+	self.msg_wnd_text:Show(true)
+	self.msg_wnd_text:SetText(str)
+	self.msg_wnd_timer = time_global() + 4000
+end
+
+function UIItemEditor:SetHint(text,pos,_w)
+	if (text == "") then
+		return
+	end
+	
+	text = text .. "\\n \\n ."
+	
+	self.hint_wnd:Show(true)
+	
+	self.hint_wnd_text:SetWndSize(vector2():set( (_w and (_w - 25)) or self.hint_wnd_text_width, self.hint_wnd_text:GetHeight()))
+	self.hint_wnd_text:SetText(text)
+	self.hint_wnd_text:AdjustHeightToText()
+	
+	local w = _w or self.hint_wnd_width
+	w = w >= 96 and w or 96
+	local h = self.hint_wnd_text:GetHeight()+44
+	h = h >= 96 and h or 96
+	self.hint_wnd:SetWndSize(vector2():set(w,h))
+	
+	pos = pos or GetCursorPosition()
+	pos.y = pos.y - self.hint_wnd:GetHeight()
+	pos.x = pos.x - self.hint_wnd_width
+	self.hint_wnd:SetWndPos(pos)
+	
+	FitInRect(self.hint_wnd,Frect():set(0,0,1024,768),0,100)
+end
+
+function UIItemEditor:SetHelp(text, stop)
+	if (text == "") then 
+		return 
+	end
+	
+	self.help_wnd_text:SetText(text)
+	self.help_wnd_text:AdjustHeightToText()
+	self.help_wnd_text:SetWndSize(vector2():set( (1024 - 40) , self.help_wnd_text:GetHeight()+10 ))
+	self.help_wnd_text:SetWndPos(vector2():set( (40 - 512) , 20 ))
+	
+	self.help_wnd:SetWndSize(vector2():set( 1024 , self.help_wnd_text:GetHeight()+44 ))
+	self.help_wnd:SetWndPos(vector2():set( 0 , (768-self.help_wnd_text:GetHeight())/2 ))
+	
+	self.help_wnd:Show(true)
+	
+	if not stop then
+		self:SetHelp(text, true)
+	end
+end
+
+
+------------------------------------------------------------
+-- Callbacks
+------------------------------------------------------------
+function UIItemEditor:SwitchParam(state, vert)
+
+	local function get_param_index(state, vert)
+	
+		--// Vertical movement
+		if vert then
+			local jumps = ((jump == jump_3) and 3) or ((jump == jump_2) and 2) or 1
+			
+			if state then
+				self.selected_group = self.selected_group + jumps
+			else
+				self.selected_group = self.selected_group - jumps
+			end
+			
+			if (self.selected_group > #self.cnt_g) then
+				self.selected_group = 1
+			elseif (self.selected_group < 1) then
+				self.selected_group = #self.cnt_g
+			end
+			
+			return self.cnt_g[self.selected_group][1]
+		
+		--// Horizental movement
+		else
+			print_dbg("selected_group: %s", self.selected_group)
+			local group = self.cnt_g[self.selected_group]
+			if group then
+				local first = group[1]
+				local last = group[#group]
+				if state and (self.selected < last) then
+					self.selected = self.selected + 1
+				elseif (not state) and (self.selected > first) then
+					self.selected = self.selected - 1
+				end
+			else
+				printe("! group doesn't exist for selected_group: %s", self.selected_group)
+			end
+			return self.selected
+		end
+	end
+	
+	if (not self.selected) or (not self.selected_group) then
+		self.selected = 1
+		self.selected_group = 1
+	else
+		self.hl_i[self.selected]:Show(false)
+		self.selected = get_param_index(state, vert)
+	end
+
+	self.hl_i[self.selected]:Show(true)
+end
+
+function UIItemEditor:SwitchValue(state, selected)
+	if (not selected) then
+		return
+	end
+	
+	local n = selected
+	local typ = self.typ_i[n]
+	local parent = self.p[n]
+	local val = self.value_i[n]
+	
+	local new_val
+	if typ ~= 0 then
+		local input_val = self.ele_i[n]:GetText()
+		local curr_val = (not self:IsInvalidValue(n,typ,input_val)) and tonumber(input_val)
+		if (not curr_val) then
+			self:Send_MSG("%c[pda_red]Couldn't read previous input for parameter (%s)", self.name_i[n])
+			return
+		end
+		
+		local step = parameters[self.item_type][parent].step * jump
+	
+		if state then
+			curr_val = curr_val + step
+		else
+			curr_val = curr_val - step
+		end
+		new_val = curr_val
+		
+	else
+		local curr_val = self.ele_i[n]:GetText()
+		if (not curr_val) then
+			return
+		end
+		
+		if not (self.list_n[n]) then
+			return
+		end
+		
+		if (not self.i[n]) then
+			for i=1,#self.list_n[n] do
+				if (self.list_n[n][i] == curr_val) then
+					self.i[n] = i
+					break
+				end
+			end
+			if (not self.i[n]) then
+				return
+			end
+		end
+		
+		local num = #self.list_n[n]
+		if state then
+			self.i[n] = (self.i[n] < num) and (self.i[n] + 1) or self.i[n]
+		else
+			self.i[n] = (self.i[n] > 0) and (self.i[n] - 1) or self.i[n]
+		end
+		
+		local txt = self.list_n[n][self.i[n]]
+		if self:IsInvalidValue(n,0,txt) then
+			self:Send_MSG("%c[pda_red]Invalid path/section for parameter (%s)", self.name_i[n])
+			return
+		end
+		
+		new_val = txt
+	end
+	
+	if new_val then
+		self:SetParameterValue(n,new_val)
+		self:Send_MSG(self.name_i[n] .. " := " .. self.value_i[n], 4)
+	else
+		self:Send_MSG("%c[pda_red]No value can be set for (%s)",self.name_i[n])
+	end
+end
+
+function UIItemEditor:SwitchValueGroup(state, selected_group)
+	if (not selected_group) then
+		return
+	end
+	print_dbg("/ UIItemEditor | selected_group: %s", selected_group)
+	local group = self.cnt_g[selected_group]
+	local size = (#group > 4) and 4 or #group
+	for i=1,size do
+		self:SwitchValue(state, group[i])
+	end
+end
+
+function UIItemEditor:OnInput(cnt)
+	local val = self.ele_i[cnt]:GetText()
+	local typ = self.typ_i[cnt]
+	
+	if self:IsInvalidValue(cnt,typ,val) then
+		self:Send_MSG("%c[pda_red]Error with input for parameter (%s)", self.name_i[cnt])
+		return
+	end
+	
+	if (typ == 0) then
+		val = val or ""
+	else
+		val = tonumber(val)
+	end
+	
+	self:SetParameterValue(cnt,val)
+end
+
+function UIItemEditor:OnButton_Copy()
+	copy_table( cache.value , self.value_g )
+	cache.type = self.item_type
+	cache.section = self.section
+	
+	self:Send_MSG("Copied current values of [%s]", self.section)
+end
+
+function UIItemEditor:OnButton_Paste()
+	if not (cache.section and cache.section ~= "") then
+		self:Send_MSG("%c[pda_red]No values are copied yet!", self.item_type)
+		return
+	end
+	
+	if (cache.type ~= self.item_type) then
+		self:Send_MSG("%c[pda_red]You can't paste the cached values because its a different item type [%s]", self.item_type)
+		return
+	end
+	
+	copy_table( self.value_g , cache.value )
+	self:ResetParameters()
+	self:ResetComparison()
+	
+	self:Send_MSG("Pasted values from [%s] to [%s]", cache.section, self.section)
+end
+
+function UIItemEditor:OnButton_Reset()
+	self:ResetParameters(true)
+	self:ResetComparison()
+	
+	self:Send_MSG("%c[pda_yellow]Reset values of [%s] to their original state", self.section)
+end
+
+function UIItemEditor:OnButton_Apply()
+	
+	local section = self.section
+	local to_save = {}
+	for par,v in pairs(parameters[self.item_type]) do
+		if v.type then
+			local changed = false
+			for i=1,#self.value_g[par] do
+				if (self.value_g[par][i] ~= self.value_tmp[par][i]) then
+					changed = true
+					break
+				end
+			end
+			
+			if changed then
+				local value = ""
+				for i=1,#self.value_g[par] do
+					value = ( (i ~= 1) and (value .. ",") or "" ) .. self.value_g[par][i]
+				end
+				
+				local sec = v.from and ini_sys:r_string_ex(section, v.from) or section
+				if (to_save[sec] == nil) then to_save[sec] = {} end
+				to_save[sec][par] = value
+			end
+		end
+	end
+	
+	if is_empty(to_save) then
+		self:Send_MSG("No parameters are modified for [%s]", section)
+		return
+	end
+
+	local function file_exists(path)
+		return io.open(path) ~= nil
+	end
+	
+	local save_done
+	local ini_cc = ui_debug_launcher.ini_cc
+	local function on_execute(path,filename,quit)
+		if is_empty(to_save) then
+			return
+		end
+		
+		local fullpath = path.."\\"..filename
+		local ltx = io.open(fullpath,"rb")
+		if (ltx) then
+			local data = ltx:read("*all")
+			ltx:close()
+			if (data) then
+				for sec, v in pairs(to_save) do
+					if (string.find(data,"["..sec.."]",nil,true)) then
+						ltx = utils_data.cfg_file(fullpath, true)
+						if (ltx) then
+							for par,val in pairs(v) do
+								ltx:SetValue(sec, par, val)
+								
+								-- Cache values for the first time so you can return to it upon reseting values
+								local cached_val = ini_cc:r_value(sec, par)
+								if not (cached_val and cached_val ~= "") then
+									local val_old = ini_sys:r_string_ex(sec, par)
+									ini_cc:w_value(sec, par, val_old)
+								end
+								
+								printf("% UIItemEditor | saving [%s]->[%s]->[%s]",sec, par, val)
+							end
+							
+							ltx:SaveExt()
+							to_save[sec] = nil
+							save_done = true
+							
+							self:Send_MSG("%c[pda_green]Applied and saved the new values for [%s]\\nFile: %c[ui_gray_3]%s", sec, t_dir[self.item_type] .. filename)
+							printf("% UIItemEditor | saved changes for {%s}", fullpath)
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	local sp = getFS():update_path('$game_config$', t_dir[self.item_type])
+	sp = string.sub(sp,0,string.len(sp)-1)
+	lua_ext.recurse_subdirectories_and_execute(sp,{"ltx"},on_execute)
+	
+	reload_ini_sys()
+	
+	if (not save_done) then
+		self:Send_MSG("%c[pda_red]No changes are made on [%s].\\nKeep in mind that configs must be unpacked before applying changes!", section)
+	else
+		-- Cache original values
+		ini_cc:save()
+		
+		-- Update object so changes take effect
+		self:Refresh_Item()
+		
+		-- Close the UI
+		self:Close()
+		
+		local str = strformat( "Changes are saved to [%s]", section)
+		actor_menu.set_msg(1, str,5)
+		
+		-- This is needed to force the UI into re-reading the new values
+		last_section = nil
+	end
+end
+
+function UIItemEditor:Refresh_Item()
+	local obj = level.object_by_id(self.id)
+	local se_obj = alife_object(self.id)
+	if not (obj and se_obj) then
+		printe("!no object found for id (%s)", self.id)
+		return
+	end
+	
+	-- Disable animations
+	local anim_state = actor_effects.is_animations_on()
+	actor_effects.set_animations(false)
+	
+	local is_wep = (self.item_type == "weapon")
+	local section = obj:section()
+	
+	-- Gather item data
+	local upgr = {}
+	local ammo_type, sil, gl
+	local data = is_wep and utils_stpk.get_weapon_data(se_obj) or utils_stpk.get_item_data(se_obj)
+	copy_table(upgr, data.upgrades)
+	
+	if is_wep then
+		ammo_type = obj:get_ammo_type()
+		print_dbg("/ UIItemEditor | Detected ammo type: %s", ammo_type)
+		
+		if (obj:weapon_silencer_status() == 2) and (utils_item.addon_attached(obj,"sl")) then
+			sil = utils_data.read_from_ini(nil,sec,"silencer_name","string",nil)
+			print_dbg("/ UIItemEditor | Detected silencer: %s", sil)
+		end
+		
+		if (obj:weapon_grenadelauncher_status() == 2) and (utils_item.addon_attached(obj,"gl")) then
+			gl = utils_data.read_from_ini(nil,sec,"grenade_launcher_name","string",nil)
+			print_dbg("/ UIItemEditor | Detected grenade launcher: %s", gl)
+		end
+	end
+
+	-- Release active item
+	alife_release(se_obj)
+
+	-- Create new item
+	local se_obj_n = alife_create(section, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), AC_ID, false)
+	local id_new = se_obj_n.id
+	
+	local sil_id, gl_id
+	if sil then
+		local se_sil = alife_create_item(sil, db.actor)
+		sil_id = se_sil and se_sil.id
+	end
+	if gl then
+		local se_gl = alife_create_item(gl, db.actor)
+		gl_id = se_gl and se_gl.id
+	end
+	
+	-- Apply upgrades if found
+	local data_n = is_wep and utils_stpk.get_weapon_data(se_obj_n) or utils_stpk.get_item_data(se_obj_n)
+	data_n.upgrades = upgr
+	if is_wep then
+		utils_stpk.set_weapon_data(data_n, se_obj_n)
+	else
+		utils_stpk.set_item_data(data_n, se_obj_n)
+	end
+	alife():register(se_obj_n)
+	
+	-- Apply attachments if found
+	local function create_new_item(id_new)
+		local obj_n = level.object_by_id(id_new)
+		if obj_n then
+			if is_wep then
+			
+				-- Reset ammo
+				if ammo_type then
+					obj_n:unload_magazine()
+					obj_n:set_ammo_type(ammo_type)
+					local mag_size = ini_sys:r_u32(section, "ammo_mag_size")
+					obj_n:set_ammo_elapsed(mag_size)
+					print_dbg("- UIItemEditor | Set ammo: size=%s, type=%s", mag_size, ammo_type)
+				end
+			
+				-- Attach silencer
+				if sil_id then
+					local obj_sil = level.object_by_id(sil_id)
+					if obj_sil then
+						obj_n:weapon_addon_attach(obj_sil)
+						print_dbg("- UIItemEditor | Attached silencer: %s", sil)
+					end
+				end
+				
+				-- Attach grenade launcher
+				if gl_id then
+					local obj_gl = level.object_by_id(gl_id)
+					if obj_gl then
+						obj_n:weapon_addon_attach(obj_gl)
+						print_dbg("- UIItemEditor | Attached silencer: %s", gl)
+					end
+				end
+				
+			elseif ini_sys:r_float_ex(section, "slot") then
+				db.actor:make_item_active(obj_n) -- force to slot.
+			end
+		end
+
+		return true
+	end
+	
+	CreateTimeEvent(0, "item_editor_delay", 0.5, create_new_item, id_new)
+	
+	-- Enable animations if they were ON
+	CreateTimeEvent(0, "item_editor_delay_anim", 3, reset_anim, anim_state)
+end
+
+
+------------------------------------------------------------
+-- End
+------------------------------------------------------------
+function UIItemEditor:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+			if self.help_wnd:IsShown() then
+				self.help_wnd:Show(false)
+				
+			elseif dik == DIK_keys.DIK_NUMPAD8 then
+				self:SwitchValue(true, self.selected)
+			elseif dik == DIK_keys.DIK_NUMPAD2 then
+				self:SwitchValue(false, self.selected)
+			elseif dik == DIK_keys.DIK_NUMPAD9 then
+				self:SwitchValueGroup(true, self.selected_group)
+			elseif dik == DIK_keys.DIK_NUMPAD3 then
+				self:SwitchValueGroup(false, self.selected_group)
+				
+			elseif dik == DIK_keys.DIK_UP then
+				self:SwitchParam(false, true)
+			elseif dik == DIK_keys.DIK_DOWN then
+				self:SwitchParam(true, true)
+			elseif dik == DIK_keys.DIK_RIGHT then
+				self:SwitchParam(true, false)
+			elseif dik == DIK_keys.DIK_LEFT then
+				self:SwitchParam(false, false)
+				
+			elseif dik == DIK_keys.DIK_NUMPAD5 then
+				self:OnButton_Copy()
+			elseif dik == DIK_keys.DIK_NUMPAD6 then
+				self:OnButton_Paste()
+				
+			elseif dik == DIK_keys.DIK_H then
+				self:SetHelp( game.translate_string("st_ui_dbg_item_about") )
+			elseif dik == DIK_keys.DIK_ESCAPE then
+				self:Close()
+			end
+		end
+	end
+	return res
+end
+
+function UIItemEditor:Close()
+	self:HideDialog()
+	self:Show(false)
+	UnregisterScriptCallback("on_key_release",on_key_release)
+	UnregisterScriptCallback("on_key_hold",on_key_hold)
+	--ui = nil
+	Unregister_UI("UIItemEditor")
+	
+	if (level.present()) then
+		printf("- main_menu off")
+		exec_console_cmd("main_menu off")
+	end
+end
+
+function UIItemEditor:OnInput_1() self:OnInput(1) end
+function UIItemEditor:OnInput_2() self:OnInput(2) end
+function UIItemEditor:OnInput_3() self:OnInput(3) end
+function UIItemEditor:OnInput_4() self:OnInput(4) end
+function UIItemEditor:OnInput_5() self:OnInput(5) end
+function UIItemEditor:OnInput_6() self:OnInput(6) end
+function UIItemEditor:OnInput_7() self:OnInput(7) end
+function UIItemEditor:OnInput_8() self:OnInput(8) end
+function UIItemEditor:OnInput_9() self:OnInput(9) end
+function UIItemEditor:OnInput_10() self:OnInput(10) end
+function UIItemEditor:OnInput_11() self:OnInput(11) end
+function UIItemEditor:OnInput_12() self:OnInput(12) end
+function UIItemEditor:OnInput_13() self:OnInput(13) end
+function UIItemEditor:OnInput_14() self:OnInput(14) end
+function UIItemEditor:OnInput_15() self:OnInput(15) end
+function UIItemEditor:OnInput_16() self:OnInput(16) end
+function UIItemEditor:OnInput_17() self:OnInput(17) end
+function UIItemEditor:OnInput_18() self:OnInput(18) end
+function UIItemEditor:OnInput_19() self:OnInput(19) end
+function UIItemEditor:OnInput_20() self:OnInput(20) end
+function UIItemEditor:OnInput_21() self:OnInput(21) end
+function UIItemEditor:OnInput_22() self:OnInput(22) end
+function UIItemEditor:OnInput_23() self:OnInput(23) end
+function UIItemEditor:OnInput_24() self:OnInput(24) end
+function UIItemEditor:OnInput_25() self:OnInput(25) end
+function UIItemEditor:OnInput_26() self:OnInput(26) end
+function UIItemEditor:OnInput_27() self:OnInput(27) end
+function UIItemEditor:OnInput_28() self:OnInput(28) end
+function UIItemEditor:OnInput_29() self:OnInput(29) end
+function UIItemEditor:OnInput_30() self:OnInput(30) end
+function UIItemEditor:OnInput_31() self:OnInput(31) end
+function UIItemEditor:OnInput_32() self:OnInput(32) end
+function UIItemEditor:OnInput_33() self:OnInput(33) end
+function UIItemEditor:OnInput_34() self:OnInput(34) end
+function UIItemEditor:OnInput_35() self:OnInput(35) end
+function UIItemEditor:OnInput_36() self:OnInput(36) end
+function UIItemEditor:OnInput_37() self:OnInput(37) end
+function UIItemEditor:OnInput_38() self:OnInput(38) end
+function UIItemEditor:OnInput_39() self:OnInput(39) end
+function UIItemEditor:OnInput_40() self:OnInput(40) end
+function UIItemEditor:OnInput_41() self:OnInput(41) end
+function UIItemEditor:OnInput_42() self:OnInput(42) end
+function UIItemEditor:OnInput_43() self:OnInput(43) end
+function UIItemEditor:OnInput_44() self:OnInput(44) end
+function UIItemEditor:OnInput_45() self:OnInput(45) end
+function UIItemEditor:OnInput_46() self:OnInput(46) end
+function UIItemEditor:OnInput_47() self:OnInput(47) end
+function UIItemEditor:OnInput_48() self:OnInput(48) end
+function UIItemEditor:OnInput_49() self:OnInput(49) end
+function UIItemEditor:OnInput_50() self:OnInput(50) end
+function UIItemEditor:OnInput_51() self:OnInput(51) end
+function UIItemEditor:OnInput_52() self:OnInput(52) end
+function UIItemEditor:OnInput_53() self:OnInput(53) end
+function UIItemEditor:OnInput_54() self:OnInput(54) end
+function UIItemEditor:OnInput_55() self:OnInput(55) end
+function UIItemEditor:OnInput_56() self:OnInput(56) end
+function UIItemEditor:OnInput_57() self:OnInput(57) end
+function UIItemEditor:OnInput_58() self:OnInput(58) end
+function UIItemEditor:OnInput_59() self:OnInput(59) end
+function UIItemEditor:OnInput_60() self:OnInput(60) end
+function UIItemEditor:OnInput_61() self:OnInput(61) end
+function UIItemEditor:OnInput_62() self:OnInput(62) end
+function UIItemEditor:OnInput_63() self:OnInput(63) end
+function UIItemEditor:OnInput_64() self:OnInput(64) end
+function UIItemEditor:OnInput_65() self:OnInput(65) end
+function UIItemEditor:OnInput_66() self:OnInput(66) end
+function UIItemEditor:OnInput_67() self:OnInput(67) end
+function UIItemEditor:OnInput_68() self:OnInput(68) end
+function UIItemEditor:OnInput_69() self:OnInput(69) end
+function UIItemEditor:OnInput_70() self:OnInput(70) end
+function UIItemEditor:OnInput_71() self:OnInput(71) end
+function UIItemEditor:OnInput_72() self:OnInput(72) end
+function UIItemEditor:OnInput_73() self:OnInput(73) end
+function UIItemEditor:OnInput_74() self:OnInput(74) end
+function UIItemEditor:OnInput_75() self:OnInput(75) end
+function UIItemEditor:OnInput_76() self:OnInput(76) end
+function UIItemEditor:OnInput_77() self:OnInput(77) end
+function UIItemEditor:OnInput_78() self:OnInput(78) end
+function UIItemEditor:OnInput_79() self:OnInput(79) end
+function UIItemEditor:OnInput_80() self:OnInput(80) end
+

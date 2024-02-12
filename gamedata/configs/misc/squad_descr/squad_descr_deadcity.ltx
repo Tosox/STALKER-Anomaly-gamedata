@@ -1,0 +1,58 @@
+;--------------------------
+;-- Special Characters
+;--------------------------
+[cit_killers_merc_trader_stalker_squad]:online_offline_group
+faction = killer
+npc = cit_killers_merc_trader_stalker
+target_smart = cit_killers
+story_id = cit_killers_merc_trader_stalker_squad
+on_death = %+cit_killers_merc_trader_stalker_squad_dead%
+;spawn_point = cit_killers_merc_trader_spawn
+
+[cit_killers_merc_mechanic_stalker_squad]:online_offline_group
+faction = killer
+npc = cit_killers_merc_mechanic_stalker
+target_smart = cit_killers
+story_id = cit_killers_merc_mechanic_stalker_squad
+;spawn_point = cit_killers_merc_mechanic_spawn
+
+[cit_killers_merc_medic_stalker_squad]:online_offline_group
+faction = killer
+npc = cit_killers_merc_medic_stalker
+target_smart = cit_killers
+story_id = cit_killers_merc_medic_stalker_squad
+;spawn_point = cit_killers_merc_medic_spawn
+
+[ds_killer_guide_main_base_squad]:online_offline_group
+faction = killer
+npc = ds_killer_guide_main_base
+npc_in_squad = 1, 1
+target_smart = cit_killers
+
+[ds_killer_medic_mlr_squad]:online_offline_group
+faction = killer
+npc = ds_killer_medic_mlr
+npc_in_squad = 1, 1
+target_smart = cit_killers
+
+[cit_killers_merc_stalker_aslan_squad]:online_offline_group
+faction = killer
+npc = cit_killers_merc_barman_mlr
+target_smart = cit_killers
+
+;--------------------------
+;-- Unique Squads
+;--------------------------
+[cit_killers_merc_guard_squad_1]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_4, sim_default_killer_0, sim_default_killer_2, sim_default_killer_2, sim_default_killer_1, sim_default_killer_3
+npc_in_squad = 3
+always_arrived = true
+target_smart = cit_killers
+
+[cit_killers_merc_guard_squad_2]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_4, sim_default_killer_3, sim_default_killer_2, sim_default_killer_2, sim_default_killer_1, sim_default_killer_3
+npc_in_squad = 2,3
+always_arrived = true
+target_smart = cit_killers

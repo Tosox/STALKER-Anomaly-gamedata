@@ -1,0 +1,88 @@
+[logic@mar_base_owl_stalker_trader]
+active = animpoint@base
+suitable = {=check_npc_name(mar_base_owl_stalker_trader)} true, {=check_npc_trader} true
+prior = 200
+trade = items\trade\trade_csky_spore.ltx
+can_select_weapon = {=is_warfare} true, false
+level_spot = trader
+dont_keep_items = true
+
+[animpoint@base]
+reach_distance = 10
+cover_name = mar_base_sc_trader
+avail_animations = animpoint_sit_normal
+meet = meet@trade
+;out_restr = mar_base_surge_hide_a4
+use_camp = false
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+on_info = {=obj_on_job(mar_smart_terrain_base:mar_smart_terrain_base_beh_trade_job_1) =job_on_point(mar_smart_terrain_base:mar_smart_terrain_base_beh_trade_job_1:1:2:false)} %=trade_job_give_id(mar_smart_terrain_base:mar_smart_terrain_base_beh_trade_job_1)%
+
+[meet@trade]
+close_snd_hello = mar_csky_trader_meet
+close_snd_bye 	= mar_csky_trader_meet_bye
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = 3
+use = {=actor_enemy} false, true
+allow_break = false
+meet_on_talking = false
+trade_enable = false	;
+
+
+
+;------------------------------
+;------- NPC trade ----------
+;------------------------------
+
+[logic@mar_smart_terrain_base_beh_trade_job_1]
+active = beh@mar_smart_terrain_base_beh_trade_job_1
+suitable = {=npc_has_items_to_sell(mar_smart_terrain_base) !surge_started} true
+prior = 65
+
+[beh@general]
+meet = meet@mar_smart_terrain_base_animpoint_meet
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+sound_idle = state
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+delay_anim = guard
+
+[beh@mar_smart_terrain_base_beh_trade_job_1]:beh@general
+pt1 = 10000,choose | pos:-179.05958557129,0.81868189573288,-319.06359863281 look:-179.06661108648,0.81868189573288,-320.03836739063
+pt2 = 5000,zat_b14_give_artefact_act | pos:-179.05958557129,0.81868189573288,-319.06359863281 look:-179.06661108648,0.81868189573288,-320.03836739063 sig:trade
+pt3 = 10000,guard | pos:-179.05958557129,0.81868189573288,-319.06359863281 look:-179.06661108648,0.81868189573288,-320.03836739063
+on_signal = trade | %=trade_job_sell_items%
+path_end = loop
+
+[meet@mar_smart_terrain_base_animpoint_meet]
+close_snd_hello = mar_csky_trader_meet
+close_snd_bye 	= mar_csky_trader_meet_bye
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
+snd_on_use = {!dist_to_actor_le(3)} nil
+meet_on_talking = false

@@ -1,0 +1,769 @@
+;-----------------------------------------------
+;-----------------< Loners >-----------------|
+[simulation_stalker]:online_offline_group
+faction = stalker
+relationship = neutral
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 1, 2
+common			= true
+;============================================
+[stalker_sim_squad_novice]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+npc_in_squad = 1, 3
+common			= true
+
+[stalker_sim_squad_novice_3_4]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0
+npc_in_squad = 3, 4
+common			= true
+;============================================
+[stalker_sim_squad_advanced]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2
+npc_in_squad = 1, 3
+common			= true
+
+[stalker_sim_squad_advanced_3_4]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2
+npc_in_squad = 3, 4
+common			= true
+;============================================
+[stalker_sim_squad_veteran]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 1, 3
+common			= true
+
+[stalker_sim_squad_veteran_3_4]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 3, 4
+common			= true
+;============================================
+
+[stalker_sim_squad_dead]:online_offline_group
+faction = stalker
+npc = sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[stalker_sim_squad_alpha]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 3, 4
+common			= true
+
+[stalker_sim_squad_trader]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_trader
+npc_in_squad = 1, 1
+common			= true
+
+[stalker_sim_squad_mechanic]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[stalker_sim_squad_medic]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_medic
+npc_in_squad = 1, 1
+common			= true
+
+[stalker_sim_squad_barman]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_barman
+npc_in_squad = 1, 1
+common			= true
+;============================================
+[simulation_stalker_for_a1]:online_offline_group
+faction = stalker
+target_smart = {+zat_a1_atack_from_zat_sim_15} zat_a1:nil, nil
+spawn_point = zat_sim_15_spawn_for_a1
+npc = sim_default_stalker_2, sim_default_stalker_0
+
+;-----------------------------------------------
+;-----------------< Bandits >-----------------|
+
+; Forced neutral:
+[simulation_bandit]:online_offline_group
+faction = bandit
+relationship = neutral
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
+npc_in_squad = 1, 3
+common			= true
+
+[bandit_sim_squad_novice]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_2
+npc_in_squad = 1, 3
+common			= true
+
+[bandit_sim_squad_advanced]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
+npc_in_squad = 1, 3
+common			= true
+
+[bandit_sim_squad_veteran]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_4
+npc_in_squad = 1, 3
+common			= true
+
+[bandit_sim_squad_dead]:online_offline_group
+faction = bandit
+npc = sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[bandit_sim_squad_alpha]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_3, sim_default_bandit_4
+npc_in_squad = 3, 4
+common			= true
+
+[bandit_sim_squad_trader]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_trader
+npc_in_squad = 1, 1
+common			= true
+
+[bandit_sim_squad_mechanic]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[bandit_sim_squad_medic]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_medic
+npc_in_squad = 1, 1
+common			= true
+
+[bandit_sim_squad_barman]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_barman
+npc_in_squad = 1, 1
+common			= true
+;-----------------------------------------------
+;-----------------< Mercs >-----------------|
+
+; Forced neutral:
+[simulation_killer]:online_offline_group
+faction = killer
+relationship = neutral
+npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 1, 3
+common			= true
+
+[simulation_hostile_killer]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 1, 3
+relationship = enemy
+common			= true
+
+[merc_sim_squad_novice]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_0, sim_default_killer_1, sim_default_killer_2
+npc_in_squad = 1, 3
+common			= true
+
+[merc_sim_squad_advanced]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
+npc_in_squad = 1, 3
+common			= true
+
+[merc_sim_squad_veteran]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 1, 3
+common			= true
+
+[killer_sim_squad_dead]:online_offline_group
+faction = killer
+npc = sim_default_killer_1, sim_default_killer_2, sim_default_killer_3, sim_default_killer_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[killer_sim_squad_alpha]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 3, 4
+common			= true
+
+[merc_sim_squad_trader]:online_offline_group
+faction = killer 
+npc_random = sim_default_killer_trader
+npc_in_squad = 1, 1
+common			= true
+
+[merc_sim_squad_mechanic]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[merc_sim_squad_medic]:online_offline_group
+faction = killer 
+npc_random = sim_default_killer_medic
+npc_in_squad = 1, 1
+common			= true
+
+[merc_sim_squad_barman]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_barman
+npc_in_squad = 1, 1
+common			= true
+;-----------------------------------------------
+;-----------------< Duty >-----------------| (reduced respawns from 2,3 to 1,3)
+
+[duty_sim_squad_novice]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_0, sim_default_duty_1, sim_default_duty_2
+npc_in_squad = 1, 3
+common			= true
+
+[duty_sim_squad_advanced]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_in_squad = 1, 3
+common			= true
+
+[duty_sim_squad_veteran]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_2, sim_default_duty_2, sim_default_duty_3, sim_default_duty_3, sim_default_duty_4
+npc_in_squad = 1, 3
+common			= true
+
+[duty_sim_squad_5]:online_offline_group
+faction = dolg
+npc  = sim_default_duty_4, sim_default_duty_3, sim_default_duty_2, sim_default_duty_1, sim_default_duty_2
+common			= true
+
+[dolg_sim_squad_dead]:online_offline_group
+faction = dolg
+npc = sim_default_duty_1, sim_default_duty_2, sim_default_duty_3, sim_default_duty_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[dolg_sim_squad_alpha]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_3, sim_default_duty_4
+npc_in_squad = 3, 4
+common			= true
+
+[dolg_sim_squad_trader]:online_offline_group
+faction = dolg 
+npc_random = sim_default_dolg_trader
+npc_in_squad = 1, 1
+common			= true
+
+[dolg_sim_squad_mechanic]:online_offline_group
+faction = dolg
+npc_random = sim_default_dolg_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[dolg_sim_squad_medic]:online_offline_group
+faction = dolg 
+npc_random = sim_default_dolg_medic
+npc_in_squad = 1, 1
+common			= true
+
+[dolg_sim_squad_barman]:online_offline_group
+faction = dolg
+npc_random = sim_default_dolg_barman
+npc_in_squad = 1, 1
+common			= true
+
+;-----------------------------------------------
+;-----------------< Freedom >-----------------| (reduced respawns from 2,3 to 1,3)
+
+[freedom_sim_squad_novice]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2
+npc_in_squad = 1, 3
+common			= true
+
+[freedom_sim_squad_advanced]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_in_squad = 1, 3
+common			= true
+
+[freedom_sim_squad_veteran]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3, sim_default_freedom_4
+npc_in_squad = 1, 3
+common			= true
+
+[freedom_sim_squad_5]:online_offline_group
+faction = freedom
+npc = sim_default_freedom_4, sim_default_freedom_3, sim_default_freedom_2, sim_default_freedom_1, sim_default_freedom_2
+common			= true
+
+[freedom_sim_squad_dead]:online_offline_group
+faction = freedom
+npc = sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[freedom_sim_squad_alpha]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_3, sim_default_freedom_4
+npc_in_squad = 3, 4
+common			= true
+
+[freedom_sim_squad_trader]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_trader
+npc_in_squad = 1, 1
+common			= true
+
+[freedom_sim_squad_mechanic]:online_offline_group
+faction = freedom 
+npc_random = sim_default_freedom_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[freedom_sim_squad_medic]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_medic
+npc_in_squad = 1, 1
+common			= true
+
+[freedom_sim_squad_barman]:online_offline_group
+faction = freedom 
+npc_random = sim_default_freedom_barman
+npc_in_squad = 1, 1
+common			= true
+
+;-----------------------------------------------
+;-----------------< Military >-----------------| (reduced respawns from 2,3 to 1,3)
+
+[army_sim_squad_novice]:online_offline_group
+faction = army
+npc_random = sim_default_military_0, sim_default_military_1, sim_default_military_2
+npc_in_squad = 1, 3
+common			= true
+
+[army_sim_squad_advanced]:online_offline_group
+faction = army
+npc_random = sim_default_military_2, sim_default_military_2, sim_default_military_3
+npc_in_squad = 1, 3
+common			= true
+
+[army_sim_squad_veteran]:online_offline_group
+faction = army
+npc_random = sim_default_military_3, sim_default_military_3, sim_default_military_4
+npc_in_squad = 1, 3
+common			= true
+
+[army_sim_squad_sniper]:online_offline_group
+faction = army
+npc = sim_default_military_3_sniper, sim_default_military_3_sniper
+npc_in_squad = 1, 3
+common			= true
+
+[army_sim_squad_10]:online_offline_group
+faction = army
+npc = sim_default_military_4, sim_default_military_4, sim_default_military_4, sim_default_military_4, sim_default_military_1, sim_default_military_2, sim_default_military_4, sim_default_military_2, sim_default_military_3, sim_default_military_4
+common			= true
+
+[army_sim_squad_dead]:online_offline_group
+faction = army
+npc = sim_default_military_1, sim_default_military_2, sim_default_military_3, sim_default_military_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[army_sim_squad_alpha]:online_offline_group
+faction = army
+npc_random = sim_default_military_3, sim_default_military_4
+npc_in_squad = 3, 4
+common			= true
+
+[army_sim_squad_trader]:online_offline_group
+faction = army
+npc_random = sim_default_army_trader
+npc_in_squad = 1, 1
+common			= true
+
+[army_sim_squad_mechanic]:online_offline_group
+faction = army
+npc_random = sim_default_army_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[army_sim_squad_medic]:online_offline_group
+faction = army
+npc_random = sim_default_army_medic
+npc_in_squad = 1, 1
+common			= true
+
+[army_sim_squad_barman]:online_offline_group
+faction = army
+npc_random = sim_default_army_barman
+npc_in_squad = 1, 1
+common			= true
+
+;-----------------------------------------------
+;-----------------< Ecologists >-----------------| (reduced respawns from 2,3 to 1,3)
+;e - ученый 
+;ls - лайт сталкер (заря)
+;ss - тяж. сталкер
+;es - сталкер-ученый
+
+[ecolog_sim_squad_novice]:online_offline_group
+faction = ecolog
+npc			 = sim_default_ecolog_1
+npc_random 	= sim_default_ecolog_1,sim_default_ecolog_2, sim_default_ecolog_2
+npc_in_squad = 1, 3
+common			= true
+
+[ecolog_sim_squad_advanced]:online_offline_group
+faction = ecolog
+npc			 = sim_default_ecolog_1
+npc_random 	= sim_default_ecolog_2, sim_default_ecolog_3
+npc_in_squad = 1, 3
+common			= true
+
+[ecolog_sim_squad_veteran]:online_offline_group
+faction = ecolog
+npc_random = sim_default_ecolog_5, sim_default_ecolog_3, sim_default_ecolog_4
+npc_in_squad = 1, 3
+common			= true
+
+[ecolog_sim_squad_advanced_1e_2ls]:online_offline_group
+faction = ecolog
+npc = sim_default_ecolog_1, sim_default_ecolog_2, sim_default_ecolog_2
+common			= true
+
+[ecolog_sim_squad_advanced_1e_2es]:online_offline_group
+faction = ecolog
+npc = sim_default_ecolog_1, sim_default_ecolog_0, sim_default_ecolog_0
+common			= true
+
+[ecolog_sim_squad_advanced_1e_1ls_1ss]:online_offline_group
+faction = ecolog
+npc = sim_default_ecolog_1, sim_default_ecolog_4, sim_default_ecolog_0
+common			= true
+
+[ecolog_sim_squad_advanced_2e_2ls_1ss]:online_offline_group
+faction = ecolog
+npc = sim_default_ecolog_4, sim_default_ecolog_1, sim_default_ecolog_1, sim_default_ecolog_2, sim_default_ecolog_2
+common			= true
+
+[ecolog_sim_squad_dead]:online_offline_group
+faction = ecolog
+npc = sim_default_ecolog_1, sim_default_ecolog_2, sim_default_ecolog_3, sim_default_ecolog_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[ecolog_sim_squad_trader]:online_offline_group
+faction = ecolog
+npc_random = sim_default_ecolog_trader
+npc_in_squad = 1, 1
+common			= true
+
+[ecolog_sim_squad_mechanic]:online_offline_group
+faction = ecolog
+npc_random = sim_default_ecolog_mechanic
+npc_in_squad = 1, 1				
+common			= true
+
+[ecolog_sim_squad_medic]:online_offline_group
+faction = ecolog
+npc_random = sim_default_ecolog_medic
+npc_in_squad = 1, 1
+common			= true
+
+[ecolog_sim_squad_barman]:online_offline_group
+faction = ecolog
+npc_random = sim_default_ecolog_barman
+npc_in_squad = 1, 1	
+common			= true
+
+;-----------------------------------------------
+;-----------------< Clear Sky >-----------------|
+
+[csky_sim_squad_novice]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_0, sim_default_csky_0, sim_default_csky_0, sim_default_csky_1
+npc_in_squad = 1, 3
+common			= true
+
+[csky_sim_squad_advanced]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_1, sim_default_csky_1, sim_default_csky_2
+npc_in_squad = 1, 3
+common			= true
+
+[csky_sim_squad_veteran]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_2, sim_default_csky_3, sim_default_csky_4
+npc_in_squad = 1, 3
+common			= true
+
+[csky_sim_squad_dead]:online_offline_group
+faction = csky
+npc = sim_default_csky_1, sim_default_csky_2, sim_default_csky_3, sim_default_csky_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[csky_sim_squad_alpha]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_3, sim_default_csky_4
+npc_in_squad = 3, 4
+common			= true
+
+[csky_sim_squad_trader]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_trader
+npc_in_squad = 1, 1
+common			= true
+
+[csky_sim_squad_mechanic]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[csky_sim_squad_medic]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_medic
+npc_in_squad = 1, 1
+common			= true
+
+[csky_sim_squad_barman]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_barman
+npc_in_squad = 1, 1
+common			= true
+
+;-----------------------------------------------
+;-----------------< Monolith >-----------------|
+
+[monolith_sim_squad_novice]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_0, sim_default_monolith_1, sim_default_monolith_2
+npc_in_squad = 2, 4
+common			= true
+
+[monolith_sim_squad_advanced]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3
+npc_in_squad = 2, 4
+common			= true
+
+[monolith_sim_squad_veteran]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 2, 4
+common			= true
+
+[monolith_sim_squad_sniper]:online_offline_group
+faction = monolith
+npc_random = sim_monolith_specnaz_rg6, sim_monolith_sniper_gauss, sim_monolith_sniper, sim_monolith_sniper, sim_monolith_sniper
+npc_in_squad = 1, 2
+common			= true
+
+[monolith_sim_squad_dead]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[monolith_sim_squad_alpha]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 3, 4
+common			= true
+
+[monolith_sim_squad_trader]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_trader
+npc_in_squad = 1, 1
+common			= true
+
+[monolith_sim_squad_mechanic]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_mechanic
+npc_in_squad = 1, 1
+common			= true
+
+[monolith_sim_squad_medic]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_medic
+npc_in_squad = 1, 1
+common			= true
+
+[monolith_sim_squad_barman]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_barman
+npc_in_squad = 1, 1
+common			= true
+
+;-----------------------------------------------
+;-----------------< Sin >-----------------|
+[greh_sim_squad_novice]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1
+npc_in_squad = 1, 3
+common			= true
+
+[greh_sim_squad_advanced]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3
+npc_in_squad = 1, 3
+common			= true
+
+[greh_sim_squad_veteran]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_default_greh_4
+npc_in_squad = 1, 3
+common			= true
+
+[greh_sim_squad_alpha]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_3, sim_default_greh_4
+npc_in_squad = 3, 4
+common			= true
+
+[greh_sim_squad_trader]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_trader
+npc_in_squad = 1, 1
+common			= true
+
+[greh_sim_squad_mechanic]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_mechanic
+npc_in_squad = 1, 1				
+common			= true
+
+[greh_sim_squad_medic]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_medic
+npc_in_squad = 1, 1
+common			= true
+
+[greh_sim_squad_barman]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_barman
+npc_in_squad = 1, 1	
+common			= true
+
+
+;-----------------------------------------------
+;-----------------< ISG >-----------------|
+[isg_sim_squad_novice]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2
+npc_in_squad = 1, 3
+common			= true
+
+[isg_sim_squad_advanced]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2, sim_default_isg_3
+npc_in_squad = 1, 3
+common			= true
+
+[isg_sim_squad_veteran]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_2, sim_default_isg_2, sim_default_isg_3, sim_default_isg_3, sim_default_isg_4
+npc_in_squad = 1, 3
+common			= true
+
+[isg_sim_squad_dead]:online_offline_group
+faction = isg
+npc = sim_default_isg_1, sim_default_isg_2, sim_default_isg_3, sim_default_isg_dead
+npc_in_squad = 4, 4
+;common			= true
+
+[isg_sim_squad_alpha]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_3, sim_default_isg_4
+npc_in_squad = 3, 4
+common			= true
+
+[isg_sim_squad_trader]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_trader
+npc_in_squad = 1, 1
+common			= true
+
+[isg_sim_squad_mechanic]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_mechanic
+npc_in_squad = 1, 1				
+common			= true
+
+[isg_sim_squad_medic]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_medic
+npc_in_squad = 1, 1
+common			= true
+
+[isg_sim_squad_barman]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_barman
+npc_in_squad = 1, 1	
+common			= true
+
+
+;-----------------------------------------------
+;-----------------< Renegades >-----------------|
+[renegade_sim_squad_novice]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_0, sim_default_renegade_0, sim_default_renegade_0, sim_default_renegade_1
+npc_in_squad = 1, 3
+common			= true
+
+[renegade_sim_squad_advanced]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_0, sim_default_renegade_1, sim_default_renegade_1, sim_default_renegade_2
+npc_in_squad = 1, 3
+common			= true
+
+[renegade_sim_squad_veteran]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_1, sim_default_renegade_1, sim_default_renegade_2, sim_default_renegade_2
+npc_in_squad = 1, 3
+common			= true
+
+[renegade_sim_squad_alpha]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_2, sim_default_renegade_2
+npc_in_squad = 3, 4
+common			= true
+
+[renegade_sim_squad_trader]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_trader
+npc_in_squad = 1, 1
+common			= true
+
+[renegade_sim_squad_mechanic]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_mechanic
+npc_in_squad = 1, 1				
+common			= true
+
+[renegade_sim_squad_medic]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_medic
+npc_in_squad = 1, 1
+common			= true
+
+[renegade_sim_squad_barman]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_barman
+npc_in_squad = 1, 1	
+common			= true

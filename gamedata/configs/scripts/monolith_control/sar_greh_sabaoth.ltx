@@ -1,0 +1,25 @@
+[logic@sar_greh_sabaoth]
+active = beh@sar_greh_sabaoth
+suitable = {=check_npc_name(sar_greh_sabaoth)} true
+prior = 200
+
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 45
+jog_dist = 75
+wait_anim = trans_0
+walk_anim = assault
+jog_anim = assault
+run_anim = assault
+delay_anim = guard
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = false
+invulnerable = false
+meet = no_meet
+
+[beh@sar_greh_sabaoth]:beh@general
+pt1 = 88860000,trans_0 | pos:0.000000000000,-34.484565734863,22.513511657715 look:-0.068105280399323,0.018465079367161,-0.9975072145462
+path_end = loop

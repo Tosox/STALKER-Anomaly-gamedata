@@ -1,0 +1,62 @@
+
+--[[
+
+	Created by Tronex
+	Added: 2018/3/19
+	Last visit: 2020/3/25
+	
+	Timer mode manager
+	you can save once the timer is finished, saving again will reset the timer and you will wait till the next cycle.
+
+--]]
+
+local saved, block_saving
+
+function get_duration()
+	local duration = alife_storage_manager.get_state().enable_timer_mode
+	return duration and duration * 60
+end
+
+function timer_reset()
+	saved = true
+end
+
+function timer_check()
+	block_saving = false
+	if (saved) then
+		ResetTimeEvent("cycle","hardcore_save",get_duration())
+		saved = false
+		block_saving = true
+	end
+end
+
+
+-------------------------------
+-- CALLBACKS
+-------------------------------
+local function on_before_save_input(flags, typ, text)
+	if (block_saving and alife_storage_manager.get_state().enable_timer_mode and db.actor and db.actor:alive()) then
+		flags.ret = true
+		local str = strformat(game.translate_string("st_ui_no_save_timer"),text)
+		actor_menu.set_msg(1, str,4)
+		exec_console_cmd("main_menu off")
+	end
+end
+
+local function on_console_execute(name)
+	if name == "save" then
+		timer_reset()
+	end
+end
+
+function on_game_start()
+	local function on_game_load()
+		local duration = alife_storage_manager.get_state().enable_timer_mode
+		if duration and (type(duration) == "number") then
+			CreateTimeEvent("cycle","hardcore_save",1,timer_check)
+			RegisterScriptCallback("on_console_execute",on_console_execute)
+			RegisterScriptCallback("on_before_save_input",on_before_save_input)
+		end
+	end
+	RegisterScriptCallback("on_game_load",on_game_load)
+end

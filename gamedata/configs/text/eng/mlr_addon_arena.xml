@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="totaliz_pre_0">
+		<text>What now?</text>
+	</string>
+	<string id="totaliz_pre_1">
+		<text>I see you’ve earned quite a reputation in the arena, which now means you can make bets and watch fights! On par with all the big loan sharks, consider this as my present to you for being a great fighter. The bets won’t be much for you, starting from one grand and going to five, and your prize will depend on the number of participants, winners and losers. To put it briefly, you can earn from forty per cent of your bet up to three times as much as you’ve given.</text>
+	</string>
+
+	<string id="totaliz_begin_0">
+		<text>I want to watch a battle.</text>
+	</string>
+	<string id="totaliz_begin_1">
+		<text>Choose what you want to see.</text>
+	</string>
+	<string id="totaliz_begin_2">
+		<text>Stalker versus stalker.</text>
+	</string>
+	<string id="totaliz_begin_6">
+		<text>See what I have.</text>
+	</string>
+
+		<string id="totaliz_begin_9">
+			<text>Two stalkers.</text>
+		</string>
+		<string id="totaliz_begin_21">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_32">
+			<text>Stalker on the left.</text>
+		</string>
+		<string id="totaliz_begin_33">
+			<text>Stalker on the right.</text>
+		</string>
+
+	<string id="totaliz_begin_10">
+		<text>Stalker group versus a group of bandits.</text>
+	</string>
+
+		<string id="totaliz_begin_22">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_34">
+			<text>The stalker group.</text>
+		</string>
+		<string id="totaliz_begin_35">
+			<text>The bandit group.</text>
+		</string>
+
+	<string id="totaliz_begin_11">
+		<text>Dutyer versus a captive Freedomer.</text>
+	</string>
+
+		<string id="totaliz_begin_23">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_36">
+			<text>The Dutyer.</text>
+		</string>
+		<string id="totaliz_begin_37">
+			<text>The Freedomer.</text>
+		</string>
+
+	<string id="totaliz_begin_12">
+		<text>Soldier versus stalker.</text>
+	</string>
+
+		<string id="totaliz_begin_24">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_38">
+			<text>The soldier.</text>
+		</string>
+		<string id="totaliz_begin_39">
+			<text>The stalker.</text>
+		</string>
+
+	<string id="totaliz_begin_3">
+		<text>A stalker versus a mutant.</text>
+	</string>
+
+		<string id="totaliz_begin_7">
+			<text>See what I have.</text>
+		</string>
+		<string id="totaliz_begin_13">
+			<text>A stalker and a pseudodog.</text>
+		</string>
+		<string id="totaliz_begin_25">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_40">
+			<text>The stalker.</text>
+		</string>
+		<string id="totaliz_begin_41">
+			<text>The pseudodog.</text>
+		</string>
+
+	<string id="totaliz_begin_14">
+		<text>Member of Duty versus a group of zombies.</text>
+	</string>
+
+		<string id="totaliz_begin_26">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_42">
+			<text>The Dutyer.</text>
+		</string>
+		<string id="totaliz_begin_43">
+			<text>Zombies.</text>
+		</string>
+
+	<string id="totaliz_begin_15">
+		<text>A pair of bandits versus a bloodsucker.</text>
+	</string>
+
+		<string id="totaliz_begin_27">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_44">
+			<text>The bandits.</text>
+		</string>
+		<string id="totaliz_begin_45">
+			<text>The bloodsucker.</text>
+		</string>
+
+	<string id="totaliz_begin_16">
+		<text>A couple of soldiers versus a burer.</text>
+	</string>
+
+		<string id="totaliz_begin_28">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_46">
+			<text>The soldiers.</text>
+		</string>
+		<string id="totaliz_begin_47">
+			<text>The burer.</text>
+		</string>
+
+	<string id="totaliz_begin_4">
+		<text>Mutant versus mutant.</text>
+	</string>
+
+		<string id="totaliz_begin_8">
+			<text>See what I have.</text>
+		</string>
+		<string id="totaliz_begin_17">
+			<text>Snork versus snork.</text>
+		</string>
+		<string id="totaliz_begin_29">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_48">
+			<text>The snork on the left.</text>
+		</string>
+		<string id="totaliz_begin_49">
+			<text>The snork on the right.</text>
+		</string>
+
+	<string id="totaliz_begin_18">
+		<text>Bloodsucker versus bloodsucker.</text>
+	</string>
+
+		<string id="totaliz_begin_30">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_50">
+			<text>The bloodsucker on the left.</text>
+		</string>
+		<string id="totaliz_begin_51">
+			<text>The bloodsucker on the right.</text>
+		</string>
+
+	<string id="totaliz_begin_19">
+		<text>Chimera versus chimera.</text>
+	</string>
+
+		<string id="totaliz_begin_31">
+			<text>Who are you betting on?</text>
+		</string>
+		<string id="totaliz_begin_52">
+			<text>The chimera on the left.</text>
+		</string>
+		<string id="totaliz_begin_53">
+			<text>The chimera on the right.</text>
+		</string>
+
+	<string id="totaliz_begin_54">
+		<text>How much are you betting?</text>
+	</string>
+
+		<string id="totaliz_begin_55">
+			<text>One thousand.</text>
+		</string>
+		<string id="totaliz_begin_56">
+			<text>Two and a half thousand.</text>
+		</string>
+		<string id="totaliz_begin_57">
+			<text>Five thousand.</text>
+		</string>
+		<string id="totaliz_begin_58">
+			<text>I don’t have that much money.</text>
+		</string>
+
+	<string id="totaliz_begin_20">
+		<text>Not interested.</text>
+	</string>
+	<string id="totaliz_begin_5">
+		<text>I’ve changed my mind.</text>
+	</string>
+
+	<string id="total_reward_dialog_1000_0">
+		<text>You got the money?</text>
+	</string>
+	<string id="total_reward_dialog_1000_1">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_2">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_3">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_4">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_5">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_6">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_7">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_8">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_9">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_10">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_11">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_12">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_13">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_14">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_15">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_16">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_17">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_18">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_19">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_20">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_21">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_22">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_1000_23">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_24">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_25">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_26">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_27">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_28">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_29">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_30">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_31">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_32">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_33">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_34">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_35">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_36">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_37">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_1000_38">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+
+	<string id="total_reward_dialog_2500_0">
+		<text>What about the money?</text>
+	</string>
+	<string id="total_reward_dialog_2500_1">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_2">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_3">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_4">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_5">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_6">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_7">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_8">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_9">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_10">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_11">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_12">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_13">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_14">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_15">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_16">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_17">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_18">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_19">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_20">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_21">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_22">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_2500_23">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_24">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_25">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_26">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_27">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_28">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_29">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_30">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_31">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_32">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_33">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_34">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_35">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_36">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_37">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+	<string id="total_reward_dialog_2500_38">
+		<text>Nothing. You’ve lost.</text>
+	</string>
+
+	<string id="total_reward_dialog_5000_0">
+		<text>What about the money?</text>
+	</string>
+	<string id="total_reward_dialog_5000_1">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_2">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_3">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_4">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_5">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_6">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_7">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_8">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_9">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_10">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_11">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_12">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_13">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_14">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_15">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_16">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_17">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_18">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_19">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_20">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_21">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_22">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_23">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_24">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_25">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_26">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_27">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_28">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_29">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_30">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_31">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_32">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_33">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_34">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_35">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_36">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_37">
+		<text>Keep your prize.</text>
+	</string>
+	<string id="total_reward_dialog_5000_38">
+		<text>Keep your prize.</text>
+	</string>
+</string_table>

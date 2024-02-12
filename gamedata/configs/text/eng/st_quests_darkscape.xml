@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Mechanic -->
+	<string id="dasc_tech_mlr_task_1_name">
+		<text>Find %s for the Loner mechanic in Darkscape</text>
+	</string>
+	<string id="dasc_tech_mlr_task_1_text">
+		<text>The technician at the sawmill has asked me to fetch him %s.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_1_about">
+		<text>As you already understand, the wilderness here is utterly unreal. Although this is a former sawmill, nothing is left but the logs. I could use some kits to work with... If you can find basic ones, please bring them here.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_1_fetch_about">
+		<text>As you already understand, the wilderness here is utterly unreal. Although this is a former sawmill, nothing is left but the logs. I could use some kits to work with... If you can find basic ones, please bring them here.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_1_fetch_finish">
+		<text>Thanks... Things are going to be much easier. Keep this artefact - it's called "Pellicle". Quite rare.</text>
+	</string>
+
+	<string id="dasc_tech_mlr_task_2_name">
+		<text>Find %s for the Loner mechanic in Darkscape</text>
+	</string>
+	<string id="dasc_tech_mlr_task_2_text">
+		<text>The technician at the sawmill has asked me to fetch him %s.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_2_about">
+		<text>Since you've already found one set of tools, do you happen to know where some more advanced ones are? I desperately need them.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_2_fetch_about">
+		<text>Since you've already found one set of tools, do you happen to know where some more advanced ones are? I desperately need them.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_2_fetch_finish">
+		<text>Thank you, thank you. Here's a small discount.</text>
+	</string>
+
+	<string id="dasc_tech_mlr_task_3_name">
+		<text>Find %s for the Loner mechanic in Darkscape</text>
+	</string>
+	<string id="dasc_tech_mlr_task_3_text">
+		<text>The technician at the sawmill has asked me to fetch him %s.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_3_about">
+		<text>I understand that it might be too much to ask in this godforsaken place, but maybe you could help me in finding a third, more complex kit? An expert's kit will do just fine.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_3_fetch_about">
+		<text>I understand that it might be too much to ask in this godforsaken place, but maybe you could help me in finding a third, more complex kit? An expert's kit will do just fine.</text>
+	</string>
+	<string id="dasc_tech_mlr_task_3_fetch_finish">
+		<text>Thank you for everything. Perhaps this wretched place will turn into a fully fledged camp someday.</text>
+	</string>
+
+
+</string_table>

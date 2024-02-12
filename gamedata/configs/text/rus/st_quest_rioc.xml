@@ -1,0 +1,202 @@
+<string_table>
+	<string id="st_rioc_sid_desc">
+		<text>Закрытый кейс, найденный на трупе сталкера. Наверняка именно тот, о котором говорил Сидорович. Пожалуй, стоит воздержаться от попыток взломать его - всё-таки с этим торговцем шутки плохи.</text>
+	</string>
+
+	<string id="st_rioc_sid">
+		<text>Товар Сидоровича</text>
+	</string>
+
+	<string id="st_rioc_duty_desc">
+		<text>Немного побитый и грязный КПК, принадлежавший ныне покойному бойцу группировки «Долг». Девайс вроде как ещё функционирует. Стоит отнести его как можно скорее к Петренко. Да и наверное не стоит заглядывать в КПК, хотя бы из уважения к погибшему.</text>
+	</string>
+
+	<string id="st_rioc_duty">
+		<text>КПК долговца</text>
+	</string>
+
+	<string id="st_rioc_ecolog_desc">
+		<text>Устройство, заключённое в армированный контейнер. Согласно учёным, это прототип совершенно нового детектора, призванного раз и навсегда изменить жизнь охотников за артефактами. К великому сожалению, информация, представленная в виде цифр и граф, не поддаётся какому-либо пониманию.</text>
+	</string>
+
+	<string id="st_rioc_ecolog">
+		<text>Прототип детектора</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_d">
+		<text>Один сталкер должен был притащить мне кое-какой товар от другого торговца, да только от него уже как пару дней ни слуху ни духу. Я уже было подумал, что хрен этот свинтил с моим хабаром, но свои текущие координаты он никак не зашифровал. Так что либо Алёша наш совсем тугой и болт положил на это, либо же с ним приключилось что-то, потому что координаты так и не изменились. А может и вовсе КПК свой просрал... Но выяснить, что за чертовщина такая там, всё же надо. Вот ты и сгодишься как раз. Сгоняй-ка да проведай всё, лады? Если паренёк наш коньки вдруг всё же отбросил да ещё и рядом с моим хабаром, то тащи это дело назад ко мне - проверю, всё ли на месте. А там уж... кто-нибудь другой справится с доставкой.</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_t">
+		<text>Вернуть товар Сидоровича</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_t">
+		<text>Вернуть прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_d">
+		<text>В данный момент мы испытываем некоторую проблему, от помощи с которой мы бы точно не отказались. Одна из исследовательских групп должна была провести сканирование ряда аномальных зон, однако группа, к сожалению, так до сих пор и не вернулась. А попытки связаться с её членами ничем хорошим не увенчались. Мы даже связались с наблюдателями СБУ в Зоне, однако получили отказ по причине нехватки людей, которых можно было бы отправить на поиски.\nВидите ли, эта группа представляет для нас просто огромное значение - один из её членов имел в своём распоряжении прототип нового детектора, который мы практически не используем за пределами нашего лагеря. Пожалуйста, не могли бы Вы помочь нам с этой проблемой? Мы позаботимся о том, чтобы Вы были вознаграждены соответствующим образом за помощь науке. Я отмечу Вам на карте последние известные координаты группы.</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_end">
+		<text>Большое Вам спасибо! Вы и понятия не имеете, какое облегчение я испытал при виде прототипа в Ваших руках. Потеря группы, безусловно, большая трагедия, но потеря прибора отбросила бы прогресс исследований чуть ли не на год назад! Ещё раз благодарю Вас. Но право, что же слова без поступков? Вот Ваша награда за помощь.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_t">
+		<text>Найти пропавшего бойца «Долга»</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_d">
+		<text>Тут дело такое... Несколькими часами ранее один из патрулей «Долга» пришёл на помощь сталкерам, отправивших сигнал SOS. Ребята прибыли оперативно и смогли обеспечить отход групп нейтралов и учёных, попавших в заварушку с мутировавшим отродьем. Однако... Один боец прикрывал тыл, чтобы обеспечить эвакуацию. Это единственный боец, которого группа не досчиталась.\n \nМне бы очень хотелось, чтобы ты обследовал место, где он предположительно и пропал. Поможешь найти бойца, а? Если он живой, то окажи какую можешь помощь или маякни нам для его последующей эвакуации. Ну, а уж если потеряли его... Доставь сюда его КПК. Там хранится разного рода информация помимо личной, включая и служебную. Сам понимаешь.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_end">
+		<text>Благодарю за КПК бойца, приятель. Жаль парня... Такого бойца потеряли, эх... Вот тебе наглядный пример, что это такое - Зона. Поскорее бы уж избавить планету от этой заразы. А вот это тебе за труды. Ещё раз спасибо.</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_agroprom_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_pol_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_garbage_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_wt_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_aw_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_trucc_0">
+		<text>Найти потерянный товар Сидоровича</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_agroprom_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_pol_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_garbage_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_wt_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_aw_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="esc_m_trader_task_recover_item_on_corpse_trucc_1">
+		<text>Вернуть хабар Сидоровичу</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_agroprom_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_pol_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_garbage_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_wt_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_aw_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_trucc_0">
+		<text>Надо найти прототип детектора</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_agroprom_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_pol_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_garbage_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_wt_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_aw_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="yan_stalker_sakharov_task_rioc_trucc_1">
+		<text>Необходимо вернуть найденный прототип обратно учёным</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_agroprom_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_pol_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_garbage_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_wt_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_aw_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_trucc_0">
+		<text>Установить местонахождение пропавшего бойца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_agroprom_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_pol_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_garbage_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_wt_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_aw_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_rioc_trucc_1">
+		<text>Доставить к Петренко найденный КПК долговца</text>
+	</string>
+
+</string_table>

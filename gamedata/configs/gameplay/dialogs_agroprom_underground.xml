@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+	<dialog id="dm_agr_u_bandit_boss_start">
+        <dont_has_info>agr_u_bandit_boss_start</dont_has_info>
+		<dont_has_info>faction_limited_playthrough</dont_has_info>
+        <init_func>dialog_manager.dm_agr_u_bandit_boss_start</init_func>
+    </dialog>
+	
+	<dialog id="dm_agr_u_bandit_boss_ask">
+		<precondition>dialogs.warfare_disabled</precondition>
+		<dont_has_info>faction_limited_playthrough</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_ask</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed_alt</dont_has_info>
+		<precondition>dialogs_agr_u.item_exist_agr_u_docs</precondition>
+        <init_func>dialog_manager.dm_agr_u_bandit_boss_ask</init_func>
+    </dialog>
+	
+	<dialog id="dm_agr_u_bandit_boss_reask">
+		<has_info>agr_u_bandit_boss_ask</has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed_alt</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_accepted</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_refused</dont_has_info>
+		<precondition>dialogs_agr_u.item_exist_agr_u_docs</precondition>
+		<precondition>dialogs_agr_u.actor_dont_has_agr_u_docs</precondition>
+        <init_func>dialog_manager.dm_agr_u_bandit_boss_reask</init_func>
+    </dialog>
+	
+	<dialog id="dm_agr_u_bandit_boss_give_docs">
+		<has_info>agr_u_bandit_boss_ask</has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed_alt</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_refused</dont_has_info>
+		<precondition>dialogs_agr_u.actor_has_agr_u_docs</precondition>
+        <init_func>dialog_manager.dm_agr_u_bandit_boss_give_docs</init_func>
+    </dialog>
+	
+	<dialog id="dm_agr_u_bandit_boss_arrived">
+		<has_info>agr_u_bandit_boss_ask</has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_task_completed_alt</dont_has_info>
+		<dont_has_info>agr_u_bandit_boss_refused</dont_has_info>
+		<precondition>dialogs_agr_u.agr_u_bandit_boss_arrived_to_smart</precondition>
+        <init_func>dialog_manager.dm_agr_u_bandit_boss_arrived</init_func>
+    </dialog>
+	
+</game_dialogs>

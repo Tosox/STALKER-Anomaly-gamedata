@@ -1,0 +1,406 @@
+#include "ambient_channels\blowout_channels.ltx"
+#include "ambient_channels\backgrounds.ltx"
+
+	
+;------------------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// NATURE - ANIMALS /////////////////////////////////////////////////////
+;------------------------------------------------------------------------------------------------------------------------
+[crows_clear] 	;everywhere
+        max_distance                     = 50.0		;40.000000
+        min_distance                     = 30.0		;20.000000
+		height                           = 10
+        period0                          = 1000
+        period1                          = 10000
+        period2                          = 5000
+        period3                          = 20000
+        sounds                           = ambient\trx\nature\crow\_sound_1, ambient\trx\nature\crow\_sound_2, ambient\trx\nature\crow\_sound_3, ambient\trx\nature\crow\_sound_4, ambient\trx\nature\crow\_sound_5, ambient\trx\nature\crow\_sound_6
+
+		
+[crows]  ;everywhere
+        max_distance                     = 80.0		;90.0
+        min_distance                     = 60.0		;70.0
+		height                           = 10
+        period0                          = 15000
+        period1                          = 30000
+        period2                          = 52500
+        period3                          = 32000
+        sounds                           = ambient\trx\nature\crow\sound_01, ambient\trx\nature\crow\sound_02, ambient\trx\nature\crow\sound_03, ambient\trx\nature\crow\sound_04, ambient\trx\nature\crow\sound_05, ambient\trx\nature\crow\sound_06, ambient\trx\nature\crow\sound_07, ambient\trx\nature\crow\sound_08, ambient\trx\nature\crow\sound_09, ambient\trx\nature\crow\sound_10, ambient\trx\nature\crow\sound_11, ambient\trx\nature\crow\sound_12, ambient\trx\nature\crow\sound_13, ambient\trx\nature\crow\sound_14, ambient\trx\nature\crow\sound_15, ambient\trx\nature\crow\sound_16
+		
+		
+[birds] 	;used twice in morning time
+        max_distance                     = 160.0
+        min_distance                     = 120.0
+        period0                          = 2000		;32000
+        period1                          = 10000	;69000
+        period2                          = 5000		;31000
+        period3                          = 15000	;68000
+        sounds                           = ambient\trx\nature\birds\sound_01, ambient\trx\nature\birds\sound_02, ambient\trx\nature\birds\sound_03, ambient\trx\nature\birds\sound_04, ambient\trx\nature\birds\sound_05, ambient\trx\nature\birds\sound_06, ambient\trx\nature\birds\sound_07, ambient\trx\nature\birds\sound_08, ambient\trx\nature\birds\sound_09, ambient\trx\nature\birds\sound_10, ambient\trx\nature\birds\sound_11, ambient\trx\nature\birds\sound_12, ambient\trx\nature\birds\sound_13, ambient\trx\nature\birds\sound_14, ambient\trx\nature\birds\sound_15, ambient\trx\nature\birds\sound_16, ambient\trx\nature\birds\sound_17, ambient\trx\nature\birds\sound_18, ambient\trx\nature\birds\sound_19, ambient\trx\nature\birds\sound_20, ambient\trx\nature\birds\sound_21, ambient\trx\nature\birds\sound_22, ambient\trx\nature\birds\sound_23, ambient\trx\nature\birds\sound_24, ambient\trx\nature\birds\sound_25, ambient\trx\nature\birds\sound_26, ambient\trx\nature\birds\sound_27, ambient\trx\nature\birds\sound_28, ambient\trx\nature\birds\sound_29, ambient\trx\nature\birds\sound_30, ambient\trx\nature\birds\sound_31, ambient\trx\nature\birds\sound_32, ambient\trx\nature\birds\sound_33, ambient\trx\nature\birds\sound_34, ambient\trx\nature\birds\sound_35, ambient\trx\nature\birds\sound_36, ambient\trx\nature\birds\sound_37, ambient\trx\nature\birds\sound_38, ambient\trx\nature\birds\sound_39, ambient\trx\nature\birds\sound_40, ambient\trx\nature\birds\sound_41, ambient\trx\nature\birds\sound_42, ambient\trx\nature\birds\sound_43, ambient\trx\nature\birds\sound_46, ambient\trx\nature\birds\sound_47, ambient\trx\nature\birds\sound_48, ambient\trx\nature\birds\sound_49, ambient\trx\nature\birds\sound_50, ambient\trx\nature\birds\sound_51
+		
+[crickets] 	;used in night and evening time
+        max_distance                     = 90.0
+        min_distance                     = 30.0
+        period0                          = 21000
+        period1                          = 58000
+        period2                          = 22500
+        period3                          = 60000
+        sounds                           = ambient\trx\nature\cricket\sound_01, ambient\trx\nature\cricket\sound_02, ambient\trx\nature\cricket\sound_03, ambient\trx\nature\cricket\sound_04, ambient\trx\nature\cricket\sound_05, ambient\trx\nature\cricket\sound_06, ambient\trx\nature\cricket\sound_07, ambient\trx\nature\cricket\sound_08, ambient\trx\nature\cricket\sound_09, ambient\trx\nature\cricket\sound_10
+		
+[crickets_night]	;used in night time
+        max_distance                     = 70.0
+        min_distance                     = 50.0
+        period0                          = 10000
+        period1                          = 30000
+        period2                          = 10000
+        period3                          = 30000
+        sounds                           = ambient\trx\nature\cricket\sound_01, ambient\trx\nature\cricket\sound_02, ambient\trx\nature\cricket\sound_03, ambient\trx\nature\cricket\sound_04, ambient\trx\nature\cricket\sound_05, ambient\trx\nature\cricket\sound_06, ambient\trx\nature\cricket\sound_07, ambient\trx\nature\cricket\sound_08, ambient\trx\nature\cricket\sound_09, ambient\trx\nature\cricket\sound_10, ambient\trx\nature\cricket\_sound_1, ambient\trx\nature\cricket\_sound_2
+		
+[insects] 	;used in swamps, non-rainy weather
+        max_distance                     = 100.0
+        min_distance                     = 40.0
+        period0                          = 8000
+        period1                          = 15000
+        period2                          = 10000
+        period3                          = 20000
+        sounds                           = ambient\trx\nature\insect\sound_01, ambient\trx\nature\insect\sound_02, ambient\trx\nature\insect\sound_03, ambient\trx\nature\insect\sound_04, ambient\trx\nature\insect\sound_05, ambient\trx\nature\insect\sound_06, ambient\trx\nature\insect\sound_07, ambient\trx\nature\insect\sound_08, ambient\trx\nature\insect\sound_09, ambient\trx\nature\insect\sound_10, ambient\trx\nature\insect\sound_11
+		
+[flies]		;not used
+        max_distance                     = 15.0
+        min_distance                     = 5.0
+        period0                          = 40000
+        period1                          = 90000
+        period2                          = 42000
+        period3                          = 91000
+        sounds                           = ambient\trx\nature\flie\sound_01, ambient\trx\nature\flie\sound_02, ambient\trx\nature\flie\sound_03, ambient\trx\nature\flie\sound_04, ambient\trx\nature\flie\sound_05, ambient\trx\nature\flie\sound_06, ambient\trx\nature\flie\sound_07, ambient\trx\nature\flie\sound_08, ambient\trx\nature\flie\sound_09, ambient\trx\nature\flie\sound_10, ambient\trx\nature\flie\sound_11, ambient\trx\nature\flie\sound_12
+		
+[gulls] 	;not used
+        max_distance                     = 70.0
+        min_distance                     = 45.0
+        period0                          = 1000		;32000
+        period1                          = 10000	;69000
+        period2                          = 5000		;31000
+        period3                          = 20000	;68000
+        sounds                           = ambient\trx\nature\gull\sound_01, ambient\trx\nature\gull\sound_02, ambient\trx\nature\gull\sound_03, ambient\trx\nature\gull\sound_04, ambient\trx\nature\gull\sound_05, ambient\trx\nature\gull\sound_06, ambient\trx\nature\gull\sound_07
+		
+[dogs]		;almost everywhere
+        max_distance                     = 140.0	;90.0		
+        min_distance                     = 100.0	;60.0	
+        period0                          = 20000
+        period1                          = 60000
+        period2                          = 30000
+        period3                          = 80000
+        sounds                           = ambient\trx\nature\dog\sound_01, ambient\trx\nature\dog\sound_02, ambient\trx\nature\dog\sound_03, ambient\trx\nature\dog\sound_04, ambient\trx\nature\dog\sound_05, ambient\trx\nature\dog\sound_06, ambient\trx\nature\dog\sound_07, ambient\trx\nature\dog\sound_08, ambient\trx\nature\dog\sound_09, ambient\trx\nature\dog\sound_10, ambient\trx\nature\dog\sound_11, ambient\trx\nature\dog\sound_12, ambient\trx\nature\dog\sound_13, ambient\trx\nature\dog\sound_14, ambient\trx\nature\dog\sound_15, ambient\trx\nature\dog\sound_16, ambient\trx\nature\dog\sound_17, ambient\trx\nature\dog\sound_18, ambient\trx\nature\dog\sound_19, ambient\trx\nature\dog\sound_20, ambient\trx\nature\dog\sound_21
+		
+		
+[owls]		;used in morning and evening
+        max_distance                     = 70.0
+        min_distance                     = 30.0
+        period0                          = 10000
+        period1                          = 20000
+        period2                          = 15000
+        period3                          = 30000
+        sounds                           = ambient\trx\nature\owl\sound_01, ambient\trx\nature\owl\sound_02, ambient\trx\nature\owl\sound_03, ambient\trx\nature\owl\sound_04, ambient\trx\nature\owl\sound_05, ambient\trx\nature\owl\sound_06, ambient\trx\nature\owl\sound_07, ambient\trx\nature\owl\sound_08
+		
+;-----------------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// NATURE - WIND ///////////////////////////////////////////////////////
+;-----------------------------------------------------------------------------------------------------------------------
+
+[wind_normal]	;used always
+		max_distance                     = 40.000000
+		min_distance                     = 25.000000
+		period0                          = 1000
+		period1                          = 20000
+		period2                          = 20000
+		period3                          = 40000
+		sounds                           = ambient\trx\nature\wind_normal\sound_01, ambient\trx\nature\wind_normal\sound_02, ambient\trx\nature\wind_normal\sound_07, ambient\trx\nature\wind_normal\sound_08, ambient\trx\nature\wind_normal\sound_09, ambient\trx\nature\wind_normal\sound_11, ambient\trx\nature\wind_normal\sound_12, ambient\trx\nature\wind_normal\sound_13, ambient\trx\nature\wind_normal\sound_14, ambient\trx\nature\wind_normal\sound_15
+
+[wind_forest] 	;used always + storms
+        max_distance                     = 60.0
+        min_distance                     = 40.0
+        period0                          = 7000
+        period1                          = 25000
+        period2                          = 30000
+        period3                          = 70000
+        sounds                           = ambient\trx\nature\wind_forest\sound_01, ambient\trx\nature\wind_forest\sound_02, ambient\trx\nature\wind_forest\sound_03, ambient\trx\nature\wind_forest\sound_04, ambient\trx\nature\wind_forest\sound_05
+		
+
+[wind_dark]		;used in normal days
+        max_distance                     = 60.0
+        min_distance                     = 30.0
+        period0                          = 15000
+        period1                          = 53000
+        period2                          = 22000
+        period3                          = 55000
+        sounds                           = ambient\trx\nature\wind_dark\sound_01, ambient\trx\nature\wind_dark\sound_02, ambient\trx\nature\wind_dark\sound_03, ambient\trx\nature\wind_dark\sound_04, ambient\trx\nature\wind_dark\sound_05, ambient\trx\nature\wind_dark\sound_06
+		
+[wind_tuman] 	;used in tuman
+        max_distance                     = 40.0
+        min_distance                     = 25.0
+        period0                          = 7000
+        period1                          = 35000
+        period2                          = 30000
+        period3                          = 50000
+        sounds                           = ambient\trx\nature\wind_tuman\sound_01, ambient\trx\nature\wind_tuman\sound_02, ambient\trx\nature\wind_tuman\sound_03, ambient\trx\nature\wind_tuman\sound_04, ambient\trx\nature\wind_tuman\sound_05, ambient\trx\nature\wind_tuman\sound_06, ambient\trx\nature\wind_tuman\sound_07, ambient\trx\nature\wind_tuman\sound_08, ambient\trx\nature\wind_tuman\sound_09, ambient\trx\nature\wind_tuman\sound_10, ambient\trx\nature\wind_tuman\sound_11, ambient\trx\nature\wind_tuman\sound_12, ambient\trx\nature\wind_tuman\sound_13, ambient\trx\nature\wind_tuman\sound_14
+		
+[wind_heavy] 	;used in rain
+        max_distance                     = 40.0
+        min_distance                     = 20.0
+        period0                          = 10000
+        period1                          = 55000
+        period2                          = 10000
+        period3                          = 55000
+        sounds                           = ambient\trx\nature\wind_heavy\sound_01, ambient\trx\nature\wind_heavy\sound_02, ambient\trx\nature\wind_heavy\sound_03, ambient\trx\nature\wind_heavy\sound_04
+		
+
+;----------------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// NATURE - STORM /////////////////////////////////////////////////////
+;----------------------------------------------------------------------------------------------------------------------
+[pre_storm]
+        max_distance                     = 300.0
+        min_distance                     = 50.0		
+        period0                          = 25000
+        period1                          = 58000
+        period2                          = 23000
+        period3                          = 59000
+        sounds                           = ambient\trx\nature\storm\sound_01, ambient\trx\nature\storm\sound_02, ambient\trx\nature\storm\sound_03, ambient\trx\nature\storm\sound_04, ambient\trx\nature\storm\sound_05, ambient\trx\nature\storm\sound_06, ambient\trx\nature\storm\sound_07, ambient\trx\nature\storm\sound_08, ambient\trx\nature\storm\sound_09, ambient\trx\nature\storm\sound_10, ambient\trx\nature\storm\sound_11, ambient\trx\nature\storm\sound_12, ambient\trx\nature\storm\sound_13, ambient\trx\nature\storm\sound_14, ambient\trx\nature\storm\sound_15, ambient\trx\nature\storm\sound_16
+		
+[storm]	;pre_storm + others
+        max_distance                     = 200.0
+        min_distance                     = 50.0		
+        period0                          = 20000
+        period1                          = 33000
+        period2                          = 21000
+        period3                          = 34000
+        sounds                           = ambient\trx\nature\storm\sound_01, ambient\trx\nature\storm\sound_02, ambient\trx\nature\storm\sound_03, ambient\trx\nature\storm\sound_04, ambient\trx\nature\storm\sound_05, ambient\trx\nature\storm\sound_06, ambient\trx\nature\storm\sound_07, ambient\trx\nature\storm\sound_08, ambient\trx\nature\storm\sound_09, ambient\trx\nature\storm\sound_10, ambient\trx\nature\storm\sound_11, ambient\trx\nature\storm\sound_12, ambient\trx\nature\storm\sound_13, ambient\trx\nature\storm\sound_14, ambient\trx\nature\storm\sound_15, ambient\trx\nature\storm\sound_16, ambient\trx\nature\storm\_sound_1, ambient\trx\nature\storm\_sound_2, ambient\trx\nature\storm\_sound_3, ambient\trx\nature\storm\_sound_4, ambient\trx\nature\storm\_sound_5, ambient\trx\nature\storm\_sound_6, ambient\trx\nature\storm\_sound_7, ambient\trx\nature\storm\_sound_8
+	
+	
+;-----------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// OUTSIDE ///////////////////////////////////////////////////////
+;-----------------------------------------------------------------------------------------------------------------
+
+[out_mutants] 	;used everywhere 
+		max_distance                     = 90.0		;70.000000
+		min_distance                     = 70.0		;45.000000
+		period0                          = 10000		;1000
+		period1                          = 40000
+		period2                          = 50000	;20000
+		period3                          = 80000
+		sounds                           = ambient\trx\spooks_above\mutants\sound_01, ambient\trx\spooks_above\mutants\sound_02, ambient\trx\spooks_above\mutants\sound_03, ambient\trx\spooks_above\mutants\sound_04, ambient\trx\spooks_above\mutants\sound_05, ambient\trx\spooks_above\mutants\sound_06, ambient\trx\spooks_above\mutants\sound_07, ambient\trx\spooks_above\mutants\sound_08, ambient\trx\spooks_above\mutants\sound_09, ambient\trx\spooks_above\mutants\sound_10, ambient\trx\spooks_above\mutants\sound_11, ambient\trx\spooks_above\mutants\sound_12, ambient\trx\spooks_above\mutants\sound_13, ambient\trx\spooks_above\mutants\sound_14, ambient\trx\spooks_above\mutants\sound_15, ambient\trx\spooks_above\mutants\sound_16, ambient\trx\spooks_above\mutants\sound_17, ambient\trx\spooks_above\mutants\sound_18, ambient\trx\spooks_above\mutants\sound_19, ambient\trx\spooks_above\mutants\sound_20, ambient\trx\spooks_above\mutants\sound_21, ambient\trx\spooks_above\mutants\sound_22, ambient\trx\spooks_above\mutants\sound_23, ambient\trx\spooks_above\mutants\sound_24, ambient\trx\spooks_above\mutants\sound_25, ambient\trx\spooks_above\mutants\sound_26, ambient\trx\spooks_above\mutants\sound_27, ambient\trx\spooks_above\mutants\sound_28, ambient\trx\spooks_above\mutants\sound_29, ambient\trx\spooks_above\mutants\sound_30, ambient\trx\spooks_above\mutants\sound_31, ambient\trx\spooks_above\mutants\sound_32, ambient\trx\spooks_above\mutants\sound_33, ambient\trx\spooks_above\mutants\sound_34, ambient\trx\spooks_above\mutants\sound_35, ambient\trx\spooks_above\mutants\sound_36, ambient\trx\spooks_above\mutants\sound_37, ambient\trx\spooks_above\mutants\sound_38, ambient\trx\spooks_above\mutants\sound_39, ambient\trx\spooks_above\mutants\sound_40
+		
+[out_screams] 	;used everywhere
+		max_distance                     = 90.0		;70.000000
+		min_distance                     = 70.0		;45.000000
+		period0                          = 20000	;1000
+		period1                          = 40000
+		period2                          = 50000	;20000
+		period3                          = 80000
+		sounds                           = ambient\trx\spooks_above\screams\sound_01, ambient\trx\spooks_above\screams\sound_02, ambient\trx\spooks_above\screams\sound_03, ambient\trx\spooks_above\screams\sound_04, ambient\trx\spooks_above\screams\sound_05, ambient\trx\spooks_above\screams\sound_06, ambient\trx\spooks_above\screams\sound_07, ambient\trx\spooks_above\screams\sound_08, ambient\trx\spooks_above\screams\sound_09, ambient\trx\spooks_above\screams\sound_10, ambient\trx\spooks_above\screams\sound_11, ambient\trx\spooks_above\screams\sound_12, ambient\trx\spooks_above\screams\sound_13, ambient\trx\spooks_above\screams\sound_14, ambient\trx\spooks_above\screams\sound_15, ambient\trx\spooks_above\screams\sound_16, ambient\trx\spooks_above\screams\sound_17, ambient\trx\spooks_above\screams\sound_18, ambient\trx\spooks_above\screams\sound_19, ambient\trx\spooks_above\screams\sound_20, ambient\trx\spooks_above\screams\sound_21, ambient\trx\spooks_above\screams\sound_22, ambient\trx\spooks_above\screams\sound_23, ambient\trx\spooks_above\screams\sound_24, ambient\trx\spooks_above\screams\sound_25
+
+[out_spooks] 	;used everywhere, double rate at night
+		max_distance                     = 80.0		;70.000000
+		min_distance                     = 60.0		;45.000000
+		period0                          = 10000		;1000
+		period1                          = 40000
+		period2                          = 50000	;20000
+		period3                          = 80000
+		sounds                           = ambient\trx\spooks_above\spooks\sound_01, ambient\trx\spooks_above\spooks\sound_02, ambient\trx\spooks_above\spooks\sound_03, ambient\trx\spooks_above\spooks\sound_04, ambient\trx\spooks_above\spooks\sound_05, ambient\trx\spooks_above\spooks\sound_06, ambient\trx\spooks_above\spooks\sound_07, ambient\trx\spooks_above\spooks\sound_08, ambient\trx\spooks_above\spooks\sound_09, ambient\trx\spooks_above\spooks\sound_10, ambient\trx\spooks_above\spooks\sound_11, ambient\trx\spooks_above\spooks\sound_12, ambient\trx\spooks_above\spooks\sound_13, ambient\trx\spooks_above\spooks\sound_14, ambient\trx\spooks_above\spooks\sound_15, ambient\trx\spooks_above\spooks\sound_16, ambient\trx\spooks_above\spooks\sound_17, ambient\trx\spooks_above\spooks\sound_18, ambient\trx\spooks_above\spooks\sound_19, ambient\trx\spooks_above\spooks\sound_20, ambient\trx\spooks_above\spooks\sound_21, ambient\trx\spooks_above\spooks\sound_22, ambient\trx\spooks_above\spooks\sound_23, ambient\trx\spooks_above\spooks\sound_24, ambient\trx\spooks_above\spooks\sound_25, ambient\trx\spooks_above\spooks\sound_26, ambient\trx\spooks_above\spooks\sound_27, ambient\trx\spooks_above\spooks\sound_28, ambient\trx\spooks_above\spooks\sound_29, ambient\trx\spooks_above\spooks\sound_30, ambient\trx\spooks_above\spooks\sound_31, ambient\trx\spooks_above\spooks\sound_32, ambient\trx\spooks_above\spooks\sound_33, ambient\trx\spooks_above\spooks\sound_34, ambient\trx\spooks_above\spooks\sound_35, ambient\trx\spooks_above\spooks\sound_36, ambient\trx\spooks_above\spooks\sound_37
+
+[out_drone] 	;played during rain
+        max_distance                     = 60.0
+        min_distance                     = 30.0		
+        period0                          = 45000
+        period1                          = 95000
+        period2                          = 44000
+        period3                          = 97000
+        sounds                           = ambient\trx\spooks_above\drone\sound_01, ambient\trx\spooks_above\drone\sound_02, ambient\trx\spooks_above\drone\sound_03, ambient\trx\spooks_above\drone\sound_04, ambient\trx\spooks_above\drone\sound_05, ambient\trx\spooks_above\drone\sound_06, ambient\trx\spooks_above\drone\sound_07, ambient\trx\spooks_above\drone\sound_08, ambient\trx\spooks_above\drone\sound_09, ambient\trx\spooks_above\drone\sound_10, ambient\trx\spooks_above\drone\sound_11
+		
+[out_night_amb]  ;not used
+        max_distance                     = 80.0
+        min_distance                     = 30.0	
+        period0                          = 55000
+        period1                          = 91000
+        period2                          = 57000
+        period3                          = 92000
+        sounds                           = ambient\trx\spooks_above\amb_night\sound_01, ambient\trx\spooks_above\amb_night\sound_02, ambient\trx\spooks_above\amb_night\sound_03, ambient\trx\spooks_above\amb_night\sound_04, ambient\trx\spooks_above\amb_night\sound_05, ambient\trx\spooks_above\amb_night\sound_06, ambient\trx\spooks_above\amb_night\sound_07, ambient\trx\spooks_above\amb_night\sound_08, ambient\trx\spooks_above\amb_night\sound_09, ambient\trx\spooks_above\amb_night\sound_10
+		
+[out_dark_amb] 
+        max_distance                     = 50.0
+        min_distance                     = 20.0
+        period0                          = 40000
+        period1                          = 80000
+        period2                          = 45000
+        period3                          = 85000
+        sounds                           = ambient\trx\spooks_above\amb_dark\sound_01, ambient\trx\spooks_above\amb_dark\sound_02, ambient\trx\spooks_above\amb_dark\sound_03, ambient\trx\spooks_above\amb_dark\sound_04, ambient\trx\spooks_above\amb_dark\sound_05, ambient\trx\spooks_above\amb_dark\sound_06, ambient\trx\spooks_above\amb_dark\sound_07, ambient\trx\spooks_above\amb_dark\sound_08, ambient\trx\spooks_above\amb_dark\sound_09, ambient\trx\spooks_above\amb_dark\sound_10, ambient\trx\spooks_above\amb_dark\sound_11, ambient\trx\spooks_above\amb_dark\sound_12, ambient\trx\spooks_above\amb_dark\sound_13, ambient\trx\spooks_above\amb_dark\sound_14, ambient\trx\spooks_above\amb_dark\sound_15, ambient\trx\spooks_above\amb_dark\sound_16
+		
+[out_gunfire] 	;used almost everywhere 
+        max_distance                     = 100.0	;80.0
+        min_distance                     = 80.0		;60.0	
+        period0                          = 50000	;65000
+        period1                          = 80000	;125000
+        period2                          = 100000	;68000
+        period3                          = 150000	;125000
+        sounds                           = ambient\trx\spooks_above\shooting\sound_01, ambient\trx\spooks_above\shooting\sound_02, ambient\trx\spooks_above\shooting\sound_03, ambient\trx\spooks_above\shooting\sound_04, ambient\trx\spooks_above\shooting\sound_05, ambient\trx\spooks_above\shooting\sound_06, ambient\trx\spooks_above\shooting\sound_07, ambient\trx\spooks_above\shooting\sound_08, ambient\trx\spooks_above\shooting\sound_09, ambient\trx\spooks_above\shooting\sound_10, ambient\trx\spooks_above\shooting\sound_11, ambient\trx\spooks_above\shooting\sound_12, ambient\trx\spooks_above\shooting\sound_13, ambient\trx\spooks_above\shooting\sound_14, ambient\trx\spooks_above\shooting\sound_15, ambient\trx\spooks_above\shooting\sound_16, ambient\trx\spooks_above\shooting\sound_17, ambient\trx\spooks_above\shooting\sound_18, ambient\trx\spooks_above\shooting\sound_19, ambient\trx\spooks_above\shooting\sound_20, ambient\trx\spooks_above\shooting\sound_21, ambient\trx\spooks_above\shooting\sound_22, ambient\trx\spooks_above\shooting\sound_23, ambient\trx\spooks_above\shooting\sound_24, ambient\trx\spooks_above\shooting\sound_25, ambient\trx\spooks_above\shooting\sound_26, ambient\trx\spooks_above\shooting\sound_27, ambient\trx\spooks_above\shooting\sound_28, ambient\trx\spooks_above\shooting\sound_29, ambient\trx\spooks_above\shooting\sound_30, ambient\trx\spooks_above\shooting\sound_31, ambient\trx\spooks_above\shooting\sound_33, ambient\trx\spooks_above\shooting\sound_33, ambient\trx\spooks_above\shooting\sound_34, ambient\trx\spooks_above\shooting\sound_35, ambient\trx\spooks_above\shooting\sound_36, ambient\trx\spooks_above\shooting\sound_37
+		
+		
+	
+
+;-------------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// UNDERGROUND /////////////////////////////////////////////////////
+;-------------------------------------------------------------------------------------------------------------------
+
+[ugrnd_ambient]
+        max_distance                     = 25.000000	;105.000000
+        min_distance                     = 10.000000	;85.000000
+		indoor                           = true
+        period0                          = 0	;65000
+        period1                          = 0	;190000
+        period2                          = 0	;65000
+        period3                          = 0	;190000
+       	sounds                           = ambient\trx\spooks_below\ambient\sound_01, ambient\trx\spooks_below\ambient\sound_02, ambient\trx\spooks_below\ambient\sound_03, ambient\trx\spooks_below\ambient\sound_04, ambient\trx\spooks_below\ambient\sound_05, ambient\trx\spooks_below\ambient\sound_06, ambient\trx\spooks_below\ambient\sound_07, ambient\trx\spooks_below\ambient\sound_08, ambient\trx\spooks_below\ambient\sound_09, ambient\trx\spooks_below\ambient\sound_10, ambient\trx\spooks_below\ambient\sound_11, ambient\trx\spooks_below\ambient\sound_12
+
+[ugrnd_metal]	;some metal sounds from metro2033
+        max_distance                     = 115.000000	;125.000000
+        min_distance                     = 95.000000
+		indoor                           = true
+        period0                          = 10000	;25000
+        period1                          = 20000	;60000
+        period2                          = 11000	;25000
+        period3                          = 30000	;60000
+		sounds                           = ambient\trx\spooks_below\metal\sound_01, ambient\trx\spooks_below\metal\sound_02, ambient\trx\spooks_below\metal\sound_03, ambient\trx\spooks_below\metal\sound_04, ambient\trx\spooks_below\metal\sound_05, ambient\trx\spooks_below\metal\sound_06, ambient\trx\spooks_below\metal\sound_07, ambient\trx\spooks_below\metal\sound_08, ambient\trx\spooks_below\metal\sound_09, ambient\trx\spooks_below\metal\sound_10, ambient\trx\spooks_below\metal\sound_11, ambient\trx\spooks_below\metal\sound_12, ambient\trx\spooks_below\metal\sound_13, ambient\trx\spooks_below\metal\sound_14
+	
+	
+[ugrnd_noise]
+        max_distance                     = 115.000000	;105.000000
+        min_distance                     = 95.000000	;85.000000
+		indoor                           = true
+        period0                          = 35000
+        period1                          = 60000
+        period2                          = 30000
+        period3                          = 50000
+ 		sounds                           = ambient\trx\spooks_below\noise\sound_01, ambient\trx\spooks_below\noise\sound_02, ambient\trx\spooks_below\noise\sound_03, ambient\trx\spooks_below\noise\sound_04, ambient\trx\spooks_below\noise\sound_05, ambient\trx\spooks_below\noise\sound_06, ambient\trx\spooks_below\noise\sound_07, ambient\trx\spooks_below\noise\sound_08, ambient\trx\spooks_below\noise\sound_09, ambient\trx\spooks_below\noise\sound_10, ambient\trx\spooks_below\noise\sound_11, ambient\trx\spooks_below\noise\sound_12, ambient\trx\spooks_below\noise\sound_13, ambient\trx\spooks_below\noise\sound_14, ambient\trx\spooks_below\noise\sound_15, ambient\trx\spooks_below\noise\sound_16, ambient\trx\spooks_below\noise\sound_17, ambient\trx\spooks_below\noise\sound_18, ambient\trx\spooks_below\noise\sound_19, ambient\trx\spooks_below\noise\sound_20, ambient\trx\spooks_below\noise\sound_21, ambient\trx\spooks_below\noise\sound_22, ambient\trx\spooks_below\noise\sound_23, ambient\trx\spooks_below\noise\sound_24, ambient\trx\spooks_below\noise\sound_25, ambient\trx\spooks_below\noise\sound_26, ambient\trx\spooks_below\noise\sound_27, ambient\trx\spooks_below\noise\sound_28
+		
+[inside_noise]
+        max_distance                     = 20.000000	;105.000000
+        min_distance                     = 10.000000	;85.000000
+		height                           = 30
+		indoor                           = true
+        period0                          = 35000
+        period1                          = 40000
+        period2                          = 20000
+        period3                          = 50000
+ 		sounds                           = ambient\trx\spooks_below\noise\sound_01, ambient\trx\spooks_below\noise\sound_02, ambient\trx\spooks_below\noise\sound_03, ambient\trx\spooks_below\noise\sound_04, ambient\trx\spooks_below\noise\sound_06, ambient\trx\spooks_below\noise\sound_07, ambient\trx\spooks_below\noise\sound_08, ambient\trx\spooks_below\noise\sound_09, ambient\trx\spooks_below\noise\sound_10, ambient\trx\spooks_below\noise\sound_11, ambient\trx\spooks_below\noise\sound_12, ambient\trx\spooks_below\noise\sound_13, ambient\trx\spooks_below\noise\sound_14, ambient\trx\spooks_below\noise\sound_15, ambient\trx\spooks_below\noise\sound_16, ambient\trx\spooks_below\noise\sound_17, ambient\trx\spooks_below\noise\sound_18, ambient\trx\spooks_below\noise\sound_19, ambient\trx\spooks_below\noise\sound_20, ambient\trx\spooks_below\noise\sound_21, ambient\trx\spooks_below\noise\sound_22, ambient\trx\spooks_below\noise\sound_23, ambient\trx\spooks_below\noise\sound_25, ambient\trx\spooks_below\noise\sound_26, ambient\trx\spooks_below\noise\sound_27, ambient\trx\spooks_below\noise\sound_28
+
+[ugrnd_banging]
+        max_distance                     = 115.000000	;105.000000
+        min_distance                     = 95.000000	;85.000000
+		indoor                           = true
+        period0                          = 25000
+        period1                          = 100000
+        period2                          = 30000
+        period3                          = 120000
+        sounds                           = ambient\trx\spooks_below\banging\sound_01, ambient\trx\spooks_below\banging\sound_02, ambient\trx\spooks_below\banging\sound_03, ambient\trx\spooks_below\banging\sound_04, ambient\trx\spooks_below\banging\sound_05, ambient\trx\spooks_below\banging\sound_06, ambient\trx\spooks_below\banging\sound_07
+		
+		
+[ugrnd_ambient_machine]
+        max_distance                     = 115.000000	;105.000000
+        min_distance                     = 95.000000	;85.000000
+		indoor                           = true
+        period0                          = 95000
+        period1                          = 230000
+        period2                          = 95000
+        period3                          = 230000
+        sounds                           = ambient\trx\spooks_below\machine\sound_01, ambient\trx\spooks_below\machine\sound_02, ambient\trx\spooks_below\machine\sound_03, ambient\trx\spooks_below\machine\sound_04, ambient\trx\spooks_below\machine\sound_05, ambient\trx\spooks_below\machine\sound_06, ambient\trx\spooks_below\machine\sound_07, ambient\trx\spooks_below\machine\sound_08, ambient\trx\spooks_below\machine\sound_09, ambient\trx\spooks_below\machine\sound_10, ambient\trx\spooks_below\machine\sound_11, ambient\trx\spooks_below\machine\sound_12
+		
+		
+[ugrnd_drone]
+        max_distance                     = 105.000000
+        min_distance                     = 85.000000
+		indoor                           = true
+        period0                          = 40000
+        period1                          = 80000
+        period2                          = 50000
+        period3                          = 90000
+        sounds                           = ambient\trx\spooks_below\drone\sound_01, ambient\trx\spooks_below\drone\sound_02, ambient\trx\spooks_below\drone\sound_03, ambient\trx\spooks_below\drone\sound_04, ambient\trx\spooks_below\drone\sound_05, ambient\trx\spooks_below\drone\sound_06, ambient\trx\spooks_below\drone\sound_07, ambient\trx\spooks_below\drone\sound_08, ambient\trx\spooks_below\drone\sound_09, ambient\trx\spooks_below\drone\sound_10
+		
+		
+[ugrnd_lab]
+        max_distance                     = 105.000000
+        min_distance                     = 95.000000
+		indoor                           = true
+        period0                          = 45000
+        period1                          = 215000
+        period2                          = 45000
+        period3                          = 215000
+        sounds                           = ambient\trx\spooks_below\lab\sound_01, ambient\trx\spooks_below\lab\sound_02, ambient\trx\spooks_below\lab\sound_03, ambient\trx\spooks_below\lab\sound_04, ambient\trx\spooks_below\lab\sound_05, ambient\trx\spooks_below\lab\sound_06
+		
+		
+[ugrnd_voices]
+        max_distance                     = 105.000000
+        min_distance                     = 95.000000
+		indoor                           = true
+        period0                          = 10000
+        period1                          = 20000
+        period2                          = 20000
+        period3                          = 40000
+        sounds                           = ambient\trx\spooks_below\spooks\sound_01, ambient\trx\spooks_below\spooks\sound_02, ambient\trx\spooks_below\spooks\sound_03, ambient\trx\spooks_below\spooks\sound_04, ambient\trx\spooks_below\spooks\sound_05, ambient\trx\spooks_below\spooks\sound_06, ambient\trx\spooks_below\spooks\sound_07, ambient\trx\spooks_below\spooks\sound_08, ambient\trx\spooks_below\spooks\sound_09, ambient\trx\spooks_below\spooks\sound_10, ambient\trx\spooks_below\spooks\sound_11, ambient\trx\spooks_below\spooks\sound_12, ambient\trx\spooks_below\spooks\sound_13, ambient\trx\spooks_below\spooks\sound_14, ambient\trx\spooks_below\spooks\sound_15, ambient\trx\spooks_below\spooks\sound_16, ambient\trx\spooks_below\spooks\sound_17, ambient\trx\spooks_below\spooks\sound_18, ambient\trx\spooks_below\spooks\sound_19, ambient\trx\spooks_below\spooks\sound_20, ambient\trx\spooks_below\spooks\sound_21, ambient\trx\spooks_below\spooks\sound_22
+		
+[ugrnd_drip]
+        max_distance                     = 95.000000
+        min_distance                     = 75.000000		;85.000000
+		indoor                           = true
+        period0                          = 1000
+        period1                          = 3000
+        period2                          = 4000
+        period3                          = 6000
+        sounds                           = ambient\trx\spooks_below\water_drip\sound_01, ambient\trx\spooks_below\water_drip\sound_02, ambient\trx\spooks_below\water_drip\sound_03, ambient\trx\spooks_below\water_drip\sound_04, ambient\trx\spooks_below\water_drip\sound_05, ambient\trx\spooks_below\water_drip\sound_06, ambient\trx\spooks_below\water_drip\sound_07, ambient\trx\spooks_below\water_drip\sound_08, ambient\trx\spooks_below\water_drip\sound_09, ambient\trx\spooks_below\water_drip\sound_10, ambient\trx\spooks_below\water_drip\sound_11
+		
+[ugrnd_rats]
+        max_distance                     = 105.000000		;95.000000
+        min_distance                     = 85.000000
+		height                           = -1
+		indoor                           = true
+        period0                          = 10000
+        period1                          = 30000
+        period2                          = 20000
+        period3                          = 30000
+        sounds                           = ambient\trx\spooks_below\rats\sound_01, ambient\trx\spooks_below\rats\sound_02, ambient\trx\spooks_below\rats\sound_03, ambient\trx\spooks_below\rats\sound_04, ambient\trx\spooks_below\rats\sound_05, ambient\trx\spooks_below\rats\sound_06
+
+		
+;--------------------------------------------------------------------------------------------------------------
+;--/////////////////////////////////////////////// OTHERS /////////////////////////////////////////////////////
+;--------------------------------------------------------------------------------------------------------------		
+[default]
+        max_distance                     = 600.000000
+        min_distance                     = 300.000000
+        period0                          = 5000
+        period1                          = 10000
+        period2                          = 5000
+        period3                          = 10000
+        sounds                           = ambient\no_sound
+		
+[default_ambient_wind]
+		max_distance                     = 2.000000
+        min_distance                     = 1.000000
+        period0                          = 0
+        period1                          = 0
+        period2                          = 0
+        period3                          = 0
+        sounds                           = ambient\trx\background\winds
+		
+[default_ambient_night]
+		max_distance                     = 2.000000
+        min_distance                     = 1.000000
+        period0                          = 0
+        period1                          = 0
+        period2                          = 0
+        period3                          = 0
+        sounds                           = ambient\trx\background\forest_night
+
+[x18]	
+        max_distance                     = 110.0
+        min_distance                     = 90.0
+		indoor                           = true
+        period0                          = 60000
+        period1                          = 180000
+        period2                          = 60000
+        period3                          = 180000
+        sounds                           = ambient\x18\x18_noise_1, ambient\x18\x18_noise_2, ambient\x18\x18_hit_1, ambient\x18\x18_hit_2, ambient\x18\x18_hit_3, ambient\x18\x18_hit_4, ambient\x18\x18_hit_5, ambient\x18\x18_hit_6, ambient\x18\x18_hit_7, ambient\x18\x18_hit_8, ambient\x18\x18_move_1, ambient\x18\x18_move_2, ambient\x18\x18_move_3, ambient\x18\x18_wind_1, ambient\x18\x18_wind_2, ambient\x18\x18_wind_3;, ambient\x18\x18_metal_1, ambient\x18\x18_metal_2, ambient\x18\x18_metal_3, ambient\x18\x18_metal_4, ambient\x18\x18_metal_5, ambient\x18\x18_move_4, ambient\x18\x18_move_5

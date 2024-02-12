@@ -1,0 +1,406 @@
+
+[up_sect_firsta_mp133]
+cost                                     = 2150
+value                                    = +10
+condition_queue_shot_dec                 = -0.00015
+condition_shot_dec                       = -0.00015
+inv_weight                               = +0.12
+
+[up_sect_firstc_mp133]
+cost                                     = 1930
+value                                    = +10
+bullet_speed                             = +45
+fire_distance                            = +40
+fire_dispersion_base                     = -0.03
+inv_weight                               = +0.15
+
+[up_sect_firstd_mp133]
+cost                                     = 2620
+value                                    = -10
+cam_dispersion                           = -0.204 
+cam_dispersion_inc                       = 0.0 ;-0.364 
+cam_step_angle_horz                      = -0.171 
+zoom_cam_dispersion                      = -0.191
+zoom_cam_dispersion_inc                  = 0.0 ; -0.296
+zoom_cam_step_angle_horz                 = -0.152
+inv_weight                               = +0.15
+
+[up_sect_firste_mp133]
+cost                                     = 2160
+value                                    = +20
+fire_dispersion_base                     = -0.1
+
+inv_weight                               = +0.1
+
+[up_sect_secona_mp133]
+cost                                     = 1750
+value                                    = -0.5
+inv_weight                               = -0.5
+crosshair_inertion                       = -0.4
+PDM_disp_vel_factor                      = -0.18
+PDM_disp_accel_factor                    = -0.18
+
+[up_sect_seconc_mp133]
+cost                                     = 2060
+value                                    = +15
+crosshair_inertion                       = -1.0
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.4
+PDM_disp_accel_factor                    = -0.4
+inv_weight                               = +0.05
+
+[up_sect_second_mp133]
+cost                                     = 2340
+value                                    = +15
+condition_shot_dec                       = -0.0002
+condition_queue_shot_dec                 = -0.0002
+inv_weight                               = +0.2
+
+[up_sect_secone_mp133]
+cost                                     = 2490
+value                                    = +15
+crosshair_inertion                       = -1.0
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.5
+PDM_disp_accel_factor                    = -0.5
+inv_weight                               = -0.12
+
+[up_sect_thirda_mp133]
+cost                                     = 2150
+value                                    = +10
+condition_shot_dec                       = -0.00015
+condition_queue_shot_dec                 = -0.00015
+inv_weight                               = +0.2
+
+[up_sect_thirdc_mp133]
+cost                                     = 2240
+value                                    = +20
+fire_dispersion_base                     = -0.1
+
+inv_weight                               = +0.05
+
+[up_sect_thirdd_mp133]
+cost                                     = 2540
+value                                    = -10
+cam_dispersion                           = -0.204 
+cam_dispersion_inc                       = 0.0 ;-0.364 
+cam_step_angle_horz                      = -0.171 
+zoom_cam_dispersion                      = -0.191
+zoom_cam_dispersion_inc                  = 0.0 ; -0.296
+zoom_cam_step_angle_horz                 = -0.152
+inv_weight                               = +0.1
+
+[up_sect_thirde_mp133]
+cost                                     = 2240
+value                                    = +30
+condition_shot_dec                       = -0.0004
+condition_queue_shot_dec                 = -0.0004
+inv_weight                               = +0.3
+
+[up_sect_thirdf_mp133]
+cost                                     = 2040
+value                                    = +15
+rpm                                      = +15
+inv_weight                               = +0.05
+
+[up_sect_fourta_mp133]
+cost                                     = 2090
+value                                    = +5
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.2
+PDM_disp_accel_factor                    = -0.2
+inv_weight                               = -0.12
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_mp133]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_mp133
+section                                  = up_sect_firsta_mp133
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_a1_name
+description                              = st_up_bard_a1_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_1
+
+[up_firstc_mp133]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_mp133
+section                                  = up_sect_firstc_mp133
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b5_name
+description                              = st_up_bard_b5_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_2
+
+
+[up_firstd_mp133]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_mp133
+section                                  = up_sect_firstd_mp133
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b4_name
+description                              = st_up_bard_b4_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_3
+
+
+[up_firste_mp133]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_mp133
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_c3_name
+description                              = st_up_bard_c3_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_4
+
+[up_secona_mp133]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_mp133
+section                                  = up_sect_secona_mp133
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_a2_name
+description                              = st_up_stvd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_6
+
+[up_seconc_mp133]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_mp133
+section                                  = up_sect_seconc_mp133
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b2_name
+description                              = st_up_stvd_b2_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_6
+
+
+[up_second_mp133]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  = up_gr_seconef_mp133
+section                                  = up_sect_second_mp133
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b5_name
+description                              = st_up_stvd_b5_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_7
+
+
+[up_secone_mp133]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_mp133
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_c1_name
+description                              = st_up_bard_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_4
+
+
+[up_thirda_mp133]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_mp133
+section                                  = up_sect_thirda_mp133
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_a2_name
+description                              = st_up_autd_a2_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_9
+
+
+[up_thirdc_mp133]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_mp133
+section                                  = up_sect_thirdc_mp133
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b2_name
+description                              = st_up_autd_b2_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_10
+
+[up_thirdd_mp133]
+scheme_index                             = 1, 5
+known                                    = 1
+effects                                  = up_gr_thirdef_mp133
+section                                  = up_sect_thirdd_mp133
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b1_name
+description                              = st_up_autd_b1_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_11
+
+[up_thirde_mp133]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_mp133
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_c1_name
+description                              = st_up_autd_c1_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_12
+
+[up_thirdf_mp133]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdf_mp133
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b3_name
+description                              = st_up_autd_b3_descr
+icon                                     = ui_inGame2_upgrade_Cheyser_13_13
+
+
+[up_fourta_mp133]
+scheme_index                             = 0, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourta_mp133
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b2_name
+description                              = st_up_stvd_b2_descr
+icon                                     = ui_inGame2_upgrade_SPSA14_7
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_mp133]
+elements                                 = up_firsta_mp133
+
+[up_gr_firstcd_mp133]
+elements                                 = up_firstc_mp133, up_firstd_mp133
+
+[up_gr_firstef_mp133]
+elements                                 = up_firste_mp133
+
+[up_gr_seconab_mp133]
+elements                                 = up_secona_mp133
+
+[up_gr_seconcd_mp133]
+elements                                 = up_seconc_mp133, up_second_mp133
+
+[up_gr_seconef_mp133]
+elements                                 = up_secone_mp133
+
+[up_gr_thirdab_mp133]
+elements                                 = up_thirda_mp133
+
+[up_gr_thirdcd_mp133]
+elements                                 = up_thirdc_mp133, up_thirdd_mp133
+
+[up_gr_thirdef_mp133]
+elements                                 = up_thirde_mp133, up_thirdf_mp133
+
+[up_gr_fourtab_mp133]
+elements                                 = up_fourta_mp133

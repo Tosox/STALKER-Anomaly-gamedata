@@ -1,0 +1,226 @@
+
+<w>
+	<item_info x="0" y="0" width="388" height="170" stretch="1">
+		<background_frame x="0" y="0" width="388" height="170" stretch="1">
+			<texture>ui_inGame2_hint_wnd_main_window</texture>
+		</background_frame>
+		
+		<name x="12" y="20" width="363" height="20" stretch="1" complex_desc="0">
+			<text font="letterica18" complex_mode="0" align="c" vert_align="c"/>
+		</name>
+		<weight x="12" y="40" width="363" height="20" stretch="1">
+			<text align="l" font="letterica18" color="ui_gray_3"/>
+		</weight>
+		
+		<cost x="198" y="40" width="164" height="16" stretch="1">
+			<text complex_mode="1" font="letterica18" align="r" r="210" g="210" b="210"/>
+		</cost>
+		<no_trade x="12" y="60" width="355" height="20" stretch="1">
+			<text complex_mode="1" font="letterica16" align="l" vert_align="c" color="d_red"/>
+		</no_trade>
+		
+		<description x="12" y="80" width="353" height="10" stretch="1">
+			<text complex_mode="1" font="letterica16" vert_align="c" align="l" color="ui_gray_1"/>
+		</description>
+		<description_line x="12" y="90" width="326" height="0" stretch="1">
+			<texture>ui_inGame2_hint_wnd_Information</texture>
+		</description_line>
+		
+		<stats_dialog x="12" y="100" width="353" height="130" stretch="1"/>
+		<stats_box x="0" y="0" width="240" height="18" stretch="1">
+			<icon x="0" y="0" width="14" height="18" stretch="1"/>
+			<cap x="17" y="2" width="100" height="8" stretch="1">
+				<text complex_mode="1" font="letterica16" align="l" color="ui_gray_1"/>
+			</cap>
+			<diff x="209" y="1" width="102" height="9" stretch="1" light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+				<text complex_mode="1" font="letterica16" align="l" color="ui_gray_1"/>
+			</diff>
+			<prog_txt x="120" y="2" width="200" height="8" stretch="1">
+				<text complex_mode="1" font="letterica16" align="l" color="ui_gray_1"/>
+			</prog_txt>
+			<prog_bar x="120" y="4" width="102" height="9" stretch="1" horz="1" min="0" max="1" pos="0">
+				<progress>
+					<texture a="200">ui_inGame2_hint_wnd_bar_alfa_line</texture>
+				</progress>
+				<background>
+					<texture>ui_inGame2_hint_wnd_bar</texture>
+				</background>
+			</prog_bar>
+			<compare x="230" y="4" width="50" height="9" stretch="1">
+				<text complex_mode="1" font="letterica16" align="l" vert_align="c"/>
+			</compare>
+		</stats_box> 
+		
+		<!-- Ammo types -->
+		<ammo_type x="0" y="230" width="120" height="57" stretch="1">
+			<cap_ammo_types x="17" y="0" width="120" height="8" stretch="1">
+				<text font="letterica16" align="l" color="ui_gray_1">ui_ammo_types</text>
+			</cap_ammo_types>
+			<cap_ammo_used_type x="104" y="0" width="40" height="8" stretch="1">
+				<text font="letterica16" align="l" color="ui_gray_1"/>
+			</cap_ammo_used_type>
+			
+			<static_ammo_type1 x="12" y="17" width="64" height="40" stretch="1" />
+			<static_ammo_type4 x="84" y="17" width="64" height="40" stretch="1" />
+			<static_ammo_type7 x="156" y="17" width="64" height="40" stretch="1" />
+			<static_ammo_type10 x="228" y="17" width="64" height="40" stretch="1" />
+			
+			<static_ammo_type2 x="12" y="57" width="64" height="40" stretch="1" />
+			<static_ammo_type5 x="84" y="57" width="64" height="40" stretch="1" />
+			<static_ammo_type8 x="156" y="57" width="64" height="40" stretch="1" />
+			<static_ammo_type11 x="228" y="57" width="64" height="40" stretch="1" />
+			
+			<static_ammo_type3 x="12" y="97" width="64" height="40" stretch="1" />
+			<static_ammo_type6 x="84" y="97" width="64" height="40" stretch="1" />
+			<static_ammo_type9 x="156" y="97" width="64" height="40" stretch="1" />
+			<static_ammo_type12 x="228" y="97" width="64" height="40" stretch="1" />
+		</ammo_type>
+		
+	</item_info>
+
+	<upgrade_info x="0" y="0" width="256" height="100" stretch="1">
+		<background_frame x="0" y="0" width="256" height="100" stretch="1">
+			<texture>ui_inGame2_hint_wnd_main_window</texture>
+		</background_frame>
+
+		<info_name x="16" y="20" width="208" height="20" stretch="1">
+			<text complex_mode="1" font="letterica18" align="l" vert_align="t"/>
+		</info_name>
+
+		<info_cost x="16" y="20" width="208" height="20" stretch="1">
+			<text complex_mode="1" font="letterica18" align="l" vert_align="t" color="ui_gray_3"/>
+		</info_cost>
+
+		<info_desc x="16" y="45" width="208" height="20" stretch="1">
+			<text complex_mode="1" font="letterica16" align="l" vert_align="t" color="ui_gray_2" />
+		</info_desc>
+
+		<info_prerequisites x="16" y="65" width="208" height="20" stretch="1">
+			<text complex_mode="1" font="letterica16" align="l" vert_align="t" color="d_red" />
+		</info_prerequisites>
+
+		<properties x="16" y="20" width="212" height="20" stretch="1">
+	        <upgr_line x="0" y="0" width="208" height="9" stretch="1">
+	            <texture>ui_inGame2_hint_wnd_upgrades</texture>
+	        </upgr_line>
+			<icon x="0"  y="0" width="16"  height="20" stretch="1"/>
+			<txt x="20" y="3" width="188" height="18" stretch="1">
+				<text complex_mode="1" font="letterica16" color="ui_gray_2"/>
+			</txt>
+		</properties>
+	</upgrade_info>
+
+	<container>
+		<scroll stretch="1" right_ident="0" left_ident="0" top_indent="0" bottom_indent="0" vert_interval="0" always_show_scroll="0" scroll_profile="hidden"/>
+		<st stretch="1"/>
+		<line width="500" height="10" stretch="1">
+			<texture a="150">ui_itm_line</texture>
+		</line>
+		<cell stretch="1">
+			<highlight stretch="1">
+				<texture>ui_inGame2_white_rect</texture>
+			</highlight>
+			<pic stretch="1" align="c" alignment="c"/>
+			<upgrade width="10" height="12" stretch="1">
+				<texture a="180">ui_upgrade_arrow2</texture>
+			</upgrade>
+			<cnt x="-1" y="-1" width="17" height="11" stretch="1">
+				<texture a="200">ui_item_count_back</texture>
+				<text x="0" y="0" width="17" height="11" font="arial_14" color="ui_2" align="c" vert_align="c"/>
+			</cnt>
+			<ctxt stretch="1">
+				<text font="arial_14" color="ui_2" align="l" vert_align="b"/>
+			</ctxt>
+			<bar x="-1" y="0" width="20" height="3" horz="1" min="0" max="1" pos="1" stretch="1">
+				<background width="22" height="3" stretch="1">
+					<texture r="62" g="74" b="74">ui_inGame2_inventory_item_status_bar</texture>
+				</background>
+				<progress stretch="1">
+					<texture r="142" g="149" b="149">ui_inGame2_inventory_item_status_bar</texture>
+				</progress>
+			</bar>
+		</cell> 
+	</container>
+	
+	<properties>
+		<highlight x="0" y="0" width="130" height="18" stretch="1">
+			<texture>ui_button_inv_h</texture>
+		</highlight>
+		<file_item>
+			<main width="130" height="18"/>
+			<fn width="130" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="0" y="0" width="130" height="200" stretch="1">
+			<list_frame x="0" y="0" width="130" height="200">
+				<texture>ui_inGame2_demo_player_info_window</texture>
+			</list_frame>
+			<list x="10" y="10" width="105" height="200" item_height="18" can_select="1" always_show_scroll="0">
+				<font_s r="220" g="220" b="220"/>
+				<font r="150" g="150" b="150" font="letterica16"/>
+			</list>
+		</form>
+	</properties>
+	<multi_choice>
+		<file_item>
+			<main width="490" height="18"/>
+			<fn width="352" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="358" y="240" width="377" height="400" stretch="1">
+			<list_frame x="0" y="0" width="377" height="400">
+				<texture>ui_inGame2_hint_wnd_main_window</texture>
+			</list_frame>
+			<list x="25" y="25" width="352" height="375" item_height="25" can_select="1" always_show_scroll="0">
+				<font font="letterica16"/>
+			</list>
+			<btn_ok x="109" y="430" width="80" height="26">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">OK</text>
+			</btn_ok>
+		</form>
+	</multi_choice>
+	<context_menu>
+		<file_item>
+			<main width="130" height="18"/>
+			<fn width="130" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="0" y="0" width="130" height="200" stretch="1">
+			<list_frame x="0" y="0" width="130" height="200">
+				<texture>ui_icons_PDA_tooltips</texture>
+			</list_frame>
+			<list x="10" y="10" width="105" height="200" item_height="22" can_select="1" always_show_scroll="0">
+				<font font="letterica16"/>
+			</list>
+		</form>
+	</context_menu>
+	<context_props>
+		<highlight x="0" y="0" width="130" height="18" stretch="1">
+			<texture>ui_button_inv_h</texture>
+		</highlight>
+		<file_item>
+			<main width="130" height="18"/>
+			<fn width="130" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="0" y="0" width="130" height="200" stretch="1">
+			<list_frame x="0" y="0" width="130" height="200">
+				<texture>ui_inGame2_demo_player_info_window</texture>
+			</list_frame>
+			<list x="10" y="10" width="105" height="200" item_height="22" can_select="1" always_show_scroll="0">
+				<font_s r="220" g="220" b="220"/>
+				<font r="150" g="150" b="150" font="letterica16"/>
+			</list>
+		</form>
+	</context_props>
+
+	<hint_wnd x="0" y="0" width="240" height="100">
+	    <background x="0" y="0" width="240" height="100">
+		    <texture>ui_icons_PDA_tooltips</texture>
+	    </background>
+	    <text x="16" y="20" width="220" height="100">
+	    	<text font="letterica16" color="ui_6" complex_mode="1" align="l" vert_align="t"/>
+	    </text>
+	</hint_wnd>
+</w>

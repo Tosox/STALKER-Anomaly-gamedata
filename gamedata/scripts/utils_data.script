@@ -1,0 +1,1279 @@
+
+--====================================================================
+-- Utilities for dealing with vars and data
+--====================================================================
+
+
+local enable_debug = false
+function print_dbg(...)
+	if enable_debug then
+		printf(...)
+	end
+end
+
+----------------------------------------------------------------------
+-- Utilities
+----------------------------------------------------------------------
+local string_find   = string.find
+local string_match  = string.match
+local string_gmatch = string.gmatch
+local string_sub    = string.sub
+local string_gsub   = string.gsub
+local string_format = string.format
+local string_char   = string.char
+local string_byte   = string.byte
+local string_len    = string.len
+
+local math_pi       = math.pi
+local math_cos      = math.cos
+local math_sin      = math.sin
+local math_acos     = math.acos
+local math_sqrt     = math.sqrt
+local math_floor    = math.floor
+local math_ceil     = math.ceil
+local math_rand		= math.random
+local math_max      = math.max
+local math_abs      = math.abs
+local math_frexp    = math.frexp
+local math_ldexp    = math.ldexp
+local math_huge     = math.huge
+
+local table_concat  = table.concat
+local table_insert  = table.insert
+local table_sort    = table.sort
+local pairs			= pairs
+local ipairs		= ipairs
+
+local tostring      = tostring
+local tonumber      = tonumber
+local type          = type
+
+
+----------------------------------------------------------------------
+-- Math
+----------------------------------------------------------------------
+function rad2deg(r)
+	return r * 180.0 / math_pi
+end
+
+function deg2rad(d)
+	return d * math_pi / 180.0
+end
+
+function mean_random(index_min,index_max,mean_index,left_power,right_power,flag)
+	local index_mean = mean_index or 0.5
+	if not(flag) and (index_mean >= 0) and (index_mean <= 1) then
+		index_mean = (index_max-index_min)*index_mean + index_min
+		local mean_down, mean_up = math_floor(index_mean), math_ceil(index_mean)
+		local d_mean_down, d_mean_up = index_mean - mean_down, mean_up - index_mean
+		if d_mean_down == d_mean_up then
+			index_mean = (math_rand(0,1) == 1) and mean_down or mean_up
+		else
+			index_mean = (d_mean_down > d_mean_up) and mean_up or mean_down
+		end
+	end
+	local power_left = left_power or 1
+	local power_right = right_power or power_left
+	local coeffs_list = {}
+	local coeffs_total = 0
+	local coeff = 0
+	local power = 0
+	local base = 0
+	local shift = math_max(index_mean-index_min,index_max-index_mean) + 1
+	for i=index_min,index_max do
+		base = shift - math_abs(index_mean - i)
+		if i < index_mean then
+			power = power_left
+		elseif i == index_mean then
+			power = math_max(power_left,power_right)
+		else
+			power = power_right
+		end
+		coeff = base^power
+		coeffs_list[i] = coeff
+		coeffs_total = coeffs_total + coeff
+	end
+	local rnd = math_rand(1,coeffs_total)
+	for i=index_min,index_max do
+		if rnd <= coeffs_list[i] then
+			return i
+		end
+		rnd = rnd - coeffs_list[i]
+	end
+end
+
+
+----------------------------------------------------------------------
+-- Vectors
+----------------------------------------------------------------------
+function string_to_vector(str)
+	if (str == nil or str == "") then 
+		return VEC_ZERO
+	end
+	local t = str_explode(str,",")
+	return vector():set(tonumber(t[1] or 0) or 0,tonumber(t[2] or 0) or 0,tonumber(t[3] or 0) or 0)
+end
+
+function vector_to_string(vec)
+	return vec.x..","..vec.y..","..vec.z
+end
+
+function vector_cmp(a, b)
+--' Сравнивает два вектора
+	return a.x == b.x and a.y == b.y and a.z == b.z
+end
+
+function vector_cmp_prec(a, b, d)
+--' Сравнивает два вектора с заданной погрешностью
+	return math_abs(a.x - b.x) <= d and math_abs(a.y - b.y) <= d and math_abs(a.z - b.z) <= d
+end
+
+function angle_diff(a1, a2)
+-- угол между двумя векторами в градусах.
+	local b1 = a1:normalize()
+	local b2 = a2:normalize()
+	local dotp = b1:dotproduct(b2)
+
+	return rad2deg(math_acos(math_abs(dotp)))
+end
+
+function angle_left(dir1, dir2)
+-- true, если нужно поворачивать влево
+	local dir_res = VEC_ZERO
+	dir_res:crossproduct(dir1, dir2)
+	return dir_res.y <= 0
+end
+
+function angle_left_xz(dir1, dir2)
+	local dir_res = VEC_ZERO
+	dir1.y = 0
+	dir2.y = 0
+	dir_res:crossproduct(dir1, dir2)
+	return dir_res.y <= 0
+end
+
+function no_need_to_rotate(npc, target_pos)
+	return yaw(npc:direction(),vector():set(target_pos):sub(npc:position())) < 0.3
+end
+
+function no_need_to_rotate_xz(npc, target_pos)
+	local dir1 = npc:direction()
+	dir1.y = 0
+	local dir2 = vector():set(target_pos):sub(npc:position())
+	dir2.y = 0
+	local y = yaw(dir1, dir2)
+
+	return y < 0.3
+end
+
+function pos_in_rect(p,r)
+	return (p.x >= r.x1) and (p.x <= r.x2) and (p.y >= r.y1) and (p.y <= r.y2)
+end
+
+
+----------------------------------------------------------------------
+-- Hex
+----------------------------------------------------------------------
+function hex2string(str)
+    return (str:gsub('..', function (cc)
+        return string_char(tonumber(cc, 16))
+    end))
+end
+
+function string2hex(str)
+    return (str:gsub('.', function (c)
+        return string_format('%02X', string_byte(c))
+    end))
+end
+
+function float2hex (n)
+    if n == 0.0 then return 0.0 end
+
+    local sign = 0
+    if n < 0.0 then
+        sign = 0x80
+        n = -n
+    end
+
+    local mant, expo = math_frexp(n)
+    local hext = {}
+
+    if mant ~= mant then
+        hext[#hext+1] = string_char(0xFF, 0x88, 0x00, 0x00)
+
+    elseif mant == math_huge or expo > 0x80 then
+        if sign == 0 then
+            hext[#hext+1] = string_char(0x7F, 0x80, 0x00, 0x00)
+        else
+            hext[#hext+1] = string_char(0xFF, 0x80, 0x00, 0x00)
+        end
+
+    elseif (mant == 0.0 and expo == 0) or expo < -0x7E then
+        hext[#hext+1] = string_char(sign, 0x00, 0x00, 0x00)
+
+    else
+        expo = expo + 0x7E
+        mant = (mant * 2.0 - 1.0) * math_ldexp(0.5, 24)
+        hext[#hext+1] = string_char(sign + math_floor(expo / 0x2),
+                                    (expo % 0x2) * 0x80 + math_floor(mant / 0x10000),
+                                    math_floor(mant / 0x100) % 0x100,
+                                    mant % 0x100)
+    end
+
+    return tonumber(string_gsub(table_concat(hext),"(.)",
+                                function (c) return string_format("%02X%s",string_byte(c),"") end), 16)
+end
+
+
+----------------------------------------------------------------------
+-- CTime
+----------------------------------------------------------------------
+function CTime2table(gt)
+	if not (gt) then
+		return
+	end
+
+	local t = {}
+	t.y, t.M, t.d, t.h, t.m, t.s, t.ms = 0, 0, 0, 0, 0, 0, 0
+	t.y, t.M, t.d, t.h, t.m, t.s, t.ms = gt:get( t.y, t.M, t.d, t.h, t.m, t.s, t.ms )
+	t.y = t.y - 2000
+	return t
+end
+
+function table2CTime(t)
+	if not (t and t.y and t.M and t.d and t.h and t.m and t.s and t.ms) then
+		return
+	end
+
+	local gt = game.CTime()
+	gt:set( t.y + 2000,  t.M, t.d, t.h, t.m, t.s, t.ms)
+	return gt
+end
+
+function w_CTime(p, t, caller)
+	if (t == nil) then
+		p:w_bool(false)
+		return
+	end
+
+	p:w_bool(true)
+
+	if not (type(t) == "userdata" and t.timeToString) then
+		t = game.get_game_time()
+	end
+
+	local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
+	Y, M, D, h, m, s, ms = t:get( Y, M, D, h, m, s, ms )
+
+	p:w_u8 ( Y - 2000 )
+	p:w_u8 ( M )
+	p:w_u8 ( D )
+	p:w_u8 ( h )
+	p:w_u8 ( m )
+	p:w_u8 ( s )
+	p:w_u16( ms )
+end
+
+function r_CTime(p, caller)
+	if (p:r_bool() == false) then
+		return
+	end
+
+	local t = game.CTime()
+	local Y, M, D, h, m, s, ms = p:r_u8(), p:r_u8(), p:r_u8(), p:r_u8(), p:r_u8(), p:r_u8(), p:r_u16()
+	t:set( Y + 2000,  M, D, h, m, s, ms)
+	return t
+end
+
+function CTime_to_table(ct)
+	local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
+	Y, M, D, h, m, s, ms = ct:get(Y, M, D, h, m, s, ms)
+	return { Y=Y, M=M, D=D, h=h, m=m, s=s, ms=ms }
+end
+
+function CTime_from_table(t)
+	local ct = game.CTime()
+	ct:set(t.Y,t.M,t.D,t.h,t.m,t.s,t.ms)
+	return ct
+end
+
+function CTimeToSec(ct)
+	local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
+	Y, M, D, h, m, s, ms = ct:get(Y, M, D, h, m, s, ms)
+	return D*24*60*60 + h*60*60 + m*60 + s
+end
+
+function CTimeAddSec(ct,sec)
+	local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
+	Y, M, D, h, m, s, ms = ct:get(Y, M, D, h, m, s, ms)
+	return D*24*60*60 + h*60*60 + m*60 + s + sec
+end
+
+
+----------------------------------------------------------------------
+-- String
+----------------------------------------------------------------------
+function startsWith(text,prefix)
+	return string_sub(text, 1, string_len(prefix)) == prefix
+end
+
+function get_ext(s)
+	return string_gsub(s,"(.*)%.","")
+end
+
+function get_comment(str)
+	local a = string_find(str,";")
+	return a and " " .. string_sub(str,a) or ""
+end
+
+function get_path(str,sep)
+    sep=sep or'\\'
+    return str:match("(.*"..sep..")")
+end
+
+function parse_string_keys(str, tbl, key)
+	-- read translated strings -> replace included special keys/patterns with the ones from (tbl) -> return the modified strings.
+	if type(str) ~= "string" then
+		callstack()
+		printe("!ERROR read_text_keylist | no string!")
+		return ""
+	end
+	
+	key = key or "%$"
+	for k,v in pairs(tbl) do
+		str = string_gsub(str, key .. k, v)
+	end
+	return str
+end
+
+
+----------------------------------------------------------------------
+-- Parsing
+----------------------------------------------------------------------
+function pairsByKeys(t, f)
+    local a = {}
+    for n in pairs(t) do table_insert(a, n) end
+    table_sort(a, f)
+    local i = 0      -- iterator variable
+    local iter = function ()   -- iterator function
+        i = i + 1
+        if a[i] == nil then return nil
+        else return a[i], t[a[i]]
+        end
+    end
+    return iter
+end
+
+function to_str(what)
+-- Переводит переменную любого типа (включая nil) в строку. Используется для отладочного вывода информации.
+	if what == nil then
+		return "<nil>"
+	else
+		return tostring(what)
+	end
+end
+
+function trim_comment(str)
+	local a = string_find(str,";")
+	return a and trim(string_sub(str,1,a-1)) or str
+end
+
+function get_scheme_by_section(section)
+	return section and string_gsub(section,"@(.*)","")
+end
+
+function cfg_get_string(char_ini, section, field, object, mandatory, gulag_name, default_val) -- deprecated
+	if mandatory == nil then
+		printf("section '%s': wrong arguments order in call to cfg_get_string", section)
+	end
+
+	if not (char_ini) then
+		--printf("cfg_get_string: ini is nil! section=%s field=%s object=%s",section,field,object and object:name())
+		return default_val
+	end
+
+	--printf("DEBUG: conf_get_string: section='%s', field='%s'", section, field)
+	if section and char_ini:section_exist(section) and char_ini:line_exist(section, field) then
+		if gulag_name and gulag_name ~= "" and gulag_name ~= "nil" then
+			return gulag_name .. "_" .. char_ini:r_string_ex(section, field)
+		else
+			return char_ini:r_string_ex(section, field)
+		end
+	end
+	--if not mandatory then
+	--	return default_val
+	--end
+	--local err = "'Attempt to read a non-existant string field '" .. field .. "' in section '" .. section .. "'";
+	--printf("%s", err)
+	return default_val
+end
+
+function read_from_ini(ini, section, line, var_type, default, caller)
+	if not (ini) then
+		ini = ini_sys
+	end
+	if not (section) then 
+		printe("!ERROR: utils_data.read_from_ini trying to read nil section! line=%s var_type=%s default=%s caller=%s",line,var_type,default,caller)
+	end
+
+	if (section and line and ini:section_exist(section) and ini:line_exist(section,line)) then
+		if (var_type == "bool") then
+			return ini:r_bool_ex(section,line)
+		elseif (var_type == "string") then
+			return ini:r_string_ex(section,line)
+		elseif (var_type == "float") then
+			return ini:r_float_ex(section,line)
+		else
+			return ini:r_string_wq(section,line)
+		end
+	end
+	return default
+end
+
+function prefix_r_string(ini, sec, key, prefix)
+	local rslt = ini:r_string_ex(sec,key)
+	if not (rslt) then
+		return
+	end
+	if (prefix and prefix ~= "" and prefix ~= "nil") then
+		return prefix .. "_" .. rslt
+	end
+	return rslt
+end
+
+function parse_params(params)
+-- a | b | c  ==>  { 1 = "a", 2 = "b", 3 = "c" }
+	--printf("_bp: parse_params: params=%s", params)
+	local rslt = {}
+	local n = 1
+	for fld in string_gmatch(params, "%s*([^|]+)%s*") do
+		--printf("_bp: parse_params iter=%d, fld=%s", n, fld)
+		rslt[n] = fld
+		n = n + 1
+	end
+	return rslt
+end
+
+function parse_data(npc,s)
+	local t = {}
+
+	if s then
+		for name in string_gmatch( s, "(%|*%d+%|[^%|]+)%p*" ) do
+			local dat = {dist = nil,state = nil,sound = nil}
+			local t_pos = string_find( name, "|", 1, true )
+			local s_pos = string_find( name, "@", 1, true )
+			local dist = string_sub( name, 1, t_pos - 1 )
+			local state
+			local sound
+			if s_pos then
+				state	= string_sub( name, t_pos + 1,
+											s_pos - 1 )
+				sound	= string_sub( name, s_pos + 1)
+			else
+				state	= string_sub( name, t_pos + 1)
+			end
+
+			dat.dist = tonumber(dist)
+			if state then
+				dat.state = xr_logic.parse_condlist(npc, dist, state, state)
+			end
+			if sound then
+				dat.sound = xr_logic.parse_condlist(npc, dist, sound, sound)
+			end
+			t[#t+1] = dat
+		end
+	end
+	return t
+end
+
+function parse_data_1v(npc,s)
+	local t = {}
+	if s then
+		for name in string_gmatch( s, "(%|*%d+%|[^%|]+)%p*" ) do
+			local dat = {dist = nil, state = nil}
+			local t_pos = string_find( name, "|", 1, true )
+			local dist = string_sub( name, 1, t_pos - 1 )
+			local state	= string_sub( name, t_pos + 1)
+			dat.dist = tonumber(dist)
+			if state then
+				dat.state = xr_logic.parse_condlist(npc, dist, state, state)
+			end
+			t[tonumber(dist)] = dat
+		end
+	end
+	return t
+end
+
+function parse_syn_data(npc,s)
+	local t = {}
+	if s then
+		for name in string_gmatch( s, "(%|*[^%|]+%|*)%p*" ) do
+			local dat = {zone = nil,state = nil,sound = nil}
+			local t_pos = string_find( name, "@", 1, true )
+			local s_pos = string_find( name, "|", 1, true )
+			local state = string_sub( name, 1, t_pos - 1 )
+			local sound
+			if s_pos then
+				sound = string_sub( name, t_pos + 1, s_pos -1)
+			else
+				sound = string_sub( name, t_pos + 1)
+			end
+
+			dat.state = state
+			dat.sound = sound
+			t[#t+1] = dat
+		end
+	end
+	return t
+end
+
+function parse_condlist(src)
+-- because xr_logic.parse_condlist npc, section, field params are only used on error
+	return xr_logic.parse_condlist(nil,nil,nil,src)
+end
+
+function parse_ini_section_to_array(ini,section)
+	local tmp=nil
+	if ini and ini:section_exist(section) then
+		tmp={}
+		for a=0,ini:line_count(section)-1 do
+			local result, id, value = ini:r_line(section,a,"","")
+			if id~=nil and trim(id)~="" and trim(id)~=nil then
+				tmp[trim(id)]=trim(value)
+			end
+		end
+	end
+	return tmp
+end
+
+function parse_ini_section_to_bool_array(ini,section)
+	local tmp=nil
+	if ini and ini:section_exist(section) then
+		tmp={}
+		local result, id, value = nil, nil, nil
+		for a=0,ini:line_count(section)-1 do
+			result, id, value = ini:r_line(section,a,"","")
+			if (id ~= nil) then
+				tmp[id] = true
+			end
+		end
+	end
+	return tmp
+end
+
+function parse_list_ex(ini,key,val,convert)
+	if not (ini) then 
+		error(strformat("utils_data.parse_list ini is nil for key=%s val=%s",key,val))
+	end
+	local str = ini:r_value(key,val)
+	local t = str and str ~= "" and str_explode(str,",") or {}
+	if (convert and #t > 0) then
+		local l = {}
+		for i=1,#t do
+			l[t[i]] = true
+		end
+		return l
+	end
+	return t
+end
+
+function collect_section(ini,section,keytable)
+	if not (ini) then
+		return
+	end
+	
+	if not (section) then 
+		callstack()
+		printe("!ERROR: collect_section - section does not exist!")
+	end
+
+	local _t = {}
+	if (section and ini:section_exist(section)) then
+		local n = ini:line_count(section)
+		if n > 0 then
+			for i = 0,n-1 do
+				local res,id,val = ini:r_line(section,i,"","")
+				if (keytable) then
+					if (val == "") then
+						val = true
+					end
+					_t[id] = val or true
+				else
+					_t[#_t+1] = id
+				end
+			end
+		end
+	end
+	return _t
+end
+
+function collect_sections(ini,sections)
+	local r,p = {},{}
+	for k=1,#sections do
+		local v = sections[k]
+		if ini:section_exist(v) then
+			local n = ini:line_count(v)
+			if n > 0 then
+				for i = 0,n-1 do
+					local res,id,val = ini:r_line(v,i,"","")
+					if r[id] == nil then
+						r[id] = val
+					end
+				end
+			end
+			p[k] = n
+		end
+	end
+	return r,p
+end
+
+function file_to_table(fname,parent,simple)
+	local root = parent and parent.root or {}
+	local sec,t,key
+	
+	local function get_section_includes(str)
+		local a = string_find(str,"]")
+		return a and " " .. string_sub(str,a+2) or ""
+	end
+
+	for line in io.lines(fname) do
+		line = trim(trim_comment(line))
+		if (line ~= "" and line ~= "\n") then
+			if (startsWith(line, "#include")) then
+				if (simple ~= true and parent ~= nil) then
+					local inc = string_match(line,[["(.-)"]]) or ""
+					if (inc ~= "" and file_exists(get_path(fname)..inc)) then
+						file_to_table(get_path(fname)..inc,parent,simple)
+					end
+				end
+			elseif (startsWith(line, "[")) then
+				sec = string_match(line,"%[(.-)%]")
+				
+				if (root[sec]) then
+					printe("!ERROR: Duplicate section exists! %s",line)
+				end
+
+				root[sec] = root[sec] or {}
+
+				local inc = trim(get_section_includes(line))
+				if (inc and inc ~= "") then
+					root[sec]["_____link"] = inc
+					if (simple ~= true) then
+						local a = str_explode(inc,",")
+						for k,v in pairs(a) do
+							if (root[v]) then
+								for kk,vv in pairs(root[v]) do
+									root[sec][kk] = vv
+								end
+							end
+						end
+					end
+				end
+			elseif (sec) then
+				key = trim(string_match(line,"(.-)=") or line)
+				if (key ~= "") then
+					root[sec] = root[sec] or {}
+					root[sec][key] = trim(string_match(line,"=(.+)") or "")
+				end
+			end
+		end
+	end
+
+	return root
+end
+
+local cache_translated = {}
+local cache_untranslated = {}
+function collect_translations(st, is_translated) 
+	-- read strings with specific pattern (ends with increased number) -> return them translated in a table
+	
+	-- no need to scan for identical results
+	if is_translated and cache_translated[st] then
+		return cache_translated[st]
+		
+	elseif cache_untranslated[st] then
+		return cache_untranslated[st]
+	end
+	
+	local string_count = 1
+	local tr_t = {}
+	while true do 
+		local tr_s = game.translate_string(st .. string_count)
+		if (tr_s == st .. string_count) then 
+			break 
+		else 
+			if is_translated then
+				tr_t[#tr_t + 1] = tr_s
+			else
+				tr_t[#tr_t + 1] = st .. tostring(string_count)
+			end
+		end
+		string_count = string_count + 1
+	end
+	
+	if (#tr_t == 0) then
+		if (not string_find(st,"st_msg")) then
+			printf("! WARNING: collect_translations | strings of (%s) don't exist!", st)
+		end
+		return false
+	end
+	
+	if is_translated then
+		cache_translated[st] = tr_t
+	else
+		cache_untranslated[st] = tr_t
+	end
+	
+	return tr_t
+end
+
+
+function findfunction(x,tbl)
+	assert(type(x) == "string")
+	local f=tbl
+	for v in x:gmatch("[^%.]+") do
+		if type(f) ~= "table" then
+			printf("looking for '%s' expected table, not %s",v,type(f))
+			return
+		end
+		f=f[v]
+	end
+	if type(f) == "function" then
+		return f
+	else
+		printf("expected function, not %s",type(f))
+		return nil
+	end
+end
+
+
+----------------------------------------------------------------------
+-- Packets
+----------------------------------------------------------------------
+function w_stpk(stpk,typ,n,info)
+	local isError
+
+	if (typ == "bool") then
+		if (n and type(n) == "boolean") then
+			stpk:w_bool(n)
+		elseif (n and type(n) == "string") then
+			isError = true
+			if (n == "true") then
+				stpk:w_bool(true)
+			elseif (n == "false") then
+				stpk:w_bool(false)
+			end
+			info = info .. " |-> auto-corrected bool value from string"
+		else
+			if (n) then
+				isError = true
+			end
+			stpk:w_bool(false)
+		end
+
+	elseif (typ == "s8") then
+		if (n and type(n) == "number" and n >= -128 and n <= 128) then
+			stpk:w_s8(n)
+		else
+			isError = true
+			stpk:w_s8(0)
+		end
+
+	elseif (typ == "s16") then
+		if (n and type(n) == "number" and n >= -32768 and n <= 32767) then
+			stpk:w_s16(n)
+		else
+			isError = true
+			stpk:w_s16(0)
+		end
+
+	elseif (typ == "s32") then										
+		if (n and type(n) == "number" and n >= -2147483648 and n <= 2147483647) then
+			stpk:w_s32(n)
+		else
+			isError = true
+			stpk:w_s32(0)
+		end
+
+	elseif (typ == "s64") then
+		if (n and type(n) == "number" and n >= -9223372036854775808 and n <= 9223372036854775808) then
+			stpk:w_s64(n)
+		else
+			isError = true
+			stpk:w_s64(0)
+		end
+
+	elseif (typ == "u8") then
+		if (n and type(n) == "number" and n >= 0 and n <= 255) then
+			stpk:w_u8(n)
+		else
+			isError = true
+			stpk:w_u8(0)
+		end
+
+	elseif (typ == "u16") then
+		if (n and type(n) == "number" and n >= 0 and n <= 65535) then
+			stpk:w_u16(n)
+		else
+			isError = true
+			stpk:w_u16(0)
+		end
+
+	elseif (typ == "u32") then
+		if (n and type(n) == "number" and n >= 0 and n <= 4294967295) then
+			stpk:w_u32(n)
+		else
+			isError = true
+			stpk:w_u32(0)
+		end
+
+	elseif (typ == "u64") then
+		if (n and type(n) == "number" and n >= 0 and n <= 18446744073709551615) then
+			stpk:w_u64(n)
+		else
+			isError = true
+			stpk:w_u64(0)
+		end
+
+	elseif (typ == "float") then
+		if (n and type(n) == "number") then
+			stpk:w_float(n)
+		else
+			isError = true
+			stpk:w_float(0)
+		end
+
+	elseif (typ == "stringZ") then
+		if (n and type(n) == "string") then
+			if (string_len(n) > 255) then
+				isError = true
+				info = info .. " |-> length of string is too long for stringZ"
+			end
+			stpk:w_stringZ( string_sub(n,0,255) )
+		elseif (n and type(n) ~= "userdata") then
+			stpk:w_stringZ(tostring(n))
+		else
+			--isError = true
+			stpk:w_stringZ("nil")
+		end
+
+	elseif (typ == "CTime") then
+		utils_data.w_CTime(stpk,n)
+		--[[
+		if (n and type(n) == "userdata" and n.timeToString) then
+			utils_data.w_CTime(stpk,n)
+		else
+			--printf("w_stpk:Debug: CTime is nil [%s]",info)
+			utils_data.w_CTime(stpk,nil)
+		end
+		--]]
+	else
+		isError = true
+	end
+
+	if (isError) then
+		printf("w_stpk:CRITICAL ERROR: write %s (%s) TrueType=%s [%s]   | Packet:w_tell()=>%s",typ,type(n) ~= "userdata" and tostring(n) or "userdata",type(n),info,stpk:w_tell())
+	else
+		--printf("w_stpk:DEBUG: write %s (%s) TrueType=%s [%s]   | Packet:w_tell()=>%s",typ,type(n) ~= "userdata" and tostring(n) or "userdata",type(n),info,stpk:w_tell())
+	end
+end
+
+
+----------------------------------------------------------------------
+-- FSGAME
+----------------------------------------------------------------------
+local fsgame
+function get_fsgame()
+	if (fsgame) then
+		return fsgame
+	end
+
+	local root = {}
+	file_to_table("fsgame.ltx",root,true)
+
+	local fsgame = {}
+	fsgame["$fs_root$"] = ""
+	local t
+	for k,v in pairs(root) do
+		t = str_explode(v,"|")
+		dir = t[3]
+
+		if not (string_find(dir,"%$")) then
+			fsgame[k] = (dir or "") .. (t[4] or "")
+		else
+			fsgame[k] = t[4] or ""
+		end
+
+		repeat
+			t = root[dir] and str_explode(root[dir],"|")
+			dir = t and t[3]
+			fsgame[k] = (fsgame[dir] or dir or "") .. (t and t[4] or "") .. fsgame[k]
+		until (dir == nil)
+	end
+	return fsgame
+end
+
+function fspath(str)
+	local fsg = get_fsgame()
+	return fsg[str] or ""
+end
+
+function fsgame_append(str,ap)
+	if (fspath(str) ~= "" and fspath(str) ~= nil) then
+		return
+	end
+	fsgame = nil
+
+	local fsg = io.open("fsgame.ltx","a+")
+	local data = fsg:read("*all")
+	if not (string_find(data,str)) then
+		fsg:write("\n"..ap)
+	end
+	fsg:close()
+end
+
+
+
+----------------------------------------------------------------------
+-- Logging
+----------------------------------------------------------------------
+function print_table(node, header, format_only)
+	-- to make output beautiful
+	local function tab(amt)
+		local str = ""
+		for i=1,amt do
+			str = str .. "\t"
+		end
+		return str
+	end
+
+	local cache, stack = {},{}
+	local depth = 1
+	local output_str = header and ("-- " .. tostring(header) .. "\n{\n") or "{\n"
+	local output = {}
+	local size_t = 0
+	local size_stack = 0 
+	while true do
+		local size = table.size(node)
+		local cur_index = 1
+		for k,v in pairs(node) do
+			if (cache[node] == nil) or (cur_index >= cache[node]) then
+				if (string_find(output_str,"}",output_str:len())) then
+					output_str = output_str .. ",\n"
+				elseif not (string_find(output_str,"\n",output_str:len())) then
+					output_str = output_str .. "\n"
+				end
+				
+				size_t = size_t + 1
+				output[size_t] = output_str
+				output_str = ""
+
+				local key
+				if (type(k) == "number" or type(k) == "boolean") then
+					key = "["..tostring(k).."]"
+				else
+					key = "['"..tostring(k).."']"
+				end
+
+				if (type(v) == "number" or type(v) == "boolean") then
+					output_str = output_str .. tab(depth) .. key .. " = "..tostring(v)
+				elseif (type(v) == "table") then
+					output_str = output_str .. tab(depth) .. key .. " = {\n"
+					size_stack = size_stack + 1
+					stack[size_stack] = node
+					size_stack = size_stack + 1
+					stack[size_stack] = v
+					cache[node] = cur_index+1
+					break
+				elseif (type(v) == "userdata") then
+					if (v.diffSec) then
+						local Y, M, D, h, m, s, ms = 0,0,0,0,0,0,0
+						Y, M, D, h, m, s, ms = v:get(Y, M, D, h, m, s, ms)
+						output_str = strformat("%s%s%s = { Y=%s, M=%s, D=%s, h=%s, m=%s, s=%s, ms=%s } ",output_str,tab(depth),key,Y, M, D, h, m, s, ms)
+					else
+						output_str = output_str .. tab(depth) .. key .. " = userdata"
+					end
+				else
+					output_str = output_str .. tab(depth) .. key .. " = '"..tostring(v).."'"
+				end
+
+				if (cur_index == size) then
+					output_str = output_str .. "\n" .. tab(depth-1) .. "}"
+				else
+					output_str = output_str .. ","
+				end
+			else
+				-- close the table
+				if (cur_index == size) then
+					output_str = output_str .. "\n" .. tab(depth-1) .. "}"
+				end
+			end
+
+			cur_index = cur_index + 1
+		end
+		
+		if (size == 0) then
+			output_str = output_str .. "\n" .. tab(depth-1) .. "}"
+		end
+
+		if (size_stack > 0) then
+			node = stack[size_stack]
+			stack[size_stack] = nil
+			size_stack = size_stack - 1
+			depth = cache[node] == nil and depth + 1 or depth - 1
+		else
+			break
+		end
+	end
+   
+	size_t = size_t + 1
+	output[size_t] = output_str
+
+	output_str = table_concat(output)
+	
+   	if (format_only) then
+		return output_str
+	end
+	
+	local file = io.open("print_table.txt","a+")
+	file:write(output_str.."\n\n")
+	file:close()
+	printf("Table written to print_table.txt")
+end
+
+function print_packet_data(data)
+	local msg = ""
+	for kk, vv in pairs(data) do
+		if (type(vv) == "userdata" and vv.x and vv.y and vv.z) then
+			--m.debug_write("%s: vector:= %s",kk,vec_to_str(vv))
+			printf("%s: vector:= %s",kk,vec_to_str(vv))
+			msg = msg.."["..kk.."] = "..vector_to_string(vv)
+		else
+			--m.debug_write("[%s] = %s",kk,vv)
+			printf("[%s] = %s",kk,vv)
+		end
+	end
+end
+
+function debug_write(output,trace)
+	--[[
+	if (trace and debug and type(debug.traceback) == 'function') then
+		output = output .. debug.traceback('\n', 2)
+	end
+	--]]
+
+	if (log) then 
+		log(output)
+	end 
+end
+
+
+
+----------------------------------------------------------------------
+-- INI
+----------------------------------------------------------------------
+class "cfg_file"
+function cfg_file:__init(fname,simple_mode)
+	--printf("fname=%s",fname)
+	local cfg = io.open(fname,"a+")
+	cfg:close()
+	self.fname = fname
+	self.directory = fname:match("(.*\\)") or ""
+	
+	self.root = {}
+	self.insert = {}
+	file_to_table(fname,self,simple_mode)
+end
+
+function cfg_file:GetValue(sec,key,typ,def)
+	local val = self.root and self.root[sec] and self.root[sec][key]
+	if (val == nil) then
+		return def
+	end
+
+	if (typ == 1 or typ == "bool") then
+		return val == "true"
+	elseif (typ == 2 or typ == "number") then
+		return tonumber(val)
+	end
+	return val
+end
+
+function cfg_file:GetKeys(sec)
+	if (self.root and self.root[sec]) then
+		local t={}
+		for k,v in pairs(self.root[sec]) do 
+			if (k ~= "_____link") then 
+				t[k] = v
+			end
+		end
+		return t
+	end
+end
+
+function cfg_file:SetValue(sec,key,val)
+	if not (self.root) then
+		self.root = {}
+	end
+
+	if not (self.root[sec]) then
+		self.root[sec] = {}
+	end
+	
+	if (self.root[sec][key] == nil) then
+		if not (self.insert[sec]) then 
+			self.insert[sec] = {}
+		end
+		local t = self.insert[sec]
+		t[#t+1] = key
+	end
+
+	self.root[sec][key] = val == nil and "" or tostring(val)
+end
+
+function cfg_file:ClearValue(sec,key)
+	if not (self.root) then
+		self.root = {}
+	end
+
+	if not (self.root[sec]) then
+		self.root[sec] = {}
+	end
+	self.root[sec][key] = nil
+end
+
+function cfg_file:SectionExist(sec)
+	return self.root and self.root[sec] ~= nil
+end
+
+function cfg_file:KeyExist(sec,key)
+	return self.root and self.root[sec] and self.root[sec][key] ~= nil
+end
+
+function cfg_file:SaveExt() -- Save ini by preserving original file. Cannot insert new keys or sections
+	local t,sec,key,comment
+	local str = ""
+
+	local function addTab(s,n)
+		local padding = {}
+		local l = string_len(s)
+		for i=1,n-l do 
+			padding[#padding+1] = " "
+		end 
+		return s .. table_concat(padding)
+	end
+
+	for ln in io.lines(self.fname) do
+		ln = trim(ln)
+		if (startsWith(ln,"[")) then
+			-- inject new fields that previously didn't exist
+			if (sec and self.root[sec] and self.insert[sec]) then
+				local insert_done = false
+				for i=1,#self.insert[sec] do
+					local k = self.insert[sec][i]
+					if (k ~= "_____link") then
+						str = str .. addTab(k,40) .. " = " .. tostring(self.root[sec][k]) .. "\n"
+						insert_done = true
+					end
+				end
+				if insert_done then -- add empty line at the end of new fields
+					str = str .. " \n"
+				end
+			end
+			
+			sec = string_match(trim_comment(ln),"%[(.-)%]")												  
+			str = str .. ln .. "\n"
+		elseif (sec and self.root[sec]) then
+			key = trim(trim_comment(string_match(ln,"(.-)=") or ln))
+			
+			if (key and self.root[sec][key]) then
+				comment = get_comment(ln) or ""
+				if (comment ~= "") then 
+					comment = addTab(comment,20)
+				end
+				if (self.root[sec][key] == "") then
+					str = str .. addTab(key,40) .. " =" .. comment .. "\n"
+				else
+					str = str .. addTab(key,40) .. " = " .. tostring(self.root[sec][key]) .. comment .. "\n"
+				end
+			else 
+				str = str .. ln .. "\n"
+			end
+		else 
+			str = str .. ln .. "\n"
+		end
+	end
+	
+	empty_table(self.insert)
+	
+	local cfg = io.open(self.fname,"w+")
+	cfg:write(str)
+	cfg:close()
+end
+
+function cfg_file:Save() -- Recreates ini as stored in the table and sorted in alphabetical order
+	local _s = {}
+	_s.__order = {}
+	
+	for section,tbl in pairs(self.root) do
+		_s.__order[#_s.__order+1] = section
+		if not (_s[section]) then 
+			_s[section] = {}
+		end
+		for k,v in pairs(tbl) do 
+			_s[section][#_s[section]+1] = k
+		end
+	end
+	
+	table_sort(_s.__order)
+	
+	for i,section in pairs(_s.__order) do 
+		table_sort(_s[section])
+	end 
+	
+	local str = ""
+	
+	local first
+	for i,section in pairs(_s.__order) do
+		if not (first) then
+			str = str .. "[" .. section .. "]"
+			first = true
+		else 
+			str = str .. "\n[" .. section .. "]"
+		end
+
+		if (self.root[section]["_____link"]) then 
+			str = str .. ":" .. self.root[section]["_____link"] .. "\n"
+		else 
+			str = str .. "\n"
+		end 
+
+		for ii, key in pairs(_s[section]) do
+			if (key ~= "_____link") then
+				val = self.root[section][key]
+				if (val == "") then
+					str = str .. key .. "\n"
+				else
+					str = str .. key .. " = " .. tostring(val) .. "\n"
+				end
+			end
+		end 
+	end 
+
+	local cfg = io.open(self.fname,"w+")
+	cfg:write(str)
+	cfg:close()
+end
+
+
+----------------------------------------------------------------------
+-- Callbacks
+----------------------------------------------------------------------
+local function on_localization_change()
+	empty_table(cache_translated)
+	empty_table(cache_untranslated)
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_localization_change",on_localization_change)
+end

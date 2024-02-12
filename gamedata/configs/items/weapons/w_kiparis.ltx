@@ -1,0 +1,211 @@
+;------------------------------------------------------------------------------------------------
+[wpn_kiparis]:identity_immunities,weapon_probability,default_weapon_params,wpn_kiparis_sounds
+        GroupControlSection         = spawn_group
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\mp5"
+        scheduled                   = off
+        cform                       = skeleton
+        
+		kind                        = w_smg ;w_pistol
+        class                       = WP_LR300
+        slot                        = 2
+        animation_slot              = 8
+        ef_main_weapon_type         = 2
+        ef_weapon_type              = 6
+        hand_dependence             = 1
+        single_handed               = 0
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+        inv_grid_height             = 2
+        inv_grid_width              = 3
+        inv_grid_x                  = 44
+        inv_grid_y                  = 64
+        inv_name                    = st_wpn_kiparis
+        inv_name_short              = st_wpn_kiparis
+        description                 = st_wpn_kiparis_descr
+        
+        inv_weight                  = 1.6
+        cost                        = 16880
+        repair_type                 = pistol
+        weapon_class                = assault_rifle
+        
+        hud                         = wpn_kiparis_hud
+        visual                      = dynamics\weapons\wpn_kiparis\wpn_kiparis.ogf
+        position                    = -0.026, -0.125, -0.03
+        orientation                 = 0, -10, 0
+        fire_point                  = 0.0, 0.188, 0.392
+        fire_point2                 = 0.0, 0.188, 0.392
+        strap_bone0                 = bip01_spine2
+        strap_bone1                 = bip01_spine1
+        strap_position              = -0.16, -0.36, 0.15
+        strap_orientation           = -10, -5, 10
+        ph_mass                     = 3
+        
+        flame_particles             = weapons\generic_weapon05
+        smoke_particles             = weapons\generic_shoot_00
+        grenade_flame_particles     = weapons\generic_weapon01
+        
+		shell_point			        = 0.0, 0.188, 0.082
+		shell_dir			        = 0.0, 1.0, 0.0
+		shell_particles	 		    = weapons\9x18
+
+        light_disabled              = false
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 5
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_kiparis, up_gr_seconab_kiparis, up_gr_thirdab_kiparis, up_gr_fourtab_kiparis, up_gr_fifthab_kiparis, up_gr_fifthcd_kiparis
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_beretta
+        upgr_icon_x                 = 750
+        upgr_icon_y                 = 1850
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        
+        fire_modes                  = 1, -1
+        ammo_class                  = ammo_9x18_fmj, ammo_9x18_fmj_bad, ammo_9x18_fmj_verybad, ammo_9x18_pmm, ammo_9x18_pmm_bad, ammo_9x18_pmm_verybad, ammo_9x18_ap, ammo_9x18_ap_bad, ammo_9x18_ap_verybad
+        ammo_elapsed                = 30
+        ammo_mag_size               = 30
+        startup_ammo                = 90
+        
+        scope_status                = 0
+        scope_zoom_factor           = 0
+        
+        silencer_name               = wpn_sil_9mm
+        silencer_status             = 2
+        silencer_x                  = 135
+        silencer_y                  = 11
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        silencer_smoke_particles    = weapons\generic_shoot_00
+        
+        grenade_class               = ammo_vog-25, ammo_vog-25_bad, ammo_vog-25_verybad
+        grenade_launcher_status     = 0
+        launch_speed                = 0
+        
+        hit_impulse                 = 20
+        hit_power                   = 0.46, 0.46, 0.46, 0.46
+        hit_type                    = fire_wound
+        fire_distance               = 300
+        bullet_speed                = 330
+        rpm                         = 850
+        rpm_empty_click             = 200
+        ap_modifier                 = 1.1
+        
+        use_aim_bullet              = false
+        time_to_aim                 = 0.0 ;  3.0
+        zoom_dof                    = 0.5, 1.0, 180
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 2.9
+        fire_dispersion_base        = 0.59
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_probability         = 0.005
+        misfire_start_condition     = 0.7 ;  0.81
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.15
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0012
+        condition_shot_dec          = 0.0012
+        
+        cam_return                  = 0
+        cam_relax_speed             = 10
+        cam_dispersion              = 0.48
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 0.0425
+        cam_max_angle               = 31.0
+        cam_max_angle_horz          = 31.0
+        cam_step_angle_horz         = 1.44
+        zoom_cam_relax_speed        = 10
+        zoom_cam_dispersion         = 0.27
+        zoom_cam_dispersion_frac    = 1.0
+        zoom_cam_dispersion_inc     = 0.0325
+        zoom_cam_max_angle          = 31.0
+        zoom_cam_max_angle_horz     = 31.0
+        zoom_cam_step_angle_horz    = 1.42
+        
+        PDM_disp_accel_factor       = 1.155
+        PDM_disp_base               = 0.65
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.15
+        
+        cam_relax_speed_ai          = 120.75
+        zoom_cam_relax_speed_ai     = 120.75
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 1.0
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 72
+        kill_msg_y                  = 82
+        kill_msg_width              = 56
+        kill_msg_height             = 23
+ 
+
+[wpn_kiparis_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_kiparis\wpn_kiparis_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        hands_position              = 0, -0.19, 0.1
+        hands_position_16x9         = 0, -0.19, 0.1
+        hands_orientation           = 0, 0, 0
+        hands_orientation_16x9      = 0, 0, 0
+        
+        aim_hud_offset_pos          = -0.0807, 0.05003, -0.25
+        aim_hud_offset_pos_16x9     = -0.0807, 0.05003, -0.25
+        aim_hud_offset_rot          = -0.0001, -0.00005, 0.0
+        aim_hud_offset_rot_16x9     = -0.0001, -0.00005, 0.0
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_pos_16x9      = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        gl_hud_offset_rot_16x9      = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_hide                    = kiparis_holster
+        anm_idle                    = kiparis_idle
+        anm_idle_aim                = kiparis_aim
+        anm_idle_aim_moving         = kiparis_move, idle, 0.75
+        anm_idle_aim_moving_crouch  = kiparis_move, idle, 0.7
+        anm_idle_moving             = kiparis_move
+        anm_idle_sprint             = kiparis_sprint
+        anm_reload                  = kiparis_reload, reload
+        anm_shots                   = kiparis_shoot, shoot
+        anm_show                    = kiparis_draw
+        
+        shell_bone                  = gilza
+        shell_dir                   = 0.0, 1.0, 0.0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = muzzle
+        fire_bone2                  = wpn_body
+        fire_point                  = 0, 0, 0
+        fire_point2                 = 0, 0, 0
+ 
+
+[wpn_kiparis_sk1_hud]:wpn_kiparis_hud
+        item_visual                 = anomaly_weapons\wpn_kiparis\wpn_kiparis_sk1_hud.ogf
+ 

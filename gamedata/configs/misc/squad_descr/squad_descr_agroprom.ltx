@@ -1,0 +1,186 @@
+[agr_smart_terrain_1_6_near_2_military_colonel_kovalski_squad]:online_offline_group
+faction = army
+npc = agr_smart_terrain_1_6_near_2_military_colonel_kovalski
+target_smart = agr_smart_terrain_1_6_near_2
+story_id = agr_smart_terrain_1_6_near_2_military_colonel_kovalski_squad
+spawn_point = agr_smart_terrain_1_6_near_2_agr_duty_commander_walk
+
+[agr_smart_terrain_1_6_army_trader_stalker_squad]:online_offline_group
+faction = army
+npc = agr_smart_terrain_1_6_army_trader_stalker
+target_smart = agr_smart_terrain_1_6
+story_id = agr_smart_terrain_1_6_army_trader_stalker_squad
+;spawn_point = agr_smart_terrain_1_6_army_trader_walk
+
+[agr_smart_terrain_1_6_army_mechanic_stalker_squad]:online_offline_group
+faction = army
+npc = agr_smart_terrain_1_6_army_mechanic_stalker
+target_smart = agr_smart_terrain_1_6
+story_id = agr_smart_terrain_1_6_army_mechanic_stalker_squad
+;spawn_point = agr_army_mechanic_walk
+
+[agr_smart_terrain_1_6_army_medic_stalker_squad]:online_offline_group
+faction = army
+npc = agr_smart_terrain_1_6_army_medic_stalker
+target_smart = agr_smart_terrain_1_6
+story_id = agr_smart_terrain_1_6_army_medic_stalker_squad
+;spawn_point = agr_army_medic_walk
+
+[agr_1_6_guards_army_mlr_squad]:online_offline_group
+faction = army
+npc_random = sim_default_military_3, sim_default_military_2, sim_default_military_2, sim_default_military_2
+npc_in_squad = 1, 3
+target_smart = agr_smart_terrain_1_6
+
+[agr_1_6_medic_army_mlr_squad]:online_offline_group
+faction = army
+npc = agr_1_6_medic_army_mlr
+npc_in_squad = 1, 1
+target_smart = agr_smart_terrain_1_6
+
+[agr_1_6_barman_army_mlr_squad]:online_offline_group
+faction = army
+npc = agr_1_6_barman_army_mlr
+npc_in_squad = 1, 1
+target_smart = agr_smart_terrain_1_6
+
+;===новые=================
+
+
+;===вход-пещера в катакомбы=================
+[perehod_bolota_burer_agr_smart_terrain_5_7]:online_offline_group
+faction = monster_predatory_day
+npc_random = burer_normal, burer_normal2, burer_weak, burer_weak2
+npc_in_squad = 1
+target_smart = agr_smart_terrain_5_7
+
+[perehod_bolota_contr_agr_smart_terrain_5_7]:online_offline_group
+faction = monster_predatory_day
+npc = snork_weak, snork_weak2, snork_weak2, snork_weak2, m_controller_normal
+target_smart = agr_smart_terrain_5_7
+
+[perehod_bolota_blood_agr_smart_terrain_5_7]:online_offline_group
+faction = monster_zombied_night
+npc_random = bloodsucker_red_weak, bloodsucker_black_weak, bloodsucker_red_normal, bloodsucker_black_normal, bloodsucker_red_strong, bloodsucker_black_strong
+npc_in_squad = 1
+target_smart = agr_smart_terrain_5_7
+
+;====узкая пещера на горке (слева при выходе со свалки)===================
+[cave_snork_agr_smart_terrain_7_5]:online_offline_group
+faction = monster_predatory_day
+npc = snork_weak, snork_normal, snork_normal2, rat_weak, rat_wolf, rat_weak, rat_normal, rat_weak, rat_strong, rat_strong, snork_strong2, rat_weak, rat_weak, rat_weak, rat_weak 
+target_smart = agr_smart_terrain_7_5
+
+[cave_cat_agr_smart_terrain_7_5]:online_offline_group
+faction = monster_predatory_night
+npc = cat_strong_e, cat_strong_d, cat_strong_c, cat_normal_c, rat_wolf, rat_weak, rat_normal, rat_weak, rat_weak, rat_normal, rat_weak
+target_smart = agr_smart_terrain_7_5
+
+
+
+;=====туннель на свалку==================
+[tunnel_rat_agr_smart_terrain_6_4]:online_offline_group
+faction = monster
+npc_random = snork_weak, snork_normal, snork_normal2, rat_weak, rat_wolf, rat_weak, rat_normal, rat_weak, rat_strong, rat_strong, snork_strong2, rat_weak, rat_strong, rat_strong, rat_weak
+npc_in_squad = 10, 20
+target_smart = agr_smart_terrain_6_4
+
+[tunnel_fract_agr_smart_terrain_6_4]:online_offline_group
+faction = monster
+relationship = neutral
+npc_random = fracture_strong
+npc_in_squad = 1
+target_smart = agr_smart_terrain_6_4
+
+[tunnel_blood_agr_smart_terrain_6_4]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_black_strong, bloodsucker_black_normal, bloodsucker_red_normal, bloodsucker_red_strong
+npc_in_squad = 1
+target_smart = agr_smart_terrain_6_4
+
+[tunnel_stalk_agr_smart_terrain_6_4]:online_offline_group
+faction = stalker
+relationship = enemy
+npc_random = sim_default_stalker_0, sim_default_stalker_1
+npc_in_squad = 1, 2
+target_smart = agr_smart_terrain_6_4
+
+[tunnel_band_agr_smart_terrain_6_4]:online_offline_group
+faction = bandit
+relationship = enemy
+npc_random = sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 2, 5
+target_smart = agr_smart_terrain_6_4
+
+[tunnel_killer_agr_smart_terrain_6_4]:online_offline_group
+faction = killer
+relationship = enemy
+npc_random = sim_default_killer_1, sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_3
+npc_in_squad = 1, 3
+target_smart = agr_smart_terrain_6_4
+
+
+
+;===переход на янтарь=========
+[per_yant_blood_agr_smart_terrain_1_2]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_green_weak, bloodsucker_green_normal, bloodsucker_green_normal, bloodsucker_green_normal, bloodsucker_green_normal, bloodsucker_green_strong
+npc_in_squad = 1
+target_smart = agr_smart_terrain_1_2
+
+
+
+;===сев. комплекс============
+
+[base_stalk_agr_smart_terrain_4_4_near_3]:online_offline_group
+faction = stalker
+npc_random = sim_default_duty_3, sim_default_duty_2, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1
+npc_in_squad = 2, 3
+target_smart = agr_smart_terrain_4_4_near_3
+always_arrived = true
+
+[base_stalk_agr_smart_terrain_4_4_near_1]:online_offline_group
+faction = stalker
+npc_random = sim_default_duty_3, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1
+npc_in_squad = 1, 2
+target_smart = agr_smart_terrain_4_4_near_1
+always_arrived = true
+
+[base_stalk_agr_smart_terrain_4_4_near_2]:online_offline_group
+faction = stalker
+npc_random = sim_default_duty_3, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1
+npc_in_squad = 2, 3
+target_smart = agr_smart_terrain_4_4_near_2
+always_arrived = true
+
+[base_stalk_agr_smart_terrain_4_4]:online_offline_group
+faction = stalker
+npc_random = sim_default_duty_3, sim_default_duty_2, sim_default_duty_0, sim_default_duty_0, sim_default_duty_0, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1
+npc_in_squad = 1, 3
+target_smart = agr_smart_terrain_4_4
+always_arrived = true
+
+;==база вояк==================
+
+[base_army_agr_smart_terrain_1_6_near_2]:online_offline_group
+faction = army
+npc = sim_default_military_4, sim_default_military_3, sim_default_military_2, sim_default_military_1, sim_default_military_0, sim_default_military_4
+target_smart = agr_smart_terrain_1_6_near_2
+always_arrived = true
+
+[base_army_agr_smart_terrain_1_6]:online_offline_group
+faction = army
+npc = sim_default_military_4, sim_default_military_0, sim_default_military_0, sim_default_military_0, sim_default_military_4, sim_default_military_3, sim_default_military_3
+target_smart = agr_smart_terrain_1_6
+always_arrived = true
+
+[base_army_agr_smart_terrain_1_6_near_1]:online_offline_group
+faction = army
+npc = sim_default_military_4, sim_default_military_2, sim_default_military_2, sim_default_military_1, sim_default_military_3, sim_default_military_4
+target_smart = agr_smart_terrain_1_6_near_1
+always_arrived = true
+
+
+
+
+

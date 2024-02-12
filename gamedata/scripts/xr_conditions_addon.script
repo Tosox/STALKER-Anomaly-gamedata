@@ -1,0 +1,101 @@
+--------------------------------------------------------------------------------------------------------------------------
+-- function to call specific script functions from configs without writing dedicated xr_conditions functions
+-- {=script(somescript:somefunc:arg1:arg2:arg3:...)}   ---->	if somescript.somefunc(a,b,{arg1,arg2,arg3,...}) then
+-- a and b are the usual first 2 arguments of condlist
+--------------------------------------------------------------------------------------------------------------------------
+function xr_conditions.script(a,b,c)
+	if c and #c > 1 and _G[c[1]] and _G[c[1]][c[2]] and type(_G[c[1]][c[2]]) == 'function' then
+		
+		local scr = c[1]
+		local fname = c[2]
+		local args = {}
+		
+		for i=3,#c do
+			args[i-2] = c[i]
+		end
+		
+		return _G[scr][fname](a,b,args)
+	else
+		printe('!ERROR in xr_conditions.script, wrong arguments: %s',utils_data.print_table(c,'',true))
+		return false
+	end
+end
+
+--------------------------------------------------------------------------------------------------------------------------
+-- check if the player has items in inventory
+-- {=has_item(vodka)}						--> true if player has at least 1 vodka
+-- {=has_item(vodka:5)}						--> true if player has at least 5 vodka
+-- {!has_item(vodka)}						--> true if player does not have vodka
+-- {=has_item(vodka) !has_item(vodka:5)}	--> true if player has vodka but less than 5
+--------------------------------------------------------------------------------------------------------------------------
+function xr_conditions.has_item(a,b,c)
+	if not c then 
+		return 
+	end
+	
+	local num = tonumber(c[2]) or 1
+	local sec = c[1]
+	local function itr(_,item)
+		if item:section() == sec then
+			num = num - 1
+		end
+	end
+	db.actor:iterate_inventory(itr)
+	
+	return num < 1
+end	
+
+--------------------------------------------------------------------------------------------------------------------------
+-- check if object with story id exists
+-- first argument is the story id to test
+-- if second argument is true then story id will be unregistered if check fails
+--------------------------------------------------------------------------------------------------------------------------
+function xr_conditions.story_object_exists(a,b,c)
+	if not c then 
+		return 
+	end
+	
+	local id = get_story_object_id(c[1])
+	local exists = id and alife_object(id)
+	
+	if not exists and c[2] and c[2] == 'true' then
+		story_objects.unregister(c[1])
+	end
+	return exists and true
+end	
+
+--------------------------------------------------------------------------------------------------------------------------
+-- check if object with story id exists and it's in player inventory
+-- first argument is the story id to test
+-- if second argument is true then story id will be unregistered if story id item doesnt exists
+--------------------------------------------------------------------------------------------------------------------------
+function xr_conditions.story_object_owned(a,b,c)
+	if not c then 
+		return 
+	end
+	
+	local id = get_story_object_id(c[1])
+	local exists = id and alife_object(id)
+	
+	if not exists and c[2] and c[2] == 'true' then
+		story_objects.unregister(c[1])
+	end
+	return exists and exists.parent_id == 0
+end	
+
+--------------------------------------------------------------------------------------------------------------------------
+-- check if enemy of at least one of several factions
+-- {=any_faction_enemy(stalker:ecolog:freedom)} --> true if enemy of any of the listed factions
+--------------------------------------------------------------------------------------------------------------------------
+function xr_conditions.any_faction_enemy(a,b,c)
+	if not c then 
+		return 
+	end
+	local acom = character_community(db.actor)
+	for k,v in pairs(c) do
+		if game_relations.is_factions_enemies(acom, v) then
+			return true
+		end
+	end
+	return false
+end	

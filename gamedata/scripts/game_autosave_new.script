@@ -1,0 +1,29 @@
+function on_game_start()
+	RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+end
+
+local last_save
+function actor_on_first_update()
+	last_save = time_global()
+	CreateTimeEvent("actor","autosave_new",60,autosave)
+end
+
+function option_updated()
+	if level.present() then
+		last_save = time_global()
+	end
+end
+
+function autosave()
+	local timer = tonumber(ui_options.get("other/autosave_timer_new"))
+	
+	if timer and timer >= 1 then
+		if (time_global() - last_save) > (timer * 60 * 1000) then
+			exec_console_cmd("save " .. (user_name() or "") .. " - tempsave")
+			last_save = time_global()
+		end
+	end
+	
+	ResetTimeEvent("actor","autosave_new",60)
+	return false
+end

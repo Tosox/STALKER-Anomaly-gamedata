@@ -1,0 +1,356 @@
+
+[up_sect_firsta_sks]
+cost                                     = 2680
+value                                    = +10
+condition_shot_dec                       = -0.00025
+condition_queue_shot_dec                 = -0.00025
+inv_weight                               = +0.2
+
+[up_sect_firstc_sks]
+cost                                     = 3240
+value                                    = +10
+bullet_speed                             = +70
+fire_distance                            = +70
+inv_weight                               = +0.15
+
+[up_sect_firstd_sks]
+cost                                     = 3160
+value                                    = -10
+cam_dispersion                           = -0.145
+cam_dispersion_inc                       = 0.0 ;-0.125
+cam_step_angle_horz                      = -0.095 
+zoom_cam_dispersion                      = -0.118
+zoom_cam_dispersion_inc                  = 0.0 ; -0.098
+zoom_cam_step_angle_horz                 = -0.085
+inv_weight                               = +0.11
+
+[up_sect_firste_sks]
+cost                                     = 3340
+value                                    = +25
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.5
+PDM_disp_accel_factor                    = -0.5
+inv_weight                               = +0.1
+
+[up_sect_firstf_sks]
+cost                                     = 6880
+value                                    = "7.62x54"
+condition_queue_shot_dec                 = +0.0003
+condition_shot_dec                       = +0.0003
+misfire_start_prob                       = 0.0006
+misfire_end_prob                         = 0.008
+bullet_speed                             = +90
+ammo_class                               = ammo_7.62x54_7h1, ammo_7.62x54_7h1_bad, ammo_7.62x54_7h1_verybad, ammo_7.62x54_ap, ammo_7.62x54_ap_bad, ammo_7.62x54_ap_verybad, ammo_7.62x54_7h14, ammo_7.62x54_7h14_bad, ammo_7.62x54_7h14_verybad
+inv_weight                               = +0.2
+
+[up_sect_secona_sks]
+cost                                     = 1860
+value                                    = -0.7
+inv_weight                               = -0.72
+crosshair_inertion                       = -0.25
+PDM_disp_vel_factor                      = -0.05
+PDM_disp_accel_factor                    = -0.05
+
+[up_sect_seconc_sks]
+cost                                     = 3220
+value                                    = +15
+crosshair_inertion                       = -0.3
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.2
+PDM_disp_accel_factor                    = -0.2
+inv_weight                               = +0.05
+
+[up_sect_second_sks]
+cost                                     = 3520
+value                                    = -10
+cam_dispersion                           = -0.145
+cam_dispersion_inc                       = 0.0 ;-0.125
+cam_step_angle_horz                      = -0.095 
+zoom_cam_dispersion                      = -0.118
+zoom_cam_dispersion_inc                  = 0.0 ; -0.098
+zoom_cam_step_angle_horz                 = -0.085
+inv_weight                               = +0.1
+
+[up_sect_thirda_sks]
+cost                                     = 2596
+value                                    = +10
+condition_shot_dec                       = -0.00025
+condition_queue_shot_dec                 = -0.00025
+inv_weight                               = +0.15
+
+[up_sect_thirdc_sks]
+cost                                     = 3640
+value                                    = -10
+cam_dispersion                           = -0.145
+cam_dispersion_inc                       = 0.0 ;-0.125
+cam_step_angle_horz                      = -0.095 
+zoom_cam_dispersion                      = -0.118
+zoom_cam_dispersion_inc                  = 0.0 ; -0.098
+zoom_cam_step_angle_horz                 = -0.085
+inv_weight                               = +0.2
+
+[up_sect_thirde_sks]
+cost                                     = 3170
+value                                    = +25
+condition_shot_dec                       = -0.0005
+condition_queue_shot_dec                 = -0.0005
+
+[up_sect_thirdf_sks]
+cost                                     = 3840
+value                                    = +15
+fire_distance                            = +100
+bullet_speed                             = +100
+fire_dispersion_base                     = -0.015
+hit_impulse                              = +5
+inv_weight                               = +0.2
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_sks]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_sks
+section                                  = up_sect_firsta_sks
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_a1_name
+description                              = st_up_bard_a1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_1
+
+[up_firstc_sks]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_sks
+section                                  = up_sect_firstc_sks
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b3_name
+description                              = st_up_bard_b3_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_2
+
+
+[up_firstd_sks]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_sks
+section                                  = up_sect_firstd_sks
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b4_name
+description                              = st_up_bard_b4_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_3
+
+
+[up_firste_sks]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_sks
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_c1_name
+description                              = st_up_bard_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_4
+
+[up_firstf_sks]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstf_sks
+property                                 = prop_calibre
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_add_b7_name
+description                              = st_up_add_b7_descr
+icon                                     = ui_inGame2_upgrade_IL86_17
+
+[up_secona_sks]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_sks
+section                                  = up_sect_secona_sks
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_a2_name
+description                              = st_up_stvd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_6
+
+[up_seconc_sks]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconc_sks
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b4_name
+description                              = st_up_stvd_b4_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_7
+
+
+[up_second_sks]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_second_sks
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_c1_name
+description                              = st_up_stvd_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_8
+
+
+[up_thirda_sks]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_sks
+section                                  = up_sect_thirda_sks
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_a2_name
+description                              = st_up_autd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_9
+
+
+[up_thirdc_sks]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_sks
+section                                  = up_sect_thirdc_sks
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b1_name
+description                              = st_up_autd_b1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_10
+
+
+[up_thirde_sks]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_sks
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_c1_name
+description                              = st_up_autd_c1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_11
+
+[up_thirdf_sks]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdf_sks
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_c2_name
+description                              = st_up_autd_c2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_12
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_sks]
+elements                                 = up_firsta_sks
+
+[up_gr_firstcd_sks]
+elements                                 = up_firstc_sks, up_firstd_sks
+
+[up_gr_firstef_sks]
+elements                                 = up_firste_sks, up_firstf_sks
+
+[up_gr_seconab_sks]
+elements                                 = up_secona_sks
+
+[up_gr_seconcd_sks]
+elements                                 = up_seconc_sks, up_second_sks
+
+[up_gr_thirdab_sks]
+elements                                 = up_thirda_sks
+
+[up_gr_thirdcd_sks]
+elements                                 = up_thirdc_sks
+
+[up_gr_thirdef_sks]
+elements                                 = up_thirde_sks, up_thirdf_sks

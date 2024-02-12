@@ -1,0 +1,167 @@
+;--------------------base defense----------------------
+[faction_base_defense_flesh_squad]:online_offline_group
+faction = monster_vegetarian
+npc_random = dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black
+npc_in_squad = 4, 6
+spawn_point = {=actor_on_level(k00_marsh)} mar_smart_terrain_5_12_home_attackers, {=actor_on_level(l03_agroprom)} agr_smart_terrain_1_3_home_attackers, {=actor_on_level(l01_escape)} esc_smart_terrain_4_11_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_6_4_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, mar_smart_terrain_5_12_home_attackers
+target_smart = {=actor_on_level(k00_marsh) +mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_base, {=actor_on_level(k00_marsh) -mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_5_12, {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_3, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l01_escape) +mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_2_12, {=actor_on_level(l01_escape) -mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_4_11, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_6_4, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, mar_smart_terrain_5_12
+on_death = %+faction_base_defense_enemy_killed%
+story_id = faction_base_defense_flesh_squad
+
+[faction_base_defense_boar_squad]:online_offline_group
+faction = monster_vegetarian
+npc_random = boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard
+npc_in_squad = 2, 4
+spawn_point = {=actor_on_level(k00_marsh)} mar_smart_terrain_5_12_home_attackers, {=actor_on_level(l03_agroprom)} agr_smart_terrain_1_3_home_attackers, {=actor_on_level(l01_escape)} esc_smart_terrain_4_11_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_6_4_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, mar_smart_terrain_5_12_home_attackers
+target_smart = {=actor_on_level(k00_marsh) +mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_base, {=actor_on_level(k00_marsh) -mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_5_12, {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_3, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l01_escape) +mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_2_12, {=actor_on_level(l01_escape) -mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_4_11, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_6_4, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, mar_smart_terrain_5_12
+on_death = %+faction_base_defense_enemy_killed%
+story_id = faction_base_defense_boar_squad
+
+[faction_base_defense_dog_squad]:online_offline_group
+faction = monster_predatory_day
+npc_random = dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black, dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black
+npc_in_squad = 4, 6
+spawn_point = {=actor_on_level(k00_marsh)} mar_smart_terrain_5_12_home_attackers, {=actor_on_level(l03_agroprom)} agr_smart_terrain_1_3_home_attackers, {=actor_on_level(l01_escape)} esc_smart_terrain_4_11_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_6_4_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, mar_smart_terrain_5_12_home_attackers
+target_smart = {=actor_on_level(k00_marsh) +mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_base, {=actor_on_level(k00_marsh) -mar_smart_terrain_5_12_mutants_to_base} mar_smart_terrain_5_12, {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_3, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l01_escape) +mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_2_12, {=actor_on_level(l01_escape) -mar_smart_terrain_5_12_mutants_to_base} esc_smart_terrain_4_11, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_6_4, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, mar_smart_terrain_5_12
+on_death = %+faction_base_defense_enemy_killed%
+story_id = faction_base_defense_dog_squad
+
+[faction_base_defense_flesh_second_squad]:online_offline_group
+faction = monster_vegetarian
+npc_random = flesh_weak, flesh_01a_weak, flesh_02a_weak, flesh_normal, flesh_02a_normal, flesh_strong, flesh_01a_strong, flesh_02a_strong, flesh_weak, flesh_01a_weak, flesh_02a_weak, flesh_normal, flesh_02a_normal, flesh_strong, flesh_01a_strong, flesh_02a_strong, flesh_weak, flesh_01a_weak, flesh_02a_weak, flesh_normal, flesh_02a_normal, flesh_strong, flesh_01a_strong, flesh_02a_strong
+npc_in_squad = 2, 4
+spawn_point = {=actor_on_level(l03_agroprom)} agr_smart_terrain_4_6_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_9_2_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_2_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, agr_smart_terrain_4_6_home_attackers
+target_smart = {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_4_6, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_9_2, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair_2, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava_2, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, agr_smart_terrain_4_6
+on_death = %+faction_base_defense_2nd_enemy_killed%
+story_id = faction_base_defense_flesh_second_squad
+
+[faction_base_defense_boar_second_squad]:online_offline_group
+faction = monster_vegetarian
+npc_random = boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard
+npc_in_squad = 2, 4
+spawn_point = {=actor_on_level(l03_agroprom)} agr_smart_terrain_4_6_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_9_2_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_2_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, agr_smart_terrain_4_6_home_attackers
+target_smart = {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_4_6, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_9_2, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair_2, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava_2, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, agr_smart_terrain_4_6
+on_death = %+faction_base_defense_2nd_enemy_killed%
+story_id = faction_base_defense_boar_second_squad
+
+[faction_base_defense_dog_second_squad]:online_offline_group
+faction = monster_predatory_day
+npc = psy_dog_normal, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black
+spawn_point = {=actor_on_level(l03_agroprom)} agr_smart_terrain_4_6_home_attackers, {=actor_on_level(l04_darkvalley)} val_smart_terrain_9_2_home_attackers, {=actor_on_level(l05_bar)} bar_zastava_dogs_lair_2_home_attackers, {=actor_on_level(l07_military)} mil_smart_terrain_4_7_home_attackers, {=actor_on_level(l09_deadcity)} cit_killers_2_home_attackers, agr_smart_terrain_4_6_home_attackers
+target_smart = {=actor_on_level(l03_agroprom) -mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_4_6, {=actor_on_level(l03_agroprom) +mar_smart_terrain_5_12_mutants_to_base} agr_smart_terrain_1_6, {=actor_on_level(l04_darkvalley) -mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_9_2, {=actor_on_level(l04_darkvalley) +mar_smart_terrain_5_12_mutants_to_base} val_smart_terrain_7_4, {=actor_on_level(l05_bar) -mar_smart_terrain_5_12_mutants_to_base} bar_zastava_dogs_lair_2, {=actor_on_level(l05_bar) +mar_smart_terrain_5_12_mutants_to_base} bar_zastava_2, {=actor_on_level(l07_military) -mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_4_7, {=actor_on_level(l07_military) +mar_smart_terrain_5_12_mutants_to_base} mil_smart_terrain_7_7, {=actor_on_level(l09_deadcity) -mar_smart_terrain_5_12_mutants_to_base} cit_killers_2, {=actor_on_level(l09_deadcity) +mar_smart_terrain_5_12_mutants_to_base} cit_killers, agr_smart_terrain_4_6
+on_death = %+faction_base_defense_2nd_enemy_killed%
+story_id = faction_base_defense_dog_second_squad
+
+[yan_faction_base_defense_zombi_in_sci_base1]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 5
+spawn_point = yan_smart_terrain_6_2_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_6_2, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_1_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base1
+
+[yan_faction_base_defense_zombi_in_sci_base2]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 4
+spawn_point = yan_smart_terrain_5_5_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_5_5, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_2_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base2
+
+[yan_faction_base_defense_zombi_in_sci_base3]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 3
+spawn_point = yan_smart_terrain_4_4_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_4_4, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_3_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base3
+
+[yan_faction_base_defense_zombi_in_sci_base4]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 4
+spawn_point = yan_smart_terrain_6_2_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_6_2, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_4_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base4
+
+[yan_faction_base_defense_zombi_in_sci_base5]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 5
+spawn_point = yan_smart_terrain_5_5_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_5_5, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_5_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base5
+
+[yan_faction_base_defense_zombi_in_sci_base6]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 4
+spawn_point = yan_smart_terrain_4_4_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_4_4, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_6_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base6
+
+[yan_faction_base_defense_zombi_in_sci_base7]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 3
+spawn_point = yan_smart_terrain_6_2_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_6_2, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_7_1_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base7
+
+[yan_faction_base_defense_zombi_in_sci_base8]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 4
+spawn_point = yan_smart_terrain_5_5_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_5_5, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_7_2_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base8
+
+[yan_faction_base_defense_zombi_in_sci_base9]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 5
+spawn_point = yan_smart_terrain_4_4_zombied_wave_spawn_point
+target_smart = yan_smart_terrain_4_4, {+mar_smart_terrain_5_12_mutants_to_base} yan_smart_terrain_6_4
+on_death = %+yan_faction_base_defense_zombi_wave_7_3_killed%
+story_id = yan_faction_base_defense_zombi_in_sci_base9
+
+
+[barrier_zombie_squad]:online_offline_group
+faction = zombied
+npc_random = sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_4
+npc_in_squad = 4, 5	;10
+target_smart = mil_smart_terrain_3_8
+on_death = %=on_barrier_defense_squad_death(barrier_defense_zombie)%
+
+[barrier_monolith_squad]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 3, 4	;5
+target_smart = mil_smart_terrain_3_8
+on_death = %=on_barrier_defense_squad_death(barrier_defense_monolith)%
+rush = true
+
+[barrier_monolith_squad_rpg]:online_offline_group
+faction = monolith
+npc_random = sim_default_monolith_1, sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 2, 3	;5
+target_smart = mil_smart_terrain_3_8
+on_death = %=on_barrier_defense_squad_death(barrier_defense_monolith)%
+rush = true
+item_on_all = wpn_rpg7,ammo_og-7b
+
+[barrier_defense_squad]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_4
+npc_in_squad = 3, 4	;5
+target_smart = mil_smart_terrain_3_8
+on_death = {+barrier_defense_zombie_first_spawn} nil %=on_barrier_defense_squad_death(barrier_defense_freedom)%, {+barrier_defense_monolith_first_spawn} nil %=on_barrier_defense_squad_death(barrier_defense_freedom)%
+rush = true

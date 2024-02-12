@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------------------------------------------------------
+-- function to call specific script functions from configs without writing dedicated xr_effects functions
+-- %=script(somescript:somefunc:arg1:arg2:arg3:...)%   ---->	somescript.somefunc(a,b,{arg1,arg2,arg3,...})
+-- a and b are the usual first 2 arguments of condlist
+--------------------------------------------------------------------------------------------------------------------------
+function xr_effects.script(a,b,c)
+	if c and #c > 1 and _G[c[1]] and _G[c[1]][c[2]] and type(_G[c[1]][c[2]]) == 'function' then
+		
+		local scr = c[1]
+		local fname = c[2]
+		local args = {}
+		
+		for i=3,#c do
+			args[i-2] = c[i]
+		end
+		
+  
+		_G[scr][fname](a,b,args)
+	else
+		printe('!ERROR in xr_effects.script, wrong arguments: %s',utils_data.print_table(c,'',true))
+	end
+end
+
+--------------------------------------------------------------------------------------------------------------------------
+-- release x units of a section from the player
+-- %=release_item(vodka:10)% 	--> release up to 10 vodka from inventory
+-- %=release_item(vodka)% 		--> release 1 vodka from inventory
+--------------------------------------------------------------------------------------------------------------------------
+function xr_effects.release_item(a,b,c)
+	if c and c[1] then
+		local count = tonumber(c[2]) or 1
+		while (count > 0) do
+			count = count - 1
+			local o = db.actor:object(c[1])
+			if o then 
+				alife_release_id(o:id())
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------------------------------------------------------------
+-- increase/decrease goodwill for many factions at once
+-- c[1] amount
+-- c[2+] factions
+--------------------------------------------------------------------------------------------------------------------------
+function xr_effects.inc_goodwill(a,b,c)
+	if c and #c > 1 and tonumber(c[1]) then
+		for i=2,#c do
+			xr_effects.complete_task_inc_goodwill(0,0,{tonumber(c[1]),c[i]})
+		end
+	end
+end
+function xr_effects.dec_goodwill(a,b,c)
+	if c and #c > 1 and tonumber(c[1]) then
+		for i=2,#c do
+			xr_effects.fail_task_dec_goodwill(0,0,{tonumber(c[1]),c[i]})
+		end
+	end
+end

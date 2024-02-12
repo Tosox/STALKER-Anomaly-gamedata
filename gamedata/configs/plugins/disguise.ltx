@@ -1,0 +1,25 @@
+;-- Disguise system controls
+;-- Disguise factors are controllable in-game
+
+[diguise_controls]
+usual_memory_limit 		= 10 ;-- real seconds, memory limit of natural NPCs
+enemy_memory_limit 		= 30 ;-- real seconds, memory limit of enemy NPCs
+memory_multi 			= 10 ;-- when actor's disguise gets exposed, npcs memory will be multiplied by this number
+break_point 			= 90 ;-- suspicion limit. When the suspicion level goes above it, you will get exposed
+inventory_limit_weight	= 25 ;-- inventory weight limit, exceeding it will build-up suspicion
+inventory_limit_big		= 9  ;-- max number of big items in inventory, exceeding it will build-up suspicion
+inventory_limit_num		= 40 ;-- max number of all items in inventory, exceeding it will build-up suspicion
+
+[npc_awareness]	;-- Awareness of npc by visual type, a main factor in building-up suspicion
+npc_awareness_type_0		= 1
+npc_awareness_type_1		= 1
+npc_awareness_type_2		= 1
+npc_awareness_type_3		= 1.1
+npc_awareness_type_4		= 1.2
+npc_awareness_type_5		= 1.3
+npc_awareness_special		= 1.4
+
+[relation_impact]
+relation_hit 		= -75 	;-- Amount of relation hit by disguise fail (between your faction and npc's faction)
+reputation_hit 		= -100	;-- Amount of reputation hit by disguise fail
+goodwill_hit 		= -50 	;-- Amount of goodwill hit by disguise fail (between your faction and npc's faction)

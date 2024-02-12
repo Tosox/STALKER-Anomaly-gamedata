@@ -1,0 +1,60 @@
+;sapsan
+[logic@mechanic_army_yan_mlr]
+suitable = {=check_npc_name(mechanic_army_yan_mlr)} true, {=check_npc_mechanic} true
+prior = 200
+active = animpoint@sit
+level_spot = mechanic
+trade = items\trade\trade_generic_mechanic.ltx
+can_select_weapon = {=is_warfare} true, false
+dont_keep_items = true
+
+[animpoint@sit]
+cover_name = yan_mecanic_army_plase
+avail_animations = animpoint_sit_low
+on_info = {=surge_started} animpoint@night
+on_info2 = {=is_night} animpoint@night
+use_camp = false
+meet = meet
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+reach_distance = 10
+reach_movement = walk_noweap
+on_info1 = {+awr_mechanic_army_yan_mlr_access} animpoint@resting
+
+[animpoint@resting]:animpoint@sit
+avail_animations = animpoint_sit_low_drink_vodka
+meet = meet	;no_meet
+on_game_timer = 2000 | animpoint@sit %=awr_timer_msg_off%
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = 3
+abuse           = false
+use = {=actor_enemy} false, true
+allow_break = false
+meet_on_talking = false
+
+[animpoint@night]
+cover_name = yan_mec_night_plase_mlr
+avail_animations = animpoint_sit_normal
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+meet = meet
+use_camp = true
+on_info = {!is_night} animpoint@sit
+on_info2 = {!surge_started !is_night} animpoint@sit
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+reach_distance = 10
+reach_movement = walk_noweap

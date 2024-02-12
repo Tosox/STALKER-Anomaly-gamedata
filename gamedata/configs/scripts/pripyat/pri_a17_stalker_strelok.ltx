@@ -1,0 +1,76 @@
+[logic@pri_a17_stalker_strelok]
+active = smartcover@pri_a17_strelok_sniper
+suitable = {=check_npc_name(stalker_strelok_oa) -strelok_respawn} true
+prior = 200
+
+[smartcover@pri_a17_strelok_sniper]
+reach_movement = sneak_run
+cover_name = pri_a17_ice_snipe_pos
+cover_state = default_behaviour 
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+use_in_combat = true
+out_restr = pri_a17_roofwalkers_stop
+in_restr = pri_a17_roofwalkers_stop_2
+invulnerable = true
+on_info = {+pri_a17_monolith_assault_squad_death} animpoint@pri_a17_strelok_sniper2
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+meet = no_meet
+
+[animpoint@pri_a17_strelok_sniper2]:smartcover@pri_a17_strelok_sniper
+def_state_standing = guard
+reach_movement = assault
+on_info = {+pri_a17_strelok_dialogue} animpoint@pri_a16_strelok_walk
+meet = meet
+
+[animpoint@pri_a16_strelok_walk]
+def_state_standing = guard
+reach_movement = assault
+cover_name = pri_a16_animp_8
+use_camp = false 
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+invulnerable = false
+on_info = {=npc_in_zone(pri_surge_hide_a16)} %=remove_special_task_squad(lost_stalker_strelok) +pri_a16_strelok_reached%
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = true
+corpse_detection_enabled = false
+meet = no_meet
+
+[animpoint@pri_a16_strelok]
+def_state_standing = guard
+reach_movement = assault
+cover_name = pri_a16_animp_8
+avail_animations = animpoint_sit_normal
+use_camp = false 
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = true
+corpse_detection_enabled = false
+meet = meet2
+
+[meet]
+close_anim 		= guard
+close_victim 	= actor
+far_anim 		= threat_danger
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 10
+far_distance 	= 40
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[meet2]:meet
+close_anim 		= nil
+close_victim 	= nil
+close_distance  = 0
+far_distance 	= 0

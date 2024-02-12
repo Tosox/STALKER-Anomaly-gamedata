@@ -1,0 +1,771 @@
+<specific_character id="sim_default_military_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo_paint</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo_paint</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo_paint</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1e</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1f</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier1g</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1_helm_tactic_nogas</visual>
+</specific_character>
+ 
+<specific_character id="sim_default_military_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_bandana</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_bandana</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_bandana</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_obichniy</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_3</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_obichniy</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_4</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_bandana_5</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_bandana_6</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_bandana_6</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_npc_u_soldier_obichniy</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\soldier_obichniy</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_0_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_0_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_army_0.xml"
+    <icon>ui_inGame2_soldier_1_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1_helm_battle_nogas</visual>
+</specific_character>
+    
+  
+
+<specific_character id="sim_default_military_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_Soldier_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_Soldier_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_Soldier_3</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_soldier_orange_mask</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\soldier_balaklava</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_soldier_green_mask</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\soldier_mask_green</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_voenny</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_Soldier_3</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_6_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_6_helm_battle_nogas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_army_1.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_6_helm_tactic_nogas</visual>
+</specific_character>
+	
+
+
+<specific_character id="sim_default_military_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_Soldier_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_Soldier_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_soldier_orange_mask</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\soldier_balaklava</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_soldier_green_mask</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\soldier_mask_green</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_voenny</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_2_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2_helm_battle_nogas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2_helm_tactic</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_army_2.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2_helm_tactic_nogas</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_military_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_Soldier_3</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_3_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3a_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3b_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3c_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3d_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3e_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_Soldier_3</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3f_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3g_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3h_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3i_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3j_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier3k_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_5_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_1_camo_paint</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5a_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5b_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5c_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5d_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5d_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5f_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue_camo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5g_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5h_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5i_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5j_beret</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_3_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_soldier_3_beret_blue</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier5k_beret</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_3_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_army_3.xml"
+    <icon>ui_inGame2_stalker_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_neutral_reinforced</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_military_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_military_exo</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4_helm_tactic_nogas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_nosorog</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier4nosorog</visual>
+</specific_character>
+  
+<specific_character id="sim_default_military_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_military_exo</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_military_exo</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_military_exo</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_stalker_soldier_exo</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_neutral_reinforced</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_nauchniy</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_army_nauchniy</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_soldier_prototip_bulat</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_9_proto</visual>
+</specific_character>
+
+<specific_character id="sim_default_military_4_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_stalker_exoseva</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_exoseva</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_1</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4_skat</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_militari_2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_npc_u_stalker_militari_1</icon>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_militari_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_military_4_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4_helm_battle</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4_helm_battle_nogas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_military_4_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_army_4.xml"
+    <icon>ui_inGame2_neutral_tactic</icon>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4_helm_tactic</visual>
+</specific_character>
+    
+  
+
+<specific_character id="sim_default_military_3_default_sniper" team_default = "1">
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Soldier_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_military_3_sniper</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <rank>11972</rank>
+    <reputation>-1000</reputation>
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+    <supplies></supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+	
+<!-- Special -->
+<specific_character id="sim_default_army_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_army_special.xml"
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Soldier_2</icon>
+    <class>sim_default_army_trader</class>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+	
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_army_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_army_special.xml"
+    <name>GENERATE_NAME_private</name>
+    <icon>ui_inGame2_Soldier_1</icon>
+    <class>sim_default_army_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\military_1\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_1</visual>
+	
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+	</specific_character>
+
+<specific_character id="sim_default_army_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_army_special.xml"
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Soldier_2</icon>
+    <class>sim_default_army_medic</class>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+	
+	<actor_dialog>dm_init_medic</actor_dialog>
+	<actor_dialog>dm_medic_general</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_army_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_army_special.xml"
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_Soldier_2</icon>
+    <class>sim_default_army_barman</class>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <visual>actors\stalker_soldier\stalker_soldier_2</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+	
+<specific_character id="sim_default_military_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_sergeant</name>
+    <icon>ui_inGame2_soldier_green_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_military_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <rank>6997</rank>
+    <reputation>-500</reputation>
+    <visual>actors\stalker_soldier\soldier_mask_green</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_military_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_senior_sergeant</name>
+    <icon>ui_inGame2_soldier_green_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_military_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <rank>10215</rank>
+    <reputation>-500</reputation>
+    <visual>actors\stalker_soldier\soldier_mask_green</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_military_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_lieutenant</name>
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_military_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <rank>10188</rank>
+    <reputation>-500</reputation>
+    <visual>actors\stalker_soldier\stalker_soldier3d_beret</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<specific_character id="sim_default_military_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_lieutenant</name>
+    <icon>ui_inGame2_soldier_3_beret</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_military_dead</class>
+    <community>army</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_1\</snd_config><!--2-->
+    <rank>10296</rank>
+    <reputation>-500</reputation>
+    <visual>actors\stalker_soldier\stalker_soldier3e_beret</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>

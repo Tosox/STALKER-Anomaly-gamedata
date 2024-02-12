@@ -1,0 +1,2025 @@
+;---------------------------------------------------------------------------------------------------------------;
+;--------- This file contains the random, generic tasks that can be given by warfare traders/mechanics ---------;
+;---------------------------------------------------------------------------------------------------------------;
+
+; =======================================================
+; ////////////////// => LONER TASKS <= \\\\\\\\\\\\\\\\\\
+; =======================================================
+
+; ELIMINATE MUTANTS 1 FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_1]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 20
+storyline = false
+title = sim_default_stalker_trader_task_1_name
+descr = sim_default_stalker_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_stalker_trader_task_1_about
+task_complete_descr = sim_default_stalker_trader_task_1_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_stalker_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_stalker_trader_task_1:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+on_complete = %=inc_task_stage(sim_default_stalker_trader_task_1) =reward_random_money(2000:4500) =reward_stash(true) =complete_task_inc_goodwill(50:stalker) =complete_task_inc_goodwill(25:dolg)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_2]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 30
+storyline = false
+title = sim_default_stalker_trader_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_trader_task_2_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_stalker_trader_task_2_about
+fetch_descr = sim_default_stalker_trader_task_2_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_stalker_trader_task_2_fetch:artefacts:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_trader_task_2_fetch_finish
+; ;precondition = true
+repeat_timeout = 86400
+on_complete = %=fetch_reward_and_remove(sim_default_stalker_trader_task_2_fetch:1.1) =inc_task_stage(sim_default_stalker_trader_task_2) =complete_task_inc_goodwill(50:stalker)%
+reward_item = vodka
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION 1 FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 40
+storyline = false
+title = sim_default_stalker_trader_task_3_name
+descr = sim_default_stalker_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_stalker_trader_task_3_about
+task_complete_descr = sim_default_stalker_trader_task_3_finish
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_stalker_trader_task_3:false:true:army:bandit:killer)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_stalker_trader_task_3) =complete_task_inc_goodwill(50:stalker)%
+;precondition = true
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ELIMINATE MUTANTS 2 FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_4]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 19
+storyline = false
+title = sim_default_stalker_trader_task_4_name
+descr = sim_default_stalker_trader_task_4_text
+descr_functor = general_warfare_task
+job_descr = sim_default_stalker_trader_task_4_about
+task_complete_descr = sim_default_stalker_trader_task_4_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_stalker_trader_task_4)%
+precondition = {!has_given_task(sim_default_stalker_trader_task_1) =validate_assault_task(sim_default_stalker_trader_task_4:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+on_complete = %=inc_task_stage(sim_default_stalker_trader_task_4) =complete_task_inc_goodwill(50:stalker) =complete_task_inc_goodwill(25:dolg) =reward_random_money(1000:3500) =reward_stash(true)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_4)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION 2 FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_5]
+icon = ui_inGame2_Odin_vistrel
+prior = 10
+storyline = false
+title = sim_default_stalker_trader_task_5_name
+descr = sim_default_stalker_trader_task_5_text
+descr_functor = general_warfare_task
+job_descr = sim_default_stalker_trader_task_5_about
+task_complete_descr = sim_default_stalker_trader_task_5_finish
+precondition = {!has_given_task(sim_default_stalker_trader_task_3)} true, false
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_stalker_trader_task_5:false:false:bandit:killer:army)%
+on_complete = %=reward_random_money(4500:7000) =reward_stash(true) =inc_task_stage(sim_default_stalker_trader_task_5) =complete_task_inc_goodwill(50:stalker)%
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND WEAPON FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_6]
+icon = ui_inGame2_Osobiy_zakaz
+prior = 35
+storyline = false
+title = sim_default_stalker_trader_task_6_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_trader_task_6_text
+descr_functor = general_warfare_task
+job_descr = sim_default_stalker_trader_task_6_about
+fetch_descr = sim_default_stalker_trader_task_6_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_stalker_trader_task_6_fetch:weapons:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_weapon_warfare
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_trader_task_6_fetch_finish
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_stash(true) =fetch_reward_and_remove(sim_default_stalker_trader_task_6_fetch:1.0) =inc_task_stage(sim_default_stalker_trader_task_6)%
+on_fail = %=fail_task_dec_goodwill(25:stalker)%
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_6)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT PARTS FOR LONERS TASK-
+
+[sim_default_stalker_trader_task_7]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 50
+storyline = false
+title = sim_default_stalker_trader_task_7_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_trader_task_7_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_stalker_trader_task_7_about
+fetch_descr = sim_default_stalker_trader_task_7_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_stalker_trader_task_7_fetch:mutant_parts_rare:1:2)%
+stage_complete = 1
+; ;precondition = true
+repeat_timeout = 86400
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_trader_task_7_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_stash(true) =fetch_reward_and_remove(sim_default_stalker_trader_task_7_fetch:2) =inc_task_stage(sim_default_stalker_trader_task_7) =pstor_reset(sim_default_stalker_trader_task_7_fetch)%
+condlist_0 = {!task_giver_alive(sim_default_stalker_trader_task_7)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR LONER MECHANICS TASK-
+
+[sim_default_stalker_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_stalker_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_stalker_mechanic_task_1_about
+fetch_descr = sim_default_stalker_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_stalker_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_stalker_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:stalker) =fetch_reward_and_remove(sim_default_stalker_mechanic_task_1_fetch) =inc_task_stage(sim_default_stalker_mechanic_task_1)%
+precondition = {-sim_default_stalker_mechanic_upgrade_tier_1} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR LONER MECHANICS TASK-
+
+[sim_default_stalker_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_stalker_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_stalker_mechanic_task_2_about
+fetch_descr = sim_default_stalker_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_stalker_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_stalker_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:stalker) =fetch_reward_and_remove(sim_default_stalker_mechanic_task_2_fetch) =inc_task_stage(sim_default_stalker_mechanic_task_2)%
+precondition = {+sim_default_stalker_mechanic_upgrade_tier_1 -sim_default_stalker_mechanic_upgrade_tier_2} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR LONER MECHANICS TASK-
+
+[sim_default_stalker_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_stalker_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_stalker_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_stalker_mechanic_task_3_about
+fetch_descr = sim_default_stalker_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_stalker_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_stalker_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_stalker_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:stalker) =fetch_reward_and_remove(sim_default_stalker_mechanic_task_3_fetch) =inc_task_stage(sim_default_stalker_mechanic_task_3)%
+precondition = {+sim_default_stalker_mechanic_upgrade_tier_2 -sim_default_stalker_mechanic_upgrade_tier_3} true, false
+
+; ========================================================
+; ////////////////// => BANDIT TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSIATION 1 FOR BANDITS TASK-
+
+[sim_default_bandit_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 34
+storyline = false
+title = sim_default_bandit_trader_task_1_name
+descr = sim_default_bandit_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_bandit_trader_task_1_about
+task_complete_descr = sim_default_bandit_trader_task_1_finish
+precondition = {!has_given_task(sim_default_bandit_trader_task_5)} true, false
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_bandit_trader_task_1:false:false:stalker:killer)%
+on_complete = %=reward_random_money(4500:7000) =reward_stash(true) =inc_task_stage(sim_default_bandit_trader_task_1) =complete_task_inc_goodwill(50:bandit)%
+condlist_0 = {!task_giver_alive(sim_default_bandit_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ELIMINATE MUTANTS FOR BANDITS TASK-
+
+[sim_default_bandit_trader_task_2]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 10
+storyline = false
+title = sim_default_bandit_trader_task_2_name
+descr = sim_default_bandit_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_bandit_trader_task_2_about
+task_complete_descr = sim_default_bandit_trader_task_2_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+on_job_descr = %=setup_assault_task(sim_default_bandit_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_bandit_trader_task_2:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+stage_complete = 1
+on_complete = %==reward_random_money(1000:3000) =reward_stash(true) =inc_task_stage(sim_default_bandit_trader_task_2) =complete_task_inc_goodwill(50:bandit)%
+on_fail = %=fail_task_dec_goodwill(25:bandit)%
+
+condlist_0 = {!task_giver_alive(sim_default_bandit_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; DEFEND TERRITORY FOR BANDITS TASK-
+
+[sim_default_bandit_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_bandit_trader_task_3_name
+descr = sim_default_bandit_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_bandit_trader_task_3_about
+task_complete_descr = sim_default_bandit_trader_task_3_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,army,dolg,killer,csky,monolith
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_bandit_trader_task_3)%
+precondition = {=validate_assault_task(sim_default_bandit_trader_task_3:2:1:nil:false:true:nil)} true, false
+on_complete = %=inc_task_stage(sim_default_bandit_trader_task_3) =complete_task_inc_goodwill(50:bandit) =reward_random_money(3500:7000)%
+on_fail = %=fail_task_dec_goodwill(25:bandit)%
+
+condlist_0 = {!task_giver_alive(sim_default_bandit_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ESCORT RAIDERS FOR BANDITS TASK-
+
+[sim_default_bandit_trader_task_4]
+icon = ui_inGame2_Odin_vistrel
+prior = 25
+storyline = false
+title = sim_default_bandit_trader_task_4_name
+descr = sim_default_bandit_trader_task_4_text
+descr_functor = general_warfare_task
+job_descr = sim_default_bandit_trader_task_4_about
+task_complete_descr = sim_default_bandit_trader_task_4_finish
+target_functor = sim_default_bandit_trader_task_target
+on_init = %=setup_companion_task(bandit_companion_task_1) -bandit_companion_task_1_started -bandit_companion_task_1_force_started%
+precondition = {!squad_exist(bandit_companion_task_1)} true, false
+repeat_timeout = 86400
+on_complete = %=reward_random_money(1500:3500) =complete_task_inc_goodwill(50:bandit) =reward_stash(true) =remove_special_task_squad(bandit_companion_task_1) =reset_warfare_escort_task%
+on_fail = %=fail_task_dec_goodwill(25:bandit) =remove_special_task_squad(bandit_companion_task_1) =reset_warfare_escort_task%
+on_cancel = %=remove_special_task_squad(bandit_companion_task_1) =reset_warfare_escort_task%
+condlist_0 = {!squad_exist(bandit_companion_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION 2 FOR OLIVIUS TASK-
+
+[sim_default_bandit_trader_task_5]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_bandit_trader_task_5_name
+descr = sim_default_bandit_trader_task_5_text
+descr_functor = general_warfare_task
+job_descr = sim_default_bandit_trader_task_5_about
+task_complete_descr = sim_default_bandit_trader_task_5_finish
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_bandit_trader_task_5:false:false:stalker:killer:dolg:csky:army)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_bandit_trader_task_5) =complete_task_inc_goodwill(50:bandit)%
+;precondition = true
+condlist_0 = {!task_giver_alive(sim_default_bandit_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR BANDIT MECHANICS-
+
+[sim_default_bandit_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_bandit_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_bandit_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_bandit_mechanic_task_1_about
+fetch_descr = sim_default_bandit_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_bandit_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_bandit_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_bandit_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(sim_default_bandit_mechanic_task_1_fetch) =inc_task_stage(sim_default_bandit_mechanic_task_1)%
+precondition = {-sim_default_bandit_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR BANDIT MECHANICS-
+
+[sim_default_bandit_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_bandit_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_bandit_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_bandit_mechanic_task_2_about
+fetch_descr = sim_default_bandit_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_bandit_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_bandit_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_bandit_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(sim_default_bandit_mechanic_task_2_fetch) =inc_task_stage(sim_default_bandit_mechanic_task_2)%
+precondition = {+sim_default_bandit_mechanic_upgrade_tier_1 -sim_default_bandit_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR BANDIT MECHANICS-
+
+[sim_default_bandit_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_bandit_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_bandit_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_bandit_mechanic_task_3_about
+fetch_descr = sim_default_bandit_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_bandit_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_bandit_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_bandit_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(sim_default_bandit_mechanic_task_3_fetch) =inc_task_stage(sim_default_bandit_mechanic_task_3)%
+precondition = {+sim_default_bandit_mechanic_upgrade_tier_2 -sim_default_bandit_mechanic_upgrade_tier_3} true, false
+
+; ======================================================
+; ////////////////// => ARMY TASKS <= \\\\\\\\\\\\\\\\\\
+; ======================================================
+
+;--------------------------------------------------------------------------------------------------
+; DEFEND TERRITORY FOR MILITARY TASK-
+
+[sim_default_army_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_army_trader_task_1_name
+descr = sim_default_army_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_army_trader_task_1_about
+task_complete_descr = sim_default_army_trader_task_1_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,bandit,csky,freedom
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_army_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_army_trader_task_1:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(50:army) =reward_random_money(5500:7000) =reward_stash(true) =inc_task_stage(sim_default_army_trader_task_1)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_army_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; CAPTURE TERRITORY FOR MILITARY TASK-
+
+[sim_default_army_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_army_trader_task_2_name
+descr = sim_default_army_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_army_trader_task_2_about
+task_complete_descr = sim_default_army_trader_task_2_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,bandit,csky,freedom,monolith
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_army_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_army_trader_task_2:1:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(50:army) =reward_random_money(5500:7000) =reward_stash(true) =inc_task_stage(sim_default_army_trader_task_2)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_army_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION FOR MILITARY TASK-
+
+[sim_default_army_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_army_trader_task_3_name
+descr = sim_default_army_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_army_trader_task_3_about
+task_complete_descr = sim_default_army_trader_task_3_finish
+;precondition = true
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_army_trader_task_3:false:false:stalker:bandit:freedom:csky)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_army_trader_task_3) =complete_task_inc_goodwill(50:army)%
+condlist_0 = {!task_giver_alive(sim_default_army_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR MILITARY MECHANICS-
+
+[sim_default_army_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_army_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_army_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_army_mechanic_task_1_about
+fetch_descr = sim_default_army_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_army_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_army_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_army_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:army) =fetch_reward_and_remove(sim_default_army_mechanic_task_1_fetch) =inc_task_stage(sim_default_army_mechanic_task_1)%
+precondition = {-sim_default_army_mechanic_upgrade_tier_1} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR MILITARY MECHANICS-
+
+[sim_default_army_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_army_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_army_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_army_mechanic_task_2_about
+fetch_descr = sim_default_army_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_army_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_army_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_army_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:army) =fetch_reward_and_remove(sim_default_army_mechanic_task_2_fetch) =inc_task_stage(sim_default_army_mechanic_task_2)%
+precondition = {+sim_default_army_mechanic_upgrade_tier_1 -sim_default_army_mechanic_upgrade_tier_2} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR MILITARY MECHANICS-
+
+[sim_default_army_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_army_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_army_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_army_mechanic_task_3_about
+fetch_descr = sim_default_army_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_army_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_army_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_army_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:army) =fetch_reward_and_remove(sim_default_army_mechanic_task_3_fetch) =inc_task_stage(sim_default_army_mechanic_task_3)%
+precondition = {+sim_default_army_mechanic_upgrade_tier_2 -sim_default_army_mechanic_upgrade_tier_3} true, false
+
+; ======================================================
+; ////////////////// => CSKY TASKS <= \\\\\\\\\\\\\\\\\\
+; ======================================================
+
+;--------------------------------------------------------------------------------------------------
+; DELIVER PDA FOR CSKY TASK-
+
+[sim_default_csky_trader_task_1]
+icon = ui_inGame2_PD_Torgovets_informatsiey
+prior = 2
+storyline = false
+title = sim_default_csky_trader_task_1_name
+descr = sim_default_csky_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_1_about
+target_functor = mar_base_owl_stalker_trader_task_target
+precondition = {-sim_default_csky_trader_task_1_complete} true, false
+on_complete = %+sim_default_csky_trader_task_1_complete =reward_random_money(6000:8000) =complete_task_inc_goodwill(25:stalker:csky)%
+on_init = %=give_actor(mar_base_owl_stalker_trader_task_1_pda)%
+repeat_timeout = 604800
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; DESTROY HELICOPTER FOR CSKY TASK-
+
+[sim_default_csky_trader_task_2]
+icon = ui_inGame2_Evakuatsiya
+prior = 2
+storyline = false
+title = sim_default_csky_trader_task_2_name
+descr = sim_default_csky_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_2_about
+target_functor = mar_base_owl_stalker_trader_task_target
+stage_complete = 1
+repeat_timeout = 604800
+on_complete = %=reward_random_money(7500:10000) =reward_stash(true) =inc_task_stage(sim_default_csky_trader_task_2) =complete_task_inc_goodwill(100:stalker:csky)%
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ESCORT SCIENTISTS FOR CSKY TASK-
+
+[sim_default_csky_trader_task_3]
+icon = ui_inGame2_PD_Opitniy_stalker
+prior = 2
+storyline = false
+title = sim_default_csky_trader_task_3_name
+title_functor = general_escort_task
+descr = sim_default_csky_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_3_about
+target_functor = mar_base_owl_stalker_trader_task_target
+task_complete_descr = sim_default_csky_trader_task_3_finish
+on_init = %=setup_companion_task(ecolog_companion_task_1) =setup_task_target_anomaly -ecolog_companion_task_1_started -ecolog_companion_task_1_force_started%
+precondition = {!squad_exist(ecolog_companion_task_1)} true, false
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_1) =reward_stash(true) =reset_task_target_anomaly =reset_warfare_escort_task =reward_random_money(1000:3500)%
+on_fail = %=fail_task_dec_goodwill(25:csky) =remove_special_task_squad(ecolog_companion_task_1) =reset_task_target_anomaly =reset_warfare_escort_task%
+on_cancel = %=remove_special_task_squad(ecolog_companion_task_1) =reset_task_target_anomaly =reset_warfare_escort_task%
+condlist_0 = {!squad_exist(ecolog_companion_task_1)} fail
+
+
+;--------------------------------------------------------------------------------------------------
+; HUNT MUTANTS FOR CSKY TASK-
+
+[sim_default_csky_trader_task_4]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 30
+storyline = false
+title = sim_default_csky_trader_task_4_name
+descr = sim_default_csky_trader_task_4_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_4_about
+task_complete_descr = sim_default_csky_trader_task_4_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+on_job_descr = %=setup_assault_task(sim_default_csky_trader_task_4)%
+precondition = {=validate_assault_task(sim_default_csky_trader_task_4:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+stage_complete = 1
+on_complete = %=reward_random_money(1000:2000) =reward_stash(true) =inc_task_stage(sim_default_csky_trader_task_4) =complete_task_inc_goodwill(50:csky) =complete_task_inc_goodwill(25:dolg)%
+on_fail = %=fail_task_dec_goodwill(25:csky)%
+
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_4)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSAULT BANDIT CAMP FOR CSKY TASK-
+
+[sim_default_csky_trader_task_5]
+icon = ui_inGame2_Odin_vistrel
+prior = 10
+storyline = false
+title = sim_default_csky_trader_task_5_name
+descr = sim_default_csky_trader_task_5_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_5_about
+task_complete_descr = sim_default_csky_trader_task_5_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = bandit
+on_job_descr = %=setup_assault_task(sim_default_csky_trader_task_5)%
+precondition = {=validate_assault_task(sim_default_csky_trader_task_5:1:1:nil:false:true:nil)} true, false
+stage_complete = 1
+on_complete = %=reward_random_money(1500:4000) =reward_stash(true) =inc_task_stage(sim_default_csky_trader_task_5) =complete_task_inc_goodwill(50:csky:stalker)%
+on_fail = %=fail_task_dec_goodwill(25:csky)%
+
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT MEAT FOR CSKY TASK-
+
+[sim_default_csky_trader_task_6]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 40
+storyline = false
+title = sim_default_csky_trader_task_6_name
+title_functor = general_fetch_task
+descr = sim_default_csky_trader_task_6_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_csky_trader_task_6_about
+fetch_descr = sim_default_csky_trader_task_6_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_csky_trader_task_6_fetch:mutant_parts:8:12)%
+stage_complete = 1
+; ;precondition = true
+repeat_timeout = 86400
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_csky_trader_task_6_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:csky) =reward_stash(true) =fetch_reward_and_remove(sim_default_csky_trader_task_6_fetch:1.25) =inc_task_stage(sim_default_csky_trader_task_6) =pstor_reset(sim_default_csky_trader_task_6_fetch)%
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_6)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSAULT MILITARY CAMP FOR CSKY TASK-
+
+[sim_default_csky_trader_task_7]
+icon = ui_inGame2_Odin_vistrel
+prior = 10
+storyline = false
+title = sim_default_csky_trader_task_7_name
+descr = sim_default_csky_trader_task_7_text
+descr_functor = general_warfare_task
+job_descr = sim_default_csky_trader_task_7_about
+task_complete_descr = sim_default_csky_trader_task_7_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = army
+on_job_descr = %=setup_assault_task(sim_default_csky_trader_task_7)%
+precondition = {=validate_assault_task(sim_default_csky_trader_task_7:1:1:nil:false:true:nil)} true, false
+stage_complete = 1
+on_complete = %=reward_random_money(1500:4000) =reward_stash(true) =inc_task_stage(sim_default_csky_trader_task_7) =complete_task_inc_goodwill(100:csky) =complete_task_inc_goodwill(50:stalker)%
+on_fail = %=fail_task_dec_goodwill(25:csky)%
+
+condlist_0 = {!task_giver_alive(sim_default_csky_trader_task_7)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLS FOR CSKY MECHANICS TASK-
+
+[sim_default_csky_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_csky_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_csky_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_csky_mechanic_task_1_about
+fetch_descr = sim_default_csky_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_csky_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_csky_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_csky_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:csky) =fetch_reward_and_remove(sim_default_csky_mechanic_task_1_fetch) =inc_task_stage(sim_default_csky_mechanic_task_1)%
+precondition = {-sim_default_csky_mechanic_upgrade_tier_1} true, false
+condlist_0 = {!task_giver_alive(sim_default_csky_mechanic_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLS FOR CSKY MECHANICS TASK-
+
+[sim_default_csky_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_csky_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_csky_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_csky_mechanic_task_2_about
+fetch_descr = sim_default_csky_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_csky_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_csky_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_csky_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:csky) =fetch_reward_and_remove(sim_default_csky_mechanic_task_2_fetch) =inc_task_stage(sim_default_csky_mechanic_task_2)%
+precondition = {+sim_default_csky_mechanic_upgrade_tier_1 -sim_default_csky_mechanic_upgrade_tier_2} true, false
+condlist_0 = {!task_giver_alive(sim_default_csky_mechanic_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLS FOR CSKY MECHANICS TASK-
+
+[sim_default_csky_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_csky_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_csky_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_csky_mechanic_task_3_about
+fetch_descr = sim_default_csky_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_csky_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_csky_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_csky_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:csky) =fetch_reward_and_remove(sim_default_csky_mechanic_task_3_fetch) =inc_task_stage(sim_default_csky_mechanic_task_3)%
+precondition = {+sim_default_csky_mechanic_upgrade_tier_2 -sim_default_csky_mechanic_upgrade_tier_3} true, false
+condlist_0 = {!task_giver_alive(sim_default_csky_mechanic_task_3)} fail
+
+; ======================================================
+; ////////////////// => DUTY TASKS <= \\\\\\\\\\\\\\\\\\
+; ======================================================
+
+;--------------------------------------------------------------------------------------------------
+; DEFEND TERRITORY FOR DUTY TASK-
+
+[sim_default_dolg_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_dolg_trader_task_1_name
+descr = sim_default_dolg_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_dolg_trader_task_1_about
+task_complete_descr = sim_default_dolg_trader_task_1_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = killer,bandit
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_dolg_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_dolg_trader_task_1:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(75:dolg) =reward_random_money(7500:9000) =reward_stash(true) =inc_task_stage(sim_default_dolg_trader_task_1)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_dolg_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; CAPTURE TERRITORY FOR DUTY TASK-
+
+[sim_default_dolg_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = ssim_default_dolg_trader_task_2_name
+descr = sim_default_dolg_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_dolg_trader_task_2_about
+task_complete_descr = sim_default_dolg_trader_task_2_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = freedom
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_dolg_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_dolg_trader_task_2:1:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(75:dolg) =reward_random_money(7500:9000) =reward_stash(true) =inc_task_stage(sim_default_dolg_trader_task_2)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_dolg_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION FOR DUTY TASK-
+
+[sim_default_dolg_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_dolg_trader_task_3_name
+descr = sim_default_dolg_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_dolg_trader_task_3_about
+task_complete_descr = sim_default_dolg_trader_task_3_finish
+;precondition = true
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_dolg_trader_task_3:false:false:freedom:bandit)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_dolg_trader_task_3) =complete_task_inc_goodwill(50:dolg)%
+condlist_0 = {!task_giver_alive(sim_default_dolg_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR DUTY MECHANICS-
+
+[sim_default_dolg_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_dolg_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_dolg_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_dolg_mechanic_task_1_about
+fetch_descr = sim_default_dolg_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_dolg_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_dolg_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_dolg_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:dolg) =remove_fetch_item(sim_default_dolg_mechanic_task_1_fetch) =inc_task_stage(sim_default_dolg_mechanic_task_1)%
+precondition = {-sim_default_dolg_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR DUTY MECHANICS-
+
+[sim_default_dolg_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_dolg_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_dolg_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_dolg_mechanic_task_2_about
+fetch_descr = sim_default_dolg_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_dolg_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_dolg_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_dolg_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(75:dolg) =remove_fetch_item(sim_default_dolg_mechanic_task_2_fetch) =inc_task_stage(sim_default_dolg_mechanic_task_2)%
+precondition = {+sim_default_dolg_mechanic_upgrade_tier_1 -sim_default_dolg_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR DUTY MECHANICS-
+
+[sim_default_dolg_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_dolg_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_dolg_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_dolg_mechanic_task_3_about
+fetch_descr = sim_default_dolg_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_dolg_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_dolg_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_dolg_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(100:dolg) =remove_fetch_item(sim_default_dolg_mechanic_task_3_fetch) =inc_task_stage(sim_default_dolg_mechanic_task_3)%
+precondition = {+sim_default_dolg_mechanic_upgrade_tier_2 -sim_default_dolg_mechanic_upgrade_tier_3} true, false
+
+; =========================================================
+; ////////////////// => FREEDOM TASKS <= \\\\\\\\\\\\\\\\\\
+; =========================================================
+
+;--------------------------------------------------------------------------------------------------
+; STOP ENEMY ASSAULT FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_freedom_trader_task_1_name
+descr = sim_default_freedom_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_freedom_trader_task_1_about
+task_complete_descr = sim_default_freedom_trader_task_1_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = army,dolg,monolith
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_freedom_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_freedom_trader_task_1:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(75:freedom) =reward_random_money(4000:7500) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:freedom)%
+
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; RECAPTURE TERRITORY FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_freedom_trader_task_2_name
+descr = sim_default_freedom_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_freedom_trader_task_2_about
+task_complete_descr = sim_default_freedom_trader_task_2_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = dolg
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_freedom_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_freedom_trader_task_2:1:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(75:freedom) =reward_random_money(4000:7500) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:freedom)%
+
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATE MONOLITH FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_freedom_trader_task_3_name
+descr =sim_default_freedom_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_freedom_trader_task_3_about
+task_complete_descr = sim_default_freedom_trader_task_3_finish
+;precondition = true
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_freedom_trader_task_3:false:false:monolith)%
+on_complete = %=reward_random_money(4500:6000) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_3) =complete_task_inc_goodwill(50:freedom:stalker)%
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATE DUTY/BANDIT/MILITARY FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_4]
+icon = ui_inGame2_Odin_vistrel
+prior = 40
+storyline = false
+title = sim_default_freedom_trader_task_4_name
+descr = sim_default_freedom_trader_task_4_text
+descr_functor = general_warfare_task
+job_descr = sim_default_freedom_trader_task_4_about
+task_complete_descr = sim_default_freedom_trader_task_4_finish
+;precondition = true
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_freedom_trader_task_4:false:false:dolg:bandit:army)%
+on_complete = %=reward_random_money(3500:5000) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_4) =complete_task_inc_goodwill(50:freedom)%
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_4)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND WEAPON FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_5]
+icon = ui_inGame2_Osobiy_zakaz
+prior = 50
+storyline = false
+title = sim_default_freedom_trader_task_5_name
+title_functor = general_fetch_task
+descr = sim_default_freedom_trader_task_5_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_freedom_trader_task_5_about
+fetch_descr = sim_default_freedom_trader_task_5_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_freedom_trader_task_5_fetch:weapons:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_weapon_warfare
+target_functor = general_fetch_task
+task_complete_descr = sim_default_freedom_trader_task_5_fetch_finish
+; ;precondition = true
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:freedom) =fetch_reward_and_remove(sim_default_freedom_trader_task_5_fetch:1.0) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_5)%
+on_fail = %=fail_task_dec_goodwill(25:freedom)%
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT MEAT FOR FREEDOM TASK-
+
+[sim_default_freedom_trader_task_6]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 40
+storyline = false
+title =  sim_default_freedom_trader_task_6_name
+title_functor = general_fetch_task
+descr =  sim_default_freedom_trader_task_6_text
+descr_functor = general_warfare_fetch_task
+job_descr =  sim_default_freedom_trader_task_6_about
+fetch_descr =  sim_default_freedom_trader_task_6_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_freedom_trader_task_6_fetch:mutant_parts:8:12)%
+stage_complete = 1
+; ;precondition = true
+repeat_timeout = 86400
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr =  sim_default_freedom_trader_task_6_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:freedom) =fetch_reward_and_remove(sim_default_freedom_trader_task_6_fetch:1.25) =reward_stash(true) =inc_task_stage(sim_default_freedom_trader_task_6) =pstor_reset(sim_default_freedom_trader_task_6_fetch)%
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_6)} fail
+
+;--------------------------------------------------------------------------------------------------
+; CLEAR AREA OF MUTANTS FOR FREEDOM-
+
+[sim_default_freedom_trader_task_7]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 20
+storyline = false
+title = sim_default_freedom_trader_task_7_name
+descr = sim_default_freedom_trader_task_7_text
+job_descr = sim_default_freedom_trader_task_7_about
+task_complete_descr = sim_default_freedom_trader_task_7_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_freedom_trader_task_7)%
+precondition = {=validate_assault_task(sim_default_freedom_trader_task_7:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+on_complete = %=inc_task_stage(sim_default_freedom_trader_task_7) =reward_random_money(2000:4500) =reward_stash(true) =complete_task_inc_goodwill(25:freedom:stalker)%
+
+
+reward_item = vodka
+condlist_0 = {!task_giver_alive(sim_default_freedom_trader_task_7)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLS FOR FREEDOM MECHANICS TASK-
+
+[sim_default_freedom_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 50
+storyline = false
+title = sim_default_freedom_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_freedom_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_freedom_mechanic_task_1_about
+fetch_descr = sim_default_freedom_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_freedom_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_freedom_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_freedom_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:freedom) =fetch_reward_and_remove(sim_default_freedom_mechanic_task_1_fetch) =inc_task_stage(sim_default_freedom_mechanic_task_1)%
+precondition = {-sim_default_freedom_mechanic_upgrade_tier_1} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLS FOR FREEDOM MECHANICS TASK-
+
+[sim_default_freedom_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 50
+storyline = false
+title = sim_default_freedom_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_freedom_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_freedom_mechanic_task_2_about
+fetch_descr = sim_default_freedom_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_freedom_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_freedom_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_freedom_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(75:freedom) =fetch_reward_and_remove(sim_default_freedom_mechanic_task_2_fetch) =inc_task_stage(sim_default_freedom_mechanic_task_2)%
+precondition = {+sim_default_freedom_mechanic_upgrade_tier_1 -sim_default_freedom_mechanic_upgrade_tier_2} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLS FOR FREEDOM MECHANICS TASK-
+
+[sim_default_freedom_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 50
+storyline = false
+title = sim_default_freedom_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_freedom_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_freedom_mechanic_task_3_about
+fetch_descr = sim_default_freedom_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_freedom_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_freedom_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_freedom_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(100:freedom) =fetch_reward_and_remove(sim_default_freedom_mechanic_task_3_fetch) =inc_task_stage(sim_default_freedom_mechanic_task_3)%
+precondition = {+sim_default_freedom_mechanic_upgrade_tier_2 -sim_default_freedom_mechanic_upgrade_tier_3} true, false
+
+; ========================================================
+; ////////////////// => KILLER TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION FOR MERCS TASK-
+
+[sim_default_killer_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_killer_trader_task_1_name
+descr = sim_default_killer_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_killer_trader_task_1_about
+task_complete_descr = sim_default_killer_trader_task_1_finish
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_killer_trader_task_1:false:false:stalker:bandit:dolg:army)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_killer_trader_task_1) =complete_task_inc_goodwill(50:killer)%
+;precondition = true
+condlist_0 = {!task_giver_alive(sim_default_killer_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSAULT TERRITORY FOR MERCS TASK-
+
+[sim_default_killer_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_killer_trader_task_2_name
+descr = sim_default_killer_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_killer_trader_task_2_about
+task_complete_descr = sim_default_killer_trader_task_2_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,bandit,dolg,army
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_killer_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_killer_trader_task_2:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(50:killer) =reward_random_money(7500:9000) =reward_stash(true) =inc_task_stage(sim_default_killer_trader_task_2)%
+
+
+condlist_0 = {!task_giver_alive(sim_default_killer_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLS FOR KILLER MECHANICS-
+
+[sim_default_killer_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_killer_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_killer_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_killer_mechanic_task_1_about
+fetch_descr = sim_default_killer_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_killer_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_killer_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_killer_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:killer) =fetch_reward_and_remove(sim_default_killer_mechanic_task_1_fetch) =inc_task_stage(sim_default_killer_mechanic_task_1)%
+precondition = {-sim_default_killer_mechanic_upgrade_tier_1} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLS FOR KILLER MECHANICS-
+
+[sim_default_killer_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_killer_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_killer_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_killer_mechanic_task_2_about
+fetch_descr = sim_default_killer_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_killer_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_killer_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_killer_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:killer) =fetch_reward_and_remove(sim_default_killer_mechanic_task_2_fetch) =inc_task_stage(sim_default_killer_mechanic_task_2)%
+precondition = {+sim_default_killer_mechanic_upgrade_tier_1 -sim_default_killer_mechanic_upgrade_tier_2} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLS FOR KILLER MECHANICS-
+
+[sim_default_killer_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_killer_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_killer_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_killer_mechanic_task_3_about
+fetch_descr = sim_default_killer_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_killer_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_killer_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_killer_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:killer) =fetch_reward_and_remove(sim_default_killer_mechanic_task_3_fetch) =inc_task_stage(sim_default_killer_mechanic_task_3)%
+precondition = {+sim_default_killer_mechanic_upgrade_tier_2 -sim_default_killer_mechanic_upgrade_tier_3} true, false
+
+; ========================================================
+; ////////////////// => ECOLOG TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+
+;--------------------------------------------------------------------------------------------------
+; ESCORT ECOLOGS TASK-
+
+[sim_default_ecolog_trader_task_1]
+icon = ui_inGame2_PD_Opitniy_stalker
+prior = 2
+storyline = false
+title = sim_default_ecolog_trader_task_1_name
+title_functor = general_escort_task
+descr = sim_default_ecolog_trader_task_1_text
+descr_functor = general_escort_task
+job_descr = sim_default_ecolog_trader_task_1_about
+target_functor = sim_default_ecolog_trader_task_target
+task_complete_descr = sim_default_ecolog_trader_task_finish
+on_init = %=setup_companion_task(ecolog_companion_task_2) =setup_task_target_anomaly -ecolog_companion_task_2_started -ecolog_companion_task_2_force_started%
+precondition = {!squad_exist(ecolog_companion_task_1) !squad_exist(ecolog_companion_task_2)} true, false
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_2) =reward_stash(true) =reset_task_target_anomaly =reset_warfare_escort_task =reward_random_money(1000:3500)%
+on_fail = %=fail_task_dec_goodwill(25:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_2) =reset_task_target_anomaly =reset_warfare_escort_task%
+on_cancel = %=remove_special_task_squad(ecolog_companion_task_2) =reset_task_target_anomaly =reset_warfare_escort_task%
+condlist_0 = {!squad_exist(ecolog_companion_task_2)} fail
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR ECOLOGS TASK-
+
+[sim_default_ecolog_trader_task_2]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 5
+storyline = false
+title = sim_default_ecolog_trader_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_ecolog_trader_task_2_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_ecolog_trader_task_2_about
+fetch_descr = sim_default_ecolog_trader_task_2_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_ecolog_trader_task_2_fetch:artefacts:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_ecolog_trader_task_2_fetch_finish
+; ;precondition = true
+repeat_timeout = 604800
+on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =reward_stash(true) =fetch_reward_and_remove(sim_default_ecolog_trader_task_2_fetch:1.1) =inc_task_stage(sim_default_ecolog_trader_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:ecolog:csky)%
+condlist_0 = {!task_giver_alive(sim_default_ecolog_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT PARTS FOR SIM ECOGS TASK-
+
+[sim_default_ecolog_trader_task_3]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 50
+storyline = false
+title = sim_default_ecolog_trader_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_ecolog_trader_task_1_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_ecolog_trader_task_1_about
+fetch_descr = sim_default_ecolog_trader_task_1_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_ecolog_trader_task_3_fetch:mutant_parts_rare:1:2)%
+stage_complete = 1
+repeat_timeout = 86400
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_ecolog_trader_task_1_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:ecolog) =reward_stash(true) =fetch_reward_and_remove(sim_default_ecolog_trader_task_3_fetch:1.5) =inc_task_stage(sim_default_ecolog_trader_task_3) =pstor_reset(sim_default_ecolog_trader_task_3_fetch)%
+condlist_0 = {!task_giver_alive(sim_default_ecolog_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR ECOLOG MECHANICS TASK-
+
+[sim_default_ecolog_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_ecolog_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_ecolog_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_ecolog_mechanic_task_1_about
+fetch_descr = sim_default_ecolog_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_ecolog_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_ecolog_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_ecolog_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:ecolog) =fetch_reward_and_remove(sim_default_ecolog_mechanic_task_1_fetch) =inc_task_stage(sim_default_ecolog_mechanic_task_1)%
+precondition = {-sim_default_ecolog_mechanic_upgrade_tier_1} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR ECOLOG MECHANICS TASK-
+
+[sim_default_ecolog_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_ecolog_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_ecolog_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_ecolog_mechanic_task_2_about
+fetch_descr = sim_default_ecolog_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_ecolog_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_ecolog_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_ecolog_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:ecolog) =fetch_reward_and_remove(sim_default_ecolog_mechanic_task_2_fetch) =inc_task_stage(sim_default_ecolog_mechanic_task_2)%
+precondition = {+sim_default_ecolog_mechanic_upgrade_tier_1 -sim_default_ecolog_mechanic_upgrade_tier_2} true, false
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR ECOLOG MECHANICS TASK-
+
+[sim_default_ecolog_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_ecolog_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_ecolog_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_ecolog_mechanic_task_3_about
+fetch_descr = sim_default_ecolog_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_ecolog_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_ecolog_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_ecolog_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:ecolog) =fetch_reward_and_remove(sim_default_ecolog_mechanic_task_3_fetch) =inc_task_stage(sim_default_ecolog_mechanic_task_3)%
+precondition = {+sim_default_ecolog_mechanic_upgrade_tier_2 -sim_default_ecolog_mechanic_upgrade_tier_3} true, false
+
+; ==========================================================
+; ////////////////// => MONOLITH TASKS <= \\\\\\\\\\\\\\\\\\
+; ==========================================================
+
+;--------------------------------------------------------------------------------------------------
+; ASSAULT TERRITORY FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_monolith_trader_task_1_name
+descr = sim_default_monolith_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_monolith_trader_task_1_about
+task_complete_descr = sim_default_monolith_trader_task_1_finish
+repeat_timeout = 172800
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,army,freedom,dolg,killer,csky,bandit
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_monolith_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_monolith_trader_task_1:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(50:monolith) =reward_random_money(2500:4500) =reward_stash(true) =inc_task_stage(sim_default_monolith_trader_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:monolith)%
+
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 40
+storyline = false
+title = sim_default_monolith_trader_task_2_name
+descr = sim_default_monolith_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_monolith_trader_task_2_about
+task_complete_descr = sim_default_monolith_trader_task_2_finish
+;precondition = true
+repeat_timeout = 172800
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_monolith_trader_task_2:false:false:stalker:army:freedom:dolg:killer:csky:bandit)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_monolith_trader_task_2) =complete_task_inc_goodwill(50:monolith)%
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND WEAPON FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_3]
+icon = ui_inGame2_Osobiy_zakaz
+prior = 50
+storyline = false
+title = sim_default_monolith_trader_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_trader_task_3_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_monolith_trader_task_3_about
+fetch_descr = sim_default_monolith_trader_task_3_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_monolith_trader_task_3_fetch:weapons:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_trader_task_3_fetch_finish
+; ;precondition = true
+repeat_timeout = 172800
+on_complete = %=complete_task_inc_goodwill(50:monolith) =fetch_reward_and_remove(sim_default_monolith_trader_task_3_fetch:1.0) =reward_stash(true) =inc_task_stage(sim_default_monolith_trader_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:monolith)%
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT MEAT FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_4]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 60
+storyline = false
+title = sim_default_monolith_trader_task_4_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_trader_task_4_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_monolith_trader_task_4_about
+fetch_descr = sim_default_monolith_trader_task_4_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_monolith_trader_task_4_fetch:mutant_meat:8:12)%
+stage_complete = 1
+; ;precondition = true
+repeat_timeout = 172800
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_trader_task_4_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:monolith) =fetch_reward_and_remove(sim_default_monolith_trader_task_4_fetch:1.5) =reward_stash(true) =inc_task_stage(sim_default_monolith_trader_task_4)%
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_4)} fail
+
+; --------------------------------------------------------------------------------------------------
+; FIND SUPPLIES FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_5]
+icon = ui_inGame2_PD_Opitniy_stalker
+prior = 75
+repeat_timeout = 172800
+storyline = false
+title = sim_default_monolith_trader_task_5_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_trader_task_5_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_monolith_trader_task_5_about
+fetch_descr = sim_default_monolith_trader_task_5_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_monolith_trader_task_5_fetch:supplies:3:8)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_trader_task_5_fetch_finish
+on_complete = %=fetch_reward_and_remove(sim_default_monolith_trader_task_5_fetch:2) =reward_stash(true) =inc_task_stage(sim_default_monolith_trader_task_5) =pstor_reset(sim_default_monolith_trader_task_5_fetch) =complete_task_inc_goodwill(25:monolith)%
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR MONOLITH TASK-
+
+[sim_default_monolith_trader_task_6]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 90
+storyline = false
+title = sim_default_monolith_trader_task_6_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_trader_task_6_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_monolith_trader_task_6_about
+fetch_descr = sim_default_monolith_trader_task_6_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_monolith_trader_task_6_fetch:artefacts:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_trader_task_6_fetch_finish
+; ;precondition = true
+repeat_timeout = 172800
+on_complete = %=complete_task_inc_goodwill(50:monolith) =reward_stash(true) =fetch_reward_and_remove(sim_default_monolith_trader_task_6_fetch:1.1) =inc_task_stage(sim_default_monolith_trader_task_6)%
+on_fail = %=fail_task_dec_goodwill(25:monolith)%
+condlist_0 = {!task_giver_alive(sim_default_monolith_trader_task_6)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR MONOLITH MECHANICS TASK-
+
+[sim_default_monolith_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_monolith_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_monolith_mechanic_task_1_about
+fetch_descr = sim_default_monolith_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_monolith_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_monolith_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:monolith) =fetch_reward_and_remove(sim_default_monolith_mechanic_task_1_fetch) =inc_task_stage(sim_default_monolith_mechanic_task_1)%
+precondition = {-sim_default_monolith_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR MONOLITH MECHANICS TASK-
+
+[sim_default_monolith_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_monolith_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_monolith_mechanic_task_2_about
+fetch_descr = sim_default_monolith_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_monolith_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_monolith_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:monolith) =fetch_reward_and_remove(sim_default_monolith_mechanic_task_2_fetch) =inc_task_stage(sim_default_monolith_mechanic_task_2)%
+precondition = {+sim_default_monolith_mechanic_upgrade_tier_1 -sim_default_monolith_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR MONOLITH MECHANICS TASK-
+
+[sim_default_monolith_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_monolith_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_monolith_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_monolith_mechanic_task_3_about
+fetch_descr = sim_default_monolith_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_monolith_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_monolith_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_monolith_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:monolith) =fetch_reward_and_remove(sim_default_monolith_mechanic_task_3_fetch) =inc_task_stage(sim_default_monolith_mechanic_task_3)%
+precondition = {+sim_default_monolith_mechanic_upgrade_tier_2 -sim_default_monolith_mechanic_upgrade_tier_3} true, false
+
+
+; ========================================================
+; ////////////////// => RENEGADE TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSIATION 1 FOR RENEGADES TASK-
+
+[sim_default_renegade_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 34
+storyline = false
+title = sim_default_renegade_trader_task_1_name
+descr = sim_default_renegade_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_renegade_trader_task_1_about
+task_complete_descr = sim_default_renegade_trader_task_1_finish
+precondition = {!has_given_task(sim_default_renegade_trader_task_5)} true, false
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_renegade_trader_task_1:false:false:stalker:killer)%
+on_complete = %=reward_random_money(4500:7000) =reward_stash(true) =inc_task_stage(sim_default_renegade_trader_task_1) =complete_task_inc_goodwill(50:renegade)%
+condlist_0 = {!task_giver_alive(sim_default_renegade_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ELIMINATE MUTANTS FOR RENEGADES TASK-
+
+[sim_default_renegade_trader_task_2]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 10
+storyline = false
+title = sim_default_renegade_trader_task_2_name
+descr = sim_default_renegade_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_renegade_trader_task_2_about
+task_complete_descr = sim_default_renegade_trader_task_2_finish
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster, monster_predatory_day, monster_predatory_night, monster_vegetarian, monster_zombied_day, monster_zombied_night, monster_special
+on_job_descr = %=setup_assault_task(sim_default_renegade_trader_task_2)%
+precondition = {=validate_assault_task(sim_default_renegade_trader_task_2:1:1:nil:false:true:nil)} true, false
+repeat_timeout = 86400
+stage_complete = 1
+on_complete = %==reward_random_money(1000:3000) =reward_stash(true) =inc_task_stage(sim_default_renegade_trader_task_2) =complete_task_inc_goodwill(50:renegade)%
+on_fail = %=fail_task_dec_goodwill(25:renegade)%
+
+condlist_0 = {!task_giver_alive(sim_default_renegade_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; DEFEND TERRITORY FOR RENEGADES TASK-
+
+[sim_default_renegade_trader_task_3]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_renegade_trader_task_3_name
+descr = sim_default_renegade_trader_task_3_text
+descr_functor = general_warfare_task
+job_descr = sim_default_renegade_trader_task_3_about
+task_complete_descr = sim_default_renegade_trader_task_3_finish
+repeat_timeout = 86400
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,army,dolg,killer,csky,monolith
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_renegade_trader_task_3)%
+precondition = {=validate_assault_task(sim_default_renegade_trader_task_3:2:1:nil:false:true:nil)} true, false
+on_complete = %=inc_task_stage(sim_default_renegade_trader_task_3) =complete_task_inc_goodwill(50:renegade) =reward_random_money(3500:7000)%
+on_fail = %=fail_task_dec_goodwill(25:renegade)%
+
+condlist_0 = {!task_giver_alive(sim_default_renegade_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION 2 FOR OLIVIUS TASK-
+
+[sim_default_renegade_trader_task_4]
+icon = ui_inGame2_Odin_vistrel
+prior = 35
+storyline = false
+title = sim_default_renegade_trader_task_4_name
+descr = sim_default_renegade_trader_task_4_text
+descr_functor = general_warfare_task
+job_descr = sim_default_renegade_trader_task_4_about
+task_complete_descr = sim_default_renegade_trader_task_4_finish
+repeat_timeout = 86400
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_renegade_trader_task_4:false:false:stalker:killer:dolg:csky:army)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_renegade_trader_task_4) =complete_task_inc_goodwill(50:renegade)%
+;precondition = true
+condlist_0 = {!task_giver_alive(sim_default_renegade_trader_task_4)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR RENEGADE MECHANICS-
+
+[sim_default_renegade_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_renegade_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_renegade_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_renegade_mechanic_task_1_about
+fetch_descr = sim_default_renegade_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_renegade_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_renegade_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_renegade_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:renegade) =fetch_reward_and_remove(sim_default_renegade_mechanic_task_1_fetch) =inc_task_stage(sim_default_renegade_mechanic_task_1)%
+precondition = {-sim_default_renegade_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR RENEGADE MECHANICS-
+
+[sim_default_renegade_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_renegade_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_renegade_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_renegade_mechanic_task_2_about
+fetch_descr = sim_default_renegade_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_renegade_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_renegade_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_renegade_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:renegade) =fetch_reward_and_remove(sim_default_renegade_mechanic_task_2_fetch) =inc_task_stage(sim_default_renegade_mechanic_task_2)%
+precondition = {+sim_default_renegade_mechanic_upgrade_tier_1 -sim_default_renegade_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR RENEGADE MECHANICS-
+
+[sim_default_renegade_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_renegade_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_renegade_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_renegade_mechanic_task_3_about
+fetch_descr = sim_default_renegade_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_renegade_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_renegade_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_renegade_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:renegade) =fetch_reward_and_remove(sim_default_renegade_mechanic_task_3_fetch) =inc_task_stage(sim_default_renegade_mechanic_task_3)%
+precondition = {+sim_default_renegade_mechanic_upgrade_tier_2 -sim_default_renegade_mechanic_upgrade_tier_3} true, false
+
+
+; ========================================================
+; ////////////////// => SIN TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+;--------------------------------------------------------------------------------------------------
+; ASSAULT TERRITORY FOR SIN TASK-
+
+[sim_default_greh_trader_task_1]
+icon = ui_inGame2_Odin_vistrel
+prior = 2
+storyline = false
+title = sim_default_greh_trader_task_1_name
+descr = sim_default_greh_trader_task_1_text
+descr_functor = general_warfare_task
+job_descr = sim_default_greh_trader_task_1_about
+task_complete_descr = sim_default_greh_trader_task_1_finish
+repeat_timeout = 172800
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = stalker,army,freedom,dolg,killer,csky,bandit
+stage_complete = 1
+on_job_descr = %=setup_assault_task(sim_default_greh_trader_task_1)%
+precondition = {=validate_assault_task(sim_default_greh_trader_task_1:2:1:nil:false:true:nil)} true, false
+on_complete = %=complete_task_inc_goodwill(50:greh) =reward_random_money(2500:4500) =reward_stash(true) =inc_task_stage(sim_default_greh_trader_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:greh)%
+
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_1)} fail
+
+;--------------------------------------------------------------------------------------------------
+; ASSASSINATION FOR SIN TASK-
+
+[sim_default_greh_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 40
+storyline = false
+title = sim_default_greh_trader_task_2_name
+descr = sim_default_greh_trader_task_2_text
+descr_functor = general_warfare_task
+job_descr = sim_default_greh_trader_task_2_about
+task_complete_descr = sim_default_greh_trader_task_2_finish
+;precondition = true
+repeat_timeout = 172800
+status_functor = bounty_task
+target_functor = general_bounty_task
+stage_complete = 1
+on_job_descr = %=setup_bounty_task(sim_default_greh_trader_task_2:false:false:stalker:army:freedom:dolg:killer:csky:bandit)%
+on_complete = %=reward_random_money(5000:7000) =reward_stash(true) =inc_task_stage(sim_default_greh_trader_task_2) =complete_task_inc_goodwill(50:greh)%
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_2)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND WEAPON FOR SIN TASK-
+
+[sim_default_greh_trader_task_3]
+icon = ui_inGame2_Osobiy_zakaz
+prior = 50
+storyline = false
+title = sim_default_greh_trader_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_greh_trader_task_3_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_greh_trader_task_3_about
+fetch_descr = sim_default_greh_trader_task_3_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_greh_trader_task_3_fetch:weapons:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_trader_task_3_fetch_finish
+; ;precondition = true
+repeat_timeout = 172800
+on_complete = %=complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(sim_default_greh_trader_task_3_fetch:1.0) =reward_stash(true) =inc_task_stage(sim_default_greh_trader_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:greh)%
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_3)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND MUTANT MEAT FOR SIN TASK-
+
+[sim_default_greh_trader_task_4]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 60
+storyline = false
+title = sim_default_greh_trader_task_4_name
+title_functor = general_fetch_task
+descr = sim_default_greh_trader_task_4_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_greh_trader_task_4_about
+fetch_descr = sim_default_greh_trader_task_4_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_greh_trader_task_4_fetch:mutant_meat:8:12)%
+stage_complete = 1
+; ;precondition = true
+repeat_timeout = 172800
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_trader_task_4_fetch_finish
+on_complete = %=complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(sim_default_greh_trader_task_4_fetch:1.5) =reward_stash(true) =inc_task_stage(sim_default_greh_trader_task_4)%
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_4)} fail
+
+; --------------------------------------------------------------------------------------------------
+; FIND SUPPLIES FOR SIN TASK-
+
+[sim_default_greh_trader_task_5]
+icon = ui_inGame2_PD_Opitniy_stalker
+prior = 75
+repeat_timeout = 172800
+storyline = false
+title = sim_default_greh_trader_task_5_name
+title_functor = general_fetch_task
+descr = sim_default_greh_trader_task_5_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_greh_trader_task_5_about
+fetch_descr = sim_default_greh_trader_task_5_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_greh_trader_task_5_fetch:supplies:3:8)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_trader_task_5_fetch_finish
+on_complete = %=fetch_reward_and_remove(sim_default_greh_trader_task_5_fetch:2) =reward_stash(true) =inc_task_stage(sim_default_greh_trader_task_5) =pstor_reset(sim_default_greh_trader_task_5_fetch) =complete_task_inc_goodwill(25:greh)%
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_5)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR SIN TASK-
+
+[sim_default_greh_trader_task_6]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 90
+storyline = false
+title = sim_default_greh_trader_task_6_name
+title_functor = general_fetch_task
+descr = sim_default_greh_trader_task_6_text
+descr_functor = general_warfare_fetch_task
+job_descr = sim_default_greh_trader_task_6_about
+fetch_descr = sim_default_greh_trader_task_6_fetch_about
+fetch_func = %=setup_fetch_task(sim_default_greh_trader_task_6_fetch:artefacts:1:1)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_trader_task_6_fetch_finish
+; ;precondition = true
+repeat_timeout = 172800
+on_complete = %=complete_task_inc_goodwill(50:greh) =reward_stash(true) =fetch_reward_and_remove(sim_default_greh_trader_task_6_fetch:1.1) =inc_task_stage(sim_default_greh_trader_task_6)%
+on_fail = %=fail_task_dec_goodwill(25:greh)%
+condlist_0 = {!task_giver_alive(sim_default_greh_trader_task_6)} fail
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR SIN MECHANICS TASK-
+
+[sim_default_greh_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_greh_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_greh_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_greh_mechanic_task_1_about
+fetch_descr = sim_default_greh_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_greh_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_greh_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(sim_default_greh_mechanic_task_1_fetch) =inc_task_stage(sim_default_greh_mechanic_task_1)%
+precondition = {-sim_default_greh_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR SIN MECHANICS TASK-
+
+[sim_default_greh_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_greh_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_greh_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_greh_mechanic_task_2_about
+fetch_descr = sim_default_greh_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_greh_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_greh_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(sim_default_greh_mechanic_task_2_fetch) =inc_task_stage(sim_default_greh_mechanic_task_2)%
+precondition = {+sim_default_greh_mechanic_upgrade_tier_1 -sim_default_greh_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR SIN MECHANICS TASK-
+
+[sim_default_greh_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_greh_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_greh_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_greh_mechanic_task_3_about
+fetch_descr = sim_default_greh_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_greh_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_greh_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_greh_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(sim_default_greh_mechanic_task_3_fetch) =inc_task_stage(sim_default_greh_mechanic_task_3)%
+precondition = {+sim_default_greh_mechanic_upgrade_tier_2 -sim_default_greh_mechanic_upgrade_tier_3} true, false
+
+
+; ========================================================
+; ////////////////// => ISG TASKS <= \\\\\\\\\\\\\\\\\\
+; ========================================================
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR ISG MECHANICS-
+
+[sim_default_isg_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_isg_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = sim_default_isg_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = sim_default_isg_mechanic_task_1_about
+fetch_descr = sim_default_isg_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_isg_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_isg_mechanic_task_1_fetch_finish
+on_complete = %+sim_default_isg_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(sim_default_isg_mechanic_task_1_fetch) =inc_task_stage(sim_default_isg_mechanic_task_1)%
+precondition = {-sim_default_isg_mechanic_upgrade_tier_1} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR ISG MECHANICS-
+
+[sim_default_isg_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_isg_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = sim_default_isg_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = sim_default_isg_mechanic_task_2_about
+fetch_descr = sim_default_isg_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_isg_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_isg_mechanic_task_2_fetch_finish
+on_complete = %+sim_default_isg_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(sim_default_isg_mechanic_task_2_fetch) =inc_task_stage(sim_default_isg_mechanic_task_2)%
+precondition = {+sim_default_isg_mechanic_upgrade_tier_1 -sim_default_isg_mechanic_upgrade_tier_2} true, false
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR ISG MECHANICS-
+
+[sim_default_isg_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = sim_default_isg_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = sim_default_isg_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = sim_default_isg_mechanic_task_3_about
+fetch_descr = sim_default_isg_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(sim_default_isg_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = sim_default_isg_mechanic_task_3_fetch_finish
+on_complete = %+sim_default_isg_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:isg) =fetch_reward_and_remove(sim_default_isg_mechanic_task_3_fetch) =inc_task_stage(sim_default_isg_mechanic_task_3)%
+precondition = {+sim_default_isg_mechanic_upgrade_tier_2 -sim_default_isg_mechanic_upgrade_tier_3} true, false

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- (Bandit ground leader) -->
+	<string id="st_agr_u_bandit_boss_dialog_start_0">
+		<text>Э-э, ты ещё мля кто такой, и чё ты тут ваще забыл, э?!</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_start_1a">
+		<text>Хабар, тайники ищу. Вдруг и тут что-то можно найти. Да и приключения же... </text>
+	</string>
+		<string id="st_agr_u_bandit_boss_dialog_start_1a_1">
+			<text>Приключения он, млять, ищет... Да, на свою жопу ты тут приключений быстро найдёшь, пацанчик. Или ты, мля, глухой шоле, и не слышал как весь этот всратый зверинец тут орёт?</text>
+		</string>
+	<string id="st_agr_u_bandit_boss_dialog_start_1b">
+		<text>Да просто болтаюсь, можно сказать, местность исследую. Кто знает, что здесь можно найти...</text>
+	</string>
+		<string id="st_agr_u_bandit_boss_dialog_start_1b_1">
+			<text>Ага, на, и среди всей Зоны ты исследовался именно в эту жопу? Аномальное поле чудес внатуре.</text>
+		</string>
+	<string id="st_agr_u_bandit_boss_dialog_start_1c">
+		<text>Цель задания у меня здесь.</text>
+	</string>
+		<string id="st_agr_u_bandit_boss_dialog_start_1c_1">
+			<text>Задание у него, мля... Поздравляю тя, пачанчик, чё я могу сказать... Суши вёсла, будем вместе тут чалиться.</text>
+		</string>
+
+	<string id="st_agr_u_bandit_boss_dialog_ask_0">
+		<text>Что насчёт вас? Как вы тут оказались-то?</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_ask_1">
+		<text>Бушлат моё погоняло, я с братвой тут от Султана. Пахан нам задвигал тему, мол, «да чё вы кипишуете, там нет никого - зольды всё давно постригли», «никакой херни мутантской».. Ага, мля. Как фраерам левым в уши нассал... Мы вчера тут нахрен чуть не зажмурились, мля! Монстрятина из своих параш повылазила, так мы куда зенки пялились, туда шаром и закатились.
+		\nНу, а чё по той теме, так то пахану малява пришла, типа тут хата Стрелка была, а фраер тот хитрый был, да и снаряга со шпалерами у него кошерные были. Ну и типа он братву сообразил сюда, шоб нашли всю эту тему. Тока я те скажу, что это фуфло всё - нихера тут нет, кроме мутантов и их дерьма. Да ток против пахана гнать ваще не тема, как и задний врубать, а если ещё и не притащим чё годного, то он нас к псевдошавкам определит на корм.</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_ask_2">
+		<text>Мда. Незавидное у вас положение. Может, я смогу помочь чем?</text>
+	</string>
+		<string id="st_agr_u_bandit_boss_dialog_ask_5">
+			<text>Ага, мля. Херачь отсюда, пока можешь... Э, погодь, ты чё внатуре братве помочь хочешь? Не, мля, без базара, пацанчик, лишнее тело нам тока в пользу - тварей вмиг намаслиним если попрут сюда, тока всё равно стрёмно в эту жопу переть.</text>
+		</string>
+			<string id="st_agr_u_bandit_boss_dialog_ask_6">
+				<text>Посмотрим... Ну так как насчёт поисков вместе?</text>
+			</string>
+				<string id="st_agr_u_bandit_boss_dialog_ask_7">
+					<text>Та хер его знает... ща попрёшь туда, а тя херня невидимая за шары - херась - и нет пацана, мля... Туши свет... Ты просто этих тварей не видел, ща бы и у тя очко сжалось.
+					\n...</text>
+				</string>
+					<string id="st_agr_u_bandit_boss_dialog_ask_72">
+						<text>...</text>
+					</string>
+					<string id="st_agr_u_bandit_boss_dialog_ask_73">
+						<text>...А-а нахер всё... Султан и без того бубенцы псинам бросит, вот ещё мля петухом подыхать...  Кандехай веселей, мля!</text>
+					</string>
+					<string id="st_agr_u_bandit_boss_dialog_ask_71">
+						<text>Погнали.</text>
+					</string>
+			<string id="st_agr_u_bandit_boss_dialog_ask_8">
+				<text>Давай так: я двину вглубь комплекса и если что найду, то вернусь сюда. Как такой расклад?</text>
+			</string>
+				<string id="st_agr_u_bandit_boss_dialog_ask_81">
+					<text>Не, ты если ваще поехавший туда лезть, то базара ноль. Зажмуришься, так хоть твари пожрут тя и от нас отвянут, ну, а если внатуре найдёшь чё и братву не кинешь, то мы такой подгон не забудем. Я те зуб, мля, даю.</text>
+				</string>
+	<string id="st_agr_u_bandit_boss_dialog_ask_3">
+		<text>Понятно... Желаю удачи с поисками.</text>
+	</string>
+	
+	<string id="st_agr_u_bandit_boss_dialog_ask_4">
+		<text>Ты часом не про эти документы?</text>
+	</string>
+
+	<string id="st_agr_u_bandit_boss_dialog_give_docs_0">
+		<text>Я тут кейс нашёл. Глянь - оно?</text>
+	</string>
+	
+	<string id="st_agr_u_bandit_boss_dialog_ask_9">
+			<text>Э... И чё за кейс?..</text>
+		</string>
+			<string id="st_agr_u_bandit_boss_dialog_ask_10">
+				<text>Не напрягайся. Вот, держи его.</text>
+			</string>
+			<string id="st_agr_u_bandit_boss_dialog_ask_11">
+				<text>Кейс как кейс. Думаю, себе его оставлю.</text>
+			</string>
+				<string id="st_agr_u_bandit_boss_dialog_ask_12">
+					<text>Чё, внатуре?</text>
+				</string>
+					<string id="st_agr_u_bandit_boss_dialog_ask_13">
+						<text>Да.</text>
+					</string>
+					<string id="st_agr_u_bandit_boss_dialog_ask_14">
+						<text>Да я шучу. Лови.</text>
+					</string>
+						<string id="st_agr_u_bandit_boss_dialog_ask_15">
+							<text>Мля, брателло, будешь нас за лошпедов держать, так мы тя точняк в бушлат деревянный оденем.</text>
+						</string>
+					
+	<string id="st_agr_u_bandit_boss_dialog_give_docs_1">
+		<text>Вот это подгонище, мля! Браток, благодарочка те от пацанов. Реально уважил и не зассал. Наконец-то можем свалить из этой жопы.\n \nЗнач так, на, расклад такой: я с прибытком двигаю к пахану, а братва пока тут пошкерится, пока всё не будет на мази.
+		\nЧё насчёт тебя, э? Погнали со мной, я Султану за тя слово замолвлю конкретное.</text>
+	</string>
+		<string id="st_agr_u_bandit_boss_dialog_give_docs_2">
+			<text>Нет, спасибо. У меня тут ещё неоконченное дело... Так что бывай.</text>
+		</string>
+			<string id="st_agr_u_bandit_boss_dialog_give_docs_3">
+				<text>Ну, мля, как знаешь, братуха... Хмм... Во, на, придумал. Лови эту херовину - нашли в одной из аномалий, пока шароёбились тут. Подгон от братвы за то, что впрягся с нами в дело. Мож за бабки загнать, а мож и поможет те чем.</text>
+			</string>
+			<string id="st_agr_u_bandit_boss_dialog_give_docs_4">
+				<text>Неплохо, спасибо!</text>
+			</string>
+		<string id="st_agr_u_bandit_boss_dialog_give_docs_5">
+			<text>Лады. Погнали к пахану твоему.</text>
+		</string>
+
+	<string id="st_agr_u_bandit_boss_dialog_reask">
+		<text>Ладно, я помогу вам тут со всем разобраться.</text>
+	</string>
+	
+	<string id="st_agr_u_bandit_boss_dialog_arrived_0">
+		<text>Вот, держи.</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_arrived_1">
+		<text>Благодарю тебя, пацанчик, за то, шо впрягся. Братва такое на забывает. Держи арт - нашли его в одной из аномалий, пока шароёбились в подземке. В качестве благодарочки те будет.</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_arrived_2">
+		<text>Пригодится, спасибо. И что будешь дальше делать?</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_arrived_3">
+		<text>Надо теперь чемодан этот херов Султану на точке отдать, а там, мля, синячить буду... Главное, шо бубенцы при себе остались, и больше в подвал хренов этот не надо переться...\nТы, это, брателло, надо будет чё... ты закатывайся - побазарим да ампулку раздавим.</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_dialog_arrived_4">
+		<text>Я запомню. Ну, бывай.</text>
+	</string>
+
+	<string id="st_agr_u_bandit_boss_news_on_going">
+		<text>Так, братва, ща я с нашим брателлой двину вниз за хабаром, а вы пока точку держите. Если чё, мочите всё, шо видите.</text>
+	</string>
+	<string id="st_agr_u_bandit_boss_news_on_going_reply">
+		<text>Надо всем быть на чеку.</text>
+	</string>
+	
+	<string id="agr_u_bandit_boss_task_1_name">
+		<text>Вниз по тушканичьей норе</text>
+	</string>
+	<string id="agr_u_bandit_boss_task_1_desc_0">
+		<text>В подземельях Агропрома встретился отряд Бушлата, посланный туда Султаном в поисках любых вещей, имеющих отношение к Стрелку.\nПрибывшие на место бандиты были заверены в том, что это место полностью заброшено и совершенно необитаемо, что, конечно же, оказалось совсем не так.\n \nБушлат понятия не имеет, что вообще искать, поэтому стоит искать любые предметы, бумаги и улики, имеющие отношение к Стрелку.</text>
+	</string>
+	<string id="agr_u_bandit_boss_task_1_desc_1">
+		<text>Бушлат ожидает возвращения к себе.</text>
+	</string>
+	<string id="agr_u_bandit_boss_task_1_desc_2">
+		<text>Необходимо доставить вместе с Бушлатом все найденные вещи на базу бандитов в Тёмной долине.</text>
+	</string>
+	<string id="agr_u_bandit_boss_task_1_desc_3">
+		<text>Стоит поговорить с Бушлатом.</text>
+	</string>
+</string_table>

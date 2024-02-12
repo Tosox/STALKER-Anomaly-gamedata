@@ -1,0 +1,235 @@
+[mar_doctor_squad]:online_offline_group
+faction = ecolog
+npc = mar_smart_terrain_base_doctor
+target_smart = mar_smart_terrain_base
+spawn_point = mar_doctor_squad_spawn
+story_id = mar_doctor_squad
+
+[mar_smart_terrain_doc_squad]:online_offline_group
+faction = ecolog
+npc = mar_smart_terrain_doc_doctor
+;target_random_smart = mar_smart_terrain_doc, mar_smart_terrain_doc_2, mar_smart_terrain_base
+target_smart = mar_smart_terrain_doc
+story_id = mar_smart_terrain_doc_squad
+;idle_time = 5000 
+invulnerability = true
+;always_arrived = true
+
+[mar_smart_terrain_base_dog_doctor_squad]:online_offline_group
+faction = monster
+sympathy = 1
+npc = mar_smart_terrain_base_dog_doctor
+target_smart = mar_smart_terrain_base
+spawn_point = mar_smart_terrain_base_dog_doctor_spawn_point
+story_id = mar_smart_terrain_base_dog_doctor_squad
+always_arrived = true
+
+[mar_smart_terrain_doc_dog_squad]:online_offline_group
+faction = monster
+sympathy = 1
+npc = mar_smart_terrain_doc_dog
+;target_smart = {=is_day} mar_smart_terrain_doc, {=is_night} mar_smart_terrain_doc_2
+target_smart = mar_smart_terrain_doc
+story_id = mar_smart_terrain_doc_dog_squad
+
+[mar_base_stalker_barmen_squad]:online_offline_group
+faction = csky
+sympathy = 1
+npc = mar_base_stalker_barmen
+target_smart = mar_smart_terrain_base
+spawn_point = mar_smart_terrain_base_barman_walk
+story_id = mar_base_stalker_barmen_squad
+
+[mar_base_owl_stalker_trader_squad]:online_offline_group
+faction = csky
+sympathy = 1
+npc = mar_base_owl_stalker_trader
+target_smart = mar_smart_terrain_base
+spawn_point = mar_smart_terrain_base_trader_walk
+story_id = mar_base_owl_stalker_trader_squad
+
+[mar_base_stalker_tech_squad]:online_offline_group
+faction = csky
+sympathy = 1
+npc = mar_base_stalker_tech
+target_smart = mar_smart_terrain_base
+spawn_point = mar_smart_terrain_base_tech_walk
+story_id = mar_base_stalker_tech_squad
+
+[mar_smart_terrain_base_lager_squad]:online_offline_group
+faction = csky
+npc = sim_default_csky_3, sim_default_csky_0, sim_default_csky_1, sim_default_csky_0, sim_default_csky_1, sim_default_csky_0
+target_smart = mar_smart_terrain_base
+story_id = mar_smart_terrain_base_lager_squad
+always_arrived = true
+
+[mar_smart_terrain_base_stalker_leader_marsh_squad]:online_offline_group
+faction = csky
+sympathy = 1
+npc = mar_smart_terrain_base_stalker_leader_marsh
+target_smart = mar_smart_terrain_base
+spawn_point = mar_smart_terrain_base_commander_walk
+story_id = mar_smart_terrain_base_stalker_leader_marsh_squad
+
+[guid_marsh_mlr_squad]:online_offline_group
+faction = csky
+npc =  guid_marsh_mlr
+npc_in_squad = 1, 1
+target_smart = mar_smart_terrain_base
+
+
+;;;;;;новые;;;;;;;;;;;;;;;
+
+[rats_mar_smart_terrain_8_11]:online_offline_group
+faction = monster_predatory_day
+npc_random = rat_weak, rat_normal, rat_weak, rat_wolf, rat_strong
+npc_in_squad = 10, 14
+target_smart = mar_smart_terrain_8_11
+common			= true
+
+[flesh_mar_smart_terrain_12_2]:online_offline_group
+faction = monster_predatory_day
+npc = rat_weak, rat_normal, flesh_01a_weak, flesh_normal, flesh_02a_strong, rat_weak, rat_normal, rat_weak, rat_normal, rat_weak
+target_smart = mar_smart_terrain_12_2
+common			= true
+
+[nasos_csky_mar_smart_terrain_5_8]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_1, sim_default_csky_0
+npc_in_squad = 3, 4
+target_smart = mar_smart_terrain_5_8
+common			= true
+
+[nasos_bandit_mar_smart_terrain_5_8]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 4, 5
+target_smart = mar_smart_terrain_5_8
+common			= true
+
+[meh_csky_mar_smart_terrain_10_5]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_1, sim_default_csky_1, sim_default_csky_1, sim_default_csky_0, sim_default_csky_0, sim_default_csky_2
+npc_in_squad = 3, 4
+target_smart = mar_smart_terrain_10_5
+common			= true
+
+[meh_bandit_mar_smart_terrain_10_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 4, 6
+target_smart = mar_smart_terrain_10_5
+common			= true
+
+[meh_tushkano_mar_smart_terrain_10_5]:online_offline_group
+faction = monster_predatory_day
+npc_random = tushkano_normal, tushkano_normal_a, tushkano_normal_b, tushkano_normal_c, tushkano_weak, tushkano_weak_a, tushkano_weak_b, tushkano_weak_c, tushkano_strong, tushkano_strong_a, tushkano_strong_b, tushkano_strong_c, rat_weak, rat_normal, rat_strong, rat_wolf, rat_weak, rat_weak, rat_normal, rat_normal, rat_weak, rat_normal, rat_strong, rat_wolf, rat_weak, rat_weak, rat_normal, rat_normal, rat_wolf, rat_wolf, rat_wolf, rat_wolf, rat_normal, rat_normal, rat_normal
+npc_in_squad = 8, 15
+target_smart = mar_smart_terrain_10_5
+common			= true
+
+[zatop_hutor_tushkano_mar_smart_terrain_4_5]:online_offline_group
+faction = monster_predatory_day
+npc_random = rat_weak, rat_normal, rat_normal, rat_normal, rat_weak, rat_weak, rat_normal, rat_normal, rat_weak, rat_normal, rat_strong, rat_weak, rat_weak, rat_weak, rat_normal, rat_normal, rat_weak, rat_wolf, rat_wolf, rat_strong, rat_normal, rat_normal, rat_normal
+npc_in_squad = 10, 15
+target_smart = mar_smart_terrain_4_5
+common			= true
+
+[zatop_hutor_bandit_mar_smart_terrain_4_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0
+npc_in_squad = 2, 4
+target_smart = mar_smart_terrain_4_5
+common			= true
+
+[perehod_bandit_mar_smart_terrain_12_2]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0
+npc_in_squad = 3, 4
+target_smart = mar_smart_terrain_12_2
+common			= true
+
+[perehod_stalker_mar_smart_terrain_12_2]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0
+npc_in_squad = 3, 4
+target_smart = mar_smart_terrain_12_2
+common			= true
+
+[na_agro_renegade_mar_smart_terrain_7_3]:online_offline_group
+faction = renegade
+npc_random = sim_default_renegade_1, sim_default_renegade_1, sim_default_renegade_0
+npc_in_squad = 3
+target_smart = mar_smart_terrain_7_3
+common			= true
+
+[na_agro_blood_mar_smart_terrain_7_3]:online_offline_group
+faction = monster_predatory_day
+npc_random = bloodsucker_green_weak, bloodsucker_green_normal,  bloodsucker_green_strong
+npc_in_squad = 1
+target_smart = mar_smart_terrain_7_3
+common			= true
+
+[tower_csky_mar_smart_terrain_6_11]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_1, sim_default_csky_2
+npc_in_squad = 4, 5
+target_smart = mar_smart_terrain_6_11
+common			= true
+
+[pereh_csky_mar_smart_terrain_11_11]:online_offline_group
+faction = csky
+npc_random = sim_default_csky_1, sim_default_csky_2, sim_default_csky_0, sim_default_csky_1, sim_default_csky_1, sim_default_csky_0, sim_default_csky_0, sim_default_csky_1
+npc_in_squad = 3, 5
+target_smart = mar_smart_terrain_11_11
+
+;;горелый хутор---------------------
+[gor_hutor_flesh_mar_smart_terrain_8_8]:online_offline_group
+faction = monster_predatory_day
+npc = flesh_01a_weak, flesh_01a_strong, flesh_02a_normal, flesh_01a_strong, rat_weak, rat_normal, rat_strong, rat_wolf, rat_weak, rat_weak, rat_normal, rat_normal, rat_weak, rat_normal
+target_smart = mar_smart_terrain_8_8
+common			= true
+
+[gor_hutor_dog_mar_smart_terrain_8_8]:online_offline_group
+faction = monster_predatory_day
+npc_random = dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black
+npc_in_squad = 5, 7
+target_smart = mar_smart_terrain_8_8
+common			= true
+
+[gor_hutor_pseudodog_mar_smart_terrain_8_8]:online_offline_group
+faction = monster_predatory_day
+npc_random = pseudodog_grey_weak, pseudodog_grey_weak
+npc_in_squad = 2, 3
+target_smart = mar_smart_terrain_8_8
+common			= true
+
+[gor_hutor_cat_mar_smart_terrain_8_8]:online_offline_group
+faction = monster_predatory_day
+npc_random = cat_weak_a, cat_weak_b, cat_weak_c, cat_weak_d, cat_weak_e, cat_normal_a, cat_normal_b, cat_normal_c, cat_normal_d, cat_normal_e, cat_strong_a, cat_strong_b, cat_strong_c, cat_strong_d, cat_strong_e
+npc_in_squad = 3, 5
+target_smart = mar_smart_terrain_8_8
+common			= true
+
+[gor_hutor_bloodsucker_mar_smart_terrain_8_8]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_normal, bloodsucker_green_strong
+npc_in_squad = 1
+target_smart = mar_smart_terrain_8_8
+common			= true
+
+
+;;грави-аномалия "Топтун"--------------------
+[toptyn_bloodsucker_mar_smart_terrain_3_7]:online_offline_group
+faction = monster_predatory_night
+npc_random = bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_weak, bloodsucker_green_normal, bloodsucker_green_strong
+npc_in_squad = 1
+target_smart = mar_smart_terrain_3_7
+common			= true
+
+[drx_march_task_5_csky_squad]:online_offline_group
+faction = csky
+relationship = friend
+npc_random = sim_default_csky_2, sim_default_csky_2, sim_default_csky_3, sim_default_csky_4
+npc_in_squad = 3, 4
+story_id = drx_march_task_5_csky_squad

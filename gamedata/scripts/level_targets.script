@@ -1,0 +1,254 @@
+-- werejew
+
+active_levels = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 } --, 34 }
+
+-- alife():level_name(gg:vertex(gvid):level_id()) == "k02_trucks_cemetery"
+
+level_names = {
+	"k00_marsh",
+	"k01_darkscape",
+	"l01_escape",
+	"l02_garbage",
+	"l03_agroprom",
+	"l04_darkvalley",
+	"l05_bar",
+	"l06_rostok",
+	"l07_military",
+	"l08_yantar",
+	"l09_deadcity",
+	"l10_limansk",
+	"l10_radar",
+	"l10_red_forest",
+	"l11_hospital",
+	"l11_pripyat",
+	"l12_stancia",
+	"l12u_sarcofag",
+	"l12u_control_monolith",
+	"l12_stancia_2",
+	"l13_generators",
+	"zaton",
+	"jupiter",
+	"pripyat",
+	"jupiter_underground",
+	"k02_trucks_cemetery"
+}
+
+-- TODO: going to hide labs until the user or the user's faction decides to target them
+labs = { 20, 21, 22, 23, 24, 25, 26, 29, 31, }
+
+level_links = {
+	[1] = { [4] = true, [2] = true, },
+	[2] = { [1] = true, [3] = true, [5] = true, }, --[34] = true, },
+	[3] = { [2] = true, [4] = true, [7] = true, [8] = true, [6] = true, },
+	[4] = { [1] = true, [3] = true, [10] = true, [20] = true, },
+	[5] = { [2] = true, [6] = true, },
+	[6] = { [3] = true, [5] = true, [32] = true, [21] = true, }, --[34] = true, },
+	[7] = { [3] = true, [8] = true, [9] = true, [32] = true, },
+	[8] = { [3] = true, [7] = true, [10] = true, },
+	[9] = { [7] = true, [13] = true, [11] = true, [32] = true, [14] = true, },
+	[10] = { [4] = true, [11] = true, [8] = true, [22] = true, },
+	[11] = { [10] = true, [9] = true, [12] = true, },
+	[12] = { [11] = true, [15] = true, [14] = true, },
+	[13] = { [9] = true, [14] = true, [16] = true, [23] = true, },
+	[14] = { [9] = true, [12] = true, [28] = true, },
+	[15] = { [12] = true, [18] = true, },
+	[16] = { [13] = true, [17] = true, [28] = true, [30] = true, },
+	[17] = { [16] = true, [18] = true, [27] = true, [24] = true, },
+	[18] = { [15] = true, [17] = true, [19] = true, },
+	[19] = { [18] = true, [26] = true, },
+	[20] = { [4] = true, },
+	[21] = { [6] = true, },
+	[22] = { [10] = true, },
+	[23] = { [13] = true, },
+	[24] = { [17] = true, [25] = true, },
+	[25] = { [24] = true, },
+	[26] = { [19] = true, },
+	[27] = { [17] = true, [28] = true, },
+	[28] = { [14] = true, [27] = true, [29] = true, },
+	[29] = { [28] = true, },
+	[30] = { [16] = true, [29] = true, [31] = true, },
+	[31] = { [30] = true, },
+	[32] = { [6] = true, [7] = true, [9] = true, },	
+	[33] = { },	
+	[34] = { [2] = true, [6] = true, },	
+}
+
+-- TODO: Find suitable start locations in labs
+level_starts = {
+	-- Marshes 1
+	[1] = { "mar_smart_terrain_base", },
+	
+	-- Escape 2
+	[2] = { "esc_smart_terrain_2_12", "esc_smart_terrain_3_16", },
+	
+	-- Garbage 3
+	[3] = { "gar_smart_terrain_3_5", },
+	
+	-- Agroprom 4
+	[4] = { "agr_smart_terrain_1_6", "agr_smart_terrain_1_6_near_1", "agr_smart_terrain_1_6_near_2", },
+	
+	-- Darkscape 5
+	[5] = { "ds_kem2", },
+	
+	-- Dark Valley 6
+	[6] = { "val_smart_terrain_7_3", "val_smart_terrain_7_4", "val_smart_terrain_7_5", },
+	
+	-- Bar 7
+	[7] = { "bar_dolg_bunker", },
+	
+	-- Rostok 8
+	[8] = { "ros_smart_killers1", },
+	
+	-- Military 9
+	[9] = { "mil_smart_terrain_7_7", "mil_smart_terrain_7_12", "mil_smart_terrain_7_8", "mil_smart_terrain_7_10", },
+	
+	-- Yantar 10
+	[10] = { "yan_smart_terrain_6_4", },
+	
+	-- Dead City 11
+	[11] = { "cit_killers", },
+	
+	-- Limansk 12
+	[12] = { "lim_smart_terrain_6", },
+	
+	-- Radar 13
+	[13] = { "rad_antenna_patrol", "rad_antenna_monolith", },
+	
+	-- Red Forest 14
+	[14] = { "red_smart_terrain_4_2", "red_smart_terrain_3_1",},
+	
+	-- Hospital 15
+	[15] = { "katacomb_smart_terrain", },
+	
+	-- Pripyat Plaza 16
+	[16] = { "pri_monolith", },
+	
+	-- CNPP (south) 17
+	[17] = { "aes_smart_terrain_monolit_blockpost4", },
+	
+	-- CNPP (north) 18
+	[18] = { "aes2_monolith_camp3", },
+	
+	-- Generators 19
+	[19] = { "gen_smart_terrain_lab_entrance", },
+	
+	-- Lab X-19 (Radar)
+	[23] = {"bun2_st_bloodsucker", "bun2_tushkano_lair", },
+	
+	-- Zaton 27
+	[27] = { "zat_stalker_base_smart", },
+	
+	-- Jupiter 28
+	[28] = { "jup_a6", },
+	
+	-- Pripyat 30
+	[30] = { "pri_a16", "pri_a28_base", },
+	
+	-- Trucks Cemetery 32
+	[32] = { "trc_sim_20", },
+}
+
+-- too lazy to parse the config; each table is just x,y,z.
+level_offsets = {
+	-- Great Swamp
+	[1] =  { 1050.0,	1000.0,		0.0, },
+	
+	-- Cordon
+	[2] =  { 2050.0,	1000.0,		0.0 },
+	
+	-- Garbage
+	[3] =  { 2050.0,	1000.0,		1000.0 },
+	
+	-- Agroprom
+	[4] =  { 1300.0,	1000.0,		1000.0 },
+	
+	-- Darkscape
+	[5] =  { 3050.0,	1000.0,		0.0 },
+	
+	-- Dark Valley
+	[6] =  { 3050.0,	1000.0,		1000.0 },
+	
+	-- Rostok
+	[7] =  { 2000.0,	1000.0,		2000.0 },
+	
+	-- Wild Territory
+	[8] =  { 2000.0,	1000.0,		2000.0 },
+	
+	-- Army Warehouses
+	[9] =  { 2130.0,	1000.0,		3000.0 },
+	
+	-- Yantar
+	[10] = { 1200.0,	1000.0,		2000.0 },
+	
+	-- Dead City
+	[11] = { 1100.0,	1000.0,		3000.0 },
+	
+	-- Limansk
+	[12] = { 1100.0,	1000.0,		4000.0 },
+	
+	-- Radar
+	[13] = { 2750.0,	1000.0,		4000.0 },
+	
+	-- Red Forest
+	[14] = { 1750.0,	1000.0,		4000.0 },
+	
+	-- Deserted Hospital
+	[15] = { 1530.0,	1000.0,		5000.0 },
+	
+	-- Pripyat
+	[16] = { 2500.0,	1000.0,		5000.0 },
+	
+	-- Chernobyl NPP (South)
+	[17] = { 2000.0,	1000.0,		6000.0 },
+	
+	-- Chernobyl NPP (North)
+	[18] = { 2000.0,	1000.0,		6500.0 },
+	
+	-- Generators 19
+	[19] = { 2500.0,	1000.0,		7000.0 },
+	
+	-- Agroprom underground
+	[20] = { 1300.0,	800.0,		1845.0 },
+	
+	-- Lab X-18 (Dark Valley)
+	[21] = { 3050.0,	800.0,		1845.0 },
+	
+	-- Lab X-16 (Yantar)
+	[22] = { 1200.0,   	800.0, 		2845.0 },
+	
+	-- Lab X-19 (Radar)
+	[23] = { 2750.0, 	800.0,		4000.0 },
+	
+	-- Sarcophagus
+	[24] = { 2000.0,  	1200.0,    	6500.0 },
+	
+	-- Monolith Control Center
+	[25] = { 2000.0,   	1400.0,    	6500.0 },
+	
+	-- Monolith War Lab
+	[26] = { 2500.0,    800.0,    	7000.0 },
+	
+	-- Zaton
+	[27] = { 1750.0,	1000.0,		5000.0 },
+	
+	-- Jupiter
+	[28] = { 1750.0,	1000.0,		4500.0 },
+	
+	-- Jupiter Underground
+	[29] = { 1750.0,    800.0,		4500.0 },
+	
+	-- Outskirts
+	[30] = { 3000.0,	1000.0,		4500.0 },
+	
+	-- Lab X-8 (Outskirts)
+	[31] = { 3000.0,    800.0,		4500.0 },
+	
+	-- Truck Cemetery
+	[32] = { 3000.0,	1000.0,		2000.0 },
+	
+	-- Fake Start
+	[33] = {   10.0,	  10.0,		   0.0 },
+	
+	-- Meadow
+	[34] = { 2150.0,	1000.0,		   0.0 },
+}

@@ -1,0 +1,101 @@
+	<inv_grid x="0" y="0" width="28" height="35"/>
+	
+	<inv_text x="0" y="0" width="28" height="35">
+		<text complex_mode="1" r="150" g="150" b="150" align="r" vert_align="b" font="letterica16"/>
+	</inv_text>
+
+	<inv_btn_1_1 x="0" y="0" width="28" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_1_1>
+	<inv_btn_1_2 x="0" y="0" width="28" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_1_2>
+	<inv_btn_1_3 x="0" y="0" width="28" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_1_3>
+	<inv_btn_1_4 x="0" y="0" width="28" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_1_4>
+	<inv_btn_1_5 x="0" y="0" width="28" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_1_5>
+	
+	<inv_btn_2_1 x="0" y="0" width="56" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_2_1>
+	<inv_btn_2_2 x="0" y="0" width="56" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_2_2>
+	<inv_btn_2_3 x="0" y="0" width="56" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_2_3>
+	<inv_btn_2_4 x="0" y="0" width="56" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_2_4>
+	<inv_btn_2_5 x="0" y="0" width="56" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_2_5>
+	
+	<inv_btn_3_1 x="0" y="0" width="84" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_3_1>
+	<inv_btn_3_2 x="0" y="0" width="84" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_3_2>
+	<inv_btn_3_3 x="0" y="0" width="84" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_3_3>
+	<inv_btn_3_4 x="0" y="0" width="84" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_3_4>
+	<inv_btn_3_5 x="0" y="0" width="84" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_3_5>
+	
+	<inv_btn_4_1 x="0" y="0" width="112" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_4_1>
+	<inv_btn_4_2 x="0" y="0" width="112" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_4_2>
+	<inv_btn_4_3 x="0" y="0" width="112" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_4_3>
+	<inv_btn_4_4 x="0" y="0" width="112" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_4_4>
+	<inv_btn_4_5 x="0" y="0" width="112" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_4_5>
+	
+	<inv_btn_5_1 x="0" y="0" width="140" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_5_1>
+	<inv_btn_5_2 x="0" y="0" width="140" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_5_2>
+	<inv_btn_5_3 x="0" y="0" width="140" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_5_3>
+	<inv_btn_5_4 x="0" y="0" width="140" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_5_4>
+	<inv_btn_5_5 x="0" y="0" width="140" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_5_5>
+	
+	<inv_btn_6_1 x="0" y="0" width="168" height="35" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_6_1>
+	<inv_btn_6_2 x="0" y="0" width="168" height="70" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_6_2>
+	<inv_btn_6_3 x="0" y="0" width="168" height="105" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_6_3>
+	<inv_btn_6_4 x="0" y="0" width="168" height="140" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_6_4>
+	<inv_btn_6_5 x="0" y="0" width="168" height="175" check_mode="0">
+		<texture>ui_button_inv</texture>
+	</inv_btn_6_5>

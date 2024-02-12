@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!--
+	Backpacks
+-->
+
+<string_table>
+	<string id="st_itm_backpack_name">
+		<text>Backpack</text>
+	</string>
+	<string id="st_itm_backpack_desc">
+		<text>A backpack made of durable material able to withstand the harshest weather conditions.\n \n
+			%c[ui_gray_1]PROPERTIES:\n
+			%c[d_blue] • %c[ui_gray_2] everyday item\n
+			%c[d_blue] • %c[ui_gray_2] item storage\n
+			%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+			</text>
+	</string>
+	
+	<string id="st_equ_smallpack_name">
+		<text>Camping backpack</text>
+	</string>
+	<string id="st_equ_smallpack_desc">
+		<text>A backpack with considerable storage space. The inside has been modified to keep water out. Not a pretty solution, but it works. A popular choice among stalkers and rookies.\n \n
+			%c[ui_gray_1]PROPERTIES:\n
+			%c[d_blue] • %c[ui_gray_2] everyday item\n
+			%c[d_blue] • %c[ui_gray_2] item storage\n
+			%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+		</text>
+	</string>
+	
+	<string id="st_equ_smilpack_name">
+		<text>Travel backpack</text>
+	</string>
+	<string id="st_equ_smilpack_desc">
+		<text>A large backpack for long journeys. Thanks to the weight distribution system, it allows the wearer to carry enough supplies and equipment for a trip lasting up to five days.\n \n
+			%c[ui_gray_1]PROPERTIES:\n
+			%c[d_blue] • %c[ui_gray_2] everyday item\n
+			%c[d_blue] • %c[ui_gray_2] item storage\n
+			%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+		</text>
+	</string>
+	
+	<string id="st_equ_milpack_name">
+		<text>Combat backpack</text>
+	</string>
+	<string id="st_equ_milpack_desc">
+		<text>A combat backpack used by the military, often to store additional munitions and medical supplies.\n \n
+			%c[ui_gray_1]PROPERTIES:\n
+			%c[d_blue] • %c[ui_gray_2] everyday item\n
+			%c[d_blue] • %c[ui_gray_2] item storage\n
+			%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+		</text>
+	</string>
+	
+	<string id="st_equ_touristpack_name">
+		<text>Tourist backpack</text>
+	</string>
+	<string id="st_equ_touristpack_desc">
+		<text>A tourist's backpack with a lot of storage space. Not very popular owing to its cumbersome size.\n \n
+			%c[ui_gray_1]PROPERTIES:\n
+			%c[d_blue] • %c[ui_gray_2] everyday item\n
+			%c[d_blue] • %c[ui_gray_2] item storage\n
+			%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+		</text>
+	</string>
+	
+	<string id="st_kit_hunt">
+		<text>Hunter's kit</text>
+	</string>
+	<string id="st_kit_hunt_descr">
+		<text>A whole bag full of hooks, knives and other equipment used for skinning and gutting animals and mutants. Few stalkers carry professional equipment for mutant hunting. That is probably the reason why so many Zoners suffer from indigestion after eating mutant meat. Thanks to the variety of tools, the kit can effectively improve weapon and armour maintenance.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] item storage\n
+		%c[0,100,255,150] • %c[ui_gray_2] usable as stash\n
+		%c[d_orange] • %c[ui_gray_2] possession increases number of body parts obtained from mutants\n
+		</text>
+	</string>
+	
+	<string id="st_itm_actor_backpack_name">
+		<text>Quick Release System</text>
+	</string>
+	<string id="st_itm_actor_backpack_descr">
+		<text>Being caught by surprise in the Zone is one of the worst things that can happen to you. Although the QR-system does not help you prevent such situations, it certainly helps with getting out of danger. Its function is simple: it almost immediately removes the straps from your backpack and lets you escape to a safe place without the heavy backpack hampering your movement. To use it, set it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to the ground. Your equipped weapon(s), ammunition, armour and armour attachments as well as UPD remain in your possession, so you are ready to fight. You can retrieve your backpack afterwards.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] military item\n
+		%c[d_blue] • %c[ui_gray_2] build in GPS\n
+		%c[d_blue] • %c[ui_gray_2] very fast usage (release clamp)\n
+		%c[d_blue] • %c[ui_gray_2] combat gear remains with user\n</text>
+	</string>
+	<string id="st_itm_actor_backpack_desc_mlr">
+		<text>Often used by stalkers as a fallback in case of unforeseen circumstances. Its features are simple, consisting of a strap which can be dropped along with the backpack at any moment, in order to run away quickly. Quite compact and capacious. Practically, it allows you to reset your backpack along with some content.</text>
+	</string>
+	
+	<string id="st_itm_backpack_stash_name">
+		<text>PDA marked backpack</text>
+	</string>
+	<string id="st_itm_backpack_stash_desc">
+		<text>An extremely durable backpack with implemented GPS devices. Automatically synchronised with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry regardless of environmental conditions. The camouflaged design assures that it doesn't stand out from the surroundings.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] military item\n
+		%c[d_blue] • %c[ui_gray_2] built-in GPS\n
+		%c[d_red] • %c[ui_gray_2] single usage\n</text>
+	</string>
+	
+</string_table>

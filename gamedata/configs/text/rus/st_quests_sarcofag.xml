@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="sar_monolith">
+		<text>Зов севера</text>
+	</string>
+	<string id="sar_monolith_0">
+		<text>Поговорить с Исполнителем желаний.</text>
+	</string>
+	<string id="sar_monolith_1">
+		<text>Голос на севере зовёт меня. Я должен пойти туда и найти источник.</text>
+	</string>
+	<string id="sar_monolith_2">
+		<text>Голос, зовущий меня, исходит от Исполнителя желаний... Я должен найти его где-то в Саркофаге...</text>
+	</string>
+	<string id="sar_monolith_destroy">
+		<text>Бетонная гробница</text>
+	</string>
+	<string id="sar_monolith_destroy_0">
+		<text>Найти скрытую базу, упомянутую в рукописи, и узнать, что там происходит.</text>
+	</string>
+	<string id="sar_monolith_destroy_1">
+		<text>Уничтожить Исполнитель желаний: сокрушить  все 10 волн психофизических голопроекций Монолита.</text>
+	</string>
+	<string id="sar_monolith_destroy_2">
+        <text>Отключить генераторы, питающие капсулы «О-Сознания».</text>
+	</string>
+	<string id="sar_monolith_destroy_3">
+        <text>Отключить Генераторы.</text>
+	</string>
+</string_table>

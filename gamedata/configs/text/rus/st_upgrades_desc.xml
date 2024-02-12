@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Upgrades descriptions
+-->
+
+<string_table>
+
+<!--
+	Outfits upgrades
+-->
+	<string id="st_up_armor_1_name">
+		<text>Кевларовые пластины</text>
+	</string>
+	<string id="st_up_armor_1_descr">
+		<text>Усиленные пластины служат большее количество времени, однако не увеличивают износостойкость.</text>
+	</string>
+	<string id="st_up_armor_2_name">
+		<text>Пластины из поликарбоната</text>
+	</string>
+	<string id="st_up_armor_2_descr">
+		<text>Пластины из поликарбоната недолговечны, но более надёжные чем кевларовые благодаря лучшему сопротивлению импульсу пули.</text>
+	</string>
+	<string id="st_up_armor_3_name">
+		<text>Двойной слой бронезащиты</text>
+	</string>
+	<string id="st_up_armor_3_descr">
+		<text>Броня с внутренним слоем, который равномерно распределяет силу удара.</text>
+	</string>
+	<string id="st_up_armor_4_name">
+		<text>Установка подвижных пластин</text>
+	</string>
+	<string id="st_up_armor_4_descr">
+		<text>Подвижные пластины защищают владельца от огнестрельных ранений.</text>
+	</string>
+	
+	
+	<string id="st_up_damage_1_name">
+		<text>Сегментированная защита</text>
+	</string>
+	<string id="st_up_damage_1_descr">
+		<text>Тонкие листы брони позволяют дополнительно повысить износостойкость брони.</text>
+	</string>
+	<string id="st_up_damage_2_name">
+		<text>Дополнительные алюминиевые/титановые пластины</text>
+	</string>
+	<string id="st_up_damage_2_descr">
+		<text>Увеличенное количество титановых пластин положительно сказывается на увеличении износостойкости.</text>
+	</string>
+	<string id="st_up_damage_3_name">
+		<text>Запасной слой брони с подвижными пластинами</text>
+	</string>
+	<string id="st_up_damage_3_descr">
+		<text>Подвижные пластины гораздо лучше защищают суставы от ранений.</text>
+	</string>
+	
+	
+	<string id="st_up_durability_1_name">
+		<text>Утолщённые кожаные вставки</text>
+	</string>
+	<string id="st_up_durability_1_descr">
+		<text>Несмотря на то, что наличие подобных вставок совсем не увеличивает защиту, они всё-таки помогают продлить срок службы экипировки.</text>
+	</string>
+	<string id="st_up_durability_2_name">
+		<text>Защитный каркас</text>
+	</string>
+	<string id="st_up_durability_2_descr">
+		<text>Используется в различных защитных костюмах для повышения их износостойкости.</text>
+	</string>
+	<string id="st_up_durability_3_name">
+		<text>Усиленные кевларовые пластины и вставки</text>
+	</string>
+	<string id="st_up_durability_3_descr">
+		<text>Усиленные пластины и вставки, которые не только увеличивают износостойкость, но и служат гораздо дольше.</text>
+	</string>
+	
+	
+	<string id="st_up_weight_1_name">
+		<text>Усиленные карбоновые детали</text>
+	</string>
+	<string id="st_up_weight_1_descr">
+		<text>Замена металла карбоновыми волокнами позволяет снизить вес брони, не жертвуя при этом её надёжностью.</text>
+	</string>
+	<string id="st_up_weight_2_name">
+		<text>Алюминиевый каркас</text>
+	</string>
+	<string id="st_up_weight_2_descr">
+		<text>Более лёгкий алюминиевый каркас заменяет стальной, тем самым снижая вес экипировки.</text>
+	</string>
+	<string id="st_up_weight_3_name">
+		<text>Установка лёгких синтетических и пластиковых деталей</text>
+	</string>
+	<string id="st_up_weight_3_descr">
+		<text>Использование более лёгких материалов позволяет снизить массу костюма.</text>
+	</string>
+	<string id="st_up_weight_4_name">
+		<text>Синтетические и полимерные материалы</text>
+	</string>
+	<string id="st_up_weight_4_descr">
+		<text>Ткани и уплотнители заменяются более лёгкими синтетическими и полимерными материалами для уменьшения массы брони.</text>
+	</string>
+	
+		
+	<string id="st_up_carry_1_name">
+		<text>Система креплений для распределения массы</text>
+	</string>
+	<string id="st_up_carry_1_descr">
+		<text>Система креплений позволяет распределить массу груза более равномерно по всему телу.</text>
+	</string>
+	<string id="st_up_carry_2_name">
+		<text>Спинной каркас для распределения веса</text>
+	</string>
+	<string id="st_up_carry_2_descr">
+		<text>Специальный спинной каркас снимает нагрузку с плеч, равномерно распределяя массу переносимого груза по всему телу, что, в свою очередь, даёт возможность переноса более тяжёлых вещей.</text>
+	</string>
+	<string id="st_up_carry_3_name">
+		<text>Дополнительные сервомоторы</text>
+	</string>
+	<string id="st_up_carry_3_descr">
+		<text>Дополнительные моторы позволяют увеличить максимально переносимый вес.</text>
+	</string>
+	
+	
+	<string id="st_up_shock_1_name">
+		<text>Изоляция из константана</text>
+	</string>
+	<string id="st_up_shock_1_descr">
+		<text>Тонкий внутренний слой из константана позволяет защитить владельца от поражения током.</text>
+	</string>
+	<string id="st_up_shock_2_name">
+		<text>Термоизоляционные вставки из константана</text>
+	</string>
+	<string id="st_up_shock_2_descr">
+		<text>Константан позволяет изолировать владельца от воздействия электричества, а также имеет крайне высокую температуру плавления.</text>
+	</string>
+	<string id="st_up_shock_3_name">
+		<text>Изоляционный костюм с магниевыми вставками</text>
+	</string>
+	<string id="st_up_shock_3_descr">
+		<text>Никель-магниевые сплавы используются в костюмах для защиты от поражения электрическим током.</text>
+	</string>
+	
+	
+	<string id="st_up_burn_1_name">
+		<text>Ткань с огнеупорным покрытием</text>
+	</string>
+	<string id="st_up_burn_1_descr">
+		<text>Обработка ткани веществами, устойчивыми к высоким температурам, является очень популярной среди охотников за артефактами термического происхождения.</text>
+	</string>
+	<string id="st_up_burn_2_name">
+		<text>Магниевые вставки</text>
+	</string>
+	<string id="st_up_burn_2_descr">
+		<text>Магниевые вставки защищают владельца костюма от термических ожогов.</text>
+	</string>
+	<string id="st_up_burn_3_name">
+		<text>Термозащита из стекловолокна</text>
+	</string>
+	<string id="st_up_burn_3_descr">
+		<text>Стекловолокно активно используется при изготовлении одежды для спасательных служб.</text>
+	</string>
+	<string id="st_up_burn_4_name">
+		<text>Огнеупорные никелевые вставки</text>
+	</string>
+	<string id="st_up_burn_4_descr">
+		<text>Никель достаточно хорошо противостоит воздействию высоких температур, что позволяет использовать его в качестве защитных вставок.</text>
+	</string>
+	<string id="st_up_helm_burn_1_name">
+		<text>Защита лица из константана</text>
+	</string>
+	<string id="st_up_helm_burn_1_descr">
+		<text>Защитный каркас, призванный обеспечить защиту от электрических и термических повреждений.</text>
+	</string>
+	
+	
+	<string id="st_up_rad_1_name">
+		<text>Прорезиненная ткань</text>
+	</string>
+	<string id="st_up_rad_1_descr">
+		<text>Резина является основным способом кратковременной защиты от радиоактивного излучения.</text>
+	</string>
+	<string id="st_up_rad_2_name">
+		<text>Установка оргстекла</text>
+	</string>
+	<string id="st_up_rad_2_descr">
+		<text>Оргстекло способно поглощать радиационное излучение, имея при этом меньшую массу по сравнению со свинцом.</text>
+	</string>
+	<string id="st_up_rad_3_name">
+		<text>Свинцовые вставки</text>
+	</string>
+	<string id="st_up_rad_3_descr">
+		<text>Свинец является надёжной защитой от радиации, так как способен поглощать все три вида радиационного излучения.</text>
+	</string>	
+	<string id="st_up_helm_rad_1_name">
+		<text>Активные фильтры</text>
+	</string>
+	<string id="st_up_helm_rad_1_descr">
+		<text>Активные фильтры способствуют более эффективной защите от радиации и пыли.</text>
+	</string>
+	<string id="st_up_helm_rad_2_name">
+		<text>Покрытие из оргстекла</text>
+	</string>
+	<string id="st_up_helm_rad_2_descr">
+		<text>Специальная маска с покрытием из оргстекла может обеспечить частичную защиту от радиации.</text>
+	</string>
+	<string id="st_up_helm_rad_3_name">
+		<text>Усиленный фильтр для работы в экстремальных условиях</text>
+	</string>
+	<string id="st_up_helm_rad_3_descr">
+		<text>Фильтр с дополнительным покрытием и системой очистки воздуха от ядов.</text>
+	</string>
+	
+	
+	<string id="st_up_chem_1_name">
+		<text>Покрытие из брезента</text>
+	</string>
+	<string id="st_up_chem_1_descr">
+		<text>Основной вид защиты от дождя и едких химических веществ, которые могут контактировать с кожей.</text>
+	</string>
+	<string id="st_up_chem_2_name">
+		<text>Герметичные пластиковые вставки</text>
+	</string>
+	<string id="st_up_chem_2_descr">
+		<text>Даже простая пластиковая вставка может предохранить владельца от вредного химического воздействия.</text>
+	</string>
+	<string id="st_up_chem_3_name">
+		<text>Пропитка тканей</text>
+	</string>
+	<string id="st_up_chem_3_descr">
+		<text>Пропитка тканей препятствует химическому отравлению.</text>
+	</string>
+	<string id="st_up_chem_4_name">
+		<text>Комбинезон со свинцовой сеткой</text>
+	</string>
+	<string id="st_up_chem_4_descr">
+		<text>Специальная свинцовая сетка даёт прочную химическую защиту без особого ущерба мобильности владельца.</text>
+	</string>
+	<string id="st_up_helm_chem_1_name">
+		<text>Фильтр для работы в загрязнённых районах</text>
+	</string>
+	<string id="st_up_helm_chem_1_descr">
+		<text>Фильтр с усиленными анти-коррозийным покрытием и слоем, удерживающим ядовитые вещества от попадания во внутрь.</text>
+	</string>
+	<string id="st_up_helm_chem_2_name">
+		<text>Установка респиратора с двумя универсальными фильтрами</text>
+	</string>
+	<string id="st_up_helm_chem_2_descr">
+		<text>Подобный респиратор обеспечивает отличную защиту от ядовитых веществ.</text>
+	</string>
+	
+	
+	<string id="st_up_tele_1_name">
+		<text>Защитная антенна</text>
+	</string>
+	<string id="st_up_tele_1_descr">
+		<text>Антенна, частично защищающая от воздействий пси-шторма.</text>
+	</string>
+	<string id="st_up_helm_tele_1_name">
+		<text>Установка защитного купола</text>
+	</string>
+	<string id="st_up_helm_tele_1_descr">
+		<text>Высокотехнологичная пси-защита, которая, по слухам, была изобретена учёным по фамилии Сахаров.</text>
+	</string>
+	
+	
+	<string id="st_up_arty_1_name">
+		<text>Основное крепление для модулей</text>
+	</string>
+	<string id="st_up_arty_1_descr">
+		<text>Установка основного крепления для модулей.</text>
+	</string>
+	<string id="st_up_arty_2_name">
+		<text>Дополнительное крепление для модулей</text>
+	</string>
+	<string id="st_up_arty_2_descr">
+		<text>Установка дополнительного крепления для модулей.</text>
+	</string>
+	<string id="st_up_arty_3_name">
+		<text>Двухотсечное крепление для модулей</text>
+	</string>
+	<string id="st_up_arty_3_descr">
+		<text>Установка двухотсечного крепления для модулей.</text>
+	</string>
+	
+	
+	<string id="st_up_stamina_1_name">
+		<text>Встроенная система регуляции температуры</text>
+	</string>
+	<string id="st_up_stamina_1_descr">
+		<text>Улучшение в эргономике: особая система, встраиваемая в комбинезон, позволяет повысить комфорт носителя, что, в свою очередь, даёт ощущение лёгкости при переносе груза.</text>
+	</string>
+	<string id="st_up_stamina_2_name">
+		<text>Комплекс «Марафонец»</text>
+	</string>
+	<string id="st_up_stamina_2_descr">
+		<text>Экспериментальная система для длительных забегов, неиспользуемая за пределами Зоны ввиду высокой стоимости  и сомнительного применения.</text>
+	</string>
+	<string id="st_up_helm_stamina_1_name">
+		<text>Дыхательные фильтры</text>
+	</string>
+	<string id="st_up_helm_stamina_1_descr">
+		<text>Набор фильтров, используемых в зонах с отравленным воздухом и экстремальными температурными условиями, в которых обычное дыхание невозможно.</text>
+	</string>
+	
+	
+	<string id="st_up_bleed_1_name">
+		<text>Гемостимулятор</text>
+	</string>
+	<string id="st_up_bleed_1_descr">
+		<text>Небольшой излучатель, установленный на спине, значительно увеличивает скорость свёртывания крови при его постоянном ношении.</text>
+	</string>
+	<string id="st_up_bleed_2_name">
+		<text>Гемоглобиновый инъектор «Гидра»</text>
+	</string>
+	<string id="st_up_bleed_2_descr">
+		<text>Инъектор поколения Б впрыскивает гемоглобин в кровь в случае резкого падения кровяного давления.</text>
+	</string>
+	
+	
+	<string id="st_up_health_1_name">
+		<text>Автоматический инъектор «Ярость»</text>
+	</string>
+	<string id="st_up_health_1_descr">
+		<text>Инъектор поколения А, разработанный одним из киевских институтов, регулярно впрыскивает в кровь владельца небольшие дозы адреналина. Несмотря на опасность передозировки, может помочь сохранить жизнь в особо экстренных случаях.</text>
+	</string>
+	<string id="st_up_health_2_name">
+		<text>Система восстановления «Феникс»</text>
+	</string>
+	<string id="st_up_health_2_descr">
+		<text>Интегрированная система, отслеживающая состояние здоровья носителя и производящая инъекции витаминов, адреналина или анаболиков по мере необходимости.</text>
+	</string>
+	<string id="st_up_health_3_name">
+		<text>Установка лёгкой системы жизнеобеспечения</text>
+	</string>
+	<string id="st_up_health_3_descr">
+		<text>Данный волновой излучатель устанавливается на шею и даёт успокаивающий эффект, хотя подробный метод его работы так до сих пор и неизвестен.</text>
+	</string>
+	
+	
+	<string id="st_up_run_1_name">
+		<text>Установка гидравлических усилителей</text>
+	</string>
+	<string id="st_up_run_1_descr">
+		<text>Гидравлические усилители двигательной системы - то, что что отличает экзоскелеты третьего поколения от четвёртого. Их установка позволяет переходить на бег.</text>
+	</string>
+
+</string_table>

@@ -1,0 +1,361 @@
+﻿<?xml version='1.0' encoding="UTF-8"?>
+<xml>
+
+<character id="mil_freedom_barman_mlr">
+<class>mil_freedom_barman_mlr</class>
+<specific_character>mil_freedom_barman_mlr</specific_character>
+</character>
+
+<character id="dasc_tech_mlr">
+<class>dasc_tech_mlr</class>
+<specific_character>dasc_tech_mlr</specific_character>
+</character>
+
+<character id="devushka">
+<class>devushka</class>
+<specific_character>devushka</specific_character>
+</character>
+
+<character id="dasc_trade_mlr">
+<class>dasc_trade_mlr</class>
+<specific_character>dasc_trade_mlr</specific_character>
+</character>
+
+<character id="bodyguard_duty_medic_bar_general">
+<class>bodyguard_duty_medic_bar_general</class>
+<specific_character>bodyguard_duty_medic_bar_general</specific_character>
+</character>
+
+<character id="ds_killer_guide_main_base">
+<class>ds_killer_guide_main_base</class>
+<specific_character>ds_killer_guide_main_base</specific_character>
+</character>
+
+<character id="zaton_killer_guide_station">
+<class>zaton_killer_guide_station</class>
+<specific_character>zaton_killer_guide_station</specific_character>
+</character>
+
+<character id="ds_killer_medic_mlr">
+<class>ds_killer_medic_mlr</class>
+<specific_character>ds_killer_medic_mlr</specific_character>
+</character>
+
+<character id="mil_freedom_medic">
+<class>mil_freedom_medic</class>
+<specific_character>mil_freedom_medic</specific_character>
+</character>
+
+<character id="zat_tech_mlr">
+<class>zat_tech_mlr</class>
+<specific_character>zat_tech_mlr</specific_character>
+</character>
+
+<character id="bar_informator_mlr">
+<class>bar_informator_mlr</class>
+<specific_character>bar_informator_mlr</specific_character>
+</character>
+
+<character id="bandit_main_base_medic_mlr">
+<class>bandit_main_base_medic_mlr</class>
+<specific_character>bandit_main_base_medic_mlr</specific_character>
+</character>
+
+<character id="agr_1_6_medic_army_mlr">
+<class>agr_1_6_medic_army_mlr</class>
+<specific_character>agr_1_6_medic_army_mlr</specific_character>
+</character>
+
+<character id="agr_1_6_barman_army_mlr">
+<class>agr_1_6_barman_army_mlr</class>
+<specific_character>agr_1_6_barman_army_mlr</specific_character>
+</character>
+
+<character id="merc_pri_a18_mech_mlr">
+<class>merc_pri_a18_mech_mlr</class>
+<specific_character>merc_pri_a18_mech_mlr</specific_character>
+</character>
+
+<character id="merc_pri_grifon_mlr">
+<class>merc_pri_grifon_mlr</class>
+<specific_character>merc_pri_grifon_mlr</specific_character>
+</character>
+
+<character id="pri_a16_mech_mlr">
+<class>pri_a16_mech_mlr</class>
+<specific_character>pri_a16_mech_mlr</specific_character>
+</character>
+
+<character id="zat_stancia_trader_merc">
+<class>zat_stancia_trader_merc</class>
+<specific_character>zat_stancia_trader_merc</specific_character>
+</character>
+
+<character id="zat_stancia_mech_merc">
+<class>zat_stancia_mech_merc</class>
+<specific_character>zat_stancia_mech_merc</specific_character>
+</character>
+
+<character id="jup_cont_trader_bandit">
+<class>jup_cont_trader_bandit</class>
+<specific_character>jup_cont_trader_bandit</specific_character>
+</character>
+
+<character id="jup_cont_mech_bandit">
+<class>jup_cont_mech_bandit</class>
+<specific_character>jup_cont_mech_bandit</specific_character>
+</character>
+
+<character id="army_south_mechan_mlr">
+<class>army_south_mechan_mlr</class>
+<specific_character>army_south_mechan_mlr</specific_character>
+</character>
+
+<character id="monolith_bridge_trader_mlr">
+<class>monolith_bridge_trader_mlr</class>
+<specific_character>monolith_bridge_trader_mlr</specific_character>
+</character>
+
+<character id="pri_special_trader_mlr">
+<class>pri_special_trader_mlr</class>
+<specific_character>pri_special_trader_mlr</specific_character>
+</character>
+
+<character id="mil_freedom_guid">
+<class>mil_freedom_guid</class>
+<specific_character>mil_freedom_guid</specific_character>
+</character>
+
+<character id="esc_3_16_military_trader">
+<class>esc_3_16_military_trader</class>
+<specific_character>esc_3_16_military_trader</specific_character>
+</character>
+
+<character id="guid_marsh_mlr">
+<class>guid_marsh_mlr</class>
+<specific_character>guid_marsh_mlr</specific_character>
+</character>
+
+<character id="guid_dv_mal_mlr">
+<class>guid_dv_mal_mlr</class>
+<specific_character>guid_dv_mal_mlr</specific_character>
+</character>
+
+<character id="guid_pri_a15_mlr">
+<class>guid_pri_a15_mlr</class>
+<specific_character>guid_pri_a15_mlr</specific_character>
+</character>
+
+<character id="trader_pri_a15_mlr">
+<class>trader_pri_a15_mlr</class>
+<specific_character>trader_pri_a15_mlr</specific_character>
+</character>
+
+<character id="guid_zan_stalker_locman">
+<class>guid_zan_stalker_locman</class>
+<specific_character>guid_zan_stalker_locman</specific_character>
+</character>
+
+<character id="guid_jup_stalker_garik">
+<class>guid_jup_stalker_garik</class>
+<specific_character>guid_jup_stalker_garik</specific_character>
+</character>
+
+<character id="guid_bar_stalker_navigator">
+<class>guid_bar_stalker_navigator</class>
+<specific_character>guid_bar_stalker_navigator</specific_character>
+</character>
+
+<character id="hunter_gar_trader">
+<class>hunter_gar_trader</class>
+<specific_character>hunter_gar_trader</specific_character>
+</character>
+
+<character id="cit_killers_merc_barman_mlr">
+<class>cit_killers_merc_barman_mlr</class>
+<specific_character>cit_killers_merc_barman_mlr</specific_character>
+</character>
+
+<character id="baraholka_trader_night">
+<class>baraholka_trader_night</class>
+<specific_character>baraholka_trader_night</specific_character>
+</character>
+
+<character id="baraholka_trader">
+<class>baraholka_trader</class>
+<specific_character>baraholka_trader</specific_character>
+</character>
+
+<character id="trucks_cemetery_bandit_trader">
+<class>trucks_cemetery_bandit_trader</class>
+<specific_character>trucks_cemetery_bandit_trader</specific_character>
+</character>
+
+<character id="trucks_cemetery_bandit_mechanic">
+<class>trucks_cemetery_bandit_mechanic</class>
+<specific_character>trucks_cemetery_bandit_mechanic</specific_character>
+</character>
+
+<character id="yan_povar_army_mlr">
+<class>yan_povar_army_mlr</class>
+<specific_character>yan_povar_army_mlr</specific_character>
+</character>
+
+<character id="mechanic_army_yan_mlr">
+<class>mechanic_army_yan_mlr</class>
+<specific_character>mechanic_army_yan_mlr</specific_character>
+</character>
+
+<character id="esc_main_base_trader_mlr">
+<class>esc_main_base_trader_mlr</class>
+<specific_character>esc_main_base_trader_mlr</specific_character>
+</character>
+
+<character id="trader_monolith_jup_depo">
+<class>trader_monolith_jup_depo</class>
+<specific_character>trader_monolith_jup_depo</specific_character>
+</character>
+
+<character id="mechanic_monolith_jup_depo">
+<class>mechanic_monolith_jup_depo</class>
+<specific_character>mechanic_monolith_jup_depo</specific_character>
+</character>
+
+<character id="trader_monolith_kbo">
+<class>trader_monolith_kbo</class>
+<specific_character>trader_monolith_kbo</specific_character>
+</character>
+
+<character id="mechanic_monolith_kbo">
+<class>mechanic_monolith_kbo</class>
+<specific_character>mechanic_monolith_kbo</specific_character>
+</character>
+
+<character id="lider_monolith_haron">
+<class>lider_monolith_haron</class>
+<specific_character>lider_monolith_haron</specific_character>
+</character>
+
+<character id="bar_dolg_medic">
+<class>bar_dolg_medic</class>
+<specific_character>bar_dolg_medic</specific_character>
+</character>
+
+<character id="agr_u_bandit_boss">
+<class>agr_u_bandit_boss</class>
+<specific_character>agr_u_bandit_boss</specific_character>
+</character>
+
+<character id="red_greh_trader">
+<class>red_greh_trader</class>
+<specific_character>red_greh_trader</specific_character>
+</character>
+
+<character id="red_greh_tech">
+<class>red_greh_tech</class>
+<specific_character>red_greh_tech</specific_character>
+</character>
+
+<!-- Common -->	
+
+<character id="total_duty_one_h">
+<class>total_duty_one_h</class>
+<specific_character>total_duty_one_h</specific_character>
+</character>
+
+<character id="total_freeman_one_h">
+<class>total_freeman_one_h</class>
+<specific_character>total_freeman_one_h</specific_character>
+</character>
+
+<character id="total_stalker_left_one">
+<class>total_stalker_left_one</class>
+<specific_character>total_stalker_left_one</specific_character>
+</character>
+
+<character id="total_stalker_right_one">
+<class>total_stalker_right_one</class>
+<specific_character>total_stalker_right_one</specific_character>
+</character>
+
+<character id="total_group_stalkers_1">
+<class>total_group_stalkers_1</class>
+<specific_character>total_group_stalkers_1</specific_character>
+</character>
+
+<character id="total_group_stalkers_2">
+<class>total_group_stalkers_2</class>
+<specific_character>total_group_stalkers_2</specific_character>
+</character>
+
+<character id="total_group_stalkers_3">
+<class>total_group_stalkers_3</class>
+<specific_character>total_group_stalkers_3</specific_character>
+</character>
+
+<character id="total_group_stalkers_4">
+<class>total_group_stalkers_4</class>
+<specific_character>total_group_stalkers_4</specific_character>
+</character>
+
+<character id="total_group_bandits_1">
+<class>total_group_bandits_1</class>
+<specific_character>total_group_bandits_1</specific_character>
+</character>
+
+<character id="total_group_bandits_2">
+<class>total_group_bandits_2</class>
+<specific_character>total_group_bandits_2</specific_character>
+</character>
+
+<character id="total_group_bandits_3">
+<class>total_group_bandits_3</class>
+<specific_character>total_group_bandits_3</specific_character>
+</character>
+
+<character id="total_group_bandits_4">
+<class>total_group_bandits_4</class>
+<specific_character>total_group_bandits_4</specific_character>
+</character>
+
+<character id="total_stalker_one_n">
+<class>total_stalker_one_n</class>
+<specific_character>total_stalker_one_n</specific_character>
+</character>
+
+<character id="total_soldier_one_n">
+<class>total_soldier_one_n</class>
+<specific_character>total_soldier_one_n</specific_character>
+</character>
+
+<character id="total_stalker_one_with_mutant">
+<class>total_stalker_one_with_mutant</class>
+<specific_character>total_stalker_one_with_mutant</specific_character>
+</character>
+
+<character id="total_duty_one_with_zombies">
+<class>total_duty_one_with_zombies</class>
+<specific_character>total_duty_one_with_zombies</specific_character>
+</character>
+
+<character id="total_group_bandits_with_bloodsucker_1">
+<class>total_group_bandits_with_bloodsucker_1</class>
+<specific_character>total_group_bandits_with_bloodsucker_1</specific_character>
+</character>
+
+<character id="total_group_bandits_with_bloodsucker_2">
+<class>total_group_bandits_with_bloodsucker_2</class>
+<specific_character>total_group_bandits_with_bloodsucker_2</specific_character>
+</character>
+
+<character id="total_two_soldiers_with_burer_1">
+<class>total_two_soldiers_with_burer_1</class>
+<specific_character>total_two_soldiers_with_burer_1</specific_character>
+</character>
+
+<character id="total_two_soldiers_with_burer_2">
+<class>total_two_soldiers_with_burer_2</class>
+<specific_character>total_two_soldiers_with_burer_2</specific_character>
+</character>
+
+</xml>

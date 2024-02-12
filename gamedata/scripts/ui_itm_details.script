@@ -1,0 +1,513 @@
+
+--[[
+	Made by Tronex
+	Last modification: 2020/3/18
+	
+	Item details UI
+--]]
+
+
+------------------------------------------------------------
+-- UI Item Property
+------------------------------------------------------------
+function menu_details(obj) 
+	--[[
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	--]]
+	
+	return game.translate_string("st_item_details")
+end
+
+function func_details(obj)
+	--[[
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then
+		return
+	end
+	---]]
+	
+	ui_itm_details.start(obj)
+end
+
+
+------------------------------------------------------------
+GUI = nil -- instance, don't touch
+function start(obj)
+	if (not obj) then
+		printf("!ERROR ui_itm_details | no game object passed!")
+		return
+	end
+	
+	--hide_hud_inventory()
+	
+	if (not GUI) then
+		GUI = UIItemSheet()
+	end
+	
+	if (GUI) and (not GUI:IsShown()) then
+		GUI:ShowDialog(true)
+		GUI:Reset(obj)
+		
+		Register_UI("UIItemSheet","ui_itm_details")
+	end
+end
+
+
+--------------------------------------------------------
+class "UIItemSheet" (CUIScriptWnd)
+
+function UIItemSheet:__init() super()
+	self.clr_1 = utils_xml.get_color("pda_white")
+	self.clr_2 = utils_xml.get_color("ui_gray_1")
+	self.clr_3 = utils_xml.get_color("ui_gray_2")
+	self.clr_p = utils_xml.get_color("d_purple")
+	self.clr_g = utils_xml.get_color("d_green")
+	self.clr_b = utils_xml.get_color("d_cyan")
+	self.clr_r = utils_xml.get_color("d_red")
+	self.clr_o = utils_xml.get_color("d_orange")
+	self.clr_y = utils_xml.get_color("yellow")
+	self.upx = {}
+	
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function UIItemSheet:__finalize()
+end
+
+function UIItemSheet:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	
+	self.xml				= CScriptXmlInit()
+	local xml = self.xml
+	xml:ParseFile			("ui_item_detail.xml")
+
+	self.dialog					= xml:InitStatic("itm_details", self)
+	xml:InitStatic("itm_details:background", self.dialog)
+
+	self.cap = xml:InitTextWnd("itm_details:cap", self.dialog)
+	self.scroll = xml:InitScrollView("itm_details:scroll_view", self.dialog)
+	self.scroll_upgr = xml:InitScrollView("itm_details:upgrade_tree", nil)
+	self.scroll_upgr:SetAutoDelete(false)
+	
+	-- Main Buttons
+	self.btn_back = xml:Init3tButton("itm_details:btn_back", self.dialog)
+	self:Register(self.btn_back,"btn_back")
+	
+	-- Containers
+	self.CC = {}
+	
+	-- Info box
+	self.item_info = utils_ui.UIInfoItem(self, 1000)
+	self.upgr_info = utils_ui.UIInfoUpgr(self)
+	
+	-- Hint Window
+	self.hint_wnd = utils_ui.UIHint(self)
+end
+
+function UIItemSheet:InitCallBacks()
+	self:AddCallback("btn_back", ui_events.BUTTON_CLICKED, self.Close, self)
+end
+
+function UIItemSheet:Reset(obj)
+	
+	local xml = self.xml
+	
+	local id = obj:id()
+	local sec = ini_sys:r_string_ex(obj:section(),"parent_section") or obj:section()
+	local is_wep = IsWeapon(obj) and (not IsItem("fake_ammo_wpn",sec))
+	
+	local class = ini_sys:r_string_ex(sec,"class")
+	--printf("-Item [%s] - class: %s - clsid: %s", sec, class, obj:clsid())
+	
+	-- Reset
+	self.scroll:Clear()
+	empty_table(self.CC)
+
+	-- Cap Main
+	local name = ui_item.get_sec_name(sec)
+	self.cap:SetText(name)
+	
+-- Info
+	-- Cap
+	self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_info")) 
+	-- Icon
+	self:AddIcon(xml, "ico", 50, obj) 
+	-- Wight
+	self:AddSpec(xml, "text_s_l", 0, "ui_total_weight", round_100(obj:weight()), self.clr_o, self.clr_2, nil, "st_kg") 
+	-- Description
+	self:AddText(xml, "text_s_l", 0, ui_item.get_obj_desc(obj)) 
+	
+	-- Stats
+	local stats = utils_ui.get_stats_table(sec) 
+	if stats then
+		for stat, gr in spairs(stats, utils_ui.sort_by_index) do
+			--printf("-stat %s is here for [%s]", stat, sec)
+			self:AddStat(xml, nil, 0, obj, stat, gr)
+		end
+	end
+	self:AddLine(xml, 0)
+	
+-- Weapon: scopes, silencer, grenade launcher
+	if is_wep then
+	
+		-- Ammo
+		local ammo_list = utils_item.get_ammo(sec, id)
+		if is_not_empty(ammo_list) then
+			local t = {}
+			for i=1,#ammo_list do
+				if (not _NO_DAMAGED_AMMO) or (_NO_DAMAGED_AMMO and (not string.find(ammo_list[i],"verybad"))) then
+					if ammo_list[i] ~= "ammo_12x70_buck_self" then
+						t[#t+1] = ammo_list[i]
+					end
+				end
+			end
+			self:AddText(xml, "text_b_l", 0, game.translate_string("ui_ammo_types")) 
+			self.CC["ammo"] = self:AddContainer(xml, "cont", 0, t)
+			self:AddLine(xml, 0)
+		end
+		
+		-- Scopes
+		local scopes = parse_list(ini_sys, sec, "scopes")
+		if scopes and #scopes > 0 then
+			self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_scopes")) 
+			self.CC["scope"] = self:AddContainer(xml, "cont", 0, scopes)
+			self:AddLine(xml, 0)
+		end
+		
+		-- Silencers
+		local silencer = utils_item.get_param(sec, id, "silencer_name", "string")
+		if silencer and (obj:weapon_silencer_status() == 2) then
+			self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_silencer")) 
+			self.CC["sil"] = self:AddContainer(xml, "cont", 0, {silencer})
+			self:AddLine(xml, 0)
+		end
+		
+		-- Grenade Launchers
+		local grenade = utils_item.get_param(sec, id, "grenade_launcher_name", "string")
+		if grenade and (obj:weapon_grenadelauncher_status() == 2) then
+			self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_grenade_launcher")) 
+			self.CC["gl"] = self:AddContainer(xml, "cont", 0, {grenade})
+			self:AddLine(xml, 0)
+		end
+	end
+	
+-- Parts
+	local parts = item_parts.get_parts_con(obj, nil, true)
+	if parts then
+		local t,t_con = {},{}
+		for k,v in pairs(parts) do
+			if (k ~= sec) then
+				t[#t+1] = k
+				t_con[#t_con+1] = v
+			end
+		end
+		self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_awr_parts_list")) 
+		self.CC["part"] = self:AddContainer(xml, "cont", 0, t, t_con)
+		local fnt = GetFontSmall()
+		for idx,ci in pairs(self.CC["part"].cell) do
+			if ci:IsShown() then
+				local con = utils_item.get_cond_static(ci.flags.info)
+				local clr = utils_xml.get_color_con(ci.flags.info, true)
+				ci:Add_CustomText( con, nil, nil, clr, fnt)
+			end
+		end
+		self:AddLine(xml, 0)
+	end
+	
+-- Repair
+	local repair_type = ini_sys:r_string_ex(sec,"repair_type")
+	if repair_type then
+		
+		-- Repair kits
+		local repair_kits = {}
+		for k,v in pairs(GetItemList("repair")) do
+			if v[repair_type] then
+				repair_kits[#repair_kits + 1] = k
+			end
+		end
+		if (#repair_kits > 0) then
+			self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_repair_kit_list")) 
+			self.CC["repair"] = self:AddContainer(xml, "cont", 0, repair_kits)
+			self:AddLine(xml, 0)
+		end
+		
+		-- Workshop kits
+		local workshop_kits
+		for k,v in pairs(GetItemList("workshop")) do
+			if v[repair_type] then
+				workshop_kits = k
+				break
+			end
+		end
+		if workshop_kits then
+			self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_workshop_kit_list")) 
+			self.CC["workshop"] = self:AddContainer(xml, "cont", 0, {workshop_kits})
+			self:AddLine(xml, 0)
+		end
+	end
+	
+-- Disassembly
+	local disassemble_list = parse_list(itms_manager.ini_parts,"nor_parts_list",sec)
+	if disassemble_list and (#disassemble_list > 0) and (kind ~= "i_quest") then
+		self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_disassemly_list")) 
+		self.CC["diss"] = self:AddContainer(xml, "cont", 0, disassemble_list)
+		self:AddLine(xml, 0)
+	end
+	
+-- Supported repair material
+	local repair_parts = parse_list(ini_sys, sec, "repair_parts_sections")
+	if repair_parts and (#repair_parts > 0) then
+		self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_repair_parts_include")) 
+		self.CC["support"] = self:AddContainer(xml, "cont", 0, repair_parts)
+		self:AddLine(xml, 0)
+	end
+	
+-- upgrades
+	self.scroll_upgr:Show(false)
+	self.upgr = utils_item.get_upgrades_tree(sec, true)
+	if self.upgr and is_not_empty(self.upgr) then
+		self:AddText(xml, "text_b_l", 0, game.translate_string("st_ui_upgrade_list")) 
+		self:AddUpgrades(xml, self.upgr, obj)
+		self:AddLine(xml, 0)
+	end
+	
+	--self:AddSpace(xml, 0, 30)
+end
+
+function UIItemSheet:Update()
+	CUIScriptWnd.Update(self)
+	
+	if self.scroll_upgr:IsShown() then
+		for ii,ele in pairs(self.upx) do
+			if ele.base:IsShown() then
+				if ele.ico:IsCursorOverWindow() and ele.section then
+					local str = ele.btn:GetCheck() and game.translate_string("st_upgr_installed") or ""
+					self.upgr_info:Update(ele.section, str, true)
+					self.item_info:Update()
+					return
+				elseif ele.cell:IsCursorOverWindow() then
+					self.upgr_info:Update()
+					self.item_info:Update(nil, ele.cell.section)
+					return
+				end
+			end
+		end
+	end
+	
+	self.upgr_info:Update()
+	for name,cc in pairs(self.CC) do
+		if cc:IsShown() and cc:Update(self.item_info) then
+			return
+		end
+	end
+	self.item_info:Update()
+end 
+
+-- Utils
+function UIItemSheet:AddIcon(xml, path, offset, obj)
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = utils_ui.UICellItem( {path="container" , xml=xml} , { path="itm_details:form:" .. path , base= _st } )
+	_ele.disable_bar = true
+	_ele:Set(obj)
+	
+	utils_xml.sync_size(_ele.cell, _st, 0, offset)
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _ele
+end
+
+function UIItemSheet:AddText(xml, path, offset, txt)
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = xml:InitTextWnd("itm_details:form:" .. path, _st)
+	_ele:SetText(txt)
+	_ele:AdjustHeightToText()
+	
+	utils_xml.sync_size(_ele, _st, 0, offset)
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _ele
+end
+
+function UIItemSheet:AddSpec(xml, path, offset, name, value, clr_1, clr_2, sign, unit)
+	if (not value) then
+		return
+	end
+	
+	local p2 = (name == "ui_total_weight") and " " or ": "
+	local str = clr_1 .. " • " .. self.clr_3 .. game.translate_string(name) .. p2 .. clr_2 .. (sign or "") .. tostring(value) .. (unit and (" " .. game.translate_string(unit)) or "")
+
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = xml:InitTextWnd("itm_details:form:" .. path, _st)
+	_ele:SetText(str)
+	_ele:AdjustHeightToText()
+	
+	utils_xml.sync_size(_ele,_st, 0, offset)
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _ele
+end
+
+function UIItemSheet:AddContainer(xml, path, offset, tbl, info)
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _el = utils_ui.UICellContainer(cnt, self, nil, "itm_details:form:" .. path, _st)
+	_el.showcase      		= true
+	_el.can_select	   		= false
+	_el.disable_drag  		= true
+	_el.disable_stack 		= true
+	_el:EnableScrolling(false)
+	_el:SetGridSpecs(35, 5)
+--	_el:SetBackground("ui_button_inv_h", GetARGB(255,50,50,50))
+	
+	_el:Reinit(tbl, info)
+	_el:AdjustHeightToCell()
+	
+	utils_xml.sync_size(_el.prof, _st, 0, offset)
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _el
+end
+
+function UIItemSheet:AddStat(xml, path, offset, obj, stat, gr)
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = utils_ui.get_stats_xml(_st, obj, obj:section(), gr, stat)
+	if _ele then
+		utils_xml.sync_size(_ele, _st, 0, offset)
+		self.scroll:AddWindow(_st, true)
+		_st:SetAutoDelete(true)
+		return _ele
+	end
+end
+
+function UIItemSheet:AddLine(xml, offset)
+	self:AddSpace(xml, 10)
+	
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = xml:InitStatic("itm_details:form:pic_line", _st)
+	
+	utils_xml.sync_size(_ele, _st, 0, offset) -- Space at bottom
+	
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _ele
+end
+
+function UIItemSheet:AddSpace(xml, offset)
+	local _st = xml:InitStatic("itm_details:form",nil)
+	local _ele = xml:InitStatic("itm_details:form:pic_line", _st)
+	
+	utils_xml.sync_size(_ele, _st, 0, offset) -- Space at bottom
+	_ele:Show(false)
+	
+	self.scroll:AddWindow(_st, true)
+	_st:SetAutoDelete(true)
+	return _ele
+end
+
+function UIItemSheet:AddUpgrades(xml, tree, obj)
+
+	-- Prepare for first time
+	
+	if is_empty(self.upx) then
+		self.upx = {} -- upgrade_xml
+		
+		-- All possible rows
+		for r=1,5 do
+			local _st = xml:InitStatic("itm_details:upgrade_tree:st", nil)
+			if (not self.st_h) then
+				self.st_h = _st:GetHeight()
+			end
+			
+			-- All possible elements
+			for c=1,6 do
+			
+				-- In case colomn has solo element
+				for s=1,2 do
+					local str = ""
+					if odd(c) then
+						str = (s == 2) and "b" or ""
+					end
+					
+					if not ((s == 2) and (not odd(c))) then
+						local ii = (r..c..str)
+						self.upx[ii] = {}
+						
+						self.upx[ii].base = xml:InitStatic("itm_details:upgrade_tree:row_cells:cell_" .. (c..str), _st)
+						self.upx[ii].ico = xml:InitStatic("itm_details:upgrade_tree:cell_upgrade:ico", self.upx[ii].base)
+						self.upx[ii].btn = xml:InitCheck("itm_details:upgrade_tree:cell_upgrade:btn", self.upx[ii].base)
+						self.upx[ii].cell = utils_ui.UICellItem( {path="container" , xml=xml} , { path="itm_details:upgrade_tree:cell_upgrade:cell" , base= self.upx[ii].base } )
+						self.upx[ii].cell.disable_bar = true
+						self.upx[ii].cell.showcase = 2
+						self.upx[ii].row = r
+						self.upx[ii].col = c
+					end
+				end
+			end
+			
+			self.scroll_upgr:AddWindow(_st, true)
+			_st:SetAutoDelete(false)
+		end
+	end
+	
+	-- Hide all possible upgrades
+	for ii,ele in pairs(self.upx) do
+		ele.base:Show(false)
+		ele.btn:Show(false)
+		--ele.btn:Enable(true)
+		--ele.btn:SetCheck(false)
+	end
+
+	-- Show upgrade tree
+	local num_rows = 0
+	local has_this_upgrade = utils_item.has_this_upgrade
+	for row,v in pairs(self.upgr) do
+		num_rows = num_rows + 1
+		for col,info in pairs(v) do
+			local ii = row .. col .. ( info.solo and "b" or "" )
+			
+			self.upx[ii].section = info.section
+			self.upx[ii].ico:InitTexture(info.icon)
+			self.upx[ii].ico:SetStretchTexture(true)
+			if info.tool then
+				self.upx[ii].cell:Set(info.tool)
+			else
+				self.upx[ii].cell:Reset()
+			end
+			if obj and has_this_upgrade(obj, nil, info.section) then
+				self.upx[ii].btn:Show(true)
+				self.upx[ii].btn:SetCheck(true)
+				--self.upx[ii].btn:Enable(false)
+			end
+			
+			self.upx[ii].base:Show(true)
+		end
+	end
+	
+	self.scroll_upgr:Show(true)
+	self.scroll_upgr:SetWndSize(vector2():set( self.scroll_upgr:GetWidth(), num_rows * self.st_h ))
+	self.scroll:AddWindow(self.scroll_upgr, true)
+	self.scroll_upgr:SetAutoDelete(false)
+	self.scroll_upgr:Enable(false)
+end
+
+-- Callbacks
+function UIItemSheet:Close()
+	self:HideDialog()
+	
+	Unregister_UI("UIItemSheet")
+end
+
+function UIItemSheet:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		local bind = dik_to_bind(dik)
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+			if dik ~= DIK_keys.MOUSE_1 then
+				self:Close()
+			end
+		end
+	end
+	return res
+end

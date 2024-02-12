@@ -1,0 +1,409 @@
+;--------------------------------------------------------------------------
+
+[army_outfit]:outfit_base
+		$spawn                        = "outfit\army_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\army_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier1e
+		npc_visual                    = actors\stalker_soldier\stalker_soldier1e
+		player_hud_section            = actor_hud_military_novice
+		character_portrait            = ui_inGame2_soldier_1_camo_paint
+		full_icon_name                = npc_icon_svoboda_light_outfit
+		full_scale_icon               = 10, 11
+        
+		inv_name                      = army_outfit_name
+		inv_name_short                = army_outfit_name
+		description                   = army_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 0
+		inv_grid_height    			  = 2
+		upgr_icon_x                   = 3440
+		upgr_icon_y                   = 896
+		upgr_icon_width               = 309
+		upgr_icon_height              = 135
+		upgrades                      = up_gr_firstab_novice_1, up_gr_seconab_novice_1, up_gr_thirdab_novice_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_novice_1
+        
+		community                     = army
+		kind                          = o_light
+		cost                          = 20530
+		inv_weight                    = 8
+		additional_inventory_weight   = 11
+		additional_inventory_weight2  = 11
+		artefact_count                = 1
+		immunities_sect               = sect_army_outfit_immunities
+		repair_type                   = outfit_novice
+		;repair_part_bonus             = 0.17
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_armor_cs1
+		control_inertion_factor       = 1.2
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 0.25
+		radiation_protection          = 0
+		chemical_burn_protection      = 0.02
+		telepatic_protection          = 0
+		strike_protection             = 0.006
+		explosion_protection          = 0.25
+		wound_protection              = 0.35
+		fire_wound_protection         = 0.25
+
+[sect_army_outfit_immunities]
+		burn_immunity                 = 0.12
+		chemical_burn_immunity        = 0.05
+		explosion_immunity            = 0.25
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.014
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.017
+ 
+;--------------------------------------------------------------------------
+
+[specops_outfit]:outfit_base
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier_3.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_soldier_3.ogf
+		player_hud_section            = actor_hud_military_berill
+		character_portrait            = ui_inGame2_Soldier_2
+		full_icon_name                = npc_icon_specops_outfit
+		full_scale_icon               = 4, 6
+        
+		inv_name                      = specops_outfit_name
+		inv_name_short                = specops_outfit_name
+		description                   = specops_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 2
+		upgr_icon_x                   = 309
+		upgr_icon_y                   = 158
+		upgr_icon_width               = 317
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_berill_1, up_gr_seconab_berill_1, up_gr_thirdab_berill_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = army
+		kind                          = o_medium
+		cost                          = 44600
+		inv_weight                    = 12
+		additional_inventory_weight   = 16
+		additional_inventory_weight2  = 16
+		artefact_count                = 1
+		immunities_sect               = sect_specops_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.07
+		shock_protection              = 0.34
+		radiation_protection          = 0.0055
+		chemical_burn_protection      = 0.02
+		telepatic_protection          = 0
+		strike_protection             = 0.2
+		explosion_protection          = 0.5
+		wound_protection              = 0.75
+		fire_wound_protection         = 0.31
+
+[sect_specops_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.025
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.020
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.018
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.020
+ 
+;--------------------------------------------------------------------------
+
+[dolg_specops_red_outfit]:outfit_base
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_dolg\stalker_dolg2a_mas3.ogf
+		npc_visual                    = actors\stalker_dolg\stalker_dolg2a_mas3.ogf
+		player_hud_section            = actor_hud_duty_psz9d
+		character_portrait            = ui_inGame2_dolgberill
+		full_icon_name                = npc_icon_specops_outfit
+        
+		inv_name                      = dolg_specops_red_outfit_name
+		inv_name_short                = dolg_specops_red_outfit_name
+		description                   = dolg_specops_red_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 8
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_berill_2, up_gr_seconab_berill_2, up_gr_thirdab_berill_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = dolg
+		kind                          = o_heavy
+		cost                          = 65700
+		inv_weight                    = 8.5
+		additional_inventory_weight   = 11
+		additional_inventory_weight2  = 11
+		artefact_count                = 1
+		immunities_sect               = sect_dolg_specops_red_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.40
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_class3
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.15
+		shock_protection              = 0.25
+		radiation_protection          = 0.004
+		chemical_burn_protection      = 0.01
+		telepatic_protection          = 0
+		strike_protection             = 0.38
+		explosion_protection          = 0.55
+		wound_protection              = 0.85
+		fire_wound_protection         = 0.35
+
+[sect_dolg_specops_red_outfit_immunities]
+		burn_immunity                 = 0.09
+		chemical_burn_immunity        = 0.025
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.02
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.02
+		strike_immunity               = 0.015
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.05
+ 
+;--------------------------------------------------------------------------
+
+[specops_bandit_outfit]:outfit_base
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_bandit\stalker_bandit_5_gasmask.ogf
+		npc_visual                    = actors\stalker_bandit\stalker_bandit_5_gasmask.ogf
+		player_hud_section            = actor_hud_bandit_military
+		character_portrait            = ui_inGame2_Soldier_2
+		full_icon_name                = npc_icon_specops_outfit
+		full_scale_icon               = 4, 6
+        
+		inv_name                      = specops_bandit_outfit_name
+		inv_name_short                = specops_bandit_outfit_name
+		description                   = specops_bandit_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 11
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_berill_1, up_gr_seconab_berill_1, up_gr_thirdab_berill_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = bandit
+		kind                          = o_medium
+		cost                          = 48600
+		inv_weight                    = 13
+		additional_inventory_weight   = 18
+		additional_inventory_weight2  = 18
+		artefact_count                = 1
+		immunities_sect               = sect_specops_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.40
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.05
+		shock_protection              = 0.3
+		radiation_protection          = 0.0055
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.15
+		explosion_protection          = 0.4
+		wound_protection              = 0.65
+		fire_wound_protection         = 0.31
+
+;--------------------------------------------------------------------------
+
+[specops_dolg_outfit]:outfit_base
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_dolg\stalker_dolg_berill.ogf
+		npc_visual                    = actors\stalker_dolg\stalker_dolg_berill.ogf
+		player_hud_section            = actor_hud_duty_military
+		character_portrait            = ui_inGame2_Soldier_2
+		full_icon_name                = npc_icon_specops_outfit
+		full_scale_icon               = 4, 6
+        
+		inv_name                      = specops_dolg_outfit_name
+		inv_name_short                = specops_dolg_outfit_name
+		description                   = specops_dolg_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 5
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_berill_3, up_gr_seconab_berill_3, up_gr_thirdab_berill_3
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = dolg
+		kind                          = o_medium
+		cost                          = 52600
+		inv_weight                    = 12
+		additional_inventory_weight   = 17
+		additional_inventory_weight2  = 17
+		artefact_count                = 1
+		immunities_sect               = sect_specops_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.40
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.06
+		shock_protection              = 0.44
+		radiation_protection          = 0.0055
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.23
+		explosion_protection          = 0.5
+		wound_protection              = 0.75
+		fire_wound_protection         = 0.31
+
+
+;--------------------------------------------------------------------------
+
+[specops_merc_outfit]:outfit_base
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_merc\stalker_merc_berill_specnaz.ogf
+		npc_visual                    = actors\stalker_merc\stalker_merc_berill_specnaz.ogf
+		player_hud_section            = actor_hud_merc_military
+		character_portrait            = ui_inGame2_Soldier_2
+		full_icon_name                = npc_icon_specops_outfit
+		full_scale_icon               = 4, 6
+        
+		inv_name                      = specops_merc_outfit_name
+		inv_name_short                = specops_merc_outfit_name
+		description                   = specops_merc_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 14
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_berill_2, up_gr_seconab_berill_2, up_gr_thirdab_berill_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = killer
+		kind                          = o_medium
+		cost                          = 49600
+		inv_weight                    = 13
+		additional_inventory_weight   = 19
+		additional_inventory_weight2  = 19
+		artefact_count                = 1
+		immunities_sect               = sect_specops_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.40
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.07
+		shock_protection              = 0.31
+		radiation_protection          = 0.0055
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.33
+		explosion_protection          = 0.5
+		wound_protection              = 0.75
+		fire_wound_protection         = 0.31
+
+;--------------------------------------------------------------------------
+
+[svoboda_heavy_outfit]:outfit_base
+		$spawn                        = "outfit\svoboda_heavy_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\svoboda_heavy_outfit
+		actor_visual                  = actors\stalker_freedom\stalker_freedom_3.ogf
+		npc_visual                    = actors\stalker_freedom\stalker_freedom_3.ogf
+		player_hud_section            = actor_hud_freedom_guard
+		character_portrait            = ui_inGame2_Freedom_3
+		full_icon_name                = npc_icon_svoboda_heavy_outfit
+		full_scale_icon               = 2, 6
+        
+		inv_name                      = svoboda_heavy_outfit_name
+		inv_name_short                = svoboda_heavy_outfit_name
+		description                   = svoboda_heavy_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 17
+		upgr_icon_x                   = 316
+		upgr_icon_y                   = 306
+		upgr_icon_width               = 305
+		upgr_icon_height              = 132
+		upgrades                      = up_gr_firstab_berill_3, up_gr_seconab_berill_3, up_gr_thirdab_berill_3
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = freedom
+		kind                          = o_medium
+		cost                          = 51300
+		inv_weight                    = 16
+		additional_inventory_weight   = 20
+		additional_inventory_weight2  = 20
+		artefact_count                = 2
+		immunities_sect               = sect_svoboda_heavy_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.42
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.13
+		shock_protection              = 0.56
+		radiation_protection          = 0.0051
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0.38
+		explosion_protection          = 0.45
+		wound_protection              = 0.65
+		fire_wound_protection         = 0.32
+
+[sect_svoboda_heavy_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.035
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.020
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.021
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.020
+ 

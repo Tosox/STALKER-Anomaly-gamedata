@@ -1,0 +1,107 @@
+local dosimeter_ui = nil
+local workIndicatorTimer = 0
+local updateTimer = 0
+local updateFreq = 555 -- in milliseconds
+
+class "ui_dosimeter" (CUIScriptWnd)
+function ui_dosimeter:__init() super()
+	self:Show					(true)
+	self:Enable					(true)
+
+	local xml					= CScriptXmlInit()
+	self.xml = xml
+	xml:ParseFile				("ui_dosimeter.xml")
+	xml:InitWindow				("dosimeter", 0, self)
+
+	self.m_wrk_area				= xml:InitStatic("dosimeter:wrk_area", self)
+	
+	self.m_seg1					= xml:InitStatic("dosimeter:seg1", self)
+	self.m_seg2					= xml:InitStatic("dosimeter:seg2", self)
+	self.m_seg3					= xml:InitStatic("dosimeter:seg3", self)
+	self.m_seg4					= xml:InitStatic("dosimeter:seg4", self)
+	
+	self.m_workIndicator		= xml:InitStatic("dosimeter:work", self)
+end
+
+function ui_dosimeter:__finalize() 
+	dosimeter_ui = nil
+end
+
+function ui_dosimeter:Update()
+	
+	CUIScriptWnd.Update(self)
+	
+	local tg = time_global()
+	
+	if (tg > workIndicatorTimer + 1000) then
+		workIndicatorTimer = tg
+		self.m_workIndicator:Show(not self.m_workIndicator:IsShown())
+	end
+	
+	if (tg < updateTimer) then
+		return
+	else
+		updateTimer = tg + updateFreq
+	end
+	
+	local rads = item_device.dosimeter_env_rads_mode and math.floor(level.get_env_rads()*2500) or math.floor(db.actor.radiation*10000*0.387)
+	
+	-- Emissions: the closer the wave, the higher the psi influnces
+	if GetEvent("surge", "state") then
+		local surge_time = GetEvent("surge", "time") or 0
+		local val_glitch = (surge_time > 168) and normalize(surge_time, 220, 168) or normalize(surge_time, 20, 168)
+		rads = (rads + 500) * math.random(0.5, 10) * clamp(val_glitch,0,1)
+		
+	-- Psi-storms: huge spike when a vortex hits the ground
+	elseif GetEvent("psi_storm", "state") then
+		if GetEvent("psi_storm", "vortex") then
+			rads = (rads + 1000) * math.random(0.7, 1.3)
+		else
+			rads = rads * math.random(0.9, 1.1)
+		end
+	end
+	
+	local s_rads = tostring(rads)
+	local seg1, seg2, seg3, seg4
+	
+	if (rads > 999) then
+		seg1 = strformat("green_%s", s_rads:sub(1, 1))
+		seg2 = strformat("green_%s", s_rads:sub(2, 2))
+		seg3 = strformat("green_%s", s_rads:sub(3, 3))
+		seg4 = strformat("green_%s", s_rads:sub(4, 4))
+	elseif (rads > 99) then
+		seg1 = "green_0"
+		seg2 = strformat("green_%s", s_rads:sub(1, 1))
+		seg3 = strformat("green_%s", s_rads:sub(2, 2))
+		seg4 = strformat("green_%s", s_rads:sub(3, 3))
+	elseif (rads > 9) then
+		seg1 = "green_0"
+		seg2 = "green_0"
+		seg3 = strformat("green_%s", s_rads:sub(1, 1))
+		seg4 = strformat("green_%s", s_rads:sub(2, 2))
+	elseif (rads > 0) then
+		seg1 = "green_0"
+		seg2 = "green_0"
+		seg3 = "green_0"
+		seg4 = strformat("green_%s", s_rads:sub(1, 1))
+	else
+		seg1 = "green_0"
+		seg2 = "green_0"
+		seg3 = "green_0"
+		seg4 = "green_0"
+	end
+	
+	self.m_seg1:InitTextureEx(seg1, "hud\\p3d")
+	self.m_seg2:InitTextureEx(seg2, "hud\\p3d")
+	self.m_seg3:InitTextureEx(seg3, "hud\\p3d")
+	self.m_seg4:InitTextureEx(seg4, "hud\\p3d")
+	
+end
+
+function get_UI()
+	if(dosimeter_ui==nil) then
+		dosimeter_ui = ui_dosimeter()
+	end
+	
+	return dosimeter_ui
+end

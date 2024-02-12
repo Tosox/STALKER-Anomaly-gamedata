@@ -1,0 +1,428 @@
+
+[up_sect_firsta_sig220]
+cost                                     = 1460
+value                                    = +10
+rpm                                      = +20
+inv_weight                               = +0.1
+
+[up_sect_firstc_sig220]
+cost                                     = 1960
+value                                    = +15
+
+condition_shot_dec                       = -0.00015
+condition_queue_shot_dec                 = -0.00015
+misfire_start_prob                       = -0.0015
+misfire_end_prob                         = -0.015
+inv_weight                               = +0.18
+
+[up_sect_firstd_sig220]
+cost                                     = 1980
+value                                    = +20
+bullet_speed                             = +56
+fire_distance                            = +30
+fire_dispersion_base                     = -0.02
+inv_weight                               = +0.13
+
+[up_sect_firste_sig220]
+cost                                     = 2860
+
+fire_modes                               = 1, 3
+rpm                                      = +275
+cam_dispersion                           = +0.057 
+cam_dispersion_inc                       = 0.0 ;+0.06 
+cam_step_angle_horz                      = +0.06 
+inv_weight                               = +0.14
+
+[up_sect_secona_sig220]
+cost                                     = 1560
+value                                    = +10
+bullet_speed                             = +28
+fire_dispersion_base                     = -0.01
+inv_weight                               = +0.1
+
+[up_sect_seconc_sig220]
+cost                                     = 1920
+value                                    = +15
+
+condition_shot_dec                       = -0.00015
+condition_queue_shot_dec                 = -0.00015
+misfire_start_prob                       = -0.0015
+misfire_end_prob                         = -0.015
+inv_weight                               = +0.16
+
+[up_sect_secone_sig220]
+cost                                     = 2340
+value                                    = +15
+rpm                                      = +30
+inv_weight                               = +0.08
+
+[up_sect_seconf_sig220]
+cost                                     = 2380
+value                                    = +30
+bullet_speed                             = +84
+fire_dispersion_base                     = -0.03
+fire_distance                            = +50
+inv_weight                               = +0.12
+
+[up_sect_thirda_sig220]
+cost                                     = 1720
+value                                    = -0.48
+inv_weight                               = -0.48
+crosshair_inertion                       = -0.3
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.15
+PDM_disp_accel_factor                    = -0.15
+
+[up_sect_thirdc_sig220]
+cost                                     = 1880
+value                                    = +15
+crosshair_inertion                       = -0.7
+PDM_disp_base                            = -0.15
+PDM_disp_vel_factor                      = -0.35
+PDM_disp_accel_factor                    = -0.35
+inv_weight                               = -0.074
+
+[up_sect_thirdd_sig220]
+cost                                     = 2830
+value                                    = -15
+cam_dispersion                           = -0.168 
+cam_dispersion_inc                       = 0.0 ;-0.182 
+cam_step_angle_horz                      = -0.18 
+inv_weight                               = +0.11
+
+[up_sect_fourta_sig220]
+cost                                     = 1640
+value                                    = +10
+fire_dispersion_base                     = -0.05
+
+inv_weight                               = +0.07
+
+[up_sect_fourtc_sig220]
+cost                                     = 1780
+value                                    = +15
+
+condition_shot_dec                       = -0.00015
+condition_queue_shot_dec                 = -0.00015
+misfire_start_prob                       = -0.0015
+misfire_end_prob                         = -0.015
+inv_weight                               = +0.14
+
+[up_sect_fourte_sig220]
+cost                                     = 2360
+value                                    = +15
+rpm                                      = +30
+inv_weight                               = +0.06
+
+[up_sect_fiftha_sig220]
+cost                                     = 2280
+value                                    = -10
+cam_dispersion                           = -0.068 
+cam_dispersion_inc                       = 0.0 ;-0.073 
+cam_step_angle_horz                      = -0.086 
+inv_weight                               = +0.04
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_sig220]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_sig220
+section                                  = up_sect_firsta_sig220
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_a1_name
+description                              = st_up_zatp_a1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_1
+
+
+[up_firstc_sig220]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_sig220
+section                                  = up_sect_firstc_sig220
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b3_name
+description                              = st_up_zatp_b3_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_2
+
+[up_firstd_sig220]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_sig220
+section                                  = up_sect_firstd_sig220
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b8_name
+description                              = st_up_zatp_b8_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_3
+
+[up_firste_sig220]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_sig220
+property                                 = prop_3xfire
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_c7_name
+description                              = st_up_zatp_c7_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_4
+
+
+[up_secona_sig220]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_sig220
+section                                  = up_sect_secona_sig220
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_a1_name
+description                              = st_up_barp_a1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_5
+
+[up_seconc_sig220]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_sig220
+section                                  = up_sect_seconc_sig220
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_b1_name
+description                              = st_up_barp_b1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_6
+
+[up_secone_sig220]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_sig220
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_c1_name
+description                              = st_up_barp_c1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_7
+
+[up_seconf_sig220]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconf_sig220
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_c2_name
+description                              = st_up_barp_c2_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_8
+
+
+[up_thirda_sig220]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_sig220
+section                                  = up_sect_thirda_sig220
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b1_name
+description                              = st_up_stvp_b1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_9
+
+[up_thirdc_sig220]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdc_sig220
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b2_name
+description                              = st_up_stvp_b2_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_10
+
+[up_thirdd_sig220]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdd_sig220
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b3_name
+description                              = st_up_stvp_b3_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_11
+
+[up_fourta_sig220]
+scheme_index                             = 0, 3
+known                                    = 1
+effects                                  = up_gr_fourtcd_sig220
+section                                  = up_sect_fourta_sig220
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usmp_b1_name
+description                              = st_up_usmp_b1_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_12
+
+
+[up_fourtc_sig220]
+scheme_index                             = 1, 5
+known                                    = 1
+effects                                  = up_gr_fourtef_sig220
+section                                  = up_sect_fourtc_sig220
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usmp_b5_name
+description                              = st_up_usmp_b5_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_13
+
+[up_fourte_sig220]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourte_sig220
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usmp_c3_name
+description                              = st_up_usmp_c3_descr
+icon                                     = ui_inGame2_upgrade_SIP_t_M200_14
+
+
+[up_fiftha_sig220]
+scheme_index                             = 0, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fiftha_sig220
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b2_name
+description                              = st_up_zatp_b2_descr
+icon                                     = ui_inGame2_upgrade_HPSS_1m_3
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_sig220]
+elements                                 = up_firsta_sig220
+
+[up_gr_firstcd_sig220]
+elements                                 = up_firstc_sig220, up_firstd_sig220
+
+[up_gr_firstef_sig220]
+elements                                 = up_firste_sig220
+
+[up_gr_seconab_sig220]
+elements                                 = up_secona_sig220
+
+[up_gr_seconcd_sig220]
+elements                                 = up_seconc_sig220
+
+[up_gr_seconef_sig220]
+elements                                 = up_secone_sig220, up_seconf_sig220
+
+[up_gr_thirdab_sig220]
+elements                                 = up_thirda_sig220
+
+[up_gr_thirdcd_sig220]
+elements                                 = up_thirdc_sig220, up_thirdd_sig220
+
+[up_gr_fourtab_sig220]
+elements                                 = up_fourta_sig220
+
+[up_gr_fourtcd_sig220]
+elements                                 = up_fourtc_sig220
+
+[up_gr_fourtef_sig220]
+elements                                 = up_fourte_sig220
+
+[up_gr_fifthab_sig220]
+elements                                 = up_fiftha_sig220

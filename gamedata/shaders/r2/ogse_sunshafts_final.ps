@@ -1,0 +1,46 @@
+#include "common.h"
+#include "anomaly_shaders.h"
+uniform float4 ogse_c_screen;
+uniform float4 c_sunshafts;		// x - exposure, y - density
+uniform sampler2D jitter0;
+uniform sampler2D jitter1;
+uniform sampler2D s_noise;
+uniform sampler2D s_sun_shafts; // current sunshafts texture
+
+float4 sun_shafts_intensity;
+
+
+float3 blendSoftLight(float3 a, float3 b)
+{
+	float3 c = 2 * a * b * ( 1 + a * (  1 - b ) );
+	float3 a_sqrt = sqrt( a );
+	float3 d = ( a  +  b * (a_sqrt - a )) * 2 - a_sqrt;
+	return( b < 0.5 )? c : d;
+};
+
+float4 main(p_screen I) : COLOR0
+{
+	// dist to the sun
+	float sun_dist = FARPLANE / (sqrt(1 - L_sun_dir_w.y * L_sun_dir_w.y));
+	// sun pos
+	float3 sun_pos_world = sun_dist*L_sun_dir_w + eye_position;
+	float4 sun_pos_projected = mul(m_VP, float4(sun_pos_world, 1));
+	float4 sun_pos_screen = proj_to_screen(sun_pos_projected)/sun_pos_projected.w;
+	// sun-pixel vector
+	float2 sun_vec_screen = normalize(sun_pos_screen.xy - I.tc0.xy);
+	// smooth shafts
+	float4 cSunShafts = tex2D(s_sun_shafts, I.tc0.xy);
+#ifdef SUN_SHAFTS_QUALITY
+#if SUN_SHAFTS_QUALITY > 1
+			cSunShafts *= 0.5;
+			cSunShafts += tex2D(s_sun_shafts, I.tc0.xy + sun_vec_screen.yx * screen_res.zw)*0.25;
+			cSunShafts += tex2D(s_sun_shafts, I.tc0.xy - sun_vec_screen.yx * screen_res.zw)*0.25;
+#endif
+#endif
+	float3 img = tex2D(s_image, I.tc0.xy).xyz;
+
+	float3 Color =  img + cSunShafts.xyz * L_sun_color.xyz * ( 1 - img ) * (sun_shafts_intensity) * (c_sunshafts.x * 10);
+	//Color = blendSoftLight(Color, L_sun_color.xyz * cSunShafts.w * SS_BLEND_FACTOR * 0.5 + 0.5);
+	return float4(Color.x, Color.y, Color.z, 1.0);
+	//return float4(1.0, 0.0, 0.0, 1.0);
+}

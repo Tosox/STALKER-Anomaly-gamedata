@@ -1,0 +1,65 @@
+;------------------------------------------------------------------------------------------
+; FIND LEVEL 1 TOOLKIT FOR BANDIT MLR TASK-
+;------------------------------------------------------------------------------------------
+[trucks_cemetery_bandit_mechanic_task_1]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = trucks_cemetery_bandit_mechanic_task_1_name
+title_functor = general_fetch_task
+descr = trucks_cemetery_bandit_mechanic_task_1_text
+descr_functor = general_fetch_task
+job_descr = trucks_cemetery_bandit_mechanic_task_1_about
+fetch_descr = trucks_cemetery_bandit_mechanic_task_1_fetch_about
+fetch_func = %=setup_generic_fetch_task(trucks_cemetery_bandit_mechanic_task_1_fetch:1:itm_basickit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = trucks_cemetery_bandit_mechanic_task_1_fetch_finish
+on_complete = %+trucks_cemetery_bandit_mechanic_upgrade_tier_1 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(trucks_cemetery_bandit_mechanic_task_1_fetch) =inc_task_stage(trucks_cemetery_bandit_mechanic_task_1)%
+precondition = {-trucks_cemetery_bandit_mechanic_upgrade_tier_1} true, false
+
+
+;------------------------------------------------------------------------------------------
+; FIND LEVEL 2 TOOLKIT FOR BANDIT MLR TASK-
+;------------------------------------------------------------------------------------------
+[trucks_cemetery_bandit_mechanic_task_2]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = trucks_cemetery_bandit_mechanic_task_2_name
+title_functor = general_fetch_task
+descr = trucks_cemetery_bandit_mechanic_task_2_text
+descr_functor = general_fetch_task
+job_descr = trucks_cemetery_bandit_mechanic_task_2_about
+fetch_descr = trucks_cemetery_bandit_mechanic_task_2_fetch_about
+fetch_func = %=setup_generic_fetch_task(trucks_cemetery_bandit_mechanic_task_2_fetch:1:itm_advancedkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = trucks_cemetery_bandit_mechanic_task_2_fetch_finish
+on_complete = %+trucks_cemetery_bandit_mechanic_upgrade_tier_2 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(trucks_cemetery_bandit_mechanic_task_2_fetch) =inc_task_stage(trucks_cemetery_bandit_mechanic_task_2)%
+precondition = {+trucks_cemetery_bandit_mechanic_upgrade_tier_1 -trucks_cemetery_bandit_mechanic_upgrade_tier_2} true, false
+
+
+;------------------------------------------------------------------------------------------
+; FIND LEVEL 3 TOOLKIT FOR BANDIT MLR TASK-
+;------------------------------------------------------------------------------------------
+[trucks_cemetery_bandit_mechanic_task_3]
+icon = ui_inGame2_Instrumenti
+prior = 10
+storyline = false
+title = trucks_cemetery_bandit_mechanic_task_3_name
+title_functor = general_fetch_task
+descr = trucks_cemetery_bandit_mechanic_task_3_text
+descr_functor = general_fetch_task
+job_descr = trucks_cemetery_bandit_mechanic_task_3_about
+fetch_descr = trucks_cemetery_bandit_mechanic_task_3_fetch_about
+fetch_func = %=setup_generic_fetch_task(trucks_cemetery_bandit_mechanic_task_3_fetch:1:itm_expertkit)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = trucks_cemetery_bandit_mechanic_task_3_fetch_finish
+on_complete = %+trucks_cemetery_bandit_mechanic_upgrade_tier_3 =complete_task_inc_goodwill(50:bandit) =fetch_reward_and_remove(trucks_cemetery_bandit_mechanic_task_3_fetch) =inc_task_stage(trucks_cemetery_bandit_mechanic_task_3)%
+precondition = {+trucks_cemetery_bandit_mechanic_upgrade_tier_2 -trucks_cemetery_bandit_mechanic_upgrade_tier_3} true, false
+

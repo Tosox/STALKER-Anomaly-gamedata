@@ -1,0 +1,35 @@
+<w>
+	<map x="0" y="0" width="819" height="768">
+		<box_map x="132" y="137" width="568" height="504"/>
+		<text_map x="296" y="595" width="240" height="32">
+			<text complex_mode="1" r="255" g="255" b="255" align="c" vert_align="c" font="letterica25"/>
+		</text_map>	
+		
+		<btn_previous x="152" y="595" width="54" height="32">
+			<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_previous</text>
+			<texture>ui_button_empty</texture>
+		</btn_previous>
+		<btn_previous_pic x="152" y="595" width="54" height="32"/>
+		
+		<btn_next x="628" y="595" width="54" height="32">
+			<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_next</text>
+			<texture>ui_button_empty</texture>
+		</btn_next>
+		<btn_next_pic x="628" y="595" width="54" height="32"/>
+		
+		<btn_ok x="152" y="151" width="54" height="32">
+			<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_ok</text>
+			<texture>ui_button_empty</texture>
+		</btn_ok>
+		<btn_ok_pic x="152" y="151" width="54" height="32"/>
+	</map>
+
+	<hint_wnd x="0" y="0" width="240" height="100">
+	    <background x="0" y="0" width="240" height="100">
+		    <texture>ui_icons_PDA_tooltips</texture>
+	    </background>
+	    <text x="16" y="20" width="220" height="100">
+	    	<text font="letterica16" r="140" g="140" b="140" complex_mode="1" align="l" vert_align="t"/>
+	    </text>
+	</hint_wnd>
+</w>

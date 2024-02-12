@@ -1,0 +1,261 @@
+;R.P.A.mod
+[m_bibliotekar_e]:fracture_weak
+GroupControlSection	= spawn_group
+SpaceRestrictionSection = space_restrictor,zone_mosquito_bald,zone_witches_galantine,zone_burning_fuzz1,zone_mincer,zone_gravi_zone,zone_smallrain
+$spawn               = "monsters\fracture"				; option for Level Editor
+$npc			     = on						; option for Level Editor
+$prefetch 			 = 16
+Scheduled		     = on						; option for ALife Simulator
+Human		     	 = off						; option for ALife Simulator
+Health			     = 250					; option for ALife Simulator
+MinSpeed		     = 2.0						; option for ALife Simulator
+MaxSpeed		     = 9.0						; option for ALife Simulator
+going_speed          = 8.5                      ; option for ALife Simulator
+search_speed         = 2.0                       ; option for ALife Simulator
+visual				 = monsters\bibliotekar\izlom
+corpse_visual		 = monsters\bibliotekar\izlom
+icon = ui_npc_monster_fracture	
+MaxHealthValue		 = 250			; range [0..200]
+DynamicObjectsCount	 = 32
+smart_terrain_choose_interval	= 00:15:00
+satiety_threshold		= 0.5
+jump_max_height = 1.0
+
+script_binding  = bind_monster.bind
+
+critical_wound_threshold		= -1
+critical_wound_decrease_quant	= 0.
+
+;---EVALUATION FUNCTIONS----------------------------------------------
+ef_creature_type	 = 21							; option for evaluation functions
+ef_weapon_type		 = 4
+ef_detector_type			 = 1
+panic_threshold		= 0.1
+
+cform                = skeleton					; collision class
+class                = SM_IZLOM					; AI class
+monster_section      = m_bibliotekar_e
+
+bone_torso			 = bip01_spine1 			; bone name
+bone_head			 = bip01_head				; bone name
+bone_fire			 = bip01_head				; bone name
+weapon_usage		 = 0						; boolean
+
+ph_box0_center 		 = 0.0,  0.9,  0.0
+ph_box0_size 		 = 0.35, 0.9,  0.35
+ph_box1_center 		 = 0.0,  0.6,  0.0
+ph_box1_size 		 = 0.40, 0.6,  0.40
+ph_crash_speed_min			= 10
+ph_crash_speed_max			= 30
+ph_collision_damage_factor	= 0.1
+ph_mass 		     = 170.
+
+destroyed_vis_name	 = dynamics\Dead_Body\skelet_crash
+
+Spawn_Inventory_Item_Section = ;mutant_fracture_hand
+Spawn_Inventory_Item_Probability = 0.0
+
+;---------------------------------------------------------------------
+ph_skeleton_airr_lin_factor   = -0.40 
+ph_skeleton_airr_ang_factor   = -0.20 
+ph_skeleton_hinger_factor1    = 5.0 ;1.0
+ph_skeleton_ddelay	     	  = 5.0
+
+ph_skel_fatal_impulse_factor  = 3.0
+ph_after_death_velocity_factor= 0.75
+ph_skel_shot_up_factor        = 0.25
+;---------------------------------------------------------------------
+
+SoundThreshold		 = 0.06             ; range [0..1]
+
+eye_fov				 = 100;
+eye_range			 = 100	;30
+max_hear_dist		 = 40
+
+hit_power			 = 50.0;
+
+ImpulseMin			 = 500.0
+ImpulseMax			 = 550.0 
+
+; speed factors			linear | angular_real | angular_path | min |  max
+Velocity_Stand			= 0,		1.4,			1.4,		1,		1
+Velocity_WalkFwdNormal	= 0.9,		2.5,			2.5,		0.02,	2.0	
+Velocity_RunFwdNormal	= 3.0,		3.5,			3.5,		0.4,	1	
+Velocity_WalkFwdDamaged	= 1.0,		3.0,			3.0,		0.2,	2.0	
+Velocity_RunFwdDamaged	= 5.0,  	3.0,			3.0,		0.2,	1
+Velocity_Drag			= 1.0,		3.0,			3.0,		1,		1
+Velocity_Steal			= 1.5,		3.0,			3.0,		1,		1
+
+; acceleration
+Accel_Generic			= 1.5
+Accel_Calm			= 3.0
+Accel_Aggressive		= 9.5
+
+;attack parameters
+MinAttackDist		= 1.8	;0.5
+MaxAttackDist		= 2.4	;3.8
+
+as_min_dist				= 0.5
+as_step					= 0.5
+
+
+DayTime_Begin		= 4			; эрўрыр фэ  фы  ьюэёЄЁр
+DayTime_End			= 23		; ъюэхЎ фэ  фы  ьюэёЄЁр
+Min_Satiety			= 0.4		; ьшэ. эюЁьр ёvЄюёЄш (ьхэ№°х - єцх уюыюфэvщ)
+Max_Satiety			= 1.0		; ьръё. эюЁьр ёvЄюёЄш (сюы№°х - юўхэ№ ёvЄvщ)
+
+distance_to_corpse	= 1.2		; фшёЄ. фю ЄЁєяр, яЁш ъюЄюЁющ юэ яхЁхїюфшЄ т ёюёЄю эшх хфv
+
+hit_type = wound
+
+; entity condition
+satiety_v 		= 0.00001				;0.01			;скорость уменьшения сытости со временем
+radiation_v 		= 0.00001		;0.004			;скорость уменьшения радиации
+satiety_power_v 	= 0.005		;0.01			;увеличение силы при уменьшении сытости 
+satiety_health_v 	= 0.0001	;0.03			;увеличение здоровья при уменьшении сытости 
+satiety_critical 	= -1.0		;0.25			;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+radiation_health_v 	= 0.01	;0.006			;уменьшение здоровья при воздействии радиации
+morale_v		= 0.01					;скорость восстановления морали
+health_hit_part 	= 0.4		;0.8			;процент хита, уходящий на отнимание здоровья
+power_hit_part 		= 1.0		;0.9			;процент хита, уходящий на отнимание силы
+psy_health_v = 0.1						;скорость восстановления psy-здоровья
+
+immunities_sect				= fractur_immunities
+
+;открытые раны
+bleeding_v					= 0						;потеря крови при номинальной ране в секунду
+wound_incarnation_v			= 0.01				;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
+min_wound_size				= 0.01
+
+sleep_health = 1.0		;1.5				;ъю¤ЇЇшЎшхэЄv ёъюЁюёЄхщ шчьхэхэш  ярЁрьхЄЁют тю тЁхь  ёэр
+sleep_power = 1.0		;1.5
+sleep_satiety = 1.0		;0.8
+sleep_radiation = 1.0	;1.1
+sleep_psy_health = 1.0
+
+eat_freq			=	5.0		; ўрёЄюЄр єъєёют т ёхъ
+eat_slice			=	0.01	; єтхышўхэшх ёvЄюёЄш яЁш 1 єъєёх
+eat_slice_weight	=	10.0	; єьхэ№°хэшх хфv є ЄЁєяр
+
+
+; Morale
+Morale_Hit_Quant				= 0.1
+Morale_Attack_Success_Quant		= 0.1
+Morale_Take_Heart_Speed			= 0.1
+Morale_Despondent_Speed			= 0.1
+Morale_Stable_Speed				= 0.01
+Morale_Despondent_Threashold	= 0.5
+
+sound_idle		= monsters\biblio\izlome_idle_ 
+sound_eat		= monsters\biblio\izlome_eat_ 
+sound_aggressive	= monsters\biblio\izlome_attack_
+sound_attack_hit	= monsters\biblio\izlome_attack_hit_
+sound_take_damage	= monsters\biblio\izlome_take_damage_
+sound_die		= monsters\biblio\izlome_die_
+sound_death		= monsters\biblio\izlome_death_
+sound_hit		= monsters\biblio\izlome_hit_
+sound_threaten		= monsters\biting\def_		
+sound_landing		= monsters\biting\def_
+sound_steal		= monsters\biting\def_
+sound_panic		= monsters\biblio\izlome_hit_
+sound_growling		= monsters\biting\def_
+sound_die_in_anomaly	= monsters\biblio\izlome_die_
+
+killer_clsids			= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
+
+
+idle_sound_delay		= 125000
+eat_sound_delay			= 3000
+attack_sound_delay		= 4000
+
+sound_distant_idle			= monsters\zombie\zombie_idle_
+distant_idle_sound_delay	= 80000
+distant_idle_sound_range	= 100.0	
+
+DamagedThreshold		= 0.5
+
+material				= creatures\medium
+DynamicObjectsCount		= 32
+
+squad_attack_algorithm	= 1
+attack_effector			= monster_attack_effector
+
+control_fx_texture		= act\act_izlom
+
+LegsCount				= 2
+
+attack_params			= m_fractur_attack_params
+step_params				= m_fractur_step_params
+damage					= m_Fractur_damage
+
+;species of monster
+species					= zombie
+
+[m_fractur_attack_params]
+;---------------------------------------------------------------------------------------------------------------------------------------------
+;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
+;---------------------------------------------------------------------------------------------------------------------------------------------
+stand_attack_0 =	  	0.15,		9.90,		    450,        0.0, 1.0, 0.0,		 -9.6, 9.6, -9.6, 9.6,							  3.5
+stand_attack_1 =	  	0.20,		9.15,		    200,        0.0, 1.0, 0.0,		 -9.6, 9.6, -9.6, 9.6,							  3.5
+stand_attack_2 =	  	0.55,		9.90,		    700,        0.0, 1.0, 0.0,		 -9.6, 9.6, -9.6, 9.6,							  3.5
+
+[m_fractur_step_params]
+;---------------------------------------------------------------------------
+;	anim			| Cycles | time1 | power1 | time2 | power2 |
+;---------------------------------------------------------------------------
+stand_walk_fwd_0 	=	1,	   0.01,     1,     0.25,    0.7,   
+stand_run_fwd_0	 	=	1,	   0.01,     1,	    0.25,    0.6,    
+
+;===========================================================================
+; IMMUNITIES
+;===========================================================================
+[fractur_immunities]
+burn_immunity = 0.4				;коэффициенты иммунитета 
+strike_immunity = 0.4
+shock_immunity = 0.4
+wound_immunity = 0.2	;0.3 	;0.4		
+radiation_immunity = 0.5
+telepatic_immunity = 0.8
+chemical_burn_immunity = 0.4
+explosion_immunity = 0.3
+fire_wound_immunity  = 0.1
+
+
+[m_Fractur_damage]
+;bone_name		 = <hit_scale>,-1,<wound_scale>
+;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья) 
+;<wound_scale>	- коэфф. изменения величины открытой раны
+
+default				= 0.3,	-1,	0.10
+
+bip01_pelvis 		= 0.1, -1, 0.1
+;bip01_spine 		= 0.1, -1, 0.1
+bip01_spine1 		= 0.2, -1, 0.1
+bip01_neck 			= 0.5, -1, 0.1
+bip01_head 			= 0.8, -1, 0.50
+
+
+[bibliotekar_weak]:m_bibliotekar_e
+$spawn               = "monsters\fracture"			; option for Level Editor
+monster_type		= indoor
+rank				= 0
+spec_rank			= weak
+community			= fracture
+Tele_Time_To_Hold	= 200
+
+[bibliotekar_normal]:m_bibliotekar_e
+$spawn               = "monsters\fracture"				; option for Level Editor
+monster_type		= indoor
+rank				= 0
+spec_rank			= normal
+community			= fracture
+Tele_Time_To_Hold	= 200
+
+[bibliotekar_strong]:m_bibliotekar_e
+$spawn               = "monsters\fracture"				; option for Level Editor
+monster_type		= indoor
+rank				= 0
+spec_rank			= strong
+community			= fracture
+Tele_Time_To_Hold	= 200
+;R.P.A.mod

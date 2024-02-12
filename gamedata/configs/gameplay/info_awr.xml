@@ -1,0 +1,71 @@
+<!----------------------------------------------------------------------------------------------->
+<!--| Advanced Weapon Repair Mod 0.3 by Faustle (2017) |--------------------------------------->
+<!--------------------------------------------------------------------------------------------->
+
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+
+	<info_portion id="awr_mil_smart_terrain_7_7_freedom_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_merc_pri_a18_mech_mlr_dead"></info_portion>
+	<info_portion id="awr_mechanic_monolith_jup_depo_dead"></info_portion>
+	<info_portion id="awr_cit_killers_merc_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_zat_stancia_mech_merc_dead"></info_portion>
+	<info_portion id="awr_val_smart_terrain_7_3_bandit_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_mar_base_stalker_tech_dead"></info_portion>
+	<info_portion id="awr_mechanic_monolith_kbo_dead"></info_portion>
+	<info_portion id="awr_mechanic_army_yan_mlr_dead"></info_portion>
+	<info_portion id="awr_army_south_mechan_mlr_dead"></info_portion>
+	<info_portion id="awr_zat_a2_stalker_mechanic_dead"></info_portion>
+	<info_portion id="awr_zat_tech_mlr_dead"></info_portion>
+	<info_portion id="awr_agr_smart_terrain_1_6_army_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_esc_smart_terrain_5_7_loner_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_pri_monolith_monolith_mechanic_stalker_dead"></info_portion>
+	<info_portion id="awr_jup_cont_mech_bandit_dead"></info_portion>
+	<info_portion id="awr_trucks_cemetery_bandit_mechanic_dead"></info_portion>
+	<info_portion id="awr_bar_visitors_stalker_mechanic_dead"></info_portion>
+	<info_portion id="awr_dasc_tech_mlr_dead"></info_portion>
+	
+	<info_portion id="awr_mil_smart_terrain_7_7_freedom_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_merc_pri_a18_mech_mlr_on_table"></info_portion>
+	<info_portion id="awr_mechanic_monolith_jup_depo_on_table"></info_portion>
+	<info_portion id="awr_cit_killers_merc_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_zat_stancia_mech_merc_on_table"></info_portion>
+	<info_portion id="awr_val_smart_terrain_7_3_bandit_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_mar_base_stalker_tech_on_table"></info_portion>
+	<info_portion id="awr_mechanic_monolith_kbo_on_table"></info_portion>
+	<info_portion id="awr_mechanic_army_yan_mlr_on_table"></info_portion>
+	<info_portion id="awr_army_south_mechan_mlr_on_table"></info_portion>
+	<info_portion id="awr_zat_a2_stalker_mechanic_on_table"></info_portion>
+	<info_portion id="awr_zat_tech_mlr_on_table"></info_portion>
+	<info_portion id="awr_agr_smart_terrain_1_6_army_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_esc_smart_terrain_5_7_loner_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_pri_monolith_monolith_mechanic_stalker_on_table"></info_portion>
+	<info_portion id="awr_jup_cont_mech_bandit_on_table"></info_portion>
+	<info_portion id="awr_trucks_cemetery_bandit_mechanic_on_table"></info_portion>
+	<info_portion id="awr_bar_visitors_stalker_mechanic_on_table"></info_portion>
+	<info_portion id="awr_red_forester_tech_on_table"></info_portion>
+	<info_portion id="awr_dasc_tech_mlr_on_table"></info_portion>
+
+	<info_portion id="awr_mil_smart_terrain_7_7_freedom_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_merc_pri_a18_mech_mlr_access"></info_portion>
+	<info_portion id="awr_mechanic_monolith_jup_depo_access"></info_portion>
+	<info_portion id="awr_cit_killers_merc_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_zat_stancia_mech_merc_access"></info_portion>
+	<info_portion id="awr_val_smart_terrain_7_3_bandit_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_mar_base_stalker_tech_access"></info_portion>
+	<info_portion id="awr_mechanic_monolith_kbo_access"></info_portion>
+	<info_portion id="awr_mechanic_army_yan_mlr_access"></info_portion>
+	<info_portion id="awr_army_south_mechan_mlr_access"></info_portion>
+	<info_portion id="awr_zat_a2_stalker_mechanic_access"></info_portion>
+	<info_portion id="awr_zat_tech_mlr_access"></info_portion>
+	<info_portion id="awr_agr_smart_terrain_1_6_army_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_esc_smart_terrain_5_7_loner_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_pri_monolith_monolith_mechanic_stalker_access"></info_portion>
+	<info_portion id="awr_jup_cont_mech_bandit_access"></info_portion>
+	<info_portion id="awr_trucks_cemetery_bandit_mechanic_access"></info_portion>
+	<info_portion id="awr_bar_visitors_stalker_mechanic_access"></info_portion>
+	<info_portion id="awr_red_forester_tech_access"></info_portion>
+	<info_portion id="awr_dasc_tech_mlr_access"></info_portion>
+
+</game_information_portions>

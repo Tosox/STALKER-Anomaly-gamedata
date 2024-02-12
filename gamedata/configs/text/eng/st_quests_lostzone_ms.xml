@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!--===========================================================
+<
+< TEXT STRINGS FOR LOST TO THE ZONE: MORTAL SIN TASKS
+<	Anomaly 1.5 - Lost to the Zone: Mortal Sin
+<
+<	Made by: SarisKhan
+<	Last revised: 25 August 2020
+<
+<===========================================================-->
+
+<string_table>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 1 -->
+	<string id="lttz_ms_start_title">
+		<text>Mortal Sin: Mysterious Envoy</text>
+	</string>
+	
+	<string id="lttz_ms_start_dolg_descr">
+		<text>General Voronin wants you to interrogate a mysterious envoy who pesters stalkers in the 100 Rads bar.</text>
+	</string>
+	<string id="lttz_ms_start_dolg_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to General Voronin.</text>
+	</string>
+	<string id="lttz_ms_start_dolg_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to General Voronin.</text>
+	</string>
+	
+	<string id="lttz_ms_start_killer_descr">
+		<text>Dushman wants you to interrogate a mysterious envoy who pesters mercs in the Dead City base.</text>
+	</string>
+	<string id="lttz_ms_start_killer_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to Dushman.</text>
+	</string>
+	<string id="lttz_ms_start_killer_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to Dushman.</text>
+	</string>
+	
+	<string id="lttz_ms_start_stalker_descr">
+		<text>Sidorovich wants you to interrogate a mysterious envoy who pesters stalkers in the Rookie Village.</text>
+	</string>
+	<string id="lttz_ms_start_stalker_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to Sidorovich.</text>
+	</string>
+	<string id="lttz_ms_start_stalker_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to Sidorovich.</text>
+	</string>
+	
+	<string id="lttz_ms_start_csky_descr">
+		<text>Cold wants you to interrogate a mysterious envoy who pesters stalkers in the Hidden Base.</text>
+	</string>
+	<string id="lttz_ms_start_csky_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to Cold.</text>
+	</string>
+	<string id="lttz_ms_start_csky_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to Cold.</text>
+	</string>
+	
+	<string id="lttz_ms_start_freedom_descr">
+		<text>Lukash wants you to interrogate a mysterious envoy who pesters stalkers in the Freedom HQ.</text>
+	</string>
+	<string id="lttz_ms_start_freedom_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to Lukash.</text>
+	</string>
+	<string id="lttz_ms_start_freedom_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to Lukash.</text>
+	</string>
+	
+	<string id="lttz_ms_start_ecolog_descr">
+		<text>Professor Sakharov wants you to interrogate a mysterious envoy who pesters guards near the mobile bunker lab.</text>
+	</string>
+	<string id="lttz_ms_start_ecolog_descr_talk">
+		<text>You have obtained some useful information from the envoy. Report to Professor Sakharov.</text>
+	</string>
+	<string id="lttz_ms_start_ecolog_descr_kill">
+		<text>You have obtained some useful information and killed the mysterious envoy. Report to Professor Sakharov.</text>
+	</string>
+	
+	<string id="vodnik_notes_name">
+		<text>Vodnik's notes</text>
+	</string>
+	<string id="vodnik_notes_desc">
+		<text>"Many have joined our cause, whether they understood the magnificence of the Zone from the beginning, or required some explanation. I envy the Founders; they were created by the Masters themselves, they could witness the birth of Vyraj! But they cleansed us, judging us worthy, and they'll cleanse our new brothers. Together, we'll spread the word across the whole world."</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 2 -->
+	<string id="lttz_ms_red_forester_title">
+		<text>Mortal Sin: Red Forester</text>
+	</string>
+	<string id="lttz_ms_red_forester_descr">
+		<text>Talk to Forester about possible Sin activity going on in the Red Forest.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 3 -->
+	<string id="lttz_ms_red_forest_attackers_title">
+		<text>Mortal Sin: Red Forest Haunters</text>
+	</string>
+	<string id="lttz_ms_red_forest_attackers_descr">
+		<text>Forester deduced where the mysterious stalkers you're investigating may have set up camp. Confront them.</text>
+	</string>
+	<string id="lttz_ms_red_forest_attackers_descr2">
+		<text>Search the bodies for any useful information.</text>
+	</string>
+	
+	<string id="attackers_pda_name">
+		<text>Sin Squad Leader's PDA</text>
+	</string>
+	<string id="attackers_pda_desc">
+		<text>This PDA used to belong to the squad leader. Contains a map of the Red Forest with a set of marked locations, an unchecked one among them. Seems the squad was pursuing someone, and that they were very close to finding them. There is also a lot of additional encrypted data; might be valuable.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 4 -->
+	<string id="lttz_ms_runaway_title">
+		<text>Mortal Sin: Runaway</text>
+	</string>
+	<string id="lttz_ms_runaway_descr">
+		<text>The Sinners were pursuing someone. They were supposed to check mines to the west next. Go investigate in their stead.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 5 -->
+	<string id="lttz_ms_needle_haystack_title">
+		<text>Mortal Sin: Needle in a Haystack</text>
+	</string>
+	<string id="lttz_ms_needle_haystack_descr">
+		<text>Stitch requires his hacking device for an important task. Retrieve the item from one of the wrecked buses in the middle of the Truck Cemetery.</text>
+	</string>
+	<string id="lttz_ms_return_stitch_descr">
+		<text>You have found the hacking device. Bring it back to Stitch.</text>
+	</string>
+	
+	<string id="stitch_decoder_name">
+		<text>Stitch's decoder</text>
+	</string>
+	<string id="stitch_decoder_desc">
+		<text>This somewhat outdated hacking device belongs to Stitch. Should be compatible with equally outdated pieces of technology scattered across the Zone.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 6 -->
+	<string id="lttz_ms_report_title">
+		<text>Mortal Sin: Situation Report</text>
+	</string>
+	<string id="lttz_ms_report_dolg_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to General Voronin.</text>
+	</string>
+	<string id="lttz_ms_report_killer_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to Dushman.</text>
+	</string>
+	<string id="lttz_ms_report_stalker_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to Sidorovich.</text>
+	</string>
+	<string id="lttz_ms_report_csky_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to Cold.</text>
+	</string>
+	<string id="lttz_ms_report_freedom_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to Lukash.</text>
+	</string>
+	<string id="lttz_ms_report_ecolog_descr">
+		<text>According to Stitch, Sin's been preparing a large-scale campaign. Report your findings to Professor Sakharov.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 7 -->
+	<string id="lttz_ms_ambush_title">
+		<text>Mortal Sin: Ambush</text>
+	</string>
+	<string id="lttz_ms_ambush_dolg_descr">
+		<text>Sin forces are invading the Bar. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_dolg_done_descr">
+		<text>You have repelled the enemy assault. Report to General Voronin.</text>
+	</string>
+	<string id="lttz_ms_ambush_killer_descr">
+		<text>Sin forces are invading Dead City. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_killer_done_descr">
+		<text>You have repelled the enemy assault. Report to Dushman.</text>
+	</string>
+	<string id="lttz_ms_ambush_stalker_descr">
+		<text>Sin forces are invading the Rookie Village. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_stalker_done_descr">
+		<text>You have repelled the enemy assault. Report to Sidorovich.</text>
+	</string>
+	<string id="lttz_ms_ambush_csky_descr">
+		<text>Sin forces are invading the Fishing Hamlet. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_csky_done_descr">
+		<text>You have repelled the enemy assault. Report to Cold.</text>
+	</string>
+	<string id="lttz_ms_ambush_freedom_descr">
+		<text>Sin forces are invading the headquarters. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_freedom_done_descr">
+		<text>You have repelled the enemy assault. Report to Lukash.</text>
+	</string>
+	<string id="lttz_ms_ambush_ecolog_descr">
+		<text>Sin forces are assaulting the mobile bunker. You have to fend them off.</text>
+	</string>
+	<string id="lttz_ms_ambush_ecolog_done_descr">
+		<text>You have repelled the enemy assault. Report to Professor Sakharov.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task -->
+	<string id="lttz_ms_dark_crusade_title">
+		<text>Mortal Sin: Dark Crusade</text>
+	</string>
+	<string id="lttz_ms_dark_crusade_descr">
+		<text>Sin poses a considerable threat to the stalker community as a whole. Do what you can to stop them.</text>
+	</string>
+	<string id="lttz_ms_dark_crusade_descr2">
+		<text>Chernobog plans to expand the Zone to span the whole world. He must be stopped.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 8 -->
+	<string id="lttz_ms_preemptive_strike_title">
+		<text>Mortal Sin: Preemptive Strike</text>
+	</string>
+	<string id="lttz_ms_protect_miracle_machine_descr">
+		<text>Sin attempts to reactivate the Miracle Machine. Kill the sentry squad near the entrance to the lab.</text>
+	</string>
+	<string id="lttz_ms_protect_miracle_machine_descr2">
+		<text>Sin attempts to reactivate the Miracle Machine. Descend to the lab and kill any enemies you encounter.</text>
+	</string>
+	<string id="lttz_ms_protect_miracle_machine_descr3">
+		<text>Sin attempts to reactivate the Miracle Machine. Prevent the final squad from succeeding.</text>
+	</string>
+	
+	<string id="lttz_ms_protect_brain_scorcher_descr">
+		<text>Sin attempts to reactivate the Brain Scorcher. Travel to Radar and eliminate all hostile forces to prevent them from doing so.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 9 -->
+	<string id="lttz_ms_to_war_title">
+		<text>Mortal Sin: To War</text>
+	</string>
+	<string id="lttz_ms_to_war_descr">
+		<text>Upon their failure to reactivate the psy-installations, Sin declared open war. Travel to Limansk to contact Rogue and form a united front.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 10 -->
+	<string id="lttz_ms_urban_warfare_title">
+		<text>Mortal Sin: Urban Warfare</text>
+	</string>
+	<string id="lttz_ms_urban_warfare_descr">
+		<text>Sin forces occupy most of Limansk. Assassinate their leadership to disrupt them.</text>
+	</string>
+	<string id="lttz_ms_urban_warfare_descr2">
+		<text>You have defeated the Sin Castigators. Report your success to Rogue.</text>
+	</string>
+	
+	<string id="drekavac_notes_name">
+		<text>Drekavac's notes</text>
+	</string>
+	<string id="drekavac_notes_desc">
+		<text>"Finally, after several years of arduous preparation, we can continue the Masters' plan. It's regrettable that so many people don't believe us, but sometimes words aren't enough. They're blinded by base human desires. If they insist on continuing their violent ways, we'll treat them with violence. Maybe then they will understand. The seed of Vyraj is budding, and I'm here to spread the paradise further and further beyond. I am the tip of the spear."</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 11 -->
+	<string id="lttz_ms_war_prisoner_title">
+		<text>Mortal Sin: Prisoner of War</text>
+	</string>
+	<string id="lttz_ms_war_prisoner_descr">
+		<text>Rogue managed to capture a Sin member. Interrogate him to obtain useful intel.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 12 -->
+	<string id="lttz_ms_contact_lost_title">
+		<text>Mortal Sin: Contact Lost</text>
+	</string>
+	<string id="lttz_ms_contact_lost_descr">
+		<text>The scout team sent by Rogue didn't return from their mission. Investigate the situation.</text>
+	</string>
+	<string id="lttz_ms_contact_lost_descr2">
+		<text>You have managed to obtain some intel from the team. Return to Rogue.</text>
+	</string>
+	
+	<string id="contact_lost_pda_name">
+		<text>Scout team leader's PDA</text>
+	</string>
+	<string id="contact_lost_pda_desc">
+		<text>This PDA used to belong to the leader of the scout team. He had managed to record some information about the enemy forces before his untimely demise.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 13 -->
+	<string id="lttz_ms_destruction_site_title">
+		<text>Mortal Sin: Destruction Site</text>
+	</string>
+	<string id="lttz_ms_destruction_site_descr">
+		<text>Sin forces have entrenched in a fortified position on an old construction site. Eliminate them to secure Limansk and access the path to the north.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 14 -->
+	<string id="lttz_ms_hospital_assault_title">
+		<text>Mortal Sin: Northern Hospitality</text>
+	</string>
+	<string id="lttz_ms_hospital_assault_descr">
+		<text>Rout Sin remnants in Limansk to access the Deserted Hospital.</text>
+	</string>
+	<string id="lttz_ms_hospital_assault_descr2">
+		<text>Oust Sin forces from the Deserted Hospital, denying them a stronghold as you push forward to the CNPP.</text>
+	</string>
+	<string id="lttz_ms_hospital_assault_descr3">
+		<text>A telepathic voice called you to the location of a mysterious stalker. Investigate.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 15 -->
+	<string id="lttz_ms_heart_zone_title">
+		<text>Mortal Sin: Heart of the Zone</text>
+	</string>
+	<string id="lttz_ms_heart_zone_descr">
+		<text>Eliminate Sin patrols on your way to the north of the CNPP to ensure a safe return trip.</text>
+	</string>
+	<string id="lttz_ms_heart_zone_descr2">
+		<text>Travel to the ominous area known as the Generators.</text>
+	</string>
+	<string id="lttz_ms_heart_zone_descr3">
+		<text>An unidentified stalker has contacted you on the PDA. Hopefully, it's an ally.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 16 -->
+	<string id="lttz_ms_decisive_blow_title">
+		<text>Mortal Sin: Decisive Blow</text>
+	</string>
+	<string id="lttz_ms_decisive_blow_descr">
+		<text>Remaining Sin forces are gathering near the main entrance to the War Lab. Attack them to divert their attention away from Strelok's sabotage mission.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 17 -->
+	<string id="lttz_ms_confrontation_title">
+		<text>Mortal Sin: Confrontation</text>
+	</string>
+	<string id="lttz_ms_confrontation_descr">
+		<text>Sin has critically failed in its mission. Confront Chernobog.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 18 -->
+	<string id="lttz_ms_endgame_title">
+		<text>Mortal Sin: Endgame</text>
+	</string>
+	<string id="lttz_ms_endgame_descr">
+		<text>Pursue Chernobog and prevent him from making his wish with extreme prejudice.</text>
+	</string>
+	
+	<string id="chernobog_notes_name">
+		<text>Chernobog's notes</text>
+	</string>
+	<string id="chernobog_notes_desc">
+		<text>"The Zone is a miracle. The Masters cleansed us. Soon, we thought, the Zone would cleanse the world. But no. Our small paradise was soon trespassed upon by the flawed people of a sinful world. And, in an act of unthinkable atrocity, the beast named Strelok crippled the valiant Monolith, and entered the Masters' chambers to slay their mortal forms. However, I shall not despair. I cannot let this miracle be consumed by the vice and filth of the unworthy. So we, Sin, must embark upon a quest to fulfil the Masters' wish. We shall wage war upon the violent to bring about eternal peace."</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 19 -->
+	<string id="lttz_ms_choice_title">
+		<text>Mortal Sin: Choice</text>
+	</string>
+	<string id="lttz_ms_choice_descr">
+		<text>Chernobog is dead. Whether you want to use the Wish Granter yourself is your choice.</text>
+	</string>
+	<string id="lttz_ms_choice_descr2">
+		<text>Talk to the Wish Granter.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Task 20 -->
+	<string id="lttz_ms_zone_hero_title">
+		<text>Mortal Sin: Hero of the Zone</text>
+	</string>
+	<string id="lttz_ms_zone_hero_dolg_descr">
+		<text>You have prevented Sin from accelerating the Zone's expansion. Report your success to General Voronin.</text>
+	</string>
+	<string id="lttz_ms_zone_hero_killer_descr">
+		<text>You have ensured the Zone stays in its current lucrative state. Report your success to Dushman.</text>
+	</string>
+	<string id="lttz_ms_zone_hero_stalker_descr">
+		<text>You confronted a threat to stalkers everywhere, and prevailed. Report your success to Sidorovich.</text>
+	</string>
+	<string id="lttz_ms_zone_hero_csky_descr">
+		<text>You have prevented the Zone from being thrown out of balance. Report your success to Cold.</text>
+	</string>
+	<string id="lttz_ms_zone_hero_freedom_descr">
+		<text>You have prevented a tyrant from imposing himself upon the world. Report your success to Lukash.</text>
+	</string>
+	<string id="lttz_ms_zone_hero_ecolog_descr">
+		<text>You have survived an adventure that'd kill most scientists, and kept the Zone safely contained for study. Report your success to Professor Sakharov.</text>
+	</string>
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mortal Sin Unquenchable Flame Tasks -->
+	<string id="unquenchable_flame_task_name">
+		<text>Unquenchable Flame</text>
+	</string>
+	<string id="unquenchable_flame_task_text">
+		<text>Sin survivors are gathering in Zaton. You have to eliminate them.</text>
+	</string>
+	
+	<string id="esc_m_trader_task_4_about">
+		<text>You see, stalker, I know that you've already fought your share of those Sin lunatics, but Beard told me that their remnants are very active. Several stalkers reported that they've been setting up a base in abandoned substation workshops in Zaton. They're endangering my trade routes and I really don't like that. Go silence them for good.</text>
+	</string>
+	<string id="esc_m_trader_task_4_finish">
+		<text>Aren't you the one-man army, huh? Well done, stalker. I hope we won't be hearing of them any more.</text>
+	</string>
+	<string id="cit_killers_merc_trader_stalker_task_4_about">
+		<text>You have established quite the reputation by almost single-handedly destroying a whole faction of lunatics. You see, the thing is they haven't been completely destroyed yet. Our guys from the outpost in Zaton reported suspicious activity in abandoned substation workshops nearby, and they're certain it's Sin again. Eliminate them before they start another bloody crusade.</text>
+	</string>
+	<string id="cit_killers_merc_trader_stalker_task_4_finish">
+		<text>I can always rely on you to finish the job like a true professional. Here's your reward.</text>
+	</string>
+	<string id="mar_smart_terrain_base_stalker_leader_marsh_task_3_about">
+		<text>Damn, just as I was about to get over almost repeating history from a few years back, those guys come back all of a sudden. Turns out there are Sin survivors regrouping in abandoned substation workshops in Zaton. I know it's quite the trip to reach the place, but I really don't like the idea of them growing stronger in there like some sort of malignant tumour. Take a few of our men and wipe them out.</text>
+	</string>
+	<string id="mar_smart_terrain_base_stalker_leader_marsh_task_3_finish">
+		<text>Ah, well done. I think we've done our share of warfare for the next few years, don't you think?</text>
+	</string>
+		
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+</string_table>

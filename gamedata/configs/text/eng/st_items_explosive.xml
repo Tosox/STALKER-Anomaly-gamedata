@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Explosive items + Mines
+-->
+
+<string_table>
+
+	<string id="st_mine_name">
+		<text>PFM-1 scatterable anti-personnel mine</text>
+	</string>
+	<string id="st_mine_descr">
+		<text>PFM-1 (short for противопехотная фугасная мина; NATO name: "Green parrot") used to be a standard-issue anti-personnel mine of the Red Army, employed mainly during the Soviet invasion of Afghanistan. Its widespread utilisation during the conflict led to high civilian casualties, especially among children, since randomly scattered mines were often mistaken for toys due to their familiar shape and colour. For this reason, the PFM-1 earned a sinister nickname: "Child killer." Since then, the mine has been replaced by newer models. However, as was the case with a variety of other 'retired' weaponry, a large number of these mines has somehow made its way into the Zone, becoming its primary booby-trap explosive. The mine is highly valued mainly for its functionality, user-friendliness, compact size and low weight, while its main drawback is a relatively small amount of explosive material: its power is often insufficient to kill a heavily armoured stalker with a single blast. For this reason, the mine should be used in combination with other explosive materials and it acts as an igniter. If it is not armed, the mine will not detonate, even when hit with a gun.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] military item\n
+		%c[d_blue] • %c[ui_gray_2] anti-personnel mine\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]pressure\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]small\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]2.2 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments' radius: %c[ui_gray_1]none\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]none\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]none\n
+		</text>
+	</string>
+	
+	<string id="st_ied_rpg">
+		<text>Improvised explosive device (based on OG-7V warhead)</text>
+	</string>
+	<string id="st_ied_rpg_descr">
+		<text>Improvised explosive device based on OG-7V warhead and parts of a car battery. It looks like it has been carried around for quite some time and could go off any second. Fortunately, the triggering mechanism ensures that it won't unless the explosive is directly hit by a bullet or subjected to other potent physical force. In the Zone, IEDs are quite popular and Zoners use them for a variety of purposes, from gaining access to closed areas to ambushes. They are also often placed next to mines to greatly amplify the power of explosion. IED can be effectively concealed making it virtually invisible to everyone else.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] military item\n
+		%c[d_blue] • %c[ui_gray_2] unnoticeable when placed on ground\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]proximity\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]high\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]7.8 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments' radius: %c[ui_gray_1]56 m\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]440 (shrapnel)\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]none\n
+		</text>
+	</string>
+	
+	<string id="st_ied">
+		<text>Improvised explosive device (based on chemicals)</text>
+	</string>
+	<string id="st_ied_descr">
+		<text>Improvised explosive device produced from various chemical substances, with a broken electrical igniter and in steel ball container. Chemicals used in the device produce intense odour and are heavily toxic. This IED is significantly more powerful than a more common OG-7V version. In the Zone, IEDs are quite popular and Zoners use them for a variety of purposes, from gaining access to closed areas to ambushes. They are also often placed next to mines to greatly amplify the explosion's power. IED can be effectively concealed making it virtually invisible to everyone else.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] military item\n
+		%c[d_blue] • %c[ui_gray_2] unnoticeable when placed on ground\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]proximity\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]very high\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]12.9 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments radius: 
+		%c[ui_gray_1]74 m\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]580 (steel balls)\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]none\n
+		</text>
+	</string>
+	
+	<string id="st_balon_gas">
+		<text>Gas balloon
+		</text>
+	</string>
+	<string id="st_balon_gas_descr">
+		<text>\n \n
+		%c[d_red]WARNING: Explodes upon impact\n \n
+		%c[ui_gray_1]Heavy metal gas balloon impregnated with compatible polymer on the inside and on the outside with Hypalon for weather abrasion and UV resistance. This gas holder balloon is a collapsible, intermediated storage tank for any industrial gas, prior to bottling under pressure. In the Zone such canisters most often contain a composition of methane, propane, ethane and butane, and can be used for cooking or heating as well as for combat purposes. Upon direct gunfire, the canister may ignite and after a short while a rapid release of a considerable amount of energy may follow, causing the gas in the balloon to expand instantly and resulting in a delayed but powerful explosion with metal shrapnel going in every direction. Such canisters have been utilised as a weapon in the feuds between factions in the Zone killing many and crippling even more. If emptied, the balloon can be utilised for armour repairs.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] technological item\n
+		%c[d_blue] • %c[ui_gray_2] contains: %c[ui_gray_1] refined natural gas\n
+		%c[d_green] • %c[ui_gray_2] hi-tier cooking fuel\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]bullet impact or explosion\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]very high\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]6.4 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments' radius: %c[ui_gray_1]36 m\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]28 (heavy metal fragments)\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]~2 seconds\n
+		</text>
+	</string>
+
+	<string id="st_balon_gas_empty">
+		<text>Gas balloon (empty)</text>
+	</string>
+	<string id="st_balon_gas_empty_descr">
+		<text>Emptied heavy metal gas balloon impregnated with compatible polymer on the inside and on the outside with Hypalon for weather abrasion and UV resistance. This gas holder balloon is a collapsible, intermediated storage tank for any industrial gas, prior to bottling under pressure. In the Zone such canisters most often contain a composition of methane, propane, ethane and butane, and can be used for cooking or heating as well as for combat purposes. It is empty now, but you can still put it to good use in outfit maintenance.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] technological item\n
+		</text>
+	</string>
+	
+	<string id="st_metalcan_powder">
+		<text>Powder can
+		</text>
+	</string>
+	<string id="st_metalcan_powder_descr">
+		<text>\n \n
+		%c[d_red]WARNING: Explodes upon impact\n \n
+		%c[ui_gray_1]A small and moderately heavy metal can filled with a mixture of explosive industrial chemicals, metal bolts and nuts as well as black gunpowder retrieved from old ammunition. A notorious death trap designed by a group of Russian bandits known as "the Swireksters" and sold to various bandit groups operating in the Zone. Upon direct gunfire, the can will instantly explode with metal bolts and corrosive chemicals bursting in every direction. No one in their right mind should drop their guard when planning to make use of this deadly weapon. You can also use the metal parts of the can for emergency maintenance of outfits.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] technological item\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]bullet impact or explosion\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]low\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]1.8 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments' radius: %c[ui_gray_1]14 m\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]77 (small metal pieces)\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]none\n
+		</text>
+	</string>
+	
+	<string id="st_jerrycan_item">
+		<text>Jerrycan
+		</text>
+	</string>
+	
+	<string id="st_jerrycan_fuel">
+		<text>Jerrycan
+		</text>
+	</string>
+	<string id="st_jerrycan_fuel_descr">
+		<text>\n \n
+		%c[d_red]WARNING: Explodes upon impact\n \n
+		%c[ui_gray_1]A large metal can filled with E95 gasoline. Jerrycans were brought to the Zone in large quantities by the Ukrainian military for their armoured vehicles. Initially, they served their purpose, but after the second Chernobyl Disaster vehicles for reasons still unknown were no longer operational. While some Zoners are still trying to make the wrecks work again, others have found alternate ways of utilising the jerrycans, namely, as improvised explosives. Upon direct hit, the canister will catch fire and explode after a slight delay. Although heavy and cumbersome, it is extremely powerful, and a well-placed jerrycan can be lethal even if the target wears the heaviest of body armours. On the other hand, the explosion is often so potent that the killer becomes the victim himself, so it's best to use these canisters with caution. There are rumours that a veteran stalker named Yuya once saved his skin by luring a pseudogiant into a jerrycan trap. He emptied his last Makarov magazine and the giant burst into flames with a roar that was heard throughout the Jupiter.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] technological item\n
+		%c[d_blue] • %c[ui_gray_2] contains: %c[ui_gray_1] E95 gasoline\n
+		%c[d_green] • %c[ui_gray_2] hi-tier cooking fuel\n
+		%c[d_purple] • %c[ui_gray_2] triggering mechanism: %c[ui_gray_1]bullet impact or explosion\n
+		%c[d_purple] • %c[ui_gray_2] blast power: %c[ui_gray_1]high\n
+		%c[d_purple] • %c[ui_gray_2] blast radius: %c[ui_gray_1]5.6 m\n
+		%c[d_purple] • %c[ui_gray_2] fragments' radius: %c[ui_gray_1]28 m\n
+		%c[d_purple] • %c[ui_gray_2] av. number of fragments: %c[ui_gray_1]39 (heavy metal fragments)\n
+		%c[d_purple] • %c[ui_gray_2] explosion delay: %c[ui_gray_1]~3 seconds\n
+		</text>
+	</string>
+
+	<string id="st_jerrycan_fuel_empty">
+		<text>Jerrycan (empty)</text>
+	</string>
+	<string id="st_jerrycan_fuel_empty_descr">
+		<text>Empty metal can. It can only be used as material for the purposes of basic outfit repairs or sold to traders.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] explosive\n
+		%c[d_blue] • %c[ui_gray_2] technological item\n
+		</text>
+	</string>
+	
+</string_table>

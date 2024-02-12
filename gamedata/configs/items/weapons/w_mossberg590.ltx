@@ -1,0 +1,184 @@
+;------------------------------------------------------------------------------------------------
+[wpn_mossberg590]: identity_immunities,weapon_probability,default_weapon_params,wpn_winchester1300_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\winchester1300"
+scheduled                                = off
+cform                                    = skeleton
+
+class                                    = WP_ASHTG
+slot                                     = 2
+animation_slot                           = 9
+ef_main_weapon_type                      = 1
+ef_weapon_type                           = 9
+hand_dependence                          = 1
+single_handed                            = 0
+
+inv_grid_height                          = 1
+inv_grid_width                           = 4
+inv_grid_x                               = 37
+inv_grid_y                               = 76
+inv_name                                 = st_wpn_mossberg590
+inv_name_short                           = st_wpn_mossberg590
+description                              = st_wpn_mossberg590_descr
+
+kind                                     = w_shotgun
+inv_weight                               = 3.3
+cost                                     = 24850
+repair_type                              = shotgun
+weapon_class                             = shotgun
+
+hud                                      = wpn_mossberg590_hud
+visual                                   = dynamics\weapons\wpn_mossberg590\wpn_mossberg590.ogf
+position                                 = -0.024, -0.097, 0.
+orientation                              = 0, -4, 0
+fire_point                               = 0.0, 0.158, 0.647
+fire_point2                              = 0.0, 0.158, 0.647
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.26, -0.10, 0.05
+strap_orientation                        = -15, -9, 110
+ph_mass                                  = 3
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = amik\weapons\smoke_particles\smoke_particles_pump_01
+
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 6.0
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_mossberg590, up_gr_seconab_mossberg590, up_gr_thirdab_mossberg590, up_gr_fourtab_mossberg590
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_wincheaster1300
+upgr_icon_x                              = 1450
+upgr_icon_y                              = 100
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+tri_state_reload                         = on
+fire_modes                               = 1
+ammo_class                               = ammo_12x70_buck, ammo_12x70_buck_bad, ammo_12x70_buck_verybad, ammo_12x76_zhekan, ammo_12x76_zhekan_bad, ammo_12x76_zhekan_verybad, ammo_12x76_dart, ammo_12x76_dart_bad, ammo_12x76_dart_verybad, ammo_12x70_buck_self
+ammo_elapsed                             = 8
+ammo_mag_size                            = 8
+startup_ammo                             = 10
+
+scope_status                             = 0
+scope_zoom_factor                        = 0
+
+silencer_status                          = 0
+
+grenade_launcher_status                  = 0
+
+hit_impulse                              = 35
+hit_power                                = 0.79, 0.79, 0.79, 0.79
+hit_type                                 = fire_wound
+fire_distance                            = 300
+bullet_speed                             = 330
+rpm                                      = 60
+rpm_empty_click                          = 200
+
+zoom_dof                                 = 0.5, 1.0, 180
+zoom_enabled                             = true
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 6.3
+fire_dispersion_base                     = 0.51
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.85
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.15
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0023
+condition_shot_dec                       = 0.0023
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 7.22
+cam_dispersion_frac                      = 0.9
+cam_dispersion_inc                       = 4.66
+cam_max_angle                            = 50.0
+cam_max_angle_horz                       = 50.0
+cam_step_angle_horz                      = 2.03
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 6.63
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_dispersion_inc                  = 4.11
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.74
+
+PDM_disp_accel_factor                    = 1.655
+PDM_disp_base                            = 1.55
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 1.65
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 120.75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 171
+kill_msg_y                               = 104
+kill_msg_width                           = 75
+kill_msg_height                          = 20
+
+
+[wpn_mossberg590_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_mossberg590\wpn_mossberg590_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = -0.07, -0.16, 0.05
+hands_position_16x9                      = -0.07, -0.16, 0.05
+hands_orientation                        = 2, 2, 0
+hands_orientation_16x9                   = 2, 2, 0
+
+aim_hud_offset_pos                       = -0.0813,0.0799,-0.2
+aim_hud_offset_pos_16x9                  = -0.0813,0.0799,-0.2
+aim_hud_offset_rot                       = 0.0363,0.0349,0.0025
+aim_hud_offset_rot_16x9                  = 0.0363,0.0349,0.0025
+
+anm_add_cartridge                        = mossberg_reload, reload
+anm_close                                = mossberg_reload_end, reload_end
+anm_hide                                 = mossberg_holster
+anm_idle                                 = mossberg_idle
+anm_idle_aim                             = mossberg_idle_aim
+anm_idle_aim_moving                      = mossberg_idle_moving, idle, 0.75
+anm_idle_aim_moving_crouch               = mossberg_idle_crouch
+anm_idle_moving                          = mossberg_idle_moving
+anm_idle_moving_crouch                   = mossberg_idle_crouch
+anm_idle_sprint                          = mossberg_idle_sprint
+anm_open                                 = mossberg_reload_start, reload_start
+anm_reload                               = mossberg_reload
+anm_shots                                = mossberg_shoot, shoot
+anm_show                                 = mossberg_draw
+
+shell_bone                               = gilza
+shell_dir                                = 0, 1, 0
+shell_point                              = 0, 0, 0
+
+fire_bone                                = muzzle
+fire_bone2                               = muzzle
+fire_point                               = 0, 0, 0
+fire_point2                              = 0, 0, 0
+
+freelook_z_offset_mul					 = 0.2
+
+[wpn_mossberg590_sk1_hud]:wpn_mossberg590_hud
+item_visual                              = anomaly_weapons\wpn_mossberg590\wpn_mossberg590_sk1_hud.ogf
+

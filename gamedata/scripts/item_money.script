@@ -1,0 +1,226 @@
+--[[
+
+- Tronex
+- Money management
+- 2018/9/13
+
+--]]
+
+
+local used_wallet = false -- preventing an exploit of infinite money
+
+local list_money = {
+	{ section= "roubles"             ,max_amount =   9          },
+	{ section= "money_10"            ,max_amount =   10         },
+	{ section= "money_10_50"         ,max_amount =   49         },
+	{ section= "money_50"            ,max_amount =   50         },
+	{ section= "money_50_100"        ,max_amount =   99         },
+	{ section= "money_100"           ,max_amount =   100        },
+	{ section= "money_100_200"       ,max_amount =   199        },
+	{ section= "money_200_300"       ,max_amount =   299        },
+	{ section= "money_300_400"       ,max_amount =   399        },
+	{ section= "money_400_500"       ,max_amount =   499        },
+	{ section= "money_500"           ,max_amount =   500        },
+	{ section= "money_500_600"       ,max_amount =   599        },
+	{ section= "money_600_700"       ,max_amount =   699        },
+	{ section= "money_700_800"       ,max_amount =   799        },
+	{ section= "money_800_900"       ,max_amount =   899        },
+	{ section= "money_900_1000"      ,max_amount =   999        },
+	{ section= "money_1000"          ,max_amount =   1000       },
+	{ section= "money_1000_5000"     ,max_amount =   4999       },
+	{ section= "money_5000"          ,max_amount =   5000       },
+	{ section= "money_5000_end"      ,max_amount =   math.huge  },
+}
+
+local list_actor = { -- amount of money found on corpses by player depends on corpse rank
+	["novice"]           = {  cond= 50,		min= 50	,	max= 200 	},
+	["trainee"]          = {  cond= 100,	min= 100,	max= 300	},
+	["experienced"]      = {  cond= 200,	min= 150,	max= 400	},
+	["professional"]     = {  cond= 300,	min= 200,	max= 500	},
+	["veteran"]          = {  cond= 400,	min= 300,	max= 600	},
+	["expert"]           = {  cond= 500,	min= 400,	max= 700	},
+	["master"]           = {  cond= 600,	min= 500,	max= 800	},
+	["legend"]           = {  cond= 800,	min= 700,	max= 1000	},
+}
+
+local list_npc = { -- amount of money found on corpses by NPCs depends on corpse rank
+	["novice"]           = {  cond= 100,	min= 25,	max= 400 	},
+	["trainee"]          = {  cond= 200,	min= 50,	max= 400 	},
+	["experienced"]      = {  cond= 250,	min= 200,	max= 500 	},
+	["professional"]     = {  cond= 300,	min= 400,	max= 600 	},
+	["veteran"]          = {  cond= 350,	min= 400,	max= 700 	},
+	["expert"]           = {  cond= 400,	min= 500,	max= 800 	},
+	["master"]           = {  cond= 450,	min= 500,	max= 900 	},
+	["legend"]           = {  cond= 500,	min= 600,	max= 1000	},
+}
+
+
+-------------------------------
+-- Item Properties
+-------------------------------
+function menu_money_100(obj)
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	
+	if (db.actor:money() < 100) then
+		return
+	end
+	
+	local txt = game.translate_string("st_item_money")
+	txt = strformat(txt,"100")
+	
+	return txt
+end
+function menu_money_500(obj)
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	
+	if (db.actor:money() < 500) then
+		return
+	end
+	
+	local txt = game.translate_string("st_item_money")
+	txt = strformat(txt,"500")
+	
+	return txt
+end
+function menu_money_1000(obj)
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	
+	if (db.actor:money() < 1000) then
+		return
+	end
+	
+	local txt = game.translate_string("st_item_money")
+	txt = strformat(txt,"1000")
+	
+	return txt
+end
+function menu_money_5000(obj)
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	
+	if (db.actor:money() < 5000) then
+		return
+	end
+	
+	local txt = game.translate_string("st_item_money")
+	txt = strformat(txt,"5000")
+	
+	return txt
+end
+
+function use_money_100(obj)
+	used_wallet = true
+	alife_create_item("money_100", db.actor)
+	db.actor:give_money(-100)
+	utils_obj.play_sound("interface\\items\\inv_items_money_paper")
+end
+function use_money_500(obj)
+	used_wallet = true
+	alife_create_item("money_500", db.actor)
+	db.actor:give_money(-500)
+	utils_obj.play_sound("interface\\items\\inv_items_money_paper")
+end
+function use_money_1000(obj)
+	used_wallet = true
+	alife_create_item("money_1000", db.actor)
+	db.actor:give_money(-1000)
+	utils_obj.play_sound("interface\\items\\inv_items_money_paper")
+end
+function use_money_5000(obj)
+	used_wallet = true
+	alife_create_item("money_5000", db.actor)
+	db.actor:give_money(-5000)
+	utils_obj.play_sound("interface\\items\\inv_items_money_paper")
+end
+
+
+-------------------------------
+-- Main
+-------------------------------
+function actor_on_loot_money(corpse)
+	local money = corpse:money()
+	if money and (money > 0) and (money < 10000) then
+		local deadmoney = money
+		local rank = ranks.get_obj_rank_name(corpse)
+		if (rank ~= nil) then
+			local eco_factor = game_difficulties.get_eco_factor("money_loots") or 1
+			if list_actor[rank] and (money >= list_actor[rank].cond) then
+				deadmoney = math.random( list_actor[rank].min , list_actor[rank].max ) * eco_factor
+			end
+		end
+		deadmoney = math.floor(deadmoney)
+		
+		local money_sec
+		for i=1,#list_money do
+			if deadmoney <= list_money[i].max_amount then
+				money_sec = list_money[i].section
+				break
+			end
+		end
+		alife_create_item(money_sec, corpse)
+		
+		corpse:give_money(-money)
+	end
+end
+
+function npc_on_loot_money(npc, corpse)
+	local money = corpse:money()
+	if money and (money > 0) and (money < 10000) then
+		local rank = ranks.get_obj_rank_name(corpse)
+		if (rank ~= nil) then
+			local eco_factor = game_difficulties.get_eco_factor("money_loots") or 1
+			
+			local deadmoney = math.random(25,400) * eco_factor 
+			if list_npc[rank] and (money >= list_npc[rank].cond) then
+				deadmoney = math.random( list_npc[rank].min , list_npc[rank].max ) * eco_factor
+			end
+			deadmoney = math.floor(deadmoney)
+			
+			npc:give_money(deadmoney)
+			
+			corpse:give_money(-money) 
+		end
+	end
+end
+
+
+-------------------------------
+-- Callbacks
+-------------------------------
+local function actor_on_item_use(obj)
+	local money_amount = IsItem("money", obj:section())
+	if money_amount and money_amount[1] then
+		if money_amount[2] then
+			local min_amt = math.floor(tonumber(money_amount[1])) or 10
+			local max_amt = math.floor(tonumber(money_amount[2])) or 30
+			db.actor:give_money(math.random(min_amt, max_amt))
+		else
+			local amount = math.floor(tonumber(money_amount[1])) or 10
+			db.actor:give_money(amount)
+		end
+	end
+end
+
+local function actor_on_item_take(obj) -- add money automatically to wallet
+	if IsItem("money", obj:section()) then
+		if used_wallet then
+			used_wallet = false
+			return
+		end
+		
+		-- Use
+		actor_on_item_use(obj)
+		
+		-- Delete
+		db.actor:drop_item(obj)
+		alife_release(obj)
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_item_use",actor_on_item_use)
+	RegisterScriptCallback("actor_on_item_take",actor_on_item_take)
+end

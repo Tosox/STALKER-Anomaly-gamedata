@@ -1,0 +1,118 @@
+-- werejew
+-- Names of factions, terrains, squads
+
+faction_names = {}
+point_names_hide = {
+	["agr_u_monsters"]             = true,
+	["agr_u_bloodsucker"]          = true,
+	["agr_u_bloodsucker_2"]        = true,
+	["agr_u_bandits"]              = true,
+	["agr_u_soldiers"]             = true,
+
+	["sar_monolith_sklad"]         = true,
+	["sar_monolith_bloodsuckers"]  = true,
+	["sar_monolith_poltergeists"]  = true,
+
+	["lx8_smart_terrain"]          = true,
+
+	["bun2_st_bloodsucker"]        = true,
+	["bun_krovosos_nest"]          = true,
+	["bun2_tushkano_lair"]         = true,
+
+	["dar_control_poltergeist"]    = true,
+	["dar_angar"]                  = true,
+	["dar_smart_snork"]            = true,
+	["dar_poltergeist_ring"]       = true,
+	["dar_poltergeist_tele"]       = true,
+	["dar_military_scout"]         = true,
+	["dar_poltergeist_tele_round"] = true,
+
+	["x162_st_snork"]              = true,
+	["x162_st_gigant"]             = true,
+	["x162_st_burer"]              = true,
+	["x162_st_poltergeist"]        = true,
+
+	["pas_b400_canalisation"]      = true,
+	["pas_b400_downstairs"]        = true,
+	["pas_b400_elevator"]          = true,
+	["pas_b400_fake"]              = true,
+	["pas_b400_hall"]              = true,
+	["pas_b400_track"]             = true,
+	["pas_b400_tunnel"]            = true,
+	["pas_b400_way"]               = true,
+}
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_sim_1")
+	
+	faction_names["stalker"]                 = game.translate_string("stalker")                 
+	faction_names["bandit"]                  = game.translate_string("bandit")                  
+	faction_names["csky"]                    = game.translate_string("csky")                    
+	faction_names["army"]                    = game.translate_string("army")                    
+	faction_names["freedom"]                 = game.translate_string("freedom")                 
+	faction_names["dolg"]                    = game.translate_string("dolg")                    
+	faction_names["ecolog"]                  = game.translate_string("ecolog")                  
+	faction_names["killer"]                  = game.translate_string("killer")                  
+	faction_names["monolith"]                = game.translate_string("monolith")                
+	faction_names["renegade"]                = game.translate_string("renegade")                
+	faction_names["greh"]                    = game.translate_string("greh")                    
+	faction_names["isg"]                     = game.translate_string("isg")                     
+	faction_names["zombied"]                 = game.translate_string("zombied")                 
+	faction_names["monster"]                 = game.translate_string("monster")                 
+	faction_names["none"]                    = game.translate_string("st_wrfr_none")                    
+	faction_names["monster_zombied_night"]   = game.translate_string("monster_zombied_night")   
+	faction_names["monster_zombied_day"]     = game.translate_string("monster_zombied_day")     
+	faction_names["monster_predatory_night"] = game.translate_string("monster_predatory_night") 
+	faction_names["monster_predatory_day"]   = game.translate_string("monster_predatory_day")   
+	faction_names["monster_vegetarian"]      = game.translate_string("monster_vegetarian")      
+	faction_names["monster_special"]         = game.translate_string("monster_special")
+end
+
+function get_name(input)
+	local name = nil
+
+	if (type(input) == "string") then
+		name = faction_names[input]
+	elseif (input.clsid ~= nil) then
+		if (input:clsid() == clsid.smart_terrain) then
+			name = get_smart_name(input)
+		elseif (input:clsid() == clsid.online_offline_group_s) then
+			name = get_squad_name(input)
+		end
+	end
+
+	if (not name) then
+		name = "[nil]"
+	end
+
+	return name
+end
+
+function get_squad_name(squad)
+	local commanderID = squad:commander_id()
+	local commander = commanderID and alife_object(commanderID)
+	local commanderName = commander and commander.character_name and commander:character_name()		
+	local squadName = commanderName and strformat(str_wrfr[1], commanderName) or squad:name()
+
+	return squadName
+end
+
+function get_smart_name(smart)
+	local name = smart:name()
+	return game.translate_string("st_" .. name .. "_name") or name
+end
+
+function translate_smart_name(name)	
+	return (name and game.translate_string("st_" .. name .. "_name") or "")
+end
+
+
+------------------------------------------------------------
+-- Callbacks
+------------------------------------------------------------
+function on_game_start()
+	refresh_strings()
+
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+end 

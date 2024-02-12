@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+<!-- Major Hernandez - Darkscape -->
+	<dialog id="hb_hernandez_ds_start_dialog">
+		<phrase_list>
+			<phrase id="0">
+                <text>hb_hernandez_ds_start_dialog_0</text>
+            </phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="hb_hernandez_ds_intro_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<dont_has_info>hb_hernandez_ds_intro_dialog_done</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_ds_intro_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+				<text>hb_hernandez_ds_intro_dialog_1</text>
+				<give_info>hb_hernandez_ds_intro_dialog_done</give_info>
+			</phrase>
+        </phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_dushman_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_dushman_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_dushman_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_dushman_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_about_dushman_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_about_dushman_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_about_dushman_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_about_dushman_dialog_5</text>
+				<give_info>hb_hernandez_about_dushman_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_darkscape_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_darkscape_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_darkscape_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_darkscape_dialog_1</text>
+				<give_info>hb_hernandez_about_darkscape_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_isg_groups_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_isg_groups_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_isg_groups_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_isg_groups_dialog_1</text>
+				<give_info>hb_hernandez_about_isg_groups_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_disguise_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_disguise_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_disguise_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_disguise_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_about_disguise_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_about_disguise_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_about_disguise_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_about_disguise_dialog_5</text>
+				<give_info>hb_hernandez_about_disguise_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_mercs_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_mercs_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_mercs_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_mercs_dialog_1</text>
+				<give_info>hb_hernandez_about_mercs_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_operation_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_operation_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_operation_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_operation_dialog_1</text>
+				<give_info>hb_hernandez_about_operation_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_about_operation_more_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<has_info>hb_hernandez_about_operation_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_about_operation_more_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_operation_more_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_operation_more_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_about_operation_more_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_about_operation_more_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_about_operation_more_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_about_operation_more_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_hernandez_about_operation_more_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_hernandez_about_operation_more_dialog_7</text>
+			<give_info>hb_hernandez_about_operation_more_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_ds_break_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_ds_intro_dialog_done</has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_ds_break_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_ds_break_dialog_1</text>
+				<next>2</next>
+				<action>dialogs_lostzone.give_task_lttz_hb_1_1_dushman_intel</action>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_ds_break_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_ds_break_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_ds_break_dialog_4</text>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+
+<!-- Dushman - Dead City -->
+	<dialog id="hb_dushman_isg_intel_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>lttz_hb_task_1_1_dushman_intel_started</has_info>
+		<dont_has_info>hb_dushman_isg_intel_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_dushman_isg_intel_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_dushman_isg_intel_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_dushman_isg_intel_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_dushman_isg_intel_dialog_3</text>
+				<next>4</next>
+				<action>dialogs_lostzone.give_hb_isg_dushman_intel</action>
+				<action>dialogs_lostzone.unlock_routes_north</action>
+				<give_info>hb_dushman_isg_intel_dialog_done</give_info>
+            </phrase>
+			<phrase id="4">
+                <text>hb_dushman_isg_intel_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_dushman_isg_intel_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_dushman_isg_intel_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_dushman_isg_intel_dialog_7</text>
+				<next>8</next>
+            </phrase>
+			<phrase id="8">
+                <text>hb_dushman_isg_intel_dialog_8</text>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="drx_isg_cit_killers_merc_trader_stalker_game_start_dialog_1">
+		<has_info>drx_sl_start_game_cit_killers_merc_trader_stalker</has_info>
+		<has_info>hb_dushman_isg_intel_dialog_done</has_info>
+		<phrase_list>
+			<phrase id="0">  <!-- Actor -->
+				<text>drx_isg_cit_killers_merc_trader_stalker_game_start_dialog_1_0</text>
+				<next>1</next>
+			</phrase>
+		    <phrase id="1">  <!-- NPC -->
+                <text>drx_isg_cit_killers_merc_trader_stalker_game_start_dialog_1_1</text>
+                <disable_info>drx_sl_start_game_cit_killers_merc_trader_stalker</disable_info>
+				<action>xr_effects.drx_sl_decrease_sl_tasks_count</action>
+				<action>xr_effects.drx_sl_meet_random_honcho</action>
+            </phrase>
+		</phrase_list>
+	</dialog>
+
+
+<!-- Major Hernandez - Jupiter/Underpass -->
+	<dialog id="hb_hernandez_jup_start_dialog">
+		<phrase_list>
+			<phrase id="0">
+                <text>hb_hernandez_jup_start_dialog_0</text>
+            </phrase>
+		</phrase_list>
+	</dialog>
+
+	<dialog id="hb_hernandez_jup_dushman_intel">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<precondition>dialogs_lostzone.has_hb_isg_dushman_intel</precondition>
+		<dont_has_info>hb_hernandez_jup_dushman_intel_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_jup_dushman_intel_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_jup_dushman_intel_1</text>
+				<next>2</next>
+				<action>dialogs_lostzone.complete_task_lttz_hb_1_2_recruit</action>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_jup_dushman_intel_2</text>
+				<give_info>hb_hernandez_jup_dushman_intel_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_about_jup_factory_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_jup_dushman_intel_done</has_info>
+		<dont_has_info>hb_hernandez_about_jup_factory_dialog_done</dont_has_info>
+		<dont_has_info>lttz_hb_jupiter_documents_given</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_jup_factory_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_jup_factory_dialog_1</text>
+				<give_info>hb_hernandez_about_jup_factory_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_about_jup_factory_enter_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_jup_dushman_intel_done</has_info>
+		<dont_has_info>hb_hernandez_about_jup_factory_enter_dialog_done</dont_has_info>
+		<dont_has_info>lttz_hb_jupiter_documents_given</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_jup_factory_enter_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_jup_factory_enter_dialog_1</text>
+				<give_info>hb_hernandez_about_jup_factory_enter_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_search_jup_factory_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_jup_dushman_intel_done</has_info>
+		<dont_has_info>hb_hernandez_search_jup_factory_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_search_jup_factory_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_search_jup_factory_dialog_1</text>
+				<next>2</next>
+				<give_info>hb_hernandez_search_jup_factory_dialog_done</give_info>
+				<action>dialogs_lostzone.give_task_lttz_hb_2_1_guarded_secrets</action>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_search_jup_factory_dialog_2</text>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_found_jupiter_documents_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<precondition>dialogs_lostzone.actor_has_jupiter_documents</precondition>
+		<dont_has_info>lttz_hb_jupiter_documents_given</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_found_jupiter_documents_dialog_0</text>
+				<next>1</next>
+				<action>dialogs_lostzone.complete_task_lttz_hb_2_1_guarded_secrets</action>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_found_jupiter_documents_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_found_jupiter_documents_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_found_jupiter_documents_dialog_3</text>
+				<next>4</next>
+				<next>5</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_found_jupiter_documents_dialog_4</text>
+				<next>41</next>
+            </phrase>
+			<phrase id="41">
+                <text>hb_hernandez_found_jupiter_documents_dialog_41</text>
+				<next>42</next>
+            </phrase>
+			<phrase id="42">
+                <text>hb_hernandez_found_jupiter_documents_dialog_42</text>
+				<action>dialogs_lostzone.give_task_lttz_hb_2_2_breakthrough</action>
+				<action>dialogs_lostzone.unlock_routes_underpass</action>
+				<!--action>dialogs_lostzone.set_stalker_living_legend_as_companion</action-->
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_found_jupiter_documents_dialog_5</text>
+				<next>51</next>
+            </phrase>
+			<phrase id="51">
+                <text>hb_hernandez_found_jupiter_documents_dialog_51</text>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_start_jup_u_breakthrough_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>lttz_hb_jupiter_documents_given</has_info>
+		<dont_has_info>hb_hernandez_start_jup_u_breakthrough_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_start_jup_u_breakthrough_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_start_jup_u_breakthrough_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_start_jup_u_breakthrough_dialog_2</text>
+				<action>dialogs_lostzone.give_task_lttz_hb_2_2_breakthrough</action>
+				<action>dialogs_lostzone.unlock_routes_underpass</action>
+				<!--action>dialogs_lostzone.set_stalker_living_legend_as_companion</action-->
+				<give_info>hb_hernandez_start_jup_u_breakthrough_dialog_done</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_hernandez_found_jup_u_documents_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_start_jup_u_breakthrough_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_found_jup_u_documents_dialog</dont_has_info>
+		<precondition>dialogs_lostzone.actor_has_main_story_6_jup_ug_documents</precondition>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_found_jup_u_documents_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_found_jup_u_documents_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_found_jup_u_documents_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_found_jup_u_documents_dialog_3</text>
+				<action>dialogs_lostzone.complete_task_lttz_hb_2_2_breakthrough</action>
+				<action>dialogs_lostzone.dismiss_speaker_companion</action>
+				<give_info>hb_hernandez_found_jup_u_documents_dialog</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_about_evidence_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>lttz_hb_isg_breakthrough</has_info>
+		<dont_has_info>hb_hernandez_about_evidence_dialog_done</dont_has_info>
+		<dont_has_info>hb_hernandez_found_labs_docs_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_about_evidence_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_about_evidence_dialog_1</text>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<give_info>hb_hernandez_about_evidence_dialog_done</give_info>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_about_evidence_dialog_2</text>
+				<next>21</next>
+            </phrase>
+			<phrase id="21">
+                <text>hb_hernandez_about_evidence_dialog_21</text>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_about_evidence_dialog_3</text>
+				<next>31</next>
+            </phrase>
+			<phrase id="31">
+                <text>hb_hernandez_about_evidence_dialog_21</text>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_about_evidence_dialog_4</text>
+				<next>41</next>
+            </phrase>
+			<phrase id="41">
+                <text>hb_hernandez_about_evidence_dialog_41</text>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_search_labs_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>lttz_hb_isg_breakthrough</has_info>
+		<dont_has_info>hb_hernandez_search_labs_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_search_labs_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_search_labs_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_search_labs_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_search_labs_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_search_labs_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_search_labs_dialog_5</text>
+				<next>6</next>
+				<action>dialogs_lostzone.give_actor_good_psi_helmet</action>
+            </phrase>
+			<phrase id="6">
+                <text>hb_hernandez_search_labs_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_hernandez_search_labs_dialog_7</text>
+				<next>8</next>
+				<action>dialogs_lostzone.unlock_routes_labs</action>
+            </phrase>
+			<phrase id="8">
+                <text>hb_hernandez_search_labs_dialog_8</text>
+				<give_info>hb_hernandez_search_labs_dialog_done</give_info>
+				<action>dialogs_lostzone.give_mysteries_of_the_zone_tasks</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_found_labs_docs_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_search_labs_dialog_done</has_info>
+		<has_info>main_1_search_agr_ug_task_done</has_info>
+		<has_info>main_2_search_labx18_task_done</has_info>
+		<has_info>main_3_search_labx16_task_done</has_info>
+		<has_info>main_4_search_labx10_task_done</has_info>
+		<has_info>main_5_search_labx8_task_done</has_info>
+		<dont_has_info>hb_hernandez_found_labs_docs_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_found_labs_docs_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_found_labs_docs_dialog_1</text>
+				<next>2</next>
+				<action>dialogs_lostzone.complete_task_lttz_hb_3_8_handle_docs</action>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_found_labs_docs_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_found_labs_docs_dialog_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_found_labs_docs_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_found_labs_docs_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_hernandez_found_labs_docs_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_hernandez_found_labs_docs_dialog_7</text>
+				<next>8</next>
+            </phrase>
+			<phrase id="8">
+                <text>hb_hernandez_found_labs_docs_dialog_8</text>
+				<next>9</next>
+            </phrase>
+			<phrase id="9">
+                <text>hb_hernandez_found_labs_docs_dialog_9</text>
+				<next>10</next>
+            </phrase>
+			<phrase id="10">
+                <text>hb_hernandez_found_labs_docs_dialog_10</text>
+				<next>11</next>
+            </phrase>
+			<phrase id="11">
+                <text>hb_hernandez_found_labs_docs_dialog_11</text>
+				<next>12</next>
+            </phrase>
+			<phrase id="12">
+                <text>hb_hernandez_found_labs_docs_dialog_12</text>
+				<next>13</next>
+            </phrase>
+			<phrase id="13">
+                <text>hb_hernandez_found_labs_docs_dialog_13</text>
+				<next>14</next>
+            </phrase>
+			<phrase id="14">
+                <text>hb_hernandez_found_labs_docs_dialog_14</text>
+				<next>15</next>
+            </phrase>
+			<phrase id="15">
+                <text>hb_hernandez_found_labs_docs_dialog_15</text>
+				<next>16</next>
+				<next>17</next>
+				<action>dialogs_lostzone.give_task_lttz_hb_4_1_crossfire</action>
+            </phrase>
+			<phrase id="16">
+                <text>hb_hernandez_found_labs_docs_dialog_16</text>
+				<next>18</next>
+				<action>dialogs_lostzone.spawn_pass_hall_isg_companion_squad</action>
+				<give_info>hb_player_want_strelok_dead</give_info>
+            </phrase>
+			<phrase id="17">
+                <text>hb_hernandez_found_labs_docs_dialog_17</text>
+				<next>18</next>
+            </phrase>
+			<phrase id="18">
+                <text>hb_hernandez_found_labs_docs_dialog_18</text>
+				<give_info>hb_hernandez_found_labs_docs_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_strelok_pendrive_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<precondition>dialogs_lostzone.actor_has_strelok_pendrive</precondition>
+		<has_info>hb_hernandez_found_labs_docs_dialog_done</has_info>
+		<dont_has_info>hb_hernandez_strelok_pendrive_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_strelok_pendrive_dialog_0</text>
+				<next>1</next>
+				<next>2</next>
+				<next>3</next>
+            </phrase>
+			<phrase id="1">
+				<dont_has_info>hb_betray_strelok</dont_has_info>
+				<has_info>lost_stalker_strelok_dead</has_info>
+                <text>hb_hernandez_strelok_pendrive_dialog_1</text>
+				<next>11</next>
+            </phrase>
+			<phrase id="11">
+                <text>hb_hernandez_strelok_pendrive_dialog_1_1</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="2">
+				<has_info>hb_betray_strelok</has_info>
+				<has_info>lost_stalker_strelok_dead</has_info>
+                <text>hb_hernandez_strelok_pendrive_dialog_2</text>
+				<next>21</next>
+            </phrase>
+			<phrase id="21">
+                <text>hb_hernandez_strelok_pendrive_dialog_2_1</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="3">
+				<dont_has_info>lost_stalker_strelok_dead</dont_has_info>
+                <text>hb_hernandez_strelok_pendrive_dialog_3</text>
+				<next>31</next>
+            </phrase>
+			<phrase id="31">
+                <text>hb_hernandez_strelok_pendrive_dialog_3_1</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+                <text>hb_hernandez_strelok_pendrive_dialog_4</text>
+				<next>5</next>
+				<action>dialogs_lostzone.complete_task_lttz_hb_4_1_crossfire</action>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_strelok_pendrive_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_hernandez_strelok_pendrive_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_hernandez_strelok_pendrive_dialog_7</text>
+				<next>8</next>
+            </phrase>
+			<phrase id="8">
+                <text>hb_hernandez_strelok_pendrive_dialog_8</text>
+				<next>9</next>
+            </phrase>
+			<phrase id="9">
+                <text>hb_hernandez_strelok_pendrive_dialog_9</text>
+				<next>10</next>
+            </phrase>
+			<phrase id="10">
+                <text>hb_hernandez_strelok_pendrive_dialog_10</text>
+				<next>12</next>
+            </phrase>
+			<phrase id="12">
+                <text>hb_hernandez_strelok_pendrive_dialog_11</text>
+				<next>13</next>
+            </phrase>
+			<phrase id="13">
+                <text>hb_hernandez_strelok_pendrive_dialog_12</text>
+				<give_info>hb_hernandez_strelok_pendrive_dialog_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_hernandez_guide_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_hernandez_search_labs_dialog_done</has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_hernandez_guide_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_hernandez_guide_dialog_1</text>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_hernandez_guide_dialog_2</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_hernandez_guide_dialog_3</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_hernandez_guide_dialog_4</text>
+            </phrase>
+			<phrase id="5">
+                <text>hb_hernandez_guide_dialog_5</text>
+				<action>dialogs_lostzone.travel_to_jup_depo</action>
+            </phrase>
+			<phrase id="6">
+                <text>hb_hernandez_guide_dialog_6</text>
+				<action>dialogs_lostzone.travel_to_outskirts</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	
+<!-- Lieutenant Maus - Jupiter -->
+	<dialog id="hb_maus_start">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<dont_has_info>hb_maus_start_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_maus_start_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_maus_start_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_maus_start_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_maus_start_3</text>
+				<next>4</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_maus_start_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_maus_start_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_maus_start_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_maus_start_7</text>
+				<next>8</next>
+            </phrase>
+			<phrase id="8">
+                <text>hb_maus_start_8</text>
+				<next>9</next>
+            </phrase>
+			<phrase id="9">
+                <text>hb_maus_start_9</text>
+				<next>10</next>
+            </phrase>
+			<phrase id="10">
+                <text>hb_maus_start_10</text>
+				<give_info>hb_maus_start_done</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_maus_leave">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<dont_has_info>hb_maus_leave</dont_has_info>
+		<has_info>lttz_hb_task_4_1_crossfire_done</has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_maus_leave_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_maus_leave_1</text>
+				<next>2</next>
+				<next>3</next>
+				<next>4</next>
+				<next>5</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_maus_leave_2</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_maus_leave_3</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="4">
+                <text>hb_maus_leave_4</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_maus_leave_5</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_maus_leave_6</text>
+				<give_info>hb_maus_leave</give_info>
+            </phrase>
+			<phrase id="7">
+                <text>hb_maus_leave_7</text>
+				<give_info>hb_maus_leave</give_info>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+	<dialog id="hb_maus_guide">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>lttz_hb_isg_breakthrough</has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_maus_guide_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_maus_guide_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_maus_guide_2</text>
+				<action>dialogs_lostzone.travel_to_pas_hall</action>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+
+<!-- Strelok - Outskirts -->
+	<dialog id="hb_strelok_start_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<dont_has_info>hb_strelok_start_dialog_done</dont_has_info>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_strelok_start_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_strelok_start_dialog_1</text>
+				<next>2</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_strelok_start_dialog_2</text>
+				<next>3</next>
+				<next>4</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_strelok_start_dialog_3</text>
+				<next>31</next>
+            </phrase>
+			<phrase id="31">
+                <text>hb_strelok_start_dialog_31</text>
+				<action>dialogs.set_enemy</action>
+				<give_info>hb_strelok_start_dialog_done</give_info>
+            </phrase>
+			<phrase id="4">
+				<dont_has_info>hb_player_want_strelok_dead</dont_has_info>
+                <text>hb_strelok_start_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_strelok_start_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_strelok_start_dialog_6</text>
+				<next>7</next>
+            </phrase>
+			<phrase id="7">
+                <text>hb_strelok_start_dialog_7</text>
+				<next>8</next>
+            </phrase>
+			<phrase id="8">
+                <text>hb_strelok_start_dialog_8</text>
+				<next>9</next>
+            </phrase>
+			<phrase id="9">
+                <text>hb_strelok_start_dialog_9</text>
+				<next>10</next>
+            </phrase>
+			<phrase id="10">
+                <text>hb_strelok_start_dialog_10</text>
+				<give_info>hb_strelok_start_dialog_done</give_info>
+				<give_info>hb_escort_strelok</give_info>
+				<action>dialogs_lostzone.set_stalker_living_legend_as_companion</action>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+
+	<dialog id="hb_strelok_escorted_dialog">
+		<precondition>dialogs.actor_true_isg</precondition>
+		<has_info>hb_escort_strelok</has_info>
+		<dont_has_info>hb_escorted_strelok</dont_has_info>
+		<precondition>dialogs_lostzone.actor_in_red_forest</precondition>
+		<phrase_list>
+            <phrase id="0">
+                <text>hb_strelok_escorted_dialog_0</text>
+				<next>1</next>
+            </phrase>
+			<phrase id="1">
+                <text>hb_strelok_escorted_dialog_1</text>
+				<next>2</next>
+				<next>21</next>
+            </phrase>
+			<phrase id="2">
+                <text>hb_strelok_escorted_dialog_2</text>
+				<next>3</next>
+            </phrase>
+			<phrase id="3">
+                <text>hb_strelok_escorted_dialog_3</text>
+				<next>4</next>
+				<action>dialogs_lostzone.give_strelok_pendrive</action>
+            </phrase>
+			<phrase id="4">
+                <text>hb_strelok_escorted_dialog_4</text>
+				<next>5</next>
+            </phrase>
+			<phrase id="5">
+                <text>hb_strelok_escorted_dialog_5</text>
+				<next>6</next>
+            </phrase>
+			<phrase id="6">
+                <text>hb_strelok_escorted_dialog_6</text>
+				<give_info>hb_escorted_strelok</give_info>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+			<phrase id="21">
+                <text>hb_strelok_escorted_dialog_21</text>
+				<next>31</next>
+            </phrase>
+			<phrase id="31">
+                <text>hb_strelok_escorted_dialog_31</text>
+				<next>41</next>
+            </phrase>
+			<phrase id="41">
+                <text>hb_strelok_escorted_dialog_41</text>
+				<next>51</next>
+            </phrase>
+			<phrase id="51">
+                <text>hb_strelok_escorted_dialog_51</text>
+				<next>61</next>
+            </phrase>
+			<phrase id="61">
+                <text>hb_strelok_escorted_dialog_61</text>
+				<next>71</next>
+            </phrase>
+			<phrase id="71">
+                <text>hb_strelok_escorted_dialog_71</text>
+				<next>81</next>
+            </phrase>
+			<phrase id="81">
+                <text>hb_strelok_escorted_dialog_81</text>
+				<next>91</next>
+            </phrase>
+			<phrase id="91">
+                <text>hb_strelok_escorted_dialog_91</text>
+				<next>101</next>
+            </phrase>
+			<phrase id="101">
+                <text>hb_strelok_escorted_dialog_101</text>
+				<next>111</next>
+            </phrase>
+			<phrase id="111">
+                <text>hb_strelok_escorted_dialog_111</text>
+				<next>121</next>
+            </phrase>
+			<phrase id="121">
+                <text>hb_strelok_escorted_dialog_121</text>
+				<action>dialogs_lostzone.fail_task_lttz_hb_4_1_crossfire</action>
+				<action>dialogs_lostzone.end_conversation</action>
+            </phrase>
+		</phrase_list>
+    </dialog>
+	
+</game_dialogs>

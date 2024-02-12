@@ -1,0 +1,44 @@
+[logic@ds_domik_isg_leader]
+active = beh@ds_domik_isg_leader
+suitable = {=check_npc_name(ds_domik_isg_leader)} true
+prior = 200
+level_spot = special
+can_select_weapon = true
+dont_keep_items = true
+   
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 90
+jog_dist = 150
+wait_anim = guard
+walk_anim = patrol	;assault
+jog_anim = patrol	;assault
+run_anim = patrol	;assault
+delay_anim = guard
+use_camp = false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = {=is_warfare} false, {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_enemy} true, false
+meet = meet
+
+[meet]
+;close_anim 		= wait_rac
+;close_victim 	= actor
+far_anim 		= nil
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 0 ;5
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[beh@ds_domik_isg_leader]:beh@general
+pt1 = 88860000,wait_rac | pos:253.82281494141,-0.44860458374023,-181.52264404297 look:253.3533359766,-0.44860458374023,-182.39450800419
+path_end = loop

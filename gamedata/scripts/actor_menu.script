@@ -1,0 +1,379 @@
+-- actor_menu_mode -----
+
+-- int mode:
+-- 0 = 	Undefined = закрыто
+-- 1 = 	Inventory
+-- 2 = 	Trade
+-- 3 = 	Upgrade
+-- 4 = 	DeadBodySearch
+-- 10 =  Talk dialog  show
+-- 11 =  Talk dialog  hide
+last_mode = 0
+xr_meet_dialog_closed = false
+xr_meet_trade_closed = false
+xr_meet_upgrade_closed = false
+dead_body_searching = false
+
+function get_last_mode()
+	return last_mode
+end
+
+function is_hud_free()
+	return (last_mode == 0) and (pda.dialog_closed == true) and (not Check_UI())
+end
+
+function actor_menu_mode(mode) -- called from engine!!
+	--printf("actor_menu_mode | current mode: %s - last mode: %s", mode, last_mode)
+	SendScriptCallback("ActorMenu_on_mode_changed",mode,last_mode)
+	if(mode==0) then
+		if(last_mode==1) then
+			inventory_wnd_closed()
+		elseif(last_mode==2) then
+			trade_wnd_closed()
+		elseif(last_mode==3) then
+			upgrade_wnd_closed()
+		elseif(last_mode==4) then
+			dead_body_search_wnd_closed()
+		end
+		last_mode = 0
+	elseif(mode==1) then
+		last_mode = 1
+		inventory_wnd_opened()
+	elseif(mode==2) then
+		last_mode = 2
+		trade_wnd_opened()
+	elseif(mode==3) then
+		last_mode = 3
+		upgrade_wnd_opened()
+	elseif(mode==4) then
+		last_mode = 4
+		dead_body_search_wnd_opened()
+	elseif(mode==10) then
+        dialog_wnd_showed()
+	elseif(mode==11) then
+        dialog_wnd_closed()
+	end
+end
+
+function inventory_wnd_opened()
+	--printf("---:>Inventory opened")
+	give_info("inventory_wnd_open")
+end
+
+function inventory_wnd_closed()
+	--printf("---:>Inventory closed")
+	disable_info("inventory_wnd_open")
+end
+
+function trade_wnd_opened()
+	SendScriptCallback("ActorMenu_on_trade_started")
+	xr_meet_dialog_closed = false
+	--printf("---:>Trade opened")
+	give_info("trade_wnd_open")
+end
+
+function trade_wnd_closed()
+	--printf("---:>Trade closed")
+	SendScriptCallback("ActorMenu_on_trade_closed")
+	xr_meet_trade_closed = true
+	disable_info("trade_wnd_open")
+end
+
+function upgrade_wnd_opened()
+	xr_meet_dialog_closed = false
+	--printf("---:>Upgrade opened")
+	give_info("upgrade_wnd_open")
+end
+
+function upgrade_wnd_closed()
+	--printf("---:>Upgrade closed")
+	xr_meet_upgrade_closed = true
+	disable_info("upgrade_wnd_open")
+end
+
+function dead_body_search_wnd_opened()
+	--printf("---:>DeadBodySearch opened")
+	dead_body_searching = true
+	give_info("body_search_wnd_open")
+end
+
+function dead_body_search_wnd_closed()
+	--printf("---:>DeadBodySearch closed")
+	dead_body_searching = false
+	disable_info("body_search_wnd_open")
+	bind_container.curBoxID = nil
+end
+
+function dialog_wnd_showed()
+	--printf("---:>Talk Dialog show")
+	give_info("dialog_wnd_open")
+end
+
+function dialog_wnd_closed()
+	--printf("---:>Talk Dialog hide")
+	xr_meet_dialog_closed = true
+	disable_info("dialog_wnd_open")
+	--SetEvent("used_npc_id", nil)
+end
+
+function inventory_opened()
+	if (db.actor:has_info("inventory_wnd_open") or
+	db.actor:has_info("trade_wnd_open") or
+	db.actor:has_info("upgrade_wnd_open") or
+	db.actor:has_info("body_search_wnd_open") or
+	db.actor:has_info("dialog_wnd_open")) then
+		return true
+	else
+		return false
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Custom HUD MSGs
+--------------------------------------------------------------------------------
+local msg_st, msg_on, msg_snd, msg_event, msg_curr, msg_alpha, msg_step, msg_pause = {}, false, true, false, "", 0, 15, nil
+local msg_tg, msg_tm, msg_FI, msg_FO = 0,2000,500,1500
+local msg_R,msg_G,msg_B = 255,255,255
+
+local msg_list = {
+	[1] = { hud= "gameplay_notification" , 	typ= "text" ,	clr= GetARGB(255,240,217,182) 	, 	tg= false 	, last_id= false },
+	[2] = { hud= "showcase_notification" , 	typ= "text" ,	clr= GetARGB(255,255,232,208)	, 	tg= false 	, last_id= false },
+	[3] = { hud= "notify_icon" 			 , 	typ= "icon"	, 										tg= false 	, last_id= false },
+}
+
+function set_msg(typ, msg, tm, clr)
+-- Displays message on middle-bottom of screen for (tm) amount of seconds. Can override older messages when initing a new one
+-- param 1 - Message as string
+-- param 2 - Milliseconds as number
+-- param 3 - custom HUD type
+
+	--[[
+	if (not is_hud_free()) then
+		return
+	end
+	--]]
+	
+	typ = typ or 1
+	tm = tm or 5
+	msg = tostring(msg)
+	
+	local hud_cs = msg_list[typ]
+	if not (hud_cs and hud_cs.typ == "text") then
+		printf("!ERROR set_msg | type (%s) doesn't exist or not text!", typ)
+		return
+	end
+	
+	local hud = get_hud()
+	if (hud) then
+		hud:AddCustomStatic(hud_cs.hud, true)
+		hud:GetCustomStatic(hud_cs.hud):wnd():TextControl():SetTextST(msg)
+		hud:GetCustomStatic(hud_cs.hud):wnd():TextControl():SetTextColor(clr or hud_cs.clr)
+		hud_cs.last_id = msg
+	end
+	
+	hud_cs.tg = time_global() + tm*1000
+end
+
+function set_fade_msg(msg, tm, cl, snd)
+--------------------------------------------
+-- Tronex 2019/4/27
+-- Displays fading message on middle-bottom of screen for tm amount of milliseconds
+-- Rely on stacking process, messages will display by their time order
+-- param 1 - Message as string
+-- param 2 - Seconds as number
+-- param 3 - [RGB] Red color as number (0 - 255)
+-- param 4 - [RGB] Green color as number (0 - 255)
+-- param 5 - [RGB] Blue color as number (0 - 255)
+--------------------------------------------
+
+	table.insert(msg_st,
+		{
+			msg = tostring(msg),
+			sec = tm or 5,
+			R = cl and cl.R or 240,
+			G = cl and cl.G or 217,
+			B = cl and cl.B or 182,
+			snd = snd or false,
+		}
+	)
+	
+	if (not msg_event) then
+		msg_event = true
+		msg_on = true
+		CreateTimeEvent(0,"check_hud_fading_msg",0,check_hud_fading_msg)
+	end
+end
+
+function set_notification(typ, texture, tm, snd)
+	typ = typ or 3
+	tm = tm or 20
+	
+	local hud_cs = msg_list[typ]
+	if not (hud_cs and hud_cs.typ == "icon") then
+		printf("!ERROR set_notification | type (%s) doesn't exist or not icon!", typ)
+		return
+	end
+	
+	local hud = get_hud()
+	if (hud) then
+		hud:AddCustomStatic(hud_cs.hud, true)
+		hud:GetCustomStatic(hud_cs.hud):wnd():InitTexture(texture)
+		hud_cs.last_id = texture
+	end
+	
+	hud_cs.tg = time_global() + tm*1000
+	
+	if snd then
+		utils_obj.play_sound(snd)
+	end
+end
+
+function set_item_news(color, type_m, text, ...)
+	local t = {...}
+	local ico = "leatherman_tool"
+	
+	local s_color, e_color
+	if color then
+		if color == 'success' then
+			s_color = utils_xml.get_color("d_green")
+			e_color = utils_xml.get_color("pda_white")
+		elseif color == 'fail' then
+			s_color = utils_xml.get_color("d_red")
+			e_color = utils_xml.get_color("pda_white")
+		end
+	end
+	
+	if type_m then
+		if type_m == 'detail' then
+			news_manager.send_tip(db.actor, string.format(game.translate_string(text), s_color, e_color, t[1]), nil, ico, 6000)
+		elseif type_m == 'weapon' then
+			news_manager.send_tip(db.actor, string.format(game.translate_string(text), s_color, t[1], e_color, t[2]), nil, ico, 6000)
+		elseif type_m == 'weapon_ammo' then
+			news_manager.send_tip(db.actor, string.format(game.translate_string(text), s_color, t[1], e_color, t[2], t[3]), nil, ico, 6000)
+		elseif type_m == 'npc' then
+			news_manager.send_tip(db.actor, string.format(game.translate_string(text), s_color, t[1], t[2], e_color, t[3]), nil, ico, 6000)
+		end
+	end
+end
+
+function last_hud_msg(typ, value)
+	return typ and msg_list[typ] and (msg_list[typ].last_id == value)
+end
+
+-- Callbacks
+function check_hud_fading_msg()
+
+	-- wait until actor finish talking
+	if (not is_hud_free()) then
+		msg_pause = time_global()
+		return false
+	end
+	
+	-- prepare
+	msg_tg = time_global()
+	if msg_on then
+		--printf("- fading text | start - time: %s", msg_tg)
+		msg_on = false
+		msg_pause = nil
+		msg_curr = msg_st[1].msg
+		
+		msg_alpha = 0
+		
+		msg_tm = msg_tg + msg_st[1].sec*1000
+		msg_FI = msg_tg + 600
+		msg_FO = msg_tm - 600
+		
+		msg_R = msg_st[1].R
+		msg_G = msg_st[1].G
+		msg_B = msg_st[1].B
+		
+		if msg_st[1].snd and msg_snd then
+			utils_obj.play_sound(msg_st[1].snd)
+			msg_snd = false
+		end
+		
+	elseif msg_pause then
+		local tg_start = msg_FI - 600 -- message start moment
+		local tg_delay = (msg_pause - tg_start) -- time delay between message start and message pause end
+		msg_tm = msg_tm + tg_delay
+		msg_FI = msg_FI + tg_delay
+		msg_FO = msg_FO + tg_delay
+		msg_pause = nil
+	end
+	
+	-- calculate
+	--msg_tg = msg_tg + msg_step
+	--printf(msg_tg)
+	if (msg_tg < msg_FI) then
+		msg_alpha = msg_alpha + msg_step
+		--printf("fade in: %s - time: %s", msg_alpha, msg_tg)
+	elseif (msg_tg > msg_FO) then
+		msg_alpha = msg_alpha - msg_step
+		--printf("fade out: %s - time: %s", msg_alpha, msg_tg)
+	else
+		msg_alpha = 255
+	end
+	
+	msg_alpha = (msg_alpha < 0 and 0) or (msg_alpha > 255 and 255) or msg_alpha
+	
+	-- HUD
+	local hud = get_hud()
+	if (hud) then
+		local hud_d = hud:GetCustomStatic("not_enough_money_mine")
+		if (hud_d == nil) then
+			hud:AddCustomStatic("not_enough_money_mine",true)
+			hud_d = hud:GetCustomStatic("not_enough_money_mine")
+		end
+		local wnd = hud_d:wnd()
+		wnd:TextControl():SetTextST(msg_curr)
+		wnd:TextControl():SetTextColor(GetARGB(msg_alpha, msg_R, msg_G, msg_B))
+	end
+	
+	-- shift or end
+	if msg_tg >= msg_tm then
+		local hud_d = hud and hud:GetCustomStatic("not_enough_money_mine")
+		if (hud_d ~= nil) then
+			hud:RemoveCustomStatic("not_enough_money_mine")
+		end
+		
+		msg_pause = nil
+		table.remove(msg_st, 1)
+		if #msg_st > 0 then
+			--printf("- fading text | next - time: %s", msg_tg)
+			msg_on = true
+		else
+			--printf("- fading text | end - time: %s", msg_tg)
+			msg_on = false
+			msg_event = false
+			msg_snd = true
+			return true
+		end
+	end
+	
+	return false
+end
+
+local function check_hud_msg()
+	for typ, v in pairs(msg_list) do
+		if v.tg then
+			local hud = get_hud()
+			if (hud) then
+				local custom_static = hud:GetCustomStatic(v.hud)
+				if custom_static ~= nil and time_global() > v.tg then
+					hud:RemoveCustomStatic(v.hud)
+					v.tg = false
+					v.last_id = false
+				end
+			end
+		end
+	end
+	return false
+end
+
+function on_game_start()
+	local function actor_on_reinit()
+		AddUniqueCall(check_hud_msg)
+	end
+	RegisterScriptCallback("actor_on_reinit",actor_on_reinit)
+end

@@ -1,0 +1,97 @@
+;-- Tronex
+;-- Bounty squads
+;-- 2018/10/13 - created
+
+;-- on high ranks or really bad repuation, your enemies will put a bounty on your head. 
+;-- every while and then, one of the enemy factions will send a hit squad to hunt you down.
+
+
+[faction_list] ;-- These factions can send bounty squads after you
+	stalker
+	dolg
+	freedom
+	;csky
+	killer
+	army
+	bandit
+	monolith
+
+[safe_levels] ;-- Bounty squad will stop targeting the player if he's in one of those maps
+	;-- North
+	l13_generators        
+	l12_stancia_2         
+	l12_stancia           
+	l11_pripyat           
+	l10_radar             
+	l11_hospital          
+	;-- Underground
+	jupiter_underground   
+	labx8                 
+	l03u_agr_underground  
+	l04u_labx18           
+	l08u_brainlab         
+	l10u_bunker           
+	l12u_control_monolith 
+	l12u_sarcofag         
+	l13u_warlab           
+	;-- Usual
+	l05_bar            	  
+	
+	fake_start            
+
+
+[safe_smarts] ;-- Bounty squad will stop targeting the player if he's in one of those smarts
+	agr_smart_terrain_1_6             
+	agr_smart_terrain_1_6_near_1      
+	agr_smart_terrain_1_6_near_2      
+	val_smart_terrain_7_3             
+	val_smart_terrain_7_4             
+	val_smart_terrain_7_5             
+	val_smart_terrain_9_4             
+	val_smart_terrain_8_6             
+	cit_killers                       
+	esc_smart_terrain_2_12            
+	esc_smart_terrain_3_16            
+	jup_a6                            
+	jup_b41                           
+	mar_smart_terrain_base            
+	mil_smart_terrain_7_7             
+	mil_smart_terrain_7_8             
+	mil_smart_terrain_7_10            
+	mil_smart_terrain_7_12            
+	yan_smart_terrain_6_4             
+	zat_stalker_base_smart            
+
+
+[faction_bounty_squads]	;-- bounty squad section
+	stalker  = stalker_sim_squad_alpha
+	bandit   = bandit_sim_squad_alpha
+	killer   = killer_sim_squad_alpha
+	dolg     = dolg_sim_squad_alpha
+	freedom  = freedom_sim_squad_alpha
+	army     = army_sim_squad_alpha
+	csky     = csky_sim_squad_alpha
+	monolith = monolith_sim_squad_alpha
+
+
+[danger_ranks]	;-- Player ranks and the number of possible bounty squad to spawn when a rank is met 
+	novice       = 0
+	trainee      = 0
+	experienced  = 0
+	professional = 0
+	veteran      = 1
+	expert       = 1
+	master       = 2
+	legend       = 2
+
+
+[danger_reputations] ;-- Player reputations and the number of possible bounty squad to spawn when a reputation is met 
+	excellent   = 0
+	really_good = 0
+	very_good   = 0
+	good        = 0
+	neutral     = 0
+	bad         = 0
+	very_bad    = 1
+	really_bad  = 1
+	terrible    = 1

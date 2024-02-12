@@ -1,0 +1,853 @@
+;; NOTICE FOR MODDERS ;;
+; unless you need to edit already existing tasks, do NOT edit the "tm_*" files but make a new one that defines your new tasks
+; eg. "tm_mymod.ltx"
+; it will be automatically included and won't cause conflict with other mods that add/edit tasks
+
+;================================================================================================
+; IMPORTANT NOTES:
+; there are unique patterns used for tasks sections to trigger them for many occasions:
+
+; Task patterns:
+; Task manager will look into tasks with specific pattern, check their availablility (by precodition), then give the player a random one
+; Here's a list of them, and how those are triggered
+
+; (character_name)_task_*				= tasks that will be available by special character in common task dialog (have you got any job to do?)
+; silumation_task_*						= tasks that will be available by common NPCs in common task dialog (have you got any job to do?)
+; drx_sl_(character_name)_start_game_*	= DRX questlines. tasks to meet the faction leader (main honcho)
+; drx_sl_(character_name)_meet_task_*	= DRX questlines. tasks to meet a honcho
+; drx_sl_(character_name)_task_*		= DRX questlines. tasks that will be picked from and given to player after meeting a honcho
+; drx_sl_(character_name)_default_task	= DRX questlines. tasks that will be picked from and given to player when there's no tasks available by the honcho (directing to player to another honcho)
+; drx_sl_(character_name)_cf_task_*		= DRX questlines. changing faction tasks
+
+; For unique tasks like storylines, pick different names that don't match those pattern
+;================================================================================================
+
+#include "tm_*.ltx"
+
+
+;========= Extra
+;include "tm_mlr.ltx"
+;include "tm_dynamic.ltx"
+;include "tm_warfare.ltx"
+
+;========= By map
+;include "tm_agroprom.ltx"
+;include "tm_agroprom_underground.ltx"
+;include "tm_bar.ltx"
+;include "tm_darkvalley.ltx"
+;include "tm_darkscape.ltx"
+;include "tm_deadcity.ltx"
+;include "tm_escape.ltx"
+;include "tm_garbage.ltx"
+;include "tm_jupiter.ltx"
+;include "tm_marsh.ltx"
+;include "tm_military.ltx"
+;include "tm_pripyat.ltx"
+;include "tm_pripyat2.ltx"
+;include "tm_radar.ltx"
+;include "tm_red_forest.ltx"
+;include "tm_sarcofag.ltx"
+;include "tm_truck.ltx"
+;include "tm_warlab.ltx"
+;include "tm_yantar.ltx"
+;include "tm_zaton.ltx"
+
+;========= Lost to the Zone
+;include "tm_lostzone_ll.ltx"
+;include "tm_lostzone_ms.ltx"
+;include "tm_lostzone_oa.ltx"
+;include "tm_lostzone_hb.ltx"
+
+;========= By quest type
+;include "tm_rioc_common.ltx"
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE GENERAL TASKS
+;
+;	Modified by DoctorX
+;	for DoctorX Questlines 1.6
+;	October 06, 2016
+;
+;--------------------------------------------------------------------------------------------------
+
+;------------------------------------------------
+; Find Wish Granter Task-
+
+[drx_sl_find_wish_granter_task]
+
+icon = ui_inGame2_PD_Otmecheniy_zonoy
+storyline = true
+prior = 10
+
+title = drx_sl_find_wish_granter_task_name
+descr = drx_sl_find_wish_granter_task_text
+
+condlist_0 = {-drx_sl_on_find_wish_granter} complete
+
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE START GAME TASKS
+;
+;	Modified by DoctorX
+;	for DoctorX Questlines 1.6
+;	October 14, 2016
+;
+;--------------------------------------------------------------------------------------------------
+
+;------------------------------------------------
+; Start Game at Sidorovich (Loner) Task 1-
+
+[drx_sl_esc_m_trader_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_esc_m_trader_start_game_1_name
+descr = drx_sl_esc_m_trader_start_game_1_text
+
+target = esc_m_trader
+condlist_0 = {-drx_sl_start_game_esc_m_trader} complete
+; condlist_1 = {!is_alive(esc_m_trader)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Petrenko (Duty) Task 1-
+
+[drx_sl_bar_dolg_general_petrenko_stalker_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_bar_dolg_general_petrenko_stalker_start_game_1_name
+descr = drx_sl_bar_dolg_general_petrenko_stalker_start_game_1_text
+
+target = bar_dolg_general_petrenko_stalker
+condlist_0 = {-drx_sl_start_game_bar_dolg_general_petrenko_stalker} complete
+condlist_1 = {!is_alive(bar_dolg_general_petrenko_stalker)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Lukash (Freedom) Task 1-
+
+[drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_start_game_1_name
+descr = drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_start_game_1_text
+
+target = mil_smart_terrain_7_7_freedom_leader_stalker
+condlist_0 = {-drx_sl_start_game_mil_smart_terrain_7_7_freedom_leader_stalker} complete
+condlist_1 = {!is_alive(mil_smart_terrain_7_7_freedom_leader_stalker)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Cold (Clear Sky) Task 1-
+
+[drx_sl_mar_smart_terrain_base_stalker_leader_marsh_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_mar_smart_terrain_base_stalker_leader_marsh_start_game_1_name
+descr = drx_sl_mar_smart_terrain_base_stalker_leader_marsh_start_game_1_text
+
+target = mar_smart_terrain_base_stalker_leader_marsh
+condlist_0 = {-drx_sl_start_game_mar_smart_terrain_base_stalker_leader_marsh} complete
+condlist_1 = {!is_alive(mar_smart_terrain_base_stalker_leader_marsh)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Sakharov (Ecologist) Task 1-
+
+[drx_sl_yan_stalker_sakharov_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_yan_stalker_sakharov_start_game_1_name
+descr = drx_sl_yan_stalker_sakharov_start_game_1_text
+
+target = yan_stalker_sakharov
+condlist_0 = {-drx_sl_start_game_yan_stalker_sakharov} complete
+condlist_1 = {!is_alive(yan_stalker_sakharov)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Dushman (Mercenary) Task 1-
+
+[drx_sl_cit_killers_merc_trader_stalker_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_cit_killers_merc_trader_stalker_start_game_1_name
+descr = drx_sl_cit_killers_merc_trader_stalker_start_game_1_text
+
+target = cit_killers_merc_trader_stalker
+condlist_0 = {-drx_sl_start_game_cit_killers_merc_trader_stalker} complete
+condlist_1 = {!is_alive(cit_killers_merc_trader_stalker)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Kuznetsov (Military) Task 1-
+
+[drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_start_game_1_name
+descr = drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_start_game_1_text
+
+target = agr_smart_terrain_1_6_near_2_military_colonel_kovalski
+condlist_0 = {-drx_sl_start_game_agr_smart_terrain_1_6_near_2_military_colonel_kovalski} complete
+condlist_1 = {!is_alive(agr_smart_terrain_1_6_near_2_military_colonel_kovalski)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Sultan (Bandit) Task 1-
+
+[drx_sl_zat_b7_bandit_boss_sultan_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_zat_b7_bandit_boss_sultan_start_game_1_name
+descr = drx_sl_zat_b7_bandit_boss_sultan_start_game_1_text
+
+target = zat_b7_bandit_boss_sultan
+condlist_0 = {-drx_sl_start_game_zat_b7_bandit_boss_sultan} complete
+condlist_1 = {!is_alive(zat_b7_bandit_boss_sultan)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Rabbit (Monolith) Task 1-
+
+[drx_sl_pri_monolith_monolith_trader_stalker_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_pri_monolith_monolith_trader_stalker_start_game_1_name
+descr = drx_sl_pri_monolith_monolith_trader_stalker_start_game_1_text
+
+target = pri_monolith_monolith_trader_stalker
+condlist_0 = {-drx_sl_start_game_pri_monolith_monolith_trader_stalker} complete
+condlist_1 = {!is_alive(pri_monolith_monolith_trader_stalker)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Start Game at Stribog (Sinner) Task 1-
+
+[drx_sl_red_greh_trader_start_game_1]
+
+icon = ui_inGame2_PD_Diplomat
+storyline = true
+prior = 195
+
+title = drx_sl_red_greh_trader_start_game_1_name
+descr = drx_sl_red_greh_trader_start_game_1_text
+
+target = red_greh_trader
+condlist_0 = {-drx_sl_start_game_red_greh_trader} complete
+condlist_1 = {!is_alive(red_greh_trader)} fail
+
+on_complete = %=drx_sl_meet_random_honcho()%
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE MEET HONCHO TASKS
+;
+;	Modified by DoctorX
+;	for DoctorX Questlines 1.6
+;	October 14, 2016
+;
+;--------------------------------------------------------------------------------------------------
+
+;------------------------------------------------
+; Meet Sidorovich (Loner) Task 1-
+
+[drx_sl_esc_m_trader_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_esc_m_trader_meet_task_1_name
+descr = drx_sl_esc_m_trader_meet_task_1_text
+
+target = esc_m_trader
+condlist_0 = {-drx_sl_meet_honcho_esc_m_trader} complete
+; condlist_1 = {!is_alive(esc_m_trader)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Xenotech (Loner) Task 1-
+
+[drx_sl_esc_smart_terrain_5_7_loner_mechanic_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_esc_smart_terrain_5_7_loner_mechanic_stalker_meet_task_1_name
+descr = drx_sl_esc_smart_terrain_5_7_loner_mechanic_stalker_meet_task_1_text
+
+target = esc_smart_terrain_5_7_loner_mechanic_stalker
+condlist_0 = {-drx_sl_meet_honcho_esc_smart_terrain_5_7_loner_mechanic_stalker} complete
+condlist_1 = {!is_alive(esc_smart_terrain_5_7_loner_mechanic_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Beard (Loner) Task 1-
+
+[drx_sl_zat_a2_stalker_barmen_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_zat_a2_stalker_barmen_meet_task_1_name
+descr = drx_sl_zat_a2_stalker_barmen_meet_task_1_text
+
+target = zat_a2_stalker_barmen
+condlist_0 = {-drx_sl_meet_honcho_zat_a2_stalker_barmen} complete
+condlist_1 = {!is_alive(zat_a2_stalker_barmen)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Noah (Loner) Task 1-
+
+[drx_sl_zat_b18_noah_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_zat_b18_noah_meet_task_1_name
+descr = drx_sl_zat_b18_noah_meet_task_1_text
+
+target = zat_b18_noah
+condlist_0 = {-drx_sl_meet_honcho_zat_b18_noah} complete
+condlist_1 = {!is_alive(zat_b18_noah)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Petrenko (Duty) Task 1-
+
+[drx_sl_bar_dolg_general_petrenko_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_bar_dolg_general_petrenko_stalker_meet_task_1_name
+descr = drx_sl_bar_dolg_general_petrenko_stalker_meet_task_1_text
+
+target = bar_dolg_general_petrenko_stalker
+condlist_0 = {-drx_sl_meet_honcho_bar_dolg_general_petrenko_stalker} complete
+condlist_1 = {!is_alive(bar_dolg_general_petrenko_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Mangun (Duty) Task 1-
+
+[drx_sl_bar_visitors_stalker_mechanic_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_bar_visitors_stalker_mechanic_meet_task_1_name
+descr = drx_sl_bar_visitors_stalker_mechanic_meet_task_1_text
+
+target = bar_visitors_stalker_mechanic
+condlist_0 = {-drx_sl_meet_honcho_bar_visitors_stalker_mechanic} complete
+condlist_1 = {!is_alive(bar_visitors_stalker_mechanic)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Lukash (Freedom) Task 1-
+
+[drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_meet_task_1_name
+descr = drx_sl_mil_smart_terrain_7_7_freedom_leader_stalker_meet_task_1_text
+
+target = mil_smart_terrain_7_7_freedom_leader_stalker
+condlist_0 = {-drx_sl_meet_honcho_mil_smart_terrain_7_7_freedom_leader_stalker} complete
+condlist_1 = {!is_alive(mil_smart_terrain_7_7_freedom_leader_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Loki (Freedom) Task 1-
+
+[drx_sl_jup_a6_freedom_leader_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_jup_a6_freedom_leader_meet_task_1_name
+descr = drx_sl_jup_a6_freedom_leader_meet_task_1_text
+
+target = jup_a6_freedom_leader
+condlist_0 = {-drx_sl_meet_honcho_jup_a6_freedom_leader} complete
+condlist_1 = {!is_alive(jup_a6_freedom_leader)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Cold (Clear Sky) Task 1-
+
+[drx_sl_mar_smart_terrain_base_stalker_leader_marsh_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_mar_smart_terrain_base_stalker_leader_marsh_meet_task_1_name
+descr = drx_sl_mar_smart_terrain_base_stalker_leader_marsh_meet_task_1_text
+
+target = mar_smart_terrain_base_stalker_leader_marsh
+condlist_0 = {-drx_sl_meet_honcho_mar_smart_terrain_base_stalker_leader_marsh} complete
+condlist_1 = {!is_alive(mar_smart_terrain_base_stalker_leader_marsh)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Librarian (Clear Sky) Task 1-
+
+[drx_sl_mar_base_stalker_barmen_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_mar_base_stalker_barmen_meet_task_1_name
+descr = drx_sl_mar_base_stalker_barmen_meet_task_1_text
+
+target = mar_base_stalker_barmen
+condlist_0 = {-drx_sl_meet_honcho_mar_base_stalker_barmen} complete
+condlist_1 = {!is_alive(mar_base_stalker_barmen)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Sakharov (Ecologist) Task 1-
+
+[drx_sl_yan_stalker_sakharov_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_yan_stalker_sakharov_meet_task_1_name
+descr = drx_sl_yan_stalker_sakharov_meet_task_1_text
+
+target = yan_stalker_sakharov
+condlist_0 = {-drx_sl_meet_honcho_yan_stalker_sakharov} complete
+condlist_1 = {!is_alive(yan_stalker_sakharov)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Tukarev (Ecologist) Task 1-
+
+[drx_sl_jup_b6_scientist_tech_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_jup_b6_scientist_tech_meet_task_1_name
+descr = drx_sl_jup_b6_scientist_tech_meet_task_1_text
+
+target = jup_b6_scientist_tech
+condlist_0 = {-drx_sl_meet_honcho_jup_b6_scientist_tech} complete
+condlist_1 = {!is_alive(jup_b6_scientist_tech)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Dushman (Mercenary) Task 1-
+
+[drx_sl_cit_killers_merc_trader_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_cit_killers_merc_trader_stalker_meet_task_1_name
+descr = drx_sl_cit_killers_merc_trader_stalker_meet_task_1_text
+
+target = cit_killers_merc_trader_stalker
+condlist_0 = {-drx_sl_meet_honcho_cit_killers_merc_trader_stalker} complete
+condlist_1 = {!is_alive(cit_killers_merc_trader_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Hog (Mercenary) Task 1-
+
+[drx_sl_cit_killers_merc_mechanic_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_cit_killers_merc_mechanic_stalker_meet_task_1_name
+descr = drx_sl_cit_killers_merc_mechanic_stalker_meet_task_1_text
+
+target = cit_killers_merc_mechanic_stalker
+condlist_0 = {-drx_sl_meet_honcho_cit_killers_merc_mechanic_stalker} complete
+condlist_1 = {!is_alive(cit_killers_merc_mechanic_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Kuznetsov (Military) Task 1-
+
+[drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_meet_task_1_name
+descr = drx_sl_agr_smart_terrain_1_6_near_2_military_colonel_kovalski_meet_task_1_text
+
+target = agr_smart_terrain_1_6_near_2_military_colonel_kovalski
+condlist_0 = {-drx_sl_meet_honcho_agr_smart_terrain_1_6_near_2_military_colonel_kovalski} complete
+condlist_1 = {!is_alive(agr_smart_terrain_1_6_near_2_military_colonel_kovalski)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Kirilov (Military) Task 1-
+
+[drx_sl_agr_smart_terrain_1_6_army_mechanic_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_agr_smart_terrain_1_6_army_mechanic_stalker_meet_task_1_name
+descr = drx_sl_agr_smart_terrain_1_6_army_mechanic_stalker_meet_task_1_text
+
+target = agr_smart_terrain_1_6_army_mechanic_stalker
+condlist_0 = {-drx_sl_meet_honcho_agr_smart_terrain_1_6_army_mechanic_stalker} complete
+condlist_1 = {!is_alive(agr_smart_terrain_1_6_army_mechanic_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Sultan (Bandit) Task 1-
+
+[drx_sl_zat_b7_bandit_boss_sultan_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_zat_b7_bandit_boss_sultan_meet_task_1_name
+descr = drx_sl_zat_b7_bandit_boss_sultan_meet_task_1_text
+
+target = zat_b7_bandit_boss_sultan
+condlist_0 = {-drx_sl_meet_honcho_zat_b7_bandit_boss_sultan} complete
+condlist_1 = {!is_alive(zat_b7_bandit_boss_sultan)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Olivius (Bandit) Task 1-
+
+[drx_sl_val_smart_terrain_7_4_bandit_trader_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_val_smart_terrain_7_4_bandit_trader_stalker_meet_task_1_name
+descr = drx_sl_val_smart_terrain_7_4_bandit_trader_stalker_meet_task_1_text
+
+target = val_smart_terrain_7_4_bandit_trader_stalker
+condlist_0 = {-drx_sl_meet_honcho_val_smart_terrain_7_4_bandit_trader_stalker} complete
+condlist_1 = {!is_alive(val_smart_terrain_7_4_bandit_trader_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Rabbit (Monolith) Task 1-
+
+[drx_sl_pri_monolith_monolith_trader_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_pri_monolith_monolith_trader_stalker_meet_task_1_name
+descr = drx_sl_pri_monolith_monolith_trader_stalker_meet_task_1_text
+
+target = pri_monolith_monolith_trader_stalker
+condlist_0 = {-drx_sl_meet_honcho_pri_monolith_monolith_trader_stalker} complete
+condlist_1 = {!is_alive(pri_monolith_monolith_trader_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Cleric (Monolith) Task 1-
+
+[drx_sl_pri_monolith_monolith_mechanic_stalker_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_pri_monolith_monolith_mechanic_stalker_meet_task_1_name
+descr = drx_sl_pri_monolith_monolith_mechanic_stalker_meet_task_1_text
+
+target = pri_monolith_monolith_mechanic_stalker
+condlist_0 = {-drx_sl_meet_honcho_pri_monolith_monolith_mechanic_stalker} complete
+condlist_1 = {!is_alive(pri_monolith_monolith_mechanic_stalker)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Olivar (Monolith) Task 1-
+
+[drx_sl_trader_monolith_kbo_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_trader_monolith_kbo_meet_task_1_name
+descr = drx_sl_trader_monolith_kbo_meet_task_1_text
+
+target = trader_monolith_kbo
+condlist_0 = {-drx_sl_meet_honcho_trader_monolith_kbo} complete
+condlist_1 = {!is_alive(trader_monolith_kbo)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Griffith (Mercenary) Task 1-
+
+[drx_sl_merc_pri_grifon_mlr_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_merc_pri_grifon_mlr_meet_task_1_name
+descr = drx_sl_merc_pri_grifon_mlr_meet_task_1_text
+
+target = merc_pri_grifon_mlr
+condlist_0 = {-drx_sl_meet_honcho_merc_pri_grifon_mlr} complete
+condlist_1 = {!is_alive(merc_pri_grifon_mlr)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Vector (Mercenary) Task 1-
+
+[drx_sl_zat_stancia_trader_merc_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_zat_stancia_trader_merc_meet_task_1_name
+descr = drx_sl_zat_stancia_trader_merc_meet_task_1_text
+
+target = zat_stancia_trader_merc
+condlist_0 = {-drx_sl_meet_honcho_zat_stancia_trader_merc} complete
+condlist_1 = {!is_alive(zat_stancia_trader_merc)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Klenov (Bandit) Task 1-
+
+[drx_sl_jup_cont_trader_bandit_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_jup_cont_trader_bandit_meet_task_1_name
+descr = drx_sl_jup_cont_trader_bandit_meet_task_1_text
+
+target = jup_cont_trader_bandit
+condlist_0 = {-drx_sl_meet_honcho_jup_cont_trader_bandit} complete
+condlist_1 = {!is_alive(jup_cont_trader_bandit)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Stribog (Sinner) Task 1-
+
+[drx_sl_red_greh_trader_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_red_greh_trader_meet_task_1_name
+descr = drx_sl_red_greh_trader_meet_task_1_text
+
+target = red_greh_trader
+condlist_0 = {-drx_sl_meet_honcho_red_greh_trader} complete
+condlist_1 = {!is_alive(red_greh_trader)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+;------------------------------------------------
+; Meet Dazhbog (Sinner) Task 1-
+
+[drx_sl_red_greh_tech_meet_task_1]
+
+icon = ui_inGame2_Put_v_pripyat
+storyline = true
+prior = 192
+
+title = drx_sl_red_greh_tech_meet_task_1_name
+descr = drx_sl_red_greh_tech_meet_task_1_text
+
+target = red_greh_tech
+condlist_0 = {-drx_sl_meet_honcho_red_greh_tech} complete
+condlist_1 = {!is_alive(red_greh_tech)} fail
+
+on_fail = %=drx_sl_decrease_sl_tasks_count() =drx_sl_meet_random_honcho()%
+
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; HIDE FROM SURGE TASKS
+;
+;	Modified by DoctorX
+;	for DoctorX Questlines 1.13
+;	November 10, 2016
+;
+;--------------------------------------------------------------------------------------------------
+
+; Hide from emission task-
+[hide_from_surge]
+icon = ui_inGame2_Vibros
+prior = 200
+title_functor = surge_task_title
+descr_functor = surge_task_descr
+target_functor = surge_task_target
+;dont_send_update_news = true
+condlist_0 = {=surge_complete()} complete
+condlist_1 = {!actor_alive()} fail
+
+; Hide from psi storm task-
+[hide_from_psi_storm]
+icon = ui_inGame2_psi_storm
+prior = 199
+title_functor = psi_storm_task_title
+descr_functor = psi_storm_task_descr
+target_functor = psi_storm_task_target
+;dont_send_update_news = true
+condlist_0 = {=psi_storm_complete()} complete
+condlist_1 = {!actor_alive()} fail
+
+
+
+;-----------------------------------------------------
+;-- DEFENSE - BARRIER
+;-----------------------------------------------------
+;todo
+;find icons
+[barrier_defense_monolith]
+icon = ui_inGame2_Vibros
+prior = 200
+title = barrier_defense_monolith_title
+descr = barrier_defense_monolith_descr
+
+; target functor aims to closest enemy squad and this would cause news spam because every time target changes there's a quest update news
+dont_send_update_news = true
+
+target_functor = barrier_defense_target_functor
+
+; enable end quest dialog at lukash when all attackers dead
+condlist_0 = {-barrier_defense_monolith_finished +barrier_defense_monolith_first_spawn =all_attackers_dead(barrier_defense_monolith)} nil %+barrier_defense_monolith_finished =barrier_defense_news(end:monolith)%
+
+; fail quest if you get too far from barrier while attack is underway
+condlist_1 = {-barrier_defense_monolith_finished +barrier_defense_monolith_first_spawn =distance_to_barrier(ge:90)} fail %=barrier_defense_news(escape:monolith) =barrier_defense_clean_flags(monolith)%
+
+; start spawns when close to barrier
+condlist_2 = {-barrier_defense_monolith_first_spawn =distance_to_barrier(le:40)} nil %+barrier_defense_monolith_first_spawn =barrier_defense_first_spawn(monolith) =barrier_defense_news(start:monolith)%
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+[barrier_defense_zombie]
+icon = ui_inGame2_Vibros
+prior = 200
+title = barrier_defense_zombie_title
+descr = barrier_defense_zombie_descr
+
+; target functor aims to closest enemy squad and this would cause news spam because every time target changes there's a quest update news
+dont_send_update_news = true
+
+target_functor = barrier_defense_target_functor
+
+; enable end quest dialog at lukash when all attackers dead
+condlist_0 = {-barrier_defense_zombie_finished +barrier_defense_zombie_first_spawn =all_attackers_dead(barrier_defense_zombie)} nil %+barrier_defense_zombie_finished =barrier_defense_news(end:zombie)%
+
+; fail quest if you get too far from barrier while attack is underway
+condlist_1 = {-barrier_defense_zombie_finished +barrier_defense_zombie_first_spawn =distance_to_barrier(ge:90)} fail %=barrier_defense_news(escape:zombie) =barrier_defense_clean_flags(zombie)%
+
+; start spawns when close to barrier
+condlist_2 = {-barrier_defense_zombie_first_spawn =distance_to_barrier(le:80)} nil %+barrier_defense_zombie_first_spawn =barrier_defense_first_spawn(zombie) =barrier_defense_news(start:zombie)%

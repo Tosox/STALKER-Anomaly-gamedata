@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--===========================================================
+<
+< TEXT  STRINGS FOR TASKS ON BAR (ROSTOK) MAP
+<	CoC 1.4.08 - DoctorX Questlines 1.6
+<
+<	Modified by: DoctorX
+<	Last revised: October 07, 2016
+<
+<===========================================================-->
+
+<string_table>
+
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- STORYLINE TASK TEXT  STRINGS
+	<!--
+	<!--	Modified by DoctorX
+	<!--	for DoctorX Questlines 1.6
+	<!--	October 07, 2016
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Default Storyline Task -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_default_task_name">
+		<text>Get Next Task</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_default_task_text">
+		<text>I have a job waiting. I should get to it as soon as I can.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_default_task_about">
+		<text>Someone I know needs help. He is a scumbag but he deserves assistance nonetheless. Report to him and see what he wants.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_default_task_finish">
+		<text>Good luck stalker.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Raid Enemy Camp Storyline Task- -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_1_name">
+		<text>Raid Enemy Camp for Duty</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_1_text">
+		<text>Lead a Duty raid against an enemy camp.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_1_about">
+		<text>We're preparing a raid on an enemy camp. I need you to lead the assault.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_1_finish">
+		<text>Excellent work. You are a fine warrior.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Locate Brain Scorcher Equipment Storyline Task -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_2_name">
+		<text>Locate Brain Scorcher Equipment</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_2_text">
+		<text>A stalker has removed a part of the Brain Scorcher and stashed it somewhere in the Zone. Find it and return it to Colonel Petrenko</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_2_about">
+		<text>I have information that a stalker has managed to steal a piece of equipment from the Brain Scorcher and stashed it somewhere. We must recover it, it could be a powerful weapon and must not fall into the wrong hands. There are a few places it could be hidden. I have half the base out looking for it right now. I want you to check one of the possible locations. If you find it, bring it here immediately.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_2_finish">
+		<text>You have done well. Thank you.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Most Wanted Storyline Task -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_3_name">
+		<text>Petrenko's Most Wanted</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_3_text">
+		<text>A certain faction member has risen to the top of Colonel Petrenko's most wanted list and he wants him executed.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_3_about">
+		<text>There is a member of a certain faction who has caused me more trouble than anyone else in the Zone. So far none of my men have been able to get to him. If you can kill him, I will reward you well.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_3_finish">
+		<text>Good, you got rid of that asshole! Good job. Here is your payment.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Search Lab X-19 (Radar) Storyline Task -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_4_name">
+		<text>Search Lab X-19</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_4_text">
+		<text>Colonel Petrenko will pay handsomely for any documents found inside Lab X-19 in Radar.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_4_about">
+		<text>My sources tell me you plan on infiltrating the Brain Scorcher in Radar. I think you are out of your mind but if you are really going to go through with it I have an offer for you. Bring back any documentation you find in there. I will reward you well.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_task_4_finish">
+		<text>Excellent work. You have done well.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mangun (Duty Mechanic) Default Storyline Task -->
+
+	<string id="drx_sl_bar_visitors_stalker_mechanic_default_task_name">
+		<text>Get Next Task</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_default_task_text">
+		<text>Mangun has lined up another job for me. I should go see who needs help.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_default_task_about">
+		<text>A friend of mine could use your help. Go see him.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_default_task_finish">
+		<text>Good luck stalker.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mangun (Duty Mechanic) Find Replacement Weapon Storyline Task- -->
+
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_1_name">
+		<text>Find Replacement %s for Mangun</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_1_text">
+		<text>Mangun screwed up a repair and needs a replacement %s for his client.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_1_about">
+		<text>I need some help, bro. A Dutier brought me in his rifle for repairs but I messed it up pretty bad. I need to find a replacement for him before he comes to pick it up.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_1_fetch_about">
+		<text>If you come across a %s, bring it to me. I don't have much money but I have something I can trade you for it.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_1_fetch_finish">
+		<text>Hey, great! You found one. Thanks bro, you saved my ass.</text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Mangun (Duty Mechanic) Clear Out Mutants Storyline Task -->
+
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_2_name">
+		<text>Clear Out Mutants for Mangun</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_2_text">
+		<text>Mangun needs the road out of the Bar cleared of mutants.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_2_about">
+		<text>Hey bro, can you do something for me? I gotta go somewhere but I heard there are mutants on the road leading out of the Bar. I'm no good at shooting, my aim is all shaky for some reason. Could you clear them out for me? I have a rifle that a customer never picked up that I can give you.</text>
+	</string>
+	<string id="drx_sl_bar_visitors_stalker_mechanic_task_2_finish">
+		<text>Thanks bro. Here's the rifle I promised you. Hope you have better luck than its previous owner... poor guy. Good thing he paid me in advance, hehe.</text>
+	</string>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- CHANGE FACTIONS TASK TEXT  STRINGS
+	<!--
+	<!--	Modified by DoctorX
+	<!--	for DoctorX Questlines 1.6
+	<!--	October 07, 2016
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Voronin (Duty Honcho) Decimate the Enemy Task -->
+	
+	<string id="bar_dolg_leader_task_1_name">
+		<text>Crack Down</text>
+	</string>	
+	<string id="bar_dolg_leader_task_1_text">
+		<text>General Voronin is encouraging a crackdown on Duty's enemies. I can collect %s for a reward.</text>
+	</string>		
+	<string id="bar_dolg_leader_task_1_about">
+		<text>Listen to me, stalker; while we strive to eradicate the Zone, we cannot ignore our duty to the innocent. On all sides, the average stalker is beset by outlaws and extremists driven by avarice and delusion! Although the monstrosities of the Zone are our true foe, we cannot sit back and do nothing while free stalkers are being harassed and misled! Thin the forces of those who would dare hurt or corrupt them. </text>
+	</string>		
+	<string id="bar_dolg_leader_task_1_fetch_about">
+		<text>Listen to me, stalker; while we strive to eradicate the Zone, we cannot ignore our duty to the innocent. On all sides, the average stalker is beset by outlaws and extremists driven by avarice and delusion! Although the monstrosities of the Zone are our true foe, we cannot sit back and do nothing while free stalkers are being harassed and misled! Thin the forces of those who would dare hurt or corrupt them. Bring me %ses as proof of your work, and your commitment to our cause shall be commended. </text>
+	</string>	
+	<string id="bar_dolg_leader_task_1_fetch_finish">
+		<text>Excellent job. Through your actions, you have helped protect the innocent from humanity's oldest nemesis; itself. </text>
+	</string>
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Voronin (Duty Honcho) Night Terror Task -->
+	
+	<string id="bar_dolg_leader_task_2_name">
+		<text>Night Terror</text>
+	</string>
+	<string id="bar_dolg_leader_task_2_text">
+		<text>Voronin wants to eliminate a dangerous mutant which haunts the Truck Cemetery. I've promised to do this for him.</text>
+	</string>
+	<string id="bar_dolg_leader_task_2_about">
+		<text>Our patrols reported signs of an exceptionally dangerous mutant haunting the Truck Cemetery. The monster has already taken the lives of several good men, but we have no chance of catching it in daylight. This terror has to stop immediately. Go, wait until nightfall when the beast gets sloppy. Then hunt this abomination down, and destroy it.</text>
+	</string>
+	<string id="bar_dolg_leader_task_2_finish">
+		<text>Another step toward fulfilling our goal. Allow me to repay our new debt to you.</text>
+	</string>
+	
+	<!-- Voronin (Duty Honcho) Mortal Sin Unquenchable Flame Task -->
+	<string id="bar_dolg_leader_task_3_about">
+		<text>Even though we have already struck the decisive blow against Sin, its devotees refuse to surrender. Trusted informants have determined that survivors of the faction are busy gathering in Zaton's abandoned substation workshops as we speak. We cannot let them regroup. It is time to finish them off once and for all.</text>
+	</string>
+	<string id="bar_dolg_leader_task_3_finish">
+		<text>Excellent work! We could not afford to get dragged into yet another long-term conflict. </text>
+	</string>
+	
+	<!-- Voronin (Duty Honcho) From Ukraine With Love Task -->
+	<string id="bar_dolg_leader_task_4_name">
+		<text>From Ukraine with Love</text>
+	</string>
+	<string id="bar_dolg_leader_task_4_text">
+		<text>An undercover agent needs to be extracted from an enemy faction. I will need to kill the other members of the squad and escort him back to the base. The spy has an SVD.</text>
+	</string>
+	<string id="bar_dolg_leader_task_4_about">
+		<text>Although our spies have succeeded in siphoning some ex-Spetsnaz materiel out of the Army Warehouses, I fear one of them is now under suspicion. He missed the last few contacts and hasn't left any more messages. He's likely being kept under watch so he can't afford to do anything besides play along until they decide to get rid of him. We need to pull him out. We have located him nearby, but he's with other stalkers. You need to eliminate them and escort our spy back alive. You will recognize him by his rifle, an SVD. He will have to shoot at you to keep up appearances when you attack the group, so plan accordingly.</text>
+	</string>
+	<string id="bar_dolg_leader_task_4_finish">
+		<text>Excellent, I'll have him report at once.</text>
+	</string>
+	<string id="bar_dolg_leader_task_4_msg_join">
+		<text>Hold your fire! I'm a Duty spy! I am sorry for firing at you, but I had to maintain appearances in case the worst happened. I didn't hit you, did I? Let's get back to Rostok. It's best if we go together</text>
+	</string>
+	<string id="bar_dolg_leader_task_4_msg_leave">
+		<text>Thanks for escorting me back safely. I'll put in a commendation to the General for you when I make my report.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Petrenko (Duty Trader) Payoff Change Factions Task -->
+
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_cf_task_1_name">
+		<text>Joining Duty</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_cf_task_1_text">
+		<text>I've been asked to gather 12,000 RU and bring it to Colonel Petrenko as a token of my commitment to Duty.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_cf_task_1_about">
+		<text>And I suppose you want to join Duty, eh? You have requested quite an honour. Do you think you have what it takes? To defend the world against the horrors of the Zone? To confront criminals and anarchists wherever you find them, whether they're alone or in groups? To place the values and security of both the innocent, and Duty as a whole, above your own?\n \nWe shoulder the burdens that no one else will. If you're serious, bring 12,000 RU as a token of your commitment and I will put in a recommendation to the General for you.</text>
+	</string>
+	<string id="drx_sl_bar_dolg_general_petrenko_stalker_cf_task_1_finish">
+		<text>You are now officially a member of Duty. May you live up to our name.</text>
+	</string>
+
+
+	<!-- Petrenko (Duty Trader) Defend Rostok Task -->
+	
+	<string id="bar_dolg_general_petrenko_stalker_task_1_name">
+		<text>Defend Rostok</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_1_text">
+		<text>Colonel Petrenko has asked me to eliminate a group of stalkers that have been posing a threat to Duty.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_1_about">
+		<text>The situation is becoming unfavourable. Enemies gather all over the Zone. I'm sending my men out to a few of our adversary's rally points before our foes can properly muster an attack, can you handle this one?</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_1_finish">
+		<text>Excellent work. Your service does you credit.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_2_name">
+		<text>Storm the Enemy</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_2_text">
+		<text>I have been tasked to storm enemy territory for Duty. I should make sure I'm well prepared. Colonel Petrenko will want to see me after I succeed.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_2_about">
+		<text>I have a significant commission available. Anarchists and rebels have been holding onto former Spetsnaz territory for too long. If you can plan, prepare, and lead an assault to weaken their grip, you'll be well rewarded.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_2_finish">
+		<text>Thank you, stalker. Duty is indebted to you.</text>
+	</string>
+
+	<string id="bar_dolg_general_petrenko_stalker_task_3_name">
+		<text>Neutralize Target for Petrenko</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_3_text">
+		<text>Colonel Petrenko has ordered me to find and eliminate a target.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_3_about">
+		<text>I have some subjects that need removal. The targets are usually murderers, rapists, defectors, enemy operatives or strategists. This target is currently our most urgent. Take him out, and you'll help not only Duty but all right-minded people who work in the Zone.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_3_finish">
+		<text>Great! You do us proud, and such diligence shall not go unrewarded.</text>
+	</string>
+	
+	<string id="bar_dolg_general_petrenko_stalker_task_4_name">
+		<text>Knowing is Half the Battle</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_4_text">
+		<text>Colonel Petrenko wants me to find a %s for Duty to study.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_4_about">
+		<text>The general wants Duty's grunts to get more educated on the horrors they're expected to kill. For that, we'll need some fresh samples to analyze. Are you interested in helping us get some?</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_4_fetch_about">
+		<text>The general wants Duty's grunts to get more educated on the horrors they're expected to kill. For that, we'll need some fresh samples to analyze. Bring back a %s, and you'll be well rewarded.</text>
+	</string>
+	<string id="bar_dolg_general_petrenko_stalker_task_4_fetch_finish">
+		<text>You have earned our gratitude, soldier. Here is your commission.</text>
+	</string>
+	
+
+	<!-- Mangun (Duty Mechanic) -->
+	<string id="bar_visitors_stalker_mechanic_task_1_name">
+		<text>Find %s for Mangun</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_1_text">
+		<text>%s are required by Mangun to install basic equipment upgrades, I should bring them back to him if I find any.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_1_about">
+		<text>Yes. We have Freedom to the north, bandits to the south-east, and mercs to the west. That's a lot of enemies, and I need to make sure Duty gets the edge they need in terms of equipment. I could do with some new tools - even basic ones would make a difference at this point. If you bring some, I could show you what this whole upgrading business is all about. You'll get a good return on your investment, don't worry.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_1_fetch_about">
+		<text>You will? I mean, of course you will! Hurry back now, Duty needs this!</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_1_fetch_finish">
+		<text>Finally! Something to do that isn't just maintenance work or drinking myself to death.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_2_name">
+		<text>Find %s for Mangun</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_2_text">
+		<text>%s are required by Mangun to install advanced equipment upgrades, I should bring them back to him if I find any.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_2_about">
+		<text>I'm starting to get a little ambitious after what you brought me last time. Those tools you brought before will last me ages, what I'm on the lookout for at the moment is something more advanced. So, how about it?</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_2_fetch_about">
+		<text>Ah, you will? Brilliant! I can almost feel the cold, hard metal in my hands already.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_2_fetch_finish">
+		<text>Wow, you did it! Hahaha! Am I shaking? I'm shaking!</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_3_name">
+		<text>Find %s for Mangun</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_3_text">
+		<text>%s are required by Mangun to install expert equipment upgrades, I should bring them back to him if I find any.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_3_about">
+		<text>I can't believe what you've done for me, stalker! Even some of the neutrals around here are coming to me for upgrades now! But I know, in my heart, I'm not doing as well as I could. If only I had some better tools... Listen, stalker. Bring me some expert-level tools, and I'll be in your debt. I could make your shooter into a masterpiece! I can't upgrade your stuff for free, of course, but I'll think of some way I can return the favour.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_3_fetch_about">
+		<text>Thanks, stalker. I'll be sure to let the General know about this if you succeed.</text>
+	</string>
+	<string id="bar_visitors_stalker_mechanic_task_3_fetch_finish">
+		<text>A Dutyer's word is their bond. Are you a learned mechanic? If not, maybe I can show you a trick or two for maintaining your gear out in the field.</text>
+	</string>
+	
+	
+	<!-- Barkeep -->
+	<string id="bar_visitors_barman_stalker_trader_task_1_name">
+		<text>Find the %s Artefact</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_1_text">
+		<text>I've agreed to find Barkeep a %s for his artefact smuggling business.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_1_about">
+		<text>I'm interested in artefacts. I'll give you the coordinates to a certain artefact, you bring it to me. Of course, you'll also get a reward. Sound good?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_1_fetch_about">
+		<text>I need an artefact for some outside clients. Don't worry, they tend to be respectable types: pastors, doctors, scientists from the outside, those sort of people. Anyways, they're looking for an artefact called %s.  Are you in? </text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_1_fetch_finish">
+		<text>Well done, stalker. Here is your reward.</text>
+	</string>
+	
+	<string id="bar_visitors_barman_stalker_trader_task_2_name">
+		<text>Kill the Stalker</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_2_text">
+		<text>I've agreed to take care of a stalker for the Barkeep.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_2_about">
+		<text>One of the regulars around here turned out to be rotten to the core. Rostok would more than happily pay to put flowers on his grave, if you catch my drift. So, are you up for it?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_2_finish">
+		<text>Here is your money, just don't get carried away with murdering too much.</text>
+	</string>
+	
+	<string id="bar_visitors_barman_stalker_trader_task_3_name">
+		<text>Destroy the Mutants</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_3_text">
+		<text>Barkeep has hired me to clear out a lair of mutants.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_3_about">
+		<text>Some of my boys got torn up real bad by mutants as they came back from their expedition. Duty purged one of the lairs in retaliation, but there's another nearby that needs dealing with. Will you take this on for me?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_3_finish">
+		<text>Sweet vengeance. Good work, here's the money.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Barkeep (Loner Trader) New Tasks -->
+	
+	<string id="bar_visitors_barman_stalker_trader_task_4_name">
+		<text>Bring Barkeep a %s </text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_4_text">
+		<text>Barkeep says he will pay well if I can bring him a %s.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_4_about">
+		<text>One of my clients wants a trophy from a specific mutant. Are you interested?</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_4_fetch_about">
+		<text>Did you know the Zone is home to some really exceptional tanners and jewellers? Doesn't matter what mutant part you give them - skulls, claws, tusks, pelts, even kidney stones, they'll make something good out of it. So, if you're interested in helping these guys out, bring me a %s, and there'll be cash in your pocket.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_4_fetch_finish">
+		<text>Atta boy. Here's your payment.</text>
+	</string>
+	
+	<string id="bar_visitors_barman_stalker_trader_task_5_name">
+		<text>Capture Encrypted Documents</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_5_text">
+		<text>Barkeep will pay me to ensure some coded papers end up safely in his hands.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_5_about">
+		<text>So, recently, a stalker slipped some stash info that apparently leads to some rather interesting documents. I will give you the coordinates and, in exchange for delivering the papers, you'll be well paid. Anything else you find in there is for you to keep.</text>
+	</string>
+	<string id="bar_visitors_barman_stalker_trader_task_5_finish">
+		<text>Great job, stalker.</text>
+	</string>
+
+<!-- Aspirin (Duty Medic) -->
+	<string id="bar_dolg_medic_task_1_name">
+		<text>Find %s for Aspirin</text>
+	</string>
+	<string id="bar_dolg_medic_task_1_text">
+		<text>%s is required by Aspirin to work on medical supplies. I should bring them back to him if I find any.</text>
+	</string>
+	<string id="bar_dolg_medic_task_1_about">
+		<text>Maintaining what's left from medical supplies storage with this number of injuries I have to treat on daily basis is worrying. I'm gonna run out of bandages and medkits soon or later. I need you to find me one of those old drug-making kits. They will come in handy for sure.</text>
+	</string>
+	<string id="bar_dolg_medic_task_1_fetch_about">
+		<text>Yes, there is. Duty's ideals compel it to provide Rostok with affordable medical care. Given the state the Zone's in, believe me when I say every little bit is needed. So, if you find a %s, bring it to me. Not only will you be compensated for it, but I'll be able to expand the range of meds I can synthesize efficiently, which will benefit everyone.</text>
+	</string>
+	<string id="bar_dolg_medic_task_1_fetch_finish">
+		<text>Heh, about time! Rostok's going to thank you for this, mark my words.</text>
+	</string>
+	
+<!-- Snitch (100 Rads) -->
+	<string id="top_10_task_name">
+		<text>Toppers: #$num. $name</text>
+	</string>
+	<string id="top_10_task_description">
+		<text>Snitch: Your current target is going to be $comm known by the name: $name. He has been seen in $map lately. Good luck.</text>
+	</string>
+	<string id="top_10_task_name_finish">
+		<text>Toppers: Go back to Snitch for your reward.</text>
+	</string>
+	<string id="top_10_task_description_finish">
+		<text>Snitch: So you did it after all, huh? Bravo! Get back to the 100 Rads, your money is waiting for you.</text>
+	</string>
+	<string id="st_task_info_awaiting">
+		<text>Awaiting info.</text>
+	</string>
+
+</string_table>

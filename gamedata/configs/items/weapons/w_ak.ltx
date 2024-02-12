@@ -1,0 +1,253 @@
+;------------------------------------------------------------------------------------------------
+[wpn_ak]:identity_immunities,weapon_probability,default_weapon_params,wpn_akm_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\ak-74"
+scheduled                                = off
+cform                                    = skeleton
+
+class                                    = WP_AK74
+slot                                     = 2
+animation_slot                           = 2
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 8
+hand_dependence                          = 1
+single_handed                            = 0
+
+default_to_ruck                          = false
+sprint_allowed                           = true
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 25
+inv_grid_y                               = 18
+inv_name                                 = st_wpn_ak
+inv_name_short                           = st_wpn_ak
+description                              = st_wpn_ak_descr
+
+kind                                     = w_rifle
+inv_weight                               = 3.3
+cost                                     = 22650
+repair_type                              = rifle_7
+weapon_class                             = assault_rifle
+
+hud                                      = wpn_ak_hud
+visual                                   = dynamics\weapons\wpn_ak\wpn_ak.ogf
+position                                 = -0.026, -0.175, 0.0
+orientation                              = 0, 0, 0
+fire_point                               = 0, 0.218, 0.656
+fire_point2                              = 0, 0.161, 0.583
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.26, -0.11, 0.25
+strap_orientation                        = -15, -9, 110
+ph_mass                                  = 4
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point			                     = 0,0.216,0.174
+shell_particles	 		                 = weapons\762x39
+
+light_disabled                           = false
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 5
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_ak, up_gr_seconab_ak, up_gr_thirdab_ak, up_gr_fourtab_ak, up_gr_fifthab_ak
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_ak74
+upgr_icon_x                              = 0
+upgr_icon_y                              = 200
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+fire_modes                               = 1, -1
+ammo_class                               = ammo_7.62x39_fmj, ammo_7.62x39_fmj_bad, ammo_7.62x39_fmj_verybad, ammo_7.62x39_ap, ammo_7.62x39_ap_bad, ammo_7.62x39_ap_verybad
+ammo_elapsed                             = 30
+ammo_mag_size                            = 30
+startup_ammo                             = 90
+
+scope_status                             = 0
+scope_name                               = wpn_addon_scope
+scope_x                                  = 33
+scope_y                                  = -2
+scope_zoom_factor                        = 0
+
+silencer_name                            = wpn_sil_pbs1
+silencer_status                          = 2
+silencer_x                               = 244
+silencer_y                               = 14
+silencer_light_color                     = 0.6, 0.5, 0.3
+silencer_light_range                     = 0.01
+silencer_light_time                      = 0.2
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_smoke_particles                 = weapons\generic_shoot_00
+
+grenade_class                            = ammo_vog-25, ammo_vog-25_bad, ammo_vog-25_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 120
+grenade_launcher_y                       = 21
+launch_speed                             = 0
+
+hit_impulse                              = 34
+hit_power                                = 0.58, 0.58, 0.58, 0.58
+hit_type                                 = fire_wound
+fire_distance                            = 900
+bullet_speed                             = 715
+rpm                                      = 600
+rpm_empty_click                          = 200
+
+use_aim_bullet                           = false
+time_to_aim                              = 0.0 ;  3.0
+zoom_dof                                 = 0.5, 1.0, 180
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.25
+reload_dof                               = 0.0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 5.8
+fire_dispersion_base                     = 0.49
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.05
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0007
+condition_shot_dec                       = 0.0007
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 0.762
+cam_dispersion_frac                      = 1.0
+cam_dispersion_inc                       = 0.0725
+cam_max_angle                            = 50.0
+cam_max_angle_horz                       = 50.0
+cam_step_angle_horz                      = 1.38
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 0.732
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_dispersion_inc                  = 0.0625
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.28
+
+PDM_disp_accel_factor                    = 2.5
+PDM_disp_base                            = 1.15
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 2.5
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 360
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 0
+kill_msg_y                               = 28
+kill_msg_width                           = 84
+kill_msg_height                          = 28
+
+
+[wpn_ak_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_ak\wpn_ak_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = -0.072, -0.15, 0.1
+hands_position_16x9                      = -0.072, -0.15, 0.1
+hands_orientation                        = 0.55, 2.39, 0.1499993
+hands_orientation_16x9                   = 0.55, 2.39, 0.1499993
+
+aim_hud_offset_pos                       = -0.08138, 0.0555, -0.25
+aim_hud_offset_pos_16x9                  = -0.08138, 0.0555, -0.25
+aim_hud_offset_rot                       = 0.0426, 0.008926, -0.0057
+aim_hud_offset_rot_16x9                  = 0.0426, 0.008926, -0.0057
+
+gl_hud_offset_pos                        = -0.0444, 0.006, -0.155
+gl_hud_offset_pos_16x9                   = -0.0444, 0.006, -0.155
+gl_hud_offset_rot                        = -0.066, 0.0042, -0.02
+gl_hud_offset_rot_16x9                   = -0.066, 0.0042, -0.02
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = lancew_akm_holster
+anm_hide_g                               = lancew_akm_holster_w_gl
+anm_hide_w_gl                            = lancew_akm_holster_w_gl
+anm_idle                                 = lancew_akm_idle
+anm_idle_aim                             = lancew_akm_idle_aim, idle_aim
+anm_idle_aim_moving                      = lancew_akm_moving, idle, 0.75
+anm_idle_aim_moving_crouch               = lancew_akm_moving, idle, 0.7
+anm_idle_g                               = lancew_akm_idle_w_gl
+anm_idle_g_aim                           = lancew_akm_idle_aim_w_gl
+anm_idle_moving                          = lancew_akm_moving
+anm_idle_moving_crouch_g_aim             = lancew_akm_moving_w_gl, idle, 0.7
+anm_idle_moving_crouch_w_gl_aim          = lancew_akm_moving_w_gl, idle, 0.7
+anm_idle_moving_g                        = lancew_akm_moving_w_gl
+anm_idle_moving_g_aim                    = lancew_akm_moving_w_gl, idle, 0.75
+anm_idle_moving_w_gl                     = lancew_akm_moving_w_gl
+anm_idle_moving_w_gl_aim                 = lancew_akm_moving_w_gl, idle, 0.75
+anm_idle_sprint                          = lancew_akm_sprint
+anm_idle_sprint_g                        = lancew_akm_sprint_w_gl
+anm_idle_sprint_w_gl                     = lancew_akm_sprint_w_gl
+anm_idle_w_gl                            = lancew_akm_idle_w_gl
+anm_idle_w_gl_aim                        = lancew_akm_idle_aim_w_gl, idle_aim
+anm_reload                               = lancew_akm_reload, reload
+anm_reload_g                             = lancew_akm_reload_g, reload_g
+anm_reload_w_gl                          = lancew_akm_reload_w_gl, reload
+anm_shots                                = lancew_akm_shoot, shoot
+anm_shots_g                              = lancew_akm_shoot_g, shoot_g
+anm_shots_w_gl                           = lancew_akm_shoot_w_gl, shoot
+anm_show                                 = lancew_akm_draw
+anm_show_g                               = lancew_akm_draw_w_gl
+anm_show_w_gl                            = lancew_akm_draw_w_gl
+anm_switch                               = lancew_akm_no_reload_w_gl
+anm_switch_g                             = lancew_akm_no_reload_w_gl
+
+shell_bone                               = wpn_body
+shell_dir                                = 0.0, 1.0, 0.0
+shell_point                              = 0.0, 0.064, 0.19
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0, 0.051841, 0.535482
+fire_point2                              = 0.0, -0.011, 0.553
+
+;------------------------------------------------------------------------------------------------
+[wpn_aks]:wpn_ak
+inv_grid_y                               = 20
+inv_name                                 = st_wpn_aks
+inv_name_short                           = st_wpn_aks
+description                              = st_wpn_aks_descr
+
+inv_weight                               = 3.2
+
+hud                                      = wpn_aks_hud
+visual                                   = dynamics\weapons\wpn_ak\wpn_aks.ogf
+
+
+[wpn_aks_hud]:wpn_ak_hud
+item_visual                              = anomaly_weapons\wpn_ak\wpn_aks_hud.ogf
+
+aim_hud_offset_pos                       = -0.081395, 0.05525, -0.25
+aim_hud_offset_pos_16x9                  = -0.081395, 0.05525, -0.25
+aim_hud_offset_rot                       = 0.0425, 0.00886, -0.0046
+aim_hud_offset_rot_16x9                  = 0.0425, 0.00886, -0.0046

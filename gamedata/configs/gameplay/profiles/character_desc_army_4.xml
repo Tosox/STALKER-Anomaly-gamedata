@@ -1,0 +1,12 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_military_4</class>
+<community>army</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="5000" max="10000" infinitive="0"/>
+<name>GENERATE_NAME_captain</name>
+<rank min="15000" max="20000" />
+<reputation min="-900" max="2500" />
+<supplies></supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

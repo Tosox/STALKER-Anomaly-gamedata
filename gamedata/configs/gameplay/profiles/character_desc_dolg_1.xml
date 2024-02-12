@@ -1,0 +1,19 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_duty_1</class>
+<community>dolg</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="1000" max="3000" infinitive="0"/>
+<name>GENERATE_NAME_sergeant</name>
+<rank min="3000" max="6000" />
+<reputation min="-600" max="1000" />
+<supplies>
+#include "gameplay\loadouts\dolg_base.ltx"
+#include "gameplay\loadouts\dolg_tier_2.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

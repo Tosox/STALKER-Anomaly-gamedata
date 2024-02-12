@@ -1,0 +1,228 @@
+--[[
+	Tronex
+	2019/12/15
+	Item binder
+	
+	This script makes sure that items multi-uses or condition are saved
+--]]
+local enable_debug = false
+--------------------------------------------------------------------------------
+function bind(obj)
+    obj:bind_object(item_binder(obj))
+end
+--------------------------------------------------------------------------------
+
+local item_uses = {}
+local item_condition = {}
+
+function print_dbg(txt, ...)
+	if enable_debug then
+		printf("bind_item | %s | " .. txt, time_global(), ...)
+	end
+end
+
+
+----------------------------------------------------------------------
+-- UI Item Property
+----------------------------------------------------------------------
+function menu_separate(obj)
+	local p = obj:parent()
+	if not (p and p:id() == AC_ID) then return end
+	
+	if (not IsItem("multiuse",nil,obj)) then return end
+	
+	local uses = obj:get_remaining_uses()
+	if not (uses and (uses > 1)) then return end
+
+	return game.translate_string("st_item_separate")
+end
+
+function func_separate(obj)
+	local sec = obj:section()
+	local uses = obj:get_remaining_uses()
+	
+	if uses and (uses > 1) then
+		local se_obj = alife_create_item(sec, db.actor, {uses = 1})
+		if se_obj then
+			obj:set_remaining_uses(uses - 1)
+			
+			-- Force bar updating
+			--db.actor:drop_item(obj)
+			--db.actor:transfer_item(obj,db.actor)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Callbacks
+--------------------------------------------------------------------------------
+local function se_item_on_unregister(se_obj, typ)
+	--local sec = se_obj:section_name()
+	--if ini_sys:r_string_ex(sec,"script_binding") == "bind_item.bind" then
+		local id = se_obj.id
+		item_uses[id] = nil
+		item_condition[id] = nil
+	--end
+end
+
+local function on_item_drag_dropped(obj_1, obj_2, slot_from, slot_to)
+	if not (slot_from == EDDListType.iActorBag and slot_to == EDDListType.iActorBag) then
+        return
+    end
+	
+	local sec_1 = obj_1:section()
+	local sec_2 = obj_2:section()
+	
+	if not ((sec_1 == sec_2) and IsItem("multiuse",sec_1)) then
+		return
+	end
+	
+	local uses_1 = obj_1:get_remaining_uses()
+	local uses_2 = obj_2:get_remaining_uses()
+	local max_uses = obj_1:get_max_uses() -- 2 items, 1 section and max uses
+
+	if not (uses_1 and uses_2 and max_uses) then
+		return
+	end
+
+	local new_uses = uses_1 + uses_2
+	if (new_uses > max_uses) then
+		return
+	end
+	
+	local id_1 = obj_1:id()
+	local id_2 = obj_2:id()
+	local id_3
+	
+	if (id_1 == id_2) then
+		--[[
+		local function search(temp, item)
+			if (item:section() == sec_1) and (item:id() ~= id_2) then
+				id_3 = item:id()
+				return
+			end
+		end
+		db.actor:iterate_inventory(search, nil)
+		--]]
+	else
+		id_3 = id_1
+	end
+	
+	if id_3 then
+		local se_obj_3 = alife_object(id_3)
+		if se_obj_3 then
+			alife_release(se_obj_3)
+			obj_2:set_remaining_uses(new_uses)
+			itms_manager.play_item_sound(obj_2) -- play sound
+			printdbg("/ Combined two [%s] items | uses_from: (%s) [%s] - uses_to: (%s) [%s] - new_uses: [%s]", sec_2, id_3, uses_1, id_2, uses_2, new_uses)
+		end
+	end
+end
+
+local function save_state(mdata) 
+	mdata.item_remaining_uses = item_uses
+	mdata.item_condition = item_condition
+end
+
+local function load_state(mdata) 
+	item_uses = mdata.item_remaining_uses or {}
+	item_condition = mdata.item_condition or {}
+end
+
+function on_game_start()
+	if (USE_MARSHAL) then 
+		RegisterScriptCallback("save_state",save_state)
+		RegisterScriptCallback("load_state",load_state)
+	end
+	RegisterScriptCallback("ActorMenu_on_item_drag_drop",on_item_drag_dropped)
+	RegisterScriptCallback("server_entity_on_unregister",se_item_on_unregister)
+end
+
+
+--------------------------------------------------------------------------------
+-- Class "item_binder"
+--------------------------------------------------------------------------------
+class "item_binder" (object_binder)
+
+function item_binder:__init(obj) super(obj)
+	self.first_update_done = nil
+end
+
+function item_binder:update(delta)
+    object_binder.update(self, delta)
+	
+	local obj = self.object
+	local id = obj:id()
+	
+	if (not self.first_update) then
+		self.first_update = true
+		
+		-- Backwards save compatibility, remove me later
+		local mdata = alife_storage_manager.get_state()
+		if mdata.device_condition and mdata.device_condition[id] then
+			item_condition[id] = mdata.device_condition[id]
+			alife_storage_manager.get_state().device_condition[id] = nil
+			print_dbg("Shifted item condition [%s](%s) to new table", obj:name(), item_condition[id])
+		end
+		
+		if item_uses[id] then
+			obj:set_remaining_uses(item_uses[id])
+			print_dbg("Restored item uses [%s] (%s)", obj:name(), item_uses[id])
+		elseif item_condition[id] then
+			obj:set_condition(item_condition[id])
+			print_dbg("Restored item condition [%s] (%s)", obj:name(), item_condition[id])
+		end
+		
+		local sec = obj:section()
+		if IsItem("multiuse", sec) then
+			self.multiuse = true
+			print_dbg("Multiuse item [%s] detected", obj:name())
+		elseif ini_sys:r_bool_ex(sec,"use_condition") then
+			self.degradable = true
+			print_dbg("Degradable item [%s] detected", obj:name())
+		end
+		
+		return
+	end
+	
+	if self.multiuse then
+		item_uses[id] = obj:get_remaining_uses()
+	elseif self.degradable then
+		item_condition[id] = obj:condition()
+	end
+end
+
+function item_binder:reload(section)
+    object_binder.reload(self, section)
+end
+
+function item_binder:reinit()
+    object_binder.reinit(self)
+end
+
+function item_binder:net_spawn(se_abstract)
+    if not(object_binder.net_spawn(self, se_abstract)) then
+        return false
+    end
+	--[[
+	if (se_abstract.remaining_uses and se_abstract.remaining_uses > 0 and se_abstract.remaining_uses <= self.object:get_max_uses()) then
+		--printf("set remaining_uses on net spawn %s",se_abstract.remaining_uses)
+		self.object:set_remaining_uses(tonumber(se_abstract.remaining_uses) or 1)
+	end
+	--]]
+	
+    return true
+end
+
+function item_binder:net_destroy()
+	object_binder.net_destroy(self)
+end
+
+function item_binder:save(stpk)
+	--object_binder.save(self, stpk)
+end
+
+function item_binder:load(stpk)
+	--object_binder.load(self, stpk)
+end

@@ -1,0 +1,350 @@
+;------------------------------------------------------------------------------
+; Tronex
+
+; These profiles for each faction are used mainly for dynamic news, to generate proper scenarios
+;------------------------------------------------------------------------------
+
+[stalker]
+type = group
+color = 255,255,255,255
+
+territory = l01_escape
+level_presence = k00_marsh,k01_darkscape,k02_trucks_cemetery,l03_agroprom,l02_garbage,l04_darkvalley,l06_rostok,l07_military,l08_yantar,l10_red_forest,jupiter,pripyat,zaton
+pda_topic = mission=1,chitchat=1,joke=1
+pda_topic_mission = bounty,target,guard,artefact,hunt
+weapon = all
+
+leader = esc_m_trader
+trader = esc_m_trader
+mechanic = zat_a2_stalker_mechanic
+medic = 
+barman = bar_visitors_barman_stalker_trader
+guide = guid_bar_stalker_navigator
+
+leader_name = escape_trader_name
+trader_name = escape_trader_name
+mechanic_name = zat_a2_stalker_mechanic_name
+medic_name = 
+barman_name = bar_barmen_name
+guide_name = guid_bar_stalker_navigator_name
+
+
+[army]
+type = troop
+color = 255,200,255,100
+
+territory = l03_agroprom
+level_presence = k00_marsh,k01_darkscape,k02_trucks_cemetery,l01_escape,l04_darkvalley,l10_red_forest,pripyat
+pda_topic = mission=1,chitchat=1,joke=1
+pda_topic_mission = target,guard,hunt
+weapon = eastern
+
+leader = agr_smart_terrain_1_6_near_2_military_colonel_kovalski
+trader = agr_smart_terrain_1_6_army_trader_stalker
+mechanic = agr_smart_terrain_1_6_army_mechanic_stalker
+medic = agr_1_6_medic_army_mlr
+barman = agr_1_6_barman_army_mlr
+guide = 
+
+leader_name = agr_kuznetsov_name
+trader_name = agr_smart_terrain_1_6_army_trader_stalker_name
+mechanic_name = agr_smart_terrain_1_6_army_mechanic_stalker_name
+medic_name = agr_1_6_medic_army_mlr_name
+barman_name = agr_1_6_barman_army_mlr_name
+guide_name = 
+
+
+[bandit]
+type = group
+color = 255,150,100,0
+territory = l04_darkvalley
+
+level_presence = k00_marsh,k01_darkscape,k02_trucks_cemetery,l01_escape,l03_agroprom,l02_garbage,l06_rostok,l07_military,l10_red_forest,jupiter,pripyat,zaton
+pda_topic = mission=0,chitchat=1,joke=1
+pda_topic_mission = bounty,guard,raid,hunt
+weapon = all
+
+leader = zat_b7_bandit_boss_sultan
+trader = val_smart_terrain_7_4_bandit_trader_stalker
+mechanic = val_smart_terrain_7_3_bandit_mechanic_stalker
+medic = bandit_main_base_medic_mlr
+barman = 
+guide = 
+
+leader_name = st_zat_b7_bandit_boss_sultan_name
+trader_name = val_smart_terrain_7_4_bandit_trader_stalker_name
+mechanic_name = val_smart_terrain_7_3_bandit_mechanic_stalker_name
+medic_name = 
+barman_name = 
+guide_name = 
+
+
+
+[csky]
+type = scientist
+color = 255,100,255,255
+territory = k00_marsh
+
+level_presence = k01_darkscape,l01_escape,l03_agroprom,l10_red_forest,pripyat
+pda_topic = mission=1,chitchat=1,joke=1
+pda_topic_mission = target,guard,artefact,anomaly,hunt
+weapon = all
+
+leader = mar_smart_terrain_base_stalker_leader_marsh
+trader = mar_base_owl_stalker_trader
+mechanic = mar_base_stalker_tech
+medic = mar_smart_terrain_base_doctor
+barman = mar_base_stalker_barmen
+guide = guid_marsh_mlr
+
+leader_name = mar_smart_terrain_base_stalker_leader_marsh_name
+trader_name = mar_base_owl_stalker_trader_name
+mechanic_name = mar_base_stalker_tech_name
+medic_name = mar_smart_terrain_base_doctor_name
+barman_name = mar_base_stalker_barmen_name
+guide_name = cit_doctor_name
+
+
+[dolg]
+type = troop
+color = 255,255,50,50
+territory = l05_bar
+
+level_presence = k01_darkscape,k02_trucks_cemetery,l02_garbage,l03_agroprom,l06_rostok,l07_military,l10_red_forest,jupiter,pripyat
+pda_topic = mission=2,chitchat=1,joke=0
+pda_topic_mission = target,guard,hunt
+weapon = eastern
+
+leader = bar_dolg_leader
+trader = bar_dolg_general_petrenko_stalker
+mechanic = bar_visitors_stalker_mechanic
+medic = bar_dolg_medic
+barman = 
+guide = 
+
+leader_name = bar_voronin_name
+trader_name = bar_kicenko_name
+mechanic_name = bar_visitors_stalker_mechanic_name
+medic_name = bar_dolg_medic_name
+barman_name = 
+guide_name = 
+
+
+[ecolog]
+type = scientist
+color = 255,100,150,100
+territory = l08_yantar
+
+level_presence = k01_darkscape,l03_agroprom,jupiter,l10_red_forest,pripyat,zaton
+pda_topic = mission=2,chitchat=1,joke=0
+pda_topic_mission = artefact,anomaly
+weapon = all
+
+leader = yan_stalker_sakharov
+trader = jup_b6_scientist_nuclear_physicist
+mechanic = mechanic_army_yan_mlr
+medic = 
+barman = yan_povar_army_mlr
+guide = 
+
+leader_name = yan_st_sakharov_name
+trader_name = jup_b6_scientist_nuclear_physicist
+mechanic_name = mechanic_army_yan_mlr_name
+medic_name = 
+barman_name = yan_povar_army_mlr_name
+guide_name = 
+
+
+[freedom]
+type = troop
+color = 255,50,255,50
+territory = l07_military
+
+level_presence = k01_darkscape,k02_trucks_cemetery,jupiter,zaton,l10_red_forest,pripyat
+pda_topic = mission=1,chitchat=1,joke=1
+pda_topic_mission = bounty,target,guard,artefact,hunt
+weapon = nato
+
+leader = mil_smart_terrain_7_7_freedom_leader_stalker
+trader = mil_smart_terrain_7_10_freedom_trader_stalker
+mechanic = mil_smart_terrain_7_7_freedom_mechanic_stalker
+medic = mil_freedom_medic
+barman = mil_freedom_barman_mlr
+guide = mil_freedom_guid
+
+leader_name = mil_freedom_leader_name
+trader_name = mil_Svoboda_trader_name
+mechanic_name = mil_Svoboda_engineer_name
+medic_name = st_mil_freedom_medic_name
+barman_name = st_mil_freedom_barman_mlr_name
+guide_name = mil_freedom_guid_name
+
+
+[killer]
+type = group
+color = 255,50,255,50
+territory = l09_deadcity
+
+level_presence = k01_darkscape,l06_rostok,l07_military,l10_limansk,l10_red_forest,pripyat,jupiter,zaton
+pda_topic = mission=2,chitchat=1,joke=1
+pda_topic_mission = bounty,target,guard,artefact
+weapon = all
+
+leader = cit_killers_merc_trader_stalker
+trader = cit_killers_merc_trader_stalker
+mechanic = cit_killers_merc_mechanic_stalker
+medic = cit_killers_merc_medic_stalker
+barman = cit_killers_merc_barman_mlr
+guide = ds_killer_guide_main_base
+
+leader_name = cit_killers_merc_trader_stalker_name
+trader_name = cit_killers_merc_trader_stalker_name
+mechanic_name = cit_killers_merc_mechanic_stalker_name
+medic_name = cit_killers_merc_medic_stalker_name
+barman_name = cit_killers_merc_barman_mlr_name
+guide_name = ds_killer_guide_main_base_name
+
+
+[monolith]
+type = troop
+color = 255,255,255,255
+territory = l12_stancia
+
+level_presence = l07_military,l09_deadcity,l10_limansk,jupiter,zaton,l10_red_forest,pripyat
+pda_topic = mission=2,chitchat=0,joke=0
+pda_topic_mission = target,guard
+weapon = all
+
+leader = lider_monolith_haron
+trader = pri_monolith_monolith_trader_stalker
+mechanic = pri_monolith_monolith_mechanic_stalker
+medic = 
+barman = 
+guide = 
+
+leader_name = lider_monolith_haron_name
+trader_name = pri_monolith_monolith_trader_stalker_name
+mechanic_name = pri_monolith_monolith_mechanic_stalker_name
+medic_name = 
+barman_name = 
+guide_name = 
+
+
+[renegade]
+type = group
+color = 255,150,100,0
+territory = k00_marsh
+
+level_presence = k00_marsh,k01_darkscape,k02_trucks_cemetery,l01_escape,l03_agroprom,l02_garbage,l06_rostok,l07_military,l10_red_forest,jupiter,pripyat,zaton
+pda_topic = mission=0,chitchat=1,joke=1
+pda_topic_mission = bounty,guard,raid,hunt
+weapon = all
+
+leader = zat_b7_bandit_boss_sultan
+trader = val_smart_terrain_7_4_bandit_trader_stalker
+mechanic = val_smart_terrain_7_3_bandit_mechanic_stalker
+medic = bandit_main_base_medic_mlr
+barman = 
+guide = 
+
+leader_name = st_zat_b7_bandit_boss_sultan_name
+trader_name = val_smart_terrain_7_4_bandit_trader_stalker_name
+mechanic_name = val_smart_terrain_7_3_bandit_mechanic_stalker_name
+medic_name = 
+barman_name = 
+guide_name = 
+
+
+[greh]
+type = troop
+color = 255,200,92,140
+territory = l10_red_forest
+
+level_presence = l07_military,l10_limansk,jupiter,l10_red_forest,pripyat
+pda_topic = mission=2,chitchat=0,joke=0
+pda_topic_mission = target,guard
+weapon = all
+
+leader = red_greh_trader
+trader = red_greh_trader
+mechanic = red_greh_tech
+medic = 
+barman = 
+guide = 
+
+leader_name = red_greh_trader_name
+trader_name = red_greh_trader_name
+mechanic_name = red_greh_tech_name
+medic_name = 
+barman_name = 
+guide_name = 
+
+
+[isg]
+type = troop
+color = 255,192,110,100
+territory = 
+
+level_presence = k01_darkscape,l10_limansk,zaton,jupiter,l10_red_forest,pripyat
+pda_topic = mission=2,chitchat=0,joke=0
+pda_topic_mission = target,artefact,anomaly
+weapon = nato
+
+leader = 
+trader = 
+mechanic = 
+medic = 
+barman = 
+guide = 
+
+leader_name = 
+trader_name = 
+mechanic_name = 
+medic_name = 
+barman_name = 
+guide_name = 
+
+
+;----------------------------------------------------------------
+[news_levels]
+k00_marsh
+k01_darkscape
+k02_trucks_cemetery
+l01_escape
+l02_garbage
+l03_agroprom
+l04_darkvalley
+l06_rostok
+l07_military
+l08_yantar
+l09_deadcity
+l10_limansk
+l10_red_forest
+jupiter
+pripyat
+zaton
+
+
+;----------------------------------------------------------------
+[mutant_tier]
+rat = 1
+tushkano = 1
+zombie = 1
+dog = 1
+cat = 1
+flesh = 1
+boar = 1
+pseudodog = 1
+bloodsucker = 2
+psysucker = 2
+snork = 2
+lurker = 2
+fracture = 2
+chimera = 3
+gigant = 3
+psy_dog_phantom = 4
+psy_dog = 4
+poltergeist = 4
+controller = 4
+burer = 4
+karlik = 4

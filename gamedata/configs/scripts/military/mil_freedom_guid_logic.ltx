@@ -1,0 +1,56 @@
+[logic@mil_freedom_guid]
+suitable = {=check_npc_name(mil_freedom_guid)} true
+prior = 140
+active = walker@base
+can_select_weapon = true
+dont_keep_items = true
+level_spot = quest_npc
+
+[walker@base]
+path_walk = freedom_guid_1_walk
+path_look = freedom_guid_1_look
+gather_items_enabled = false
+help_wounded_enabled = false
+on_info = {=is_night} sleeper@sleeper_1
+on_info2 = {=surge_started} walker@surge
+corpse_detection_enabled = false
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = 3
+abuse           = false
+use = {=actor_enemy} false, true
+allow_break = false
+meet_on_talking = false
+
+[sleeper@sleeper_1]
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+path_main = freedom_guid_sleeper
+meet = no_meet
+on_info = {!is_night} walker@base
+
+[walker@surge]
+path_walk = freedom_guid_hide_1_walk
+path_look = freedom_guid_hide_1_look
+on_info = {!surge_started} walker@base
+reach_movement = walk_noweap
+use_camp = false
+reach_distance = 10
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false

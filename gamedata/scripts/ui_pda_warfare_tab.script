@@ -1,0 +1,283 @@
+------------------------------------------------
+-- Made by Tronex
+-- 2019/5/17
+-- New PDA tab for Warfare mode: faction war
+
+-- The tab will sort factions by dominance, and list total squads number / total captured smarts / faction's territory (their most captured smarts)
+-- A button can be used to toggle search between current or all levels
+------------------------------------------------
+
+
+local clr_w,clr_gr
+
+local SINGLETON = nil
+function get_ui()
+	SINGLETON = SINGLETON or pda_warfare_tab()
+	SINGLETON:Reset()
+	return SINGLETON
+end
+
+-- Constructor.
+class "pda_warfare_tab" (CUIScriptWnd)
+function pda_warfare_tab:__init() super()
+
+	self.curr_map = false
+	
+	self.faction_squads = {}
+	self.faction_squads_lvl = {}
+	self.faction_smarts = {}
+	self.faction_smarts_lvl = {}
+	self.faction_smarts_lvls = {}
+	self.tot_smarts = 0
+	self.tot_smarts_lvl = 0
+	
+	clr_w = utils_xml.get_color("pda_white")
+	clr_gr = utils_xml.get_color("ui_gray_1")
+	
+	self:InitControls()
+end
+
+function pda_warfare_tab:__finalize()
+end
+
+function pda_warfare_tab:InitControls()
+	self:SetWndRect(Frect():set(0, 0, 1024, 768))
+	
+	-- Main frame.
+	self.xml = CScriptXmlInit()
+	
+	local xml = self.xml
+	xml:ParseFile("pda_warfare.xml")
+	xml:InitFrame("frame1", self)
+	xml:InitFrame("frame2", self)
+	
+	self.btn = xml:Init3tButton("btn_map", self)
+	self:Register(self.btn, "btn")
+	self:AddCallback("btn", ui_events.BUTTON_CLICKED, self.btn_map, self)
+	
+	self.txt_order = {}
+	self.txt_squads = {}
+	self.txt_captured_smarts = {}
+	self.txt_major_territory = {}
+	self.faction_icon = {}
+	self.faction_name = {}
+	self.progress_dominance = {}
+
+	self.scroll = xml:InitScrollView("scrollbar", self)
+	
+	-- Hint Window
+	self.hint_wnd = utils_ui.UIHint(self)
+end
+
+function pda_warfare_tab:Reset()
+	local xml = self.xml
+	
+	-- Clear XML elements
+	self.scroll:Clear()
+	empty_table(self.txt_order)
+	empty_table(self.txt_squads)
+	empty_table(self.txt_captured_smarts)
+	empty_table(self.txt_major_territory)
+	empty_table(self.faction_icon)
+	empty_table(self.faction_name)
+	empty_table(self.progress_dominance)
+	
+	-- Prepare
+	local sim = alife()
+	local gg = game_graph()
+	local actor_faction = get_actor_true_community()
+	local curr_lvl = gg:vertex(sim:actor().m_game_vertex_id):level_id()
+	local factions = {}
+	
+	-- Gather active level
+	local active_levels = {}
+	for i,lvl in pairs(level_targets.active_levels) do
+		active_levels[lvl] = true
+	end
+	
+	-- Gather faction squads count
+	empty_table(self.faction_squads)
+	empty_table(self.faction_squads_lvl)
+	for f,sq in pairs(warfare.registered_squads) do
+		factions[f] = true
+		for sq_id,_ in pairs(sq) do
+			local squad = sq_id and alife_object(sq_id)
+			if squad then
+				self.faction_squads[f] = (self.faction_squads[f] or 0) + 1
+				local lvl = gg:vertex(squad.m_game_vertex_id):level_id()
+				if (lvl == curr_lvl) then
+					self.faction_squads_lvl[f] = (self.faction_squads_lvl[f] or 0) + 1
+				end
+			end
+		end
+	end
+	
+	-- Gather smart count in active levels + faction smarts count
+	empty_table(self.faction_smarts)
+	empty_table(self.faction_smarts_lvl)
+	empty_table(self.faction_smarts_lvls)
+	self.tot_smarts = 0
+	self.tot_smarts_lvl = 0
+	for name,smart in pairs(SIMBOARD.smarts_by_names) do
+		local lvl = gg:vertex(smart.m_game_vertex_id):level_id()
+		if active_levels[lvl] then
+			if (not self.faction_smarts_lvls[lvl]) then
+				self.faction_smarts_lvls[lvl] = {}
+			end
+		
+			-- Smart count
+			self.tot_smarts = self.tot_smarts + 1
+			if (lvl == curr_lvl) then
+				self.tot_smarts_lvl = self.tot_smarts_lvl + 1
+			end
+			
+			local o_f = smart.owning_faction
+			if o_f and factions[o_f] then
+				self.faction_smarts[o_f] = (self.faction_smarts[o_f] or 0) + 1
+				
+				if (lvl == curr_lvl) then
+					self.faction_smarts_lvl[o_f] = (self.faction_smarts_lvl[o_f] or 0) + 1
+				end
+				
+				local cnt_lvl = self.faction_smarts_lvls[lvl][o_f] or 0
+				self.faction_smarts_lvls[lvl][o_f] = cnt_lvl + 1
+			end
+		end
+	end
+	
+	
+	-- Sort faction by captured smart
+	local faction_by_power = {}
+	local search_tbl = self.curr_map and self.faction_smarts_lvl or self.faction_smarts
+	for fac,num in pairs(search_tbl) do
+		--printf("faction_by_power | %s - %s", fac, num)
+		table.insert(faction_by_power, {fac, num})
+	end
+	
+	function compare(a,b)
+		return a[2] > b[2]
+	end
+	
+	table.sort(faction_by_power, compare)
+	
+	-- Gather faction squads in each active level
+	local faction_territory = {}
+	for lvl,v in pairs(self.faction_smarts_lvls) do
+		for f,num in pairs(v) do
+			if (not faction_territory[f]) then
+				faction_territory[f] = {lvl,num}
+			elseif faction_territory[f] and (faction_territory[f][2] < num) then
+				faction_territory[f] = {lvl,num}
+			end
+		end
+	end
+	
+	-- Show
+	local n = 0
+	for _,v in pairs(faction_by_power) do
+		local f = v[1]
+		local cap_smarts = v[2]
+		n = n + 1
+		
+		local _st = xml:InitStatic("temp", nil)
+		xml:InitFrame("faction:frame", _st)
+		
+		-- Highlight actor faction
+		if (f == actor_faction) then
+			xml:InitFrame("faction:frame", _st)
+			xml:InitFrame("faction:frame", _st)
+		end
+		
+		-- Highlight #1 faction
+		xml:InitFrame("faction:frame_order", _st)
+		if (n == 1) then
+			xml:InitFrame("faction:frame_order", _st)
+			xml:InitFrame("faction:frame_order", _st)
+			xml:InitFrame("faction:frame_order", _st)
+		end
+		
+		xml:InitStatic("faction:pic_dominance", _st)
+		
+		self.faction_icon[f] = xml:InitStatic("faction:faction_icon", _st)
+		self.faction_icon[f]:InitTexture("ui_inGame4_ico_" .. f)
+		self.faction_icon[f]:SetStretchTexture(true)
+		
+		self.faction_name[f] = xml:InitTextWnd("faction:text_faction", _st)
+		self.faction_name[f]:SetText(game.translate_string(f))
+		
+		self.txt_order[f] = xml:InitTextWnd("faction:text_order", _st)
+		self.txt_order[f]:SetText(n)
+		
+		local str_squads = self.curr_map and self.faction_squads_lvl[f] or self.faction_squads[f] or 0
+		self.txt_squads[f] = xml:InitTextWnd("faction:info_squads", _st)
+		self.txt_squads[f]:SetText(game.translate_string("ui_st_pda_warfare_squads") .. ": " .. clr_gr .. str_squads)
+		
+		local str_smarts = self.curr_map and self.faction_smarts_lvl[f] or self.faction_smarts[f] or 0
+		self.txt_captured_smarts[f] = xml:InitTextWnd("faction:info_captured_smarts", _st)
+		self.txt_captured_smarts[f]:SetText(game.translate_string("ui_st_pda_warfare_capped_smarts") .. ": " .. clr_gr .. str_smarts)
+		
+		local str_territory = faction_territory[f] and faction_territory[f][1] and alife():level_name(faction_territory[f][1])
+		if (not self.curr_map) then
+			self.txt_major_territory[f] = xml:InitTextWnd("faction:info_major_territory", _st)
+			self.txt_major_territory[f]:SetText(game.translate_string("ui_st_pda_warfare_major_hold") .. ": " .. clr_gr .. game.translate_string(str_territory))
+		end
+		
+		local base = self.curr_map and self.tot_smarts_lvl or self.tot_smarts
+		local rate = math.ceil((str_smarts / base)*100)
+		local r_val = relation_registry.community_relation(f, actor_faction)
+		local str_rel = ((r_val >= game_relations.FRIENDS) and "friend") or ((r_val <= game_relations.ENEMIES) and "enemy") or "neutral"
+		self.progress_dominance[f] = xml:InitProgressBar("faction:dominance_" .. str_rel, _st)
+		self.progress_dominance[f]:Show(true)
+		self.progress_dominance[f]:SetProgressPos(rate)
+		
+		self.scroll:AddWindow(_st, true)
+		_st:SetAutoDelete(false)
+		
+		if (not self.curr_map) and (f == actor_faction) and (rate >= 50) and (not has_alife_info("warfare_actor_faction_domination")) then
+			give_info("warfare_actor_faction_domination")
+		end
+		
+		--printf("tot_smarts: %s - tot_smarts_lvl: %s", self.tot_smarts, self.tot_smarts_lvl)
+		--printf("%s | str_squads: %s - str_smarts: %s - str_territory: %s - rate: %s", f, str_squads, str_smarts, game.translate_string(str_territory), rate)
+	end
+end
+
+function pda_warfare_tab:Update()
+	CUIScriptWnd.Update(self)
+	
+	--[[ Auto-update if checked.
+	local tg = time_global()
+	if not self._tmr or self._tmr < tg then
+		self._tmr = tg + 10000
+		self:Reset()
+	end
+	--]]
+	
+	-- Show faction progress
+	for f,v in pairs(self.progress_dominance) do
+		if (v and v:IsCursorOverWindow()) then
+			local str = game.translate_string("ui_st_pda_warfare_dominance")
+			local str_fac = game.translate_string("st_dyn_news_comm_" .. f .. "_7")
+			local str_fac_smarts = self.curr_map and self.faction_smarts_lvl[f] or self.faction_smarts[f] or 0
+			local str_all_smarts = self.curr_map and self.tot_smarts_lvl or self.tot_smarts
+			local str_extra = self.curr_map and game.translate_string(level.name()) or game.translate_string("ui_st_pda_warfare_zone")
+			str = strformat(str, str_fac, str_fac_smarts, str_all_smarts, str_extra)
+			
+			self.hint_wnd:Update(str)
+			return
+		end
+	end
+	
+	self.hint_wnd:Update()
+end
+
+function pda_warfare_tab:btn_map()
+	self.curr_map = not self.curr_map
+	if self.curr_map then
+		self.btn:TextControl():SetText(game.translate_string("pda_current_level"))
+	else
+		self.btn:TextControl():SetText(game.translate_string("pda_all_levels"))
+	end
+	
+	self:Reset()
+end

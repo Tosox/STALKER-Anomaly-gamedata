@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_items">
+		<text>Items</text>
+	</string>
+	
+	<string id="encyclopedia_items_pda">
+		<text>PDA</text>
+	</string>
+	<string id="encyclopedia_items_pda_text">
+		<text>
+		A %c[pda_white]Personal Digital Assistant%c[ui_gray_1], or %c[pda_white]"PDA"%c[ui_gray_1], is a pocket-sized electronic device meant to encompass the basic and most vital functions of a computer.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe PDA is essential for daily information sharing. For this reason, almost every stalker in the Zone owns one.
+		\nA GPS module is used to provide geolocation and time information to the user.
+		\nApart from basic functions, the PDA has many features. Including access to the local network. Stalkers can easily communicate on normal days.
+		\nIt also comes with an FM radio receiver, providing access to local radio channels.
+		\nImproved versions of PDAs come with an improved module to retrieve and process the position of other modules connected to the network in a radius of 300 meters, which makes this PDA compelling among stalkers.
+		\n \n• The PDA consumes %c[pda_white]0.1 mAh%c[ui_gray_1] per second of continuous usage. The consumption is higher for improved variants.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_upd">
+		<text>UPD</text>
+	</string>
+	<string id="encyclopedia_items_itm_upd_text">
+		<text>
+		The %c[pda_white]Universal Power Device%c[ui_gray_1] is a portable power unit about the size of a small walkie-talkie. Accepts almost any type of batteries. Utilizes every bit of energy from inserted batteries and supplies electronic devices with power in an enhanced stream through a set of micro wires. These can be connected to any piece of equipment, regardless of its complexity or age. Allows stalkers to use and handle numerous electronic devices even if they have only one battery.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe UPD has a total power capacity of 3 Ah (ampere-hours).
+		\nAll active devices will consume electric power out of the UPD. Consumption varies between devices.
+		\nWhen the UPD runs out of charge, all connected devices will stop working. 
+		\nAlways keep an eye on the remaining power. Make sure you have some backup batteries, just in case.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_basickit">
+		<text>Basic tools</text>
+	</string>
+	<string id="encyclopedia_items_itm_basickit_text">
+		<text>
+		The %c[pda_white]Basic tools%c[ui_gray_1] can be used for crafting basic equipment, devices and outfit upgrade parts.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nUnlikely to be suitable for advanced maintenance, but they could be useful in the hands of a thrifty technician.
+		\nThe kit Contains different types and sizes of pliers, screws, adhesives and assorted fasteners.
+		\n \n%c[pda_white]Survival guides%c[ui_gray_1] usually provide informations about basic equipment and survival kits. With enough knowledge, a thrifty stalker can make a great use out of this kit.
+		\nA good idea is to keep basic materials around. After all, you can't craft things out of thin air.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_advancedkit">
+		<text>Advanced tools</text>
+	</string>
+	<string id="encyclopedia_items_itm_advancedkit_text">
+		<text>
+		The %c[pda_white]Advanced tools%c[ui_gray_1] can be used for crafting better equipment, devices and outfit upgrade parts.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA decent set of old tools, but despite their age they appear to be in good condition.
+		\nContains a handful set of small pliers, tipped tweezers, probe and pick set.
+		\n \n%c[pda_white]Mechanics manuals%c[ui_gray_1] provide informations about mechanical engineering. With enough knowledge, a thrifty stalker can make a great use out of this kit.
+		\nA good idea is to keep basic materials around. After all, you can't craft things out of thin air.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_expertkit">
+		<text>Expert tools</text>
+	</string>
+	<string id="encyclopedia_items_itm_expertkit_text">
+		<text>
+		The %c[pda_white]Advanced tools%c[ui_gray_1] can be used for crafting advanced equipment, devices and outfit upgrade parts.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA professional set of high quality tools for fine-tuning equipment.
+		\nContains drill bit set, precision tweezers, soldiering iron, 4 mm Screwdriver bits and a multimeter.
+		\n \n%c[pda_white]Engineering manuals%c[ui_gray_1] provide informations about industrial engineering. With enough knowledge, a thrifty stalker can make a great use out of this kit.
+		\nA good idea is to keep basic materials around. After all, you can't craft things out of thin air.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_drugkit">
+		<text>Drug-making kit</text>
+	</string>
+	<string id="encyclopedia_items_itm_drugkit_text">
+		<text>
+		The %c[pda_white]Drug-making kit%c[ui_gray_1] can be used for crafting various types of drugs and medicines.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nSmall cases and various metal objects constitute a kit for managing and producing drugs. Contains some plastic packages, tablets and ampoules.
+		\n \nFew people with enough knowledge on drugs can make use out of these kits. Keep an eye on those who possess informative %c[pda_white]recipes%c[ui_gray_1].
+		\nA good idea is to keep basic materials around. After all, you can't craft things out of thin air.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_itm_ammokit">
+		<text>Ammunition kit</text>
+	</string>
+	<string id="encyclopedia_items_itm_ammokit_text">
+		<text>
+		%c[pda_white]Gunsmithing tools%c[ui_gray_1] can be used for recycling damaged ammunition and creation of better variants.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA decent set of old gunsmithing tools and accessories.
+		\nContains a pin punch set, wheeler hammer, press tool and a black powder measure kit.
+		\n \n%c[pda_white]Safety guides to ammunition%c[ui_gray_1] provides informations about various types of ammunition, plus an in-depth view about the basic components of cartridges. With enough knowledge, a thrifty stalker can make a great use out of this kit.
+		\nA good idea is to keep damaged ammunition around. After all, you can't craft things out of thin air.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_kit_hunt">
+		<text>Hunter's kit</text>
+	</string>
+	<string id="encyclopedia_items_kit_hunt_text">
+		<text>
+		The possession of %c[pda_white]hunter's kit%c[ui_gray_1] increases number of body parts obtained from mutants.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA whole bag full of hooks, knives and other equipment used for skinning and gutting animals and mutants.
+		\nFew stalkers carry professional equipment for mutant hunting. That is probably the reason why so many Zoners suffer from indigestion after eating mutant meat.
+		\nThanks to the variety of tools, the kit can effectively improve weapon and armour maintenance.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_fieldcooker">
+		<text>Multi-fuel stove</text>
+	</string>
+	<string id="encyclopedia_items_fieldcooker_text">
+		<text>
+		The %c[pda_white]Multi-fuel stove%c[ui_gray_1] allows its user to cook mutants meat.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		The stove has been tested extensively over many years and has been used on countless expeditions. It is extremely robust, reliable and powerful and was designed to handle demanding situations, extreme altitudes and both low and high temperatures.
+		\nIt has a very high output and can be used with virtually any kind of fuel, including butane, gasoline / petrol, diesel, kerosene / paraffin, and even aviation fuel. Using the separate control knob, you can adjust the flame to the heat you want, even if you are wearing gloves.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\nSince fuels used in the multi-fuel stove are much more efficient energy-carriers than the wood or coal, the multi-fuel stove is - in the long run - significantly more cost-effective than traditional wood or coal stoves. 
+		\nOn the other hand, these fuels are usually carried in heavy metal containers, which makes them more suited for use at bases, rather than in field operations.
+		\nMutant meats that do not require high temperature to be prepared are referred to as 'low-tier', whereas those that require high temperature - 'high-tier'.
+		\n• Unlimited usage.
+		\n• The Multi-fuel stove can cook all types of meat.
+		\n• Usable fuel: %c[pda_white]gasoline, natural gas, kerosene%c[ui_gray_1]
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_cooking">
+		<text>Field cooking kit</text>
+	</string>
+	<string id="encyclopedia_items_cooking_text">
+		<text>
+		The %c[pda_white]field cooking travel kit%c[ui_gray_1] allows its user to cook mutants meat.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA field cooking travel kit. Contains cooking accessories and utensils for use when camping and travelling. Produces a lot of noise and is unwieldy due to its heavy weight. Very popular among larger groups of stalkers.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\nAlthough charcoal is available in the Zone at relatively cheap prices, you need to use a significant amount of it in order to prepare a single meal. For this reason, charcoal is not as cost effective as it would seem. On the other hand, it is relatively light, which makes it perfect for longer trips deep in the Zone.
+		\nMutant meats that do not require high temperature to be prepared are referred to as 'low-tier', whereas those that require high temperature - 'high-tier'.
+		
+		\n \n• Number of max uses: %c[pda_white]3%c[ui_gray_1]
+		\n• %c[pda_white]Charcoal%c[ui_gray_1] is required for cooking meat on the field cooking kit.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_army_bowler">
+		<text>Army kettle</text>
+	</string>
+	<string id="encyclopedia_items_army_bowler_text">
+		<text>
+		The %c[pda_white]army kettle%c[ui_gray_1] allows its user to cook mutants meat.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe army kettle features a convex-concave bottom profile, concave on one side. It is supplied with a wire handle-loop for hanging and carrying. 
+		\nWhen worn on the waist belt, the concave side should be placed to the body. The bowl cover can be used as a pan when heating or preparing a second dish. The handle of the lid is designed to hold it, securely closing the lid when carrying, and a tablespoon is inserted into the special holes on the handle.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\nAlthough charcoal is available in the Zone at relatively cheap prices, you need to use a significant amount of it in order to prepare a single meal. For this reason, charcoal is not as cost effective as it would seem. On the other hand, it is relatively light, which makes it perfect for longer trips deep in the Zone.
+		\nMutant meats that do not require high temperature to be prepared are referred to as 'low-tier', whereas those that require high temperature - 'high-tier'.
+		
+		\n \n• Number of max uses: %c[pda_white]7%c[ui_gray_1]
+		\n• The army kettle can be used on %c[pda_white]campfires%c[ui_gray_1] or %c[pda_white]charcoal%c[ui_gray_1].
+		</text>
+	</string>
+	
+	
+	<string id="encyclopedia_items_detector_geiger">
+		<text>Geiger counter</text>
+	</string>
+	<string id="encyclopedia_items_detector_geiger_text">
+		<text>
+		%c[pda_white]Geiger counters%c[ui_gray_1] are used to measure the radiation level.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA Geiger counter measures ionizing (radioactive) radiation. It detects the emission of alpha particles, beta particles and gamma particles. Invented in 1908, Geiger counters remain popular technological object used for measurements in health, physics, industry, geology and other fields of activity. Made of simple electronic circuits.
+		
+		\n \n%c[pda_blue]Usage%c[ui_gray_1]
+		\nThe Geiger counter operates in 3 modes:
+		\n• While Active: display the radiation level while the device is held
+		\n• Always: display the radiation level always, as long as the the device is in your inventory and its batteries are not drained
+		\n• On button click: display the radiation level on pressing the hotkey (see keybind options in the settings)
+		
+		\n \n• Consumes %c[pda_white]0.1 mAh%c[ui_gray_1] per single use.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_detector_simple">
+		<text>Echo detector</text>
+	</string>
+	<string id="encyclopedia_items_detector_simple_text">
+		<text>
+		The %c[pda_white]Echo detector%c[ui_gray_1] is a device with the ability to locate nearby artefacts.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThis dated anomalous activity detector produces an alarm signal when anomalous particles enter a special chamber as you approach an anomaly. It can also register the presence of artefacts and measure the distance to the nearest one.
+		\nThe distance is indicated by the frequency of the sound the detector emits.
+		\nTo switch to artefact search mode, open the device's front cover.
+		\nDue to its simple design, Echo can only be used to locate the most common artefacts.
+		
+		\n \n• Consumes %c[pda_white]0.1 mAh%c[ui_gray_1] per second of continuous usage.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_detector_advanced">
+		<text>Bear detector</text>
+	</string>
+	<string id="encyclopedia_items_detector_advanced_text">
+		<text>
+		The %c[pda_white]Bear detector%c[ui_gray_1] is a device with the ability to locate nearby artefacts.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThis last generation anomalous activity detector can be used to locate anomalous formations and has a color diode panel, which not only indicates the direction of artefacts, but also measures the distance to them.
+		\nTo switch to artefact search mode, open the device's front cover.
+		\nUnfortunately, the device is programmed with a somewhat outdated list of detectable artefacts.
+		
+		\n \n• Consumes %c[pda_white]0.15 mAh%c[ui_gray_1] per second of continuous usage.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_detector_elite">
+		<text>Veles detector</text>
+	</string>
+	<string id="encyclopedia_items_detector_elite_text">
+		<text>
+		%c[pda_white]Veles detector%c[ui_gray_1] is an advanced device with the ability to locate nearby artefacts accurately.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA next generation scientific detection scanner. Thanks to three modernized detection chambers, the position of artefacts is shown on a special display screen.
+		\nWhen closed, the device registers only radiation and anomalies.
+		\nTo switch to artefact search mode, open the front LED display. When in search mode, the detector is capable of locating all artefacts known to science.
+		
+		\n \n• Consumes %c[pda_white]0.15 mAh%c[ui_gray_1] per second of continuous usage.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_detector_scientific">
+		<text>Svarog detector</text>
+	</string>
+	<string id="encyclopedia_items_detector_scientific_text">
+		<text>
+		%c[pda_white]Svarog detector%c[ui_gray_1] is an advanced device with the ability to locate nearby artefacts accurately.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artefacts. 
+		\nThe position of anomalous areas and artefacts is displayed on a special screen.
+		\nThe artefact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.
+		
+		\n \n• Consumes %c[pda_white]0.2 mAh%c[ui_gray_1] per second of continuous usage.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_gps_tracker">
+		<text>Military GPS module</text>
+	</string>
+	<string id="encyclopedia_items_gps_tracker_text">
+		<text>
+		The %c[pda_white]military GPS module%c[ui_gray_1] allows its user to locate nearby natural stalkers.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nA prototype of the next generation of GPS navigation devices. Only few copies are made. Distributed among the highest military ranks exclusively, although some of these have been leaked out to other sides.
+		\nThe improved module guarantees operation even in hostile environments. High sensitivity during acquisition or while tracking allows for use in many different environments and under toughest operating conditions.
+		\nUnlike usual GPS modules, this one relies on sets of codes that allows the module to acquire special privileges on the connected channel. It retrieves the position of other connected modules in a radius of 300 meters.
+		\nOn the other hand, this module consumes a considerable amount of electrical power while operating. An automatic switching circuit is included inside the module to turn it off after 20 seconds of continuous scanning.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\n• Scanning time: %c[pda_white]20 sec%c[ui_gray_1]
+		\n• Scanning radius: %c[pda_white]300 meters%c[ui_gray_1]
+		\n• Consumes %c[pda_white]0.25 Ah%c[ui_gray_1] per single usage.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_lead_box">
+		<text>LLMC</text>
+	</string>
+	<string id="encyclopedia_items_lead_box_text">
+		<text>
+		%c[pda_white]Lead-lined metal containers (LLMC)%c[ui_gray_1] are used to store artefacts and completely isolate their effects.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe lead-lined metal container (LLMC) is a simple metal box with thick walls and foam inserts as well as a heavy lid with pressure-sealing mechanism.
+		\nSpecifically designed for transporting radioactive materials, in the Zone LLMC is most commonly employed as artefact storage and transportation device.
+		\nIt stops all radiation from leaking, thus ensuring safety of the user when in possession of artefacts.
+		\nHowever, the device cannot be attached to the belt, which means that both positive and negative properties of artefacts won't apply. The contents can be manipulated with an artefact handling tool.\n \n
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\n• You have to remove artefacts from the container prior to selling them.
+		\n• Drag and drop an artefact on the container to store it inside.
+		\n• Weight: %c[pda_white]2.12 kg%c[ui_gray_1]
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_af_iam">
+		<text>IAM</text>
+	</string>
+	<string id="encyclopedia_items_af_iam_text">
+		<text>
+		The %c[pda_white]Improvised Application Module (IAM)%c[ui_gray_1] is used to store artefacts and filter low radiation levels, allowing its user to attach artefacts safely on their belt.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe Improvised Application Module (IAM) filters a small amount of radiation particles emitted from artefacts.
+		\nThis mechanical metal pouch is the cheapest device that allows the user to harness the power of less potent artefacts. Artefact filter is composed of multiple layers made primarily of lead which shield from radiation.
+		\nA low-cost alternative to the more reliable AAC and AAM. In case of emergency or if no longer needed, the module can be utilized as a source of quality metal for use in outfit or helmet repairs.
+		\n \nTo attach it to the belt, you have to put an artefact inside. The artefact will retain its characteristics with the exception of reduced radiation output.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\n• You have to remove artefacts from the container prior to selling them.
+		\n• Drag and drop an artefact on the container to store it inside.
+		\n• Weight: %c[pda_white]2.4 kg%c[ui_gray_1]
+		\n• Maximum permissible level of contained radiation: %c[pda_white]7 mSv%c[ui_gray_1]
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_af_aac">
+		<text>AAC</text>
+	</string>
+	<string id="encyclopedia_items_af_aac_text">
+		<text>
+		The %c[pda_white]Artefact Application Container (AAC)%c[ui_gray_1] is used to store artefacts and filter moderate radiation levels, allowing its user to attach artefacts safely on their belt.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe Artefact Application Container (AAC) filters a moderate amount of radiation particles emitted from artefacts.
+		\nThis mechanical aluminum container is the most cost-efficient and thus the most popular way of handling artefacts as it allows the user to harness the power of more potent artefacts.
+		\nArtefact filter is composed of multiple layers made primarily of lead, with one layer of thorium which has strong radiation shielding properties. 
+		\nThis device has been manufactured by scientists residing in military bunkers around the Zone. In case of emergency or if no longer needed, the module can be utilized as a source of quality metal for use in outfit or helmet repairs. 
+		\n \nTo attach it to the belt, you have to put an artefact inside. The artefact will retain its characteristics with the exception of reduced radiation output.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\n• You have to remove artefacts from the container prior to selling them.
+		\n• Drag and drop an artefact on the container to store it inside.
+		\n• Weight: %c[pda_white]2.73 kg%c[ui_gray_1]
+		\n• Maximum permissible level of contained radiation: %c[pda_white]12 mSv%c[ui_gray_1]
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_af_aam">
+		<text>AAM</text>
+	</string>
+	<string id="encyclopedia_items_af_aam_text">
+		<text>
+		The %c[pda_white]Artefact Application Module (AAM)%c[ui_gray_1] is used to store artefacts and filter dangerous radiation levels, allowing its user to attach artefacts safely on their belt.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nThe Artefact Application Module (AAM) filters a significant amount of radiation particles emitted from artefacts.
+		\nThis advanced mechanical module is the most effective way of harnessing the power of most potent artefacts.
+		\nArtefact filter is composed of numerous layers made of nano-carbon. It is hence lightweight and has the strongest radiation shielding properties of all devices.
+		\nRegarded as a symbol of affluence in the Zone. Most commonly used by the scientists to minimize the harmful effects of artefacts.
+		\nDesigned and manufactured in Ukraine by a government institute which provides equipment for the scientists residing in the Zone of Alienation.
+		\nIn case of emergency or if no longer needed, the module can be utilized as a source of quality metal for use in outfit or helmet repairs. 
+		\n \nTo attach it to the belt, you have to put an artefact inside. The artefact will retain its characteristics with the exception of reduced radiation output.
+		
+		\n \n%c[pda_blue]Details%c[ui_gray_1]
+		\n• You have to remove artefacts from the container prior to selling them.
+		\n• Drag and drop an artefact on the container to store it inside.
+		\n• Weight: %c[pda_white]3.06 kg%c[ui_gray_1]
+		\n• Maximum permissible level of contained radiation: %c[pda_white]23 mSv%c[ui_gray_1]
+		</text>
+	</string>
+	
+	<string id="encyclopedia_items_detector_radio">
+		<text>RF Receiver</text>
+	</string>
+	<string id="encyclopedia_items_detector_radio_text">
+		<text>
+		%c[pda_white]RF Receiver%c[ui_gray_1] is a small device with a highly-sensitive RF module used for basic communications.
+		
+		\n \n%c[pda_green]Information%c[ui_gray_1]
+		\nRF Receivers have proven to be more durable unlike the advanced devices such as PDAs, which is the reason why many stalkers prefer to own one for emergency situations or other uses.
+		\nMade of simple electronics components and a sensitive module, this device has the ability to interact with radio signals in a radius of 200 m. It is able to process radio waves with a frequency range between 30 and 300 Ghz.
+		
+		\n \n%c[pda_blue]Usage%c[ui_gray_1]
+		\nWhile holding the receiver, you can switch the working radio frequency.
+		\n• Press Mouse-1 button to increase the frequency.
+		\n• Press Mouse-2 button to decrease the frequency.
+		\n• Hold Left-Shift button to increase frequency jumps by 10 Hz while increasing / decreasing the working frequency.
+		\n• Hold Left-Alt button to increase frequency jumps by 50 Hz while increasing / decreasing the working frequency.
+
+		\n \n• Consumes %c[pda_white]0.1 uAh%c[ui_gray_1] per second of continuous usage.
+		</text>
+	</string>
+	
+</string_table>

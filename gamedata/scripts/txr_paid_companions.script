@@ -1,0 +1,286 @@
+--[[
+
+- Created by Tronex
+- 2018/11/28 - Pay natural squads for escort service
+- 2019/5/14 - Added a list of possible factions for the service
+
+--]]
+
+paid_companions = {}
+
+local factions_paid = { -- factions that can be paid for escort service
+	["stalker"] = true,
+	--["csky"] = true,
+	--["dolg"] = true,
+	["freedom"] = true,
+	["killer"] = true,
+	["bandit"] = true,
+}
+
+local money_1_base = 1500
+local money_2_base = 3000
+local dialog_squad = {}
+local guard_period
+function is_not_dangerous_map(actor,npc)
+	local lvl_name = level.name()
+	local blk = xr_effects.blacklisted_maps
+	if blk[lvl_name] then
+		return false
+	end
+	return true
+end
+
+function is_actor_natural(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+
+	if not (axr_companions.allow_simulation_squads_as_companions) then
+		return false
+	end
+
+	if not (axr_companions.allow_only_friends_as_companions) then
+		return true
+	end
+
+	return npc:relation(db.actor) == game_object.neutral
+end
+
+function is_squad_competent(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+
+	local section = squad:section_name()
+	--printf("-txr_paid_companions | squad on dialog - id: %s - section: %s", squad.id, section)
+	
+	local rand = 0
+	dialog_squad[squad.id] = dialog_squad[squad.id] or {}
+	if string.find(section,"veteran") then
+		rand = 70
+		dialog_squad[squad.id].money = dialog_squad[squad.id].money or (math.random(180,240)/100)
+	elseif string.find(section,"advanced") then
+		rand = 40
+		dialog_squad[squad.id].money = dialog_squad[squad.id].money or (math.random(130,160)/100)
+	else
+		dialog_squad[squad.id].money = dialog_squad[squad.id].money or (math.random(80,120)/100)
+	end
+	
+	
+	if (dialog_squad[squad.id].can_work == "true") or ((dialog_squad[squad.id].can_work ~= "false") and (math.random(1,100) <= rand)) then
+		dialog_squad[squad.id].can_work = "true"
+		return true
+	end
+	
+	dialog_squad[squad.id].can_work = "false"
+	return false
+end
+
+function is_squad_not_competent(actor,npc)
+	return (not is_squad_competent(actor,npc))
+end
+
+function is_paid_companion_faction(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+	
+	local comm = character_community(npc) or ""
+	
+	if factions_paid[comm] then
+		return true
+	end
+	return false
+end
+
+function have_guard_money_1(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local money = (dialog_squad[squad.id].money * 2000) or ((math.random(80,120)/100) * 2000)
+	
+	return mlr_utils.have_money(money)
+end
+
+function have_guard_money_2(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local money = (dialog_squad[squad.id].money * money_2_base) or ((math.random(80,120)/100) * money_2_base)
+	
+	return mlr_utils.have_money(money)
+end
+
+
+function take_guard_money_1(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local money = (dialog_squad[squad.id].money * money_1_base) or ((math.random(80,120)/100) * money_1_base)
+	guard_period = 1*24*60*60
+	
+	dialogs.relocate_money_from_actor(actor, npc, money)
+end
+
+function take_guard_money_2(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local money = (dialog_squad[squad.id].money * money_2_base) or ((math.random(80,120)/100) * money_2_base)
+	guard_period = 2*24*60*60
+	
+	dialogs.relocate_money_from_actor(actor, npc, money)
+end
+
+function register_paid_companion(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+	local squad = get_object_squad(npc)
+
+	if not (squad) then
+		return
+	end
+	
+	if axr_companions.companion_squads[squad.id] then
+		local members_id = {}
+		for k in squad:squad_members() do
+			local member = db.storage[k.id] and db.storage[k.id].object
+	
+			if ( member and member:alive() ) then
+				members_id[#members_id + 1] = member:id()
+			end
+		end
+		
+		paid_companions[squad.id] = { members_id = members_id , join_time = utils_data.CTime_to_table(game.get_game_time()) , guard_period = guard_period }
+		--printf("-txr_paid_companions | Registered paid companions[%s] - num of members: %s - period: %s", squad.id, #members_id, guard_period)
+	end
+end
+
+function st_paid_companion_dialog_text_1(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local str = game.translate_string("st_paid_companion_dialog_text_1")
+	local money_1 = (dialog_squad[squad.id].money * money_1_base)
+	local money_2 = (dialog_squad[squad.id].money * money_2_base)
+	
+	return strformat(str, money_1, money_2)
+end
+
+function st_paid_companion_dialog_text_3(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local str = game.translate_string("st_paid_companion_dialog_text_3")
+	local money = (dialog_squad[squad.id].money * money_1_base)
+	
+	return strformat(str, money)
+end
+
+function st_paid_companion_dialog_text_4(actor,npc)
+	local npc = dialogs.who_is_npc(actor,npc)
+
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return false
+	end
+	
+	local str = game.translate_string("st_paid_companion_dialog_text_4")
+	local money = (dialog_squad[squad.id].money * money_2_base)
+	
+	return strformat(str, money)
+end
+
+--============================================< Callbacks >============================================--
+local function contract_timer(danger)
+	ResetTimeEvent("cycle","paid_companions",10)
+
+	for k,v in pairs(paid_companions) do
+		local members_id = v.members_id
+		local join_time = utils_data.CTime_from_table(v.join_time)
+		local period = v.guard_period
+		if not (members_id and join_time and period) then
+			paid_companions[k] = nil
+			return false
+		end
+		
+		local squad
+		if (game.get_game_time():diffSec(join_time) > period) or danger then
+			for i=1,#members_id do
+				local member = db.storage[members_id[i]] and db.storage[members_id[i]].object
+				if member then
+					axr_companions.remove_from_actor_squad(member)
+					squad = squad or get_object_squad(member)
+				end
+			end
+			
+			paid_companions[k] = nil
+			
+			local commander_id =  squad and squad:commander_id()
+			local commander = commander_id and db.storage[commander_id] and db.storage[commander_id].object
+			if commander then
+				local str_timeout = game.translate_string("st_paid_companion_contract_timeout_" .. tostring(math.random(1,2)))
+				local str_danger = game.translate_string("st_paid_companion_danger_" .. tostring(math.random(1,2)))
+				local msg = danger and str_danger or str_timeout
+				dynamic_news_helper.send_tip( msg, commander:character_name(), nil, 15, commander:character_icon(), nil, "npc" )	-- send the news
+			end
+		end
+	end
+	
+	return false
+end
+
+local function on_level_changing()
+	local lvl_name = level.name()
+	local blk = xr_effects.blacklisted_maps
+	if blk[lvl_name] then
+		contract_timer(true)
+	end
+end
+
+local function save_state(m_data)
+	m_data.paid_companions = paid_companions
+end
+
+local function load_state(m_data) 
+	paid_companions = m_data.paid_companions or paid_companions
+	m_data.paid_companions = nil
+end
+
+local function on_game_load()
+	CreateTimeEvent("cycle","paid_companions",10,contract_timer)
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_level_changing",on_level_changing)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+	RegisterScriptCallback("on_game_load",on_game_load)
+end

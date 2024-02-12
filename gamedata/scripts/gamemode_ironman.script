@@ -1,0 +1,185 @@
+--[[
+- Created by Tronex
+- Ironman Manager
+- 2018/5/23 - created
+- 2019/1/13 - reworked
+
+-- Grants new lives for ironman playthroughs with enabled life cycle
+--]]
+
+
+local MDATA
+
+function timer()
+	if not (db.actor and MDATA and MDATA.life_feature) then
+		return true
+	end
+
+	-- Reset timer
+	ResetTimeEvent("cycle", "ironman", 60)
+
+	-- Calculate hours since the start of a playthrough
+	local start_time = level.get_start_time()
+	local seconds = tonumber(game.get_game_time():diffSec(start_time))
+	local minutes = math.floor(seconds/60)
+	local hours = math.floor(minutes/60)
+	
+	local true_hrs = hours - MDATA.sleep_hrs
+	local total_lives = math.floor(true_hrs/MDATA.life_cycle)
+	
+	if MDATA.granted_lives and MDATA.death_limit and MDATA.death_count and (MDATA.granted_lives < total_lives) then
+		-- Reduce death count
+		MDATA.death_count = MDATA.death_count - 1
+		
+		-- Increase granted lives count
+		MDATA.granted_lives = MDATA.granted_lives + 1
+		
+		-- Calculate lives left
+		local deaths = MDATA.death_count + MDATA.granted_lives
+		local lives_left = MDATA.death_limit - MDATA.death_count
+		
+		-- Send news
+		local header = game.translate_string("encyclopedia_features_ironman_mode")
+		local message = strformat(game.translate_string("st_ironman_new_life"), deaths, lives_left)
+
+		actor_menu.set_msg(1, message, 10)
+		db.actor:give_game_news(header, message, "ui_inGame2_PD_Otmecheniy_zonoy", 0, 15000, 0)
+		utils_obj.play_sound("interface\\mp_reward")
+		
+		printdbg("- Ironman mode - Second Wind | NEW LIFE GRANTED! | uuid = %s - deaths = %s - lives_left = %s", tostring(MDATA.uuid), tostring(deaths), tostring(lives_left))
+	end
+
+	return false
+end
+
+function get_lives_left()
+	local ironman = get_ironman_details()
+	if ironman ~= nil then
+		 return ironman.death_limit - ironman.death_count
+	end
+end
+
+function get_ironman_details()
+	timer()
+	
+	local t = {}
+	local ironman = MDATA or alife_storage_manager.get_state().ironman or {}
+	copy_table(t,ironman)
+	return t
+end
+
+
+----------------------
+-- Callbacks
+----------------------
+local function actor_on_first_update()
+
+	-- Flag ironman if it got turned off at somepoint
+	local ironman = alife_storage_manager.get_state().ironman
+	if not (ironman and ironman.uuid and ironman.death_count and ironman.death_limit) then
+		if (not has_alife_info("ironman_flag_off")) then
+			give_info("ironman_flag_off")
+			printf("~ Ironman | player turned it off!")
+		end
+		
+	-- Flag ironman if actor died once
+	elseif (ironman and ironman.death_count and (ironman.death_count > 1)) then
+		if (not has_alife_info("ironman_flag_died")) then
+			give_info("ironman_flag_died")
+			printf("~ Ironman | player died twice!")
+		end
+	end
+	
+	if not (MDATA and MDATA.uuid and MDATA.life_feature and MDATA.life_cycle) then
+		printdbg("# LOADING: Ironman mode - Second Wind | Life Granting is off")
+		return
+	end
+		
+	CreateTimeEvent("cycle", "ironman", 10, timer)
+end
+
+local function actor_on_before_death()
+	if not (USE_MARSHAL) then
+		return
+	end
+	
+	local ironman = alife_storage_manager.get_state().ironman
+	
+	if not (ironman and ironman.uuid and ironman.death_count and ironman.death_limit) then
+		return -- not in hardcore mode
+	end
+	printdbg("/ Ironman mode found for this save | uuid: %s", ironman.uuid)
+	
+	
+	local uuid = ironman.uuid
+	
+	local fs = getFS()
+	local flist = fs:file_list_open_ex("$game_saves$",bit_or(FS.FS_ListFiles,FS.FS_RootOnly),"*.scoc")
+	local f_cnt = flist:Size()
+
+	for	it=0, f_cnt-1 	do
+		local file = flist:GetAt(it)
+		local file_name = string.sub(file:NameFull(), 0, (string.len(file:NameFull()) - string.len(".scoc")))
+
+		--printf("file_name = %s",file_name)
+		local path = fs:update_path('$game_saves$', '')..file_name..".scoc"
+		local f = io.open(path,"rb")
+		if (f) then
+			local data = f:read("*all")
+			f:close()
+			if (data) then
+				local decoded = alife_storage_manager.decode(data)
+				local d_ironman = decoded and decoded.ironman
+				if (d_ironman and (d_ironman.uuid == uuid) and d_ironman.death_count and d_ironman.death_limit) then
+					d_ironman.death_count = d_ironman.death_count + 1
+					printdbg("/ Ironman mode | file: %s - death_count: %s - death_limit: %s", file_name, d_ironman.death_count, d_ironman.death_limit)
+					if (d_ironman.death_count >= d_ironman.death_limit) then
+						printdbg("~ Ironman mode | delete save file: %s",file_name)
+						ui_load_dialog.delete_save_game(file_name)	
+					else
+						local f = io.open(path,"wb")
+						if (f) then
+							local encoded = marshal.encode(decoded)
+							if (encoded) then 
+								f:write(encoded)
+							end
+							f:close()
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+local function actor_on_sleep(hours)
+	if (MDATA and MDATA.uuid and MDATA.life_feature and MDATA.sleep_hrs) then
+		MDATA.sleep_hrs = MDATA.sleep_hrs + hours
+		printdbg("/ Ironman mode actor_on_sleep | slept for = %s - sleep_hrs = %s", tostring(hours), tostring(MDATA.sleep_hrs))
+	end
+end
+
+local function save_state(m_data)
+	if not (MDATA and MDATA.uuid and MDATA.life_feature and MDATA.life_cycle) then
+		return
+	end
+	m_data.ironman = MDATA
+	printdbg("# SAVING: Ironman mode - Second Wind | uuid = %s - life_feature = %s - granted_lives = %s - life_cycle = %s - sleep_hrs = %s",tostring(MDATA.uuid),tostring(MDATA.life_feature),tostring(MDATA.granted_lives),tostring(MDATA.life_cycle),tostring(MDATA.sleep_hrs))
+end
+
+local function load_state(m_data)
+	local ironman = m_data.ironman
+	if not (ironman and ironman.uuid and ironman.life_feature and ironman.life_cycle) then
+		return
+	end
+	MDATA = ironman
+	printdbg("# LOADING: Ironman mode - Second Wind | uuid = %s - life_feature = %s - granted_lives = %s - life_cycle = %s - sleep_hrs = %s",tostring(MDATA.uuid),tostring(MDATA.life_feature),tostring(MDATA.granted_lives),tostring(MDATA.life_cycle),tostring(MDATA.sleep_hrs))
+end
+
+function on_game_start()
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+	RegisterScriptCallback("actor_on_sleep",actor_on_sleep)
+	RegisterScriptCallback("actor_on_before_death",actor_on_before_death)
+	RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+end

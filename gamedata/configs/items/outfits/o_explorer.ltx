@@ -1,0 +1,188 @@
+;--------------------------------------------------------------------------
+
+[nomad_outfit]:outfit_base
+		$spawn                        = "outfit\scientific_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_neutral\st_nt_1.ogf
+		npc_visual                    = actors\stalker_neutral\st_nt_1.ogf
+		player_hud_section            = actor_hud_loner_sunrise
+		character_portrait            = ui_inGame2_nomad
+		full_icon_name                = npc_icon_specops_outfit
+        
+		inv_name                      = nomad_outfit_name
+		inv_name_short                = nomad_outfit_name
+		description                   = nomad_outfit_description
+		inv_grid_x                    = 86
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_sunrise_1, up_gr_seconab_sunrise_1, up_gr_thirdab_sunrise_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_1
+        
+		community                     = stalker
+		kind                          = o_sci
+		cost                          = 67000
+		inv_weight                    = 5.2
+		additional_inventory_weight   = 14.2
+		additional_inventory_weight2  = 14.2
+		artefact_count                = 3
+		immunities_sect               = sect_nomad_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.28
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_class2
+		control_inertion_factor       = 1.18
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.36
+		shock_protection              = 0.7
+		radiation_protection          = 0.02
+		chemical_burn_protection      = 0.018
+		telepatic_protection          = 0.04
+		strike_protection             = 0.24
+		explosion_protection          = 0.5
+		wound_protection              = 0.5
+		fire_wound_protection         = 0.4
+
+[sect_nomad_outfit_immunities]
+		burn_immunity                 = 0.025
+		chemical_burn_immunity        = 0.006
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.02
+		strike_immunity               = 0.01
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.06
+ 
+;--------------------------------------------------------------------------
+
+[travel_outfit]:outfit_base,outfit_restrictions_5
+		$spawn                        = "outfit\svoboda_light_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\svoboda_light_outfit
+		actor_visual                  = actors\stalker_neutral\stalker_neutral_6.ogf
+		npc_visual                    = actors\stalker_neutral\stalker_neutral_6.ogf
+		player_hud_section            = actor_hud_loner_sunrise
+		character_portrait            = ui_inGame2_traveler
+		full_icon_name                = npc_icon_svoboda_light_outfit
+		full_scale_icon               = 10, 11
+        
+		inv_name                      = travel_outfit_name
+		inv_name_short                = travel_outfit_name
+		description                   = travel_outfit_description
+		inv_grid_x                    = 86
+		inv_grid_y                    = 6
+		upgr_icon_x                   = 814
+		upgr_icon_y                   = 579
+		upgr_icon_width               = 159
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_novice_1, up_gr_seconab_novice_1, up_gr_thirdab_novice_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_novice_1
+        
+		community                     = stalker
+		kind                          = o_sci
+		cost                          = 74700
+		inv_weight                    = 6.6
+		additional_inventory_weight   = 64.7
+		additional_inventory_weight2  = 64.7
+		artefact_count                = 5
+		immunities_sect               = sect_travel_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.28
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_armor_class1
+		control_inertion_factor       = 1.18
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.34
+		shock_protection              = 0.75
+		radiation_protection          = 0.025
+		chemical_burn_protection      = 0.12
+		telepatic_protection          = 0.032
+		strike_protection             = 0.12
+		explosion_protection          = 0.2
+		wound_protection              = 0.6
+		fire_wound_protection         = 0.2
+
+[sect_travel_outfit_immunities]
+		burn_immunity                 = 0.02
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.2
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.05
+		strike_immunity               = 0.01
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.06
+ 
+;--------------------------------------------------------------------------
+
+[wastelander_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\scientific_outfit
+		actor_visual                  = actors\stalker_neutral\stalker_neutral4hunter.ogf
+		npc_visual                    = actors\stalker_neutral\stalker_neutral4hunter.ogf
+		player_hud_section            = actor_hud_loner_sunrise
+		character_portrait            = ui_inGame2_hunter
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = wastelander_outfit_name
+		inv_name_short                = wastelander_outfit_name
+		description                   = wastelander_outfit_description
+		inv_grid_x                    = 86
+		inv_grid_y                    = 3
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_sunrise_2, up_gr_seconab_sunrise_2, up_gr_thirdab_sunrise_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_1
+        
+		community                     = stalker
+		kind                          = o_sci
+		cost                          = 82000
+		inv_weight                    = 9.2
+		additional_inventory_weight   = 12
+		additional_inventory_weight2  = 12
+		artefact_count                = 4
+		immunities_sect               = sect_wastelander_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.40
+		hit_fraction_actor            = 0.5
+		bones_koeff_protection        = actor_armor_class3
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.4
+		shock_protection              = 1.3
+		radiation_protection          = 0.03
+		chemical_burn_protection      = 0.05
+		telepatic_protection          = 0.11
+		strike_protection             = 0.3
+		explosion_protection          = 0.3
+		wound_protection              = 0.3
+		fire_wound_protection         = 0.3
+
+[sect_wastelander_outfit_immunities]
+		burn_immunity                 = 0.015
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.2
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.012
+		strike_immunity               = 0.014
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.04
+ 

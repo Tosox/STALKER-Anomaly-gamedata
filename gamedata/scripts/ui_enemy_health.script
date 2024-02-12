@@ -1,0 +1,151 @@
+--[[
+ui_enemy_health allows the ability to show health progress of last hit enemy if they have db.storage[id].show_health = true
+
+author: Alundaio
+--]]
+
+local progress = nil
+local last_id = nil
+
+function on_game_start()
+	RegisterScriptCallback("monster_on_hit_callback",on_hit)
+	RegisterScriptCallback("npc_on_hit_callback",on_hit)
+	RegisterScriptCallback("heli_on_hit_callback",on_hit)
+end 
+
+function on_hit(obj,power,dir,who,bi)
+	local st = db.storage[obj:id()]
+	if not (st) then 
+		return 
+	end 
+	
+	if not (st.show_health) then
+		-- show health progress for all objects hit by actor if option is enabled
+		if (ui_options.get("video/hud/show_enemy_health") == false) then
+			return 
+		end
+	end
+	
+	-- in case object dies by something other than actor
+	if (last_id and last_id == obj:id()) then 
+		local cls = obj:clsid()
+		local is_heli = IsHelicopter(nil,cls)
+		local v = is_heli and obj:get_helicopter():GetfHealth() or obj.health or 0
+		if (v <= 0.005) then
+			cs_remove()
+		end
+	end
+	
+	if (who == nil or who:id() ~= 0) then 
+		return 
+	end
+	
+	local hud = get_hud()
+	if not (hud) then 
+		return 
+	end
+	
+	CreateTimeEvent(math.random(),math.random(),0,hbar,bi,obj:id())
+end
+
+local strings = {
+	dog = "encyclopedia_mutants_blind_dog",
+	bloodsucker = "encyclopedia_mutants_bloodsucker",
+	boar = "encyclopedia_mutants_boar",
+	burer = "encyclopedia_mutants_burer",
+	cat = "encyclopedia_mutants_cat",
+	chimera = "encyclopedia_mutants_chimera",
+	controller = "encyclopedia_mutants_controller",
+	bird = "encyclopedia_mutants_crow",
+	flesh = "encyclopedia_mutants_flesh",
+	fracture = "encyclopedia_mutants_fracture",
+	pseudodog = "encyclopedia_mutants_pseudodog",
+	giant = "encyclopedia_mutants_pseudogiant",
+	snork = "encyclopedia_mutants_snork",
+	tushkano = "encyclopedia_mutants_tushkano",
+	zombie = "encyclopedia_mutants_zombie",
+	SM_KARLIK = "encyclopedia_mutants_karlik",
+	SM_LURKER = "encyclopedia_mutants_lurker",
+	SM_POLTER_G	= "encyclopedia_mutants_poltergeist",
+	SM_PYRO_G = "encyclopedia_mutants_pyrogeist",
+	SM_PSEUDO_G	= "encyclopedia_mutants_pseudogeist",
+	SM_PSYSUCKER = "encyclopedia_mutants_psysucker",
+}
+			
+
+function hbar(bi,id)
+	local hud = get_hud()
+	local cs = hud:GetCustomStatic("cs_enemy_health") 
+	if (cs == nil) then 
+		hud:AddCustomStatic("cs_enemy_health", true)
+		local xml = CScriptXmlInit()
+		xml:ParseFile("ui_enemy_health.xml")
+		cs = hud:GetCustomStatic("cs_enemy_health")
+		local w = cs:wnd()
+		progress = xml:InitProgressBar("enemy_health", w)
+	end
+	
+	if (bi == "from_death_callback") then
+		last_id = nil
+		progress = nil
+		hud:RemoveCustomStatic("cs_enemy_health")
+		return true
+	end
+	
+	local obj = level.object_by_id(id)
+	local cls = obj:clsid()
+	local is_heli = IsHelicopter(nil,cls)
+	local v = is_heli and obj:get_helicopter():GetfHealth() or obj.health or 0
+	if (v > 0.005) then 
+		progress:Show(true)
+		progress:SetProgressPos(v*100)
+		local text = ""
+		if (is_heli) then 
+			text = game.translate_string("st_ui_heli")
+		elseif (IsStalker(nil,cls)) then 
+			text = obj:character_name()
+		elseif (IsMonster(nil,cls)) then 
+			
+			-- epic special cases
+			if string.find(obj:section(),'rotan') then
+				text = "encyclopedia_mutants_rat"
+			end
+			if string.find(obj:section(),'psy_dog') then
+				text = "encyclopedia_mutants_psydog"
+			end
+			
+			-- this should catch all the rest
+			local what = ini_sys:r_string_ex(obj:section(),"kind") or ini_sys:r_string_ex(obj:section(),"species") or nil
+			text = game.translate_string(strings[what])
+		else 
+			local sid = get_object_story_id(obj:id())
+			if (sid) then 
+				text = game.translate_string(sid)
+			end
+		end
+		cs:wnd():TextControl():SetText(text)
+		
+		-- Auto-remove Custom Static after 30s unless hit again
+		RemoveTimeEvent(0,"enemy_health_remove")
+		local function remove_me()
+			cs_remove()
+		end
+		CreateTimeEvent(0,"enemy_health_remove",30,remove_me)
+		last_id = obj:id()
+	else
+		last_id = nil
+		progress = nil
+		hud:RemoveCustomStatic("cs_enemy_health")
+	end
+	return true
+end
+
+function cs_remove()
+	last_id = nil
+	progress = nil
+	local hud = get_hud()
+	local cs = hud and hud:GetCustomStatic("cs_enemy_health") 
+	if (cs) then
+		hud:RemoveCustomStatic("cs_enemy_health")
+	end
+end

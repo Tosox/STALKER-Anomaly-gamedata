@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Mutant parts
+-->
+
+<string_table>
+	
+	<string id="st_meat_tushkano">
+		<text>Rat skewers</text>
+	</string>
+	<string id="st_meat_tushkano_descr">
+		<text>2 small skewered tushkanos, grilled and seasoned with salt and chili pepper. The cheapest hot meal available in the Zone.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_dog">
+		<text>Dog chops</text>
+	</string>
+	<string id="st_meat_dog_descr">
+		<text>A small hot meal of grilled dog chops mixed with garlic, peppers and mushrooms. A cheap alternative to the more popular boar beef.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_pseudodog">
+		<text>Pseudodog chops</text>
+	</string>
+	<string id="st_meat_pseudodog_descr">
+		<text>Portion of grilled pseudodog meat chops. Good nutrition value due to thick muscles of the animal.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_flesh">
+		<text>Fat bacon</text>
+	</string>
+	<string id="st_meat_flesh_descr">
+		<text>Slices of fat and greasy bacon made from mutated pigs commonly known as fleshes.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_boar">
+		<text>Boar chops</text>
+	</string>
+	<string id="st_meat_boar_descr">
+		<text>A small portion of boar meat, grilled and seasoned with salt and mixed with peppers. The most popular warm meal among stalkers.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_bloodsucker">
+		<text>Bloodsucker goulash</text>
+	</string>
+	<string id="st_meat_bloodsucker_descr">
+		<text>A small hot meal made from bloodsucker meat spiced with chilies and mixed with mushrooms.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_psysucker">
+		<text>Psysucker goulash</text>
+	</string>
+	<string id="st_meat_psysucker_descr">
+		<text>A small hot meal made from psysucker meat spiced with chilies and mixed with mushrooms.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_snork">
+		<text>Grilled snork hand</text>
+	</string>
+	<string id="st_meat_snork_descr">
+		<text>Grilled snork hand, ready to be eaten. WARNING: Most Zoners consider eating snork's meat cannibalistic and immoral. However, certain factions, such as bandits and mercenaries, include it in their meals so as to show their superiority over other groups.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_chimera">
+		<text>The Masculine Meal</text>
+	</string>
+	<string id="st_meat_chimera_descr">
+		<text>A portion of grilled chimera meat, served with mushrooms and spices. An expensive meal, eaten most commonly by veteran Stalkers to celebrate accomplishment of difficult missions.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="st_meat_lurker">
+		<text>Lurker chops</text>
+	</string>
+	<string id="st_meat_lurker_descr">
+		<text>A small portion of lurker meat, grilled and seasoned with salt and mixed with peppers. Good nutrition value due to thick muscles of the mutant.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		</text>
+	</string>
+	
+	<string id="mutant_flesh_meat">
+		<text>Flesh meat</text>
+	</string>
+	<string id="mutant_flesh_meat_description">
+		<text>A popular choice in the Zone, flesh meat has a good taste and high nutritional value. The scientists have enough samples already, which limits its use as a commodity. However, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_boar_chop">
+		<text>Boar chop</text>
+	</string>
+	<string id="mutant_boar_chop_description">
+		<text>The most popular meat in the Zone. Nutritious and hardly contaminated. The scientists have enough samples already, which limits its use as a commodity. However, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_dog_meat">
+		<text>Dog meat</text>
+	</string>
+	<string id="mutant_dog_meat_description">
+		<text>Meat of mutated dogs is used as a cheap alternative to the more popular boar meat. The scientists have enough samples already, which limits its use as a commodity. However, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_psevdodog_meat">
+		<text>Pseudodog meat</text>
+	</string>
+	<string id="mutant_psevdodog_meat_description">
+		<text>Pseudodog meat is a common dietary component in the Zone. Tasty, with high nutritional value, a popular choice among stalkers. Can be sold to the scientists. Moreover, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_krovosos_meat">
+		<text>Bloodsucker meat</text>
+	</string>
+	<string id="mutant_krovosos_meat_description">
+		<text>Bloodsucker meat is stringy and thus not suited for eating. Although bloodsuckers are fearsome beasts, the price of the meat is not very high due to its limited use. Can be sold to the scientists. Moreover, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[d_green] • %c[ui_gray_2] high-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+	
+	<string id="mutant_psysucker_meat">
+		<text>Psysucker meat</text>
+	</string>
+	<string id="mutant_psysucker_meat_description">
+		<text>Similar to bloodsuckers, Psysucker meat is stringy and thus not suited for eating. The price of the meat is not very high due to its limited use. Can be sold to the scientists. Moreover, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[d_green] • %c[ui_gray_2] high-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_snork_hand">
+		<text>Snork hand</text>
+	</string>
+	<string id="mutant_snork_hand_description">
+		<text>As is widely known, snorks originate from humans, so eating their meat is considered cannibalistic and immoral. However, certain factions, such as bandits and mercenaries, include it in their meals so as to show their superiority over other groups. Can be sold to the scientists who make better use of it.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_fracture_hand">
+		<text>Fracture hand</text>
+	</string>
+	<string id="mutant_fracture_hand_description">
+		<text>A severed hand of a fracture - an extremely deformed humanoid mutant. It is certain that these creatures used to be humans and that they are the direct result of the second Chernobyl incident. From the remains of their clothing we can deduce that fractures originate from prisoner population that was stationed in the Exclusion Zone and sentenced to forced labour. Since all fractures suffer almost the same type of deformation of the body, it is supposed that when the exposure took place all subjects were in the same body position - either because they were being transported at the time or because someone forced them. All specimens encountered so far were male and sterile. Hence it can be safely assumed that the fracture population is unable to reproduce, and their number in the Zone will be steadily dwindling. For this reason, at present they remain one of the most rarely encountered types of mutant. The right hand of a fracture is a valuable research object.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_zombi_hand">
+		<text>Zombie hand</text>
+	</string>
+	<string id="mutant_zombi_hand_description">
+		<text>This is a hand of a creature called old zombie - former human beings who lived or worked in the Exclusion Zone and were subjected to extreme amounts of radiation and psy-influence when the second Chernobyl incident occurred. After many years of being in this state, they possess only a frail body with bones and half-rotten flesh clearly visible. For this reason, the creatures very much resemble re-animated dead bodies, however they are very much alive and almost permanently hungry and thus can become a threat when encountered in packs. Severed hand not only constitutes a scientific research material but in many cases can also be used to identify the person to whom the hand belonged.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_chimera_meat">
+		<text>Chunk of chimera meat</text>
+	</string>
+	<string id="mutant_chimera_meat_description">
+		<text>A heavy chunk of chimera meat. Since chimeras are considered one of the most dangerous creatures, their meat is highly valued by veteran stalkers who are willing to buy it for fairly high prices. The cook on Skadovsk uses this meat as one of the ingredients of the so called masculine meal, although only few claim that it tastes better than boar meat. Can be sold to the scientists. Furthermore, it provides the best quality animal fat available in the Zone which can be used for the purposes of very effective gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] high-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+	
+	<string id="mutant_lurker_meat">
+		<text>Lurker meat</text>
+	</string>
+	<string id="mutant_lurker_meat_description">
+		<text>A good chunk of lurker meat. Nutritious and hardly contaminated. Can be sold to the scientists. However, it can also serve as a source of animal fat for gun lubrication.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] high-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_tushkano_meat">
+		<text>Rodent meat</text>
+	</string>
+	<string id="mutant_tushkano_meat_description">
+		<text>A small portion of a mutated rodent's body. A cheap and commonly found food that is said to strengthen your heart after being cooked in open fire. Can be sold to the scientists.\n \n
+		%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n
+		%c[d_green] • %c[ui_gray_2] cookable\n
+		%c[d_red] • %c[ui_gray_2] toxic food\n
+		</text>
+	</string>
+
+	<string id="mutant_flesh_eye">
+		<text>Flesh eye</text>
+	</string>
+	<string id="mutant_flesh_eye_description">
+		<text>Mutated, swollen eye of a flesh has a number of strange characteristics, the most interesting and potentially useful of which is the ability to repair even severe damage sustained to the organ. The specifics of this process are hitherto unknown, although the discovery of the mechanism behind it would most certainly revolutionize modern medicine by providing cures for many diseases. You can play a part in speeding up the progress of science and save the lives of innocent people by selling eyes of fleshes to the scientists.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_boar_leg">
+		<text>Boar leg</text>
+	</string>
+	<string id="mutant_boar_leg_description">
+		<text>Hoofs of boars can be used to produce various drugs, for example anti-radiation serums.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_dog_tail">
+		<text>Dog tail</text>
+	</string>
+	<string id="mutant_dog_tail_description">
+		<text>Resistance of mutant dogs' skin to electricity and chemical agents has been the object of scientific interest for a long time. Due to the absence of fat tissue, the tail is especially suited for lab tests.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_psevdodog_tail">
+		<text>Pseudodog tail</text>
+	</string>
+	<string id="mutant_psevdodog_tail_description">
+		<text>Rumour has it that a certain trend has recently taken over the fashion world: fur from the tails of pseudodogs. The fur is reportedly soft like no other. It is also said that it will keep you warm even in most vicious snowstorms and blizzards. For these reasons, pseudodog tails are in high demand.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_krovosos_jaw">
+		<text>Bloodsucker jaw</text>
+	</string>
+	<string id="mutant_krovosos_jaw_description">
+		<text>Bloodsucker tentacles contain a special gland which produces an enzyme capable of dissolving the skin and simultaneously preventing blood from clotting. Discovering the enzyme's composition could be the cornerstone of a whole series of great medical advances. Some stalkers tend to use bloodsucker teeth to make necklaces and charms. It is thus safe to say that bloodsucker jaw is one of the most popular pieces of jewelry found in the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_snork_leg">
+		<text>Snork leg</text>
+	</string>
+	<string id="mutant_snork_leg_description">
+		<text>Snork feet and legs contain a huge number of highly elastic tendons. This explains the beast's ability to perform its characteristic long leaps at its prey. The scientists still look for potential uses of the snork's leg, and will be grateful for each specimen you bring to their base.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n
+		</text>
+	</string>
+
+	<string id="mutant_chimera_cogot">
+		<text>Chimera horn</text>
+	</string>
+	<string id="mutant_chimera_cogot_description">
+		<text>The horn of a chimera. Its exact molecular composition is unknown, but we know for a fact that its tip is as durable and sharp as a diamond, which explains why the beast is able to cut through armour with ease. This item is in high demand as it is visibly similar to a rhino horn. Rumour has it that once upon a time a few poachers arrived in the Zone with the aim of acquiring the horn and selling it on the black market. To their surprise, however, chimeras did not make such easy targets as rhinos, so the poachers were never heard from again. All that remains of them are some unpleasant memories and belongings which indicate where they must have been ripped to pieces by these vicious mutants. Chimera’s horn can also be used as a crude sharpening tool, but utmost caution should be exercised because it can break, preventing the careless stalker from selling this valuable specimen.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_chimera_claw">
+		<text>Chimera claw</text>
+	</string>
+	<string id="mutant_chimera_claw_description">
+		<text>The claw of a chimera. Its exact molecular composition is unknown, but we know for a fact that it is as durable and sharp as a diamond, which explains why the beast is able to cut through armour with ease.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	<string id="mutant_lurker_eye">
+		<text>Lurker eye</text>
+	</string>
+	<string id="mutant_lurker_eye_description">
+		<text>A mutated, yellow eye of a lurker. The glow surrounding the big pupil made the lurker's eye a matter of interest among local hunters. The scientists still look for potential uses of the lurker's eye.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+	
+	<string id="mutant_lurker_tail">
+		<text>Lurker tail</text>
+	</string>
+	<string id="mutant_lurker_tail_description">
+		<text>Scientists suggest that the characteristics of a lurker tail is proof that lurkers are a mutant species of tushkano.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+	
+	<string id="mutant_psysucker_hand">
+		<text>Psysucker hand</text>
+	</string>
+	<string id="mutant_psysucker_hand_description">
+		<text>Psysuckers are known for their skinny hands and long fingers. It seems that the skin around the fingertips is badly torn, which explains all the blood covering the fingers. The scientists will gladly examine it in the hope of finding the source of mutation responsible for its psy-related powers.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_tushkano_head">
+		<text>Tushkano head</text>
+	</string>
+	<string id="mutant_tushkano_head_description">
+		<text>The head of a tushkano. The scientists would like to study it in order to identify which creature tushkanos originate from.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_part_controller_brain_tissue">
+		<text>Controller brain tissue</text>
+	</string>
+	<string id="mutant_part_controller_brain_tissue_description">
+		<text>Controllers have potent mental powers and it's safe to say that these powers have their origin in their brain. What's interesting, every mutant possessing abilities related to psy waves has a brain of similar structure. The scientists will pay handsomely for this tissue. It has a smell reminiscent of a sour pumpkin.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] extremely valuable\n</text>
+	</string>
+
+	<string id="mutant_controller_hand">
+		<text>Controller hand</text>
+	</string>
+	<string id="mutant_controller_hand_description">
+		<text>The controller seems to use its hand when mentally attacking its prey. The scientists will gladly examine it in the hope of finding the source of mutation responsible for its psy-related powers. Smells like old socks and bad kimchee.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_cat_tail">
+		<text>Cat tail</text>
+	</string>
+	<string id="mutant_cat_tail_description">
+		<text>Cats in the Zone are bigger than their pet cousins and are in fact very dangerous predators, capable of moving swiftly and without a sound, no matter the surface. Within the stalker community, a cat's tail is a symbol of awareness.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_pseudogigant_hand">
+		<text>Pseudogiant hand</text>
+	</string>
+	<string id="mutant_pseudogigant_hand_description">
+		<text>A hand of a pseudogiant may prove useful for the scientists who will gladly examine it. Smells like old socks and bad kimchee.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_pseudogigant_eye">
+		<text>Pseudogiant eye</text>
+	</string>
+	<string id="mutant_pseudogigant_eye_description">
+		<text>An eye of the pseudogiant has the appearance of a larger human eye, but with a few differences. It has a multi-coloured iris and its tear glands are exceptionally well-developed. Pseudogiants are known to lacrimate profusely and regularly, but we don't know whether this is a result of some physiological process or a by-product of the psychology of the creature. In any case, the scientists would be very eager to lay their hands on it, so they're willing to pay a high price for any specimen.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_burer_hand">
+		<text>Burer hand</text>
+	</string>
+	<string id="mutant_burer_hand_description">
+		<text>Burer's hand seems to play a vital role in the creature's use of the telekinetic powers. Scientists will gladly examine it in the hope of finding the source of mutation. Smells like old socks and bad kimchee.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] very rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="st_mutant_part_crow_beak">
+		<text>Mutated crow beak</text>
+	</string>
+	<string id="st_mutant_part_crow_beak_description">
+		<text>While many stalkers consider crows no more than pests, more insightful ones acknowledge their usefulness in tackling the many challenges the Zone presents. While murders of crows can prove invaluable navigating and evading danger on the empty streets of Chernobyl and Pripyat, it's only after their death when their true value is manifested.\n \nThe population of crows grows constantly in spite of the increased knowledge of usefulness of their beaks. It seems accelerated adaptation, typical among Zone's fauna, has provided them with a sped-up reproduction cycle resulting in up to 4 egg lays a year. Their prolonged life-span, of up to 20 years, has given them extraordinary intelligence manifested especially when many crows are in proximity.\n \nThis last effect has led to a rather peculiar custom among the some of the Zone-dwellers which - as rumor has it - was introduced by the very first Stalkers who arrived in the Zone after the Second Incident. The ritual - aptly referred to as "The Beak" - involves taking a pulverized beak from the eldest crow in the murder and creating a special mixture. When the concoction is consumed by the light of the full moon, it allows one's mind to temporarily merge with the multi-consciousness shared by all crows in the Zone. No one knows what happens to a fragile human mind when it is subjected to such an experience, but some speculate that this is what led the Stalker Noah to build his Arc in a desperate attempt to preserve whatever possible from the inevitable cataclysm that is about to once again fall upon this already devastated land.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_snork_mask">
+		<text>Snork mask</text>
+	</string>
+	<string id="mutant_snork_mask_description">
+		<text>Masks worn by snorks are apparently a version of GP-5, a Soviet gas mask, which was commonly used by soldiers as well as research and utility crews operating in the Zone when the second Chernobyl disaster occurred. Some of these people were working in numerous underground labouratories in which they were sealed from the outside world and exposed to tremendous amounts of radiation, which produced a creature we know as the snork. The mask, although broken beyond use (with cracked lenses and punctured filter hose), is still in demand by the scientific community. It can also be used to repair parts of outfits, but this process results in all remaining organic material being lost.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] technological item\n
+		%c[d_red] • %c[ui_gray_2] broken beyond repair\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n
+		</text>
+	</string>
+
+	<string id="mutant_dog_liver">
+		<text>Dog liver</text>
+	</string>
+	<string id="mutant_dog_liver_description">
+		<text>The liver of a dog, having undergone severe changes due to a toxic diet and a lack of clean drinking water in the Zone. The liver is of particular interest to scientists due to its potential for aiding research in medicine for liver diseases.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] the mutated part of the body\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific instance\n</text>
+	</string>
+
+	<string id="mutant_dog_heart">
+		<text>Dog heart</text>
+	</string>
+	<string id="mutant_dog_heart_description">
+		<text>Blind dogs have many traits, much different from healthy counterparts. One of these differences - a very hardy heart, allowing the mutant for a long time to chase down its prey, until it's exhausted. Pulse when on the pursuit reaches 250 beats per minute, which is unthinkable for non-atherogenic healthy individuals of the same weight category. This endurance makes the blind dog's heart an interesting subject for study, but because of its prevalence, the rates for it among scientists are very small.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_cat_thyroid">
+		<text>Cat thyroid</text>
+	</string>
+	<string id="mutant_cat_thyroid_description">
+		<text>Long-term residence in radiation-contaminated territories resulted in the fact that the thyroid gland of local cats has multiplied in size. At the moment the hyperthyroidism after the change of generations is not acquired, but is a hereditary disease. Symptoms: increased food intake, increased activity, behaviour changes, nervousness, hair loss. These acquired skills are not destroyed, but rather allowed the mutated animals to quickly displace their healthy relatives and to occupy a high position in the food chain. Great interest for scientists is not due to the study of mechanisms and effects of disease.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_cat_claw">
+		<text>Cat claw</text>
+	</string>
+	<string id="mutant_cat_claw_description">
+		<text>Cat's claws have an unknown structure, due to which they can easily cut jumpsuits. Scientists and military believe that a thorough study of them will help to create new highly durable materials and armour based on them.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_tusk_boar">
+		<text>Boar fang</text>
+	</string>
+	<string id="mutant_tusk_boar_description">
+		<text>Posing a considerable threat to anything caught in its strike, this fang spans a length of 30 centimetres. It is of no particular interest to scientists in the Zone due to its lackluster composition and strength. The fang is commonly used as a trophy among stalkers and has found its way as a collector's item outside of the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_heart_bloodsucker">
+		<text>Bloodsucker heart</text>
+	</string>
+	<string id="mutant_heart_bloodsucker_description">
+		<text>Bloodsucker's heart have an unstudied ability - it secretes special enzymes which halt the coagulation process caused by incompatible blood types. Thanks to that, clotting does not occur even if the blood groups are different. The studies on the way this mechanism works and the composition of the enzyme will allow scientists to solve the problem of blood donor for patients with rare blood groups, as well as, probably, will open new doors for medicine.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_fang_psevdodog">
+		<text>Pseudodog fang</text>
+	</string>
+	<string id="mutant_fang_psevdodog_description">
+		<text>Pseudodogs fangs are used for tearing and holding their prey. Due to the tremendous jaw pressure of the mutant, it bites through most of the protective equipment used in the Zone. The teeth themselves are not too strong and are routinely replaced throughout life. Scientists are not particularly interested in them, unlike collectors from the outside of the Zone.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+
+	<string id="mutant_brain_burer">
+		<text>Burer brain</text>
+	</string>
+	<string id="mutant_brain_burer_description">
+		<text>Burer have a perfect telepathic skills, which are absolutely unstudied by the science. That's why most of his organs are desirable by scientists and mercenaries. The brain, as the main source of his telepathic abilities, has a top-priority in this list. It's mass is a 0.5-1.5 times bigger than a human brain. There's no any external differences. Because of its size and structure the brain can be easily damaged during extraction: wasted organ can't be used in any scientific researches.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+
+	<string id="mutant_heart_chimera">
+		<text>Chimera heart</text>
+	</string>
+	<string id="mutant_heart_chimera_description">
+		<text>Fitting the creature's doubly nature, this heart of a chimera has grown into a doubled organ that can function as a reserve blood supply. Of interest to scientists is its possession of a high level of regeneration, providing the chimera with continued abilities in combat even after sustaining heavy injuries. It is being sought after to aid in the study of death rates among Siamese twins.\n \n
+		%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] valuable\n</text>
+	</string>
+	
+	
+	<!-- Analogs addon-->
+	<string id="mutant_part_psy_dog_brain">
+		<text>Psi-Dog Brain</text>
+	</string>
+	<string id="mutant_part_psy_dog_brain_description">
+		<text>Psi-Dogs have powerful physic abilities, for example, the ability to induce "hallucinations" upon prey. These illusions are extremely convincing, often capable of inflicting very real trauma through currently unknown means. Interestedly, scientists say that while they've identified the region of the brain responsible for the psionic abilities, it's evident that the region is "juvenile" in both development and evolutionary potential. Scientists will pay generously for samples of such tissues. \n \n%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] Mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] Rare scientific specimen\n
+		%c[d_cyan] • %c[ui_gray_2] High value\n</text>
+	</string>
+	
+	<string id="st_meat_tark">
+		<text>Horse meat</text>
+	</string>
+	<string id="st_meat_descr_tark">
+		<text>A piece of meat high in both nutrition and radiation. The scientists have enough samples already, which limits its use as a commodity. Source of animal fat for gun lubrication.\n \n%c[d_red]WARNING:\n \n%c[default]Stalkers are advised to refrain from eating raw meat as animals and mutants in the Zone are likely to be carrying trichinosis or brucellosis. These diseases are transmitted by ingesting infected meat. The symptoms include fever, fatigue and appetite loss, all of which are extremely dangerous given the conditions in the Zone. Abscesses, fungal growth and tumours on the surface of the body indicate that the meat is infected and should be disposed of.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_green] • %c[ui_gray_2] low-tier mutant meat\n%c[d_green] • %c[ui_gray_2] not cookable\n%c[d_red] • %c[ui_gray_2] toxic food\n%c[d_red] • %c[ui_gray_2] radiation poisoning: %c[ui_gray_1] +646 mSv\n
+		</text>
+	</string>
+	
+	<string id="mutant_tark_tail">
+		<text>Horse tail</text>
+	</string>
+	<string id="mutant_tark_tail_description">
+		<text>A long, frayed tail, presumably from a local horse. The scientists have enough samples already, which limits its use as a commodity.\n \n%c[ui_gray_2]PROPERTIES:\n
+		%c[d_cyan] • %c[ui_gray_2] mutated body part\n
+		%c[d_cyan] • %c[ui_gray_2] common scientific specimen\n</text>
+	</string>
+	
+</string_table>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding="windows-1251"?>
+<xml>
+
+<!-------------------------- Darkscape - Mechanic  ------------------------>
+	<specific_character id="dasc_tech_mlr" team_default="1">
+		<name>st_dasc_tech_mlr_name</name>
+		<icon>ui_inGame2_neutral_2</icon>
+		<map_icon x="1" y="0"></map_icon>
+		<bio>An experienced stalker. No detailed information is available.</bio>
+		
+		<class>dasc_tech_mlr</class>
+		<community>stalker</community> 
+		<terrain_sect>stalker_terrain</terrain_sect>
+		<snd_config>characters_voice\human\stalker_3\</snd_config>
+		<!--mechanic_mode>1</mechanic_mode-->
+		
+		<rank>2500</rank>
+		<money min="1000000" max="1000000" infinitive="1"/>
+		<reputation>-1200</reputation>
+		
+		<visual>actors\stalker_neutral\stalker_neutral2c</visual>
+		<supplies>
+		
+		[spawn] \n
+		wpn_fort \n
+		ammo_9x18_fmj = 1 \n
+#include "gameplay\supplies\character_items.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs.xml"
+		</supplies>
+		
+#include "gameplay\character_criticals.xml"
+		<actor_dialog>dm_init_trader</actor_dialog>
+		<actor_dialog>dm_init_mechanic</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_cancel_dialog</actor_dialog>
+		<actor_dialog>dm_tech_repair</actor_dialog>
+		<actor_dialog>dm_encrypted_pda</actor_dialog>
+		<actor_dialog>awr_tech_dialog_drink_1</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+	</specific_character>
+
+	
+<!-------------------------- Darkscape - Trader  ------------------------>
+	<specific_character id="dasc_trade_mlr" team_default="1">
+		<name>st_dasc_trade_mlr_name</name>
+		<icon>ui_inGame2_neutral_2_mask</icon>
+		<map_icon x="1" y="0"></map_icon>
+		<bio>An experienced stalker. No detailed information is available.</bio>
+		
+		<class>dasc_trade_mlr</class>
+		<community>stalker</community> 
+		<terrain_sect>stalker_terrain</terrain_sect>
+		<snd_config>characters_voice\human\stalker_2\</snd_config>
+		
+		<rank>3000</rank>
+		<money min="1000000" max="1000000" infinitive="1"/>
+		<reputation>-700</reputation>
+		
+		<visual>actors\stalker_neutral\stalker_neutral2amask2</visual>
+		<supplies>
+		
+		[spawn] \n
+		wpn_beretta \n
+		ammo_9x19_fmj = 1 \n
+#include "gameplay\supplies\character_items.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals.xml"
+
+		<actor_dialog>dm_init_trader</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_cancel_dialog</actor_dialog>
+		<actor_dialog>buy_route</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+	</specific_character>
+
+</xml>

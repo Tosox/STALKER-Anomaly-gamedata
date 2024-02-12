@@ -1,0 +1,5 @@
+[logic]
+active = sr_idle@idle
+
+[sr_idle@idle]
+on_actor_inside = %=dec_faction_goodwill_to_actor(freedom:5000)% nil

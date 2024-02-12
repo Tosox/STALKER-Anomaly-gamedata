@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="st_addon_companion_quick_menu_tooFar">
+		<text>Мой отряд меня не услышит. Нужно подойти ближе или связаться через КПК.</text>
+	</string>
+
+	<string id="st_addon_companion_quick_menu_followMe">
+		<text>ЗА МНОЙ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_waitHere">
+		<text>ЖДАТЬ ЗДЕСЬ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_stopStealth">
+		<text>НЕ ПРЯТАТЬСЯ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_stealth">
+		<text>ПРЯТАТЬСЯ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_stayClose">
+		<text>ДЕРЖАТЬСЯ РЯДОМ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_stayFar">
+		<text>ДЕРЖАТЬ ДИСТАНЦИЮ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_fireAtWill">
+		<text>ОГОНЬ ПО ЖЕЛАНИЮ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_ignoreCombatButHelpMe">
+		<text>ТОЛЬКО ОГОНЬ ПОДДЕРЖКИ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_ignoreCombat">
+		<text>НЕ ОТКРЫВАТЬ ОГОНЬ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_doNotLootCorpses">
+		<text>НЕ ОБЫСКИВАТЬ ТРУПЫ</text>
+	</string>
+	
+	<string id="st_addon_companion_quick_menu_lootCorpses">
+		<text>ОБЫСКИВАТЬ ТРУПЫ</text>
+	</string>
+	
+</string_table>

@@ -1,0 +1,177 @@
+;------------------------------------------------------------------------------------------------
+[wpn_m79]:zero_immunities,weapon_probability,default_weapon_params,wpn_m79_sounds
+		kind = w_explosive
+        GroupControlSection         = spawn_group
+        discovery_dependency        =
+        $npc                        = on
+        $prefetch                   = 2
+        $spawn                      = "weapons\rg-6"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_RG6
+        slot                        = 2
+        animation_slot              = 10
+        ef_main_weapon_type         = 4
+        ef_weapon_type              = 12
+        hand_dependence             = 1
+        single_handed               = 0
+        
+        sprint_allowed              = true
+        
+        inv_grid_height             = 2
+        inv_grid_width              = 4
+        inv_grid_x                  = 35
+        inv_grid_y                  = 58
+        inv_name                    = st_wpn_m79
+        inv_name_short              = st_wpn_m79
+        description                 = st_wpn_m79_descr
+        
+        inv_weight                  = 2.7
+        cost                        = 26840
+        weapon_class                = heavy_weapon
+        
+        hud                         = wpn_m79_hud
+        visual                      = dynamics\weapons\wpn_m79\wpn_m79.ogf
+        position                    = -0.026, -0.111, 0
+        orientation                 = 0, -9, 0
+        fire_point                  = 0, 0.120, 0.452
+        fire_point2                 = 0, 0.120, 0.452
+        strap_bone0                 = bip01_spine2
+        strap_bone1                 = bip01_spine1
+        strap_position              = -0.26, -0.11, 0.15
+        strap_orientation           = -15, -9, 110
+        ph_mass                     = 3
+        
+        flame_particles             = weapons\generic_weapon05
+        smoke_particles             = amik\weapons\smoke_particles\smoke_particles_pump_01
+        
+		shell_point				    = 0, 0.12, 0.2
+
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 6.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgr_icon_x                 = 900
+        upgr_icon_y                 = 1500
+        upgr_icon_width             = 250
+        upgr_icon_height            = 100
+        
+        tri_state_reload            = on
+        ammo_class                  = ammo_m209, ammo_m209_bad, ammo_m209_verybad
+        ammo_current                = 60
+        ammo_elapsed                = 0
+        ammo_limit                  = 70
+        ammo_mag_size               = 1
+        startup_ammo                = 0
+        
+        scope_status                = 0
+        scope_zoom_factor           = 0
+        
+        silencer_status             = 0
+        
+        grenade_launcher_status     = 0
+        launch_speed                = 73.5
+        
+        hit_impulse                 = 150
+        hit_power                   = 0.8, 0.8, 0.8, 0.8
+        hit_type                    = fire_wound
+        fire_distance               = 500
+        bullet_speed                = 295
+        rpm                         = 200
+        rpm_empty_click             = 200
+        
+        zoom_dof                    = 0.5, 1.0, 180
+        zoom_enabled                = true
+        reload_dof                  = 0.0, 0.5, 5, 1.3
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 8.3
+        fire_dispersion_base        = 0.76
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_probability         = 0.005
+        misfire_start_condition     = 0.7 ;  0.86
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.14
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.009
+        condition_shot_dec          = 0.009
+        
+        cam_relax_speed             = 7.0
+        cam_dispersion              = 3.02
+        cam_dispersion_frac         = 0.1
+        cam_dispersion_inc          = 3.02
+        cam_max_angle               = 50
+        cam_max_angle_horz          = 50
+        cam_step_angle_horz         = 3.9
+        
+        PDM_disp_accel_factor       = 2.9
+        PDM_disp_base               = 0.95
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 2.9
+        
+        cam_relax_speed_ai          = 360
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 1.0
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 0
+        kill_msg_y                  = 172
+        kill_msg_width              = 68
+        kill_msg_height             = 30
+ 
+
+[wpn_m79_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_m79\wpn_m79_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        hands_position              = -0.044, -0.192, 0.1355
+        hands_position_16x9         = -0.044, -0.192, 0.1355
+        hands_orientation           = 0.55, 2.4, 0.15
+        hands_orientation_16x9      = 0.55, 2.4, 0.15
+        
+        aim_hud_offset_pos          = -0.109297, -0.0611, -0.32
+        aim_hud_offset_pos_16x9     = -0.109297, -0.0611, -0.32
+        aim_hud_offset_rot          = -0.117, 0.00889, -0.0071
+        aim_hud_offset_rot_16x9     = -0.117, 0.00889, -0.0071
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_add_cartridge           = lancew_m79_reload
+        anm_close                   = lancew_m79_no_reload
+        anm_hide                    = lancew_m79_holster
+        anm_idle                    = lancew_m79_idle
+        anm_idle_aim                = lancew_m79_idle_aim
+        anm_idle_aim_moving         = lancew_m79_moving, idle, 0.75
+        anm_idle_aim_moving_crouch  = lancew_m79_moving, idle, 0.7
+        anm_idle_moving             = lancew_m79_moving
+        anm_idle_sprint             = lancew_m79_sprint
+        anm_open                    = lancew_m79_no_reload
+        anm_shots                   = lancew_m79_shoot, shoot
+        anm_show                    = lancew_m79_draw
+        
+        shell_bone                  = wpn_body
+        shell_dir                   = 0, 1, 0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = wpn_body
+        fire_point                  = 0, 0.07, 0.513
+ 
+		freelook_z_offset_mul		= 0.3

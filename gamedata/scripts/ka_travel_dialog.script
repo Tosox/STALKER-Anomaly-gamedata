@@ -1,0 +1,68 @@
+------------------------------
+-- Immersive Travel Dialog
+-- author: SpikensbroR
+------------------------------
+
+local function set_saved_dialog(dialog)
+	return ka_dialog.set_saved_dialog(dialog)
+end
+
+local function add_dialog(p_id, id, phrase_id, cond, act)
+	return ka_dialog.add_dialog(p_id, id, phrase_id, cond, act)
+end
+
+local function add_script_dialog(p_id, id, phrase_id, cond, act)
+	return ka_dialog.add_script_dialog(p_id, id, phrase_id, cond, act)
+end
+
+local function generate_travel_dialog_for(parent_id, smart_key, base_id)
+	local current_parent_id = 0
+	
+	base_id = base_id + 1
+	add_dialog(parent_id, base_id, "ka_travel_dialog_" .. smart_key, "ka_travel.can_travel_to_" .. smart_key .. "_hard")
+		current_parent_id = base_id
+
+		base_id = base_id + 1
+		add_script_dialog(current_parent_id, base_id, "ka_travel.text_travel_to_" .. smart_key)
+			current_parent_id = base_id
+			
+			base_id = base_id + 1
+			add_dialog(current_parent_id, base_id, "ka_travel_dialog_accept", "ka_travel.can_travel_to_" .. smart_key .. "_soft", "ka_travel.travel_to_" .. smart_key)
+			
+			base_id = base_id + 1
+			add_dialog(current_parent_id, base_id, "ka_travel_dialog_change")
+				add_dialog(base_id, parent_id, "ka_travel_dialog_response")
+			
+			base_id = base_id + 1
+			add_dialog(current_parent_id, 999, "ka_travel_dialog_deny")
+	
+	return base_id
+end
+
+function init_hub_provider_dialog(dialog)
+	set_saved_dialog(dialog)
+	
+	local base_id = -1
+	local current_parent_id = 0
+	
+	base_id = base_id + 1
+	add_dialog("", base_id, "ka_travel_dialog_ask") -- ACTOR
+		current_parent_id = base_id
+		
+		base_id = base_id + 1
+		add_dialog(current_parent_id, base_id, "ka_travel_dialog_response") -- NPC
+			current_parent_id = base_id
+			
+			base_id = generate_travel_dialog_for(current_parent_id, "zaton", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "jupiter", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "yantar", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "cordon", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "bar", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "warehouses", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "city", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "agroprom", base_id)
+			base_id = generate_travel_dialog_for(current_parent_id, "swamp", base_id)
+			
+			base_id = base_id + 1
+			add_dialog(current_parent_id, base_id, "ka_travel_dialog_nevermind") -- ACTOR
+end

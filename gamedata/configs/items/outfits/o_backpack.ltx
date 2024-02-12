@@ -1,0 +1,147 @@
+[itm_backpack]:global_item_actions
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "equipments\backpack"
+$prefetch                                = 32
+kind                                     = i_backpack
+class                                    = EQ_BAKPK
+cform                                    = skeleton
+visual                                   = dynamics\devices\dev_rukzak\dev_rukzak.ogf
+description                              = st_itm_backpack_desc
+inv_weight                               = 0.82
+inv_name                                 = st_itm_backpack_name
+inv_name_short                           = st_itm_backpack_name
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 76
+inv_grid_y                               = 0
+cost                                     = 2000
+highlight_equipped 						 = true
+slot                                     = 12
+additional_inventory_weight				 = 21
+additional_inventory_weight2			 = 21
+use_condition							 = true
+can_stack 								 = true
+default_to_ruck                          = true ;false
+sprint_allowed							 = true
+auto_attach			                     = false
+immunities_sect                          = sect_backpack_immunities
+control_inertion_factor					 = 1.0
+power_loss								 = 0.04 ;NEW FORMULA ; power restore (0.0 base) * (0.5 + outfit power loss + helmet power loss + backpack power loss)
+
+snd_on_take								 = outfit
+use1_functor                             = item_backpack.menu_stash
+use1_action_functor                      = item_backpack.func_stash
+
+disassemble_parts				 		 = textile_patch_m,textile_patch_m
+
+upgrades								 = ;up_gr_firstab_backpack			; * Dear modders, backpacks can have upgrades *
+upgrade_scheme							 = ;upgrade_scheme_backpack
+
+[sect_backpack_immunities]
+burn_immunity                            = 0.0
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.0
+wound_2_immunity                         = 0.0
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = 0.0
+fire_wound_immunity                      = 0.0
+
+[equ_small_pack]:itm_backpack
+$spawn                                   = "equipments\smallpack"
+description                              = st_equ_smallpack_desc
+inv_weight                               = 0.54
+inv_name                                 = st_equ_smallpack_name
+inv_name_short                           = st_equ_smallpack_name
+inv_grid_y                               = 2
+cost                                     = 4500
+additional_inventory_weight				 = 28
+additional_inventory_weight2			 = 28
+power_loss								 = 0.02
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,textile_patch_m
+
+[equ_small_military_pack]:itm_backpack
+$spawn                                   = "equipments\smilpack"
+description                              = st_equ_smilpack_desc
+inv_weight                               = 0.67
+inv_name                                 = st_equ_smilpack_name
+inv_name_short                           = st_equ_smilpack_name
+inv_grid_y                               = 4
+cost                                     = 7500
+additional_inventory_weight				 = 34
+additional_inventory_weight2			 = 34
+power_loss								 = 0.03
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,textile_patch_m
+
+[equ_military_pack]:itm_backpack
+$spawn                                   = "equipments\milpack"
+description                              = st_equ_milpack_desc
+inv_weight                               = 1.24
+inv_name                                 = st_equ_milpack_name
+inv_name_short                           = st_equ_milpack_name
+inv_grid_x                               = 76
+inv_grid_y                               = 6
+cost                                     = 15000
+additional_inventory_weight				 = 41
+additional_inventory_weight2			 = 41
+power_loss								 = 0.05
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,textile_patch_m,textile_patch_m
+
+[equ_tourist_pack]:itm_backpack
+$spawn                                   = "equipments\touristpack"
+description                              = st_equ_touristpack_desc
+inv_weight                               = 1.83
+inv_name                                 = st_equ_touristpack_name
+inv_name_short                           = st_equ_touristpack_name
+inv_grid_y                               = 8
+cost                                     = 20000
+additional_inventory_weight				 = 47
+additional_inventory_weight2			 = 47
+power_loss								 = 0.05
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,textile_patch_m
+
+;;--==========================< Hunting Kit >=============================
+[kit_hunt]:itm_backpack
+$spawn 				                     = "equipments\kit_hunt"
+visual				                     = dynamics\equipments\trade\kit_hunt.ogf
+description			                     = st_kit_hunt_descr
+inv_name			                     = st_kit_hunt
+inv_name_short		                     = st_kit_hunt
+inv_grid_width		                     = 2
+inv_grid_height		                     = 2
+inv_grid_x			                     = 76
+inv_grid_y			                     = 10
+cost				                     = 8043
+inv_weight			                     = 4.231
+attach_angle_offset		                 = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name	                     = bip01_r_hand
+bonus_mutant_part_chance				 = 40
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,swiss_knife
+
+;;--==========================< Actor backpack >=============================
+[itm_actor_backpack]:booster
+$spawn 						             = "food and drugs\bread"
+cform                                    = skeleton
+visual                                   = dynamics\devices\dev_rukzak\dev_rukzak.ogf
+kind			                         = i_tool
+inv_name                                 = st_itm_actor_backpack_name
+inv_name_short                           = st_itm_actor_backpack_name
+description 							 = st_itm_actor_backpack_descr
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 48
+inv_weight								 = 0.27
+cost                                     = 650
+attach_angle_offset			             = -0.287979, 1.560923, 1.544060
+attach_position_offset		             = 0.096910, -0.013594, 0.107925
+attach_bone_name			             = bip01_r_hand
+auto_attach					             = false
+bone_name					             = bip01_r_hand
+position_offset				             = 0.0,0.0,0.0
+angle_offset				             = 1.570790,1.570790,3.92699
+remove_after_use                         = false

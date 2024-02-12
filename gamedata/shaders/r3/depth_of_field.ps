@@ -1,0 +1,43 @@
+#include "common.h"
+
+uniform float4	dof_params;// x - near y - focus z - far w - sky distance
+
+#define EPSDEPTH 0.001h
+
+float DOFFactor( float depth)
+{
+	float	dist_to_focus	= depth-dof_params.y;
+	float 	blur_far	= saturate( dist_to_focus
+					/ (dof_params.z-dof_params.y) );
+	float 	blur_near	= saturate( dist_to_focus
+					/ (dof_params.x-dof_params.y) );
+	float   blur 		= blur_near+blur_far;
+	blur *= blur;
+	
+	return blur;
+}
+
+float4 main(p_screen I) : SV_TARGET
+{
+	float contrib = 1;
+	float4 sum = s_image.Sample(smp_nofilter, I.tc0);
+	
+   	for (int i=0; i<12; i++)
+	{
+		float4 blurring = s_blur_2.Sample(smp_nofilter,I.tc0);	
+	#ifndef USE_MSAA
+		float depth = s_position.Sample( smp_nofilter, I.tc0).z;
+	#else
+		float depth = s_position.Load( int3( I.tc0 * screen_res.xy ,0),0 ).z;
+	#endif
+	
+		if (depth <= EPSDEPTH)
+			depth = dof_params.w;
+
+		float tap_contrib = DOFFactor(depth);
+
+		sum += blurring * tap_contrib;
+		contrib += tap_contrib;
+	}
+	return 	(sum/contrib);
+}

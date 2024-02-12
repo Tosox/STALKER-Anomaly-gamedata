@@ -1,0 +1,156 @@
+-- Lanforce
+-- 	full online objects caching, by setting alife to a max value then restore it to general 250 m
+--	this will force all objects inside the level to go online, where their resources get cached
+
+-- Tronex:
+--  Switching to max distance will happen on sleeping as well, since squads tend to arrive to their distinations
+--  When a squad is created inside (or traveled to) actor level, this script will prefetch the model of its npcs to save resources and reduce the lag when they go online
+
+
+
+local enable_debug = false
+
+local enable_feature   = ini_sys:r_bool_ex("alife","auto_switch") or false
+local min_dist         = ini_sys:r_float_ex("alife","auto_switch_distance_normal") or 250  --[meters]
+local max_dist         = ini_sys:r_float_ex("alife","auto_switch_distance_start") or 2000 --[meters]
+local timer_switch     = ini_sys:r_float_ex("alife","auto_switch_timer") or 5000 --[milli-seconds]
+local timer_prefetch   = 5000 --[milli-seconds]
+local tg_switch        = 0
+local tg_prefetch      = 0
+
+local on_max        = false
+local prev_level_id = {}
+local to_prefetch   = {}
+local first_time    = false
+
+
+function print_debug(fmt, ...)
+	if enable_debug then
+		printf("-xr_patch | " .. fmt, ...)
+	end
+end
+
+function switch_distance()
+	tg_switch = time_global()
+end
+
+function queue_squad(squad)
+	if is_far(squad) then
+		print_debug("squad [%s] is set to prefetch", squad:name())
+		
+		for k in squad:squad_members() do
+			print_debug("NPC [%s] is set to prefetch", k)
+			to_prefetch[k.id] = true
+		end
+	end
+end
+
+function is_online(squad)
+	for k in squad:squad_members() do
+		local object = db.storage[k.id] and db.storage[k.id].object
+		if object then
+			return true
+		end
+	end
+	return false
+end
+
+function is_far(squad)
+	local dist = db.actor:position():distance_to(squad.position)
+	print_debug("squad [%s] distance from player is %s meters | far: %s", squad:name(), round(dist), dist > min_dist)
+	return dist > min_dist
+end
+
+
+-- Callbacks
+local function squad_on_npc_creation(squad, se_obj, spawn_smart)
+	if simulation_objects.is_on_the_actor_level(squad)then
+		queue_squad(squad)
+	end
+end
+
+local function squad_on_update(squad)
+	local id = squad.id
+	if (not prev_level_id[id]) then
+		prev_level_id[id] = game_graph():vertex(squad.m_game_vertex_id):level_id()
+		return
+	end
+	
+	local curr_level_id = game_graph():vertex(squad.m_game_vertex_id):level_id()
+	if (curr_level_id ~= prev_level_id[id]) then
+		prev_level_id[id] = curr_level_id
+		
+		if (curr_level_id == get_player_level_id()) then -- squad arrived to player's level
+			queue_squad(squad)
+			print_debug("squad [%s] traveled to actor level", squad:name())
+		end
+	end
+end
+
+local function actor_on_update()
+	local tg = time_global()
+	if tg_switch then
+		
+		if (not on_max) then
+			alife():set_switch_distance(max_dist)
+			on_max = true
+			print_debug("alife switch distance set to: %s", max_dist)
+		end
+		
+		if (tg > (tg_switch + timer_switch)) then
+			alife():set_switch_distance(min_dist)
+			on_max = false
+			tg_switch = false
+			print_debug("alife switch distance set to: %s", min_dist)
+			
+			-- Callbacks can be set after switching the distance to avoid bloating tables on loading
+			if (not first_time) then
+				print_debug("registered callbacks", min_dist)
+				RegisterScriptCallback("squad_on_npc_creation",squad_on_npc_creation)
+				RegisterScriptCallback("squad_on_update",squad_on_update)
+				first_time = true
+			end
+		end
+	end
+	
+	-- Timer to prefetch one model each time
+	if on_max or (tg < tg_prefetch + timer_prefetch) then
+		return
+	end
+	tg_prefetch = tg
+	
+	for id,_ in pairs(to_prefetch) do
+		local se_npc = alife_object(id)
+		if se_npc then
+			print_debug("Prefetch mode start for [%s]", se_npc:name())
+			local cls = se_npc:clsid()
+			local data = IsStalker(nil,cls) and utils_stpk.get_stalker_data(se_npc) or IsMonster(nil,cls) and utils_stpk.get_monster_data(se_npc)
+			if data then
+				print_debug("Prefetching: %s", data.visual_name)
+				game.prefetch_model(data.visual_name)
+			end
+			print_debug("Prefetch mode finished for [%s]", se_npc:name())
+		end
+		to_prefetch[id] = nil
+		break
+	end
+end
+
+local function actor_on_first_update()
+	switch_distance()
+end
+
+local function actor_on_sleep()
+	switch_distance()
+end
+
+
+function on_game_start()
+	if (not enable_feature) then
+		return
+	end
+	
+	RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+	RegisterScriptCallback("actor_on_sleep",actor_on_sleep)
+end 

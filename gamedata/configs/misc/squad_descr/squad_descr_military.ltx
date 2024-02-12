@@ -1,0 +1,78 @@
+;--------------------------
+;-- Special Characters
+;--------------------------
+[mil_smart_terrain_7_10_freedom_trader_stalker_squad]:online_offline_group
+faction = freedom
+npc = mil_smart_terrain_7_10_freedom_trader_stalker
+target_smart = mil_smart_terrain_7_10
+story_id = mil_smart_terrain_7_10_freedom_trader_stalker_squad
+;spawn_point = mil_smart_terrain_7_10_freedom_trader_spawn
+
+[mil_smart_terrain_7_7_freedom_mechanic_stalker_squad]:online_offline_group
+faction = freedom
+npc = mil_smart_terrain_7_7_freedom_mechanic_stalker
+target_smart = mil_smart_terrain_7_7
+story_id = mil_smart_terrain_7_7_freedom_mechanic_stalker_squad
+;spawn_point = mil_smart_terrain_7_7_freedom_mechanic_spawn
+
+[mil_smart_terrain_7_7_freedom_leader_stalker_squad]:online_offline_group
+faction = freedom
+npc = mil_smart_terrain_7_7_freedom_leader_stalker, mil_smart_terrain_7_7_freedom_bodyguard_stalker, mil_smart_terrain_7_7_freedom_bodyguard2_stalker
+target_smart = mil_smart_terrain_7_7
+story_id = mil_smart_terrain_7_7_freedom_leader_stalker_squad
+spawn_point = mil_smart_terrain_7_7_freedom_leader_stalker_squad_spawn
+
+[mil_freedom_barman_mlr_squad]:online_offline_group
+faction = freedom
+npc = mil_freedom_barman_mlr
+npc_in_squad = 1, 1
+target_smart = mil_smart_terrain_7_7
+
+[mil_freedom_medic_squad]:online_offline_group
+faction = freedom
+npc = mil_freedom_medic
+npc_in_squad = 1, 1
+target_smart = mil_smart_terrain_7_7
+
+[mil_freedom_guid_squad]:online_offline_group
+faction = freedom
+npc = mil_freedom_guid
+npc_in_squad = 1, 1
+target_smart = mil_smart_terrain_7_7
+
+
+;--------------------------
+;-- Unique Squads
+;--------------------------
+[mil_smart_terrain_7_7_squad]:online_offline_group
+faction = freedom
+npc = sim_default_freedom_3, sim_default_freedom_1, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_0, sim_default_freedom_0, sim_default_freedom_1, sim_default_freedom_2
+target_smart = mil_smart_terrain_7_7
+always_arrived = true
+
+[mil_smart_terrain_7_8_squad]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_4, sim_default_freedom_4, sim_default_freedom_2, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_0, sim_default_freedom_3, sim_default_freedom_1
+npc_in_squad = 3, 4
+target_smart = mil_smart_terrain_7_8
+always_arrived = true
+
+[mil_7_7_protect_mlr_squad]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3
+npc_in_squad = 1, 3
+target_smart = mil_smart_terrain_7_7
+
+[mil_7_7_protect_mlr_squad2]:online_offline_group
+faction = freedom
+npc_random = sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_2, sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1, sim_default_freedom_1
+npc_in_squad = 3, 4
+target_smart = mil_smart_terrain_7_7
+always_arrived = true
+
+[mil_smart_terrain_4_2_bloodsuckers_sleepers]:online_offline_group
+faction = monster_predatory_day
+npc_random = bloodsucker_red_weak, bloodsucker_green_weak, bloodsucker_black_weak, bloodsucker_red_normal, bloodsucker_green_normal, bloodsucker_black_normal, bloodsucker_red_strong, bloodsucker_green_strong, bloodsucker_black_strong
+npc_in_squad = 2, 4
+target_smart = mil_smart_terrain_4_2
+

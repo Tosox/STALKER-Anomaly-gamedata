@@ -1,0 +1,95 @@
+local progress_bat = nil
+local progress_blt = nil
+local progress_wnd = nil
+local progress_exp = nil
+local progress_str = nil
+local background = nil
+
+function on_game_start()
+	--RegisterScriptCallback("actor_on_update",update)
+end
+
+function update()
+	if not db.actor then 
+		clear_hud()
+		return 
+	end
+	update_hud()
+end
+
+
+
+function get_protection(hit_type)
+	if not db.actor then return 0 end
+
+	local protection = 0
+	local hit_types={"burn", "shock", "chemical_burn", "radiation", "telepatic", "strike", "wound", "explosion", "fire_wound", "???", "???", "light_burn", "dummy"}
+	local suit_factors={10,1,5,33,10,1,0.5,1,1}
+	local drug_factors={1,1,5,33,10,1,1,1,1}
+	local artefact_factors={10,5,10,10,10,10,10,10,10}
+
+	local suit_protection = db.actor:get_current_outfit_protection(hit_type)*suit_factors[hit_type+1]
+	if (hit_type == 6) then
+		suit_protection = db.actor:get_current_outfit_protection(5)*suit_factors[hit_type+1]
+	end
+	
+	
+	local helmet_protection = 0
+	local helmet = db.actor:item_in_slot(12)
+	if helmet ~= nil then
+		helmet_protection = ini_sys:r_float(helmet:section(),hit_types[hit_type+1].."_protection")*suit_factors[hit_type+1]
+	end
+	
+	local drug_protection = 0
+	if hit_type == 2 and self.drug_chemical_burn_protection ~= nil then
+		drug_protection=self.drug_chemical_burn_protection*drug_factors[hit_type+1]
+	elseif hit_type == 3 and self.drug_radiation_protection ~= nil then
+		drug_protection=self.drug_radiation_protection*drug_factors[hit_type+1]
+	elseif hit_type == 4 and self.drug_telepatic_protection ~= nil then
+		drug_protection=self.drug_telepatic_protection*drug_factors[hit_type+1]
+	end
+	
+	local belt_protection = 0
+	local function SearchBeltProtection(item)
+		if db.actor:is_on_belt(item) then
+			local absorb_sect = ini_sys:r_string_ex(item:section(),"hit_absorbation_sect")
+			local absorb = ini_sys:r_float_ex(absorb_sect,hit_types[hit_type+1].."_immunity")
+			belt_protection = belt_protection + absorb
+		end
+	end
+	db.actor:inventory_for_each(SearchBeltProtection)
+	
+	protection = (suit_protection + helmet_protection + drug_protection + belt_protection)
+	if protection > 1 then
+		protection = 1
+	end
+	
+	return protection
+end
+
+function clear_hud()
+	local hud = get_hud()
+	if not (hud) then return end
+	local cs = hud:GetCustomStatic("cs_battery_state")
+	if (cs ~= nil) then
+		hud:RemoveCustomStatic("cs_battery_state")
+	end
+end
+
+function update_hud()
+	local hud = get_hud()
+	if not (hud) then return end
+	
+	local cs = hud:GetCustomStatic("cs_battery_state")
+	if (cs == nil) then 
+		hud:AddCustomStatic("cs_battery_state", true)
+		local xml = CScriptXmlInit()
+		xml:ParseFile("maingame_battery.xml")
+		cs = hud:GetCustomStatic("cs_battery_state")
+		local w = cs:wnd()
+		progress_bat = xml:InitProgressBar("battery_state", w)
+	end
+	
+	progress_bat:Show(not actor_menu.inventory_opened())
+	progress_bat:SetProgressPos(axr_battery.getBatteryCondition()*100)
+end

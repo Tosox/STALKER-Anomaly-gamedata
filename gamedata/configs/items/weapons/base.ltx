@@ -1,0 +1,1115 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; New Ordnance MISERY v2 Edition ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; 30.03.2013 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; _xXxTWiST3DxXx_ (concept & weapon GFX assets) ;;;;;;;;;;;;;;;;;
+;;;;;;;; N.Aaroe (additional texture work) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; alundaio (scripting) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; trojanuch (implementation & factional loadout configs) ;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; NOTICE FOR MODDERS ;;
+; unless you need to edit already existing guns, do NOT edit the "w_*" files but make a new one that defines your new guns
+; eg. "w_mygun.ltx"
+; it will be automatically included and won't cause conflict with other mods that add/edit guns
+
+
+#include "upgrades_properties.ltx"
+
+#include "weapon_addons.ltx"
+#include "weapon_silencers.ltx"
+#include "weapon_scopes.ltx"
+#include "weapon_sounds.ltx"
+#include "weapon_ammo.ltx"
+
+;-- Weapons upgrades
+#include "upgrades\upgrade_presets.ltx"
+
+;-- Weapons
+#include "w_*.ltx"
+
+
+;include "w_aps.ltx"
+;include "w_beretta.ltx"
+;include "w_bizon.ltx"
+;include "w_colt1911.ltx"
+;include "w_cz75.ltx"
+;include "w_desert_eagle.ltx"
+;include "w_fn57.ltx"
+;include "w_fnp45.ltx"
+;include "w_fort.ltx"
+;include "w_glock.ltx"
+;include "w_grach.ltx"
+;include "w_gsh18.ltx"
+;include "w_hpsa.ltx"
+;include "w_mp412.ltx"
+;include "w_mp5.ltx"
+;include "w_oc33.ltx"
+;include "w_p90.ltx"
+;include "w_pb.ltx"
+;include "w_pm.ltx"
+;include "w_pp2000.ltx"
+;include "w_ppsh41.ltx"
+;include "w_sig220.ltx"
+;include "w_tt33.ltx"
+;include "w_ump45.ltx"
+;include "w_usp45.ltx"
+;include "w_kiparis.ltx"
+;include "w_vz61.ltx"
+;include "w_vityaz.ltx"
+;include "w_walther.ltx"
+;
+;include "w_bm16.ltx"
+;include "w_mossberg590.ltx"
+;include "w_mp133.ltx"
+;include "w_mp153.ltx"
+;include "w_protecta.ltx"
+;include "w_saiga.ltx"
+;include "w_spas12.ltx"
+;include "w_toz34.ltx"
+;include "w_toz194.ltx"
+;include "w_usas12.ltx"
+;include "w_vepr12.ltx"
+;
+;include "w_9a91.ltx"
+;include "w_abakan.ltx"
+;include "w_aek.ltx"
+;include "w_ak.ltx"
+;include "w_ak12.ltx"
+;include "w_ak74.ltx"
+;include "w_ak74m.ltx"
+;include "w_ak101.ltx"
+;include "w_ak102.ltx"
+;include "w_ak103.ltx"
+;include "w_ak104.ltx"
+;include "w_ak105.ltx"
+;include "w_akm.ltx"
+;include "w_aks74.ltx"
+;include "w_aks74u.ltx"
+;include "w_aug.ltx"
+;include "w_fn2000.ltx"
+;include "w_g36.ltx"
+;include "w_galil.ltx"
+;include "w_groza.ltx"
+;include "w_hk416.ltx"
+;include "w_l85.ltx"
+;include "w_lr300.ltx"
+;include "w_m4.ltx"
+;include "w_m4a1.ltx"
+;include "w_m16.ltx"
+;include "w_scar.ltx"
+;include "w_sig550.ltx"
+;include "w_sig552.ltx"
+;include "w_sks.ltx"
+;include "w_type63.ltx"
+;include "w_val.ltx"
+;include "w_vihr.ltx"
+;include "w_vsk94.ltx"
+;include "w_famas3.ltx"      ; Not used
+;
+;include "w_m249.ltx"
+;include "w_m79.ltx"
+;include "w_pkm.ltx"
+;include "w_rg6.ltx"
+;include "w_rpd.ltx"
+;include "w_rpg7.ltx"
+;include "w_rpk.ltx"
+;
+;include "w_g3sg1.ltx"
+;include "w_gauss.ltx"
+;include "w_l96a1.ltx"
+;include "w_m98b.ltx"
+;include "w_mosin.ltx"
+;include "w_sr25.ltx"
+;include "w_sv98.ltx"
+;include "w_svd.ltx"
+;include "w_svt40.ltx"
+;include "w_svu.ltx"
+;include "w_vintorez.ltx"
+;include "w_vssk.ltx"
+;include "w_g43.ltx"
+;include "w_k98.ltx"
+;include "w_m24.ltx"
+;include "w_trg.ltx"
+
+;-- STCoP 3.0 + more mods
+;include "w_cz52.ltx"
+;include "w_mp7.ltx"
+;include "w_m60.ltx"		; Not used
+;include "w_hk417.ltx"  	; Not used
+;include "w_fnc.ltx"
+;include "w_ash12.ltx"
+;include "w_aug_a3.ltx"     ; Not used
+;include "w_fal.ltx"
+;include "w_fort500.ltx"
+;include "w_mk14.ltx"
+;include "w_m82.ltx"
+;include "w_remington700.ltx"
+;include "w_remington870.ltx"
+;include "w_wa2000.ltx"
+;include "w_xm8.ltx"	;-- CEASAR LFO XM8
+
+;-- Misc
+#include "m_*.ltx"
+
+;include "m_binoc.ltx"
+;include "m_f1.ltx"
+;include "m_knife.ltx"
+;include "m_mounted.ltx"
+;include "m_rgd5.ltx"
+;include "m_gd5.ltx"
+;include "m_gsmoke.ltx"
+;include "m_bolt.ltx"
+;include "m_upd.ltx"
+;include "m_dynamo_hand.ltx"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Огнестрельное оружие
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bullet_manager]
+tracer_shader					= effects\bullet_tracer ;hud\default
+tracer_texture					= fx\fx_tracer_weapons
+fire_circle_k					= 2.0f ; means tracer_width*2
+
+tracer_width					= 0.065	;0.08
+tracer_length_max				= 1.5	;225		;24.0 ;14.0	
+tracer_length_min				= 0		;1.6		;0.2
+
+;расстояние после которого учитывается hit_probabilty полностью
+hit_probability_max_dist		= 3;
+
+gravity_const					= 9.81
+;сопротивление воздуха, процент, который отнимается от скорости полета пули
+air_resistance_k				= 1
+
+;размер шага времени (в милисекундах), по которому проигрываются
+time_step						= 33
+;минимальная скорость (м/с), на которой пуля еще считается и показывается
+min_bullet_speed				= 3.0
+;cколько процентов энергии потеряет пуля при столкновении с материалом (при падении под прямым углом)
+collision_energy_min			= 0.8
+;сколько процентов энергии останется у пули при любом столкновении
+collision_energy_max			= 0.5
+
+whine_sounds					= weapons\whine_1, weapons\whine_2, weapons\whine_3, weapons\whine_4, weapons\whine01, weapons\whine02
+explode_particles				= explosions\expl_bullet,explosions\expl_bullet_00,explosions\expl_bullet_01
+
+
+[tracers_color_table]
+color_0 = 255, 130, 0, 255 ; Vanilla yellow
+color_1 = 38, 247, 129, 255 ; Green (Russia)
+color_2 = 255, 30, 115, 255 ; Red (NATO)
+color_3 = 255, 222, 0, 255 ; Yellow (Helicopters)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Fake Missiles and Grenades
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_fake_missile]:identity_immunities,default_weapon_params
+visual              = dynamics\weapons\wpn_ammo\ammo_vog_25.ogf
+cform               = skeleton
+class               = G_FAKE
+$prefetch 			= 32
+
+inv_weight			= 0
+
+cost				= 150
+
+blast				= 4.8 ;3.0
+blast_r				= 4.3 ;4
+blast_impulse		= 150 ;100
+;delete
+blast_impulse_factor = 1
+
+frags				= 85 ;10
+frags_r				= 20 ;10
+frag_hit			= 0.07 ;0.50
+frag_hit_impulse	=  34 ;50
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.41
+
+;trail				= weapons\rpg_trail_01, weapons\rpg_trail_02
+
+explode_particles	= explosions\explosion_01
+
+light_color		         = 1.9,1.2,0.5
+light_range		         = 25.0
+light_time 		         = 0.5
+
+ph_mass			 = 5
+;engine_f			= 530
+;engine_u			= 90
+
+jump_height = 0.1 ;0
+
+wm_size         = 0.05
+
+;трассы от осколков
+fragment_speed				= 184
+
+explode_duration		 = 5		;подолжительность взрыва (с)
+
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+;wallmarks
+wallmark_section		= explosion_marks
+
+;свойства которые читаются, но не используются
+inv_name		= ammo-vog-25
+inv_name_short	= ammo-vog-25
+inv_weight		= .2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 31
+inv_grid_y			= 60
+
+kill_msg_x			= 17
+kill_msg_y			= 232
+kill_msg_width		= 21
+kill_msg_height		= 22
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Свойства CustomRocket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+engine_present		= false		;присутствует ли в ракете двигатель
+lights_enabled		= false		;свет вокруг ракеты, во время полета
+force_explode_time  = 10000
+
+[wpn_fake_missile1]:identity_immunities,default_weapon_params
+$prefetch 			= 32
+visual              = dynamics\weapons\wpn_ammo\ammo_vog_25p.ogf
+cform               = skeleton
+class               = G_FAKE
+
+inv_weight			= 0
+
+cost				= 150
+
+blast				= 5.8 ;3.0
+blast_r				= 5.3 ;4
+blast_impulse		= 187 ;100
+;delete
+blast_impulse_factor = 1
+
+frags				= 140 ;10
+frags_r				= 34 ;10
+frag_hit			= 0.066 ;0.50
+frag_hit_impulse	=  35 ;50
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.42
+
+;trail				= weapons\rpg_trail_01, weapons\rpg_trail_02
+
+explode_particles	= explosions\explosion_01
+
+light_color		    = 1.9,1.4,0.5
+light_range		    = 14.0
+light_time 		    = 0.85
+
+ph_mass			 = 5
+;engine_f			= 530
+;engine_u			= 90
+
+jump_height = 1
+
+;трассы от осколков
+fragment_speed		= 240
+
+wm_size         	= 0.05
+;wallmarks
+wallmark_section		 = explosion_marks
+explode_duration		 = 5		;подолжительность взрыва (с)
+
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+
+;свойства которые читаются, но не используются
+inv_name		= ammo-vog-25p
+inv_name_short	= ammo-vog-25p
+inv_weight		= .2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 31
+inv_grid_y			= 59
+
+kill_msg_x			= 38
+kill_msg_y			= 233
+kill_msg_width		= 21
+kill_msg_height		= 22
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Свойства CustomRocket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+engine_present		= false		;присутствует ли в ракете двигатель
+lights_enabled 		= true			;свет вокруг ракеты, во время полета
+trail_light_color 	= 0.6,0.5,0.3
+trail_light_range 	= 8.0
+force_explode_time  = 10000
+
+[wpn_fake_missile2]:identity_immunities,default_weapon_params
+$prefetch 		= 32
+visual              = dynamics\weapons\wpn_ammo\ammo_m209.ogf
+cform               = skeleton
+class               = G_FAKE
+description			=
+inv_weight			= 0
+
+cost				= 150
+
+blast				= 5.2 ;3.0
+blast_r				= 4.7 ;4
+blast_impulse		= 174 ;100
+;delete
+blast_impulse_factor = 1
+
+
+frags				= 94 ;10
+frags_r				= 28 ;10
+frag_hit			= 0.074 ;0.50
+frag_hit_impulse	=  44 ;50
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.36
+
+;trail				= weapons\rpg_trail_01, weapons\rpg_trail_02
+
+explode_particles	= explosions\explosion_01
+
+light_color		         = 1.9,1.4,0.5
+light_range		         = 14.0
+light_time 		         = 0.85
+
+ph_mass			 = 5
+;engine_f			= 530
+;engine_u			= 90
+
+jump_height = 1
+
+;трассы от осколков
+fragment_speed				= 190
+;wallmarks
+wallmark_section			= explosion_marks
+wm_size						= 0.1 ;0.05
+
+explode_duration			 = 5		;подолжительность взрыва (с)
+
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+
+;свойства которые читаются, но не используются
+inv_name		= ammo-m209
+inv_name_short	= "M209"
+inv_weight		= .2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 16
+inv_grid_y			= 5
+
+kill_msg_x			= 61
+kill_msg_y			= 232
+kill_msg_width		= 19
+kill_msg_height		= 22
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Свойства CustomRocket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+engine_present		= false		;присутствует ли в ракете двигатель
+lights_enabled 		= true			;свет вокруг ракеты, во время полета
+trail_light_color 	= 0.6,0.5,0.3
+trail_light_range 	= 8.0
+force_explode_time  = 10000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Explosive Inventory Items
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[explosive_tank]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\tank"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\balon\kanistra.ogf
+description			= st_jerrycan_fuel_descr
+inv_name			= st_jerrycan_item
+inv_name_short		= st_jerrycan_item
+inv_weight			= .1
+
+inv_grid_width     = 2
+inv_grid_height    = 2
+inv_grid_x         = 2
+inv_grid_y         = 30
+;вещь невозможно подобрать
+can_take			= true
+
+cost				= 50
+;-------------------------------------------------------------------------------
+blast				= 4.6
+blast_r				= 6.4
+blast_impulse		= 130
+;delete
+blast_impulse_factor = 1
+
+frags				= 28
+frags_r				= 36
+frag_hit			= 0.11
+frag_hit_impulse	= 66
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.54
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_mobiltank
+
+light_color		         = 1.9,1.3,0.5
+light_range		         = 30.0
+light_time 		         = 1
+
+;трассы от осколков
+fragment_speed				= 224		;скорость осколков (м/с)
+
+explode_duration		 = 2		;подолжительность взрыва (с)
+;wallmarks
+wallmark_section		= explosion_marks
+
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+immunities_sect			= explosive_tank_immunities_sect
+
+[explosive_tank_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.14
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.77
+fire_wound_immunity		= 0.68
+
+[explosive_barrel_low]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\barrel_low"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\balon\bochka_fuel.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 4.9
+blast_r				= 7.6
+blast_impulse		= 188
+;delete
+blast_impulse_factor = 1
+
+frags				= 66
+frags_r				= 37
+frag_hit			= 0.11
+frag_hit_impulse	= 51
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.66
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_barrel
+
+light_color		         = 1.9,1.4,0.5
+light_range		         = 14.0
+light_time 		         = 0.85
+
+;трассы от осколков
+fragment_speed				= 186		;скорость осколков (м/с)
+
+explode_duration		 = 5		;подолжительность взрыва (с)
+
+;wallmarks
+wallmark_section		 = explosion_marks
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+immunities_sect			= explosive_barrel_low_new_immunities_sect
+
+[explosive_barrel_low_new_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.11
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.74
+fire_wound_immunity		= 0.61
+
+;time_to_explode			= 0.f
+
+[explosive_grenade]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\explosive_grenade"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\weapons\wpn_grenades\wpn_f1.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 2.50
+blast_r				= 3
+blast_impulse		= 250
+;delete
+blast_impulse_factor = 1
+
+
+frags				= 15
+frags_r				= 5
+frag_hit			= 0.75
+frag_hit_impulse	= 150
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 1.0
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_01
+
+light_color		         = 1.9,1.4,0.5
+light_range		         = 14.0
+light_time 		         = 0.85
+
+;трассы от осколков
+fragment_speed				= 204		;скорость осколков (м/с)
+
+explode_duration		 = 2		;подолжительность взрыва (с)
+
+;wallmarks
+wallmark_section		 = explosion_marks
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+immunities_sect			= explosive_explosive_grenade_immunities_sect
+
+;time_to_explode			= 0.f
+
+;------------------------ pri_a25_enter_door_explosive_grenade --------------
+[pri_a25_enter_door_explosive_grenade]:explosive_grenade
+$spawn              = "dynamic_objects\scene_objects\pri_a25_enter_door_explosive_grenade"
+story_id 			= pri_a25_enter_door_explosive_grenade
+hit_type_blast = chemical_burn
+hit_type_frag = chemical_burn
+visual				= dynamics\light\light_signal.ogf
+
+
+;------------------------- pri_a25_antenna_grenade --------------
+[pri_a25_antenna_grenade]:explosive_grenade
+$spawn              = "dynamic_objects\scene_objects\pri_a25_antenna_grenade"
+story_id 			= pri_a25_antenna_grenade
+visual				= dynamics\light\light_signal.ogf
+
+
+[explosive_explosive_grenade_immunities_sect]
+burn_immunity			= 0.0
+strike_immunity			= 0.0
+shock_immunity			= 0.0
+wound_immunity			= 0.0
+radiation_immunity		= 0.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.0
+fire_wound_immunity		= 0.0
+
+
+[explosive_hide]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\explosive_hide"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\weapons\wpn_grenades\wpn_f1.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 1.00
+blast_r				= 30
+blast_impulse		= 500
+;delete
+blast_impulse_factor = 1
+
+
+frags				= 15
+frags_r				= 20
+frag_hit			= 0.05
+frag_hit_impulse	= 50
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 1.0
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_01
+
+light_color		         = 1.9,1.4,0.5
+light_range		         = 14.0
+light_time 		         = 0.85
+
+;трассы от осколков
+fragment_speed				= 200		;скорость осколков (м/с)
+
+explode_duration		 = 5		;подолжительность взрыва (с)
+
+;wallmarks
+wallmark_section		 = explosion_marks
+;звуки
+snd_explode = wpn_fake_vog-25_explode
+immunities_sect			= explosive_hide_immunities_sect
+
+;time_to_explode			= 0.f
+
+[explosive_hide_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 0.0
+shock_immunity			= 0.0
+wound_immunity			= 0.0
+radiation_immunity		= 0.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.0
+fire_wound_immunity		= 0.0
+
+[explosive_particle]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\explosive_particle"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\weapons\wpn_grenades\wpn_f1.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 3.6
+blast_r				= 5.2
+blast_impulse		= 138
+;delete
+blast_impulse_factor = 1
+
+frags				= 52
+frags_r				= 36
+frag_hit			= 0.08
+frag_hit_impulse	= 51
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.47
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_concrete_box
+
+light_color		         = 0,0,0
+light_range		         = 0.0
+light_time 		         = 0.85
+
+;трассы от осколков
+fragment_speed				= 195		;скорость осколков (м/с)
+
+explode_duration		 = 2		;подолжительность взрыва (с)
+
+;wallmarks
+wallmark_section		 = explosion_marks
+;звуки
+snd_explode = weapons\f1_explode_
+immunities_sect			= explosive_barrel_low_immunities_sect
+
+;time_to_explode			= 0.f
+
+
+[explosive_barrel_low_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.11
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.74
+fire_wound_immunity		= 0.61
+
+
+[explosive_barrel]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\barrel"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\balon\bochka_fuel.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= .1
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 5.4
+blast_r				= 8.2
+blast_impulse		= 196
+;delete
+blast_impulse_factor = 1
+
+frags				= 78
+frags_r				= 42
+frag_hit			= 0.13
+frag_hit_impulse	= 51
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.73
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_barrel
+
+light_color		         = 1.9,1.4,0.5
+light_range		         = 14.0
+light_time 		         = 0.85
+
+;трассы от осколков
+fragment_speed				= 215		;скорость осколков (м/с)
+
+explode_duration		 = 3		;подолжительность взрыва (с)
+
+
+;звуки
+snd_explode = barrel_explode_snd
+immunities_sect			= explosive_barrel_immunities_sect
+;wallmarks
+wallmark_section		= explosion_marks
+
+[explosive_barrel_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.08
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.61
+fire_wound_immunity		= 0.52
+
+
+[explosive_fuelcan]:explosive_barrel
+$spawn 				= "weapons\explosive\fuelcan"
+visual		 		= dynamics\balon\balon_01.ogf
+
+
+[explosive_gaz_balon]:explosive_fuelcan
+$spawn                        = "weapons\explosive\gaz_balon"
+visual                        = dynamics\balon\gaz_balon.ogf 
+
+
+
+[explosive_mobiltank]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\mobiltank"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual				= dynamics\balon\kanistra.ogf
+description			= st_jerrycan_fuel_descr
+inv_name			= st_jerrycan_item
+inv_name_short		= st_jerrycan_item
+inv_weight			= .1
+
+inv_grid_width     = 2
+inv_grid_height    = 2
+inv_grid_x         = 2
+inv_grid_y         = 30
+;вещь невозможно подобрать
+can_take			= true
+
+cost				= 500
+;-------------------------------------------------------------------------------
+blast				= 4.6
+blast_r				= 7.5
+blast_impulse		= 166
+;delete
+blast_impulse_factor = 1
+
+frags				= 57
+frags_r				= 34
+frag_hit			= 0.09
+frag_hit_impulse	= 46
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.66
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_mobiltank
+
+light_color		         = 1.9,1.2,0.5
+light_range		         = 30.0
+light_time 		         = 1
+
+;трассы от осколков
+fragment_speed				= 208		;скорость осколков (м/с)
+
+explode_duration		 = 2		;подолжительность взрыва (с)
+
+
+;звуки
+snd_explode = barrel_explode_snd
+immunities_sect			= explosive_mobiltank_immunities_sect
+;wallmarks
+wallmark_section		= explosion_marks
+
+[explosive_mobiltank_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.11
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.67
+fire_wound_immunity		= 0.56
+
+
+[explosive_dinamit]:identity_immunities,delayed_action_fuse,default_weapon_params
+
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\dinamit"
+$prefetch			= 16
+class				= S_EXPLO
+cform				= skeleton
+visual		 		= dynamics\box\expl_dinamit.ogf
+inv_name			=
+inv_name_short		=
+inv_weight			= 10.0
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 9
+
+;вещь невозможно подобрать
+can_take			= false
+
+cost				= 50
+;-------------------------------------------------------------------------------
+blast				= 4.3
+blast_r				= 6.7
+blast_impulse		= 153
+;delete
+blast_impulse_factor = 1
+
+frags				= 84
+frags_r				= 46
+frag_hit			= 0.03
+frag_hit_impulse	= 31
+
+hit_type_blast		= explosion
+hit_type_frag		= fire_wound
+
+up_throw_factor		= 0.44
+;-------------------------------------------------------------------------------
+wm_size                  = 0.1
+
+explode_particles		 = explosions\explosion_dynamite
+
+light_color		         = 1.9,1.3,0.5
+light_range		         = 30.0
+light_time 		         = 1.5
+
+;трассы от осколков
+fragment_speed				= 220
+
+explode_duration		 = 3		;подолжительность взрыва (с)
+
+;звуки
+snd_explode = weapons\f1_explode
+immunities_sect			= dinamit_immunities_sect
+;condition_to_explode        =0.f
+;wallmarks
+wallmark_section		= explosion_marks
+
+[dinamit_immunities_sect]
+;коэффициенты для попаданий различными типами хитов
+burn_immunity			= 0.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 0.03
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 0.88
+fire_wound_immunity		= 0.13
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[gl_test_shell]:delayed_action_fuse,grenade_rgd5,wpn_fake_missile
+class				= II_EXPLO
+visual			= grenadier\ammo_vog-25.ogf
+inv_name			= .
+inv_name_short		= .
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 50
+inv_grid_y			= 50
+
+immunities_sect		= gl_test_shell_immunities
+wm_size			= 0.1
+ph_mass			= 5
+
+[gl_test_shell_ammo_vog-25]:gl_test_shell
+visual					= grenadier\ammo_vog-25.ogf
+[gl_test_shell_ammo_vog-25p]:gl_test_shell
+visual					= grenadier\ammo_vog-25p.ogf
+[gl_test_shell_ammo_m209]:gl_test_shell
+visual					= grenadier\ammo_m209.ogf
+
+[gl_fake_missile]:delayed_action_fuse
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "weapons\explosive\gl_fake_missile"
+$prefetch			= 16
+class				= II_EXPLO
+cform				= skeleton
+cost				= 0
+inv_name			= .
+inv_name_short		= .
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 50
+inv_grid_y			= 50
+can_take			= true
+immunities_sect		= gl_test_shell_immunities ;gl_fake_missile_immunities
+time_to_explode		= 0.f
+wm_size			= 0.1
+ph_mass			= 5
+explode_duration		= 3
+
+[gl_fake_missile_ammo_vog-25]:wpn_fake_missile,gl_fake_missile
+inv_grid_x = 15
+inv_grid_y = 5
+[gl_fake_missile_ammo_vog-25p]:wpn_fake_missile1,gl_fake_missile
+inv_grid_x = 31
+inv_grid_y = 59
+[gl_fake_missile_ammo_m209]:wpn_fake_missile2,gl_fake_missile
+inv_grid_x = 16
+inv_grid_y = 5
+
+[gl_fake_missile_immunities]
+burn_immunity			= 0.6
+strike_immunity			= 1
+shock_immunity			= 1
+wound_immunity			= 0.1
+radiation_immunity		= 0
+telepatic_immunity		= 0
+chemical_burn_immunity		= 0.3
+explosion_immunity		= 1
+fire_wound_immunity		= 0.7
+
+[gl_test_shell_immunities]
+burn_immunity			= 0
+strike_immunity			= 0
+shock_immunity			= 0
+wound_immunity			= 0
+radiation_immunity		= 0
+telepatic_immunity		= 0
+chemical_burn_immunity		= 0
+explosion_immunity		= 0
+fire_wound_immunity		= 0

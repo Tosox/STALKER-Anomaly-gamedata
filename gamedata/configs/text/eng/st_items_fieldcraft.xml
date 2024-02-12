@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	UNUSED!
+	Fieldcraft Crafting Overhaul
+
+
+<string_table>
+	<string id="fieldcraft_survivalguide_name">
+		<text>Ukrainian Special Forces Survival Guide (No.76)</text>
+	</string>
+	<string id="fieldcraft_survivalguide_descr">
+		<text>You have studied many survival guides like this one throughout your travels. Nevertheless, it still holds some educational value, and might come in handy when you are forced to manufacture some makeshift equipment in the field. Provides compact instructions on how craft several useful items: \n • Medkit \n • Improvised stimpack \n • Backpack \n • Sleeping bag \n • Chemical IED \n • RPG IED \n • Proximity mine \n • Improvised protective plate \n • Army kettle \n • Handgun repair kit \n • Shotgun repair kit \n • Smallbore rifle repair kit \n • Medium and large calibre rifle fixing kit \n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting guide\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon cleaning and lubrication (+3%)</text> 
+	</string>
+	
+	<string id="fieldcraft_pkg_medkit_0_name">
+		<text>Crafting package: Medkit</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_0_descr">
+		<text>An organised package for crafting a medkit. According to the survival guide, you need to gather the following items:\n - 1x Sewing kit \n - 1x Bandage \n - Strong alcohol \n - 1x Textile sheet \n \nAdd these items in order. Add a sewing kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_1_name">
+		<text>Crafting package: Medkit</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_1_descr">
+		<text>An organised package for crafting a medkit. According to the survival guide, you need to gather the following items:\n - 1x Sewing kit \n - 1x Bandage \n - Strong alcohol \n - 1x Textile sheet \n \nAdd these items in order. Add bandage next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_2_name">
+		<text>Crafting package: Medkit</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_2_descr">
+		<text>An organised package for crafting a medkit. According to the survival guide, you need to gather the following items:\n - 1x Sewing kit \n - 1x Bandage \n - Strong alcohol \n - 1x Textile sheet \n \nAdd these items in order. Add strong alcohol next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_3_name">
+		<text>Crafting package: Medkit</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_3_descr">
+		<text>An organised package for crafting a medkit. According to the survival guide, you need to gather the following items:\n - 1x Sewing kit \n - 1x Bandage \n - Strong alcohol \n - 1x Textile sheet \n \nAdd these items in order. Add a textile sheet next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_4_name">
+		<text>Crafting package: Medkit (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_medkit_4_descr">
+		<text>An organised package for crafting a medkit. According to the survival guide, you need to gather the following items:\n - 1x Sewing kit \n - 1x Bandage \n - Strong alcohol \n - 1x Textile sheet \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_stimpack_0_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_0_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add empty syringe next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_1_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_1_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add alcohol next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_2_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_2_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add drug-making kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_3_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_3_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add vinca next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_4_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_4_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add chlortetracyclin next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_5_name">
+		<text>Crafting package: Improvised stimpack</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_5_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nAdd these items in order. Add field cutlery next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_6_name">
+		<text>Crafting package: Improvised stimpack (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_stimpack_6_descr">
+		<text>An organised package for crafting a stimpack. According to the survival guide, you need to gather the following items:\n - 1x Empty syringe \n - 1x Alcohol \n - Drug-making kit \n - 1x Vinca (blood coagulant) \n - 1x Chlortetracyclin (antibiotic) \n - TOOL: Field cutlery (reusable) \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_backpack_0_name">
+		<text>Crafting package: Backpack</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_0_descr">
+		<text>An organised package for crafting a backpack. According to the survival guide, you need to gather the following items:\n - Compression bag \n - Synthetic harness \n - Sewing kit \n \nAdd these items in order. Add a compression bag next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_1_name">
+		<text>Crafting package: Backpack</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_1_descr">
+		<text>An organised package for crafting a backpack. According to the survival guide, you need to gather the following items:\n - Compression bag \n - Synthetic harness \n - Sewing kit \n \nAdd these items in order. Add a synthetic harness next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_2_name">
+		<text>Crafting package: Backpack</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_2_descr">
+		<text>An organised package for crafting a backpack. According to the survival guide, you need to gather the following items:\n - Compression bag \n - Synthetic harness \n - Sewing kit \n \nAdd these items in order. Add a sewing kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_3_name">
+		<text>Crafting package: Backpack (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_backpack_3_descr">
+		<text>An organised package for crafting a backpack. According to the survival guide, you need to gather the following items:\n - Compression bag \n - Synthetic harness \n - Sewing kit \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_sleepbag_0_name">
+		<text>Crafting package: Sleeping bag</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_0_descr">
+		<text>An organised package for crafting a sleeping bag. According to the survival guide, you need to gather the following items:\n - Camouflaged tarpaulin \n - Bed spread \n - Sewing kit \n \nAdd these items in order. Add a camouflaged tarpaulin next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_1_name">
+		<text>Crafting package: Sleeping bag</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_1_descr">
+		<text>An organised package for crafting a sleeping bag. According to the survival guide, you need to gather the following items:\n - Camouflaged tarpaulin \n - Bed spread \n - Sewing kit \n \nAdd these items in order. Add a bed spread next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_2_name">
+		<text>Crafting package: Sleeping bag</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_2_descr">
+		<text>An organised package for crafting a sleeping bag. According to the survival guide, you need to gather the following items:\n - Camouflaged tarpaulin \n - Bed spread \n - Sewing kit \n \nAdd these items in order. Add a sewing kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_3_name">
+		<text>Crafting package: Sleeping bag (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_sleepbag_3_descr">
+		<text>An organised package for crafting a sleeping bag. According to the survival guide, you need to gather the following items:\n - Camouflaged tarpaulin \n - Bed spread \n - Sewing kit \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_ied_0_name">
+		<text>Crafting package: Chemical IED</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_0_descr">
+		<text>An organised package for crafting a chemical IED. According to the survival guide, you need to gather the following items:\n - Gasoline (jerrycan) \n - Thermite grenade \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add some gasoline next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_1_name">
+		<text>Crafting package: Chemical IED</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_1_descr">
+		<text>An organised package for crafting a chemical IED. According to the survival guide, you need to gather the following items:\n - Gasoline (jerrycan) \n - Thermite grenade \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add a thermite grenade next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_2_name">
+		<text>Crafting package: Chemical IED</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_2_descr">
+		<text>An organised package for crafting a chemical IED. According to the survival guide, you need to gather the following items:\n - Gasoline (jerrycan) \n - Thermite grenade \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add copper wire next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_3_name">
+		<text>Crafting package: Chemical IED</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_3_descr">
+		<text>An organised package for crafting a chemical IED. According to the survival guide, you need to gather the following items:\n - Gasoline (jerrycan) \n - Thermite grenade \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add a proximity device next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_4_name">
+		<text>Crafting package: Chemical IED (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_ied_4_descr">
+		<text>An organised package for crafting a chemical IED. According to the survival guide, you need to gather the following items:\n - Gasoline (jerrycan) \n - Thermite grenade \n - Copper wire \n - Proximity device \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_iedrpg_0_name">
+		<text>Crafting package: RPG warhead IED</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_0_descr">
+		<text>An organised package for crafting the RPG warhead IED. According to the survival guide, you need to gather the following items:\n - 1x Rpg ammo \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add the rpg ammo next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_1_name">
+		<text>Crafting package: RPG warhead IED</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_1_descr">
+		<text>An organised package for crafting the RPG warhead IED. According to the survival guide, you need to gather the following items:\n - 1x Rpg ammo \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add copper wire next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_2_name">
+		<text>Crafting package: RPG warhead IED</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_2_descr">
+		<text>An organised package for crafting the RPG warhead IED. According to the survival guide, you need to gather the following items:\n - 1x Rpg ammo \n - Copper wire \n - Proximity device \n \nAdd these items in order. Add a proximity device next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_3_name">
+		<text>Crafting package: RPG warhead IED (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_iedrpg_3_descr">
+		<text>An organised package for crafting the RPG warhead IED. According to the survival guide, you need to gather the following items:\n - 1x Rpg ammo \n - Copper wire \n - Proximity device \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_mine_0_name">
+		<text>Crafting package: Mine</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_0_descr">
+		<text>An organised package for crafting a proximity mine. According to the survival guide, you need to gather the following items:\n - 1x Explosive grenade / grenade launcher ammo\n - Copper wire \n - Plastic pieces \n \nAdd these items in order. Add a grenade next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_1_name">
+		<text>Crafting package: Mine</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_1_descr">
+		<text>An organised package for crafting a proximity mine. According to the survival guide, you need to gather the following items:\n - 1x Explosive grenade / grenade launcher ammo\n - Copper wire \n - Plastic pieces \n \nAdd these items in order. Add a copper wire next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_2_name">
+		<text>Crafting package: Mine</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_2_descr">
+		<text>An organised package for crafting a proximity mine. According to the survival guide, you need to gather the following items:\n - 1x Explosive grenade / grenade launcher ammo\n - Copper wire \n - Plastic pieces \n \nAdd these items in order. Add plastic pieces next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_3_name">
+		<text>Crafting package: Mine (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_mine_3_descr">
+		<text>An organised package for crafting a proximity mine. According to the survival guide, you need to gather the following items:\n - 1x Explosive grenade / grenade launcher ammo\n - Copper wire \n - Plastic pieces \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+
+	<string id="fieldcraft_pkg_plate_attch_0_name">
+		<text>Crafting package: Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_0_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a metal plate next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_1_name">
+		<text>Crafting package: Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_1_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a metal plate next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_2_name">
+		<text>Crafting package: Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_2_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add metal scrap next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_3_name">
+		<text>Crafting package: Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_3_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a synthetic harness next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_4_name">
+		<text>Crafting package: Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_4_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a hammer next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_5_name">
+		<text>Crafting package: Improvised protective plate (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_plate_attch_5_descr">
+		<text>An organised package for crafting an improvised protective plate. According to the survival guide, you need to gather the following items:\n - 2x Metal plate\n - Some screws, bolts (metal scrap) \n - Synthetic harness \n - TOOL: Hammer (reusable) \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_pkg_army_bowler_0_name">
+		<text>Crafting package: Army kettle</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_0_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a cooking equipment next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_1_name">
+		<text>Crafting package: Army kettle</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_1_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a metal plate next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_2_name">
+		<text>Crafting package: Army kettle</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_2_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add metal scrap next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_3_name">
+		<text>Crafting package: Army kettle</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_3_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add copper wire next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_4_name">
+		<text>Crafting package: Army kettle</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_4_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nAdd these items in order. Add a hammer next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_5_name">
+		<text>Crafting package: Army kettle (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_army_bowler_5_descr">
+		<text>An organised package for crafting an army kettle. According to the survival guide, you need to gather the following items:\n - A pot from another cooking equipment\n - Metal plate\n - Few bolts, handles (metal scrap) \n - Copper wire \n - TOOL: Hammer (reusable) \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	
+	<string id="fieldcraft_pkg_toolkit_p_0_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_0_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a gun oil / solvent next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_1_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_1_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a spring next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_2_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_2_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a trigger mechanism next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_3_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_3_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a suitable cleaning kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_4_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_4_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a pistol grip next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_5_name">
+		<text>Crafting package: Handgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_5_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nAdd these items in order. Add a swiss knife next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_6_name">
+		<text>Crafting package: Handgun repair kit (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_p_6_descr">
+		<text>An organised package for crafting a handgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Pistol grip \n - Swiss knife \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	
+	<string id="fieldcraft_pkg_toolkit_s_0_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_0_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a gun oil / solvent next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_1_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_1_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a spring next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_2_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_2_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a trigger mechanism next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_3_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_3_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a suitable cleaning kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_4_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_4_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a rifle stock next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_5_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_5_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a crowbar next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_6_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_6_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a smoothbore barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_7_name">
+		<text>Crafting package: Shotgun repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_7_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nAdd these items in order. Add a smoothbore barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_8_name">
+		<text>Crafting package: Shotgun repair kit (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_s_8_descr">
+		<text>An organised package for crafting a shotgun repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Rifle stock \n - Crowbar \n - 2x Smoothbore barrel \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	
+	<string id="fieldcraft_pkg_toolkit_r5_0_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_0_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a gun oil / solvent next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_1_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_1_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a spring next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_2_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_2_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a trigger mechanism next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_3_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_3_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a suitable cleaning kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_4_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_4_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a bolt carrier next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_5_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_5_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a rifle stock next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_6_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_6_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a crowbar next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_7_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_7_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a 5.45 barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_8_name">
+		<text>Crafting package: Smallbore rifle repair kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_8_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nAdd these items in order. Add a 5.56 barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_9_name">
+		<text>Crafting package: Smallbore rifle repair kit (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r5_9_descr">
+		<text>An organised package for crafting a smallbore rifle repair kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 5.45 barrel \n - 5.56 barrel \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	
+	<string id="fieldcraft_pkg_toolkit_r7_0_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_0_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a gun oil / solvent next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_1_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_1_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a spring next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_2_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_2_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a trigger mechanism next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_3_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_3_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a suitable cleaning kit next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_4_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_4_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a bolt carrier next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_5_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_5_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a rifle stock next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_6_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_6_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a crowbar next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_7_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_7_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a 7.62 barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_8_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_8_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a 7.92 barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_9_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_9_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nAdd these items in order. Add a 9mm barrel next.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_10_name">
+		<text>Crafting package: Medium and large calibre rifle fixing kit (ready)</text>
+	</string>
+	<string id="fieldcraft_pkg_toolkit_r7_10_descr">
+		<text>An organised package for crafting a medium and large calibre rifle fixing kit. According to the survival guide, you need to gather the following items:\n - Gun oil / solvent\n - Spring\n - Trigger mechanism\n - Suitable cleaning kit \n - Bolt carrier \n - Rifle stock \n - Crowbar \n - 7.62 barrel \n - 7.92 barrel \n - 9mm barrel \n \nReady to be crafted.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] crafting package</text>
+	</string>
+	
+	<string id="fieldcraft_plate_attch_name">
+		<text>Improvised protective plate</text>
+	</string>
+	<string id="fieldcraft_plate_attch_descr">
+		<text>A makeshift protective plate consisting from two sheets of metal plate taken out of an armoured vest. It performs a wide variety of functions, the most important of which is absorbing the impact of firearm projectiles. Using the attached synthetic harness, it can be strapped around the front or the back of the torso. It has limited protective capabilities - constitutes a cheap but weaker alternative to kevlar or steel plates. Additionally, any type of armour plating also helps to maintain suits in good condition, preventing degradation through wear and tear.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] improvised military item\n%c[d_cyan] • %c[ui_gray_2] effectiveness of mult. units is stackable\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] outfit repairs (+9%)</text>
+	</string>
+	<string id="syringe_empty_name">
+		<text>Empty syringe</text>
+	</string>
+	<string id="syringe_empty_descr">
+		<text>Syringes are frequently used in clinical medicine to administer injections, infuse intravenous therapy into the bloodstream, apply compounds such as glue or lubricant, and draw/measure liquids. This syringe has been previously used and there are still a few drops of residual liquid visible inside the barrel. Should be disinfected before it's used again.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] medical item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] crafting (stimpack)</text>
+	</string>
+	<string id="dis_metalplate_name">
+		<text>Metal plate</text>
+	</string>
+	<string id="dis_metalplate_descr">
+		<text>A worn sheet of strong metal torn out of a protective layer of some armoured outfit. Could still be used to repair or craft another equipment.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] everyday item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] outfit repairs (+5%)</text>
+	</string>
+	<string id="dis_scrap_name">
+		<text>Various metallic scrap</text>
+	</string>
+	<string id="dis_scrap_descr">
+		<text>Handful of metal bolts, screws, bits and pieces of equipment. Could be used to aid in repairing gear in the field, or perhaps even in crafting.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] everyday item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] outfit repairs, weapon maintenance (+3%)</text>
+	</string>
+	<string id="st_copper_wire_name">
+		<text>Copper wire</text>
+	</string>
+	<string id="st_copper_wire_descr">
+		<text>An uncoated solid copper wire, crudely taken out of some oufit or electrical device. Could still have some other use.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] technological item \n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] outfit repairs (+4%)</text>
+	</string>
+	<string id="st_synth_harness_name">
+		<text>Synthetic harness</text>
+	</string>
+	<string id="st_synth_harness_descr">
+		<text>A makeshift arrangement of synthetic straps looped together, fitted to fasten some other item in place.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] technological item</text>
+	</string>
+	<string id="st_proxim_device_name">
+		<text>Proximity device</text>
+	</string>
+	<string id="st_proxim_device_descr">
+		<text>Functional proximity sensor taken out from the artefact detector. Can be used for setting up various explosives.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] technological item</text>
+	</string>
+	<string id="st_cloth_strip">
+		<text>Cloth strip</text>
+	</string>
+	<string id="st_cloth_strip_descr">
+		<text>A piece of cloth cut from a shirt or sheet or something. Could be used to aid in cleaning gear. Large enough to be used as a bandage, but should probably be disinfected first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] everyday item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] outfit repairs, weapon maintenance (+1%)</text>
+	</string>
+	<string id="st_shotgunbarrelw">
+		<text>Smoothbore barrel (worn)</text>
+	</string>
+	<string id="st_shotgunbarrelw_descr">
+		<text>A worn-out smoothbore barrel from a 12 gauge shotgun. It could be used to replace the barrel of a different shotgun, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_shotgunbarrelr">
+		<text>Smoothbore barrel (rusted)</text>
+	</string>
+	<string id="st_shotgunbarrelr_descr">
+		<text>A rusty smoothbore barrel from a 12 gauge shotgun. Worthless in its current state, but you might be able to clean it up.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange]</text>
+	</string>
+	<string id="st_762_barrel">
+		<text>7.62 barrel</text>
+	</string>
+	<string id="st_762_barrel_descr">
+		<text>The barrel from some Soviet weapon that used a 7.62mm diameter cartridge. Still in pretty decent condition, it could be used to replace the barrel of a similar gun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_762_barrelw">
+		<text>7.62 barrel (worn)</text>
+	</string>
+	<string id="st_762_barrelw_descr">
+		<text>A worn-out barrel from some Soviet weapon that used a 7.62mm diameter cartridge. It could be used to replace the barrel of another rifle, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_762_barrelr">
+		<text>7.62 barrel (rusted)</text>
+	</string>
+	<string id="st_762_barrelr_descr">
+		<text>A rusty barrel from a 7.62 rifle. Worthless in its current state, but you might be able to clean it up.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange]</text>
+	</string>
+	<string id="st_545_barrel">
+	<text>5.45 barrel</text>
+	</string>
+	<string id="st_545_barrel_descr">
+		<text>The barrel from some weapon that used a 5.45mm diameter cartridge. Still in pretty decent condition, it could be used to replace the barrel of a similar gun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_545_barrelw">
+		<text>5.45 barrel (worn)</text>
+	</string>
+	<string id="st_545_barrelw_descr">
+		<text>A worn-out barrel from some weapon that used a 5.45mm diameter cartridge. It could be used to replace the barrel of another rifle, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_545_barrelr">
+		<text>5.45 barrel (rusted)</text>
+	</string>
+	<string id="st_545_barrelr_descr">
+		<text>A rusty barrel from a 5.45 rifle. Worthless in its current state, but you might be able to clean it up.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange]</text>
+	</string>
+		<string id="st_556_barrel">
+		<text>5.56 barrel</text>
+	</string>
+	<string id="st_556_barrel_descr">
+		<text>The barrel from some weapon that used a 5.56mm diameter cartridge. Still in pretty decent condition, it could be used to replace the barrel of a similar gun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_556_barrelw">
+		<text>5.56 barrel (worn)</text>
+	</string>
+	<string id="st_556_barrelw_descr">
+		<text>A worn-out barrel from some weapon that used a 5.56mm diameter cartridge. It could be used to replace the barrel of another rifle, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_556_barrelr">
+		<text>5.56 barrel (rusted)</text>
+	</string>
+	<string id="st_556_barrelr_descr">
+		<text>A rusty barrel from a 5.56 rifle. Worthless in its current state, but you might be able to clean it up.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange]</text>
+	</string>
+	<string id="st_9x_barrel">
+		<text>9mm barrel</text>
+	</string>
+	<string id="st_9x_barrel_descr">
+		<text>The barrel from some weapon that used a 9mm diameter cartridge. Still in pretty decent condition, it could be used to replace the barrel of a similar gun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_9x_barrelw">
+		<text>9mm barrel (worn)</text>
+	</string>
+	<string id="st_9x_barrelw_descr">
+		<text>A worn-out barrel from some weapon that used a 9mm diameter cartridge. It could be used to replace the barrel of another rifle, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_792_barrel">
+		<text>7.92 barrel</text>
+	</string>
+	<string id="st_792_barrel_descr">
+		<text>The barrel from a weapon that used a 7.92mm diameter cartridge. Still in pretty decent condition, it could be used to replace the barrel of a similar gun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_792_barrelw">
+		<text>7.92 barrel (worn)</text>
+	</string>
+	<string id="st_792_barrelw_descr">
+		<text>A worn-out barrel from a weapon that used a 7.92mm diameter cartridge. It could be used to replace the barrel of another rifle, but you're better off cleaning it up first.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+10%)</text>
+	</string>
+	<string id="st_stock">
+		<text>Rifle stock</text>
+	</string>
+	<string id="st_stock_descr">
+		<text>The buttstock and furniture from a rifle or shotgun. Can be used to refurbish a weapon.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+6%)</text>
+	</string>
+	<string id="st_shotgunbarrel">
+		<text>Smoothbore barrel</text>
+	</string>
+	<string id="st_shotgunbarrel_descr">
+		<text>A smoothbore barrel from a 12 gauge shotgun. Still in pretty decent condition, it could be used to replace the barrel of a different shotgun.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+20%)</text>
+	</string>
+	<string id="st_trigger">
+		<text>Trigger mechanism</text>
+	</string>
+	<string id="st_trigger_descr">
+		<text>The trigger mechanism and assembly from an unknown firearm. Most triggers are very similar, and there's no reasno this one couldn't be shaved down to fit almost any weapon.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+5%)</text>
+	</string>
+	<string id="st_triggerrusty">
+		<text>Trigger mechanism (rusted)</text>
+	</string>
+	<string id="st_triggerrusty_descr">
+		<text>A rust covered trigger mechanism and assembly from an unknown firearm. Worthless in its current condition, but with the application of some solvents or oils, could be made into a working trigger assembly again.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange]</text>
+	</string>
+	<string id="st_spspring">
+		<text>Spring</text>
+	</string>
+	<string id="st_spspring_descr">
+		<text>A small spring from either the trigger assembly or inner workings of an unknown firearm. Could probably be adapted to replace almost any small spring.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+2%)</text>
+	</string>
+	<string id="st_pistolgrip">
+		<text>Pistol grip</text>
+	</string>
+	<string id="st_pistolgrip_descr">
+		<text>Pistol grips from some unknown weapon. This rubberised handle could probably be shaped or molded to fit almost any firearm.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+6%)</text>
+	</string>
+	<string id="st_boltcarrier">
+		<text>Bolt carrier</text>
+	</string>
+	<string id="st_boltcarrier_descr">
+		<text>The bolt carrier and firing pin from an unknown rifle. Too large to fit any weapon that utilises pistol calibre rounds, but may be useful to replace a damaged firing pin or bolt in almost any type of rifle. If ground down, it may even fit certain submachine guns.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon maintenance (+8%)</text>
+	</string>
+	<string id="st_boltcarrierrusty">
+		<text>Bolt carrier (rusted)</text>
+	</string>
+	<string id="st_boltcarrierrusty_descr">
+		<text>A rusted bolt carrier and firing pin from an unknown rifle. Too large to fit any weapon that utilises pistol calibre rounds, but could be used to replace a damaged firing pin or bolt in almost any type of rifle if you can clean it up. If ground down, it may even fit certain submachine guns.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item</text>
+	</string>
+	<string id="st_barrelkit_762">
+		<text>Barrel swap kit (7.62mm)</text>
+	</string>
+	<string id="st_barrelkit_762_descr">
+		<text>This is a specialised kit for replacing the barrels of various rifles in the field. Includes allen wrenches of various sizes, and some basic calibration tools. This particular kit can be used for weapons with a barrel diameter of 7.62mm.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon repair\n%c[d_orange] • %c[ui_gray_2] not usable below condition level %c[ui_gray_1] 45%</text>
+	</string>
+	<string id="st_barrelkit_545">
+		<text>Barrel swap kit (5.45mm)</text>
+	</string>
+	<string id="st_barrelkit_545_descr">
+		<text>This is a specialised kit for replacing the barrels of various rifles in the field. Includes allen wrenches of various sizes, and some basic calibration tools. This particular kit can be used for weapons with a barrel diameter of 5.45mm.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon repair\n%c[d_orange] • %c[ui_gray_2] not usable below condition level %c[ui_gray_1] 45%</text>
+	</string>
+		<string id="st_barrelkit_556">
+		<text>Barrel swap kit (5.56mm)</text>
+	</string>
+	<string id="st_barrelkit_556_descr">
+		<text>This is a specialised kit for replacing the barrels of various rifles in the field. Includes allen wrenches of various sizes, and some basic calibration tools. This particular kit can be used for weapons with a barrel diameter of 5.56mm.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon repair\n%c[d_orange] • %c[ui_gray_2] not usable below condition level %c[ui_gray_1] 45%</text>
+	</string>
+		<string id="st_barrelkit_9x">
+		<text>Barrel swap kit (9mm)</text>
+	</string>
+	<string id="st_barrelkit_9x_descr">
+		<text>This is a specialised kit for replacing the barrels of various rifles in the field. Includes allen wrenches of various sizes, and some basic calibration tools. This particular kit can be used for those rare rifles utilising 9mm diameter barrels.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon repair\n%c[d_orange] • %c[ui_gray_2] not usable below condition level %c[ui_gray_1] 45%</text>
+	</string>
+		<string id="st_barrelkit_792">
+		<text>Barrel swap kit (7.92mm)</text>
+	</string>
+	<string id="st_barrelkit_792_descr">
+		<text>This is a specialised kit for replacing the barrels of various rifles in the field. Includes allen wrenches of various sizes, and some basic calibration tools. This particular kit can be used for weapons with a barrel diameter of 7.92mm.\n \n%c[ui_gray_2]PROPERTIES:\n%c[d_cyan] • %c[ui_gray_2] military item\n%c[d_orange] • %c[ui_gray_2] usable for:%c[ui_gray_1] weapon repair\n%c[d_orange] • %c[ui_gray_2] not usable below condition level %c[ui_gray_1] 45%</text>
+	</string>
+</string_table>
+
+-->

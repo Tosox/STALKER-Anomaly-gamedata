@@ -1,0 +1,176 @@
+#include "presets\trade_discounts.ltx"
+#include "presets\trade_presets.ltx"
+
+[trader]
+buy_condition                            = trade_generic_buy
+buy_item_condition_factor                = 0.40
+buy_item_exponent = 2.25
+sell_item_exponent = 0.75
+buy_supplies                             = supplies_generic
+price_profile                            = default
+sell_condition                           = trade_generic_sell
+discounts = discount_barman_special
+
+[trade_generic_sell]
+itm_pda_common ;NO TRADE
+itm_pda_rare ;NO TRADE 
+itm_pda_uncommon ;NO TRADE 
+
+sharpening_stones = 1.7, 1.6
+
+ammo_12x76_zhekan = 1.2, 2
+ammo_12x70_buck = 1.1, 1.4
+
+mutant_part_krovosos_jaw = 4.2, 4.2
+mutant_part_boar_leg = 4.2, 4.2
+mutant_part_chimera_kogot = 4.2, 4.2
+mutant_part_chimera_claw = 4.2, 4.2
+mutant_part_dog_tail = 4.2, 4.2
+mutant_part_flesh_eye = 4.2, 4.2
+mutant_part_psevdodog_tail = 4.2, 4.2
+mutant_part_snork_leg = 4.2, 4.2
+mutant_part_snork_hand = 4.2, 4.2
+mutant_part_tushkano_head = 4.2, 4.2
+mutant_part_pseudogigant_hand = 4.2, 4.2
+mutant_part_pseudogigant_eye = 4.2, 4.2
+mutant_part_controller_glass = 4.2, 4.2
+mutant_part_controller_hand = 4.2, 4.2
+mutant_part_burer_hand = 4.2, 4.2
+mutant_part_cat_tail = 4.2, 4.2
+mutant_part_fracture_hand= 0.56, 1
+mutant_part_zombi_hand = 4.2, 4.2
+mutant_part_flesh_meat = 4.2, 4.2
+mutant_part_boar_chop = 4.2, 4.2
+mutant_part_dog_meat = 4.2, 4.2
+mutant_part_psevdodog_meat = 4.2, 4.2
+mutant_part_chimera_meat = 4.2, 4.2
+
+wpn_mp153 = 1.7, 2.2
+wpn_fort500	= 1.7, 2.2
+wpn_spas12 = 1.7, 2.2
+wpn_remington870 = 1.7, 2.2
+wpn_bm16 = 1.4, 1.6
+wpn_toz34 = 1.4, 1.7
+wpn_wincheaster1300 = 1.7, 2.2
+wpn_wa2000				= 4, 4
+wpn_knife               = 1, 1
+wpn_knife2              = 1, 1
+wpn_knife3              = 1, 1
+kit_hunt                = 1, 1
+
+meat_tushkano			= 6, 1
+meat_dog				= 6, 1
+meat_pseudodog			= 4, 1
+meat_flesh				= 4, 1
+meat_boar				= 4, 1
+meat_bloodsucker		= 2, 1
+meat_snork				= 4, 1
+meat_chimera			= 1, 1
+
+
+[trade_generic_buy]:none
+medkit_army = 1, 0.8
+medkit_scientic = 1, 0.8
+drug_coagulant = 2, 1
+drug_psy_blockade = 2, 1
+drug_antidot = 2, 1
+drug_radioprotector = 2, 1
+drug_anabiotic = 3, 2
+
+wpn_wa2000	= 2.5, 2.5
+
+mutant_part_krovosos_jaw      = 2.5, 2.5
+mutant_part_boar_leg          = 2.5, 2.5
+mutant_part_chimera_kogot     = 2.5, 2.5
+mutant_part_chimera_claw      = 2.5, 2.5
+mutant_part_dog_tail          = 2.5, 2.5
+mutant_part_flesh_eye         = 2.5, 2.5
+mutant_part_psevdodog_tail    = 2.5, 2.5
+mutant_part_snork_leg         = 2.5, 2.5
+mutant_part_snork_hand        = 2.5, 2.5
+mutant_part_tushkano_head     = 2.5, 2.5
+mutant_part_pseudogigant_hand = 2.5, 2.5
+mutant_part_pseudogigant_eye  = 2.5, 2.5
+mutant_part_controller_glass  = 2.5, 2.5
+mutant_part_controller_hand   = 2.5, 2.5
+mutant_part_burer_hand        = 2.5, 2.5
+mutant_part_cat_tail          = 2.5, 2.5
+mutant_part_fracture_hand     = 2.5, 2.5
+mutant_part_zombi_hand        = 2.5, 2.5
+mutant_part_dog_liver         = 2.5, 2.5	
+mutant_part_dog_heart         = 2.5, 2.5	
+mutant_part_cat_thyroid       = 2.5, 2.5	
+mutant_part_cat_claw          = 2.5, 2.5
+mutant_part_tusk_boar         = 2.5, 2.5	
+mutant_part_heart_bloodsucker = 2.5, 2.5	
+mutant_part_fang_psevdodog    = 2.5, 2.5
+mutant_part_brain_burer       = 2.5, 2.5
+mutant_part_heart_chimera     = 2.5, 2.5
+mutant_part_lurker_tail       = 2.5, 2.5
+mutant_part_lurker_eye        = 2.5, 2.5
+mutant_part_psysucker_hand    = 2.5, 2.5
+hide_chimera                  = 2.5, 2.5
+hide_pseudogiant              = 2.5, 2.5
+hide_psy_dog                  = 2.5, 2.5
+hide_pseudodog                = 2.5, 2.5
+hide_burer                    = 2.5, 2.5
+hide_controller               = 2.5, 2.5
+hide_bloodsucker              = 2.5, 2.5
+hide_boar                     = 2.5, 2.5
+hide_flesh                    = 2.5, 2.5
+hide_lurker                   = 2.5, 2.5
+hide_psysucker                = 2.5, 2.5
+mutant_part_boar_chop         = 2.5, 2.5
+mutant_part_general_meat      = 2.5, 2.5
+mutant_part_psevdodog_meat    = 2.5, 2.5
+mutant_part_flesh_meat        = 2.5, 2.5
+mutant_part_tushkano_meat     = 2.5, 2.5
+mutant_part_chimera_meat      = 2.5, 2.5
+mutant_part_krovosos_meat     = 2.5, 2.5
+mutant_part_dog_meat          = 2.5, 2.5
+mutant_part_psysucker_meat    = 2.5, 2.5
+mutant_part_lurker_meat       = 2.5, 2.5
+
+
+[supplies_generic]
+swiss_knife			= 2, 1
+sharpening_stones	= 2, 1
+
+ammo_12x76_zhekan = 5, 0.7
+ammo_12x70_buck = 5, 1
+
+wpn_mp153 = 1, 1
+wpn_spas12 = 1, 1
+wpn_bm16 = 2, 1
+wpn_toz34 = 1, 1
+wpn_wincheaster1300 = 1, 0.7
+wpn_remington870 	= 1, 0.7
+wpn_knife               = 1, 1
+wpn_knife2              = 1, 1
+wpn_knife3              = 1, 1
+
+kit_hunt                = 1, 1
+
+meat_tushkano			= 6, 1
+meat_dog				= 6, 1
+meat_pseudodog			= 4, 1
+meat_flesh				= 4, 1
+meat_boar				= 4, 1
+meat_bloodsucker		= 2, 1
+meat_snork				= 4, 1
+meat_chimera			= 1, 1
+
+mutant_part_boar_leg = 5, 1
+mutant_part_dog_tail = 3, 1
+mutant_part_flesh_eye = 4, 1
+mutant_part_psevdodog_tail = 2, 1
+mutant_part_snork_leg = 4, 1
+mutant_part_snork_hand = 2, 1
+mutant_part_tushkano_head = 5, 1
+mutant_part_cat_tail = 3, 1
+mutant_part_fracture_hand = 2, 1
+mutant_part_zombi_hand = 4, 1
+mutant_part_flesh_meat = 5, 1
+mutant_part_boar_chop = 7, 1
+mutant_part_dog_meat = 3, 1
+mutant_part_psevdodog_meat = 2, 1

@@ -1,0 +1,717 @@
+;------------------------------------------------------------------------------------------------
+[wpn_ak74]:identity_immunities,weapon_probability,default_weapon_params,wpn_ak74_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\ak-74"
+scheduled                                = off
+cform                                    = skeleton
+parent_section                           = wpn_ak74
+
+class                                    = WP_AK74
+slot                                     = 2
+animation_slot                           = 2
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 8
+hand_dependence                          = 1
+single_handed                            = 0
+
+default_to_ruck                          = false
+sprint_allowed                           = true
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 0
+inv_name                                 = st_wpn_ak74
+inv_name_short                           = st_wpn_ak74
+description                              = st_wpn_ak74_descr
+
+kind                                     = w_rifle
+inv_weight                               = 3.3
+cost                                     = 26950
+repair_type                              = rifle_5
+weapon_class                             = assault_rifle
+
+hud                                      = wpn_ak74_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74.ogf
+position                                 = -0.026, -0.175, 0.0
+orientation                              = 0, 0, 0
+fire_point                               = 0, 0.218, 0.656
+fire_point2                              = 0, 0.161, 0.583
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.26, -0.11, 0.25
+strap_orientation                        = -15, -9, 110
+ph_mass                                  = 4
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point               	             = 0.07,0.2,0.466
+shell_dir               	             = 0.0, 1.0, 0.0
+shell_bone                	             = wpn_body
+shell_particles			                 = weapons\545x39
+
+light_disabled                           = false
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 5
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_ak74, up_gr_seconab_ak74, up_gr_thirdab_ak74, up_gr_fourtab_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_ak74
+upgr_icon_x                              = 0
+upgr_icon_y                              = 400
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+fire_modes                               = 1, -1
+ammo_class                               = ammo_5.45x39_fmj, ammo_5.45x39_fmj_bad, ammo_5.45x39_fmj_verybad, ammo_5.45x39_ep, ammo_5.45x39_ep_bad, ammo_5.45x39_ep_verybad, ammo_5.45x39_ap, ammo_5.45x39_ap_bad, ammo_5.45x39_ap_verybad
+ammo_elapsed                             = 30
+ammo_mag_size                            = 30
+startup_ammo                             = 90
+
+scopes                                   = 1p29, kobra, ps01
+scope_status                             = 0
+scope_zoom_factor                        = 0
+
+silencer_name                            = wpn_sil_tgp-a
+silencer_status                          = 2
+silencer_x                               = 227
+silencer_y                               = 12
+silencer_light_color                     = 0.6, 0.5, 0.3
+silencer_light_range                     = 0.01
+silencer_light_time                      = 0.2
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_smoke_particles                 = weapons\generic_shoot_00
+
+grenade_class                            = ammo_vog-25, ammo_vog-25_bad, ammo_vog-25_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 114
+grenade_launcher_y                       = 21
+launch_speed                             = 0
+
+hit_impulse                              = 25
+hit_power                                = 0.5, 0.5, 0.5, 0.5
+hit_type                                 = fire_wound
+fire_distance                            = 1000
+bullet_speed                             = 880
+rpm                                      = 650
+rpm_empty_click                          = 200
+
+use_aim_bullet                           = false
+time_to_aim                              = 0.0 ;  3.0
+zoom_dof                                 = 0.5, 1.0, 180
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.25
+reload_dof                               = 0.0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 5.8
+fire_dispersion_base                     = 0.35
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.75
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 0.545
+cam_dispersion_frac                      = 1.1
+cam_dispersion_inc                       = 0.0625
+cam_max_angle                            = 50.0
+cam_max_angle_horz                       = 50.0
+cam_step_angle_horz                      = 1.15
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 0.515
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_dispersion_inc                  = 0.0525
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.05
+
+PDM_disp_accel_factor                    = 2.5
+PDM_disp_base                            = 1.0
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 2.5
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 360
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 0
+kill_msg_y                               = 28
+kill_msg_width                           = 84
+kill_msg_height                          = 28
+
+
+[wpn_ak74_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true
+
+item_position                            = -0.003, 0.011, 0.008
+item_orientation                         = -0.56, 0.7, 0
+
+hands_position                           = 0.0195, -0.00672, 0.15
+hands_position_16x9                      = 0.0195, -0.00672, 0.15
+hands_orientation                        = 2, 1.3198, -0.3
+hands_orientation_16x9                   = 2, 1.3198, -0.3
+
+aim_hud_offset_pos                       = -0.07269, 0.04719, -0.19
+aim_hud_offset_pos_16x9                  = -0.07269, 0.04719, -0.19
+aim_hud_offset_rot                       = 0.03115, 0.02484, -0.0047
+aim_hud_offset_rot_16x9                  = 0.03115, 0.02484, -0.0047
+
+gl_hud_offset_pos                        = -0.0415, 0.01, -0.15
+gl_hud_offset_pos_16x9                   = -0.0415, 0.01, -0.15
+gl_hud_offset_rot                        = -0.07, 0.023, 0
+gl_hud_offset_rot_16x9                   = -0.07, 0.023, 0
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = ak_74_holster
+anm_hide_g                               = ak_74_holster_w_gl, ak_74_holster_grenade
+anm_hide_w_gl                            = ak_74_holster_w_gl
+anm_idle                                 = ak_74_idle
+anm_idle_aim                             = ak_74_idle_aim
+anm_idle_aim_moving                      = ak_74_idle_move, idle, 0.75
+anm_idle_aim_moving_crouch               = ak_74_idle_move, idle, 0.7
+anm_idle_g                               = ak_74_idle_w_gl, ak_74_idle_grenade
+anm_idle_g_aim                           = ak_74_idle_aim_w_gl, ak_74_idle_grenade
+anm_idle_moving                          = ak_74_idle_move
+anm_idle_moving_crouch_g_aim             = ak_74_idle_move_w_gl, ak_74_idle_grenade, 0.7
+anm_idle_moving_crouch_w_gl_aim          = ak_74_idle_move_w_gl, idle, 0.7
+anm_idle_moving_g                        = ak_74_idle_move_w_gl, ak_74_idle_grenade
+anm_idle_moving_g_aim                    = ak_74_idle_move_w_gl, ak_74_idle_grenade, 0.75
+anm_idle_moving_w_gl                     = ak_74_idle_move_w_gl
+anm_idle_moving_w_gl_aim                 = ak_74_idle_move_w_gl, idle, 0.75
+anm_idle_sprint                          = ak_74_idle_sprint
+anm_idle_sprint_g                        = ak_74_idle_sprint_w_gl, ak_74_idle_grenade
+anm_idle_sprint_w_gl                     = ak_74_idle_sprint_w_gl
+anm_idle_w_gl                            = ak_74_idle_w_gl
+anm_idle_w_gl_aim                        = ak_74_idle_aim_w_gl
+anm_reload                               = ak_74_reload1
+anm_reload_g                             = ak_74_reload_grenade_l
+anm_reload_w_gl                          = ak_74_reload_w_gl
+anm_shots                                = ak_74_shoot
+anm_shots_g                              = ak_74_shoot_grenade
+anm_shots_w_gl                           = ak_74_shoot_w_gl
+anm_show                                 = ak_74_draw
+anm_show_g                               = ak_74_draw_w_gl, ak_74_draw_grenade
+anm_show_w_gl                            = ak_74_draw_w_gl
+anm_switch                               = ak_74_grenade_off
+anm_switch_g                             = ak_74_grenade_on
+
+shell_bone                               = wpn_body
+shell_dir                                = 0, 1, 0
+shell_point                              = 0.017, 0.054, 0.17
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0, 0.042, 0.684
+fire_point2                              = 0.078965, -0.211564, 0.553397
+
+freelook_z_offset_mul					 = 0.2
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_1p29]:wpn_ak74
+1icon_layer                              = 1p29
+1icon_layer_x                            = 53
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.1
+
+hud                                      = wpn_ak74_1p29_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_1p29.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+
+[wpn_ak74_1p29_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_1p29_hud.ogf
+
+aim_hud_offset_pos                       = -0.0717, 0.0172, -0.25
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0172, -0.25
+aim_hud_offset_rot                       = 0.0195, 0.026, -0.0035
+aim_hud_offset_rot_16x9                  = 0.0195, 0.026, -0.0035
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_kobra]:wpn_ak74
+1icon_layer                              = kobra
+1icon_layer_x                            = 65
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.7
+
+hud                                      = wpn_ak74_kobra_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_kobra.ogf
+
+
+[wpn_ak74_kobra_hud]:wpn_ak74_1p29_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_kobra_hud.ogf
+
+aim_hud_offset_pos                       = -0.0714,0.0168,-0.2
+aim_hud_offset_pos_16x9                  = -0.0714,0.0168,-0.2
+aim_hud_offset_rot                       = 0.0195, 0.026, -0.0035
+aim_hud_offset_rot_16x9                  = 0.0195, 0.026, -0.0035
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_ps01]:wpn_ak74
+1icon_layer                              = ps01
+1icon_layer_x                            = 27
+1icon_layer_y                            = 2
+
+inv_weight                               = 3.93
+
+hud                                      = wpn_ak74_pso1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+
+[wpn_ak74_pso1_hud]:wpn_ak74_kobra_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_hud.ogf
+
+hands_position                           = 0.0195, -0.00672, 0.18
+hands_position_16x9                      = 0.0195, -0.00672, 0.18
+
+aim_hud_offset_pos                       = -0.0717, 0.0372, -0.2
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0372, -0.2
+
+
+;------------------------------------------------------------------------------------------------
+;-- Alt
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_alt]:wpn_ak74
+parent_section                           = wpn_ak74_alt
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 6
+inv_name                                 = st_wpn_ak74_alt
+inv_name_short                           = st_wpn_ak74_alt
+
+cost                                     = 30380
+
+hud                                      = wpn_ak74_sk3_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_sk3.ogf
+
+installed_upgrades                       = up_fiftha_ak74
+
+bullet_speed                             = 895
+rpm                                      = 660
+
+fire_dispersion_base                     = 0.3
+
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.00068
+condition_shot_dec                       = 0.00068
+
+
+[wpn_ak74_sk3_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_alt_1p29]:wpn_ak74_alt
+1icon_layer                              = 1p29
+1icon_layer_x                            = 53
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.1
+
+hud                                      = wpn_ak74_1p29_sk3_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_1p29_sk3.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74_1p29_sk3_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_1p29_sk3_hud.ogf
+
+aim_hud_offset_pos                       = -0.0717, 0.0172, -0.25
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0172, -0.25
+aim_hud_offset_rot                       = 0.0195, 0.026, -0.0035
+aim_hud_offset_rot_16x9                  = 0.0195, 0.026, -0.0035
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_alt_kobra]:wpn_ak74_alt
+1icon_layer                              = kobra
+1icon_layer_x                            = 65
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.7
+
+hud                                      = wpn_ak74_kobra_sk3_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_kobra_sk3.ogf
+
+
+[wpn_ak74_kobra_sk3_hud]:wpn_ak74_kobra_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_kobra_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_alt_ps01]:wpn_ak74_alt
+1icon_layer                              = ps01
+1icon_layer_x                            = 27
+1icon_layer_y                            = 2
+
+inv_weight                               = 3.92
+
+hud                                      = wpn_ak74_pso1_sk3_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74_pso1_sk3_hud]:wpn_ak74_1p29_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk3_hud.ogf
+
+hands_position                           = 0.0195, -0.00672, 0.18
+hands_position_16x9                      = 0.0195, -0.00672, 0.18
+
+aim_hud_offset_pos                       = -0.0717, 0.0372, -0.2
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0372, -0.2
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_custom]:wpn_ak74
+parent_section                           = wpn_ak74_custom
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 2
+inv_name                                 = st_wpn_ak74_custom
+inv_name_short                           = st_wpn_ak74_custom
+
+cost                                     = 31580
+
+hud                                      = wpn_ak74_sk1_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_sk1.ogf
+
+installed_upgrades                       = up_thirda_ak74, up_fiftha_ak74, up_firsta_ak74
+
+bullet_speed                             = 905
+rpm                                      = 640
+
+fire_dispersion_base                     = 0.28
+
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.00063
+condition_shot_dec                       = 0.00063
+
+
+[wpn_ak74_sk1_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_custom_1p29]:wpn_ak74_custom
+1icon_layer                              = 1p29
+1icon_layer_x                            = 53
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.1
+
+hud                                      = wpn_ak74_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74_1p29_sk1_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_1p29_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.0717, 0.0172, -0.25
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0172, -0.25
+aim_hud_offset_rot                       = 0.0195, 0.026, -0.0035
+aim_hud_offset_rot_16x9                  = 0.0195, 0.026, -0.0035
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_custom_kobra]:wpn_ak74_custom
+1icon_layer                              = kobra
+1icon_layer_x                            = 65
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.7
+
+hud                                      = wpn_ak74_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_kobra_sk1.ogf
+
+
+[wpn_ak74_kobra_sk1_hud]:wpn_ak74_kobra_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_kobra_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_custom_ps01]:wpn_ak74_custom
+1icon_layer                              = ps01
+1icon_layer_x                            = 27
+1icon_layer_y                            = 2
+
+inv_weight                               = 3.92
+
+hud                                      = wpn_ak74_pso1_sk1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74_pso1_sk1_hud]:wpn_ak74_1p29_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk1_hud.ogf
+
+hands_position                           = 0.0195, -0.00672, 0.18
+hands_position_16x9                      = 0.0195, -0.00672, 0.18
+
+aim_hud_offset_pos                       = -0.0717, 0.0372, -0.2
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0372, -0.2
+
+
+;------------------------------------------------------------------------------------------------
+;-- Modern
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_modern]:wpn_ak74
+parent_section                           = wpn_ak74_modern
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 4
+inv_name                                 = st_wpn_ak74_modern
+inv_name_short                           = st_wpn_ak74_modern
+
+cost                                     = 29560
+
+hud                                      = wpn_ak74_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_sk2.ogf
+
+installed_upgrades                       = up_fourta_ak74, up_fiftha_ak74
+
+bullet_speed                             = 887
+rpm                                      = 680
+
+fire_dispersion_base                     = 0.34
+
+misfire_start_condition                  = 0.7 ;  0.68
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.0006
+condition_shot_dec                       = 0.0006
+
+
+[wpn_ak74_sk2_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk2_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_modern_1p29]:wpn_ak74_modern
+1icon_layer                              = 1p29
+1icon_layer_x                            = 53
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.1
+
+hud                                      = wpn_ak74_1p29_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_1p29_sk2.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+[wpn_ak74_1p29_sk2_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_1p29_sk2_hud.ogf
+
+aim_hud_offset_pos                       = -0.0717, 0.0172, -0.25
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0172, -0.25
+aim_hud_offset_rot                       = 0.0195, 0.026, -0.0035
+aim_hud_offset_rot_16x9                  = 0.0195, 0.026, -0.0035
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_modern_kobra]:wpn_ak74_modern
+1icon_layer                              = kobra
+1icon_layer_x                            = 65
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.7
+
+hud                                      = wpn_ak74_kobra_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_kobra_sk2.ogf
+
+[wpn_ak74_kobra_sk2_hud]:wpn_ak74_kobra_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_kobra_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_modern_ps01]:wpn_ak74_modern
+1icon_layer                              = ps01
+1icon_layer_x                            = 27
+1icon_layer_y                            = 2
+
+inv_weight                               = 3.92
+
+hud                                      = wpn_ak74_pso1_sk2_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74_pso1_sk2_hud]:wpn_ak74_1p29_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk2_hud.ogf
+
+hands_position                           = 0.0195, -0.00672, 0.18
+hands_position_16x9                      = 0.0195, -0.00672, 0.18
+
+aim_hud_offset_pos                       = -0.0717, 0.0372, -0.2
+aim_hud_offset_pos_16x9                  = -0.0717, 0.0372, -0.2
+
+
+;------------------------------------------------------------------------------------------------
+;-- Old
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_old]:wpn_ak74
+parent_section                           = wpn_ak74_old
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 25
+inv_grid_y                               = 6
+inv_name                                 = st_wpn_ak74_old
+inv_name_short                           = st_wpn_ak74_old
+description                              = st_wpn_ak74_old_descr
+
+cost                                     = 23580
+
+hud                                      = wpn_ak74_sk6_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_sk6.ogf
+
+upgrades                                 = up_gr_firstab_ak74_old, up_gr_seconab_ak74_old, up_gr_thirdab_ak74_old, up_gr_fourtab_ak74_old, up_gr_fifthab_ak74_old, up_gr_fifthcd_ak74_old
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_ak74
+
+scopes                                   = none
+
+bullet_speed                             = 875
+
+fire_dispersion_base                     = 0.36
+
+misfire_start_condition                  = 0.7 ;  0.77
+misfire_end_condition                    = 0.12
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+
+[wpn_ak74_sk6_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_sk6_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+;-- RPK
+;------------------------------------------------------------------------------------------------
+[wpn_ak74_rpk]:wpn_ak74
+parent_section                           = wpn_ak74_rpk
+
+inv_grid_x                               = 44
+inv_grid_y                               = 44
+inv_name                                 = st_wpn_ak74_eot
+inv_name_short                           = st_wpn_ak74_eot
+description                              = st_wpn_ak74_eot_descr
+
+inv_weight                               = 3.621
+cost                                     = 33680
+
+hud                                      = wpn_ak74_rpk_hud
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74_eot_rpkmag.ogf
+
+ammo_elapsed                             = 45
+ammo_mag_size                            = 45
+
+scopes                                   = none
+
+silencer_y                               = 10
+
+grenade_launcher_name                    = wpn_addon_grenade_launcher
+grenade_launcher_x                       = 115
+grenade_launcher_y                       = 14
+
+bullet_speed                             = 901
+rpm                                      = 683
+
+fire_dispersion_base                     = 0.38
+
+misfire_start_condition                  = 0.7 ;  0.69
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.00068
+condition_shot_dec                       = 0.00068
+
+
+[wpn_ak74_rpk_hud]:wpn_ak74_hud
+item_visual                              = anomaly_weapons\wpn_ak74\wpn_ak74_eot_rpkmag_hud.ogf
+
+aim_hud_offset_pos                       = -0.0719,0.0272,-0.2
+aim_hud_offset_pos_16x9                  = -0.0719,0.0272,-0.2
+aim_hud_offset_rot                       = 0.0396, 0.0225, -0.0037
+aim_hud_offset_rot_16x9                  = 0.0396, 0.0225, -0.0037
+
+anm_reload                               = ak_74_reload
+

@@ -1,0 +1,29 @@
+[logic]
+active = sr_idle@ll_rogue_join
+
+[sr_idle@ll_rogue_join]
+on_info = {+stalker_rogue_reach_pripyat} sr_idle@oa_encrypted_transmission_prep %=give_task(lttz_ll_path_pripyat)%
+
+[sr_idle@oa_encrypted_transmission_prep]
+on_info = {=actor_on_level(zaton) +operation_afterglow} sr_idle@oa_encrypted_transmission %=create_squad(special_poltergeist_task2_squad:zat_b100)%
+
+[sr_idle@oa_encrypted_transmission]
+on_info = {=actor_in_zone(zat_b100_heli_2_cat) +operation_afterglow =actor_has_item(decryption_radio)} sr_timer@decryption %=play_sound_on_actor(radio_comm_1)%
+
+[sr_timer@decryption]
+type = dec
+start_value = 10000
+on_value = 0 | sr_idle@decryption_done %=play_sound_on_actor(decoder) +decryption_done%
+string = st_oa_transmission_decryption
+
+[sr_idle@decryption_done]
+on_info = {+decryption_done} %=clear_smart_terrain(zat_b5_smart_terrain) =clear_smart_terrain(zat_b103_merc_smart) +encrypted_transmission_done =intercepted_transmission()%
+on_info2 = {+encrypted_transmission_done} sr_idle@rally_point %=clear_smart_terrain(zat_sim_24) =create_squad(army_degtyarev_zat_squad:zat_b103_merc_smart) =create_squad(degtyarev_taskforce_squad:zat_b103_merc_smart)%
+
+[sr_idle@rally_point]
+on_info = {+isg_guard_squad_dead} sr_idle@wait %=create_squad(isg_recon_squad:zat_sim_24)%
+
+[sr_idle@wait]
+on_info = {+degtyarev_rally_point_pda} sr_idle@nil %=remove_special_companion_squad(army_degtyarev:degtyarev_taskforce_squad)%
+
+[sr_idle@nil]

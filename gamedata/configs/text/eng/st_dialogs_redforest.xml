@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Forester -->
+	<string id="red_forester_hello_dialog_0">
+		<text>To what do I owe this pleasure?</text>
+	</string>
+	<string id="red_forester_hello_dialog_1">
+		<text>What's a rookie like you looking for in Forester's estate?</text>
+	</string>
+	<string id="red_forester_hello_dialog_2">
+		<text>Was it chance that brought you to me?</text>
+	</string>
+	<string id="red_forester_hello_dialog_3">
+		<text>Good luck, son!</text>
+	</string>
+	<string id="red_forester_hello_dialog_4">
+		<text>Don't forget me!</text>
+	</string>
+	<string id="red_forester_hello_dialog_5">
+		<text>Remember me well!</text>
+	</string>
+	<string id="red_forester_who_are_you_0">
+		<text>Who are you?</text>
+	</string>
+	<string id="red_forester_who_are_you_1">
+		<text>What can I tell you about myself? I'm Forester. I've been here a long time; I've spent my whole life living next to this forest. I'm old. At my age, you grow attached to your place of residence, no matter what it is. I refused to be evacuated after the accident at the power plant, and I also survived the appearance of the Zone. I remember a flash on the horizon... Many folks died that day, but the Zone spared me, you see? Heck, it didn't just spare me, it gave me a gift! I used to be able to find paths in the forest, and now I can feel out a safe path through deadly anomalies. Stalkers envy me, but I can't say I'm all that happy about my gift. You must understand that everything comes at a price. Someday, the Zone will take payment for my gift. That's what I am afraid of, buddy.</text>
+	</string>
+	<string id="red_forester_who_are_you_111">
+		<text>No, this was your typical pine forest. Well, it was also a nature reserve, but that was about as special as it got at the time. It became red after the accident at the Chernobyl NPP in 1986. It was green when I went to bed, and when I woke up it was as you see it now. Then the Zone appeared, and animals and birds abandoned this forest. I was the only living being that stayed behind. Just me, a red forest, and this thick mist that never clears.</text>
+	</string>
+	<string id="red_forester_who_are_you_11111">
+		<text>Yes, many stalkers have met their end here. I've even heard rumours that an evil spirit lives in the Red Forest. The way I see it, this forest is just like everything else in the Zone. If you treat it right, it won't touch you. The trouble is, you stalkers don't treat anything right. You seek to own parts of the Zone, and in return, you get... what you're due.</text>
+	</string>
+	<string id="red_forester_about_forest_0">
+		<text>Tell me about the Red Forest.</text>
+	</string>
+	<string id="red_forester_about_forest_1">
+		<text>This used to be a wildlife reserve, and I was the local forester. I protected the forest and its animals from poachers. Now, the Zone itself protects this place, and it does it so well that people are willing to travel a dozen extra miles just to avoid it. If a stranger sets his foot in the forest, he's as good as dead. I may be Forester, but even I don't know exactly what goes on here. A man walks into the mist and just gets sucked off into nowhere. You could be walking right behind him and still not know how he met his end. So that's that, sonny.</text>
+	</string>
+	<string id="red_forester_about_zone_0">
+		<text>What can you tell me about the Zone?</text>
+	</string>
+	<string id="red_forester_about_zone_1">
+		<text>The Zone, heh... The Zone has a life of its own, and we people just get in its way; some more, some less. The Zone works to neutralize any risk to its existence the same way our bodies fight diseases. We get a fever, and the Zone has its shakes too. Emissions... Now, those are a way to 'barf' us up. The more irritation we cause to it, the stronger the new emissions will be.</text>
+	</string>
+	<string id="red_forester_about_zone_11">
+		<text>How did you survive here all these years; alone and amidst all the dangers?</text>
+	</string>
+	<string id="red_forester_about_zone_111">
+		<text>One foolish action can destroy the Zone... along with everything that belongs to it. Not just mutants and anomalies, but also artefacts and you stalkers... and me. I can feel that the Zone is deeply concerned; something is upsetting it, disturbing its equilibrium. A storm is brewing... and I don't know if the status quo can be preserved.</text>
+	</string>
+	
+	<string id="red_forester_about_doc_0">
+		<text>I'm seeking someone who can tell me more about the Zone. Tell me old man, do you know anything useful?</text>
+	</string>
+	<string id="red_forester_about_doc_1">
+		<text>Hmm... you're quite ambitious, aren't you? Reminds me of all those stalkers who came here seeking the unknown, poor souls...
+				\nMany years ago, an old pal of mine used to travel with a certain group. One of them has made it to the deepest side of the Zone. He should be the one you're seeking. If my memory didn't betray me, he settled in the Great Swamps along with his dog.</text>
+	</string>
+	<string id="red_forester_about_doc_11">
+		<text>Alright, thanks for the info.</text>
+	</string>
+	<string id="red_forester_about_doc_111">
+		<text>Careful what you're wishing for, young man.</text>
+	</string>
+
+	<string id="look_for_cs_history_part_2_1_0">
+		<text>Forester, I need to get across the Limansk bridge.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_1">
+		<text>Across the bridge, you say? Why don't you go speak with the ones guarding the bridge?</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_2">
+		<text>You may have forgotten, but it is thanks to you that Limansk is now swarming with mercenaries.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_3">
+		<text>I haven't forgotten, but you will not get any help from me, either. I'm still not sure if I did the right thing by helping those mercenaries.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_4">
+		<text>Listen, you need to help me. What does it matter if you did the right thing or not? In any case, I can find out if I'll be able to reach the city.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_5">
+		<text>If you don't tell me about everything this instant, you're going to get a free ticket to the morgue.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_6">
+		<text>Old man, if the Zone wants me at Limansk, I'm gonna get there. It's in your best interest to help me, because no one knows if it'll be supportive to you next time.</text>
+	</string>
+	<string id="look_for_cs_history_part_2_1_7">
+		<text>...I saw something in Scar - the Zone needed him. You, however... Yes, I'd like to know what happened to him. So, listen: we helped the mercenary detachment get out of the space anomaly. Once everything was settled, they paid me a visit. Looks like one of them snitched on me, told them I also took part in the rescue. I spoke to their leader, Leshiy, who gave me some provisions, money and ammunition - then he went on his way. In his own words, he headed off to the Army Warehouses - to Freedom. You can go look for him there - several years have passed, but judging by our conversation, his intentions to join them were serious.</text>
+	</string>
+
+	
+<!-- (Monolith Trader) by the bridge to Limansk -->
+	<string id="meet_guid_red_forest_mon_0">
+		<text>To which places may I travel to, brother?</text>
+	</string>
+	<string id="meet_guid_red_forest_mon_1">
+		<text>I can not escort you personally, but our brothers may show you where to go - for a fee. We've got positions set up in the Red Forest, Jupiter and Pripyat. We would be glad to assist you at any time.</text>
+	</string>
+
+	<string id="meet_guid_red_forest_mon_list_0">
+		<text>Where can the guides take me?</text>
+	</string>
+	<string id="meet_guid_red_forest_mon_list_1">
+		<text>To the Red Forest for five thousand rubles, Jupiter for two thousand and Pripyat for one thousand.</text>
+	</string>
+
+	<string id="travel_guid_red_forest_mon_0">
+		<text>I'd like to travel somewhere.</text>
+	</string>
+	<string id="travel_guid_red_forest_mon_1">
+		<text>Certainly. Where would you like the guides to take you?</text>
+	</string>
+	<string id="travel_guid_red_forest_mon_2">
+		<text>To the Red Forest. %c[d_orange][5000 RU]</text>
+	</string>
+	<string id="travel_guid_red_forest_mon_3">
+		<text>To Jupiter. %c[d_orange][2000 RU]</text>
+	</string>
+	<string id="travel_guid_red_forest_mon_4">
+		<text>To Pripyat. %c[d_orange][1000 RU]</text>
+	</string>
+	<string id="travel_guid_red_forest_mon_5">
+		<text>I've changed my mind.</text>
+	</string>
+	
+<!-- Sin trader -->
+	<string id="red_greh_trader_start_dialog_0">
+		<text>Come, brother. I'll make sure you can serve the Zone well.</text>
+	</string>
+	<string id="red_greh_trader_st_1">
+		<text>If you need equipment, I can provide. I don't merely collect and manage the gear that our brave crusaders take from fallen enemies. No, no, no, throughout the years I have established many contacts with outside suppliers. You see, brother, others may not understand the magnificence of the Zone, disagree with the justness of our cause, even want us dead... but as soon as they recognise a chance to make profits, they're more than willing to cooperate. And I'm more than willing to exploit their flaws to our advantage. While they provide us with the tools required to realise our vision of Vyraj, all they gain in return is digits, metal disks, and scraps of paper. Ironic, isn't it?</text>
+	</string>
+
+<!-- Sin mechanic -->
+	<string id="red_greh_tech_start_dialog_0">
+		<text>There is more than meets the eye to the Zone.</text>
+	</string>
+	<string id="red_greh_tech_st_1">
+		<text>I'm forever but a humble servant. You know, brother, I used to work as an engineer for the Masters even before the Zone was created. I was one of the many who assembled the venerable Generators, with no authority to speak of, and a small, but important role to play in the Zone's creation. When the Masters ascended to Vyraj and our Father, Chernobog, was let loose to carry out their will, he recruited me into the ranks of newborn Sin in recognition of my part in the mission and mechanical skills. Nowadays, I toil constantly to maintain the equipment of our crusaders in satisfactory condition, so that they can carry out the will of Masters as well.</text>
+	</string>
+</string_table>

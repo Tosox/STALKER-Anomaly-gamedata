@@ -1,0 +1,957 @@
+;-- x -127   y 74
+[af_black]:af_base	;;-- LTTZ
+$spawn                                   		= "artefacts\af_black"
+kind			                             = i_arty_junk
+class                                   		 = ARTEFACT
+visual                                  		 = dynamics\artefacts\artefact_diablo.ogf
+description                             		 = st_af_black_descr
+inv_name                                		 = st_af_black_name
+inv_name_short                          		 = st_af_black_name
+inv_grid_x						                 = 0
+inv_grid_y						                 = 73
+inv_weight						                 = 1.37
+cost							                 = 21600
+jump_height			                             = 0.05
+;particles                               		 = artefact\af_electra_idle
+det_show_particles                      		 = artefact\af_electra_show
+det_hide_particles                       		 = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0.4
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_dragon_eye]:af_base
+$spawn 							                 = "artefacts\af_dragon_eye"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	
+visual							                 = dynamics\artefacts\af_dragon_eye.ogf
+inv_name						                 = st_af_dragon_eye_name
+inv_name_short					                 = st_af_dragon_eye_name
+description						                 = st_af_dragon_eye_descr
+inv_grid_x						                 = 1
+inv_grid_y						                 = 73
+inv_weight						                 = 1.16
+cost							                 = 15600
+jump_height			                             = 0.08
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; «Fire Loop, Thorn »
+;--------------------------------------------------------------------------------
+[af_fire_loop]:af_base
+$spawn							                 = "artefacts\af_loop"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	
+visual							                 = dynamics\artefacts\af_fire_loop.ogf
+inv_name						                 = st_af_fire_loop_name
+inv_name_short					                 = st_af_fire_loop_name
+description						                 = st_af_fire_loop_descr
+inv_grid_x						                 = 2
+inv_grid_y						                 = 73
+cost							                 = 17800
+inv_weight						                 = 1.678
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; Ball, Fonar, Tapeworm, Moh, Serofim, Elektron, Kogot, 
+;--------------------------------------------------------------------------------
+[af_ball]:af_base
+$spawn 							                 = "artefacts\af_ball"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_ball.ogf
+inv_name						                 = st_af_ball_name
+inv_name_short					                 = st_af_ball_name
+description						                 = st_af_ball_descr
+inv_weight						                 = 0.5
+inv_grid_x         				                 = 3
+inv_grid_y						                 = 73
+inv_weight						                 = 0.78
+cost							                 = 9800
+jump_height			                             = 1
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_fonar]:af_base
+$spawn 							                 = "artefacts\af_fonar"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_fonar.ogf
+inv_name						                 = st_af_fonar_name
+inv_name_short					                 = st_af_fonar_name
+description						                 = st_af_fonar_descr
+inv_grid_x						                 = 4
+inv_grid_y						                 = 73
+inv_weight						                 = 0.940
+cost							                 = 17800
+jump_height			                             = 0.08
+;particles				                         = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled      			                 = true
+trail_light_color 				                 = 0.6,0.7,0.9
+trail_light_range 				                 = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_tapeworm]:af_base
+$spawn							                 = "artefacts\af_tapeworm"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_tapeworm.ogf
+inv_name						                 = st_af_tapeworm_name
+inv_name_short					                 = st_af_tapeworm_name
+description						                 = st_af_tapeworm_descr
+inv_grid_x						                 = 5
+inv_grid_y						                 = 73
+inv_weight						                 = 0.83
+cost							                 = 12700
+jump_height			                             = 0.4
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_moh]:af_base
+$spawn 							                 = "artefacts\af_moh"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_moh.ogf
+inv_name						                 = st_af_moh_name
+inv_name_short					                 = st_af_moh_name
+description						                 = st_af_moh_descr
+inv_grid_x						                 = 6
+inv_grid_y						                 = 73
+inv_weight						                 = 0.42
+cost							                 = 6300
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_serofim]:af_base
+$spawn							                 = "artefacts\af_serofim"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_serofim.ogf
+inv_name						                 = st_af_serofim_name
+inv_name_short					                 = st_af_serofim_name
+description						                 = st_af_serofim_descr
+inv_grid_x						                 = 7
+inv_grid_y						                 = 73
+inv_weight						                 = 0.6
+cost							                 = 9800
+jump_height			                             = 0.4
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_elektron]:af_base
+$spawn 							                 = "artefacts\af_elektron"
+kind			                             = i_arty_junk
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_elektron.ogf
+inv_name						                 = st_af_elektron_name
+inv_name_short					                 = st_af_elektron_name
+description						                 = st_af_elektron_descr
+inv_grid_x						                 = 8
+inv_grid_y						                 = 73
+cost							                 = 20700
+inv_weight						                 = 5.9
+jump_height			                             = 0.05
+;particles				                         = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_kogot]:af_base
+$spawn 							                 = "artefacts\af_kogot"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_kogot.ogf
+inv_name						                 = st_af_kogot_name
+inv_name_short					                 = st_af_kogot_name
+description						                 = st_af_kogot_descr
+inv_grid_x						                 = 9
+inv_grid_y						                 = 73
+inv_weight						                 = 0.640
+cost							                 = 7400
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; ЗGeneratorИ
+;--------------------------------------------------------------------------------
+[af_generator]:af_base
+$spawn							                 = "artefacts\af_generator"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_generator.ogf
+inv_name						                 = st_af_generator_name
+inv_name_short					                 = st_af_generator_name
+description						                 = st_af_generator_descr
+inv_grid_x						                 = 10
+inv_grid_y						                 = 73
+cost							                 = 20700
+inv_weight						                 = 4.07
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled      			                 = true
+trail_light_color 				                 = 0.6,0.7,0.9
+trail_light_range 				                 = 2.0
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+;--------------------------------------------------------------------------------
+; Black Angel, Grapes, Skull Miser, Star Phantom, Medallion, Peas, 
+;--------------------------------------------------------------------------------
+[af_black_angel]:af_base
+$spawn							                 = "artefacts\af_black_angel"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_black_angel.ogf
+inv_name						                 = st_af_black_angel_name
+inv_name_short					                 = st_af_black_angel_name
+description						                 = st_af_black_angel_descr
+inv_weight						                 = 0.5
+inv_grid_x						                 = 11
+inv_grid_y						                 = 73
+cost							                 = 26700
+inv_weight						                 = 3.850
+jump_height			                             = 0.15
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.8,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_grapes]:af_base
+$spawn							                 = "artefacts\af_grapes"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_grapes.ogf
+inv_name						                 = st_af_grapes_name
+inv_name_short					                 = st_af_grapes_name
+description						                 = st_af_grapes_descr
+inv_grid_x						                 = 12
+inv_grid_y						                 = 73
+cost							                 = 18700
+inv_weight						                 = 4.78
+jump_height			                             = 0.01
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_skull_miser]:af_base
+$spawn							                 = "artefacts\af_skull_miser"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_skull_miser.ogf
+inv_name						                 = st_af_skull_miser_name
+inv_name_short					                 = st_af_skull_miser_name
+description						                 = st_af_skull_miser_descr
+inv_grid_x						                 = 13
+inv_grid_y						                 = 73
+inv_weight						                 = 0.320
+cost							                 = 7800
+jump_height			                             = 0.1
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = false
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_star_phantom]:af_base
+$spawn							                 = "artefacts\af_star_phantom"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_star_phantom.ogf
+inv_name						                 = st_af_star_phantom_name
+inv_name_short					                 = st_af_star_phantom_name
+description						                 = st_af_star_phantom_descr
+inv_grid_x						                 = 14
+inv_grid_y						                 = 73
+cost							                 = 19000
+inv_weight						                 = 4.090
+jump_height			                             = 0.2
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.8,0.5,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_medallion]:af_base
+$spawn							                 = "artefacts\af_medallion"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_medallion.ogf
+inv_name						                 = st_af_medallion_name
+inv_name_short					                 = st_af_medallion_name
+description						                 = st_af_medallion_descr
+inv_grid_x						                 = 15
+inv_grid_y						                 = 73
+cost							                 = 26900
+inv_weight						                 = 2.96
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_peas]:af_base
+$spawn							                 = "artefacts\af_peas"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_peas.ogf
+inv_name						                 = st_af_peas_name
+inv_name_short					                 = st_af_peas_name
+description						                 = st_af_peas_descr
+inv_grid_x						                 = 16
+inv_grid_y						                 = 73
+inv_weight						                 = 0.8
+cost							                 = 8700
+jump_height			                             = 0.1
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled      			                 = true
+trail_light_color 				                 = 0.5,0.5,0.5
+trail_light_range 				                 = 2.0
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; ЗKislushkaИ
+;--------------------------------------------------------------------------------
+[af_kislushka]:af_base
+$spawn							                 = "artefacts\af_kislushka"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_kislushka.ogf
+inv_name						                 = st_af_kislushka_name
+inv_name_short					                 = st_af_kislushka_name
+description						                 = st_af_kislushka_descr
+inv_weight						                 = 0.5
+inv_grid_x						                 = 17
+inv_grid_y						                 = 73
+inv_weight						                 = 1.17
+cost							                 = 7890
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; Zhelch, Sandstone, 
+;--------------------------------------------------------------------------------
+[af_zhelch]:af_base
+$spawn 							                 = "artefacts\af_zhelch"
+kind			                             = i_arty_junk
+class							                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_zhelch.ogf
+inv_name						                 = st_af_zhelch_name
+inv_name_short					                 = st_af_zhelch_name
+description						                 = st_af_zhelch_descr
+inv_grid_x						                 = 18
+inv_grid_y						                 = 73
+inv_weight						                 = 0.4
+cost							                 = 16700
+jump_height			                             = 0.15
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.7
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_sandstone]:af_base
+$spawn							                 = "artefacts\af_sandstone"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_sandstone.ogf
+inv_name						                 = st_af_sandstone_name
+inv_name_short					                 = st_af_sandstone_name
+description						                 = st_af_sandstone_descr
+inv_grid_x						                 = 19
+inv_grid_y						                 = 73
+cost							                 = 19800
+inv_weight						                 = 2.22
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_acidic_idle
+det_show_particles		                         = artefact\af_acidic_show
+det_hide_particles		                         = artefact\af_acidic_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.7,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;--------------------------------------------------------------------------------
+; Fontan, Spaika, Signet, Repei, Bat, Sun, Ear, Chelust, Atom, Lighthouse 
+;--------------------------------------------------------------------------------
+[af_fountain]:af_base
+$spawn							                 = "artefacts\af_fountain"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_fountain.ogf
+inv_name						                 = st_af_fountain_name
+inv_name_short					                 = st_af_fountain_name
+description						                 = st_af_fountain_descr
+inv_grid_x						                 = 0
+inv_grid_y						                 = 74
+cost							                 = 17300
+jump_height						                 = 0.1
+inv_weight						                 = 1.320
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank							                 = 0
+lights_enabled      			                 = false
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_spaika]:af_base
+$spawn							                 = "artefacts\af_spaika"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_spaika.ogf
+inv_name						                 = st_af_spaika_name
+inv_name_short					                 = st_af_spaika_name
+description						                 = st_af_spaika_descr
+inv_grid_x						                 = 1
+inv_grid_y						                 = 74
+cost							                 = 19200
+jump_height						                 = 0.05
+inv_weight						                 = 1.498
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = false
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_signet]:af_base
+$spawn							                 = "artefacts\af_signet"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_signet.ogf
+inv_name						                 = st_af_signet_name
+inv_name_short					                 = st_af_signet_name
+description						                 = st_af_signet_descr
+inv_grid_x						                 = 2
+inv_grid_y						                 = 74
+cost							                 = 11800
+inv_weight			                             = 0.6
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = false
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_repei]:af_base
+$spawn 							                 = "artefacts\af_repei"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_repei.ogf
+inv_name						                 = st_af_repei_name
+inv_name_short					                 = st_af_repei_name
+description						                 = st_af_repei_descr
+inv_grid_x						                 = 3
+inv_grid_y						                 = 74
+inv_weight						                 = 0.3
+cost							                 = 10560
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_bat]:af_base
+$spawn							                 = "artefacts\af_bat"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_bat.ogf
+inv_name						                 = st_af_bat_name
+inv_name_short					                 = st_af_bat_name
+description						                 = st_af_bat_descr
+inv_grid_x						                 = 4
+inv_grid_y						                 = 74
+cost							                 = 30300
+inv_weight			                             = 2.271
+jump_height			                             = 0.01
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.7,0.4,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_sun]:af_base
+$spawn							                 = "artefacts\af_8_sun"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_sun.ogf
+inv_name						                 = st_af_sun_name
+inv_name_short					                 = st_af_sun_name
+description						                 = st_af_sun_descr
+inv_grid_x						                 = 5
+inv_grid_y						                 = 74
+cost							                 = 21800
+inv_weight						                 = 3.490
+jump_height			                             = 0.08
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled      			                 = true
+trail_light_color 				                 = 0.4,0.4,0.0
+trail_light_range 				                 = 2.0
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_ear]:af_base
+$spawn 							                 = "artefacts\af_ear"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_ear.ogf
+inv_name						                 = st_af_ear_name
+inv_name_short					                 = st_af_ear_name
+description						                 = st_af_ear_descr
+inv_grid_x						                 = 6
+inv_grid_y						                 = 74
+cost							                 = 6700
+inv_weight						                 = 0.578
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_chelust]:af_base
+$spawn							                 = "artefacts\af_chelust"
+kind			                             = i_arty_junk
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_chelust.ogf
+inv_name						                 = st_af_chelust_name
+inv_name_short					                 = st_af_chelust_name
+description						                 = st_af_chelust_descr
+inv_grid_x						                 = 7
+inv_grid_y						                 = 74
+cost							                 = 22400
+inv_weight						                 = 5.732
+jump_height			                             = 0.12
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.9,0.4,0.2
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+[af_atom]:af_base
+$spawn 							                 = "artefacts\af_atom"
+kind			                             = i_arty_junk
+class   						                 = ARTEFACT
+visual							                 = dynamics\artefacts\af_atom.ogf
+inv_name						                 = st_af_atom_name
+inv_name_short					                 = st_af_atom_name
+description						                 = st_af_atom_descr
+inv_grid_x						                 = 8
+inv_grid_y						                 = 74
+cost							                 = 9800
+inv_weight						                 = 0.659
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.6,0.7,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+[af_lighthouse]:af_base
+$spawn							                 = "artefacts\af_lighthouse"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_lighthouse.ogf
+inv_name						                 = st_af_lighthouse_name
+inv_name_short					                 = st_af_lighthouse_name
+description						                 = st_af_lighthouse_descr
+inv_grid_x						                 = 9
+inv_grid_y						                 = 74
+cost							                 = 24500
+inv_weight						                 = 1.746
+jump_height			                             = 0.02
+;particles		                                 = artefact\af_electra_idle
+det_show_particles		                         = artefact\af_electra_show
+det_hide_particles		                         = artefact\af_electra_hide
+particles_bone			                         = joint2
+af_rank				                             = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.5,0.6,0.9
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+;--------------------------------------------------------------------------------
+; ЗCellИ
+;--------------------------------------------------------------------------------
+[af_cell]:af_base
+$spawn							                 = "artefacts\af_cell"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_cell.ogf
+description						                 = st_af_cell_descr
+inv_name						                 = st_af_cell_name
+inv_name_short					                 = st_af_cell_name
+inv_grid_x						                 = 10
+inv_grid_y						                 = 74
+cost							                 = 23200
+jump_height						                 = 0.1
+inv_weight						                 = 1.814
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank							                 = 0
+lights_enabled                                   = true
+trail_light_color 		                         = 0.4,0.4,0.4
+trail_light_range 		                         = 1.0
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 2
+
+;--------------------------------------------------------------------------------
+; ЗЉоконИ
+;--------------------------------------------------------------------------------
+[af_cocoon]:af_base
+$spawn							                 = "artefacts\af_cocoon"
+kind			                             = i_arty_junk
+class				                             = ARTEFACT  	; будет подпрыгивать
+visual							                 = dynamics\artefacts\af_cocoon.ogf
+inv_name						                 = st_af_cocoon_name
+inv_name_short					                 = st_af_cocoon_name
+description						                 = st_af_cocoon_descr
+inv_grid_x						                 = 11
+inv_grid_y						                 = 74
+cost							                 = 17400
+inv_weight						                 = 1.03
+jump_height			                             = 0.05
+;particles		                                 = artefact\af_thermal_idle
+det_show_particles		                         = artefact\af_thermal_show
+det_hide_particles		                         = artefact\af_thermal_hide
+particles_bone			                         = joint2
+af_rank							                 = 0
+lights_enabled      			                 = true
+trail_light_color 		                         = 0.3,0.3,0.3
+trail_light_range 		                         = 1.0
+
+attach_angle_offset		                         = 1.922,1.551,-0.740   
+attach_position_offset                           = 0.15,0.002,0.25
+attach_bone_name		                         = bip01_r_hand
+auto_attach			                             = false
+
+tier = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

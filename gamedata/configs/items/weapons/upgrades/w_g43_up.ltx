@@ -1,0 +1,227 @@
+
+[up_sect_firsta_g43]
+cost                                     = 1480
+value                                    = +10
+condition_shot_dec                       = -0.0003
+condition_queue_shot_dec                 = -0.0003
+inv_weight                               = +0.14
+
+[up_sect_firstc_g43]
+cost                                     = 1640
+value                                    = +10
+bullet_speed                             = +80
+fire_distance                            = +60
+fire_dispersion_base                     = -0.01
+inv_weight                               = +0.11
+
+[up_sect_firstd_g43]
+cost                                     = 1460
+value                                    = -10
+cam_dispersion                           = -0.192
+cam_dispersion_inc                       = 0.0 ;0.0 ;-0.0
+cam_step_angle_horz                      = -0.025 
+zoom_cam_dispersion                      = -0.125
+zoom_cam_dispersion_inc                  = 0.0 ; -0.125
+zoom_cam_step_angle_horz                 = -0.045
+inv_weight                               = +0.1
+
+[up_sect_firste_g43]
+cost                                     = 1340
+value                                    = +25
+crosshair_inertion                       = -1.0
+PDM_disp_base                            = -0.1
+PDM_disp_vel_factor                      = -0.5
+PDM_disp_accel_factor                    = -0.5
+inv_weight                               = +0.1
+
+[up_sect_secona_g43]
+cost                                     = 2860
+value                                    = -0.6
+inv_weight                               = -0.6
+crosshair_inertion                       = -0.25
+PDM_disp_vel_factor                      = -0.05
+PDM_disp_accel_factor                    = -0.05
+
+[up_sect_seconc_g43]
+cost                                     = 1220
+value                                    = +12
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.2
+PDM_disp_accel_factor                    = -0.2
+inv_weight                               = +0.05
+
+[up_sect_second_g43]
+cost                                     = 1520
+value                                    = -10
+cam_dispersion                           = -0.192
+cam_dispersion_inc                       = 0.0 ;0.0 ;-0.192
+cam_step_angle_horz                      = -0.025 
+zoom_cam_dispersion                      = -0.125
+zoom_cam_dispersion_inc                  = 0.0 ; -0.125
+zoom_cam_step_angle_horz                 = -0.045
+inv_weight                               = +0.15
+
+[up_sect_thirda_g43]
+cost                                     = 1560
+value                                    = +10
+condition_shot_dec                       = -0.0003
+condition_queue_shot_dec                 = -0.0003
+inv_weight                               = +0.15
+
+[up_sect_thirdc_g43]
+cost                                     = 2240
+value                                    = -10
+cam_dispersion                           = -0.192
+cam_dispersion_inc                       = 0.0 ;0.0 ;-0.192
+cam_step_angle_horz                      = -0.025 
+zoom_cam_dispersion                      = -0.125
+zoom_cam_dispersion_inc                  = 0.0 ; -0.125
+zoom_cam_step_angle_horz                 = -0.045
+inv_weight                               = +0.2
+
+[up_sect_thirde_g43]
+cost                                     = 1870
+value                                    = +25
+condition_shot_dec                       = -0.0006
+condition_queue_shot_dec                 = -0.0006
+inv_weight                               = +0.14
+
+[up_sect_thirdf_g43]
+cost                                     = 2340
+value                                    = +20
+fire_distance                            = +140
+bullet_speed                             = +150
+hit_impulse                              = +5
+inv_weight                               = +0.2
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_g43]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_g43
+section                                  = up_sect_firsta_g43
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_a1_name
+description                              = st_up_bard_a1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_1
+
+[up_firstc_g43]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = 
+section                                  = up_sect_firstc_g43
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b3_name
+description                              = st_up_bard_b3_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_2
+
+
+[up_firstd_g43]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = 
+section                                  = up_sect_firstd_g43
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b4_name
+description                              = st_up_bard_b4_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_3
+
+
+[up_secona_g43]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = 
+section                                  = up_sect_secona_g43
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_a2_name
+description                              = st_up_stvd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_6
+
+
+[up_thirda_g43]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_g43
+section                                  = up_sect_thirda_g43
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_a2_name
+description                              = st_up_autd_a2_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_9
+
+
+[up_thirdc_g43]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = 
+section                                  = up_sect_thirdc_g43
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b1_name
+description                              = st_up_autd_b1_descr
+icon                                     = ui_inGame2_upgrade_Hunting_rifle_10
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_g43]
+elements                                 = up_firsta_g43
+
+[up_gr_firstcd_g43]
+elements                                 = up_firstc_g43, up_firstd_g43
+
+[up_gr_seconab_g43]
+elements                                 = up_secona_g43
+
+[up_gr_thirdab_g43]
+elements                                 = up_thirda_g43
+
+[up_gr_thirdcd_g43]
+elements                                 = up_thirdc_g43

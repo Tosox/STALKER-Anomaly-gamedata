@@ -1,0 +1,118 @@
+---------------------------------------------
+-- PDA Backpack Travel (CoC 1.4.22 / 1.5 R6)
+-- script version 12
+-- author: sLoPpYdOtBiGhOlE
+---------------------------------------------
+local bp_travel,bp_combat,bp_damage,bp_notime,bp_storm,bp_weight
+
+local function bbp_extra_weight()
+	local w = 0
+	
+	local function itr(npc,itm)
+		if (npc:is_on_belt(itm)) then
+			w = w + (itm and ((ini_sys:r_float_ex(itm:section(),"additional_inventory_weight") or 0) * itm:condition()) or 0)
+		end
+	end
+	db.actor:iterate_inventory(itr,db.actor)
+	
+	local bkpk = db.actor:item_in_slot(13)
+	w = w + (bkpk and ini_sys:r_float_ex(bkpk:section(),"additional_inventory_weight") or 0)
+	
+	return w
+end
+
+local function map_spot_menu_add_property(property_ui,id,level_name)
+	local se_obj = alife_object(id)
+	if not (se_obj) then
+		return
+	end
+	if (bp_travel) and (string.find(se_obj:name(), "inv_actor_backpack") or string.find(se_obj:name(), "inv_backpack")) then
+		property_ui:AddItem(game.translate_string("bp_to"))
+		if (level.object_by_id(id)) then
+			property_ui:AddItem(game.translate_string("bp_open"))
+		end
+	end
+end
+
+local function map_spot_menu_property_clicked(property_ui,id,level_name,prop)
+	local se_obj = alife_object(id)
+	if not (se_obj) then
+		return
+	end
+	if (prop == game.translate_string("bp_to")) then
+		if not (bp_combat) then
+			if not (is_empty(xr_combat_ignore.fighting_with_actor_npcs)) then
+				hide_hud_pda()
+				actor_menu.set_msg(1, game.translate_string("st_travel_event"),4)
+				return
+			end
+		end
+		if not (bp_weight) then
+			local suit = db.actor:item_in_slot(7)
+			local diff = db.actor:get_total_weight() - db.actor:get_actor_max_walk_weight() - (suit and suit:get_additional_max_weight() or 0) - bbp_extra_weight()
+			if diff > 0 then
+				hide_hud_pda()
+				actor_menu.set_msg(1, game.translate_string("st_travel_overloaded"),4)
+				return
+			end
+		end
+		if not (bp_damage) then
+			local bleeding = db.actor.bleeding > 0
+			local radiation = db.actor.radiation > 0
+			if (bleeding or radiation) then
+				if (bleeding and radiation) then
+					actor_menu.set_msg(1, game.translate_string("st_sleep_bleeding_irradiated"),5)
+				elseif (bleeding) then
+					actor_menu.set_msg(1, game.translate_string("st_sleep_bleeding"),4)
+				elseif (radiation) then
+					actor_menu.set_msg(1, game.translate_string("st_sleep_irradiated"),4)
+				end
+				hide_hud_pda()
+				return
+			end
+		end
+		if not (bp_storm) then
+			if (xr_conditions.surge_started() or psi_storm_manager.is_started()) then
+				actor_menu.set_msg(1, game.translate_string("st_travel_event"),4)
+				hide_hud_pda()
+				return
+			end
+		end
+		if not (bp_notime) then
+			local dist = db.actor:position():distance_to(se_obj.position)
+			level.change_game_time(0,math.floor(dist/1000)+math.random(0,2),math.random(1,59))
+			surge_manager.get_surge_manager().time_forwarded = true
+			psi_storm_manager.get_psi_storm_manager().time_forwarded = true
+			level_weathers.get_weather_manager():forced_weather_change()
+		end
+
+		if (level_name == level.name()) then
+			db.actor:set_actor_position(se_obj.position)
+			hide_hud_pda()
+		else
+			ChangeLevel(se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id,VEC_ZERO, true)
+		end
+	elseif (prop == game.translate_string("bp_open")) then
+		local b = level.object_by_id(id)
+		if (b) then
+			hide_hud_inventory()
+			b:use(db.actor)
+		end
+	end
+end
+
+function update_settings()
+	bp_travel = ui_options.get("gameplay/backpack_travel/state")
+	bp_combat = ui_options.get("gameplay/backpack_travel/on_combat")
+	bp_damage = ui_options.get("gameplay/backpack_travel/on_damage")
+	bp_notime = ui_options.get("gameplay/backpack_travel/time")
+	bp_storm  = ui_options.get("gameplay/backpack_travel/on_emission")
+	bp_weight = ui_options.get("gameplay/backpack_travel/on_overweight")
+end
+
+function on_game_start()
+	RegisterScriptCallback("map_spot_menu_add_property",map_spot_menu_add_property)
+	RegisterScriptCallback("map_spot_menu_property_clicked",map_spot_menu_property_clicked)
+	RegisterScriptCallback("on_game_load",update_settings)
+	RegisterScriptCallback("on_option_change",update_settings)
+end

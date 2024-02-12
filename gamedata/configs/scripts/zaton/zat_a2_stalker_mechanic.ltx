@@ -1,0 +1,66 @@
+[logic@zat_a2_stalker_mechanic]
+suitable = {=check_npc_name(zat_a2_stalker_mechanic)} true ;--, {=check_npc_mechanic} true
+prior = 200
+active = animpoint@sit
+can_select_weapon = false
+level_spot = mechanic
+
+[animpoint@sit]
+cover_name = kardan_smart_cover
+avail_animations = animpoint_sit_normal
+use_camp = false
+meet = meet
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+invulnerable = {!actor_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+on_info = {=is_rain} walker@smoke
+on_info1 = {+awr_zat_a2_stalker_mechanic_access} animpoint@resting
+
+[animpoint@resting]:animpoint@sit
+cover_name = kardan_smart_cover
+avail_animations = animpoint_sit_normal_drink_vodka
+;meet = no_meet
+on_game_timer = 2000 | animpoint@sit %=awr_timer_msg_off%
+
+[animpoint@sit2]
+cover_name = kardan_smart_cover
+avail_animations = animpoint_sit_normal
+use_camp = false
+meet = meet
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+invulnerable = {!actor_enemy} true, false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+on_info = {!is_rain} animpoint@sit
+
+[walker@smoke]
+path_walk = kardan_mlr_1_walk
+path_look = kardan_mlr_1_look
+on_game_timer = 2300 | animpoint@sit2
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+reach_distance = 10
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+invulnerable = {!actor_enemy} true, false
+;meet = no_meet
+
+[meet]
+close_snd_hello = zat_b3_tech_drink_no_more
+close_snd_bye   = nil
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = 3
+use = {=actor_enemy} false, true
+allow_break = false
+meet_on_talking = false

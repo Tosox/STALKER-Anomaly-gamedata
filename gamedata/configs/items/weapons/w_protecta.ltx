@@ -1,0 +1,309 @@
+;------------------------------------------------------------------------------------------------
+[wpn_protecta]:identity_immunities,weapon_probability,default_weapon_params,wpn_protecta_sounds
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\protecta"
+scheduled                                = off
+cform                                    = skeleton
+
+class                                    = WP_ASHTG
+slot                                     = 2
+animation_slot                           = 10
+ef_main_weapon_type                      = 1
+ef_weapon_type                           = 9
+hand_dependence                          = 1
+single_handed                            = 0
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 35
+inv_grid_y                               = 42
+inv_name                                 = st_wpn_protecta
+inv_name_short                           = st_wpn_protecta
+description                              = st_wpn_protecta_descr
+
+kind                                     = w_shotgun
+inv_weight                               = 4.2
+cost                                     = 28550
+repair_type                              = shotgun
+weapon_class                             = shotgun
+
+hud                                      = wpn_protecta_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta
+position                                 = -0.024, -0.097, 0.0
+orientation                              = 0, -4, 0
+fire_point                               = 0.0, 0.158, 0.647
+fire_point2                              = 0.0, 0.158, 0.647
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.26, -0.15, 0.15
+strap_orientation                        = -15, -9, 110
+ph_mass                                  = 3
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = amik\weapons\smoke_particles\smoke_particles_pump_01
+
+shell_point					             = 0.0, 0.180, 0.647
+shell_particles         				 = weapons\12ga
+
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 6.0
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_protecta, up_gr_seconab_protecta, up_gr_thirdab_protecta, up_gr_fourtab_protecta
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_protecta
+upgr_icon_x                              = 1450
+upgr_icon_y                              = 200
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+tri_state_reload                         = on
+fire_modes                               = 1
+ammo_class                               = ammo_12x70_buck, ammo_12x70_buck_bad, ammo_12x70_buck_verybad, ammo_12x76_zhekan, ammo_12x76_zhekan_bad, ammo_12x76_zhekan_verybad, ammo_12x76_dart, ammo_12x76_dart_bad, ammo_12x76_dart_verybad, ammo_12x70_buck_self
+ammo_current                             = 12
+ammo_elapsed                             = 0
+ammo_limit                               = 60
+ammo_mag_size                            = 12
+startup_ammo                             = 10
+
+scope_status                             = 0
+scope_texture                            = 
+scope_x                                  = 95
+scope_y                                  = -1
+scope_zoom_factor                        = 0
+
+silencer_status                          = 0
+
+grenade_launcher_status                  = 0
+
+hit_impulse                              = 30
+hit_power                                = 0.78, 0.78, 0.78, 0.78
+hit_type                                 = fire_wound
+fire_distance                            = 300
+bullet_speed                             = 320
+rpm                                      = 155
+rpm_empty_click                          = 200
+
+zoom_dof                                 = 0.5, 1.0, 180
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.25
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 6.3
+fire_dispersion_base                     = 0.53
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.005
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.11
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0021
+condition_shot_dec                       = 0.0021
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 6.46
+cam_dispersion_frac                      = 0.9
+cam_dispersion_inc                       = 3.44
+cam_max_angle                            = 50.0
+cam_max_angle_horz                       = 50.0
+cam_step_angle_horz                      = 2.22
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 5.54
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_dispersion_inc                  = 2.46
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.88
+
+PDM_disp_accel_factor                    = 1.35
+PDM_disp_base                            = 1.55
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 1.35
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 120.75
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.0
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 258
+kill_msg_y                               = 3
+kill_msg_width                           = 94
+kill_msg_height                          = 21
+
+
+[wpn_protecta_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_hud
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = 0.1, -0.055, 0.25
+hands_position_16x9                      = 0.1, -0.055, 0.25
+hands_orientation                        = 0, 0, 0
+hands_orientation_16x9                   = 0, 0, 0
+
+aim_hud_offset_pos                       = -0.10018, -0.00485, -0.3
+aim_hud_offset_pos_16x9                  = -0.10018, -0.00485, -0.3
+aim_hud_offset_rot                       = -0.04, 0.00024, 0.0
+aim_hud_offset_rot_16x9                  = -0.04, 0.00024, 0.0
+
+anm_add_cartridge                        = protecta_reload, reload
+anm_close                                = protecta_reload_end, reload_end
+anm_hide                                 = protecta_holster
+anm_idle                                 = protecta_idle
+anm_idle_aim                             = protecta_aim
+anm_idle_aim_moving                      = protecta_move, idle, 0.75
+anm_idle_aim_moving_crouch               = protecta_move, idle, 0.7
+anm_idle_moving                          = protecta_move
+anm_idle_sprint                          = protecta_sprint
+anm_open                                 = protecta_reload_start, reload_start
+anm_shots                                = protecta_shoot, shoot
+anm_show                                 = protecta_draw
+
+shell_bone                               = gilza
+shell_dir                                = 0, 0, 0
+shell_point                              = 0, 0, 0
+
+fire_bone                                = muzzle
+fire_point                               = 0, 0, 0
+
+freelook_z_offset_mul					 = 0.6
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_aim]:wpn_protecta
+inv_grid_x                               = 35
+inv_grid_y                               = 52
+inv_name                                 = st_wpn_protecta_aim
+inv_name_short                           = st_wpn_protecta_aim
+description                              = st_wpn_protecta_aim_descr
+
+cost                                     = 33780
+
+hud                                      = wpn_protecta_aim_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_aim.ogf
+
+rpm                                      = 150
+
+fire_dispersion_base                     = 0.53
+
+misfire_start_condition                  = 0.7 ;  0.78
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.093
+misfire_end_prob                         = 0.05
+
+condition_queue_shot_dec                 = 0.0022
+condition_shot_dec                       = 0.0022
+
+
+[wpn_protecta_aim_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_aim_hud.ogf
+
+aim_hud_offset_pos                       = -0.1001,0.0206,-0.3
+aim_hud_offset_pos_16x9                  = -0.1001,0.0206,-0.3
+aim_hud_offset_rot                       = 0,0.0003,0
+aim_hud_offset_rot_16x9                  = 0,0.0003,0
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_camo]:wpn_protecta
+inv_grid_x                               = 35
+inv_grid_y                               = 44
+inv_name                                 = st_wpn_protecta_camo
+inv_name_short                           = st_wpn_protecta_camo
+
+cost                                     = 33850
+
+hud                                      = wpn_protecta_sk1_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_sk1.ogf
+
+installed_upgrades                       = up_firsta_protecta, up_secona_protecta
+
+fire_dispersion_base                     = 0.6
+
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.00223
+condition_shot_dec                       = 0.00223
+
+
+[wpn_protecta_sk1_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_custom]:wpn_protecta
+inv_grid_y                               = 46
+inv_name                                 = st_wpn_protecta_custom
+inv_name_short                           = st_wpn_protecta_custom
+
+cost                                     = 30650
+
+hud                                      = wpn_protecta_sk2_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_sk2.ogf
+
+installed_upgrades                       = up_fourta_protecta
+
+rpm                                      = 168
+
+fire_dispersion_base                     = 0.62
+
+misfire_start_condition                  = 0.7 ;  0.76
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.04
+
+condition_queue_shot_dec                 = 0.00211
+condition_shot_dec                       = 0.00211
+
+
+[wpn_protecta_sk2_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_nimble]:wpn_protecta
+$spawn                                   = "weapons\wpn_protecta_nimble"
+
+inv_grid_x                               = 35
+inv_grid_y                               = 54
+inv_name                                 = st_wpn_protecta_nimble
+inv_name_short                           = st_wpn_protecta_nimble
+description                              = st_wpn_protecta_nimble_descr
+
+cost                                     = 32680
+
+hud                                      = wpn_protecta_nimble_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_nimble
+
+rpm                                      = 191
+
+fire_dispersion_base                     = 0.63
+
+misfire_start_condition                  = 0.7 ;  0.76
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.0022
+condition_shot_dec                       = 0.0022
+
+
+[wpn_protecta_nimble_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_nimble_hud
+

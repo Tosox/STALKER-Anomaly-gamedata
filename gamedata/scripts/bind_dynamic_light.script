@@ -1,0 +1,179 @@
+---------------------------------------------------------------------------------------------------
+-- Physic objects binding
+----------------------------------------------------------------------------------------------------
+local lights = {}
+local switch = false
+
+local function on_key_press(key)
+	if (key == 34) then --G
+		switch = not switch
+		
+		if (switch) then
+			printf("flicker turned on")
+		else
+			printf("flicker turned off")
+		end
+	end
+end
+
+function on_game_start()
+	--RegisterScriptCallback("on_key_press",on_key_press)
+end
+
+local psi_influence_clsid = {
+
+	[clsid.poltergeist_s] = true,
+	[clsid.controller_s] = true,
+	
+}
+
+function need_flicker(lamp_obj)
+	
+	-- Flicker on Emission Wave or Vortex
+	if (level_environment.get_light_flicker()) then return true end
+	
+	-- Flicker if Psi Mutant nearby
+	local psi_influence = false
+	local function iterate_func(obj)
+		if (obj and psi_influence_clsid[obj:clsid()] and obj:alive()) then 
+			psi_influence = true
+			return true
+		end
+	end
+
+	level.iterate_nearest(lamp_obj:position(), 15, iterate_func)
+	
+	if psi_influence then return true end
+	
+	return switch
+end
+
+function init(obj)
+	local visual = obj:get_visual_name()
+	
+	if (visual) then
+		obj:bind_object(generic_light_binder(obj))
+	end
+end
+
+---------------------------------------------------------------------------------------------
+class "generic_light_binder" (object_binder)
+function generic_light_binder:__init(obj) super(obj)
+	
+	local visual = self.object:get_visual_name()
+	if (visual) then
+		if (string.match(visual, "galogen")) then
+		
+			lights[obj:id()] = "light\\light_galogen_br_01"
+		
+			--self.object:start_particles("ogsm\\ogsm_flies","link")
+			self.humming = sound_object("ambient\\special\\light_humming")
+			self.humming:play_at_pos(self.object, self.object:position(), 0, sound_object.s3d + sound_object.looped)
+			self.humming.volume = 0.0
+			self.humming_max = time_global() + 5000
+		elseif (string.match(visual, "alarm")) then
+			lights[obj:id()] = "light\\light_alarm_blim"
+		else
+			lights[obj:id()] = "light_flicker"
+		end
+	end
+	
+	self.tg = 0
+	self.last_state = self.object:get_hanging_lamp():is_on()
+end
+
+function generic_light_binder:reload(section)
+end
+
+function generic_light_binder:reinit()
+end
+
+function generic_light_binder:update(delta)
+
+	self.object:set_callback(callback.hit, generic_light_binder.hit_callback, self)
+	self.object:set_callback(callback.death, generic_light_binder.death_callback, self)
+	self.object:set_callback(callback.use_object, generic_light_binder.use_callback, self)
+	
+	local lamp_obj = self.object:get_hanging_lamp()
+	local is_flickering = lamp_obj:is_flickering()
+	local is_on = lamp_obj:is_on()
+	
+	if (self.last_state ~= is_on) then
+	
+		-- Halogen Humming
+		if (is_on) then
+			if (self.humming ~= nil and not self.humming:playing()) then
+				self.humming:play_at_pos(self.object, self.object:position(), 0, sound_object.s3d + sound_object.looped)
+				self.humming.volume = 0.0
+				self.humming_max = time_global() + 5000
+			end
+		else
+			if (self.humming ~= nil and self.humming:playing()) then
+				self.humming:stop()
+			end
+		end
+	
+		-- Buzzing Sounds
+		if (self.humming ~= nil) then
+			sound_object("ambient\\special\\Light_Buzz_"..math.random(1,4)):play_no_feedback(self.object, sound_object.s3d, 0, self.object:position(), math.random(5,8), random_float(0.9, 1.1))
+		else
+			sound_object("ambient\\special\\Light_sizzles_"..math.random(1,11)):play_no_feedback(self.object, sound_object.s3d, 0, self.object:position(), random_float(0.5, 0.9), random_float(0.9, 1.1))
+		end
+	end
+	
+	self.last_state = is_on
+	
+	-- Slow Startup for Humming Sound
+	if (self.humming ~= nil and self.humming:playing() and (self.humming_max > time_global())) then
+		self.humming.volume = 0.6 - (self.humming_max - time_global()) / 5000.0
+	end
+
+	if (self.tg > time_global()) then return end
+	self.tg = time_global() + 1000
+	
+	local needflicker = need_flicker(self.object)
+	
+	if (needflicker and not is_flickering) then
+		--							color animator			 flicker	on/off chance	on/off base time		 color animator fps
+		lamp_obj:set_color_animator(lights[self.object:id()], true, math.random(25,75), random_float(0.75,1.75), math.random(10,20))
+	elseif (not needflicker and is_flickering) then
+		lamp_obj:reset_color_animator()
+	end
+end
+
+function generic_light_binder:net_spawn(data)
+end
+
+function generic_light_binder:net_destroy()
+	if (self.humming) then
+		self.humming:stop()
+		self.humming = nil
+	end
+	
+	lights[self.object:id()] = nil
+end
+
+function generic_light_binder:net_save_relevant()
+	return true
+end
+
+function generic_light_binder:save(packet)
+end
+
+function generic_light_binder:load(reader)
+end
+
+function generic_light_binder:use_callback(obj, who)
+end
+
+function generic_light_binder:hit_callback(obj, amount, local_direction, who, bone_index)
+end
+
+function generic_light_binder:death_callback(victim, who)
+	if (self.humming) then
+		self.humming:stop()
+		self.humming = nil
+	end
+	
+	lights[self.object:id()] = nil
+end

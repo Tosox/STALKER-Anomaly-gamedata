@@ -1,0 +1,20 @@
+[logic@patrol_1]
+active = walker@patrol_1
+; monster_job = true
+; prior = 45
+
+[walker@patrol_1]
+path_walk = patrol_1_walk
+; path_look = guard_1_look
+
+[logic@polter]
+active = mob_home@polter
+monster_job = true
+
+[mob_home@polter]
+path_home = pol_smart_terrain_2_1_home_1
+home_min_radius = 20
+home_max_radius = 50
+aggressive_home
+; braindead = true
+; combat_ignore_cond = true

@@ -1,0 +1,66 @@
+#include "common.h"
+
+uniform float3 dof_kernel;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Pixel
+float4 main( p_screen I ) : SV_TARGET
+{
+  return (
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      -3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      -3.0f / screen_res.y)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      -2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      -2.0f / screen_res.y)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      -1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      -1.0f / screen_res.y)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      0)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      0)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      1.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      1.0f / screen_res.y)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      2.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      2.0f / screen_res.y)* dof_kernel.z)) +
+ 
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-3.0f / screen_res.x,     3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-2.0f / screen_res.x,     3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(-1.0f / screen_res.x,     3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(0,                      3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(1.0f / screen_res.x,      3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(2.0f / screen_res.x,      3.0f / screen_res.y)* dof_kernel.z)) +
+    s_image.Sample(smp_nofilter, I.tc0 + (float2(3.0f / screen_res.x,      3.0f / screen_res.y)* dof_kernel.z))
+  ) / 49;
+}

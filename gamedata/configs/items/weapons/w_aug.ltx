@@ -1,0 +1,370 @@
+;------------------------------------------------------------------------------------------------
+[wpn_aug]:identity_immunities,weapon_probability,default_weapon_params,wpn_aug_sounds
+GroupControlSection                      = spawn_group
+$npc                                     = on
+$prefetch                                = 8
+$spawn                                   = "weapons\l85"
+scheduled                                = off
+cform                                    = skeleton
+
+class                                    = WP_AK74
+slot                                     = 2
+animation_slot                           = 2
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 7
+hand_dependence                          = 1
+single_handed                            = 0
+
+default_to_ruck                          = false
+sprint_allowed                           = true
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 40
+inv_name                                 = st_wpn_aug
+inv_name_short                           = st_wpn_aug
+description                              = st_wpn_aug_descr
+
+kind                                     = w_rifle
+inv_weight                               = 3.3
+cost                                     = 40680
+repair_type                              = rifle_5
+weapon_class                             = assault_rifle
+
+hud                                      = wpn_aug_a1_hud
+visual                                   = dynamics\weapons\wpn_aug_a1\wpn_aug_a1.ogf
+position                                 = -0.026, -0.135, 0.0
+orientation                              = 0, 0, 0
+fire_point                               = 0.0, 0.186, 0.415
+fire_point2                              = 0.0, 0.106, 0.468
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
+strap_position                           = -0.15, -0.36, 0.25
+strap_orientation                        = -10, -5, 10
+ph_mass                                  = 5
+
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point					             = -0.02, 0.17, -0.18
+shell_dir					             = 0,0,0.4
+shell_particles				             = weapons\556x45
+
+light_disabled                           = false
+light_color                              = 0.6, 0.5, 0.3
+light_range                              = 5
+light_time                               = 0.2
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+
+upgrades                                 = up_gr_firstab_aug, up_gr_seconab_aug, up_gr_thirdab_aug, up_gr_fourtab_aug, up_gr_fourtcd_aug, up_gr_fourtef_aug, up_gr_fifthab_aug, up_gr_fifthcd_aug
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_l85
+upgr_icon_x                              = 300
+upgr_icon_y                              = 500
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
+
+fire_modes                               = 1, -1
+ammo_class                               = ammo_5.56x45_fmj, ammo_5.56x45_fmj_bad, ammo_5.56x45_fmj_verybad, ammo_5.56x45_ss190, ammo_5.56x45_ss190_bad, ammo_5.56x45_ss190_verybad, ammo_5.56x45_ap, ammo_5.56x45_ap_bad, ammo_5.56x45_ap_verybad
+ammo_elapsed                             = 30
+ammo_mag_size                            = 30
+startup_ammo                             = 90
+
+scope_status                             = 0
+scope_name                               = wpn_addon_scope_susat
+scope_texture                            = 
+scope_x                                  = 60
+scope_y                                  = -2
+scope_zoom_factor                        = 55
+
+silencer_name                            = wpn_sil_nato
+silencer_status                          = 2
+silencer_x                               = 232
+silencer_y                               = 14
+silencer_light_color                     = 0.6, 0.5, 0.3
+silencer_light_range                     = 0.01
+silencer_light_time                      = 0.2
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_smoke_particles                 = weapons\generic_shoot_00
+
+grenade_class                            = ammo_m209, ammo_m209_bad, ammo_m209_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 128
+grenade_launcher_y                       = 28
+launch_speed                             = 0
+
+hit_impulse                              = 25
+hit_power                                = 0.51, 0.51, 0.51, 0.51
+hit_type                                 = fire_wound
+fire_distance                            = 1000
+bullet_speed                             = 930
+rpm                                      = 680
+rpm_empty_click                          = 200
+
+use_aim_bullet                           = false
+time_to_aim                              = 0.0 ;  3.0
+zoom_dof                                 = 0.5, 1.0, 180
+zoom_enabled                             = true
+zoom_rotate_time                         = 0.25
+reload_dof                               = 0.0, 0.5, 5, 2
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 5.6
+fire_dispersion_base                     = 0.3
+fire_dispersion_condition_factor         = 0.001
+
+misfire_probability                      = 0.05
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.11
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+cam_return                               = 0
+cam_relax_speed                          = 5
+cam_dispersion                           = 0.556
+cam_dispersion_frac                      = 1.1
+cam_dispersion_inc                       = 0.0675
+cam_max_angle                            = 50.0
+cam_max_angle_horz                       = 50.0
+cam_step_angle_horz                      = 2.0
+zoom_cam_relax_speed                     = 5
+zoom_cam_dispersion                      = 0.466
+zoom_cam_dispersion_frac                 = 1.0
+zoom_cam_dispersion_inc                  = 0.0525
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.8
+
+PDM_disp_accel_factor                    = 1.58
+PDM_disp_base                            = 0.5
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
+PDM_disp_vel_factor                      = 1.58
+
+cam_relax_speed_ai                       = 360
+zoom_cam_relax_speed_ai                  = 360
+holder_fov_modifier                      = 1.0
+holder_range_modifier                    = 1.85
+min_radius                               = 0
+max_radius                               = 500
+hit_probability_gd_novice                = 1.00
+hit_probability_gd_stalker               = 1.00
+hit_probability_gd_veteran               = 1.00
+hit_probability_gd_master                = 1.00
+
+kill_msg_x                               = 84
+kill_msg_y                               = 28
+kill_msg_width                           = 73
+kill_msg_height                          = 30
+
+
+[wpn_aug_hud]:hud_base
+item_visual                              = anomaly_weapons\wpn_aug_a1\wpn_aug_a1_hud.ogf
+attach_place_idx                         = 0
+zoom_hide_crosshair                      = true   
+
+item_position                            = 0, 0, 0
+item_orientation                         = 0, 0, 0
+
+hands_position                           = -0.064, -0.17, 0.2055
+hands_position_16x9                      = -0.064, -0.17, 0.2055
+hands_orientation                        = 0.52, 2.4, 0.15
+hands_orientation_16x9                   = 0.52, 2.4, 0.15
+
+aim_hud_offset_pos                       = -0.0915, 0.0363, -0.3
+aim_hud_offset_pos_16x9                  = -0.0915, 0.0363, -0.3
+aim_hud_offset_rot                       = 0.0356, 0.0121, 0.01
+aim_hud_offset_rot_16x9                  = 0.0356, 0.0121, 0.01
+
+gl_hud_offset_pos                        = 0, 0, 0
+gl_hud_offset_pos_16x9                   = 0, 0, 0
+gl_hud_offset_rot                        = 0, 0, 0
+gl_hud_offset_rot_16x9                   = 0, 0, 0
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = lancew_aug_a1_holser
+anm_idle                                 = lancew_aug_a1_idle
+anm_idle_aim                             = lancew_aug_a1_idle_aim
+anm_idle_aim_moving                      = lancew_aug_a1_moving, idle, 0.75
+anm_idle_aim_moving_crouch               = lancew_aug_a1_moving, idle, 0.7
+anm_idle_moving                          = lancew_aug_a1_moving
+anm_idle_sprint                          = lancew_aug_a1_sprint
+anm_reload                               = lancew_aug_a1_reload, reload
+anm_shots                                = lancew_aug_a1_shoot, shoot
+anm_show                                 = lancew_aug_a1_draw
+
+shell_bone                               = wpn_body
+shell_dir                                = 0, 1, 0
+shell_point                              = 0.02, 0.06, -0.099
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = -0.011, 0.053137, 0.487153
+fire_point2                              = 0, -0.017, 0.692
+
+[wpn_aug_a1_hud]:wpn_aug_hud,hud_low_interia	;3D SCOPE
+attach_place_idx                         = 0
+
+item_position                            = 0.0, 0.0, 0.0
+item_orientation                         = 0.0, 0.0, 0.0
+
+hands_position                           = -0.044,-0.181999,0.2055
+hands_position_16x9                      = -0.044,-0.181999,0.2055
+hands_orientation                        = 0.519999, 2.409999, 0.1499993
+hands_orientation_16x9                   = 0.519999, 2.409999, 0.1499993
+
+aim_hud_offset_pos                       = -0.1116,0.05631,-0.3
+aim_hud_offset_pos_16x9                  = -0.1116,0.05631,-0.3
+aim_hud_offset_rot                       = 0.0356,0.0121,0.01
+aim_hud_offset_rot_16x9                  = 0.0356,0.0121,0.01
+
+gl_hud_offset_pos                        = -0.0465,-0.091,-0.15
+gl_hud_offset_pos_16x9                   = -0.0465,-0.091,-0.15
+gl_hud_offset_rot                        = -0.1625,-0.04,0
+gl_hud_offset_rot_16x9                   = -0.1625,-0.04,0
+
+lean_hud_offset_pos                      = 0, 0, 0
+lean_hud_offset_rot                      = 0, 0, 0
+
+anm_hide                                 = lancew_aog_a1_holser
+anm_idle                                 = lancew_aog_a1_idle
+anm_idle_aim                             = lancew_aog_a1_idle_aim
+anm_idle_moving                          = lancew_aog_a1_moving
+anm_idle_sprint                          = lancew_aog_a1_sprint
+anm_reload                               = lancew_aog_a1_reload, reload
+anm_shots                                = lancew_aog_a1_shoot, shoot
+anm_show                                 = lancew_aog_a1_draw
+
+shell_bone                               = wpn_body
+shell_dir                                = 0.0, 1.0, 0.0
+shell_point                              = 0.02, 0.06, -0.099
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = -0.011, 0.053137, 0.487153
+fire_point2                              = 0.0, -0.017, 0.692
+
+;------------------------------------------------------------------------------------------------
+[wpn_aug_custom]:wpn_aug
+inv_grid_x                               = 35
+inv_name                                 = st_wpn_aug_custom
+inv_name_short                           = st_wpn_aug_custom
+
+cost                                     = 46580
+
+hud                                      = wpn_aug_sk3_hud
+visual                                   = dynamics\weapons\wpn_aug_a1\wpn_aug_a1_sk3.ogf
+
+installed_upgrades                       = up_firsta_aug
+
+rpm                                      = 700
+
+fire_dispersion_base                     = 0.25
+
+misfire_start_condition                  = 0.7 ;  0.63
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.075
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.0009
+condition_shot_dec                       = 0.0009
+
+
+[wpn_aug_sk3_hud]:wpn_aug_a1_hud
+item_visual                              = anomaly_weapons\wpn_aug_a1\wpn_aug_a1_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_aug_freedom]:wpn_aug
+inv_grid_x                               = 25
+inv_name                                 = st_wpn_aug_freedom
+inv_name_short                           = st_wpn_aug_freedom
+
+cost                                     = 43380
+
+hud                                      = wpn_aug_sk1_hud
+visual                                   = dynamics\weapons\wpn_aug_a1\wpn_aug_a1_sk1.ogf
+
+installed_upgrades                       = up_thirda_aug
+
+rpm                                      = 730
+
+fire_dispersion_base                     = 0.3
+
+misfire_start_condition                  = 0.7 ;  0.66
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.06
+
+condition_queue_shot_dec                 = 0.00075
+condition_shot_dec                       = 0.00075
+
+
+[wpn_aug_sk1_hud]:wpn_aug_a1_hud
+item_visual                              = anomaly_weapons\wpn_aug_a1\wpn_aug_a1_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_aug_merc]:wpn_aug
+inv_grid_x                               = 30
+inv_name                                 = st_wpn_aug_merc
+inv_name_short                           = st_wpn_aug_merc
+
+cost                                     = 45180
+
+hud                                      = wpn_aug_sk2_hud
+visual                                   = dynamics\weapons\wpn_aug_a1\wpn_aug_a1_sk2.ogf
+
+installed_upgrades                       = up_fourta_aug, up_firsta_aug
+
+rpm                                      = 710
+
+fire_dispersion_base                     = 0.23
+
+misfire_start_condition                  = 0.7 ;  0.65
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.08
+misfire_end_prob                         = 0.07
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+
+[wpn_aug_sk2_hud]:wpn_aug_a1_hud
+item_visual                              = anomaly_weapons\wpn_aug_a1\wpn_aug_a1_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_aug_modern]:wpn_aug
+inv_grid_x                               = 30
+inv_grid_y                               = 38
+inv_name                                 = st_wpn_aug_modern
+inv_name_short                           = st_wpn_aug_modern
+description                              = st_wpn_aug_modern_descr
+
+kind                                     = w_rifle
+cost                                     = 42580
+
+hud                                      = wpn_aug_sk4_hud
+visual                                   = dynamics\weapons\wpn_aug_a1\wpn_aug_a1_sk4.ogf
+
+fire_dispersion_base                     = 0.28
+
+misfire_start_condition                  = 0.7 ;  0.67
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.065
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+
+[wpn_aug_sk4_hud]:wpn_aug_a1_hud
+item_visual                              = anomaly_weapons\wpn_aug_a1\wpn_aug_a1_sk4_hud.ogf
+

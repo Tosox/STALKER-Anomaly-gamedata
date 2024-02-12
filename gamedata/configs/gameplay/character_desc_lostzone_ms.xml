@@ -1,0 +1,767 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<!--===========================================================
+<
+< CHARACTER DESCRIPTIONS FOR LOST TO THE ZONE: MORTAL SIN
+<	S.T.A.L.K.E.R.: Anomaly 1.5
+<
+<	Created by: SarisKhan
+<	Last revised: 31 August 2019
+<
+<===========================================================-->
+
+<xml>
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+	<!--
+	<!-- Sin Envoy Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	05 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<specific_character id="greh_envoy" team_default = "1">
+    <name>greh_envoy_name</name>
+    <icon>ui_inGame2_bandit_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>An envoy sent by a mysterious faction.</bio>
+    <class>greh_envoy</class>
+    <community>greh_npc</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>7200</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_1b_face_09</visual>
+    <supplies>
+     [spawn_loadout] \n
+	  wpn_ak74 = 1 \n
+	  wpn_ak74m = 1 \n
+	  wpn_aks74 = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_pm = 1 \n
+	  wpn_fort = 1 \n
+	  wpn_tt33_modern = 1 \n
+	  wpn_mp443 = 1 \n
+      [spawn] \n
+	  vodnik_notes = 1 \n
+	  grenade_rgd5 = 1 \n
+#include "gameplay\supplies\character_items_3.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_2.xml"
+#include "gameplay\character_artifacts.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>greh_envoy_greeting</start_dialog>
+    <start_dialog>greh_envoy_greeting_killer</start_dialog>
+	<actor_dialog>greh_envoy_dialog</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+  
+  <!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- Stitch (Strelok's Companion) Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	06 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<specific_character id="stalker_stitch_ms" team_default = "1">
+    <name>stalker_stitch_oa_name</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>An experienced loner and Strelok's companion. The team's medic.</bio>
+    <class>stalker_stitch_ms</class>
+    <community>stalker</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
+    <rank>8754</rank>
+    <reputation>1000</reputation>
+    <visual>actors\stalker_neutral\stalker_neutral_stitch</visual>
+    <supplies>
+        [spawn] \n
+		wpn_ak105_kobra = 1 \n
+        ammo_5.45x39_fmj = 3 \n
+		wpn_fort = 1 \n
+        ammo_9x18_fmj = 1 \n       
+        detector_advanced = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_sci.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+
+	<actor_dialog>stalker_stitch_mortal_sin</actor_dialog>
+	<actor_dialog>stalker_stitch_mortal_sin_decoder</actor_dialog>
+	<start_dialog>stalker_stitch_mortal_sin_generators</start_dialog>
+	<actor_dialog>stalker_stitch_mortal_sin_choice</actor_dialog>
+	<actor_dialog>stalker_stitch_heal</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- Rogue (Strelok's Companion) Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	18 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<specific_character id="stalker_rogue_ms" team_default = "1">
+    <name>stalker_rogue_oa_name</name>
+    <icon>ui_inGame2_neutral_2_merc</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>Former soldier and Strelok's companion. The team's brawn.</bio>
+    <class>stalker_rogue_ms</class>
+    <community>stalker</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\military_3\</snd_config>
+    <rank>12288</rank>
+    <reputation>650</reputation>
+    <visual>actors\stalker_neutral\stalker_neutral_rogue</visual>
+    <supplies>
+        [spawn] \n
+		wpn_pkm_zulus = 1 \n
+        ammo_pkm_100 = 2 \n
+		wpn_gsh18 = 1 \n
+        ammo_9x19_fmj = 1 \n                      
+		grenade_f1 = 1 \n
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+    <start_dialog>stalker_rogue_dialog_ms</start_dialog>	
+	<actor_dialog>stalker_rogue_mortal_sin</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_warfare</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_interrogation</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_contact_lost</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_ready</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_destruction</actor_dialog>
+	<actor_dialog>stalker_rogue_mortal_sin_assault</actor_dialog>
+	<actor_dialog>stalker_rogue_repair</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+	<!--
+	<!-- Sin Prisoner of War Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	19 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+
+	<specific_character id="greh_prisoner" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A member of Sin captured during the conflict in Limansk.</bio>
+    <class>greh_prisoner</class>
+    <community>greh_npc</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>3846</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_prisoner</visual>
+    <supplies>
+        [spawn] \n
+		detector_simple = 1 \n		
+#include "gameplay\supplies\character_items_nd.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>greh_prisoner_greeting</start_dialog>
+	<actor_dialog>greh_prisoner_dialog</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+  
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+	<!--
+	<!-- Stalker Scout Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	28 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+
+	<specific_character id="lim_stalker_scout" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A member of the team of scouts sent by Rogue.</bio>
+    <class>lim_stalker_scout</class>
+    <community>stalker</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
+    <rank>7248</rank>
+    <reputation>548</reputation>
+    <visual>actors\stalker_neutral\stalker_neutral2b</visual>
+    <supplies>
+        [spawn] \n
+		wpn_ak74m = 1 \n
+		ammo_5.45x39_fmj = 2 \n
+		wpn_beretta = 1 \n
+		ammo_9x19_fmj = 1 \n
+        detector_simple = 1 \n  		
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_sci.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lim_stalker_scout_dialog</start_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+	
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////
+	<!--
+	<!-- Chernobog (Sin Grandmaster) Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	11 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+	
+	<specific_character id="kat_greh_sabaoth" team_default = "1">
+    <name>kat_greh_sabaoth_name</name>
+    <icon>ui_inGame2_monolit_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Former death row convict turned super-powered fanatic. Self-proclaimed leader of the Sin faction.</bio>
+    <class>kat_greh_sabaoth</class>
+    <community>greh_npc</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>24556</rank>
+	<reputation>-1000</reputation>
+    <visual>actors\stalker_greh\stalker_greh_leader</visual>
+    <supplies>
+	[spawn] \n
+	wpn_vihr_kobra = 1 \n
+	ammo_9x39_pab9 = 3 \n
+	wpn_oc33 = 1 \n
+	ammo_9x18_fmj = 1 \n	
+	chernobog_notes = 1 \n
+	grenade_f1 = 2 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_sci.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>kat_greh_sabaoth_mortal_sin</start_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="gen_greh_sabaoth" team_default = "1">
+    <name>kat_greh_sabaoth_name</name>
+    <icon>ui_inGame2_monolit_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Former death row convict turned super-powered fanatic. Self-proclaimed leader of the Sin faction.</bio>
+    <class>gen_greh_sabaoth</class>
+    <community>greh_npc</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>24556</rank>
+	<reputation>-1000</reputation>
+    <visual>actors\stalker_greh\stalker_greh_leader</visual>
+    <supplies>
+	[spawn] \n
+	wpn_vihr_kobra = 1 \n
+	ammo_9x39_pab9 = 3 \n
+	wpn_oc33 = 1 \n
+	ammo_9x18_fmj = 1 \n	
+	chernobog_notes = 1 \n
+	grenade_f1 = 2 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_sci.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>gen_greh_sabaoth_mortal_sin_generators</start_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="sar_greh_sabaoth" team_default = "1">
+    <name>kat_greh_sabaoth_name</name>
+    <icon>ui_inGame2_monolit_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Former death row convict turned super-powered fanatic. Self-proclaimed leader of the Sin faction.</bio>
+    <class>sar_greh_sabaoth</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>24556</rank>
+	<reputation>-1000</reputation>
+    <visual>actors\stalker_greh\stalker_greh_leader</visual>
+    <supplies>
+	[spawn] \n
+	wpn_vihr_kobra = 1 \n
+	ammo_9x39_pab9 = 3 \n
+	wpn_oc33 = 1 \n
+	ammo_9x18_fmj = 1 \n	
+	chernobog_notes = 1 \n
+	grenade_f1 = 2 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_sci.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>kat_greh_sabaoth_start</start_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////// --!>
+	<!--
+	<!-- Psoglav (Player Companion) Character Description
+	<!--
+	<!--	Made by SarisKhan
+	<!--	for Lost to the Zone: Mortal Sin
+	<!--	30 November 2017
+	<!--
+	<!-- ----------------------------------------------------------------------------------------- -->
+
+	<specific_character id="lazarus_dolg" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_Dolg_1_mask</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_dolg</class>
+    <community>dolg</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_dolg</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="lazarus_killer" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_merc_sun1</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_killer</class>
+    <community>killer</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_merc</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="lazarus_stalker" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_stalker</class>
+    <community>stalker</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_neutral</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n		
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="lazarus_csky" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_csky_sun</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_csky</class>
+    <community>csky</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_nebo</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="lazarus_freedom" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_Freedom_2_mask</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_freedom</class>
+    <community>freedom</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_freedom</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<specific_character id="lazarus_ecolog" team_default = "1">
+    <name>greh_prisoner_name</name>
+    <icon>ui_inGame2_ecolog_guard_blue</icon>
+    <map_icon x="1" y="0">
+    </map_icon>
+    <bio>A former member of Sin captured during the conflict in Limansk.</bio>
+    <class>lazarus_ecolog</class>
+    <community>ecolog</community>
+    <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <rank>5046</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_lazarus\lazarus_ecolog</visual>
+    <supplies>
+        [spawn] \n
+		wpn_fort = 1 \n
+		ammo_9x18_fmj = 2 \n    
+		detector_simple = 1 \n
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_drugs_4.xml"
+#include "gameplay\supplies\character_drugs_mil.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+	<start_dialog>lazarus_greeting</start_dialog>
+	<actor_dialog>lazarus_story</actor_dialog>
+	<actor_dialog>lazarus_repair</actor_dialog>
+	<actor_dialog>lazarus_join_companion</actor_dialog>
+	<actor_dialog>dm_is_actor_companion_dialog</actor_dialog>
+    <actor_dialog>dm_companion_patrol</actor_dialog>
+    <actor_dialog>dm_companion_leave</actor_dialog>
+    <actor_dialog>actor_break_dialog</actor_dialog>
+    </specific_character>
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+	<!--  Sin Castigators  -->
+	
+	<specific_character id="greh_squad_leader" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Squad Leader.</bio>
+    <class>greh_squad_leader</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <rank>12800</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_4</visual>
+    <supplies>
+     [spawn_loadout] \n
+	  wpn_groza = 1 \n
+	  wpn_val_ekp = 1 \n
+	  wpn_vihr_ekp = 1 \n
+	  wpn_g3_eot = 1 \n
+	  wpn_scar_eot = 1 \n
+	  wpn_vepr_ekp = 1 \n
+	  wpn_saiga = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_desert_eagle = 1 \n
+	  wpn_gsh18 = 1 \n
+	  wpn_mp443 = 1 \n
+      [spawn] \n
+	  grenade_f1 = 1 \n
+	  attackers_pda = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_1" team_default = "1">
+    <name>greh_castigator_1_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_1</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_rpd = 1 \n
+	  ammo_7.62x39_fmj = 3 \n
+	  wpn_gsh18 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+	  drekavac_notes = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_2" team_default = "1">
+    <name>greh_castigator_2_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_2</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_saiga12s = 1 \n
+	  ammo_12x76_zhekan = 2 \n
+	  wpn_mp443 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_3" team_default = "1">
+    <name>greh_castigator_3_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_3</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_vintorez_1pn93 = 1 \n
+	  ammo_9x39_pab9 = 2 \n
+	  wpn_gsh18 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_4" team_default = "1">
+    <name>greh_castigator_4_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_4</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_hk416_eot = 1 \n
+	  ammo_5.56x45_ss190 = 2 \n
+	  wpn_mp443 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_5" team_default = "1">
+    <name>greh_castigator_5_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_5</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_sig550_acog = 1 \n
+	  ammo_5.56x45_ss190 = 2 \n
+	  wpn_gsh18 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_6" team_default = "1">
+    <name>greh_castigator_6_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_6</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_vepr_kobra = 1 \n
+	  ammo_12x76_zhekan = 2 \n
+	  wpn_gsh18 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+	
+	<specific_character id="greh_castigator_7" team_default = "1">
+    <name>greh_castigator_7_name</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sin Castigator.</bio>
+    <class>greh_castigator_7</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <rank>15000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_castigator</visual>
+    <supplies>
+     [spawn] \n
+	  wpn_scar_acog = 1 \n
+	  ammo_7.62x51_fmj = 2 \n
+	  wpn_gsh18 = 1 \n
+	  ammo_9x19_fmj = 2 \n
+	  grenade_f1 = 1 \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+    </supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+    </specific_character>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+</xml>

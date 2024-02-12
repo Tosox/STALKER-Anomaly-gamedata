@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_mutants">
+		<text>Mutants</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_blind_dog">
+		<text>Blind dog</text>
+	</string>
+	<string id="encyclopedia_mutants_blind_dog_text">
+		<text>
+			%c[pda_white]Blind dogs%c[ui_gray_1] are the most familiar representative of the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nSeveral generations of dogs have lived and died since the second disaster, with each being more affected by the Zone than the previous.\n
+			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - at the expense of those that share their habitat.\n
+			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey through the walls.\n
+			\nLike their wolf ancestors, blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_bloodsucker">
+		<text>Bloodsucker</text>
+	</string>
+	<string id="encyclopedia_mutants_bloodsucker_text">
+		<text>
+			%c[pda_white]Bloodsuckers%c[ui_gray_1], as the name would suggest, are hematophagous monsters.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThe Bloodsucker is a semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
+			\nThis status has been achieved thanks to the species' relative rarity and the low survival rate of its victims.\n
+			\nThose who have encountered them and lived to tell about it have described them as looking like tall slouching humanoids with many tentacles protruding from their faces.\n
+			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
+			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Camouflage, Blood-sucking\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• A rare subspecies once existed in the Great Swamp which carried its victims away.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_boar">
+		<text>Boar</text>
+	</string>
+	<string id="encyclopedia_mutants_boar_text">
+		<text>
+			%c[pda_white]Boars%c[ui_gray_1] are a common mutant found in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nWhile less touched by mutations physically, the boars here have developed a serious taste for human flesh and much sharper intelligence.\n
+			\nThey are large animals, and their ability to survive and their aggression surpasses all of their living relatives outside of the Zone.\n
+			\nMutagenic processes have played a significant part in shaping these mammals, as they have lost all fur in a few places, and grown long, bristly fur in others.\n
+			\nUsually if distance is kept and they aren't antagonised, they will stick with their herd of Flesh and other boars.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_burer">
+		<text>Burer</text>
+	</string>
+	<string id="encyclopedia_mutants_burer_text">
+		<text>
+			%c[pda_white]Burers%c[ui_gray_1] are stocky, almost dwarf-like monsters that usually stick to underground areas.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and are generally afraid of bright lights.\n
+			\nCreated as the result of genetic experiments on criminals, burers naturally posses powerful telekinetic abilities, making them far more powerful than they appear.\n
+			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Slow\n• Traits: Psy-powers, Telekinesis\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Some burers are excellent mimics, able to imitate sounds such as bird cries, dog barks, human laughter or even a crying infant.
+			\n• Burers often focus on defeating their opponents by wearing them down. Heavily armed and armoured stalkers tend to suffer most when fighting them. 
+			\n• A burer's diet tends to consist of kimchi and human flesh.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_cat">
+		<text>Cat</text>
+	</string>
+	<string id="encyclopedia_mutants_cat_text">
+		<text>
+			%c[pda_white]Cats%c[ui_gray_1] in the Zone are heavily mutated from local wildcats.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nOriginally ordinary pets, under the influence of the Zone they have changed quite remarkably, becoming very dangerous even to people.\n
+			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet secluded places such as forest thickets.\n
+			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until the victim tires and/or bleeds out.\n
+			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to strike.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Cats are a surprisingly frequent cause of death amongst fresh stalkers.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_chimera">
+		<text>Chimera</text>
+	</string>
+	<string id="encyclopedia_mutants_chimera_text">
+		<text>
+			%c[pda_white]Chimeras%c[ui_gray_1] are hairless monsters, close to the size of an adult lion when fully grown.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nAn almost evolutionarily perfect killing machine, though not physically the strongest, they account for this through extreme speed and aggressiveness.\n
+			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
+			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
+			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Traits: Nimble, Regenerative\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• While fairly resistant to bullets, chimeras are notably vulnerable towards chemical and thermal anomalies.
+			\n• While generally solitary creatures, it is not unheard of for chimeras to hunt in pairs.
+			\n• Two especially powerful chimeras kept Zaton and Yanov in terror during 2012. Both were eventually hunted down and killed by a stalker named Alexander.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_controller">
+		<text>Controller</text>
+	</string>
+	<string id="encyclopedia_mutants_controller_text">
+		<text>
+			%c[pda_white]Controllers%c[ui_gray_1] are some of the most dangerous psychic mutants in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nOutwardly resembling a human being with a disproportionately enlarged head, a controller is capable of influencing and often directly controlling another living being's actions.\n
+			\nUnlike other psychic mutants a controller won't manipulate physical objects, but will instead fight with its brain - in a very literal sense - often taking its enemies through surprise and confusion.\n
+			\nThe controller attacks mainly with a directed psi-bolt, which causes severe damage to the brain of its recipient, whilst passive exposure to the mutant can ultimately lead to suicide or zombification.\n
+			\nIt is widely believed that they can only attack what they can see, so making good use of cover to conceal yourself from its view could make all the difference in the outcome of fighting this creature.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Psi-powers, Mind control
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_crow">
+		<text>Crow</text>
+	</string>
+	<string id="encyclopedia_mutants_crow_text">
+		<text>
+			%c[pda_white]Crows%c[ui_gray_1] are one of few bird species to have survived in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nIn order not to perish in a labyrinth of gravitational anomalies, military pilots use sophisticated detectors, but the secret of how crows safely navigate the Zone's skies remains a mystery.\n
+			\nLittle else is known about what makes the Zone's crows so special, or why they have remained almost completely untouched when compared to the rest of the local wildlife.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: None\n• Health: Low\n• Speed: Fast\n• Traits: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_flesh">
+		<text>Flesh</text>
+	</string>
+	<string id="encyclopedia_mutants_flesh_text">
+		<text>
+			%c[pda_white]Fleshes%c[ui_gray_1] are heavily mutated pigs and one of the most harmless mutants in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nLike many other creatures living in the Zone, domestic pigs underwent serious mutations following the second disaster, affecting genes responsible for their metabolism.\n
+			\nThis eventually caused the animal's phenotype to change significantly, their forelimbs have turned into insect-like legs which the Flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
+			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is attacked or cornered and has nowhere else to run.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_fracture">
+		<text>Fracture</text>
+	</string>
+	<string id="encyclopedia_mutants_fracture_text">
+		<text>
+			%c[pda_white]Fractures%c[ui_gray_1] are former, seemingly devolved human beings with an animalistic mindset.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nUnlike other mutant humanoids the fracture has retained a rather familiar appearance, looking like a hunchbacked old man in tattered clothing, despite being over two meters tall.\n
+			\nNot much is known about these creatures. It is believed they were either former residents who illegally lived in the area before the second disaster, or early test subjects involved in genetic experimentation.\n
+			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with very little effort.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Sometimes they'll call for help when spotting stalkers. It is ambiguous whether they're calling to their fellow mutants, or the stalkers themselves.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_karlik">
+		<text>Karlik</text>
+	</string>
+	<string id="encyclopedia_mutants_karlik_text">
+		<text>
+			%c[pda_white]Karliks%c[ui_gray_1] are very rare dwarf-like mutants which hide away in seclusion.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nIt is unclear whether or not they are related to Burers, but between them they share a great many psychic similarities making it difficult to dismiss as just coincidence.\n
+			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, proceeding to attack anything that comes too close.\n
+			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psy-powers, Telekinesis\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• While often compared to the Burer, the Karlik focuses more on illusions and telepathy than telekinesis.
+			\n• If one accepts that Karliks and Burers were lab creations, the former was likely an earlier iteration of the latter.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_poltergeist">
+		<text>Poltergeist</text>
+	</string>
+	<string id="encyclopedia_mutants_poltergeist_text">
+		<text>
+			%c[pda_white]Poltergeists%c[ui_gray_1] are strange, almost invisible creatures haunting the deeper reaches of the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nSupernatural in the eyes of some, and usually found haunting old, abandoned buildings.\n
+			\nNothing is known about their origin, although rumours and legends claim they are the spirits of stalkers hit by a massive blast of radiation.\n
+			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
+			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psy-powers, Telekinesis\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Older stalkers report poltergeists occasionally leaving a body behind. Younger stalkers don't tend to believe them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_pseudodog">
+		<text>Pseudodog</text>
+	</string>
+	<string id="encyclopedia_mutants_pseudodog_text">
+		<text>
+			%c[pda_white]Pseudodogs%c[ui_gray_1] are relatively common canine mutants.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nDespite the name, pseudodogs did not come from dogs, but rather from wolves that lived in the forests of the Zone at the time of the second disaster.\n
+			\nStrictly speaking there is not much left of the wolf in the Pseudodog, its head is more round, with huge but not very prominent jaws, armed with numerous huge teeth growing throughout the life of the animal.\n
+			\nPseudodogs are often seen together with Blind dogs, though they are much faster, stronger, and more aggressive than their blind relatives. They are also viciously territorial and will not hesitate to attack intruders.\n
+			\nIts powerful muscles and reshaped skeleton allow this monster to move with incredible speed and make huge swift jumps, allowing it to be far more agile than most other animals of its kind.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_pseudogeist">
+		<text>Pseudogeist</text>
+	</string>
+	<string id="encyclopedia_mutants_pseudogeist_text">
+		<text>
+			%c[pda_white]Pseudogeists%c[ui_gray_1] are a rare cloud-like subspecies of Poltergeists.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nEssentially nothing is known about these creatures, as they are only a recent occurrence and have not been around long enough to document.\n
+			\nAppearing as a pulsating, burgundy-coloured series of clouds, they will attempt to kill anything unfortunate enough to wander into them.\n
+			\nThere are no specific locations they are found as they tend to appear in the most unsuspecting of places.\n
+			\nUpon death they explode into multiple cloud-like formations before dissipating.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psy-powers\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_pseudogiant">
+		<text>Pseudogiant</text>
+	</string>
+	<string id="encyclopedia_mutants_pseudogiant_text">
+		<text>
+			%c[pda_white]Pseudogiants%c[ui_gray_1] are one of the rarest and most fearsome mutants in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before succumbing to its wounds and dying.\n
+			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it - being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
+			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Very high\n• Speed: Slow\n• Traits: Immense strength
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Curiously, most pseudogiants - while territorial - nevertheless number among the least aggressive of the Zone's mutants. To the average stalker, however, that really isn't saying much.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_psydog">
+		<text>Psy-dog</text>
+	</string>
+	<string id="encyclopedia_mutants_psydog_text">
+		<text>
+			%c[pda_white]Psy-dogs%c[ui_gray_1] are a rare subspecies of Pseudodogs, possessing unique psychic abilities.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThe most distinguishing feature of the psy-dog is its ability to affect the minds of others, where it is able to create seemingly live images of itself.\n
+			\nThese are different from regular phantoms produced by psy-fields and some other mutants, as they look more real and solid and can - at least to the mind - hurt what they attack.\n
+			\nVisually they are almost indistinguishable from Pseudodogs aside from having large streaks of grey/white fur.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Fast\n• Traits: Nimble, Phantom projection
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_pyrogeist">
+		<text>Pyrogeist</text>
+	</string>
+	<string id="encyclopedia_mutants_pyrogeist_text">
+		<text>
+			%c[pda_white]Pyrogeists%c[ui_gray_1] are a rare pyrokinetic subspecies of Poltergeists.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nAppearing as a floating form of heat haze surrounded by a fiery glow, they are easily distinguishable from regular poltergeists. On death, they explode in a mess of blood and fire.\n
+			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it lacks any telekinetic abilities.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Traits: Psy-powers
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_rat">
+		<text>Rat</text>
+	</string>
+	<string id="encyclopedia_mutants_rat_text">
+		<text>
+			%c[pda_white]Rats%c[ui_gray_1] are small, hungry rodents found in and around deserted buildings.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nMostly found in packs, and in rare cases alone, rats are the constant companion of man - in the places that people leave behind the rats will soon replace them.\n
+			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides has very little chance of survival.\n
+			\nThey usually live in abandoned places and are said to feel danger and carefully bypass it.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Traits: None\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Easily the most harmless mutant in the Zone, they're generally hunted for their meat, rather than the danger they pose.
+			\n• Rats are the softer, less aggressive and less obviously mutated cousin of the Tushkano.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_snork">
+		<text>Snork</text>
+	</string>
+	<string id="encyclopedia_mutants_snork_text">
+		<text>
+			%c[pda_white]Snorks%c[ui_gray_1] are horrifically mutated soldiers and stalkers.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThese creatures were apparently once people as they still wear the tattered remains of their uniforms, although it is difficult to imagine what conditions could bring a person to this state.\n
+			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground, and are constantly sniffing the air to catch the smell of their next meal.\n
+			\nThey hunt cleverly and prudently, waiting for stalkers like predatory animals. Lightning reflexes and hypertrophied muscles allow snorks to make long, precise jumps and within seconds tear their victims to shreds.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• Originally thought to be unfortunate survivors of the very first military expeditions into the Zone, their continued presence into 2018 has opened up dark avenues of thought and speculation regarding their true nature.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_tushkano">
+		<text>Tushkano</text>
+	</string>
+	<string id="encyclopedia_mutants_tushkano_text">
+		<text>
+			%c[pda_white]Tushkano%c[ui_gray_1] are small rat-like creatures which move about on their two hind legs.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nTheir name is in reference to the dipodidae rodent, called tushkanchikovye in Russian, which move about in a very similar manner.\n
+			\nDespite their behaviour, Tushkano are widely believed to have originated from trained and domesticated rats which were experimented on before the second disaster.\n
+			\nThey live mostly in ruined buildings, feeding on everything that they can catch - both mutants and stalkers - and often in groups of up to ten individuals.\n
+			\nLike rats they are also very smart creatures and will attack their victims from all sides, and because of their small stature they can quickly overwhelm most prey when working together.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_zombie">
+		<text>Zombie</text>
+	</string>
+	<string id="encyclopedia_mutants_zombie_text">
+		<text>
+			%c[pda_white]Zombies%c[ui_gray_1] are stalkers who have been reduced to their most residual reflexes.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nUnlike the name would suggest these zombies are not actually undead, but just mindless husks of those that they used to be.\n
+			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psy-fields, having lost even the ability to operate basic tools and weaponry.\n
+			\nAs a result of these changes, Zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
+			\nDue to the fact most are killed off long before ever reaching this phase, this mutant can be a somewhat rare discovery in the Zone.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None\n
+			\n%c[pda_yellow]Trivia%c[ui_gray_1]
+			\n• A true tragedy, it is best to put these poor saps out of their misery as often as possible.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_psysucker">
+		<text>Psysucker</text>
+	</string>
+	<string id="encyclopedia_mutants_psysucker_text">
+		<text>
+			%c[pda_white]Psysuckers%c[ui_gray_1] are the relative species of Bloodsuckers that possess unique psychic abilities.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nUnknown origins. Psysuckers are one of the most mysterious creatures in the Zone.
+			\nAutopsy results showed a lot of similarities to the Bloodsuckers, especially with the optic camouflage which allows them to temporarily become almost invisible to the naked eye. On the contrary, further studies has shown that Psysuckers hold a developed nerve system unlike their relatives, which points towards their unique ability to affect the minds of others, where it is able to create seemingly live images of itself.\n
+			\nPsysuckers have a torn, weaker skin comparing to their relatives, as if they're losing their durability over time. They also lack the tentacles protruding from a Blooduscker's face along with other organs. Perhaps it's the reason why Psysuckers hide more occasionally while relying on their psi attacks.
+			\n \n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee, Psychic\n• Health: Low\n• Speed: Fast\n• Traits: Camouflage, Phantom projection\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_lurker">
+		<text>Lurker</text>
+	</string>
+	<string id="encyclopedia_mutants_lurker_text">
+		<text>
+			The %c[pda_white]Lurker%c[ui_gray_1] is a hybrid mutant with great physical power.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nRumors say that Lurkers were a part of an experiment that occurred in one of the hidden labs around the Zone before the second disaster. Yet, the first wave of Lurkers have been spotted in 2013, near the outskirts of Pripyat.\n
+			\nTheir strong multi-layered skin, abnormal muscular endurance and sense of hearing has gained the Lurkers the ability to survive in the worst environment conditions. Their hind legs allows them to jump huge distances and strike their slower victims.\n
+			\nLocal hunters are known to collect the creature's eyes for their unique yellow glow.
+			\n \n%c[pda_blue]Statistics%c[ui_gray_1]
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: None\n
+		</text>
+	</string>
+	
+</string_table>

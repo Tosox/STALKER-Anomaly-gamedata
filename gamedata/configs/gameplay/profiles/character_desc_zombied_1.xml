@@ -1,0 +1,18 @@
+<bio></bio>
+<class>sim_default_zombied_1</class>
+<community>zombied</community>
+<crouch_type>0</crouch_type>
+<map_icon x="1" y="0"></map_icon>
+<money min="500" max="1500" infinitive="0"/>
+<rank min="500" max="3000" />
+<reputation min="-1500" max="1500" />
+<supplies>
+#include "gameplay\loadouts\zombied_base.ltx"
+#include "gameplay\loadouts\zombied_tier_1.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

@@ -1,0 +1,402 @@
+--[[
+common task settings:
+
+	stage_complete = 1
+	descr_functor  = multifetch_task_descr_functor
+	status_functor = multifetch_status_functor
+	target_functor = multifetch_target_functor
+
+	on_job_descr 	= %=multifetch_on_job_descr(task_id)%
+		required for task data init
+		
+	on_complete 	= %=multifetch_remove(task_id:true)%
+		set the second argument to false to remove items only, for custom rewards
+
+multifetch specific settings 
+	at least item_1 lines must be defined (except _cond which is optional)
+	_cond value is a number between 0 and 1 (for full condition use 0.99 because guns are never full 1.0 condition), can be omitted (any condition is valid)
+	
+		required_item_1 	  = section_name
+		required_item_1_num   = number
+		
+		required_item_2 	  = section_name
+		required_item_2_num   = number
+		required_item_2_cond  = number
+		
+		...
+
+these are optional
+	optional_item_1 	  = section_name
+	optional_item_1_num   = number
+	optional_item_1_cond  = number
+	
+	optional_item_2 	  = section_name
+	optional_item_2_num   = number
+	optional_item_2_cond  = number
+	
+	...
+	
+these are called if on_complete calls multifetch_task_trigger_extra_items_condlist and player delivers also the optional items, see mil_smart_terrain_7_10_freedom_trader_stalker_task_5
+	on_extra_items_delivered_1 =
+	on_extra_items_delivered_2 =
+	...
+]]
+
+local _M = {}
+local gts = game.translate_string
+function on_game_start()
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+end
+
+function save_state(m_data)
+	m_data.multifetch_data = _M
+end
+
+function load_state(m_data) 
+	_M = m_data.multifetch_data or {}
+end
+
+
+
+local _status = {}
+local _target = {}
+
+function tcopy(t)
+	local ret = {}
+	for k,v in pairs(t) do
+		if type(v) == 'table' then
+			ret[k] = tcopy(v)
+		else
+			ret[k] = v
+		end
+	end
+	return ret
+end
+
+function has_items(tid)
+	local x = tcopy(_M[tid].required_items)
+
+	-- printf('scanning items')
+	for k,v in pairs(x) do
+		local sec2find = v.sec
+		local mincd = v.cond or -1
+		local found = 0
+		
+		-- printf('looking for %s, mincd %s', sec2find, mincd)
+		function itr(_,i)
+			local sec = i:section()
+			local cnd = i:condition()
+			if sec == sec2find and cnd > mincd then
+				found = found + 1
+				-- printf('found x %s', found)
+			end
+		end
+		db.actor:iterate_inventory(itr, db.actor)
+		
+		if found >= v.num then
+			-- printf('found enough %s', v.sec)
+			v.fulfilled = true
+		end
+	end
+	
+	for k,v in pairs(x) do
+		if not v.fulfilled then return false end
+	end
+	return true
+end
+
+function has_optional_items(tid)
+	if not _M[tid].optional_items then return false end
+
+	local x = tcopy(_M[tid].optional_items)
+
+	-- printf('scanning items')
+	for k,v in pairs(x) do
+		local sec2find = v.sec
+		local mincd = v.cond or -1
+		local found = 0
+		
+		-- printf('looking for %s, mincd %s', sec2find, mincd)
+		function itr(_,i)
+			local sec = i:section()
+			local cnd = i:condition()
+			if sec == sec2find and cnd > mincd then
+				found = found + 1
+				-- printf('found x %s', found)
+			end
+		end
+		db.actor:iterate_inventory(itr, db.actor)
+		
+		if found >= v.num then
+			-- printf('found enough %s', v.sec)
+			v.fulfilled = true
+		end
+	end
+	
+	for k,v in pairs(x) do
+		if not v.fulfilled then return false end
+	end
+	return true
+end
+
+function condmult(x)
+	if x < 0.25 then
+		return x * 0.7
+	end
+	if x < 0.5 then
+		return x * 0.8
+	end
+	if x < 0.75 then
+		return x * 0.9
+	end
+	return 1
+end
+
+function xr_effects.multifetch_remove(a,b,c)
+	remove_items_and_pay(c[1],c[2])
+end
+
+function remove_items_and_pay(tid,do_pay)
+	local todel = {}
+	local todelnews = {}
+	local payout = 0
+	local mult_req = 1.1
+	local mult_opt = 1.3
+	
+	for k,v in pairs(tcopy(_M[tid].required_items)) do
+		local sec2find = v.sec
+		local mincd = v.condition or -1
+		local found = 0
+		table.insert(todelnews,{sec2find,v.num})
+		
+		function itr(_,i)
+			local sec = i:section()
+			local cnd = i:condition()
+			if sec == sec2find and cnd > mincd and v.num > 0 then
+				table.insert(todel, {i:id(), sec})
+				
+				local ncost = v.cost * condmult(cnd) * mult_req
+				payout = payout + ncost
+				
+				-- printf('paying %s for %s at %s condition', ncost, sec, cnd)
+				
+				v.num = v.num - 1
+			end
+		end
+		db.actor:iterate_inventory(itr, db.actor)
+	end
+	
+	if has_optional_items(tid) then
+		for k,v in pairs(tcopy(_M[tid].optional_items)) do
+			local sec2find = v.sec
+			local mincd = v.condition or -1
+			local found = 0
+			table.insert(todelnews,{sec2find,0})
+			
+			function itr(_,i)
+				local sec = i:section()
+				local cnd = i:condition()
+				if sec == sec2find and cnd > mincd and v.num > 0 then
+					table.insert(todel, {i:id(), sec})
+					local ncost = math.floor(v.cost * condmult(cnd) * mult_opt)
+					payout = payout + ncost
+					-- printf('paying %s for %s at %s condition', ncost, sec, cnd)
+					todelnews[#todelnews][2] = todelnews[#todelnews][2] + 1
+					v.num = v.num - 1
+				end
+			end
+			db.actor:iterate_inventory(itr, db.actor)
+		end
+	end
+
+
+	for k,v in ipairs(todelnews) do
+		news_manager.relocate_item(db.actor, "out", v[1], v[2])
+	end
+	
+	
+	local sim = alife()
+	for k,v in ipairs(todel) do
+		alife_release_id(v[1])
+	end
+	
+	
+	if do_pay then
+		payout = math.floor(payout)
+		
+		-- printf('total %s', payout)
+		db.actor:give_money(payout)
+		news_manager.relocate_money(db.actor, "in", payout)
+	end
+end
+
+-- _M = {
+	-- esc_m_trader_task_x = {
+		-- required_items = {
+			-- {
+				-- sec = medkit,
+				-- num = 2,
+				-- cost = 11111,
+			-- },
+			-- {
+				-- sec = wpn_pm,
+				-- num = 2,
+				-- cond = 0.5,
+				-- cost = 2222,
+			-- },
+		-- },
+		-- optional_items = {
+		
+		-- }
+		
+	-- }
+-- }
+
+_status[0] = function(t,tid)
+	if has_items(tid) then
+		return 1
+	end
+end
+
+_status[1] = function(t,tid)
+	if not has_items(tid) then
+		return 0
+	end
+end
+
+_target[1] = function(t,tid)
+	return t.task_giver_id
+end
+
+function nkeys(t)
+	if not t then return -1 end 
+	
+	local x = 0
+	for k in pairs(t) do
+		x = x + 1
+	end
+	return x
+end
+
+
+task_functor.multifetch_task_descr_functor = function(tid,_,__,t,ondescr)
+	-- printf('descr %s', tid)
+	-- if not (_M[tid] and _M[tid].init_done) then
+		-- return
+	-- end
+	-- printf('descr, _M[%s].init_done true', tid)
+	
+	if not ondescr and t.stage == 1 then
+		return gts("st_return_for_reward")
+	else
+		local txt = {}
+		local function ti(x)
+			table.insert(txt, x)
+		end
+		
+		local first = true
+		if not ondescr then ti(gts('st_multifetch_1')) end
+		for k,v in pairs(_M[tid].required_items) do
+			local condtext = ''
+			if v.cond then
+				condtext = strformat(gts('st_multifetch_2'), math.floor(v.cond*100))
+			end
+			ti(strformat('%s%s x %s%s', first and "" or " ", gts(v.iname), v.num, condtext))
+			first = false
+		end
+		
+		if nkeys(_M[tid].optional_items) > 0 then
+			ti('')
+			ti(' '..gts('st_multifetch_3'))
+		end
+		for k,v in pairs(_M[tid].optional_items) do
+			local condtext = ''
+			if v.cond then
+				condtext = strformat(gts('st_multifetch_2'), math.floor(v.cond*100))
+			end
+			ti(strformat(' %s x %s%s', gts(v.iname), v.num, condtext))
+		end
+		
+		return table.concat(txt,"\\n")
+	end
+end
+
+task_functor.multifetch_target_functor = function(task_id,field,p,tsk)
+	if not (db.actor and tsk) then return nil end
+	local stage = tsk.stage
+	if _target[stage] then 
+		return _target[stage](tsk,task_id)
+	end
+	return nil
+end
+
+task_status_functor.multifetch_status_functor = function(tsk,task_id)
+	if not (db.actor and tsk) then return end
+	local stage = tsk.stage
+	local ret = _status[stage] and _status[stage](tsk,task_id) or stage
+	-- printl('setting task stage to %s', ret)
+	if tonumber(ret) then
+		tsk.stage = ret
+	else
+		return ret
+	end
+end
+
+
+function xr_effects.multifetch_on_job_descr(_,__,p)
+	if p and p[1] then
+		local tid = p[1]
+		_M[tid] = {}
+		_M[tid].required_items = {}
+		_M[tid].optional_items = {}
+		local tid = p[1]
+		
+
+		local cfg = utils_data.parse_ini_section_to_array(task_manager.task_ini,tid)
+		local i = 1
+		while (cfg['required_item_'..i]) do
+			table.insert(_M[tid].required_items, {
+				sec = cfg['required_item_'..i],
+				num = tonumber(cfg['required_item_'..i..'_num']) or 1,
+				cond = tonumber(cfg['required_item_'..i..'_cond']),
+				cost = tonumber(ini_sys:r_float_ex(cfg['required_item_'..i],"cost")),
+				iname = ini_sys:r_string_ex(cfg['required_item_'..i],"inv_name"),
+			})
+			i = i + 1
+		end
+		
+		i = 1
+		while (cfg['optional_item_'..i]) do
+			table.insert(_M[tid].optional_items, {
+				sec = cfg['optional_item_'..i],
+				num = tonumber(cfg['optional_item_'..i..'_num']) or 1,
+				cond = tonumber(cfg['optional_item_'..i..'_cond']),
+				cost = tonumber(ini_sys:r_float_ex(cfg['optional_item_'..i],"cost")),
+				iname = ini_sys:r_string_ex(cfg['optional_item_'..i],"inv_name"),
+			})
+			i = i + 1
+		end
+		
+		CreateTimeEvent(0,"multifetch_on_job_descr",0,on_descr_news,tid)
+	end
+end
+
+function xr_effects.multifetch_task_trigger_extra_items_condlist(a,b,c)
+	if has_optional_items(c[1]) then
+		local i = 1
+		local cl =  task_manager.task_ini:r_string_to_condlist(c[1],"on_extra_items_delivered_"..i,nil)
+		while cl do
+			xr_logic.pick_section_from_condlist(db.actor, _M[tid], cl)
+			i = i + 1
+			cl =  task_manager.task_ini:r_string_to_condlist(c[1],"on_extra_items_delivered_"..i,nil)
+		end
+	end
+end
+
+function on_descr_news(tid)
+	local msg = task_functor.multifetch_task_descr_functor(tid,nil,nil,nil,true)
+	db.actor:give_talk_message2(gts('st_multifetch_4'), msg, "ui_inGame2_Polucheni_koordinaty_taynika", "iconed_answer_item")
+	-- utils_data.print_table(_M,'_M')
+	return true
+end

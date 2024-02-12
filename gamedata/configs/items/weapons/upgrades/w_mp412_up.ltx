@@ -1,0 +1,166 @@
+
+[up_sect_firsta_mp412]
+cost                                     = 2280
+value                                    = +15
+inv_weight                               = -0.06
+crosshair_inertion                       = -0.7
+PDM_disp_base                            = -0.15
+PDM_disp_vel_factor                      = -0.35
+PDM_disp_accel_factor                    = -0.35
+
+[up_sect_firstc_mp412]
+cost                                     = 2180
+value                                    = +10
+rpm                                      = +20
+inv_weight                               = +0.03
+
+[up_sect_firstd_mp412]
+cost                                     = 2390
+value                                    = -10
+cam_dispersion                           = -0.191 
+cam_dispersion_inc                       = 0.0 ;-0.198 
+cam_step_angle_horz                      = -0.114 
+inv_weight                               = +0.05
+
+[up_sect_firste_mp412]
+cost                                     = 2260
+value                                    = +25
+fire_dispersion_base                     = -0.08
+inv_weight                               = +0.04
+
+[up_sect_firstf_mp412]
+cost                                     = 2580
+value                                    = +5
+bullet_speed                             = +20
+fire_dispersion_base                     = -0.02
+inv_weight                               = +0.05
+
+[up_sect_secona_mp412]
+cost                                     = 1980
+value                                    = +10
+condition_shot_dec                       = -0.0002
+condition_queue_shot_dec                 = -0.0002
+misfire_start_prob                       = -0.001
+misfire_end_prob                         = -0.01
+inv_weight                               = +0.04
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_mp412]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_mp412
+section                                  = up_sect_firsta_mp412
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b5_name
+description                              = st_up_stvp_b5_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_10
+
+[up_firstc_mp412]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_mp412
+section                                  = up_sect_firstc_mp412
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_c1_name
+description                              = st_up_barp_c1_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_7
+
+[up_firstd_mp412]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_mp412
+section                                  = up_sect_firstd_mp412
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b6_name
+description                              = st_up_zatp_b6_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_2
+
+[up_firste_mp412]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_mp412
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_c4_name
+description                              = st_up_zatp_c4_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_3
+
+[up_firstf_mp412]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstf_mp412
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_a1_name
+description                              = st_up_barp_a1_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_5
+
+[up_secona_mp412]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secona_mp412
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usmp_b5_name
+description                              = st_up_usmp_b5_descr
+icon                                     = ui_inGame2_upgrade_Black_hawk_14
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_mp412]
+elements                                 = up_firsta_mp412
+
+[up_gr_firstcd_mp412]
+elements                                 = up_firstc_mp412, up_firstd_mp412
+
+[up_gr_firstef_mp412]
+elements                                 = up_firste_mp412, up_firstf_mp412
+
+[up_gr_seconab_mp412]
+elements                                 = up_secona_mp412

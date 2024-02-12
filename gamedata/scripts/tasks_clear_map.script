@@ -1,0 +1,94 @@
+
+function xr_conditions.task_stage_is(a,b,c)
+	local tm = task_manager.get_task_manager()
+    local task_info = tm.task_info
+	if c and c[1] and c[2] and tm.task_info[c[1]] and tonumber(c[2]) then
+		return task_info[c[1]].stage == tonumber(c[2])
+	else
+		if c then
+			printf('task_stage_is: arguments incorrect: %s %s',c[1],c[2])
+		else
+			printf('task_stage_is: no arguments')
+		end
+	end
+end
+
+function xr_conditions.task_stage_is_not(a,b,c)	
+	local tm = task_manager.get_task_manager()
+    local task_info = tm.task_info
+	if c and c[1] and c[2] and tm.task_info[c[1]] and tonumber(c[2]) then
+		return not (task_info[c[1]].stage == tonumber(c[2]))
+	else
+		if c then
+			printf('task_stage_is_not: arguments incorrect: %s %s',c[1],c[2])
+		else
+			printf('task_stage_is_not: no arguments')
+		end
+	end
+end
+
+function xr_conditions.mutants_in_map(a,b,c)
+	local x = c and type(c) == 'table' and c[1] or nil
+	local ret = mutants_in_map(x, true)
+	-- printf('cond: %s',ret)
+	return ret
+end
+
+function xr_conditions.mutants_in_map_ge(a,b,c)
+	if c and c[1] and c[2] and tonumber(c[2]) then
+		local ret,squads = mutants_in_map(c[1])
+		-- printf('cond: %s',ret)
+		return (ret and #squads >= tonumber(c[2]))
+	else
+		printf('mutants_in_map_ge: no arguments or malformed, must be (map_name:number)')
+		return false
+	end
+end
+
+function xr_conditions.mutants_in_map_le(a,b,c)
+	if c and c[1] and c[2] and tonumber(c[2]) then
+		local ret,squads = mutants_in_map(c[1])
+		-- printf('cond: %s',ret)
+		return (ret and #squads <= tonumber(c[2]))
+	else
+		printf('mutants_in_map_le: no arguments or malformed, must be (map_name:number)')
+		return false
+	end
+end
+
+function task_functor.mutants_in_map_target(task_id,field,map_name,tsk)
+	if tsk.stage == 1 then
+		return tsk.task_giver_id
+	end
+	
+	local present, list = mutants_in_map(map_name)
+	if #list > 0 then
+		return list[1]
+	end
+end
+
+function mutants_in_map(map_name, return_only_bool)
+	if map_name then
+		local sfind = string.find
+		local sim = alife()
+		local gg = game_graph()
+		local found_squads = {}
+		for sid,_ in pairs(SIMBOARD.squads) do
+			local sob = sim:object(sid)
+			if sob and is_squad_monster[sob.player_id] and (not sfind(sob:section_name(),"tushkano")) and (not sfind(sob:section_name(),"rat")) then
+				local lname = sim:level_name(gg:vertex(sob.m_game_vertex_id):level_id())
+				if lname == map_name then
+					-- level.map_add_object_spot(sid, "ui_secondary_task_blink", "")
+					sob.force_online = true
+					if return_only_bool then return true end
+					table.insert(found_squads, sid)
+				end
+			end
+		end
+		if return_only_bool then return false end
+		return #found_squads > 0, found_squads
+	else
+		callstack()
+		printf('mutants_in_map: no arguments')
+	end
+end

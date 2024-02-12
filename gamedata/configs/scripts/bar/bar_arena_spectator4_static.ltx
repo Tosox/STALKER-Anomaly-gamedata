@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle
+
+[ph_idle]
+on_info = {+totaliz_begin_over_dialog} ph_idle@sound
+
+[ph_idle@sound]
+on_info = %=play_sound(bar_arena_public)%
+on_info2 = {+total_fight_is_over} ph_idle

@@ -1,0 +1,20 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_ecolog_2</class>
+<community>ecolog</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="1500" max="3500" infinitive="0"/>
+<name>GENERATE_NAME_stalker</name>
+<rank min="6000" max="10000" />
+<reputation min="0" max="1500" />
+<supplies>
+#include "gameplay\loadouts\ecolog_base.ltx"
+#include "gameplay\loadouts\ecolog_tier_3.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_items_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs_2.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

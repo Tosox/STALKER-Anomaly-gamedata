@@ -1,0 +1,414 @@
+<template name="up_scheme_helm_resp_1">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="240"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="185" point_y="200"/>
+    </column>
+</template>
+
+<template name="up_scheme_helm_resp_2">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="240"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="185" point_y="200"/>
+        <cell x="80" y="49" point_x="130" point_y="190"/>
+    </column>
+    <column>
+        <cell x="160" y="24" point_x="163" point_y="205"/>
+    </column>
+</template>
+
+<template name="up_scheme_helm_resp_4">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="240"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="185" point_y="200"/>
+        <cell x="80" y="49" point_x="130" point_y="190"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="163" point_y="195"/>
+		<cell x="160" y="49" point_x="185" point_y="195"/>
+    </column>
+</template>
+
+<template name="up_scheme_novice_1">
+    <column>
+        <cell x="0" y="24" point_x="140" point_y="225"/>
+        <cell x="0" y="126" point_x="160" point_y="250"/>
+        <cell x="0" y="228" point_x="160" point_y="225"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="150" point_y="185"/>
+        <cell x="80" y="102" point_x="170" point_y="195"/>
+        <cell x="80" y="151" point_x="200" point_y="195"/>
+    </column>
+    <column>
+        <cell x="160" y="24" point_x="175" point_y="230"/>
+    </column>
+</template>
+
+<template name="up_scheme_sunrise_1">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="240"/>
+        <cell x="0" y="126" point_x="195" point_y="240"/>
+        <cell x="0" y="228" point_x="163" point_y="150"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="185" point_y="200"/>
+        <cell x="80" y="49" point_x="130" point_y="190"/>
+        <cell x="80" y="102" point_x="140" point_y="200"/>
+        <cell x="80" y="151" point_x="180" point_y="170"/>
+        <cell x="80" y="204" point_x="135" point_y="260"/>
+        <cell x="80" y="253" point_x="163" point_y="265"/>
+    </column>
+    <column>
+        <cell x="160" y="24" point_x="163" point_y="205"/>
+        <cell x="160" y="102" point_x="195" point_y="240"/>
+        <cell x="160" y="151" point_x="210" point_y="185"/>
+        <cell x="160" y="228" point_x="190" point_y="260"/>
+    </column>
+</template>
+
+<template name="up_scheme_sunrise_extra_1">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="240"/>
+        <cell x="0" y="126" point_x="195" point_y="240"/>
+        <cell x="0" y="228" point_x="163" point_y="150"/>
+		<cell x="0" y="330" point_x="186" point_y="248"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="185" point_y="200"/>
+        <cell x="80" y="49" point_x="130" point_y="190"/>
+        <cell x="80" y="102" point_x="140" point_y="200"/>
+        <cell x="80" y="151" point_x="180" point_y="170"/>
+        <cell x="80" y="204" point_x="135" point_y="260"/>
+        <cell x="80" y="253" point_x="163" point_y="265"/>
+		<cell x="80" y="330" point_x="150" point_y="245"/>
+    </column>
+    <column>
+        <cell x="160" y="24" point_x="163" point_y="205"/>
+        <cell x="160" y="102" point_x="195" point_y="240"/>
+        <cell x="160" y="151" point_x="210" point_y="185"/>
+        <cell x="160" y="228" point_x="190" point_y="260"/>
+    </column>
+</template>
+
+<template name="up_scheme_lcs_1">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="185"/>
+        <cell x="0" y="126" point_x="230" point_y="170"/>
+        <cell x="0" y="228" point_x="183" point_y="260"/>
+		<cell x="0" y="330" point_x="186" point_y="248"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="125" point_y="165"/>
+        <cell x="80" y="49" point_x="197" point_y="163"/>
+        <cell x="80" y="102" point_x="65" point_y="197"/>
+        <cell x="80" y="151" point_x="163" point_y="230"/>
+        <cell x="80" y="228" point_x="190" point_y="193"/>
+		<cell x="80" y="330" point_x="150" point_y="245"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="163" point_y="205"/>
+        <cell x="160" y="49" point_x="150" point_y="170"/>
+        <cell x="160" y="126" point_x="163" point_y="160"/>
+        <cell x="160" y="228" point_x="175" point_y="215"/>
+    </column>
+</template>
+
+<template name="up_scheme_sts_1">
+    <column>
+        <cell x="0" y="24" point_x="145" point_y="190"/>
+        <cell x="0" y="126" point_x="210" point_y="180"/>
+        <cell x="0" y="228" point_x="150" point_y="155"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="185" point_y="170"/>
+        <cell x="80" y="102" point_x="150" point_y="170"/>
+        <cell x="80" y="151" point_x="163" point_y="175"/>
+        <cell x="80" y="204" point_x="180" point_y="215"/>
+        <cell x="80" y="253" point_x="195" point_y="220"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="163" point_y="205"/>
+        <cell x="160" y="49" point_x="163" point_y="230"/>
+        <cell x="160" y="102" point_x="195" point_y="160"/>
+        <cell x="160" y="151" point_x="105" point_y="170"/>
+        <cell x="160" y="228" point_x="145" point_y="215"/>
+    </column>
+</template>
+
+<template name="up_scheme_sts_extra_1">
+    <column>
+        <cell x="0" y="24" point_x="145" point_y="190"/>
+        <cell x="0" y="126" point_x="210" point_y="180"/>
+        <cell x="0" y="228" point_x="150" point_y="155"/>
+		<cell x="0" y="330" point_x="186" point_y="248"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="185" point_y="170"/>
+        <cell x="80" y="102" point_x="150" point_y="170"/>
+        <cell x="80" y="151" point_x="163" point_y="175"/>
+        <cell x="80" y="204" point_x="180" point_y="215"/>
+        <cell x="80" y="253" point_x="195" point_y="220"/>
+		<cell x="80" y="330" point_x="150" point_y="245"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="163" point_y="205"/>
+        <cell x="160" y="49" point_x="163" point_y="230"/>
+        <cell x="160" y="102" point_x="195" point_y="160"/>
+        <cell x="160" y="151" point_x="105" point_y="170"/>
+        <cell x="160" y="228" point_x="145" point_y="215"/>
+    </column>
+</template>
+
+<template name="up_scheme_ps5_1">
+    <column>
+        <cell x="0" y="24" point_x="138" point_y="210"/>
+        <cell x="0" y="126" point_x="220" point_y="190"/>
+        <cell x="0" y="228" point_x="195" point_y="170"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="185" point_y="210"/>
+        <cell x="80" y="102" point_x="265" point_y="200"/>
+        <cell x="80" y="151" point_x="85" point_y="195"/>
+        <cell x="80" y="228" point_x="135" point_y="260"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="150" point_y="170"/>
+        <cell x="160" y="49" point_x="170" point_y="195"/>
+        <cell x="160" y="126" point_x="161" point_y="210"/>
+        <cell x="160" y="228" point_x="187" point_y="260"/>
+    </column>
+</template>
+
+<template name="up_scheme_ps5_extra_1">
+    <column>
+        <cell x="0" y="24" point_x="138" point_y="210"/>
+        <cell x="0" y="126" point_x="220" point_y="190"/>
+        <cell x="0" y="228" point_x="195" point_y="170"/>
+		<cell x="0" y="330" point_x="186" point_y="248"/>
+    </column>
+    <column>
+        <cell x="80" y="24" point_x="185" point_y="210"/>
+        <cell x="80" y="102" point_x="265" point_y="200"/>
+        <cell x="80" y="151" point_x="85" point_y="195"/>
+        <cell x="80" y="228" point_x="135" point_y="260"/>
+		<cell x="80" y="330" point_x="186" point_y="248"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="150" point_y="170"/>
+        <cell x="160" y="49" point_x="170" point_y="195"/>
+        <cell x="160" y="126" point_x="161" point_y="210"/>
+        <cell x="160" y="228" point_x="187" point_y="260"/>
+    </column>
+</template>
+
+<template name="up_scheme_seva_1">
+    <column>
+        <cell x="0" y="24" point_x="141" point_y="225"/>
+        <cell x="0" y="126" point_x="104" point_y="208"/>
+        <cell x="0" y="228" point_x="135" point_y="191"/>
+		<cell x="0" y="311" point_x="197" point_y="215"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="153" point_y="214"/>
+        <cell x="80" y="49" point_x="173" point_y="214"/>
+        <cell x="80" y="102" point_x="173" point_y="248"/>
+        <cell x="80" y="151" point_x="173" point_y="248"/>
+        <cell x="80" y="204" point_x="187" point_y="198"/>
+        <cell x="80" y="253" point_x="131" point_y="276"/>
+		<cell x="80" y="311" point_x="192" point_y="276"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="184" point_y="225"/>
+        <cell x="160" y="49" point_x="178" point_y="264"/>
+        <cell x="160" y="102" point_x="162" point_y="227"/>
+        <cell x="160" y="151" point_x="162" point_y="227"/>
+        <cell x="160" y="228" point_x="131" point_y="276"/>
+		<cell x="160" y="311" point_x="191" point_y="276"/>
+    </column>
+</template>
+
+<template name="up_scheme_ssp_1">
+    <column>
+		<cell x="0" y="24" point_x="140" point_y="225"/>
+        <cell x="0" y="126" point_x="195" point_y="240"/>
+        <cell x="0" y="228" point_x="163" point_y="150"/>
+		<cell x="0" y="390" point_x="192" point_y="173"/>
+    </column>
+    <column>
+		<cell x="80" y="24" point_x="150" point_y="185"/>
+        <cell x="80" y="102" point_x="140" point_y="200"/>
+        <cell x="80" y="151" point_x="180" point_y="170"/>
+		<cell x="80" y="368" point_x="162" point_y="158"/>
+		<cell x="80" y="417" point_x="162" point_y="158"/>
+    </column>
+    <column>
+		<cell x="160" y="24" point_x="175" point_y="230"/>
+        <cell x="160" y="102" point_x="195" point_y="240"/>
+        <cell x="160" y="151" point_x="210" point_y="185"/>
+    </column>
+</template>
+
+<template name="up_scheme_berill_1">
+    <column>
+        <cell x="0" y="24" point_x="163" point_y="185"/>
+        <cell x="0" y="126" point_x="230" point_y="170"/>
+        <cell x="0" y="228" point_x="183" point_y="260"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="125" point_y="165"/>
+        <cell x="80" y="49" point_x="197" point_y="163"/>
+        <cell x="80" y="102" point_x="65" point_y="197"/>
+        <cell x="80" y="151" point_x="163" point_y="230"/>
+        <cell x="80" y="228" point_x="190" point_y="193"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="163" point_y="205"/>
+        <cell x="160" y="49" point_x="150" point_y="170"/>
+        <cell x="160" y="126" point_x="163" point_y="160"/>
+        <cell x="160" y="228" point_x="175" point_y="215"/>
+    </column>
+</template>
+
+<template name="up_scheme_assault_vest_1">
+    <column>
+        <cell x="0" y="24" point_x="205" point_y="180"/>
+        <cell x="0" y="126" point_x="143" point_y="200"/>
+        <cell x="0" y="228" point_x="195" point_y="195"/>
+        <cell x="0" y="330" point_x="201" point_y="220"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="143" point_y="175"/>
+        <cell x="80" y="49" point_x="143" point_y="175"/>
+        <cell x="80" y="102" point_x="162" point_y="163"/>
+        <cell x="80" y="151" point_x="162" point_y="163"/>
+        <cell x="80" y="204" point_x="130" point_y="195"/>
+        <cell x="80" y="253" point_x="190" point_y="225"/>
+        <cell x="80" y="330" point_x="120" point_y="221"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="192" point_y="158"/>
+        <cell x="160" y="49" point_x="162" point_y="195"/>
+        <cell x="160" y="102" point_x="162" point_y="222"/>
+        <cell x="160" y="151" point_x="162" point_y="222"/>
+        <cell x="160" y="228" point_x="135" point_y="225"/>
+        <cell x="160" y="330" point_x="195" point_y="195"/>
+    </column>
+</template>
+
+<template name="up_scheme_skat_1">
+    <column>
+        <cell x="0" y="24" point_x="120" point_y="157"/>
+        <cell x="0" y="126" point_x="216" point_y="173"/>
+        <cell x="0" y="228" point_x="204" point_y="273"/>
+        <cell x="0" y="330" point_x="185" point_y="244"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="162" point_y="185"/>
+        <cell x="80" y="49" point_x="178" point_y="197"/>
+        <cell x="80" y="102" point_x="155" point_y="154"/>
+        <cell x="80" y="151" point_x="155" point_y="154"/>
+        <cell x="80" y="204" point_x="203" point_y="258"/>
+        <cell x="80" y="253" point_x="140" point_y="187"/>
+        <cell x="80" y="330" point_x="185" point_y="244"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="162" point_y="203"/>
+        <cell x="160" y="49" point_x="183" point_y="162"/>
+        <cell x="160" y="102" point_x="162" point_y="145"/>
+        <cell x="160" y="151" point_x="162" point_y="145"/>
+        <cell x="160" y="228" point_x="127" point_y="255"/>
+        <cell x="160" y="330" point_x="185" point_y="244"/>
+    </column>
+</template>
+
+<template name="up_scheme_skat_extra_1">
+    <column>
+        <cell x="0" y="24" point_x="120" point_y="157"/>
+        <cell x="0" y="126" point_x="216" point_y="173"/>
+        <cell x="0" y="228" point_x="204" point_y="273"/>
+        <cell x="0" y="330" point_x="185" point_y="244"/>
+		<cell x="0" y="392" point_x="177" point_y="179"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="162" point_y="185"/>
+        <cell x="80" y="49" point_x="178" point_y="197"/>
+        <cell x="80" y="102" point_x="155" point_y="154"/>
+        <cell x="80" y="151" point_x="155" point_y="154"/>
+        <cell x="80" y="204" point_x="203" point_y="258"/>
+        <cell x="80" y="253" point_x="140" point_y="187"/>
+        <cell x="80" y="330" point_x="185" point_y="244"/>
+		<cell x="80" y="392" point_x="177" point_y="179"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="162" point_y="203"/>
+        <cell x="160" y="49" point_x="183" point_y="162"/>
+        <cell x="160" y="102" point_x="162" point_y="145"/>
+        <cell x="160" y="151" point_x="162" point_y="145"/>
+        <cell x="160" y="228" point_x="127" point_y="255"/>
+        <cell x="160" y="330" point_x="185" point_y="244"/>
+    </column>
+</template>
+
+<template name="up_scheme_exolight_1">
+    <column>
+        <cell x="0" y="24" point_x="94" point_y="205"/>
+        <cell x="0" y="126" point_x="213" point_y="201"/>
+        <cell x="0" y="203" point_x="129" point_y="216"/>
+        <cell x="0" y="287" point_x="116" point_y="173"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="196" point_y="192"/>
+        <cell x="80" y="49" point_x="162" point_y="221"/>
+        <cell x="80" y="102" point_x="148" point_y="190"/>
+        <cell x="80" y="151" point_x="148" point_y="190"/>
+        <cell x="80" y="203" point_x="130" point_y="277"/>
+        <cell x="80" y="257" point_x="50" point_y="208"/>
+        <cell x="80" y="309" point_x="71" point_y="201"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="162" point_y="221"/>
+        <cell x="160" y="49" point_x="185" point_y="207"/>
+        <cell x="160" y="102" point_x="161" point_y="192"/>
+        <cell x="160" y="151" point_x="161" point_y="192"/>
+        <cell x="160" y="203" point_x="130" point_y="277"/>
+        <cell x="160" y="257" point_x="204" point_y="173"/>
+        <cell x="160" y="309" point_x="267" point_y="200"/>
+    </column>
+</template>
+
+<template name="up_scheme_exo_1">
+    <column>
+        <cell x="0" y="24" point_x="94" point_y="205"/>
+        <cell x="0" y="126" point_x="213" point_y="201"/>
+        <cell x="0" y="203" point_x="129" point_y="216"/>
+        <cell x="0" y="287" point_x="116" point_y="173"/>
+		<cell x="0" y="392" point_x="177" point_y="179"/>
+    </column>
+    <column>
+        <cell x="80" y="0" point_x="196" point_y="192"/>
+        <cell x="80" y="49" point_x="162" point_y="221"/>
+        <cell x="80" y="102" point_x="148" point_y="190"/>
+        <cell x="80" y="151" point_x="148" point_y="190"/>
+        <cell x="80" y="203" point_x="130" point_y="277"/>
+        <cell x="80" y="257" point_x="50" point_y="208"/>
+        <cell x="80" y="309" point_x="71" point_y="201"/>
+		<cell x="80" y="368" point_x="161" point_y="136"/>
+	    <cell x="80" y="417" point_x="154" point_y="157"/>
+    </column>
+    <column>
+        <cell x="160" y="0" point_x="162" point_y="221"/>
+        <cell x="160" y="49" point_x="185" point_y="207"/>
+        <cell x="160" y="102" point_x="161" point_y="192"/>
+        <cell x="160" y="151" point_x="161" point_y="192"/>
+        <cell x="160" y="203" point_x="130" point_y="277"/>
+        <cell x="160" y="257" point_x="204" point_y="173"/>
+        <cell x="160" y="309" point_x="267" point_y="200"/>
+		<cell x="160" y="392"  point_x="161" point_y="148"/>
+    </column>
+</template>

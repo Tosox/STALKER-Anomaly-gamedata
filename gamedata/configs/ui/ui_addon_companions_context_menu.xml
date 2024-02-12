@@ -1,0 +1,70 @@
+<w>
+<move_wait x="572" y="383" width="180" height="43" stretch="1">
+	<text align="c" font="letterica18">OK</text>
+	<text_color>
+		<e r="255" g="255" b="255" a="150"/>
+		<h r="255" g="0" b="0" a="150"/>
+	</text_color>
+	<auto_static width="180" height="43" stretch="1">
+		<texture x="0" y="0" width="247" height="43">ui\ui_addon_companion_menu</texture>
+	</auto_static>
+</move_wait>
+
+<stealth_stopStealth x="272" y="383" width="180" height="43" stretch="1">
+	<text align="c" font="letterica18">OK</text>
+	<text_color>
+		<e r="255" g="255" b="255" a="150"/>
+		<h r="255" g="0" b="0" a="150"/>
+	</text_color>
+	<auto_static width="180" height="43" stretch="1">
+		<texture x="246" y="0" width="247" height="43">ui\ui_addon_companion_menu</texture>
+	</auto_static>
+</stealth_stopStealth>
+
+		
+	<far_close x="422" y="433" width="180" height="43" stretch="1">
+		<text align="c" font="letterica18">OK</text>
+		<text_color>
+			<e r="255" g="255" b="255" a="150"/>
+			<h r="255" g="0" b="0" a="150"/>
+		</text_color>
+		<auto_static width="180" height="43" stretch="1">
+			<texture x="0" y="42" width="247" height="43">ui\ui_addon_companion_menu</texture>
+		</auto_static>
+	</far_close>
+	
+
+	<aggressive_ignoreCombatButHelpActor x="572" y="333" width="180" height="43" stretch="1">
+		<text align="c" font="letterica18">OK</text>
+		<text_color>
+			<e r="255" g="255" b="255" a="150"/>
+			<h r="255" g="0" b="0" a="150"/>
+		</text_color>
+		<auto_static width="180" height="43" stretch="1">
+			<texture x="246" y="0" width="247" height="43">ui\ui_addon_companion_menu</texture>
+		</auto_static>
+	</aggressive_ignoreCombatButHelpActor>
+	
+	<ignoreCombat_ignoreCombatButHelpActor x="272" y="333" width="180" height="43" stretch="1">
+		<text align="c" font="letterica18">OK</text>
+		<text_color>
+			<e r="255" g="255" b="255" a="150"/>
+			<h r="255" g="0" b="0" a="150"/>
+		</text_color>
+		<auto_static width="180" height="43" stretch="1">
+			<texture x="246" y="0" width="247" height="43">ui\ui_addon_companion_menu</texture>
+		</auto_static>
+	</ignoreCombat_ignoreCombatButHelpActor>
+	
+	
+	<lootCorpses_ignoreCorpses x="422" y="283" width="180" height="43" stretch="1">
+		<text align="c" font="letterica18">OK</text>
+		<text_color>
+			<e r="255" g="255" b="255" a="150"/>
+			<h r="255" g="0" b="0" a="150"/>
+		</text_color>
+		<auto_static width="180" height="43" stretch="1">
+			<texture x="0" y="42" width="247" height="43">ui\ui_addon_companion_menu</texture>
+		</auto_static>
+	</lootCorpses_ignoreCorpses>
+</w>

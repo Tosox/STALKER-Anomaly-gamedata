@@ -1,0 +1,196 @@
+
+; UNUSED -- it works the same as wpn_binoc_inv and all traders sell that one, so this cannot be obtained normally 
+; since most properties are defined here i'd say in 1.6 to delete the _inv version and keep and use this one instead
+[wpn_binoc]:identity_immunities,weapon_probability,default_weapon_params,wpn_binoc_sounds
+        GroupControlSection         = spawn_group
+        discovery_dependency        =
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\binocular"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_BINOC
+        slot                        = 4
+        animation_slot              = 13
+        ef_main_weapon_type         = 5
+        ef_weapon_type              = 0
+        hand_dependence             = 2
+        single_handed               = 0
+        
+        default_to_ruck             = true
+        sprint_allowed              = true
+        show_ammo                   = false
+        show_condition              = false
+        
+        inv_grid_height             = 1
+        inv_grid_width              = 2
+        inv_grid_x                  = 14
+        inv_grid_y                  = 9
+        inv_name                    = st_binocular_name
+        inv_name_short              = st_binocular_name
+        description                 = st_binocular_descr
+        highlight_equipped          = true
+		anim_item					= true
+        
+        kind                        = w_misc
+        inv_weight                  = 1.0
+        cost                        = 1580
+		repair_type                 = lens
+        
+        hud                         = wpn_binoc_hud
+        visual                      = dynamics\devices\dev_binoculars\dev_binoculars.ogf
+        normal                      = 0, 1, 0
+        position                    = -0.08, -0.05, 0.05
+        orientation                 = 0, -90, 70
+        direction                   = 0, 0, 1
+        fire_point                  = 0.0, 0.133, 0.161
+        ph_mass                     = 1
+        
+        attach_bone_name            = bip01_r_hand
+        attach_position_offset      = 0.080000, 0.021273, 0.100000
+        attach_angle_offset         = 3.080506, -1.493053, -1.202040
+        auto_attach                 = false
+        
+        catch_snd                   = none
+        found_snd                   = none
+        vis_frame_color             = 0.0, 0.0, 0.0, 0.0
+        vis_frame_speed             = 0
+        vision_present              = true
+        
+        flame_particles             = weapons\generic_weapon05
+        smoke_particles             = weapons\generic_shoot_00
+        
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 3.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_binoc, up_gr_seconab_binoc, up_gr_thirdab_binoc
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_binoculars
+        upgr_icon_x                 = 300
+        upgr_icon_y                 = 1950
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        upgr_icon_path              = ui\ui_actor_weapons
+        
+        ammo_class                  = ammo_binoc
+        ammo_current                = 0
+        ammo_elapsed                = 0
+        ammo_limit                  = 0
+        ammo_mag_size               = 0
+        
+        scope_status                = 1
+        scope_texture               = wpn_crosshair_bino
+        scope_zoom_factor           = 20
+		scope_dynamic_zoom          = true
+        
+        silencer_status             = 0
+        
+        grenade_launcher_status     = 0
+        
+        hit_impulse                 = 0
+        hit_power                   = 0
+        hit_type                    = fire_wound
+        fire_distance               = 0
+        bullet_speed                = 0
+        rpm                         = 0
+        rpm_empty_click             = 0
+        
+        zoom_enabled                = true
+        reload_dof                  = 0.0, 0.5, 5, 1.7
+        control_inertion_factor     = 1.1
+        fire_dispersion_base        = 1
+        fire_dispersion_condition_factor = 0
+        
+        misfire_start_condition     = 0
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0
+        misfire_end_prob            = 0.02
+        
+        condition_queue_shot_dec    = 0
+        condition_shot_dec          = 0
+        
+        cam_return                  = 0
+        cam_relax_speed             = 7
+        cam_dispersion              = 1.9
+        cam_dispersion_frac         = 1.1
+        cam_dispersion_inc          = 1.9
+        cam_max_angle               = 10.0
+        cam_max_angle_horz          = 10.0
+        cam_step_angle_horz         = 1.2
+        
+        PDM_disp_accel_factor       = 1.1
+        PDM_disp_base               = 0.5
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.1
+        disp_crouch_factor          = 0
+        disp_jump_factor            = 0
+        disp_vel_factor             = 0
+        
+        cam_relax_speed_ai          = 360
+        min_radius                  = 0
+        max_radius                  = 500
+        
+        snd_close                   = weapons\generic_close
+        snd_on_take                 = other
+		
+		can_be_lowered				= false
+ 
+
+[wpn_binoc_hud]:hud_base
+        item_visual                 = dynamics\devices\dev_binoculars\dev_binoculars_hud
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 180, 0, 0
+        
+        hands_position              = 0, -0.155, 0.2
+        hands_position_16x9         = 0, -0.155, 0.2
+        hands_orientation           = 0, 0, 0
+        hands_orientation_16x9      = 0, 0, 0
+        
+        aim_hud_offset_pos          = 0, 0, 0
+        aim_hud_offset_pos_16x9     = 0, 0, 0
+        aim_hud_offset_rot          = 0.0, 0.0, 0.0
+        aim_hud_offset_rot_16x9     = 0.0, 0.0, 0.0
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_hide                    = binoculars_holster
+        anm_idle                    = binoculars_idle
+        anm_idle_aim                = binoculars_idle_aim
+        anm_idle_moving             = binoculars_idle_moving
+        anm_idle_moving_crouch      = binoculars_idle_moving, idle, 0.75
+        anm_idle_sprint             = binoculars_idle_sprint
+        anm_show                    = binoculars_draw
+ 
+		freelook_z_offset_mul		= 0.75
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_binoc_inv]:identity_immunities,weapon_probability,default_weapon_params,wpn_binoc
+        animation_slot              = 13
+        hand_dependence             = 1
+        
+        hud                         = wpn_binoculars_hud
+        ph_mass                     = 3
+        
+        control_inertion_factor     = 1.28
+        fire_dispersion_base        = 1
+        
+        holder_fov_modifier         = 0.7
+        holder_range_modifier       = 2.0
+ 
+		anim_item					= false
+		
+[wpn_binoculars_hud]:wpn_binoc_hud
+        attach_place_idx            = 0
+ 

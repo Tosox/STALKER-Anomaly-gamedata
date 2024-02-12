@@ -1,0 +1,41 @@
+[logic@lim_stalker_scout]
+active = beh@lim_stalker_scout
+suitable = {=check_npc_name(lim_stalker_scout)} true
+prior = 200
+   
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 90
+jog_dist = 150
+wait_anim = wounded_heavy
+walk_anim = assault
+jog_anim = assault
+run_anim = assault
+delay_anim = wounded_heavy
+on_info = {+lim_stalker_scout_dialog} %=kill_npc%
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[beh@lim_stalker_scout]:beh@general
+pt1 = 88860000,wounded_heavy | pos:-23.779333114624,-3.9480452537537,142.94073486328 look:-0.31513428688049,0.040959220379591,-0.94816279411316
+path_end = loop

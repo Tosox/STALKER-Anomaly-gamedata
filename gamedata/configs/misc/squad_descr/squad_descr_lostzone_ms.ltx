@@ -1,0 +1,430 @@
+;--Lost to the Zone: Mortal Sin
+
+[bar_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = bar_visitors
+story_id = bar_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[cit_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = cit_killers
+story_id = cit_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[esc_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = esc_smart_terrain_2_12
+story_id = esc_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[mar_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = mar_smart_terrain_base
+story_id = mar_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[mil_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = mil_smart_terrain_7_7
+story_id = mil_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[yan_greh_envoy_squad]:online_offline_group
+faction = greh_npc
+npc = greh_envoy
+target_smart = yan_smart_terrain_6_4
+story_id = yan_greh_envoy
+on_death = %+greh_envoy_dead%
+
+[red_forest_greh_squad]:online_offline_group
+faction = greh
+npc = greh_squad_leader, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+target_smart = red_smart_terrain_6_3
+story_id = red_forest_greh_squad
+on_death = %+red_forest_greh_squad_dead%
+
+[stalker_stitch_ms_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_stitch_ms
+target_smart = red_smart_terrain_3_2
+story_id = stalker_stitch
+on_death = %+stalker_stitch_dead%
+
+[bar_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 12, 12
+target_smart = bar_dolg_bunker
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[cit_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 12, 12
+target_smart = cit_killers
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[esc_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 12, 12
+target_smart = esc_smart_terrain_2_12
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[mar_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 12, 12
+target_smart = mar_smart_terrain_base
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[mil_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 12, 12
+target_smart = mil_smart_terrain_7_8
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[yan_greh_ambush_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 8, 10
+target_smart = yan_smart_terrain_6_4
+story_id = greh_ambush_squad
+on_death = %+greh_ambush_squad_dead%
+
+[yan_greh_miracle_squad_1]:online_offline_group
+faction = greh
+npc = sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3
+target_smart = yan_smart_terrain_2_4
+story_id = yan_greh_miracle_squad_1
+on_death = %+yan_greh_miracle_squad_1_dead%
+
+[yan_greh_miracle_squad_2]:online_offline_group
+faction = greh
+npc = sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3
+target_smart = x162_st_snork
+story_id = yan_greh_miracle_squad_2
+on_death = %+yan_greh_miracle_squad_2_dead%
+
+[yan_greh_miracle_squad_3]:online_offline_group
+faction = greh
+npc = sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_4
+target_smart = x162_st_burer
+story_id = yan_greh_miracle_squad_3
+on_death = %+yan_greh_miracle_squad_3_dead%
+
+[rad_greh_scorcher_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_default_greh_4, sim_greh_hwp
+npc_in_squad = 12, 12
+target_smart = rad_antenna_patrol
+story_id = rad_greh_scorcher_squad
+on_death = %+rad_greh_scorcher_squad_dead%
+
+[stalker_rogue_ms_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_rogue_ms
+target_smart = lim_smart_terrain_1
+story_id = stalker_rogue
+on_death = %+stalker_rogue_dead%
+
+[lim_stalker_rogue_squad]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 6, 6
+target_smart = lim_smart_terrain_1
+always_arrived = true
+
+[lim_dolg_assault_squad]:online_offline_group
+faction = dolg
+relationship = friend
+npc_random = sim_default_duty_2, sim_default_duty_3, sim_default_duty_3, sim_default_duty_4
+npc_in_squad = 6, 6
+story_id = lim_dolg_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_killer_assault_squad]:online_offline_group
+faction = killer
+relationship = friend
+npc_random = sim_default_killer_2, sim_default_killer_3, sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 6, 6
+story_id = lim_killer_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_stalker_assault_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc_random = sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
+npc_in_squad = 6, 6
+story_id = lim_stalker_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_csky_assault_squad]:online_offline_group
+faction = csky
+relationship = friend
+npc_random = sim_default_csky_3, sim_default_csky_3, sim_default_csky_4
+npc_in_squad = 6, 6
+story_id = lim_csky_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_freedom_assault_squad]:online_offline_group
+faction = freedom
+relationship = friend
+npc_random = sim_default_freedom_2, sim_default_freedom_3, sim_default_freedom_3, sim_default_freedom_4
+npc_in_squad = 6, 6
+story_id = lim_freedom_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_ecolog_assault_squad]:online_offline_group
+faction = ecolog
+relationship = friend
+npc_random = sim_default_ecolog_1, sim_default_ecolog_1, sim_default_ecolog_3
+npc_in_squad = 6, 6
+story_id = lim_ecolog_assault_squad
+on_death = %+lim_assault_squad_dead%
+
+[lim_greh_recon_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_2
+npc_in_squad = 4, 4
+target_smart = lim_smart_terrain_1
+on_death = %+lim_greh_recon_squad_dead%
+
+[lim_greh_forward_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3
+npc_in_squad = 4, 6
+target_smart = lim_smart_terrain_3
+on_death = %+lim_greh_forward_squad_dead%
+
+[lim_greh_assault_squad_1]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3
+npc_in_squad = 8, 10
+target_smart = lim_smart_terrain_4
+story_id = lim_greh_assault_squad_1
+on_death = %+lim_greh_assault_squad_1_dead%
+
+[greh_castigator_1_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_1
+target_smart = lim_smart_terrain_4
+story_id = greh_castigator_1
+on_death = %+greh_castigator_1_dead%
+
+[lim_greh_assault_squad_2]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_greh_hwp
+npc_in_squad = 8, 10
+target_smart = lim_smart_terrain_5
+story_id = lim_greh_assault_squad_2
+on_death = %+lim_greh_assault_squad_2_dead%
+
+[greh_castigator_2_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_2
+target_smart = lim_smart_terrain_5
+story_id = greh_castigator_2
+on_death = %+greh_castigator_2_dead%
+
+[lim_greh_assault_squad_3]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_greh_sniper
+npc_in_squad = 6, 6
+target_smart = lim_smart_terrain_6
+story_id = lim_greh_assault_squad_3
+on_death = %+lim_greh_assault_squad_3_dead%
+
+[greh_castigator_3_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_3
+target_smart = lim_smart_terrain_6
+story_id = greh_castigator_3
+on_death = %+greh_castigator_3_dead%
+
+[greh_prisoner_squad]:online_offline_group
+faction = greh_npc
+npc = greh_prisoner
+target_smart = lim_smart_terrain_1
+story_id = greh_prisoner
+on_death = %+greh_prisoner_dead%
+
+[lim_stalker_scout_squad]:online_offline_group
+faction = stalker
+npc = lim_stalker_scout
+target_smart = lim_smart_terrain_8
+story_id = lim_stalker_scout
+on_death = %+lim_stalker_scout_dead%
+
+[lim_bloodsucker_ambush_squad]:online_offline_group
+faction = monster
+npc_random = bloodsucker_black_strong, bloodsucker_red_strong
+npc_in_squad = 2, 3
+target_smart = lim_smart_terrain_8
+story_id = lim_bloodsucker_ambush_squad
+on_death = %+lim_bloodsucker_ambush_squad_dead%
+
+[lim_greh_patrol_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3
+npc_in_squad = 4, 4
+target_smart = lim_smart_terrain_8
+story_id = lim_greh_patrol_squad
+on_death = %+lim_greh_patrol_squad_dead%
+
+[lim_greh_outpost_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_4, sim_greh_sniper, sim_greh_sniper
+npc_in_squad = 8, 8
+target_smart = lim_smart_terrain_9
+story_id = lim_greh_outpost_squad
+on_death = %+lim_greh_outpost_squad_dead%
+
+[lim_greh_remnant_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_greh_sniper
+npc_in_squad = 6, 6
+target_smart = lim_smart_terrain_10
+story_id = lim_greh_remnant_squad
+on_death = %+lim_greh_remnant_squad_dead%
+
+[kat_greh_garrison_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_default_greh_4, sim_greh_sniper
+npc_in_squad = 12, 16
+target_smart = katacomb_smart_terrain
+story_id = kat_greh_garrison_squad
+on_death = %+kat_greh_garrison_squad_dead%
+
+[kat_greh_sabaoth_squad]:online_offline_group
+faction = greh_npc
+npc = kat_greh_sabaoth
+relationship = neutral
+target_smart = katacomb_smart_terrain
+story_id = greh_sabaoth
+on_death = %+greh_sabaoth_dead =play_sound_on_actor(sabaoth_death)%
+
+[aes2_greh_squad1]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_greh_hwp
+npc_in_squad = 4, 6
+target_smart = aes2_monsters2
+story_id = aes2_greh_squad1
+on_death = %+aes2_greh_squad1_dead%
+
+[aes2_greh_squad2]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_greh_sniper
+npc_in_squad = 4, 6
+target_smart = aes2_monsters1
+story_id = aes2_greh_squad2
+on_death = %+aes2_greh_squad2_dead%
+
+[stalker_stitch_ms_gen_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_stitch_ms
+target_smart = gen_smart_terrain_lab_entrance_2
+story_id = stalker_stitch
+on_death = %+stalker_stitch_dead%
+
+[gen_greh_ultimate_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_4, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_default_greh_3, sim_greh_sniper, sim_greh_sniper, sim_default_greh_4, sim_greh_hwp
+target_smart = gen_smart_terrain_lab_entrance
+story_id = gen_greh_ultimate_squad
+on_death = %+gen_greh_ultimate_squad_dead%
+
+[gen_greh_sabaoth_squad]:online_offline_group
+faction = greh_npc
+npc = gen_greh_sabaoth
+target_smart = gen_smart_terrain_lab_entrance
+story_id = greh_sabaoth
+on_death = %+greh_sabaoth_dead =play_sound_on_actor(sabaoth_death)%
+
+[aes2_greh_defence_squad]:online_offline_group
+faction = greh
+npc_random = sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_greh_sniper
+npc_in_squad = 6, 6
+target_smart = aes2_monolith_camp1
+story_id = aes2_greh_defence_squad
+on_death = %+aes2_greh_defence_squad_dead%
+
+[greh_castigator_5_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_5
+target_smart = sar_monolith_guard
+story_id = greh_castigator_5
+on_death = %+greh_castigator_5_dead%
+
+[greh_castigator_6_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_6
+target_smart = sar_monolith_guard
+story_id = greh_castigator_6
+on_death = %+greh_castigator_6_dead%
+
+[sar_greh_sabaoth_squad]:online_offline_group
+faction = greh
+npc = sar_greh_sabaoth
+target_smart = sar_monolith_guard
+story_id = sar_greh_sabaoth
+on_death = %+greh_sabaoth_dead =play_sound_on_actor(sabaoth_death) =aes_earthshake%
+
+[zat_greh_resurgent_squad]:online_offline_group
+faction = greh
+npc = greh_castigator_7, sim_default_greh_0, sim_default_greh_0, sim_default_greh_1, sim_default_greh_1, sim_default_greh_2, sim_default_greh_2, sim_default_greh_2, sim_default_greh_3, sim_greh_sniper
+target_smart = zat_b103_merc_smart
+story_id = zat_greh_resurgent_squad
+on_death = %+zat_greh_resurgent_squad_dead%
+
+[lazarus_dolg_squad]:online_offline_group
+faction = dolg
+npc = lazarus_dolg
+target_smart = bar_dolg_general
+story_id = lazarus_dolg
+
+[lazarus_killer_squad]:online_offline_group
+faction = killer
+npc = lazarus_killer
+target_smart = cit_killers
+story_id = lazarus_killer
+
+[lazarus_stalker_squad]:online_offline_group
+faction = stalker
+npc = lazarus_stalker
+target_smart = esc_smart_terrain_2_12
+story_id = lazarus_stalker
+
+[lazarus_csky_squad]:online_offline_group
+faction = csky
+npc = lazarus_csky
+target_smart = mar_smart_terrain_base
+story_id = lazarus_csky
+
+[lazarus_freedom_squad]:online_offline_group
+faction = freedom
+npc = lazarus_freedom
+target_smart = mil_smart_terrain_7_7
+story_id = lazarus_freedom
+
+[lazarus_ecolog_squad]:online_offline_group
+faction = ecolog
+npc = lazarus_ecolog
+target_smart = yan_smart_terrain_6_4
+story_id = lazarus_ecolog
+

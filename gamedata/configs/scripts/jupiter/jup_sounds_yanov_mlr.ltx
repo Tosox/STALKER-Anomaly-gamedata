@@ -1,0 +1,24 @@
+[logic]
+active = sr_idle@music
+
+[sr_idle@music]
+on_info = %=play_sound(mil_freebase_mlr)%
+on_timer = 6660 | sr_idle@propaganda
+on_info2 = {=is_night} sr_idle@night
+on_info3 = {=surge_started} sr_idle@surge
+
+[sr_idle@propaganda]
+on_info = %=play_sound(mil_freebase_mlr_propaganda)%
+on_timer = 1800 | sr_idle@music
+on_info2 = {=is_night} sr_idle@night
+on_info3 = {=surge_started} sr_idle@surge
+
+[sr_idle@night]
+on_info = %=play_sound(jup_night_sound_mlr)%
+on_info2 = {!is_night} sr_idle@music
+on_info3 = {=surge_started} sr_idle@surge
+
+[sr_idle@surge]
+on_info = %=play_sound(broken_radio_mlr)%
+on_info2 = {!surge_started !is_night} sr_idle@music
+on_info3 = {!surge_started =is_night} sr_idle@night

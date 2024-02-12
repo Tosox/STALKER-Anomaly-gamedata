@@ -1,0 +1,66 @@
+----------------------- Alundaio easy scripted_dialog
+local saved_dialog
+--local cond_list = {}
+function add_dialog(p_id,id,phrase_id,cond,act)
+	if not ( saved_dialog ) then
+		return
+	end
+
+	local phrase = saved_dialog:AddPhrase(phrase_id,tostring(id),tostring(p_id),-10000)
+	if not ( phrase ) then
+		return
+	end
+
+	--printf("phrase_id = %s",phrase_id)
+
+	local phrase_script = phrase:GetPhraseScript()
+	if ( cond ) then
+		if ( type(cond) == "table" ) then
+			for key, value in pairs(cond) do
+				if (utils_data.findfunction(value,_G)) then
+					phrase_script:AddPrecondition(value)
+					--table.insert(cond_list,value)
+				else
+					printe("!ERROR dialog_manager | No such function exists '%s'",value)
+				end
+			end
+		else
+			if (utils_data.findfunction(cond,_G)) then
+				phrase_script:AddPrecondition(cond)
+				--table.insert(cond_list,value)
+			else
+				printe("!ERROR dialog_manager | No such function exists '%s'",cond)
+			end
+		end
+	end
+
+	if ( act ) then
+		if ( type(act) == "table" ) then
+			for key, value in pairs(act) do
+				if (utils_data.findfunction(value,_G)) then
+					phrase_script:AddAction(value)
+				else
+					printe("!ERROR dialog_manager | No such function exists '%s'",value)
+				end
+			end
+		else
+			if (utils_data.findfunction(act,_G)) then
+				phrase_script:AddAction(act)
+			else
+				printe("!ERROR dialog_manager | No such function exists '%s'",act)
+			end
+		end
+	end
+	return phrase_script
+end
+
+function add_script_dialog(p_id,id,phrase_id,cond,act)
+	local d = add_dialog(p_id,id,phrase_id,cond,act)
+	if (d) then
+		d:SetScriptText(phrase_id)
+	end
+end
+
+function set_saved_dialog(dialog)
+	saved_dialog = dialog
+end

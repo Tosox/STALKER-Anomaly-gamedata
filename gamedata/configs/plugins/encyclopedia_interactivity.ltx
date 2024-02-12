@@ -1,0 +1,362 @@
+; This plugin matches entities to articles, so relevant articles unlock as things are discovered.
+; Examples of this feature would include talking to specific characters, wearing a faction's armour etc.
+
+; Fills tables with a section's contents.
+; Only used by scripts, and has hardcoded references.
+; Do not touch this section unless you know what you are doing!
+[encyclopedia_interactivity]
+notes 	   = encyclopedia_interactivity__notes
+anomalies  = encyclopedia_interactivity_anomalies
+artefacts  = encyclopedia_interactivity_artefacts
+characters = encyclopedia_interactivity_characters
+factions   = encyclopedia_interactivity_factions
+items      = encyclopedia_interactivity_items
+levels     = encyclopedia_interactivity_levels
+mutants    = encyclopedia_interactivity_mutants
+smarts     = encyclopedia_interactivity_smarts
+vehicles   = encyclopedia_interactivity_vehicles
+
+[encyclopedia_interactivity__notes]
+recipe_basic_1                 = encyclopedia__notes_recipe_basic_1
+recipe_basic_2                 = encyclopedia__notes_recipe_basic_2
+recipe_basic_3                 = encyclopedia__notes_recipe_basic_3
+recipe_basic_4                 = encyclopedia__notes_recipe_basic_4
+recipe_advanced_1              = encyclopedia__notes_recipe_advanced_1
+recipe_advanced_2              = encyclopedia__notes_recipe_advanced_2
+recipe_advanced_3              = encyclopedia__notes_recipe_advanced_3
+recipe_advanced_4              = encyclopedia__notes_recipe_advanced_4
+recipe_expert_1                = encyclopedia__notes_recipe_expert_1
+recipe_expert_2                = encyclopedia__notes_recipe_expert_2
+recipe_expert_3                = encyclopedia__notes_recipe_expert_3
+recipe_expert_4                = encyclopedia__notes_recipe_expert_4
+recipe_drug_1                  = encyclopedia__notes_recipe_drug_1
+recipe_drug_2                  = encyclopedia__notes_recipe_drug_2
+recipe_drug_3                  = encyclopedia__notes_recipe_drug_3
+recipe_drug_4                  = encyclopedia__notes_recipe_drug_4
+recipe_ammo_1                  = encyclopedia__notes_recipe_ammo_1
+recipe_ammo_2                  = encyclopedia__notes_recipe_ammo_2
+recipe_ammo_3                  = encyclopedia__notes_recipe_ammo_3
+recipe_ammo_4                  = encyclopedia__notes_recipe_ammo_4
+recipe_cooking_1               = encyclopedia__notes_recipe_cooking_1
+letter_memoirs_1_of_2          = encyclopedia__notes_letter_memoirs_1_of_2
+letter_memoirs_2_of_2          = encyclopedia__notes_letter_memoirs_2_of_2
+letter_freedom_manual_1_of_2   = encyclopedia__notes_letter_freedom_manual_1_of_2
+letter_freedom_manual_2_of_2   = encyclopedia__notes_letter_freedom_manual_2_of_2
+letter_stalker_letter_1_of_2   = encyclopedia__notes_letter_stalker_letter_1_of_2
+letter_stalker_letter_2_of_2   = encyclopedia__notes_letter_stalker_letter_2_of_2
+letter_stalker_letter_3        = encyclopedia__notes_letter_stalker_letter_3
+letter_ecologist_report_1_of_3 = encyclopedia__notes_letter_ecologist_report_1_of_3
+letter_ecologist_report_2_of_3 = encyclopedia__notes_letter_ecologist_report_2_of_3
+letter_ecologist_report_3_of_3 = encyclopedia__notes_letter_ecologist_report_3_of_3
+letter_monolith_prayer_1_of_3  = encyclopedia__notes_letter_monolith_prayer_1_of_3
+letter_monolith_prayer_2_of_3  = encyclopedia__notes_letter_monolith_prayer_2_of_3
+letter_monolith_prayer_3_of_3  = encyclopedia__notes_letter_monolith_prayer_3_of_3
+letter_monolithian_thoughts    = encyclopedia__notes_letter_monolithian_thoughts
+letter_letter_to_outside       = encyclopedia__notes_letter_letter_to_outside
+letter_military_stalker        = encyclopedia__notes_letter_military_stalker
+letter_mercenary               = encyclopedia__notes_letter_mercenary
+letter_military_log            = encyclopedia__notes_letter_military_log
+note_from_aslan			 	   = encyclopedia__notes_note_from_aslan
+note_from_spirit			   = encyclopedia__notes_note_from_spirit
+note_from_trunk			   	   = encyclopedia__notes_note_from_trunk
+note_from_meeker			   = encyclopedia__notes_note_from_meeker
+note_from_grifon			   = encyclopedia__notes_note_from_grifon
+mysteries_of_the_zone		   = encyclopedia__notes_mysteries_of_the_zone
+living_legend		   		   = encyclopedia__notes_living_legend
+mortal_sin		   			   = encyclopedia__notes_mortal_sin
+
+;-- Artefacts - triggered by acquiring
+[encyclopedia_interactivity_artefacts]
+about_artefacts		 = encyclopedia_artefacts__about
+af_medusa            = encyclopedia_artefacts_af_medusa
+af_cristall_flower   = encyclopedia_artefacts_af_cristall_flower
+af_night_star        = encyclopedia_artefacts_af_night_star
+af_vyvert            = encyclopedia_artefacts_af_vyvert
+af_gravi             = encyclopedia_artefacts_af_gravi
+af_gold_fish         = encyclopedia_artefacts_af_gold_fish
+af_cristall          = encyclopedia_artefacts_af_cristall
+af_fireball          = encyclopedia_artefacts_af_fireball
+;af_fire_loop         = encyclopedia_artefacts_af_fire_loop
+af_dummy_glassbeads  = encyclopedia_artefacts_af_dummy_glassbeads
+af_eye               = encyclopedia_artefacts_af_eye
+af_fire              = encyclopedia_artefacts_af_fire
+af_blood             = encyclopedia_artefacts_af_blood
+af_mincer_meat       = encyclopedia_artefacts_af_mincer_meat
+af_soul              = encyclopedia_artefacts_af_soul
+af_fuzz_kolobok      = encyclopedia_artefacts_af_fuzz_kolobok
+af_baloon            = encyclopedia_artefacts_af_baloon
+af_glass             = encyclopedia_artefacts_af_glass
+af_electra_sparkler  = encyclopedia_artefacts_af_electra_sparkler
+af_electra_flash     = encyclopedia_artefacts_af_electra_flash
+af_electra_moonlight = encyclopedia_artefacts_af_electra_moonlight
+af_dummy_battery     = encyclopedia_artefacts_af_dummy_battery
+af_dummy_dummy       = encyclopedia_artefacts_af_dummy_dummy
+af_ice               = encyclopedia_artefacts_af_ice
+af_vaselisk          = encyclopedia_artefacts_af_vaselisk
+af_geliy             = encyclopedia_artefacts_af_geliy
+af_gimlet            = encyclopedia_artefacts_af_gimlet
+;af_dragon_eye        = encyclopedia_artefacts_af_dragon_eye
+af_monolith          = encyclopedia_artefacts_af_monolith
+;af_ball              = encyclopedia_artefacts_af_ball
+;af_fonar             = encyclopedia_artefacts_af_fonar
+;af_tapeworm          = encyclopedia_artefacts_af_tapeworm
+;af_moh               = encyclopedia_artefacts_af_moh
+;af_serofim           = encyclopedia_artefacts_af_serofim
+;af_elektron          = encyclopedia_artefacts_af_elektron
+;af_kogot             = encyclopedia_artefacts_af_kogot
+;af_generator         = encyclopedia_artefacts_af_generator
+;af_black_angel       = encyclopedia_artefacts_af_black_angel
+;af_grapes            = encyclopedia_artefacts_af_grapes
+;af_skull_miser       = encyclopedia_artefacts_af_skull_miser
+;af_star_phantom      = encyclopedia_artefacts_af_star_phantom
+;af_medallion         = encyclopedia_artefacts_af_medallion
+;af_peas              = encyclopedia_artefacts_af_peas
+;af_kislushka         = encyclopedia_artefacts_af_kislushka
+;af_zhelch            = encyclopedia_artefacts_af_zhelch
+;af_sandstone         = encyclopedia_artefacts_af_sandstone
+;af_fountain          = encyclopedia_artefacts_af_fountain
+;af_spaika            = encyclopedia_artefacts_af_spaika
+;af_signet            = encyclopedia_artefacts_af_signet
+;af_repei             = encyclopedia_artefacts_af_repei
+;af_bat               = encyclopedia_artefacts_af_bat
+;af_sun               = encyclopedia_artefacts_af_sun
+;af_ear               = encyclopedia_artefacts_af_ear
+;af_chelust           = encyclopedia_artefacts_af_chelust
+;af_atom              = encyclopedia_artefacts_af_atom
+;af_lighthouse        = encyclopedia_artefacts_af_lighthouse
+;af_cell              = encyclopedia_artefacts_af_cell
+;af_cocoon            = encyclopedia_artefacts_af_cocoon
+af_compass           = encyclopedia_artefacts_af_compass
+af_oasis_heart       = encyclopedia_artefacts_af_oasis_heart
+;jup_b1_half_artifact = encyclopedia_artefacts_jup_b1_half_artifact
+;af_quest_b14_twisted = encyclopedia_artefacts_af_quest_b14_twisted
+af_black_spray       = encyclopedia_artefacts_af_black_spray
+af_bracelet          = encyclopedia_artefacts_af_bracelet
+af_death_lamp        = encyclopedia_artefacts_af_death_lamp
+af_empty             = encyclopedia_artefacts_af_empty
+af_full_empty        = encyclopedia_artefacts_af_full_empty
+af_itcher            = encyclopedia_artefacts_af_itcher
+af_lobster_eyes      = encyclopedia_artefacts_af_lobster_eyes
+af_pin               = encyclopedia_artefacts_af_pin
+af_ring              = encyclopedia_artefacts_af_ring
+af_sponge            = encyclopedia_artefacts_af_sponge
+
+;-- Anomalies - triggered through various means.
+[encyclopedia_interactivity_anomalies]
+emissions                                    = encyclopedia_anomalies_emission
+psi_storms                                   = encyclopedia_anomalies_psistorm
+zone_field_radioactive                       = encyclopedia_anomalies_radiation
+brain_scorcher                               = encyclopedia_anomalies_brain_scorcher
+zone_field_psychic							 = encyclopedia_anomalies_psi
+zone_field_thermal		                     = encyclopedia_anomalies_burner
+zone_mine_thermal		                     = encyclopedia_anomalies_burner
+zone_zharka_static		                     = encyclopedia_anomalies_burner
+zone_mine_gravitational_average              = encyclopedia_anomalies_vortex
+zone_mine_gravitational_weak                 = encyclopedia_anomalies_springboard
+zone_mine_gravitational_big                  = encyclopedia_anomalies_whirligig
+zone_mine_gravitational_strong               = encyclopedia_anomalies_whirligig
+zone_buzz                                    = encyclopedia_anomalies_fruit
+zone_mine_chemical                           = encyclopedia_anomalies_fruit
+zone_burning_fuzz                            = encyclopedia_anomalies_fuzz
+zone_mine_electric                           = encyclopedia_anomalies_electro
+zone_witches_galantine                       = encyclopedia_anomalies_electro
+zone_field_acidic                            = encyclopedia_anomalies_gas
+zone_mine_acidic                             = encyclopedia_anomalies_gas
+fireball_zone                                = encyclopedia_anomalies_comet
+fireball_electric_zone                       = encyclopedia_anomalies_tesla
+fireball_acidic_zone                         = encyclopedia_anomalies_gascloud
+lim_space_restrictor_0016                    = encyclopedia_anomalies_space
+zone_teleport                                = encyclopedia_anomalies_teleport
+pulse                                		 = encyclopedia_anomalies_pulse
+
+; Characters - triggered by looting or talking-to.
+; Faction articles should also trigger if a character is technically in the trader faction.
+[encyclopedia_interactivity_characters]
+agr_smart_terrain_1_6_army_mechanic_stalker            = encyclopedia_characters_lieutenant_kirilov
+agr_smart_terrain_1_6_army_trader_stalker              = encyclopedia_characters_sergeant_spooner
+agr_smart_terrain_1_6_near_2_military_colonel_kovalski = encyclopedia_characters_major_kuznetsov
+bar_visitors_barman_stalker_trader                     = encyclopedia_characters_barkeep
+esc_2_12_stalker_fanat                                 = encyclopedia_characters_fanatic
+esc_2_12_stalker_nimble                                = encyclopedia_characters_nimble
+esc_2_12_stalker_wolf                                  = encyclopedia_characters_wolf
+esc_smart_terrain_5_7_loner_mechanic_stalker           = encyclopedia_characters_xenotech
+jup_a6_freedom_leader                                  = encyclopedia_characters_loki
+jup_a6_freedom_trader_ashot                            = encyclopedia_characters_ashot
+jup_a6_stalker_barmen                                  = encyclopedia_characters_hawaiian
+jup_b19_freedom_yar                                    = encyclopedia_characters_yar
+m_lesnik                                               = encyclopedia_factions_loner
+m_trader                                               = encyclopedia_factions_loner, encyclopedia_characters_sidorovich
+mar_base_owl_stalker_trader                            = encyclopedia_characters_spore
+mar_base_stalker_barmen                                = encyclopedia_characters_librarian
+mar_base_stalker_tech                                  = encyclopedia_characters_novikov
+mar_smart_terrain_base_doctor                          = encyclopedia_characters_professor_kalancha
+mar_smart_terrain_base_stalker_leader_marsh            = encyclopedia_characters_cold
+mar_smart_terrain_doc_doctor                           = encyclopedia_factions_loner, encyclopedia_characters_doctor
+val_smart_terrain_7_3_bandit_mechanic_stalker          = encyclopedia_characters_limpid
+val_smart_terrain_7_4_bandit_trader_stalker            = encyclopedia_characters_olivius
+yan_ecolog_kruglov                                     = encyclopedia_characters_professor_kruglov
+yan_stalker_sakharov                                   = encyclopedia_factions_ecologist, encyclopedia_characters_professor_sakharov
+zat_a2_stalker_barmen                                  = encyclopedia_characters_beard
+zat_a2_stalker_mechanic                                = encyclopedia_characters_cardan
+zat_b106_stalker_gonta                                 = encyclopedia_characters_gonta
+zat_b22_stalker_medic                                  = encyclopedia_characters_axel
+zat_b30_owl_stalker_trader                             = encyclopedia_characters_owl
+zat_b7_bandit_boss_sultan                              = encyclopedia_characters_sultan
+yan_povar_army_mlr									   = encyclopedia_characters_spirit
+mechanic_army_yan_mlr								   = encyclopedia_characters_peregrine
+hunter_gar_trader									   = encyclopedia_characters_butcher
+cit_killers_merc_barman_mlr							   = encyclopedia_characters_aslan
+ds_killer_guide_main_base						  	   = encyclopedia_characters_leopard
+cit_killers_merc_medic_stalker						   = encyclopedia_characters_surgeon
+esc_main_base_trader_mlr							   = encyclopedia_characters_loris
+devushka											   = encyclopedia_characters_hip                         
+bar_informator_mlr                                     = encyclopedia_characters_snitch
+guid_bar_stalker_navigator							   = encyclopedia_characters_navigator
+merc_pri_grifon_mlr	                                   = encyclopedia_characters_griffin
+merc_pri_a18_mech_mlr                                  = encyclopedia_characters_trunk
+pri_special_trader_mlr                                 = encyclopedia_characters_meeker
+zat_stancia_trader_merc                                = encyclopedia_characters_vector
+zat_stancia_mech_merc                                  = encyclopedia_characters_kolin
+mil_freedom_medic                                      = encyclopedia_characters_solid
+mil_freedom_guid                                       = encyclopedia_characters_leshiy
+monolith_eidolon 									   = encyclopedia_characters_eidolon
+stalker_gatekeeper 									   = encyclopedia_characters_gatekeeper
+stalker_rogue 										   = encyclopedia_characters_rogue
+stalker_rogue_ms									   = encyclopedia_characters_rogue
+stalker_rogue_oa									   = encyclopedia_characters_rogue
+stalker_stitch_ms									   = encyclopedia_characters_stitch
+stalker_stitch_oa									   = encyclopedia_characters_stitch
+stalker_stitch 										   = encyclopedia_characters_stitch
+lost_stalker_strelok 								   = encyclopedia_characters_strelok
+stalker_strelok_oa 								   	   = encyclopedia_characters_strelok
+kat_greh_sabaoth 									   = encyclopedia_characters_chernobog
+army_degtyarev 										   = encyclopedia_characters_degtyarev
+army_degtyarev_jup									   = encyclopedia_characters_degtyarev
+bar_dolg_leader									   	   = encyclopedia_characters_general_voronin
+bar_dolg_general_petrenko_stalker					   = encyclopedia_characters_colonel_petrenko
+bar_visitors_stalker_mechanic						   = encyclopedia_characters_mangun
+bar_dolg_medic									   	   = encyclopedia_characters_aspirin
+agr_1_6_medic_army_mlr								   = encyclopedia_characters_lieutenant_rogovets
+esc_3_16_military_trader							   = encyclopedia_characters_major_zhurov
+bar_arena_manager									   = encyclopedia_characters_arnie
+mil_smart_terrain_7_10_freedom_trader_stalker		   = encyclopedia_characters_skinflint
+red_greh_trader									   	   = encyclopedia_characters_stribog
+red_greh_tech									  	   = encyclopedia_characters_dazhbog
+greh_envoy									  	   	   = encyclopedia_characters_vodnik
+greh_castigator_1									   = encyclopedia_characters_drekavac
+;pri_a16_mech_mlr
+;lider_monolith_haron
+;guid_pri_a15_mlr
+;trader_pri_a15_mlr
+;guid_jup_stalker_garik
+;zat_tech_mlr
+;esc_3_16_military_trader   
+;mil_freedom_barman_mlr
+
+; Factions - triggered through various means.
+[encyclopedia_interactivity_factions]
+army     = encyclopedia_factions_military
+bandit   = encyclopedia_factions_bandit
+csky     = encyclopedia_factions_clear_sky
+dolg     = encyclopedia_factions_duty
+ecolog   = encyclopedia_factions_ecologist
+freedom  = encyclopedia_factions_freedom
+killer   = encyclopedia_factions_mercenary
+monolith = encyclopedia_factions_monolith
+renegade = encyclopedia_factions_renegade
+stalker  = encyclopedia_factions_loner
+zombied  = encyclopedia_factions_zombified
+isg 	 = encyclopedia_factions_isg
+greh 	 = encyclopedia_factions_greh
+greh_npc = encyclopedia_factions_greh
+army_npc = encyclopedia_factions_military
+
+; Items - triggered by taking, using or equipping.
+[encyclopedia_interactivity_items]
+;itm_basickit        = encyclopedia_items_itm_basickit
+;itm_advancedkit     = encyclopedia_items_itm_advancedkit
+;itm_expertkit       = encyclopedia_items_itm_expertkit
+;itm_drugkit         = encyclopedia_items_itm_drugkit
+;itm_ammokit         = encyclopedia_items_itm_ammokit
+kit_hunt            = encyclopedia_items_kit_hunt
+fieldcooker         = encyclopedia_items_fieldcooker
+cooking             = encyclopedia_items_cooking
+army_bowler         = encyclopedia_items_army_bowler
+af_iam              = encyclopedia_items_af_iam
+af_aac              = encyclopedia_items_af_aac
+af_aam              = encyclopedia_items_af_aam
+lead_box            = encyclopedia_items_lead_box
+detector_simple     = encyclopedia_items_detector_simple
+detector_advanced   = encyclopedia_items_detector_advanced
+detector_elite      = encyclopedia_items_detector_elite
+detector_scientific = encyclopedia_items_detector_scientific
+detector_geiger     = encyclopedia_items_detector_geiger
+detector_radio      = encyclopedia_items_detector_radio
+;gps_tracker         = encyclopedia_items_gps_tracker
+
+; Levels - triggered by visiting them.
+[encyclopedia_interactivity_levels]
+jupiter               = encyclopedia_locations_jupiter
+k00_marsh             = encyclopedia_locations_great_swamp
+k01_darkscape         = encyclopedia_locations_darkscape
+k02_trucks_cemetery   = encyclopedia_locations_truck_cemetery
+l01_escape            = encyclopedia_locations_cordon
+l02_garbage           = encyclopedia_locations_garbage
+l03_agroprom          = encyclopedia_locations_agroprom
+l04_darkvalley        = encyclopedia_locations_dark_valley
+l05_bar               = encyclopedia_locations_rostok
+l06_rostok            = encyclopedia_locations_wild_territory
+l07_military          = encyclopedia_locations_army_warehouses
+l08_yantar            = encyclopedia_locations_yantar
+l09_deadcity          = encyclopedia_locations_dead_city
+l10_limansk           = encyclopedia_locations_limansk
+l10_radar             = encyclopedia_locations_radar
+l10_red_forest        = encyclopedia_locations_red_forest
+l11_hospital          = encyclopedia_locations_deserted_hospital
+l11_pripyat           = encyclopedia_locations_pripyat
+l12_stancia           = encyclopedia_locations_chernobyl_npp
+l12_stancia_2         = encyclopedia_locations_chernobyl_npp
+l13_generators        = encyclopedia_locations_generators
+pripyat	              = encyclopedia_locations_outskirts
+zaton                 = encyclopedia_locations_zaton
+jupiter_underground	  = encyclopedia_locations_jupiter_underground
+labx8                 = encyclopedia_locations_lab_x8
+l03u_agr_underground  = encyclopedia_locations_agroprom_underground
+l04u_labx18           = encyclopedia_locations_lab_x18
+l08u_brainlab         = encyclopedia_locations_lab_x16
+l10u_bunker           = encyclopedia_locations_lab_x19
+l12u_control_monolith = encyclopedia_locations_monolith_control_center
+l12u_sarcofag         = encyclopedia_locations_sarcophagus
+l13u_warlab           = encyclopedia_locations_monolith_war_lab
+
+; Mutants - triggered by field dressing.
+[encyclopedia_interactivity_mutants]
+bloodsucker = encyclopedia_mutants_bloodsucker
+boar        = encyclopedia_mutants_boar
+burer       = encyclopedia_mutants_burer
+cat         = encyclopedia_mutants_cat
+chimera     = encyclopedia_mutants_chimera
+controller  = encyclopedia_mutants_controller
+crow        = encyclopedia_mutants_crow
+dog         = encyclopedia_mutants_blind_dog
+flesh       = encyclopedia_mutants_flesh
+fracture    = encyclopedia_mutants_fracture
+gigant      = encyclopedia_mutants_pseudogiant
+karlik      = encyclopedia_mutants_karlik
+pseudodog   = encyclopedia_mutants_pseudodog
+psy_dog     = encyclopedia_mutants_psydog
+rat         = encyclopedia_mutants_rat
+snork       = encyclopedia_mutants_snork
+tushkano    = encyclopedia_mutants_tushkano
+zombie      = encyclopedia_mutants_zombie
+lurker      = encyclopedia_mutants_lurker
+psysucker   = encyclopedia_mutants_psysucker
+poltergeist = encyclopedia_mutants_poltergeist
+pyrogeist   = encyclopedia_mutants_pyrogeist
+pseudogeist = encyclopedia_mutants_pseudogeist
+
+; Smart terrains - triggered by walking into.
+[encyclopedia_interactivity_smarts]
+
+; Vehicles - triggered by entering.
+[encyclopedia_interactivity_vehicles]

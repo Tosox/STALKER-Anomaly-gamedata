@@ -1,0 +1,50 @@
+function ReadOutfitBlindnessKoeff(section)
+   if ini_sys:line_exist(section,"npc_blindness_koeff") then
+      return ini_sys:r_float(section,"npc_blindness_koeff")
+   else
+      return 80
+   end
+end
+
+
+function transparent_gg() 
+	local  range1, id, obj_around, alife_obj, dist_act_npc 
+	local outfit_in_slot=db.actor:item_in_slot(7)
+	if db.actor == nil then 
+		return nil 
+	end  
+	if db.actor:item_in_slot(7) == nil then 
+		range1 = 80  
+	elseif outfit_in_slot~=nil and ReadOutfitBlindnessKoeff(outfit_in_slot:section())>0.0 then
+		range1 = ReadOutfitBlindnessKoeff(outfit_in_slot:section())
+	else 
+		range1 = 80 
+	end  
+
+	for id = 1, 65534 do 
+		obj_around = level.object_by_id(id)  
+		if obj_around ~= nil and IsStalker(obj_around) then   
+			alife_obj = alife_object(id) 
+			if alife_obj then  
+				dist_act_npc = db.actor:position():distance_to(alife_obj.position) 
+			end 
+			if dist_act_npc <= 120 then  
+				if obj_around then  
+					obj_around:set_range(range1)  
+				end 
+			else 
+				if obj_around then  
+					obj_around:set_range(80) 
+				end 
+			end 
+		end 
+	end
+end 
+
+function timer_trans() 
+	timer_transparent = timer_transparent + 1 
+	if timer_transparent >= 50 then 
+		timer_transparent = 0 
+		transparent_gg() 
+	end 
+end

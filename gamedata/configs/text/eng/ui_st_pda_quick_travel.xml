@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<!-- Fast Travel Names -->
+	<string id="st_pda_fast_travel_to">
+		<text>Fast travel to</text>
+	</string>
+	<string id="agr_smart_terrain_1_2">
+		<text>Swamp</text>
+	</string>
+	<string id="agr_smart_terrain_1_6">
+		<text>Research Institute</text>
+	</string>
+	<string id="agr_smart_terrain_4_4">
+		<text>Factory</text>
+	</string>
+	<string id="agr_smart_terrain_6_4">
+		<text>Camp In Tunnel</text>
+	</string>
+
+	<string id="mil_smart_terrain_2_2">
+		<text>Merc Camp</text>
+	</string>
+	<string id="mil_smart_terrain_2_4">
+		<text>Farmstead</text>
+	</string>
+	<string id="mil_smart_terrain_2_6">
+		<text>Fallen Helicopter</text>
+	</string>
+	<string id="mil_smart_terrain_2_10">
+		<text>Bloodsucker Village</text>
+	</string>
+	<string id="mil_smart_terrain_3_8">
+		<text>The Barrier</text>
+	</string>
+	<string id="mil_smart_terrain_7_4">
+		<text>Duty Outpost</text>
+	</string>
+	<string id="mil_smart_terrain_7_12">
+		<text>Freedom Base</text>
+	</string>
+
+	<string id="aes_smart_terrain_monolit_blockpost4">
+		<text>Monolith Blockade</text>
+	</string>
+	<string id="aes2_monolith_snipers_2">
+		<text>Monolith Patrol Area</text>
+	</string>
+
+	<string id="esc_smart_terrain_2_12">
+		<text>Rookie Village</text>
+	</string>
+	<string id="esc_smart_terrain_3_16">
+		<text>Military Outpost</text>
+	</string>
+	<string id="esc_smart_terrain_5_2">
+		<text>Military Checkpoint</text>
+	</string>
+	<string id="esc_smart_terrain_5_7">
+		<text>Northern Farm</text>
+	</string>
+	<string id="esc_smart_terrain_5_9">
+		<text>Mill</text>
+	</string>
+	<string id="esc_smart_terrain_6_6">
+		<text>Abandoned Farmstead</text>
+	</string>
+	<string id="esc_smart_terrain_6_8">
+		<text>Railway Bridge</text>
+	</string>
+	<string id="esc_smart_terrain_7_11">
+		<text>Vehicle Station</text>
+	</string>
+
+	<string id="ds2_lager_st">
+		<text>Camp Under Cliff</text>
+	</string>
+	<string id="ds_kem2">
+		<text>Abandoned Petrol Station</text>
+	</string>
+	<string id="ds_ptr">
+		<text>Railroad Crossing</text>
+	</string>
+	<string id="ds2_domik_st">
+		<text>Abandoned Farm</text>
+	</string>
+
+	<string id="val_smart_terrain_1_2">
+		<text>Behind Lab X-18 Complex</text>
+	</string>
+	<string id="val_smart_terrain_4_0">
+		<text>Abandoned pig farm</text>
+	</string>
+	<string id="val_smart_terrain_7_4">
+		<text>Bandit Base</text>
+	</string>
+	<string id="val_smart_terrain_7_8">
+		<text>Polluted Lake North</text>
+	</string>
+	<string id="val_smart_terrain_8_9">
+		<text>Polluted Lake South</text>
+	</string>
+
+	<string id="cit_killers">
+		<text>Merc Base</text>
+	</string>
+	<string id="cit_bandits">
+		<text>Dead City School</text>
+	</string>
+	<string id="cit_bandits_2">
+		<text>Dead City Village</text>
+	</string>
+
+	<string id="katacomb_smart_terrain">
+		<text>Deserted Hospital</text>
+	</string>
+
+	<string id="gar_smart_terrain_3_5">
+		<text>Train Hangar</text>
+	</string>
+	<string id="gar_smart_terrain_3_7">
+		<text>Vehicle Graveyard</text>
+	</string>
+	<string id="gar_smart_terrain_6_3">
+		<text>Flea Market</text>
+	</string>
+
+	<string id="gen_smart_terrain_cemetery">
+		<text>Cemetery</text>
+	</string>
+	<string id="gen_smart_terrain_lab_entrance">
+		<text>War Lab Entrance</text>
+	</string>
+	<string id="gen_smart_terrain_lab_entrance_2">
+		<text>Abandoned Lab</text>
+	</string>
+
+	<string id="mar_smart_terrain_base">
+		<text>Clear Sky Base</text>
+	</string>
+	<string id="mar_smart_terrain_doc">
+		<text>Tuzla Tunnel</text>
+	</string>
+	<string id="mar_smart_terrain_doc_2">
+		<text>Guard Post</text>
+	</string>
+	<string id="mar_smart_terrain_3_3">
+		<text>Tuzla Encampment</text>
+	</string>
+	<string id="mar_smart_terrain_4_5">
+		<text>Village Ruins</text>
+	</string>
+	<string id="mar_smart_terrain_5_8">
+		<text>Pump Station</text>
+	</string>
+	<string id="mar_smart_terrain_5_12">
+		<text>Fishing Hamlet</text>
+	</string>
+	<string id="mar_smart_terrain_8_8">
+		<text>Burnt Farmstead</text>
+	</string>
+	<string id="mar_smart_terrain_8_11">
+		<text>Old Church</text>
+	</string>
+	<string id="mar_smart_terrain_10_5">
+		<text>Machine Yard</text>
+	</string>
+	<string id="mar_smart_terrain_11_11">
+		<text>Southern Farmstead</text>
+	</string>
+	<string id="mar_smart_terrain_12_2">
+		<text>Northern Farmstead</text>
+	</string>
+
+	<string id="jup_a12">
+		<text>Container Warehouse</text>
+	</string>
+	<string id="jup_b204">
+		<text>Factory Bandit Camp</text>
+	</string>
+	<string id="jup_a6">
+		<text>Yanov Station</text>
+	</string>
+	<string id="jup_b200">
+		<text>Cement Factory</text>
+	</string>
+	<string id="jup_b19">
+		<text>Kopachy Village</text>
+	</string>
+	<string id="jup_b41">
+		<text>Mobile Science Lab</text>
+	</string>
+
+	<string id="lim_smart_terrain_1">
+		<text>Red Forest Entry Campfire</text>
+	</string>
+	<string id="lim_smart_terrain_3">
+		<text>Gastronom </text>
+	</string>
+	<string id="lim_smart_terrain_6">
+		<text>Bridge Outpost</text>
+	</string>
+	<string id="lim_smart_terrain_9">
+		<text>Construction Site</text>
+	</string>
+	<string id="lim_smart_terrain_10">
+		<text>Radiowave Institute</text>
+	</string>
+
+	<string id="pri_a16">
+		<text>Laundromat</text>
+	</string>
+	<string id="pri_a21_smart_terrain">
+		<text>Grocery Store</text>
+	</string>
+	<string id="pri_a28_school">
+		<text>School</text>
+	</string>
+	<string id="pri_b36_smart_terrain">
+		<text>River Port</text>
+	</string>
+
+	<string id="pri_smart_monolith_stalker6">
+		<text>Pripyat Stadium</text>
+	</string>
+	<string id="pri_smart_pseudodog_lair1">
+		<text>Ferris Wheel</text>
+	</string>
+	<string id="pri_smart_tushkano_lair1">
+		<text>Polissya Hotel</text>
+	</string>
+	<string id="pri_monolith">
+		<text>Monolith Base</text>
+	</string>
+	<string id="pri_smart_neutral_stalker1">
+		<text>Roadway Entry</text>
+	</string>
+
+	<string id="rad_antenna_patrol">
+		<text>Brain Scorcher (Lab X-19 Entry)</text>
+	</string>
+	<string id="rad2_loner_0001">
+		<text>Bus Stop</text>
+	</string>
+	<string id="rad2_prip_teleport">
+		<text>Pripyat Tunnel</text>
+	</string>
+	<string id="rad_entrance">
+		<text>The Barrier Entry Checkpoint</text>
+	</string>
+
+	<string id="red_smart_terrain_3_2">
+		<text>Old Mine</text>
+	</string>
+	<string id="red_smart_terrain_4_2">
+		<text>Mining Complex</text>
+	</string>
+	<string id="red_smart_terrain_6_3">
+		<text>Devilish Encampment</text>
+	</string>
+	<string id="red_smart_terrain_bridge">
+		<text>Bridge To Limansk</text>
+	</string>
+
+	<string id="bar_visitors">
+		<text>100 Rads Bar</text>
+	</string>
+	<string id="bar_dolg_general">
+		<text>Duty Base</text>
+	</string>
+
+	<string id="ros_smart_poltergeist2">
+		<text>Train Depot</text>
+	</string>
+	<string id="ros_smart_stalker_killers1">
+		<text>Merc Campsite</text>
+	</string>
+	<string id="ros_smart_killers1">
+		<text>Merc Sniper Nest</text>
+	</string>
+
+	<string id="trc_sim_1">
+		<text>South Base</text>
+	</string>
+	<string id="trc_sim_3">
+		<text>West Base</text>
+	</string>
+	<string id="trc_sim_4">
+		<text>Southeast Base</text>
+	</string>
+	<string id="trc_sim_7">
+		<text>East Base</text>
+	</string>
+	<string id="trc_sim_10">
+		<text>Southwest Base</text>
+	</string>
+	<string id="trc_sim_17">
+		<text>North Base</text>
+	</string>
+	<string id="trc_sim_20">
+		<text>Northeast Base</text>
+	</string>
+
+	<string id="yan_smart_terrain_3_6">
+		<text>East Lowered Base</text>
+	</string>
+	<string id="yan_smart_terrain_6_4">
+		<text>Mobile Science Lab</text>
+	</string>
+
+	<string id="zat_stalker_base_smart">
+		<text>Skadovsk</text>
+	</string>
+	<string id="zat_b5_smart_terrain">
+		<text>Ranger Station</text>
+	</string>
+	<string id="zat_b40_smart_terrain">
+		<text>Waste Processing Station</text>
+	</string>
+	<string id="zat_b100">
+		<text>Iron Forest Anomaly</text>
+	</string>
+	<string id="zat_b101">
+		<text>Sawmill Pipeline Campsite</text>
+	</string>
+</string_table>

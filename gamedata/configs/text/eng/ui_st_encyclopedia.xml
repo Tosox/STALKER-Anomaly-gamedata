@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<!-- PDA -->
+	<string id="pda_btn_encyclopedia">
+		<text>Guide</text>
+	</string>
+	
+	<string id="pda_btn_encyclopedia_hint">
+		<text>Show the user guide</text>
+	</string>
+	
+	<!-- Interface components -->
+	<string id="pda_encyclopedia_title">
+		<text>Guide to the Zone</text>
+	</string>
+	
+	<string id="st_pda_encyclopedia_image_checkbox">
+		<text>Images on top</text>
+	</string>
+	
+	<string id="st_pda_encyclopedia_message_checkbox">
+		<text>Show messages</text>
+	</string>
+	
+	<!-- Messages -->
+	<string id="pda_encyclopedia_notify">
+		<text>Article unlocked: %s, %s</text>
+	</string>
+	<string id="pda_encyclopedia_notify_note">
+		<text>New note: %s</text>
+	</string>
+	
+	<!-- Misc -->
+	<string id="pda_encyclopedia_info">
+		<text>Information</text>
+	</string>
+	<string id="pda_encyclopedia_properties">
+		<text>Properties</text>
+	</string>
+	<string id="pda_encyclopedia_subject">
+		<text>Subject</text>
+	</string>
+	<string id="pda_encyclopedia_content">
+		<text>Table of contents</text>
+	</string>
+	
+	<string id="pda_encyclopedia_ironman_lifes">
+		<text>Granted lives</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_life">
+		<text>Remaining lives</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_deaths">
+		<text>Death count</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_cycle">
+		<text>Granting-life cycle (in hours)</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_1">
+		<text>One mistake, and it's all over...</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_2">
+		<text>Gotta be more careful!</text>
+	</string>
+	<string id="pda_encyclopedia_ironman_3">
+		<text>I'm safe for now.</text>
+	</string>
+	
+	
+	<!-- Locked articles -->
+	<string id="pda_encyclopedia_locked">
+		<text>??????????</text>
+	</string>
+	
+	<string id="pda_encyclopedia_locked_text">
+		<text>
+			You have not yet unlocked this article.\n
+			\nArticles can be unlocked in ways such as the following:\n
+			\n• Discovering locations for the first time.
+			\n• Downloading data from memory sticks.
+			\n• Field dressing mutants for parts and meat.
+			\n• Talking to and interacting with stalkers.
+			\n• Using items and equipping faction armour.
+		</text>
+	</string>
+	
+</string_table>

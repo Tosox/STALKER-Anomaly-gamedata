@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Griffith (Mercs leader in the Bookstore) -->
+	<string id="grifon_meet_dialog_0">
+		<text>Ну, здаров. Видел я твоё сообщение. Чего это вдруг вы такие добренькие стали?</text>
+	</string>
+	<string id="grifon_meet_dialog_1">
+		<text>Вот зачем ты так с ходу? Не злоупотребляй нашим гостеприимством. Дела у нас к херам пошли, вот и всё.\n \nИз-за военных, что раньше здесь ошивались, мы потеряли нескольких важных людей, так и не сумев отыскать нужные для нас сведения и получить необходимый доступ. Если мы вернёмся к Душману, то он нам шары оторвёт и сожрать заставит, так что мы пока обосновались здесь, смысла с одиночками я враждовать не вижу.</text>
+	</string>
+	<string id="grifon_meet_dialog_2">
+		<text>И какого рода помощь тебе пригодится?</text>
+	</string>
+	<string id="grifon_meet_dialog_3">
+		<text>У нас здесь ни припасов, ни снаряжения необходимого - только то, что осталось от посредников для выполнения операции. Ты можешь ещё поговорить с нашим снабженцем - этот за соответствующую плату он поделится с тобой ненужным для нас снаряжением.</text>
+	</string>
+
+	<string id="task_find_inf_inx_8_mlr_1_0">
+		<text>А есть какая-нибудь особая работа?</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_1">
+		<text>Есть. Мы сюда пришли за информацией из лаборатории X-8 - она расположена в недрах местного КБО, лифт там может доставить на «минус первый» этаж, но нам помешали хреновы зольды. И теперь из-за них мы в таком хреновом положении.\n \nОт Душмана нам всё равно кирдык, но, может быть, там ещё остались какие-либо бумаги. Если б знали наверняка, то уже бы думали о том, как свинтить отсюда.\n \nЯ бы сходил туда с ребятами, но нас и так слишком осталось, а надо ещё обратно будет прорываться как-то из центра Зоны.\n \nВот, что я предлагаю, сталкер: ты проверишь Х-8 на предмет любых документов и информации, авось чего там ещё и осталось, а мы тебе деньжат неплохих подкинем заодно. Согласен?</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_2">
+		<text>Согласен, по рукам.</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_1_3">
+		<text>Нет, уж извиняй.</text>
+	</string>
+	
+	<string id="task_find_inf_inx_8_mlr_2_0">
+		<text>Вот всё, что удалось собрать.</text>
+	</string>
+	<string id="task_find_inf_inx_8_mlr_2_1">
+		<text>Мда, прямо тебе скажу, что не густо. Прям совсем уж. Однако интересные моменты всё же присутствуют. Да и покупателя на такое добро найти точно сможем. Вот, держи свой обещанный гонорар.</text>
+	</string>
+	
+<!-- Trunk (Merc Mechanic in the Bookstore) -->
+	<string id="tech_a18_meet_dialog_0">
+		<text>Привет, ты ведь снабженец местный, так? Предоставляешь какие-нибудь услуги?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_1">
+		<text>Да какой я теперь снабженец... Однако услуги предоставляю: ремонт да бартер. Могу выменять боеприпасы, которые наши ребята периодически из рейдов приносят. Оружие-то у нас хорошее, но местные больше с отечественным ходят, поэтому чтобы здесь не сдохнуть, пригодились бы нужные нам боеприпасы.\nЕщё могу сдать тебе выстрелы для РПГ и подствольные гранаты М209, которые мы в избытке взяли для задания - гранатомётчиков-то у нас и не осталось уже. Что до самого обмена, то соотношение 1:1, за исключением выстрелов РПГ.</text>
+	</string>
+
+	<string id="tech_a18_meet_dialog_1_0">
+		<text>И какое снаряжение тебе нужно для обмена?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_1_1">
+		<text>Значит, смотри, закидываешь нам эдак 200 шт. 9х19 мм, и я тебе выписываю равное количество 9х18 мм +P+;\nЗа 300 шт. демократических 5,56х45 мм - равное количество 5,45х39 мм;\n20 гранат Ф-1 на равное количество М209;\n10 гранат РГД-5 - за 3 выстрела к РПГ.</text>
+	</string>
+
+	<string id="tech_a18_meet_dialog_2_0">
+		<text>Я готов обменяться.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_1">
+		<text>Хорошо, что у тебя?</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_2">
+		<text>Готов отдать 200 патронов калибра 9х18 мм +P+ в обмен на 200 патронов 9х19 мм.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_3">
+		<text>Готов отдать 300 патронов калибра 5,45х39 мм в обмен на 300 патронов 5,56х45 мм.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_4">
+		<text>Готов отдать 20 гранат Ф-1 в обмен на 20 гранат М209.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_5">
+		<text>Готов отдать 10 гранат РГД-5 в обмен на 3 выстрела к РПГ.</text>
+	</string>
+	<string id="tech_a18_meet_dialog_2_6">
+		<text>Подожди, я передумал.</text>
+	</string>
+
+	
+<!-- Meeker (Special trader  in the Bookstore, substituting Nimble as special orders trader) -->
+	<string id="pri_special_trader_mlr1_0">
+		<text>Здрав буде, сталкер. М-м... Промышляешь чем-нибудь?</text>
+	</string>
+	<string id="pri_special_trader_mlr1_1">
+		<text>Я занимаюсь крайне... изысканными заказами по части снаряжения. Значит, смотри, у меня расклад такой: кто и с какой горы ты - такие моменты меня вообще не интересуют. Выбираешь то, что тебе нужно из списка, и ждёшь сутки, пока я не вернусь с заказом. Кроме того, человек я хоть и очень серьёзный, но работаю без предоплаты, так что отказов я не принимаю - заверяю, всё будет точно в срок. А, и ещё момент... заказать можно не более одного образца.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr4_0">
+		<text>Слушай... А каким вообще макаром ты сотрудничаешь с «Монолитом»? Комбезы не выглядят побитыми или трофейными. И как тебе вообще удаётся доставать столь уникальное снаряжение?</text>
+	</string>
+	<string id="pri_special_trader_mlr4_1">
+		<text>Если меня не интересует кто ты, то и тебя не должно интересовать, кто я. Тебе известно, что любопытство сгубило кошку? Я лишь скажу, что я посредник - не какой-то безбашенный ходок по Зоне как, например, тот же Шустрый, когда дело касается хабара. Просто знай: тебе крупно повезло, что ты оказался здесь, а я, в свою очередь, решил с тобой сотрудничать вместо того, чтобы позволить парням тебя определить в какую-нибудь аномалию неподалёку.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr2_0">
+		<text>Я хочу сделать заказ.</text>
+	</string>
+	<string id="pri_special_trader_mlr2_1">
+		<text>Отлично. Пистолеты, ПП, дробовики, винтовки, автоматы, броня - всё есть, выбирай:</text>
+	</string>
+		<string id="pri_special_trader_mlr2_2">
+		<text>Пистолеты.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_7">
+		<text>Смотри, что у меня для тебя есть, выбирай:</text>
+		</string>
+		<string id="pri_special_trader_mlr2_8">
+		<text>«Степной орёл» - более удачная модификация Desert Eagle, с подогнанными вручную деталями. Цена: 8,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_11">
+		<text>Хорошо, ожидай сообщения на КПК. Время заказа: 24 часа.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_9">
+		<text>«Альпиец» - модификация SIG220 с увеличенной ёмкостью магазина. Цена: 6,500 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_10">
+		<text>«Марш» - скорострельный и убойный ствол, является модификацией пистолета USP. Цена: 7,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_3">
+		<text>Дробовики / ПП.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_28">
+		<text>Смотри, что у меня для тебя есть, выбирай:</text>
+		</string>
+		<string id="pri_special_trader_mlr2_12">
+		<text>MP-5 «Фрезер» - ручная работа. Подтянуты все ТТХ оружия. Цена: 9,500 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_13">
+		<text>«Карабинер» - армейская модификация SPAS-12 со сниженной отдачей и автоматическим режимом огня. Цена: 11,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_14">
+		<text>«Protecta» - эксклюзивная модификация дробовика Striker. Цена: 17,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_15">
+		<text>Я не нашёл того, что искал.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_4">
+		<text>Снайперские / Штурмовые винтовки.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_29">
+		<text>Смотри, что у меня для тебя есть, выбирай:</text>
+		</string>
+		<string id="pri_special_trader_mlr2_16">
+		<text>«Шторм» - модификация ОЦ-14 «Гроза» от спецов, партия тайно утекла в массы. Из достоинств стоит отметить увеличенную ёмкость магазина. Цена: 19,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_17">
+		<text>H&amp;K G36 - редкая вещь в зоне. Цена: 14,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_18">
+		<text>FN-2000 - бельгиец, большая редкость и довольно-таки хорошая штурмовая винтовка. Цена: 17,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_19">
+		<text>«Прибой» - эксклюзивная модификация ВСС «Винторез», тоже от спецов. У него пониженный темп стрельбы, зато повышенная убойная сила. Цена: 20,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_20">
+		<text>«СВУ2-А» - модификация СВУ с повышенным темпом стрельбы, взял её у «Свободы». Цена: 24,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_21">
+		<text>СВД «Рысь» - армейская модификация, сочетающая в себе точность и убойную силу. Цена: 18,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_27">
+		<text>Гаусс-пушка. Трофейное оружие, таких в Зоне по пальцам пересчитать. Абсолютные точность и урон при почти полном отсутствии отдачи прилагаются. Цена: 150,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_5">
+		<text>Снаряжение.</text>
+		</string>
+		<string id="pri_special_trader_mlr2_30">
+		<text>Смотри, что у меня для тебя есть, выбирай:</text>
+		</string>
+		<string id="pri_special_trader_mlr2_22">
+		<text>Экзоскелет «Монолита» - лучшее сочетание защитных характеристик. Такой ты нигде больше не достанешь, если ты, конечно, не из монохромных братьев. Цена: 100,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_23">
+		<text>Экзоскелет наёмников является, пожалуй, самым надёжным средством защиты. Цена: 75,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_24">
+		<text>Бандитский экзоскелет. Эксклюзив в чистом виде. Цена: 65,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_25">
+		<text>Комбез «Монолита» с замкнутой системой дыхания, как и в случае с экзоскелетом - такой ты вряд ли больше где-то увидишь. Цена: 70,000 рублей</text>
+		</string>
+		<string id="pri_special_trader_mlr2_26">
+		<text>Комбез наёмников с замкнутой системой дыхания. Отличная защита от аномалий, настоящая редкость для обывателя. Цена: 50,000 рублей</text>
+		</string>
+	<string id="pri_special_trader_mlr2_6">
+		<text>Ничего, я уже передумал.</text>
+	</string>
+
+	<string id="pri_special_trader_mlr3_0">
+		<text>Я получил твоё сообщение. Ну что там, доставили?</text>
+	</string>
+	<string id="pri_special_trader_mlr3_1">
+		<text>Да, всё готово. Бабки-то при тебе? Напоминаю: [%s руб.]</text>
+	</string>
+		<string id="pri_special_trader_mlr3_2">
+		<text>Да, давай моего «Степного орла». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_20">
+		<text>Приходи ещё.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_3">
+		<text>Да, давай мой SIG-220 «Альпиец». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_4">
+		<text>Да, давай мой USP «Марш». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_5">
+		<text>Да, давай мой MP-5 «Фрезер». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_6">
+		<text>Да, давай мой помповый «Карабинер». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_7">
+		<text>Да, давай мой дробовик «Protecta». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_8">
+		<text>Да, давай мой ОЦ-14 «Шторм». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_9">
+		<text>Да, давай мой H&amp;K G36. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_10">
+		<text>Да, давай мой FN-2000. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_11">
+		<text>Да, давай мою ВСС «Прибой». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_12">
+		<text>Да, давай мою «СВУ2-А». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_13">
+		<text>Да, давай мою СВД «Рысь». Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_14">
+		<text>Да, давай мой «монолитовский» экзоскелет. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_15">
+		<text>Да, давай мой экзоскелет наёмников. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_16">
+		<text>Да, давай мой бандитский экзоскелет. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_17">
+		<text>Да, давай мой комбез от «Монолита» с замкнутой системой. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_18">
+		<text>Да, давай мой комбез с замкнутой системой. Вот деньги.</text>
+		</string>
+		<string id="pri_special_trader_mlr3_19">
+		<text>Да, давай сюда «Гаусску». Вот деньги.</text>
+		</string>
+	<string id="pri_special_trader_mlr3_21">
+		<text>Вот же ж... Забыл.</text>
+	</string>
+
+
+<!-- Monolith Mechanic in the Yubileiny service center -->
+	<string id="mechanic_monolith_kbo_start_0">
+		<text>Приветствую. Его волю мне дано исполнять. Братьям нашим помощь со снаряжением оказывается мною.</text>
+	</string>
+
+	
+<!-- Monolith trader in the Yubileiny service center -->
+	<string id="meet_guid_prikbo_mon_0">
+	<text>Брат, не знаешь ли ты, как можно быстро добраться до тех или иных мест через тропы тайные?</text>
+	</string>
+	<string id="meet_guid_prikbo_mon_1">
+	<text>Брат твой отвести не cможет, но собратья путь тебе укажут, куда идти. Не бесплатно только. Ходят братья в Рыжий лес, Окрестности «Юпитера» и Припять.</text>
+	</string>
+
+	<string id="meet_guid_prikbo_mon_list_0">
+		<text>Брат, напомни про места, куда отряды братьев ходят, а также материальное вознаграждение, от меня требуемое.</text>
+	</string>
+	<string id="meet_guid_prikbo_mon_list_1">
+		<text>Рыжий лес - 5,000 рублей,\nОкрестности «Юпитера» - 2,000 руб,\nПрипять - 1,000 рублей.</text>
+	</string>
+
+	<string id="travel_guid_prikbo_mon_mon_0">
+		<text>Воспользоваться твоими тропами мне надобно.</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_1">
+		<text>Хорошо, брат, выбирай:</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_2">
+		<text>Рыжий лес. %c[d_orange][5,000 руб]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_3">
+		<text>Окрестности «Юпитера». %c[d_orange][2,000 руб]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_4">
+		<text>Припять. %c[d_orange][1,000 руб]</text>
+	</string>
+	<string id="travel_guid_prikbo_mon_mon_5">
+		<text>Передумал я.</text>
+	</string>
+
+	
+<!---- Charon, in the basement of the Palace of Culture --->
+	<string id="meet_guid_l11pri_mon_haron_0">
+		<text>Приветствую тебя, хранитель. Не располагаешь ли ты знаниями путей, от ока неверных сокрытых, для перемещения к нашим лагерям?</text>
+	</string>
+	<string id="meet_guid_l11pri_mon_haron_1">
+		<text>Ведомо мне это знание. И братьев наших попросить могу я показать тебе, но за пожертвование слугам лишь. Вот, куда ходим мы: окраины Припяти, окрестности «Юпитера» и Рыжий лес.</text>
+	</string>
+
+	<string id="meet_guid_l11pri_mon_haron_list_0">
+		<text>Напомни мне, брат, наши тропы и стоимость пожертвований.</text>
+	</string>
+	<string id="meet_guid_l11pri_mon_haron_list_1">
+		<text>Окраины Припяти 1,000 руб,\nОкрестности «Юпитера» - 1,000 руб,\n Рыжий лес - 5,000 руб</text>
+	</string>
+
+	<string id="travel_guid_l11pri_mon_haron_0">
+		<text>Отведите меня.</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_1">
+		<text>Куда, брат?</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_2">
+		<text>На окраины Припяти %c[d_orange][1,000 руб]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_3">
+		<text>В окрестности «Юпитера» %c[d_orange][1,000 руб]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_4">
+		<text>В Рыжий лес %c[d_orange][5,000 руб]</text>
+	</string>
+	<string id="travel_guid_l11pri_mon_haron_5">
+		<text>Передумал я.</text>
+	</string>
+
+	<string id="find_blackbox_mlr_reward_haron_0">
+		<text>Брат мой, из-под обломков вертолёта неверных я вытащил устройство...</text>
+	</string>
+	<string id="find_blackbox_mlr_reward_haron_1">
+		<text>Готов я в руки принять сей трофей. Поможет он нам знание неверных открыть о кознях их грешных.</text>
+	</string>
+
+	
+
+<!-- Guide in eastern Pripyat -->
+	<string id="meet_guid_pri_stalker_0">
+		<text>Ты тоже проводник, верно?</text>
+	</string>
+	<string id="meet_guid_pri_stalker_1">
+		<text>Так и есть. Туристом величают. Понимаешь, люблю я бродить по слабо обжитым территориям, поэтому и тропку нужную в два счёта найду. Ладно, вот куда я могу тебя отвести: АЭС, Припять, Окрестности «Юпитера», Радар, Путепровод, Затон через Гарика.</text>
+	</string>
+
+	<string id="meet_guid_pri_stalker_list_0">
+		<text>Можно ещё разок уточнить твои маршруты?</text>
+	</string>
+	<string id="meet_guid_pri_stalker_list_1">
+		<text>На: АЭС - 12,000 руб,\nПрипять - 3,000 руб,\nОкрестности «Юпитера» - 4,000 руб,\nРадар - 8,000 руб,\nПутепровод - 10,000 руб,\nЗатон (через Гарика) - 4,000 руб.</text>
+	</string>
+
+	<string id="travel_guid_pri_stalker_0">
+		<text>Хочу воспользоваться твоими услугами.</text>
+	</string>
+	<string id="travel_guid_pri_stalker_1">
+		<text>Отлично, куда?</text>
+	</string>
+	<string id="travel_guid_pri_stalker_2">
+		<text>На ЧАЭС. %c[d_orange][12,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_3">
+		<text>В Припять. %c[d_orange][3,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_4">
+		<text>На Радар. %c[d_orange][8,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_5">
+		<text>В Окрестности «Юпитера». %c[d_orange][4,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_6">
+		<text>В Путепровод. %c[d_orange][1,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_7">
+		<text>На Затон. %c[d_orange][4,000 руб.]</text>
+	</string>
+	<string id="travel_guid_pri_stalker_8">
+		<text>Передумал я.</text>
+	</string>
+
+<!-- Eidolon -->
+	<string id="monolith_eidolon_st_1">
+		<text>Я буду Фантомом. Избранным Монолита.\nЯ был тем, кто вновь даровал жизнь «Выжигателю». Монолит направлял меня.\nЯ желал аудиенции и желание моё было исполнено.\nЯ был наделён даром. Кристальной чистоты ясность видения.\nЗащищать, наказывать. Служить великой цели.\nЯ рыщу по благословенной земле в поисках неверных.\nНевежественных глупцов, что желают уничтожить нас, уничтожить Его.\nПроповедями я приношу им учение.\nМоим оружием.\nМоим благословенным разумом.\nЯ чувствую их, как они бегут и прячутся.\nБесполезно. Безрезультатно, ибо я вижу.\nЯ преследую.\nВо имя Монолита, защиты ради, я изничтожаю.</text>
+	</string>
+
+</string_table>

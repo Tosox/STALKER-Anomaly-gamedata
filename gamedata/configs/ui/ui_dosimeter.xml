@@ -1,0 +1,15 @@
+<w>
+<dosimeter>
+	<wrk_area/>
+							<!-- dosimeter dial -->
+	<seg1	x = "0.007"		y = "0.0235"	width="0.009"	height="0.021"	stretch="1"/>
+	<seg2	x = "0.016"		y = "0.0235"	width="0.009"	height="0.021"	stretch="1"/>
+	<seg3	x = "0.025"		y = "0.0235"	width="0.009"	height="0.021"	stretch="1"/>
+	<seg4	x = "0.034"		y = "0.0235"	width="0.009"	height="0.021"	stretch="1"/>
+
+							<!-- flashing diode -->
+	<work	x = "-0.0024"		y = "0.0113"	width="0.008"	height="0.008"	stretch="1">
+		<texture shader="hud\p3d" color="red">red_diod</texture>
+	</work>
+</dosimeter>
+</w>

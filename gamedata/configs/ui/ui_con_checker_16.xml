@@ -1,0 +1,35 @@
+<w>
+	<con_checker>
+		<file_item>
+			<main width="490" height="18"/>
+			<fn width="145" height="18"/>
+			<fd width="50" height="18"/>
+		</file_item>
+		<form x="10" y="10" width="230" height="450"  stretch="1">
+			<texture>ui_con_checker_window</texture>
+
+			<caption_weapons x="20" y="15" width="56" height="25">
+				<text font="graffiti22"r="40" g="26" b="20">Weapons</text>
+			</caption_weapons>
+			<list_frame_weapons x="17" y="40" width="200" height="175">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame_weapons>
+			<list_weapons x="20" y="40" width="197" height="173" item_height="18" can_select="0" always_show_scroll="0">
+			</list_weapons>
+
+			<caption_outfits x="20" y="220" width="56" height="25">
+				<text font="graffiti22"r="40" g="26" b="20">Outfits</text>
+			</caption_outfits>
+			<list_frame_outfits x="17" y="245" width="200" height="175">
+				<texture>ui_inGame2_servers_list_frame</texture>
+			</list_frame_outfits>
+			<list_outfits x="20" y="245" width="197" height="173" item_height="18" can_select="0" always_show_scroll="0">
+			</list_outfits>
+
+			<btn_ok x="79" y="420" width="80" height="26">
+				<texture>ui_button_main01</texture>
+				<text font="letterica18">OK</text>
+			</btn_ok>
+		</form>
+	</con_checker>
+</w>

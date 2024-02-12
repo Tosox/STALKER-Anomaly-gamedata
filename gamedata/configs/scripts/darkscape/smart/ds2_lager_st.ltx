@@ -1,0 +1,39 @@
+[smart_terrain]
+squad_id = 15
+max_population = 2
+respawn_params = respawn@ds2_lager_st
+respawn_idle = 86400
+
+
+
+[respawn@ds2_lager_st]
+spawn_renegade
+spawn_stalker
+spawn_killer
+spawn_isg
+
+
+[spawn_renegade]
+spawn_squads = renegade_sim_squad_novice, renegade_sim_squad_advanced
+spawn_num =  2
+
+[spawn_stalker]
+spawn_squads = stalker_sim_squad_novice, stalker_sim_squad_novice, stalker_sim_squad_advanced
+spawn_num =  2
+
+[spawn_killer]
+spawn_squads = merc_sim_squad_novice, merc_sim_squad_advanced
+spawn_num =  2
+
+[spawn_isg]
+spawn_squads =  isg_sim_squad_novice, isg_sim_squad_advanced, isg_sim_squad_veteran
+spawn_num = {+isg_entered_the_zone} 2, 0
+
+
+
+[exclusive]
+ds2_lager_st_camp_work_1 = darkscape\ds2_lager_st_smart_logic.ltx
+ds2_lager_st_camp_work_2 = darkscape\ds2_lager_st_smart_logic.ltx
+ds2_lager_st_camp_work_3 = darkscape\ds2_lager_st_smart_logic.ltx
+ds2_lager_st_camp_work_4 = darkscape\ds2_lager_st_smart_logic.ltx
+ds2_lager_st_camp_work_5 = darkscape\ds2_lager_st_smart_logic.ltx

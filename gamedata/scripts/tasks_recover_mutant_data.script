@@ -1,0 +1,163 @@
+local M, stage_f, stage_tgt_f = {},{},{}
+local sf = string.find
+
+function save_state(m) 
+	m.recover_mutant_data_mdata = M 
+end
+
+function load_state(m) 
+	M = m.recover_mutant_data_mdata or {} 
+end
+
+function on_death(victim)
+	for k,v in pairs(M) do
+		if victim:id() == v.mutant_id then
+			local se_item = alife_create('recover_mutant_data_device', victim:position(), victim:level_vertex_id(), victim:game_vertex_id())
+			v.item_id = se_item.id
+		end
+	end
+end
+
+function check(pid, name)
+	return sf(name,'simulation') and sf(pid,'monster') and not (sf(pid,'night') or sf(pid,'zombied') or sf(pid,'special'))
+end
+
+
+function xr_conditions.recover_mutant_data_precondition(a,b,c)
+	local sim = alife()
+	local temp = {
+		linked = {},
+		extra = {},
+	}
+	
+	local links = parse_list(ini_file('ai_tweaks\\simulation_objects.ltx'),level.name(),'target_maps',true)
+	local curlevel = level.name()
+	for id in pairs(SIMBOARD.squads) do
+		local se_squad = sim:object(id)
+		if se_squad and check(se_squad.player_id, se_squad:name()) then
+			-- printf('valid %s',se_squad:name())
+			local id 
+			for k in se_squad:squad_members() do
+				id = k.id
+			end
+			
+			local target_level = alife():level_name(game_graph():vertex(se_squad.m_game_vertex_id):level_id())
+			
+			table.insert(temp[(target_level == curlevel or links[target_level]) and 'linked' or 'extra'],{
+				mutant_id = id,
+				target_level = target_level,
+			})
+		end
+	end
+	
+	if #temp.linked > 0 then
+		local x = temp.linked[math.random(#temp.linked)]
+		M[c[1]] = {
+			mutant_id = x.mutant_id,
+			target_level = x.target_level,
+		}
+	elseif #temp.extra > 0 then
+		local x = temp.extra[math.random(#temp.extra)]
+		M[c[1]] = {
+			mutant_id = x.mutant_id,
+			target_level = x.target_level,
+		}	
+	end
+	
+	-- utils_data.print_table(temp)
+	
+	return M[c[1]]
+end
+
+function xr_effects.recover_mutant_data_location(a,b,p)
+	CreateTimeEvent(0,"recover_mutant_data_location",0,function()
+		local news_caption = game.translate_string(task_manager.task_ini:r_string_ex(p[1], "title")) or "error"
+		local news_icon = task_manager.task_ini:r_string_ex(p[1], "icon") or "ui_inGame2_Poslednie_razrabotki"
+		local news_text = game.translate_string("st_location") .. " " .. game.translate_string(M[p[1]].target_level)
+		db.actor:give_talk_message2(news_caption, news_text, news_icon, "iconed_answer_item")
+		return true
+	end)
+end
+
+function xr_effects.recover_mutant_data_unset(a,b,c)
+	local item = M[c[1]] and M[c[1]].item_id and alife_object(M[c[1]].item_id)
+	if item then alife_release(item) end
+	M[c[1]] = nil
+end
+
+function fail_condition(tid,stage)
+	if not M[tid] then return end
+	if stage == 0 then
+		-- fail if mutant stop exisiting while item not spawned
+		local mut = alife_object(M[tid].mutant_id)
+		if not mut then return true end
+	end
+	if stage > 0 then
+		-- fail if item stop exisiting 
+		local item = alife_object(M[tid].item_id)
+		if not item then return true end
+	end
+	return false
+end
+
+stage_f[0] = function(tsk, task_id)
+	if M[task_id].item_id then
+		return 1
+	end
+end
+stage_f[1] = function(tsk, task_id)
+	local se = alife_object(M[task_id].item_id)
+	if se and se.parent_id == 0 then
+		return 2
+	end
+end
+stage_f[2] = function(tsk, task_id)
+	local se = alife_object(M[task_id].item_id)
+	if se and not (se.parent_id == 0) then
+		return 1
+	end
+end
+
+stage_tgt_f[0] = function(tsk, task_id)
+	return M[task_id].mutant_id
+end
+stage_tgt_f[1] = function(tsk, task_id)
+	return M[task_id].item_id
+end
+stage_tgt_f[2] = function(tsk, task_id)
+	return tsk.task_giver_id
+end
+
+task_status_functor.recover_mutant_data_status = function(tsk,task_id)
+	if not (db.actor and tsk) then return end
+	local stage = tsk.stage
+	local ret = stage_f[stage] and stage_f[stage](tsk,task_id) or stage
+	-- printl('setting task stage to %s', ret)
+	if fail_condition(task_id, tsk.stage) then
+		return 'fail'
+	end
+	if tonumber(ret) then
+		tsk.stage = ret
+	else
+		return ret
+	end
+end
+
+task_functor.recover_mutant_data_target = function(task_id,field,p,tsk)
+	if not (db.actor and tsk) then return nil end
+	local stage = tsk.stage
+	if stage_tgt_f[stage] then 
+		return stage_tgt_f[stage](tsk,task_id)
+	end
+	return nil
+end
+
+function task_functor.recover_mutant_data_desc(task_id,field,p,tsk)
+	return "yan_stalker_sakharov_task_4_stage_"..tsk.stage
+end
+
+function on_game_start()
+	RegisterScriptCallback('monster_on_death_callback',on_death)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+end

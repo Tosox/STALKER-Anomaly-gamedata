@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<!-- Description - Factions -->
+	<string id="st_faction_stalker">
+		<text>Loner</text>
+	</string>
+	<string id="st_faction_stalker_desc">
+		<text>%c[0,150,150,150]Loners, or free stalkers, prefer to remain unaligned with the various factions operating in the Zone.\nThe vast majority of the Zone's inhabitants belong to this unofficial brotherhood, choosing to live life without getting caught up in someone else's ideals.\n \n%c[0,255,255,255]Recommended For: New Players</text>
+	</string>
+	<string id="st_faction_bandit">
+		<text>Bandit</text>
+	</string>
+	<string id="st_faction_bandit_desc">
+		<text>%c[0,150,150,150]Chernobyl's outlaws know that while Ukraine and Belarus control the Zone on paper, it is in effect a lawless place.\n \nBandits are killers, thieves and other members of the criminal underworld who exploit this, abusing the Zone's anarchic state to hide from the law and continue their illicit dealings.</text>
+	</string>
+	<string id="st_faction_dolg">
+		<text>Duty</text>
+	</string>
+	<string id="st_faction_dolg_desc">
+		<text>%c[0,150,150,150]Duty is a paramilitary faction that wages war against the Zone itself, seeing it as an incubator for untold horrors that would threaten the entire world if left unchecked.\n \nThey have long been in fierce conflict with Freedom due to their conflicting ideals.</text>
+	</string>
+	<string id="st_faction_freedom">
+		<text>Freedom</text>
+	</string>
+	<string id="st_faction_freedom_desc">
+		<text>%c[0,150,150,150]Freedom are anarchists and daredevils who fight for unregulated access to the Zone, seeing the Zone as a miracle to be shared and consequently finding themselves in constant conflict with Duty.</text>
+	</string>
+	<string id="st_faction_army">
+		<text>Military</text>
+	</string>
+	<string id="st_faction_army_desc">
+		<text>%c[0,150,150,150]The Military refers to the Ukrainian government's internal troops, Spetsnaz detachments and commissioned stalkers.\n \nTaking a hardline approach to securing the border between the Zone and the outside world, they're known to shoot all unsanctioned personnel on sight.</text>
+	</string>
+	<string id="st_faction_ecolog">
+		<text>Ecologist</text>
+	</string>
+	<string id="st_faction_ecolog_desc">
+		<text>%c[0,150,150,150]Sponsored by the Ukrainian government, the Ecologists are an official body of scientists and contracted field assistants who research the Zone, hoping to harness its potential for the good of mankind.\n \n%c[0,255,255,255]Recommended For: Pacifistic Players</text>
+	</string>
+	<string id="st_faction_killer">
+		<text>Mercenary</text>
+	</string>
+	<string id="st_faction_killer_desc">
+		<text>%c[0,150,150,150]Mercenaries in the Zone usually belong to a semi-loose company of professional fighters.\nThese irregulars come from all sorts of nationalities and backgrounds, selling their services as veteran soldiers to anyone willing to pay.\n \nIt is unknown who hired them to enter the Zone, or why they have interests there.</text>
+	</string>
+	<string id="st_faction_monolith">
+		<text>Monolith</text>
+	</string>
+	<string id="st_faction_monolith_desc">
+		<text>%c[0,150,150,150]The Monolith are a fanatical cult hostile to all but their own.\n \nDespite the destruction of the C-Conciousness, they recently experienced a troubling surge in numbers. Since then, they have retaken many of their former territories.\n \n%c[0,255,255,255]Recommended For: Advanced Players Only</text>
+	</string>
+	<string id="st_faction_csky">
+		<text>Clear Sky</text>
+	</string>
+	<string id="st_faction_csky_desc">
+		<text>%c[0,150,150,150]Clear Sky is an independent scientific and paramilitary organisation, dedicated to increasing general understanding of the Zone while safeguarding its deadliest secrets.\n \nAlthough the group effectively collapsed after a failed expedition to the CNPP seven years ago, the few remaining survivors eventually rebuilt the faction to its former stature.\n \n%c[0,255,255,255]Recommended For: New Players</text>
+	</string>
+	<string id="st_faction_renegade">
+		<text>Renegade</text>
+	</string>
+	<string id="st_faction_renegade_desc">
+		<text>%c[0,150,150,150]Renegades consist of the most despicable stalkers in the Zone.\n \nEach member has committed transgressions so grave that no group will take them in, and even bandits just barely tolerate them.\n \n%c[0,255,255,255]Recommended For: Advanced Players Only</text>
+	</string>
+	<string id="st_faction_greh">
+		<text>Sin</text>
+	</string>
+	<string id="st_faction_greh_desc">
+		<text>%c[0,150,150,150]Sin are an extremely hostile cult of mutant stalkers who believe in the divine essence of the Zone.\n \nVariously described as zombified, mutated or possessed, "dark stalkers" of the ominous Sin faction seek to expand the Zone to span the whole world - and they will stop at nothing to accomplish this ambitious goal.\n \n%c[0,255,255,255]Recommended For: Advanced Players Only</text>
+	</string>
+	<string id="st_faction_isg">
+		<text>UNISG</text>
+	</string>
+	<string id="st_faction_isg_desc">
+		<text>%c[0,150,150,150]The United Nations International Scientific Group is a special forces unit with a keen interest in the Zone.\n \nWhatever their goal may be, their field agents are far from defenceless, and most would rather shoot first than risk information on their movements getting leaked.\n \n%c[0,255,255,255]Recommended For: Advanced Players Only</text>
+	</string>
+	<string id="st_faction_zombied">
+		<text>Zombified</text>
+	</string>
+	<string id="st_faction_zombied_desc">
+		<text>%c[0,150,150,150]Braaaiiinnnsss!!!\n \nZombified stalkers are mindless husks of their previous selves reduced to their most basic animal-like instincts and will attack almost anything that gets too close.\n \n%c[0,255,255,255]Recommended For: Advanced Players Only</text>
+	</string>
+	
+	<!-- Hint -->
+	<string id="st_mm_box_faction_desc">
+		<text>
+			%c[0,150,150,150]%s flair.
+		</text>
+	</string>
+	<string id="st_mm_box_icon_desc">
+		<text>
+			%c[0,150,150,150]The portrait of your character.
+		</text>
+	</string>
+	<string id="st_mm_list_map_desc">
+		<text>
+			%c[0,150,150,150]Choose the start location of your new game.
+		</text>
+	</string>
+	<string id="st_mm_ck_reset_desc">
+		<text>
+			%c[0,150,150,150]Reset the inventory.
+		</text>
+	</string>
+	<string id="st_mm_list_economy_desc">
+		<text>
+			%c[0,150,150,150]The Progression difficulty has a big impact on the economy, which affects the player's progression during their journey in the Zone.
+			\nAspects affected by this range from sell/buy prices with traders, repair/upgrade prices with mechanics, rarity of loots, money and goodwill earned by completing tasks and more. 
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]You can control each one of these aspects in your playthrough at any time.
+			\nSee "Extra Options -> Progression difficulty".
+		</text>
+	</string>
+	<string id="st_mm_list_difficulty_desc">
+		<text>
+			%c[0,150,150,150]Gameplay difficulty affects aspects related to the player such as protection against damage sources, stamina loss and carry weight. In addition to extra aspects such as water and sleep deprivation.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]You can control each one of these aspects in your playthrough at any time.
+			\nSee "Extra Options -> Gameplay difficulty".
+		</text>
+	</string>
+	<string id="st_mm_ck_story_desc">
+		<text>
+			%c[0,150,150,150]Story mode, when active, allows the player to experience a unique set of story-driven and dynamic questlines.\n 
+			\nStory-driven questlines such as "Living Legend", "Mortal Sin" and "Operation Afterglow" are only available to Loner, Duty, Freedom, Ecologist, Mercenary and Clear Sky factions.\n
+			\nDynamic questlines, however, can be enjoyed  by all the playable factions. In both cases, speak to your faction leader to begin them. Have fun!
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Warfare mode.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Survival mode.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Azazel mode.
+		</text>
+	</string>
+	<string id="st_mm_ck_drx_desc">
+		<text>
+			%c[0,150,150,150]A dynamic, linked set of varied tasks to take you throughout the Zone.
+			\nInfinite replayability; playthrough will never be the same even if you play again as the same faction.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Story mode.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Azazel mode.
+		</text>
+	</string>
+	<string id="st_mm_ck_hardcore_desc">
+		<text>
+			%c[0,150,150,150]Ironman mode is a feature that will remove your game saves upon death.\n
+			\nYou are free to make as many saves as you wish but dying will result in the removal of all saves made with this character.
+		</text>
+	</string>
+	<string id="st_mm_ck_hardcore_aim_desc">
+		<text>
+			%c[0,150,150,150]Hardcore AI Aim is a feature that maximizes AI aim predictability, making it more difficult for the player to dodge hits while moving.
+		</text>
+	</string>
+	<string id="st_mm_ck_survival_desc">
+		<text>
+			%c[0,150,150,150]Survival mode is a feature that replaces all spawns with Zombies.\n
+			\nThese hordes will make their way to your location - be prepared! See how long you can survive!
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Warfare mode.
+		</text>
+	</string>
+	<string id="st_mm_ck_azazel_mode_desc">
+		<text>
+			%c[0,150,150,150]In Azazel mode, death is not the end.\n
+			\nLike the demon Azazel you will possess a new body when you die; taking over the form of another random stalker that really exists in the Zone.\n
+			\nIf you have companions, you will become one of them. This feature compliments Ironman and/or Survival mode very well.\n
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]All maps will be unlocked in Azazel mode.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Story mode.
+		</text>
+	</string>
+	<string id="st_mm_ck_warfare_desc">
+		<text>
+			%c[0,150,150,150]This mode grants Stalker's A-Life system more freedom, creating a more dynamic Zone.
+			\n \nFaction ownership of bases and territories is more prone to change. Medics, traders and mechanics are now also replaceable.\n
+			\n \nYou also have the ability to lead your faction and help them with taking over the surrounding areas, achieving dominance in the Zone.\n
+			\n \n%c[200,150,50,200]• %c[0,150,150,150]Command your faction through the PDA map!
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Story mode.
+			\n \n%c[200,200,50,50]• %c[0,150,150,150]Not compatible with Survival mode.
+		</text>
+	</string>
+	<string id="st_mm_ck_campfire_desc">
+		<text>
+			%c[0,150,150,150]In Campfire save mode, you can't save your progress unless you're standing near a campfire. Campfires can be found all across the Zone, and represent gathering places for stalkers everywhere.
+			\n \n%c[200,50,200,50]• %c[0,150,150,150]All hardcore save modes are compatible with each other.
+		</text>
+	</string>
+	<string id="st_mm_ck_conditions_desc">
+		<text>
+			%c[0,150,150,150]Agony mode will prevent you from saving your progress if you're:
+			\n%c[200,200,200,50]• %c[0,150,150,150]Injured
+			\n%c[200,200,200,50]• %c[0,150,150,150]Bleeding
+			\n%c[200,200,200,50]• %c[0,150,150,150]Irradiated
+			\n%c[200,200,200,50]• %c[0,150,150,150]In combat with enemies
+			\n%c[200,200,200,50]• %c[0,150,150,150]Under circumstances of an emission or psi-storm
+			\n \n%c[200,50,200,50]• %c[0,150,150,150]All hardcore save modes are compatible with each other.
+		</text>
+	</string>
+	<string id="st_mm_ck_routes_desc">
+		<text>
+			%c[0,150,150,150]Many levels are not accessible by default. Hidden routes can be discovered by different ways through your playthrough. 
+			\n \nEnabling this option will unlocks all levels upon starting a new game.
+		</text>
+	</string>
+	<string id="st_mm_list_hardcore_lives_desc">
+		<text>
+			%c[0,150,150,150]An addition feature for Ironman mode that allows you to set how many lives you have at the beginning of your new game.
+			\nEverytime you die, you will lose a life.
+			\nOnce you run out of lives, all the game saves of your related playthrough will be removed.\n
+			\n%c[200,200,50,50]• %c[0,150,150,150]Ironman mode must be active.
+		</text>
+	</string>
+	<string id="st_mm_list_hardcore_regen_desc">
+		<text>
+			%c[0,150,150,150]An additional feature for Ironman mode that allows you to set how many days it will take to grant an extra life.
+			\n%c[200,200,50,50]• %c[0,150,150,150]Sleeping will not help.
+			\n%c[200,200,50,50]• %c[0,150,150,150]Ironman mode must be active.
+		</text>
+	</string>
+	<string id="st_mm_list_timer_desc">
+		<text>
+			%c[0,150,150,150]In Timer mode, you can save your game every specific amount of time. 
+			\nOnce you save your game, you cannot make another save once again until the timer is over.
+			\n \n%c[200,50,200,50]• %c[0,150,150,150]All hardcore save modes are compatible with each other.
+		</text>
+	</string>
+	
+	<!-- Static Text -->
+	<string id="st_mm_new_game_character">
+		<text>Character</text>
+	</string>
+	<string id="st_mm_new_game_faction">
+		<text>Select Faction</text>
+	</string>
+	<string id="st_mm_new_game_icon">
+		<text>Select Portrait</text>
+	</string>
+	<string id="st_mm_new_game_options">
+		<text>Options</text>
+	</string>
+	<string id="st_mm_new_game_inventory">
+		<text>Inventory</text>
+	</string>
+	<string id="st_mm_new_game_loadout">
+		<text>Loadout</text>
+	</string>
+	<string id="st_mm_new_game_name">
+		<text>Name:</text>
+	</string>
+	<string id="st_mm_new_game_faction_2">
+		<text>Faction:</text>
+	</string>
+	<string id="st_mm_new_game_money">
+		<text>Money:</text>
+	</string>
+	<string id="st_mm_new_game_points_left">
+		<text>Points left:</text>
+	</string>
+	<string id="st_mm_new_game_points_used">
+		<text>Points used:</text>
+	</string>
+	<string id="ui_st_random_location">
+		<text>-Random Location-</text>
+	</string>
+	
+
+	<!-- Description elements -->
+	<string id="st_mm_new_game_relations">
+		<text>Relations</text>
+	</string>
+	<string id="st_mm_new_game_description">
+		<text>Brief History</text>
+	</string>
+	<string id="st_mm_new_game_points">
+		<text>Points</text>
+	</string>
+	<string id="st_mm_new_game_essential">
+		<text>Essential</text>
+	</string>
+	
+	<!-- Hint -->
+	<string id="st_mm_itm_desc_unknown">
+		<text>No available info</text>
+	</string>
+	
+	<!-- Options -->
+	<string id="st_cap_check_warfare">
+		<text>Warfare</text>
+	</string>
+	<string id="st_cap_check_drx">
+		<text>DoctorX Questlines</text>
+	</string>
+	<string id="st_cap_check_campfire">
+		<text>Campfire mode</text>
+	</string>
+	<string id="st_cap_check_conditions">
+		<text>Agony mode</text>
+	</string>
+	<string id="st_cap_list_timer">
+		<text>Timer mode</text>
+	</string>
+	<string id="st_cap_check_routes">
+		<text>Accessible zone</text>
+	</string>
+	<string id="st_cap_list_hardcore_lives">
+		<text>Ironman lives</text>
+	</string>
+	<string id="st_cap_list_hardcore_regen">
+		<text>Life granter</text>
+	</string>
+	<string id="st_cap_list_economy">
+		<text>Progression difficulty</text>
+	</string>
+	<string id="st_cap_list_difficulty">
+		<text>Gameplay difficulty</text>
+	</string>
+	
+	<string id="st_econ_1">
+		<text>Tourist</text>
+	</string>
+	<string id="st_econ_2">
+		<text>Scavenger</text>
+	</string>
+	<string id="st_econ_3">
+		<text>Survivalist</text>
+	</string>
+	
+	<string id="st_diff_1">
+		<text>Easy</text>
+	</string>
+	<string id="st_diff_2">
+		<text>Medium</text>
+	</string>
+	<string id="st_diff_3">
+		<text>Hard</text>
+	</string>
+	<string id="st_diff_4">
+		<text>Hardcore</text>
+	</string>
+	
+	<!--string id="st_diff_1">
+		<text>Novice</text>
+	</string>
+	<string id="st_diff_2">
+		<text>Stalker</text>
+	</string>
+	<string id="st_diff_3">
+		<text>Veteran</text>
+	</string>
+	<string id="st_diff_4">
+		<text>Master</text>
+	</string-->
+	
+	<string id="st_off">
+		<text>off</text>
+	</string>
+	<string id="st_new_game_min">
+		<text>min.</text>
+	</string>
+	<string id="st_new_game_mins">
+		<text>mins.</text>
+	</string>
+	<string id="st_new_game_hour">
+		<text>hour</text>
+	</string>
+	<string id="st_new_game_hours">
+		<text>hours</text>
+	</string>
+	<string id="st_new_game_day">
+		<text>day</text>
+	</string>
+	<string id="st_new_game_days">
+		<text>days</text>
+	</string>
+	<string id="st_new_game_life">
+		<text>life</text>
+	</string>
+	<string id="st_new_game_lives">
+		<text>lives</text>
+	</string>
+	
+	<!-- Buttons -->
+	<string id="st_mm_btn_new_game_faction">
+		<text>Faction</text>
+	</string>
+	<string id="st_mm_btn_new_game_icon">
+		<text>Portrait</text>
+	</string>
+	<string id="st_mm_btn_new_game_back">
+		<text>Back</text>
+	</string>
+	<string id="st_mm_btn_new_game_submit">
+		<text>Start</text>
+	</string>
+	<string id="st_mm_btn_new_game_rand">
+		<text>Randomize</text>
+	</string>
+	
+	<!-- Discord -->
+	<string id="st_hardcore_lives_left">
+		<text>Lives left</text>
+	</string>
+	<string id="st_hardcore_lives_left_single">
+		<text>Life left</text>
+	</string>
+	<string id="st_player_dead">
+		<text>Dead</text>
+	</string>
+	<string id="st_main_menu">
+		<text>Main Menu</text>
+	</string>
+	<string id="st_loading">
+		<text>Loading</text> 
+	</string>
+	<string id="st_pause_menu">
+		<text>Pause Menu</text>
+	</string>
+	<string id="st_cap_check_freeplay">
+		<text>Freeplay Mode</text>
+	</string>
+	<string id="st_azazel_lives_possessed">
+		<text>Lives possessed</text>
+	</string>
+	<string id="st_azazel_lives_possessed_single">
+		<text>Life possessed</text>
+	</string>
+	<string id="st_godmode">
+		<text>God Mode</text>
+	</string>
+</string_table>

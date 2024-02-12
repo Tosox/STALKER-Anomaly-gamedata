@@ -1,0 +1,55 @@
+
+;; -- Main controls for relation calculations
+[controls]
+death_value			= 100		; -- The relation step, increasing it will make relation progress goes faster
+friend_limit		= 5000		; -- Friend relation threshold. Once a relation reaches it, it will reset to 0 (natural)
+enemy_limit			= -5000		; -- Enemy relation threshold. Once a relation reaches it, it will reset to 0 (natural)
+friend_count_limit  = 2			; -- If a faction has only x or less allied/natural factions in total, don't apply good relation changes coming from their death
+enemy_count_limit   = 0			; -- If a faction has only x or less enemy factions in total, don't apply bad relation changes coming from their death
+
+;; --Factions inside this section are unaffected by relation changes no matter what (see the list below for faction codes)
+[unaffected_factions] 	
+monolith
+greh
+isg
+renegade
+greh_npc
+army_npc
+trader
+monster
+zombied
+
+;; --every pair of factions here have no relation changes between them
+;; --you can add your own pairs [example: pair_5	= killer,bandit] (see the list below for faction codes) 
+[unaffected_pairs] 		
+pair_1	= army,bandit
+pair_2	= army,dolg
+pair_3	= army,ecolog
+pair_4	= army,stalker
+pair_5	= bandit,csky
+pair_6	= bandit,dolg
+pair_7	= bandit,stalker
+;	pair_8	= csky,killer
+pair_9	= dolg,ecolog
+pair_10	= dolg,freedom
+;	pair_11	= dolg,killer
+pair_12	= dolg,stalker
+;	pair_13	= ecolog,killer
+pair_14	= ecolog,stalker
+pair_15	= freedom,stalker
+
+
+;;--[[
+;;===============================================================
+;; You can use these faction code names:
+;; army			(code name of Military)
+;; bandit 		(code name of Bandits)
+;; csky 		(code name of Clear Sky)
+;; dolg 		(code name of Duty)
+;; ecolog 		(code name of Ecologists)
+;; freedom 		(code name of Freedom)
+;; greh 		(code name of Sin)
+;; killer 		(code name of Mercs)
+;; monolith 	(code name of Monolith)
+;; stalker  	(code name of Loners/Free Stalkers)
+;;--]]

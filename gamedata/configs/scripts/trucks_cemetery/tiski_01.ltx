@@ -1,0 +1,18 @@
+[logic]
+active = ph_idle@close
+
+[ph_idle@close]
+tips = st_tiski_no_info
+nonscript_usable = false
+on_info = {+awr_trucks_cemetery_bandit_mechanic_access} ph_idle@open
+on_info2 = {+awr_trucks_cemetery_bandit_mechanic_dead} ph_idle@unlimited
+
+[ph_idle@open]
+tips = st_tiski
+on_info = {-awr_trucks_cemetery_bandit_mechanic_access} ph_idle@close
+
+[ph_idle@unlimited]
+tips = st_tiski
+
+[collide] 
+ignore_static

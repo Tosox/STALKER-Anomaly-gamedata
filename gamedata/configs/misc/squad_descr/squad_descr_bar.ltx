@@ -1,0 +1,213 @@
+[bar_visitors_barman_stalker_trader_squad]:online_offline_group
+faction = stalker
+npc = bar_visitors_barman_stalker_trader
+target_smart = bar_visitors
+spawn_point = bar_barman_spawn
+story_id = bar_visitors_barman_stalker_trader_squad
+always_arrived = true
+
+[bar_visitors_garik_stalker_guard_squad]:online_offline_group
+faction = stalker
+npc = bar_visitors_garik_stalker_guard
+target_smart = bar_visitors
+spawn_point = bar_visitors_guard_door_walk
+story_id = bar_visitors_garik_stalker_guard_squad
+always_arrived = true
+
+[bar_visitors_zhorik_stalker_guard2_squad]:online_offline_group
+faction = stalker
+npc = bar_visitors_zhorik_stalker_guard2
+target_smart = bar_visitors
+spawn_point = bar_visitors_guard2_walk
+story_id = bar_visitors_zhorik_stalker_guard2_squad
+always_arrived = true
+
+[bar_duty_security_squad_leader_squad]:online_offline_group
+faction = dolg
+npc = bar_duty_security_squad_leader, sim_default_duty_3, sim_default_duty_2, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_3, sim_default_duty_2, sim_default_duty_1
+target_smart = bar_zastava
+story_id = bar_duty_security_squad_leader_squad
+always_arrived = true
+
+[bar_zastava_2_commander_squad]:online_offline_group
+faction = dolg
+npc = bar_zastava_2_commander, sim_default_duty_3, sim_default_duty_2, sim_default_duty_1, sim_default_duty_1, sim_default_duty_1
+target_smart = bar_zastava_2
+story_id = bar_zastava_2_commander_squad
+always_arrived = true
+
+[bar_visitors_cardan_tech_squad]:online_offline_group
+faction = stalker
+npc = bar_visitors_stalker_mechanic
+target_smart = bar_visitors
+story_id = bar_visitors_cardan_tech_squad
+spawn_point = bar_visitors_cardan_spawn
+always_arrived = true
+
+[bar_dolg_general_zoneguard_stalker_squad]:online_offline_group
+faction = dolg
+npc = bar_dolg_general_zoneguard_stalker
+target_smart = bar_dolg_general
+story_id = bar_dolg_general_zoneguard_stalker_squad
+spawn_point = bar_dolg_general_zoneguard_stalker_spawn
+always_arrived = true
+
+[bar_dolg_general_petrenko_stalker_squad]:online_offline_group
+faction = dolg
+npc = bar_dolg_general_petrenko_stalker
+target_smart = bar_dolg_general
+story_id = bar_dolg_general_petrenko_stalker_squad
+;spawn_point = bar_dolg_general_petrenko_spawn
+always_arrived = true
+
+[bar_dolg_leader_squad]:online_offline_group
+faction = dolg
+npc = bar_dolg_leader
+target_smart = bar_dolg_bunker
+story_id = bar_dolg_leader_squad
+spawn_point = bar_dolg_bunker_bar_dolg_leader_walk
+always_arrived = true
+
+[bar_arena_manager_squad]:online_offline_group
+faction = stalker
+npc = bar_arena_manager
+target_smart = bar_visitors
+story_id = bar_arena_manager_squad
+always_arrived = true
+
+[bar_arena_guard_squad]:online_offline_group
+faction = stalker
+npc = bar_arena_guard
+target_smart = bar_visitors
+story_id = bar_arena_guard_squad
+always_arrived = true
+
+
+[guid_bar_stalker_navigator_squad]:online_offline_group
+faction = stalker
+npc =  guid_bar_stalker_navigator
+npc_in_squad = 1, 1
+target_smart = bar_visitors
+
+[bar_informator_mlr_squad]:online_offline_group
+faction = stalker
+npc_random = bar_informator_mlr
+npc_in_squad = 1, 1
+target_smart = bar_visitors
+
+[dolg_medic_squad]:online_offline_group
+faction = dolg
+npc = bar_dolg_medic
+npc_in_squad = 1, 1
+target_smart = bar_dolg_general
+spawn_point = bar_medic_spawn_point
+
+;======новые=============
+
+[bar_dolg_general_squad]:online_offline_group
+faction = dolg
+npc = sim_default_duty_3, sim_default_duty_1, sim_default_duty_0, sim_default_duty_0, sim_default_duty_2, sim_default_duty_1, sim_default_duty_1, sim_default_duty_0
+target_smart = bar_dolg_general
+always_arrived = true
+
+[bar_dolg_bunker_squad]:online_offline_group
+faction = dolg
+npc_random = sim_default_duty_3, sim_default_duty_1, sim_default_duty_0, sim_default_duty_1, sim_default_duty_0, sim_default_duty_2, sim_default_duty_1, sim_default_duty_0, sim_default_duty_1, sim_default_duty_0
+npc_in_squad = 3
+target_smart = bar_dolg_bunker
+always_arrived = true
+
+[bar_dolg_bar_zastava]:online_offline_group
+faction = dolg
+npc = sim_default_duty_4, sim_default_duty_0, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+target_smart = bar_zastava
+always_arrived = true
+
+[bar_dolg_bar_zastava2]:online_offline_group
+faction = dolg
+npc = sim_default_duty_4, sim_default_duty_3, sim_default_duty_1, sim_default_duty_2, sim_default_duty_0, sim_default_duty_4
+target_smart = bar_zastava2
+always_arrived = true
+;спам застав
+
+[zombied_bar_dolg_general]:online_offline_group
+faction 		= zombied
+npc_random 		= sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2
+npc_in_squad = 7
+target_smart = bar_zastava_2
+
+[boar_bar_dolg_general]:online_offline_group
+faction 		= monster
+npc_random 		= boar_normal, boar_normal, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, flesh_01a_weak, flesh_normal, flesh_02a_normal, flesh_01a_strong, flesh_02a_strong
+npc_in_squad = 5
+target_smart = bar_zastava
+
+[dog_bar_dolg_general]:online_offline_group
+faction 		= monster
+npc_random 		= dog_normal_brown, pseudodog_grey_weak, pseudodog_normal, pseudodog_strong, pseudodog_grey_strong, dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black, dog_weak_bulterier, dog_weak_brown, dog_weak_brown
+npc_in_squad = 6
+target_smart = bar_zastava
+
+[tushkano_bar_dolg_general]:online_offline_group
+faction 		= monster
+npc_random 		= tushkano_normal, tushkano_normal_a, tushkano_normal_b, tushkano_normal_c, tushkano_weak, tushkano_weak_a, tushkano_weak_b, tushkano_weak_c, tushkano_strong, tushkano_strong_a, tushkano_strong_b, tushkano_strong_c
+npc_in_squad = 11
+target_smart = bar_zastava_2
+
+[snork_bar_dolg_general]:online_offline_group
+faction 		= monster
+npc_random 		= snork_weak, snork_weak2, snork_weak3, snork_normal3, snork_normal, snork_normal2, snork_strong, snork_strong2, snork_strong3
+npc_in_squad = 5
+target_smart = bar_zastava_2
+
+[chimera_bar_dolg_general]:online_offline_group
+faction 		= monster
+npc_random 		= pseudodog_grey_weak, pseudodog_normal
+npc_in_squad = 4
+target_smart = bar_zastava
+
+
+;===================
+[trx_bar_zastava_flesh]:online_offline_group
+faction 		= monster
+npc_random 		= dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier
+npc_in_squad    = 2
+target_smart    = bar_zastava
+
+[trx_bar_zastava_mix_dogs]:online_offline_group
+faction 		= monster
+npc_random 		= dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, pseudodog_grey_weak, pseudodog_grey_weak
+npc_in_squad    = 2
+target_smart    = bar_zastava
+
+[trx_bar_zastava_snork]:online_offline_group
+faction 		= monster
+npc_random 		= snork_weak, snork_weak2, snork_weak3, snork_weak4
+npc_in_squad    = 2
+target_smart    = bar_zastava
+
+[trx_bar_zastava_chimera]:online_offline_group
+faction 		= monster
+npc_random 		= psy_dog_normal
+npc_in_squad    = 1
+target_smart    = bar_zastava
+
+
+;===================
+[trx_bar_zastava_2_zombied]:online_offline_group
+faction 		= monster
+npc_random 		= zombie_weak, zombie_normal, zombie_strong
+npc_in_squad    = 2
+target_smart    = bar_zastava_2
+
+[trx_bar_zastava_2_mix_dogs]:online_offline_group
+faction 		= monster
+npc_random 		= dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, pseudodog_grey_weak, pseudodog_grey_weak
+npc_in_squad    = 2
+target_smart    = bar_zastava_2
+
+[trx_bar_zastava_2_snork]:online_offline_group
+faction 		= monster
+npc_random 		= snork_weak, snork_weak2, snork_weak3, snork_weak4
+npc_in_squad    = 2
+target_smart    = bar_zastava_2

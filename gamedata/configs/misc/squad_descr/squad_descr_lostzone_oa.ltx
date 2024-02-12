@@ -1,0 +1,177 @@
+;--Lost to the Zone: Operation Afterglow
+
+[special_poltergeist_task2_squad]:online_offline_group
+faction = monster
+npc_random = m_poltergeist_normal_tele, m_poltergeist_normal_flame
+npc_in_squad = 2, 3
+target_smart = zat_b100
+on_death = %+special_poltergeist_task2_squad_dead%
+
+[army_degtyarev_zat_squad]:online_offline_group
+faction = army_npc
+relationship = neutral
+npc = army_degtyarev
+target_smart = zat_b103_merc_smart
+story_id = army_degtyarev
+on_death = %+army_degtyarev_dead%
+
+[degtyarev_taskforce_squad]:online_offline_group
+faction = army_npc
+relationship = neutral
+npc = sim_default_anpc_1, sim_default_anpc_1, sim_default_anpc_1, sim_default_anpc_1, sim_default_anpc_2
+target_smart = zat_b103_merc_smart
+story_id = degtyarev_taskforce_squad
+on_death = %+degtyarev_taskforce_squad_dead%
+
+[isg_guard_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2
+target_smart = zat_b5_smart_terrain
+story_id = isg_guard_squad
+on_death = %+isg_guard_squad_dead%
+
+[isg_recon_squad]:online_offline_group
+faction = isg
+npc = isg_squad_leader, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2, sim_default_isg_3, sim_default_isg_3
+target_smart = zat_b5_smart_terrain
+story_id = isg_recon_squad
+on_death = %+isg_recon_squad_dead%
+
+[army_degtyarev_jup_squad]:online_offline_group
+faction = army_npc
+npc = army_degtyarev_jup
+target_smart = jup_a6
+story_id = army_degtyarev
+on_death = %+army_degtyarev_dead%
+
+[army_jup_squad]:online_offline_group
+faction = army_npc
+relationship = neutral
+npc = army_lt_jup
+target_smart = jup_b46
+story_id = army_lt_jup
+on_death = %+army_jup_squad_dead%
+
+[isg_delivery_interception_squad]:online_offline_group
+faction = isg
+npc_random = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_3
+npc_in_squad = 4, 6
+target_smart = jup_b46
+story_id = isg_delivery_interception_squad
+on_death = %+isg_delivery_interception_squad_dead%
+
+[army_isg_spy_squad]:online_offline_group
+faction = isg
+relationship = neutral
+npc = army_isg_spy
+target_smart = jup_a10_smart_terrain
+story_id = army_isg_spy
+on_death = %+army_isg_spy_dead%
+
+[isg_checkpoint_squad]:online_offline_group
+faction = isg
+relationship = neutral
+npc = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_3
+target_smart = jup_a10_smart_terrain
+story_id = isg_checkpoint_squad
+on_death = %+isg_checkpoint_squad_dead%
+
+[isg_jupiter_factory_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2, sim_default_isg_3, sim_default_isg_4
+target_smart = jup_b219
+story_id = isg_jupiter_factory_squad
+on_death = %+isg_jupiter_factory_squad_dead%
+
+[stalker_strelok_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_strelok_oa
+target_smart = pri_a17
+story_id = lost_stalker_strelok
+on_death = %+lost_stalker_strelok_dead%
+
+[pri_a17_monolith_assault_squad]:online_offline_group
+faction = monolith
+npc = pri_a17_monolith_leader, pri_a17_monolith_trooper, pri_a17_monolith_trooper2
+spawn_point = pri_a17_mon_pat_spawn
+target_smart = pri_a17
+story_id = pri_a17_monolith_assault_squad
+on_death = %+pri_a17_monolith_assault_squad_death%
+
+[pri_a16_stalker_strelok_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_strelok_oa
+target_smart = pri_a16
+story_id = lost_stalker_strelok
+on_death = %+lost_stalker_strelok_dead%
+
+[stalker_rogue_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_rogue_oa
+spawn_point = pri_a25_smart_terrain_cutscene_actor_walk
+target_smart = pri_a25_smart_terrain
+story_id = stalker_rogue
+on_death = %+stalker_rogue_dead%
+
+[pri_a16_stalker_rogue_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_rogue_oa
+target_smart = pri_a16
+story_id = stalker_rogue
+on_death = %+stalker_rogue_dead%
+
+[stalker_stitch_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_stitch_oa
+target_smart = pri_a28_heli
+spawn_point = pri_a28_heli_evac_military_1_walk
+story_id = stalker_stitch
+on_death = %+stalker_stitch_dead%
+
+[pri_a16_stalker_stitch_oa_squad]:online_offline_group
+faction = stalker
+relationship = friend
+npc = stalker_stitch_oa
+target_smart = pri_a16
+story_id = stalker_stitch
+on_death = %+stalker_stitch_dead%
+
+[pri_a28_zombie_wave1_squad]:online_offline_group
+faction = monster
+npc = zombie_blind, zombie_blind, zombie_weak, zombie_normal, zombie_strong, zombie_weak, zombie_normal, zombie_strong, zombie_weak, zombie_normal, zombie_strong
+target_smart = pri_a28_heli
+story_id = pri_a28_zombie_wave1
+on_death = %+pri_a28_zombie_wave1_dead%
+
+[pri_a28_zombie_wave2_squad]:online_offline_group
+faction = zombied
+npc = zombie_blind, zombie_blind, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_3, sim_default_zombied_3
+target_smart = pri_a28_heli
+story_id = pri_a28_zombie_wave2
+on_death = %+pri_a28_zombie_wave2_dead%
+
+[degtyarev_pri_b35_squad]:online_offline_group
+faction = army_npc
+npc = army_degtyarev
+target_smart = pri_b35_mercs
+story_id = army_degtyarev
+on_death = %+army_degtyarev_dead%
+
+[tarasov_pri_b35_squad]:online_offline_group
+faction = army_npc
+npc = army_tarasov, pri_b35_army_1, pri_b35_army_2, pri_b35_army_3, pri_b35_army_4
+target_smart = pri_b35_mercs
+story_id = tarasov_pri_b35_squad
+on_death = %+tarasov_pri_b35_squad_dead%
+
+[isg_pripyat_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_1, sim_default_isg_2, sim_default_isg_2, sim_default_isg_3, sim_default_isg_3, sim_default_isg_4
+target_smart = pri_b35_mercs
+story_id = isg_pripyat_squad
+on_death = %+isg_pripyat_squad_dead%

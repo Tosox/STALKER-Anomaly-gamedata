@@ -1,0 +1,7 @@
+#include "common.h"
+
+float4 main(p_screen I) : COLOR
+{
+	float3 image = tex2D(s_image, I.tc0);
+	return float4(image, 1.0);
+} 

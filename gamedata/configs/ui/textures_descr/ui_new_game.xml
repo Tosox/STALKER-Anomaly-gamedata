@@ -1,0 +1,160 @@
+<w>
+	
+	<file name="ui\new_game\ui_new_game_main">
+		<texture id="ui_new_game_main" x="0" y="0" width="999" height="723" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_back_t">
+		<texture id="ui_new_game_back" x="0" y="0" width="899" height="623" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_popup">
+		<texture id="ui_new_game_popup_faction" x="648" y="0" width="376" height="395" />
+		<texture id="ui_new_game_popup_icon" x="431" y="0" width="216" height="515" />
+		<texture id="ui_new_game_popup_options_extra" x="640" y="540" width="384" height="401" />
+		<texture id="ui_new_game_popup_option" x="0" y="543" width="644" height="397" />
+		<texture id="ui_new_game_black_back" x="649" y="400" width="374" height="114" />
+	
+		<texture id="ui_new_game_btn_icon_e" x="268" y="0" width="123" height="87" />
+		<texture id="ui_new_game_btn_icon_h" x="268" y="88" width="123" height="87" />
+		<texture id="ui_new_game_btn_icon_t" x="268" y="88" width="123" height="87" />
+		<texture id="ui_new_game_btn_icon_d" x="268" y="0" width="123" height="87" />
+	
+		<texture id="ui_new_game_btn_stalker_e" x="0" y="267" width="88" height="88" />
+		<texture id="ui_new_game_btn_stalker_h" x="0" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_stalker_t" x="0" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_stalker_d" x="0" y="267" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_bandit_e" x="89" y="267" width="88" height="88" />
+		<texture id="ui_new_game_btn_bandit_h" x="89" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_bandit_t" x="89" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_bandit_d" x="89" y="267" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_csky_e" x="178" y="267" width="88" height="88" />
+		<texture id="ui_new_game_btn_csky_h" x="178" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_csky_t" x="178" y="0" width="88" height="88" />
+		<texture id="ui_new_game_btn_csky_d" x="178" y="267" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_dolg_e" x="0" y="356" width="88" height="88" />
+		<texture id="ui_new_game_btn_dolg_h" x="0" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_dolg_t" x="0" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_dolg_d" x="0" y="356" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_freedom_e" x="89" y="356" width="88" height="88" />
+		<texture id="ui_new_game_btn_freedom_h" x="89" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_freedom_t" x="89" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_freedom_d" x="89" y="356" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_killer_e" x="178" y="356" width="88" height="88" />
+		<texture id="ui_new_game_btn_killer_h" x="178" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_killer_t" x="178" y="89" width="88" height="88" />
+		<texture id="ui_new_game_btn_killer_d" x="178" y="356" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_army_e" x="0" y="445" width="88" height="88" />
+		<texture id="ui_new_game_btn_army_h" x="0" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_army_t" x="0" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_army_d" x="0" y="445" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_ecolog_e" x="89" y="445" width="88" height="88" />
+		<texture id="ui_new_game_btn_ecolog_h" x="89" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_ecolog_t" x="89" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_ecolog_d" x="89" y="445" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_monolith_e" x="178" y="445" width="88" height="88" />
+		<texture id="ui_new_game_btn_monolith_h" x="178" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_monolith_t" x="178" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_monolith_d" x="178" y="445" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_renegade_e" x="267" y="445" width="88" height="88" />
+		<texture id="ui_new_game_btn_renegade_h" x="267" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_renegade_t" x="267" y="178" width="88" height="88" />
+		<texture id="ui_new_game_btn_renegade_d" x="267" y="445" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_isg_e" x="88" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_isg_h" x="0" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_isg_t" x="0" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_isg_d" x="88" y="936" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_greh_e" x="264" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_greh_h" x="176" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_greh_t" x="176" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_greh_d" x="264" y="936" width="88" height="88" />
+		
+		<texture id="ui_new_game_btn_zombied_e" x="440" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_zombied_h" x="352" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_zombied_t" x="352" y="936" width="88" height="88" />
+		<texture id="ui_new_game_btn_zombied_d" x="440" y="936" width="88" height="88" />
+	</file>
+	
+	<file name="ui\ui_actor_multiplayer_game_menu">
+		<texture id="ui_new_game_btn_checkbox_e" x="903" y="183" width="44" height="29" />
+	    <texture id="ui_new_game_btn_checkbox_h" x="903" y="153" width="44" height="29" />
+	    <texture id="ui_new_game_btn_checkbox_t" x="903" y="153" width="44" height="29" />
+	    <texture id="ui_new_game_btn_checkbox_d" x="903" y="183" width="44" height="29" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_factions">
+		<texture id="ui_new_game_flair_bandit" x="0" y="0" width="104" height="80" />
+		<texture id="ui_new_game_flair_dolg" x="0" y="80" width="104" height="80" />
+		<texture id="ui_new_game_flair_ecolog" x="0" y="160" width="104" height="80" />
+		<texture id="ui_new_game_flair_freedom" x="0" y="240" width="104" height="80" />
+		<texture id="ui_new_game_flair_stalker" x="0" y="320" width="104" height="80" />
+		<texture id="ui_new_game_flair_csky" x="104" y="0" width="104" height="80" />
+		<texture id="ui_new_game_flair_killer" x="104" y="80" width="104" height="80" />
+		<texture id="ui_new_game_flair_army" x="104" y="160" width="104" height="80" />
+		<texture id="ui_new_game_flair_monolith" x="104" y="240" width="104" height="80" />
+		<texture id="ui_new_game_flair_renegade" x="104" y="320" width="104" height="80" />
+		<texture id="ui_new_game_flair_isg" x="208" y="0" width="104" height="80" />
+		<texture id="ui_new_game_flair_greh" x="208" y="80" width="104" height="80" />
+		<texture id="ui_new_game_flair_zombied" x="0" y="400" width="104" height="80" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_models">
+		<texture id="ui_new_game_model_bandit" x="0" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_csky" x="120" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_army" x="240" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_dolg" x="360" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_ecolog" x="480" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_freedom" x="600" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_monolith" x="720" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_killer" x="840" y="0" width="120" height="263" />
+		<texture id="ui_new_game_model_stalker" x="0" y="263" width="120" height="263" />
+		<texture id="ui_new_game_model_regenade" x="120" y="263" width="120" height="263" />
+		<texture id="ui_new_game_model_zombied" x="240" y="263" width="120" height="263" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_maps_1">
+		<texture id="ui_new_game_map_l03_agroprom" x="0" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l07_military" x="435" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l12_stancia" x="0" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_l12_stancia_2" x="0" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_l01_escape" x="435" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_l04_darkvalley" x="0" y="620" width="435" height="310" />
+		<texture id="ui_new_game_map_k01_darkscape" x="435" y="620" width="435" height="310" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_maps_2">
+		<texture id="ui_new_game_map_l09_deadcity" x="0" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l02_garbage" x="435" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_k00_marsh" x="0" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_l11_hospital" x="435" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_jupiter" x="0" y="620" width="435" height="310" />
+		<texture id="ui_new_game_map_l10_limansk" x="435" y="620" width="435" height="310" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_maps_3">
+		<texture id="ui_new_game_map_l11_pripyat" x="0" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l10_radar" x="435" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l10_red_forest" x="0" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_l05_bar" x="435" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_k02_trucks_cemetery" x="0" y="620" width="435" height="310" />
+		<texture id="ui_new_game_map_pripyat" x="435" y="620" width="435" height="310" />
+	</file>
+	
+	<file name="ui\new_game\ui_new_game_maps_4">
+		<texture id="ui_new_game_map_l03u_agr_underground" x="0" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l06_rostok" x="435" y="0" width="435" height="310" />
+		<texture id="ui_new_game_map_l08_yantar" x="0" y="310" width="435" height="310" />
+		<texture id="ui_new_game_map_zaton" x="435" y="310" width="435" height="310" />
+	</file>
+</w>

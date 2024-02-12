@@ -1,0 +1,965 @@
+-- werejew
+
+printd = warfare.printd
+dbg_map_hud = false
+
+squad_icons = {
+	["stalker"]     = "warfare_stalker_spot",
+	["dolg"]        = "warfare_duty_spot",
+	["freedom"]     = "warfare_freedom_spot",
+	["killer"]      = "warfare_killer_spot",
+	["csky"]        = "warfare_csky_spot",
+	["monolith"]    = "warfare_monolith_spot",
+	["army"]        = "warfare_army_spot",
+	["ecolog"]      = "warfare_ecolog_spot",
+	["bandit"]      = "warfare_bandit_spot",
+	["greh"]   		= "warfare_greh_spot",
+	["isg"]   		= "warfare_isg_spot",
+	["renegade"]   	= "warfare_renegade_spot",
+	["greh_npc"] 	= "warfare_greh_spot",
+	["army_npc"] 	= "warfare_army_spot",
+	["zombied"]     = "warfare_zombied_spot",
+	["monster"]     = "warfare_mutant_spot",
+}
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_sim_1")
+	str_wrfr[2] = game.translate_string("st_wrfr_sim_2")
+	str_wrfr[3] = game.translate_string("st_wrfr_sim_3")
+	str_wrfr[4] = game.translate_string("st_wrfr_sim_4")
+	str_wrfr[5] = game.translate_string("st_wrfr_sim_5")
+	str_wrfr[6] = game.translate_string("st_wrfr_sim_6")
+	str_wrfr[7] = game.translate_string("st_wrfr_sim_7")
+	str_wrfr[8] = game.translate_string("st_wrfr_sim_8")
+	str_wrfr[9] = game.translate_string("st_wrfr_sim_9")
+	str_wrfr[10] = game.translate_string("st_wrfr_sim_10")
+	str_wrfr[11] = game.translate_string("st_wrfr_sim_11")
+	str_wrfr[12] = game.translate_string("st_wrfr_sim_12")
+	str_wrfr[13] = game.translate_string("st_wrfr_prop_time_culc_hr")
+	str_wrfr[14] = game.translate_string("st_wrfr_prop_time_culc_min")
+	str_wrfr[15] = game.translate_string("st_wrfr_prop_target")
+	str_wrfr[16] = game.translate_string("st_wrfr_you")
+	str_wrfr[17] = game.translate_string("st_goodwill_enemy")
+	str_wrfr[18] = game.translate_string("st_goodwill_indifferent")
+	str_wrfr[19] = game.translate_string("st_goodwill_friendly")
+end
+
+function translate_smart_name(name)	
+	return (name and game.translate_string("st_" .. name .. "_name") or "")
+end
+
+function squad_on_update(squad)
+	printd(0, "squad_on_update: "..squad:name())
+	
+	if not (IsWarfare()) then
+		return
+	end
+
+	local faction = squad:get_squad_community()
+	
+	if warfare.ignore[squad:section_name()] then
+        printd(1, squad:name())
+		
+		--[[
+		if not (squad.switched_to_trader) then			
+			squad.switched_to_trader = true
+			if (warfare_options.options.random_starting_locations) then -- unique squads should become neutral only with random spawns setting
+				for k in squad:squad_members() do
+					local member = db.storage[k.id] and db.storage[k.id].object
+					
+					if (member and member:alive()) then				
+						db.storage[k.id].object:set_character_community("trader", 0, 0)
+						game_relations.set_community_goodwill_for_faction("trader")
+					end
+				end
+			end
+		
+			-- xQd - removed unique npcs from trader faction
+			if string.find(squad:section_name(),"trader") or string.find(squad:section_name(),"mechanic") or string.find(squad:section_name(),"medic") or string.find(squad:section_name(),"barman") then -- only the warfare traders should switch to the "trader" player_id
+				squad.player_id = "trader"
+			end
+			-- xQd		
+			return
+		end
+		--]]
+		
+		-- Switching traders to use the community they belong to
+		if not (squad.switched_to_trader) then
+			squad.switched_to_trader = true
+			for k in squad:squad_members() do
+				local member = db.storage[k.id] and db.storage[k.id].object
+				if (member and member:alive()) then
+					local community = sim_offline_combat.story_id_communities[squad:section_name()]
+					if community and warfare_factions.factions_p[community] then
+						db.storage[k.id].object:set_character_community(community, 0, 0)
+					end
+				end
+			end
+		end
+		
+	end
+	
+	
+	
+	-- If the squad doesn't have a registered flag, see if it should.
+	if not (squad.registered_with_warfare) then		
+		-- Only check once, checking multiple times would be redundant.
+		if (squad.checked_with_warfare) then
+            printd(2, squad:name())
+			return
+		end
+		
+		-- Set the checked flag.
+		squad.checked_with_warfare = true
+		
+		if (squad:clsid() ~= clsid.online_offline_group_s) then
+			printe("!!! TRYING TO REGISTER NON-SQUAD AS SQUAD")
+			return
+		end
+		
+		-- See if the squad has an entry in the registered squads table.
+		if (warfare.registered_squads[faction] and warfare.registered_squads[faction][squad.id]) then
+			printf("--- registering " .. squad:section_name() .. " with warfare")
+			squad.registered_with_warfare = true
+		end
+	end
+
+	squad.global_position = global_position.from(squad)
+		
+	if not (axr_companions.companion_squads[squad.id]) then	
+		-- Make sure generic_update and specific return early as both have code that interfere with warfare.
+		-- Hopefully setting scripted_target every update won't cause any memory issues or performance decreases...
+		squad.__lock = true
+		squad.scripted_target = ""
+		
+		if squad.current_action and squad.current_action == 0 then
+			squad.rush_to_target = true
+		else
+			squad.rush_to_target = false
+		end
+		
+		if squad.current_target_id and not squad.assigned_target_id then
+			squad.assigned_target_id = squad.current_target_id
+		end
+		
+		squad_warfare_update(squad)
+	end
+    
+    printd(3, squad:name())
+end
+
+function update_global_position(squad)
+	local level_id = game_graph():vertex(squad.m_game_vertex_id):level_id()
+	local offset = level_targets.level_offsets[level_id]
+	local p = squad.position
+	
+	if (offset) then
+		squad.global_position = vector():set(p.x + offset[1], p.y + offset[2], p.z + offset[3])
+	end
+end
+
+-- borrowed from gamemode_azazel.script from the actor_on_before_death function.
+function add_companion_squad(squad)
+	if (squad) then
+		SIMBOARD:assign_squad_to_smart(squad, nil)
+		axr_companions.companion_squads[squad.id] = squad
+	
+		for k in squad:squad_members() do
+			local member = db.storage[k.id] and db.storage[k.id].object
+	
+			if ( member and member:alive() ) then
+				axr_companions.add_to_actor_squad(member)
+			end
+		end
+	end
+end
+
+-- Modified generic_update for warfare. squad.__lock will cause generic_update not to run.
+-- Not using scripted_target / specific_update, and need to avoid the precondition check.
+function squad_warfare_update(squad)
+    printd(0, "squad_warfare_update: "..squad:name())
+
+	--process_random_patrol(squad)
+
+	if (squad.current_action) then
+		local se_target = squad.current_target_id and simulation_objects.get_server_entity(squad.current_target_id)
+		
+		if (se_target) then
+			if (squad.smart_id ~= squad.current_target_id and se_target:clsid() == clsid.smart_terrain) then
+				squad:assign_smart(se_target, squad.smart_id)
+			end
+			
+			-- Only need to check if the squad has reached its destination.
+			-- TODO: stay timer for patrol squads.
+			if (squad.current_action == 0 and not squad.combat_target_id) then
+				if (se_target:clsid() == clsid.smart_terrain) then
+					local smartOwner = se_target.owning_faction or "none"
+					
+					if not (game_relations.is_factions_enemies(smartOwner, squad:get_squad_community())) then
+						if (se_target:am_i_reached(squad)) then
+							se_target:on_after_reach(squad)
+							squad.current_action = 1
+							squad.arrive_time = game.get_game_time()
+							squad.wait_time = math.random(10, 60)
+						end
+					end
+				else
+					if (se_target:am_i_reached(squad)) then
+						se_target:on_after_reach(squad)
+						squad.current_action = 1
+						squad.arrive_time = game.get_game_time()
+						squad.wait_time = math.random(10, 60)
+					end
+				end
+			end--[[
+		else
+			local levelID = game_graph():vertex(squad.m_game_vertex_id):level_id()
+			
+			if (warfare_levels.level_information[levelID] and warfare_levels.level_information[levelID].smarts) then
+				for i,sm in pairs(warfare_levels.level_information[levelID].smarts) do
+					local smart = sm and alife_object(sm)
+					
+					if (smart) then
+						printf(smart:name())
+						sim_squad_warfare.set_target(squad, smart.id)
+					end
+				end
+			end]]
+		end
+	end
+    
+    printd(1, squad:name())
+end
+
+--[[	
+random_patrols[squad.id] = {
+	target = smart.id,
+	stay_time = math.random(min_idle, max_idle),
+	arrive_time = game.get_game_time()
+}
+]]
+
+function process_random_patrol(squad)
+	if not (squad.patrol_timer) or game.get_game_time():diffSec(squad.patrol_timer) > (squad.next_patrol_update*60) then
+		squad.patrol_timer = game.get_game_time()
+		squad.next_patrol_update = 10
+	else
+		return
+	end
+
+	local faction = smart_terrain_warfare.random_patrols[squad.id]
+
+	if (faction) then
+		if (squad.current_action == 1) then
+			local target_point
+			local target_level
+			local choices = {}
+			local levels = warfare.hash_table_to_array(level_targets.active_levels)
+			warfare.shuffleTable(levels)
+
+			for _,v in pairs(levels) do
+				target_level = v.key
+
+				local level_info = warfare_levels.level_information[target_level]
+				local smarts = level_info.smarts
+
+				if (level_info) then
+					for _,smart_id in pairs(level_info.smarts) do
+						local smart  = smart_id and alife_object(smart_id)
+
+						if (smart) then
+							if (smart.props.all and smart.props.all > 0) then
+								for i=0,smart.props.all do
+									choices[#choices+1] = { smart, v.key }
+								end
+							end
+
+							if (smart.props[faction] and smart.props[faction] > 0) then
+								for i=0,smart.props[faction]*3 do
+									choices[#choices+1] = { smart, v.key }
+								end
+							end
+						end
+					end
+				end
+			end
+
+			local target_choice = choices[math.random(#choices)]
+			target_point = target_choice[1]
+			target_level = target_choice[2]
+			
+			sim_squad_warfare.set_target(squad, target_point.id)
+		end
+	end
+end
+
+-- unregister squad with warfare
+function remove_squad(squad)
+    printd(0, squad:name())
+
+	if (squad and squad:clsid() == clsid.online_offline_group_s) then
+		local f = squad:get_squad_community()
+		
+		if (warfare.registered_squads[f]) then
+			smart_terrain_warfare.random_patrols[squad.id] = nil
+			warfare.registered_squads[f][squad.id] = nil
+			sim_offline_combat.ocs_power[squad.id] = nil
+			squad.registered_with_warfare = false
+			--squad:hide()
+			--squad:remove_squad()
+		end
+	end
+	
+    printd(1, squad:name())
+end
+
+function squad_on_npc_death(squad, npc, killer)
+    printd(0, "squad_on_npc_death: "..squad:name())
+
+    if (squad.registered_with_warfare) then
+   	    if killer and killer.id == AC_ID then
+		    local f = squad:get_squad_community()
+		
+		    if game_relations.is_factions_enemies(f, warfare.actor_faction) == true then	
+				local rank = npc:rank()
+                local money = warfare_options.options.actor_support_reward_money
+                local rank_weight = warfare_options.options.actor_support_enemy_rank_weight
+                local influence = warfare_options.options.actor_support_reward_influence
+                money = money+(rank*rank_weight)
+                db.actor:give_money(money)
+                warfare.actor_influence_points = warfare.actor_influence_points + influence
+                --printf("money=%s, influence=%s, final influence=%s", money, influence, warfare.actor_influence_points)
+		    end
+	    end
+    end
+    printd(1, squad:name())
+end
+
+-- Show warfare icon.
+--function show_squad(squad)
+function sim_squad_scripted.sim_squad_scripted.show(self)
+    printd(0, self:name().." registered: "..tostring(self.registered_with_warfare))
+	
+	if self.show_disabled then
+		self:hide()
+		printd(1, self:name())
+		return
+	end
+
+    if (level.map_has_object_spot(self:commander_id(), "ui_pda2_special_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_trader_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_mechanic_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_scout_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_quest_npc_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_barman_location")~=0) or
+	(level.map_has_object_spot(self:commander_id(), "ui_pda2_medic_location")~=0) then
+		self.show_disabled = true
+		printd(2, self:name())
+		return
+	end
+
+	if (self.registered_with_warfare) then --_G.WARFARE
+		local faction = self:get_squad_community()	
+		local enemy = game_relations.is_factions_enemies(warfare.actor_faction, faction)
+		local friend = warfare.actor_faction == faction or game_relations.is_factions_friends(warfare.actor_faction, faction)
+
+		if (warfare_options.options.fog_of_war) then
+			local fog_of_war_distance = warfare_options.options.fog_of_war_distance
+			fog_of_war_distance = tonumber(fog_of_war_distance)
+			
+			local levelID = self.m_game_vertex_id and game_graph():vertex(self.m_game_vertex_id):level_id()
+			local visible = false
+			
+			if (levelID == get_player_level_id()) then
+				local dist = warfare.distance_to_xz_sqr(self.position, alife():actor().position)
+
+				if (dist < fog_of_war_distance*fog_of_war_distance) then
+					visible = true
+				end
+			end
+			
+			if not (visible) then
+				if (sim_offline_combat.squads_by_level[levelID]) then
+					for squadID,_ in pairs(sim_offline_combat.squads_by_level[levelID]) do
+						local squad = squadID and alife_object(squadID)
+
+						if (squad and squad:clsid() == clsid.online_offline_group_s) then
+							if (squad:get_squad_community() == warfare.actor_faction) then
+								if (warfare.distance_to_xz_sqr(squad.position, self.position) < fog_of_war_distance*fog_of_war_distance) then
+									visible = true
+									break
+								end
+							end
+						end
+					end
+				end
+			end
+
+			local info = nil
+
+			if (self:get_squad_community() == warfare.actor_faction or game_relations.is_factions_friends(self:get_squad_community(), warfare.actor_faction)) then
+				info = get_warfare_info(self)
+			else
+				info = get_enemy_info(self)
+
+				if (game_relations.is_factions_enemies(self:get_squad_community(), warfare.actor_faction) and warfare_options.options.hide_unfriendly_squads) then
+					visible = false
+				end
+			end
+
+			if (visible) then
+				if not (self.warfare_spot) then
+					self.warfare_spot = squad_icons[faction]
+					level.map_add_object_spot(self.id, self.warfare_spot, info)
+				else
+					level.map_change_spot_hint(self.id, self.warfare_spot, info)
+				end
+			else
+				if (self.warfare_spot) then
+					level.map_remove_object_spot(self.id, self.warfare_spot)
+					self.warfare_spot = nil
+				end
+			end
+		else
+			local info = nil
+
+			if (self:get_squad_community() == warfare.actor_faction or game_relations.is_factions_friends(self:get_squad_community(), warfare.actor_faction)) then
+				info = get_warfare_info(self)
+			else
+				info = get_enemy_info(self)
+			end
+
+			if not (self.warfare_spot) then
+				local spot = squad_icons[faction]
+				
+				if (spot) then
+					if (friend or not warfare_options.options.hide_unfriendly_squads) then
+						level.map_add_object_spot(self.id, spot, info)
+						self.warfare_spot = spot
+					end
+				end
+			else
+				if not (friend or not warfare_options.options.hide_unfriendly_squads) then
+					level.map_remove_object_spot(self.id, self.warfare_spot)
+					self.warfare_spot = nil
+				else
+					level.map_change_spot_hint(self.id, self.warfare_spot, info)
+				end
+			end
+		end
+	else
+		local sim = alife()
+		local se_actor = sim:actor()
+		local spot = ""
+		
+		-- 1. Debug mode + Debug HUD enabled
+		if (DEV_DEBUG and dbg_map_hud) then
+			spot = squad_icons[self.player_id] or "warfare_mutant_spot"
+		
+		-- 2. Improved PDAs
+		elseif db.actor then
+			local pda = db.actor:item_in_slot(8)
+			if pda and simulation_objects.is_on_the_same_level(se_actor,self) and (not is_squad_monster[self.player_id]) then
+				local comm = get_actor_true_community()
+				if (pda:section() == "device_pda_2") and (self.player_id == comm) then
+					spot = squad_icons[self.player_id]
+				elseif (pda:section() == "device_pda_3") and (not game_relations.is_factions_enemies(comm,self.player_id)) then
+					spot = squad_icons[self.player_id]
+				end
+			end
+		end
+		
+		if (spot ~= "") then
+			if spot == self.spot_section then
+				level.map_change_spot_hint(self.id, self.spot_section, self:get_squad_props()) --self.current_spot_id
+				return
+			end
+			
+			if (self.spot_section == nil) then
+				level.map_add_object_spot(self.id, spot, self:get_squad_props())
+			else
+				level.map_remove_object_spot(self.id, self.spot_section)
+				level.map_add_object_spot(self.id, spot, self:get_squad_props())
+			end
+			
+			self.spot_section = spot
+			
+		elseif (self.spot_section ~= nil) then
+			level.map_remove_object_spot(self.id, self.spot_section)
+			self.spot_section = nil
+		end
+	end
+	
+    printd(3, self:name())
+end
+
+-- Hide warfare icon.
+--function hide_squad(squad)
+function sim_squad_scripted.sim_squad_scripted.hide(self)
+	printd(0, self:name())
+	
+	if not (self.warfare_spot) then
+		printd(1, self:name())
+		return
+	end
+	
+	level.map_remove_object_spot(self.id, self.warfare_spot)
+	self.warfare_spot = nil
+	
+    printd(2, self:name())
+end
+
+-- Get the warfare information for the spot hint.
+-- xr_Sanya
+function get_squad_relation(squad_id)
+    local squad = squad_id and alife_object(squad_id)
+	
+	if not squad then
+       return str_wrfr[18]
+	end
+	
+----av661194
+	if(squad==nil) then
+		--printf("No such squad %s in board", tostring(squad_id))
+	end
+	if (is_squad_monster[squad.player_id]) then 
+		return str_wrfr[17]
+	end
+----av661194
+    local goodwill = 0
+    local npc_count = 0
+    for k in squad:squad_members() do
+  local object = db.storage[k.id] and db.storage[k.id].object
+        if object and db.actor then
+            goodwill = goodwill + object:general_goodwill(db.actor)
+            npc_count = npc_count + 1
+        end
+    end
+    if npc_count ~= 0 then
+        local delta = goodwill/npc_count
+        if delta <= -1000 then
+            return str_wrfr[17]
+        elseif delta >= 1000 then
+            return str_wrfr[19]
+        elseif delta < 1000 and delta > -1000 then
+            return str_wrfr[18]
+        end
+    end 
+	
+    local relation = 0
+    if db.actor then
+       relation = db.actor:community_goodwill(squad.player_id)+game_relations.get_factions_community(squad.player_id, alife():actor():community())
+    end
+    
+    if relation >= 1000 then
+       return str_wrfr[19]
+    elseif relation <= -1000 then
+       return str_wrfr[17]
+    else
+       return str_wrfr[18]
+    end
+end
+-- xr_Sanya
+
+function get_enemy_info(squad)
+    printd(0, squad:name())
+	
+	if squad == nil then
+		--printf("nil squad")
+	end
+	
+	local squadName = squad:name()
+	local section = squad:section_name()
+	local name = ui_warfare_options_hints.get_name(squad:section_name()) or warfare_names.faction_names[squad.player_id]
+-- xr_Sanya	local faction = game.translate_string(squad:get_squad_community())
+-- xr_Sanya	local relation = game_relations.get_squad_relation_to_actor_by_id(squad.id)
+	local npc_count = squad:npc_count()		
+	local atarget = squad.current_target_id
+	local ase_target = atarget and alife_object(atarget)
+
+	-- xr_Sanya
+	local relation = get_squad_relation(squad.id)
+	local faction = warfare_names.faction_names[squad:get_squad_community()]
+	-- xr_Sanya
+
+
+	local commanderID = squad:commander_id()
+	local commander = commanderID and alife_object(commanderID)
+	local commanderName = commander and commander.character_name and commander:character_name()
+	
+	local props = ""
+	
+	if (commanderName and IsStalker(commander)) then
+		props = props.." \\n" .. strformat(str_wrfr[1], commanderName) .. " \\n"
+
+	    if (warfare_options.options.debug_logging) then
+			props = props.." \\n"..name.." \\n"
+	    end
+	end
+	
+	props = props.." \\n"..faction.." ("..relation..")"
+	props = props.." \\n"..npc_count.. " " .. str_wrfr[2] .. " \\n"
+	
+	if (warfare_options.options.debug_logging) then
+		props = props .." \\n" .. str_wrfr[3] .. ": "..section.." \\n"
+		props = props .." \\n" .. str_wrfr[4] .. ": "..squad.id.." \\n"
+	end
+	
+	if sim_offline_combat.opponents[squad.id] then
+		props = props.." \\n" .. str_wrfr[5] .. " \\n"
+	elseif (squad.current_action == 0) then
+		props = props.." \\n" .. str_wrfr[6] .. " \\n"		
+	elseif (squad.current_action == 1) then
+		props = props.." \\n" .. str_wrfr[7] .. " \\n"
+	end
+	
+    printd(1, squad:name())
+	
+	return props
+end
+
+function get_warfare_info(squad)
+    printd(0, squad:name())
+	
+	if squad == nil then
+		--printf("nil squad")
+	end
+	
+	local squadName = squad:name()
+	local section = squad:section_name()
+	local name = ui_warfare_options_hints.get_name(squad:section_name()) or warfare_names.faction_names[squad.player_id]
+-- xr_Sanya	local faction = game.translate_string(squad:get_squad_community())
+-- xr_Sanya	local relation = game_relations.get_squad_relation_to_actor_by_id(squad.id)
+	local npc_count = squad:npc_count()	
+	local power = sim_offline_combat.calculate_squad_power(squad)	
+	local atarget = squad.current_target_id
+	local ase_target = atarget and alife_object(atarget)
+
+	-- xr_Sanya
+	local relation = get_squad_relation(squad.id)
+	local faction = warfare_names.faction_names[squad:get_squad_community()]
+	-- xr_Sanya
+
+
+	local commanderID = squad:commander_id()
+	local commander = commanderID and alife_object(commanderID)
+	local commanderName = commander and commander.character_name and commander:character_name()
+	
+	local props = ""
+	
+	if (commanderName and IsStalker(commander)) then
+		props = props.." \\n" .. strformat(str_wrfr[1], commanderName) .. " \\n"
+
+	    if (warfare_options.options.debug_logging) then
+			props = props.." \\n"..name.." \\n"
+	    end
+	end
+	
+	props = props.." \\n"..faction.." ("..relation..")"
+	props = props.." \\n"..npc_count.." " .. str_wrfr[2] .. " \\n"
+	
+	if (warfare_options.options.debug_logging) then
+		props = props .." \\n" .. str_wrfr[3] .. ": "..section.." \\n"
+		props = props .." \\n" .. str_wrfr[4] .. ": "..squad.id.." \\n"
+	end
+	
+	props = props.." \\n"..power.." " .. str_wrfr[8]
+	
+	if (squad.patrol_owner) then
+		local owner = alife_object(squad.patrol_owner)
+		local wn = translate_smart_name(owner:name()) or owner:name()
+		props = props .. " \\n" .. str_wrfr[10] .. ": " .. wn .. " \\n"
+	end
+		
+	if (ase_target) then
+		local levelID = ase_target.m_game_vertex_id and game_graph():vertex(ase_target.m_game_vertex_id):level_id()
+		local levelName = levelID and alife():level_name(levelID)
+		local finalName = levelName and game.translate_string(levelName)
+		local lvl = game.translate_string(alife():level_name(game_graph():vertex(ase_target.m_game_vertex_id):level_id()))
+
+		
+		if (squad.patrol_table) then
+			if (squad.patrol_table.arrive_time and squad.patrol_table.stay_time) then
+				local diff = game.get_game_time():diffSec(squad.patrol_table.arrive_time)
+				local remaining = (squad.patrol_table.stay_time*60) - diff
+			
+				-- xQd, show the timer in hours and minutes
+				--remaining = round_idp(remaining / 60)
+				if remaining <= 3600 then -- show in minutes if less than an hour left
+					remaining = strformat(str_wrfr[14] , round_idp(remaining / 60))
+				else 					  -- otherwise show in hours and minutes
+					local remaining_hrs_round = math.floor((remaining / 60)/60)
+					local remaining_hrs_float = (remaining / 60)/60
+					local remaining_mins_diff = round_idp((remaining_hrs_float - remaining_hrs_round) * 60)
+					remaining = strformat(str_wrfr[13] , remaining_hrs_round, remaining_mins_diff)
+				end
+				-- xQd
+			
+				props = props .. " \\n" .. str_wrfr[11] .. ": " .. remaining .. " \\n";
+			end
+		end
+	
+		props = props.."\\n----------\\n"	
+		
+		if sim_offline_combat.opponents[squad.id] then
+			props = props.." \\n" .. str_wrfr[5] .. " \\n"
+		elseif (squad.current_action == 0) then
+			props = props.." \\n" .. str_wrfr[6] .. " \\n"
+			
+			local warfareName = translate_smart_name(ase_target:name()) or ase_target:name()
+--av661194
+			if ase_target.player_id then
+				local ase_name = ui_warfare_options_hints.get_name(ase_target:section_name())
+				warfareName = ase_name and (ase_name .. " \\n" .. str_wrfr[4] .. ": " .. ase_target.id) or ase_target:name()
+			end
+--av661194
+			if ase_target.id == AC_ID then
+				warfareName = str_wrfr[16]
+			end
+			
+			props = props.." \\n" .. str_wrfr[15] .. ": "..warfareName.." \\n"
+			
+			if (finalName) then 
+				props = props.." \\n" .. str_wrfr[12] .. ": "..lvl.." \\n" 
+			end
+		elseif (squad.current_action == 1) then
+			props = props.." \\n" .. str_wrfr[7] .. " \\n"
+			local warfareName = translate_smart_name(ase_target:name()) or ase_target:name()
+--av661194
+			if ase_target.player_id then
+				local ase_name = ui_warfare_options_hints.get_name(ase_target:section_name())
+				warfareName = ase_name and (ase_name.." \\n" .. str_wrfr[4] .. ": "..ase_target.id) or ase_target:name()
+			end
+--av661194
+			props = props.." \\n" .. str_wrfr[15] .. ": "..warfareName.." \\n"
+			
+			if (finalName) then 
+				props = props.." \\n" .. str_wrfr[12] .. ": "..lvl.." \\n" 
+			end
+		end
+	end
+	
+    printd(1, squad:name())
+	
+	return props
+end
+
+--[[
+	targets[#targets+1] = { dist/priority, other.id }	
+	targets = warfare.sort_priority_table(targets)
+]]
+
+function find_random_patrol_target(squad)
+	printd(0, squad:name())
+	
+	local faction = squad:get_squad_community()
+	local lvl = game_graph():vertex(squad.m_game_vertex_id):level_id()
+	local current_info = warfare_levels.level_information[lvl]
+	
+	local priority_targets = {}
+
+	for _,smart_id in pairs(current_info.smarts) do
+		local smart = smart_id and alife_object(smart_id)
+
+		if (smart) then
+			local priority = smart.props and smart.props[faction]
+			local p1 = global_position.from(squad)
+			local p2 = global_position.from(smart)
+			local dist = math.pow(warfare.distance_to_xz_sqr(p1, p2), 2)
+
+			priority_targets[#priority_targets+1] = { (dist/priority), smart.id }
+		end
+	end
+
+	for i,_ in pairs(level_targets.level_links[lvl]) do
+		local other_info = warfare_levels.level_information[lvl]
+
+		for _,smart_id in pairs(other_info.smarts) do
+			local smart = smart_id and alife_object(smart_id)
+
+			if (smart) then
+				local priority = smart.props and smart.props[faction]
+				local p1 = global_position.from(squad)
+				local p2 = global_position.from(smart)
+				local d = 1 + 1/(math.min(1, math.pow(warfare.distance_to_xz_sqr(p1, p2), 2)))
+
+				priority_targets[#priority_targets+1] = { (dist/priority), smart.id }
+			end
+		end
+	end
+
+	printd(1, squad:name())
+end
+
+local BASE_WEIGHT = 3
+local RESOURCE_WEIGHT = 1
+
+-- TODO: have this first look for enemy patrol squads to target.
+-- Used when squads on the way to their target are no longer needed, or when squads of neutral/allied factions are present at a point.
+function find_target(squad)
+    printd(0, squad:name())
+
+    local lvl = game_graph():vertex(squad.m_game_vertex_id):level_id()
+    local info = warfare_levels.level_information[lvl]
+    local faction = squad:get_squad_community()
+    local found_target = false
+	
+	if not (offset) then
+		return
+	end
+	
+    local gp = global_position.from(squad)
+    local smarts = nil
+
+    if (info and info.faction_stats) then
+        if ((info.faction_stats[faction] and (not warfare_levels.faction_enemy_present(lvl, faction))) or info.faction_stats["none"].base_count > 0 or info.faction_stats["none"].resource_count > 0) then
+            smarts = info.smarts
+			found_target = true
+        end
+    end
+    
+    if not (found_target) then
+        local links = level_targets.level_links[lvl]
+
+        for lvl,l in pairs(links) do
+            local info2 = warfare_levels.level_information[lvl]
+
+            if (info2 and info2.faction_stats) then
+                if ((info2.faction_stats[faction] and warfare_levels.faction_enemy_present(lvl, faction)) or info.faction_stats["none"].base_count > 0 or info.faction_stats["none"].resource_count > 0) then
+                    smarts = info2.smarts
+                    break
+                end
+            end
+        end 
+    end
+
+    if (smarts) then
+        local targets = {}
+
+        for i,sm in pairs(smarts) do
+            local other = sm and alife_object(sm)
+			local dist = warfare.distance_to_xz_sqr(other, gp)
+			local priority = 1
+			local f2 = other.owning_faction or "none"		
+		
+			
+			if (other.owning_faction == squad:get_squad_community()) then
+				priority = priority + 200
+			elseif (other.owning_faction == "none") then
+				priority = priority + 50
+			elseif (not game_relations.is_factions_enemies(other.owning_faction, squad:get_squad_community())) then
+				-- 0
+			else
+				priority = priority - 10
+			end
+			
+			targets[#targets + 1] = { other.id, -priority }
+        end
+
+        function target_sort(a, b)
+            return a[2] < b[2]
+        end
+
+        table.sort(targets, target_sort)
+        
+        printd(1, squad:name())
+
+        return targets[1] and targets[1][1]
+    end
+    
+    printd(2, squad:name())
+
+    return nil
+end
+
+-- Function to help set a squads target; also registers the squad if they are not registered already.
+function set_target(squad, target)
+	
+	-- added xQd's fix for not being able to dismiss companions	
+	if not (squad) or axr_companions.companion_squads[squad.id] then
+		
+	    return
+	end
+	
+    printd(0, squad:name())
+	
+	if squad.stay_time then -- check if the squad has stay_time initialized(used to check if the squad are targeted by a "capture territory" task, so that the squad won't move resulting in failing of the task)
+		printf("squad %s is from capture territory task, ignore it's target", squad:name())
+		return
+	end
+	
+	if (warfare.ignore[squad:section_name()]) then
+		return
+	end
+
+    local obj = target and alife_object(target)
+
+    if (obj) then
+        squad.current_action = 0
+        squad.scripted_target = ""
+        squad.current_target_id = target
+        squad.assigned_target_id = target
+		squad.registered_with_warfare = true
+		warfare.registered_squads[squad:get_squad_community()][squad.id] = target
+
+        --if (obj:clsid() == clsid.smart_terrain) then 
+        if (obj:clsid() == clsid.smart_terrain) then 
+			obj:on_reach_target(squad)
+        end
+        --end
+
+        if not (squad.registered_with_warfare) then
+            squad.registered_with_warfare = true
+            warfare.registered_squads[squad:get_squad_community()][squad.id] = target
+        end		
+	
+		local sim = alife()
+		for k in squad:squad_members() do
+			local se_obj = k.object or k.id and sim:object(k.id)
+			if (se_obj) then
+				SIMBOARD:setup_squad_and_group(se_obj)
+			end
+		end				
+    end
+	
+    printd(1, squad:name())
+end
+
+-- Added by xQd. A function exclusively for warfare traders/mechanics squads to help them target the smart terrain they spawned to;
+function set_target_trader(squad, target, target_name)
+    printd(0, squad:name())
+	
+	if not (squad) then
+	    return
+    end
+
+    local obj = target and alife_object(target)
+
+    if (obj) then
+        squad.scripted_target = target_name
+
+        if (obj:clsid() == clsid.smart_terrain) then 
+			obj:on_reach_target(squad)
+        end
+	
+		local sim = alife()
+		for k in squad:squad_members() do
+			local se_obj = k.object or k.id and sim:object(k.id)
+			if (se_obj) then
+				SIMBOARD:setup_squad_and_group(se_obj)
+			end
+		end
+    end
+    printd(1, squad:name())
+end
+
+
+------------------------------------------------------------
+-- Callbacks
+------------------------------------------------------------
+function on_game_start()
+	refresh_strings()
+
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+end 

@@ -1,0 +1,659 @@
+
+<specific_character id="sim_default_csky_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_0.xml"
+    <icon>ui_inGame2_csky_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_r</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_0.xml"
+    <icon>ui_inGame2_csky_2</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_r_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_0.xml"
+    <icon>ui_inGame2_csky_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_r_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_0.xml"
+    <icon>ui_inGame2_csky_1_gas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_r_gas</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_0.xml"
+    <icon>ui_inGame2_csky_4</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_r2</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_csky_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_2_gas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_s</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_mask</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_smask1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_smask2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_oldgas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_2_gas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_backpack_hood</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_gp5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_s_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_4_helm_m40</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_4_helm_respirator</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_4_backpack_hood</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_backpack_helm_battle</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_1_backpack_helm_m40</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_backpack_helm_respirator</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_1_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_1.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_backpack_helm_tactic</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_csky_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_1_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5_2</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo2a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5_2</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebob2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo2b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_1</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mask</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_mask</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_smask1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_smask2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_oldgas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2_backpack_helm_tactic_nogas</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_gp5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_s_gp5</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mas2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_sun</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_s_mas3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_1_2</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_neboa2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2_backpack_helm_battle</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2_backpack_helm_battle_nogas</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_2.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_1\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2_backpack_helm_tactic</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_csky_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo2a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo3a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_5</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo2b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo3b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_stalker_nebo_skat</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_military</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_stalker_merc_skat</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_skat</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_balloon_helm_battle</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_balloon_helm_tactic</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_helm_battle</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_helm_battle_nogas</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_helm_tactic</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_3_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3_helm_tactic_nogas</visual>
+</specific_character>
+<specific_character id="sim_default_csky_3_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_3.xml"
+    <icon>ui_inGame2_csky_2_gas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_proto</visual>
+</specific_character>
+
+
+<specific_character id="sim_default_csky_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo3a</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_3</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo3b</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_nauchniy</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_seva_3</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_exo</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_exo_1</visual>
+</specific_character>
+
+<specific_character id="sim_default_csky_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_npc_u_stalker_militari_2</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_skat</visual>
+</specific_character>
+<specific_character id="sim_default_csky_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_4.xml"
+    <icon>ui_inGame2_csky_2_gas</icon>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <visual>actors\stalker_nebo\stalker_nebo_1_proto</visual>
+</specific_character>
+
+	
+	<!-- Special -->
+<specific_character id="sim_default_csky_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <class>sim_default_csky_trader</class>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_trader_nebo</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_csky_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_npc_u_nebo_3</icon>
+    <class>sim_default_csky_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_nebo_2_face_3</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+<specific_character id="sim_default_csky_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <class>sim_default_csky_medic</class>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_trader_nebo</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_csky_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_csky_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <class>sim_default_csky_barman</class>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <visual>actors\stalker_nebo\stalker_trader_nebo</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+	
+<specific_character id="sim_default_csky_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_csky_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_csky_dead</class>
+    <community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\csky_1\</snd_config><!--2-->
+    <rank>3656</rank>
+    <money min="1000" max="2000" infinitive="0"/>
+    <reputation>587</reputation>
+    <visual>actors\stalker_nebo\stalker_nebo_smask1</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_csky_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_csky_5</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_csky_dead</class>
+    <community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <rank>10513</rank>
+    <reputation>461</reputation>
+    <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_csky_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_csky_5_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_csky_dead</class>
+    <community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <rank>12749</rank>
+    <reputation>-1601</reputation>
+    <visual>actors\stalker_nebo\stalker_nebo_b</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_csky_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_science</name>
+    <icon>ui_inGame2_csky_3</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_csky_dead</class>
+    <community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\csky_3\</snd_config>
+    <rank>3538</rank>
+    <reputation>720</reputation>
+    <visual>actors\stalker_nebo\stalker_nebo3b</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	

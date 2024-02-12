@@ -1,0 +1,123 @@
+-- werejew
+
+level_offsets = {
+	-------------------------unused--------------------------
+	[33] = {   0.0,	  	0.0,		   0.0 },			--fake_start
+	
+	-------------------------undergrounds--------------------------
+	-- values are still off!!!!
+	-- do not use global position for objects inside them!!
+	[20] = { 1300.0,	800.0,		1845.0 },			--l03u_agr_underground
+	[21] = { 3050.0,	800.0,		1845.0 },			--l04u_labx18
+	[22] = { 1200.0,   	800.0, 		2845.0 },			--l08u_brainlab
+	[23] = { 2750.0, 	800.0,		4000.0 },			--l10u_bunker
+	[24] = { 2000.0,  	1200.0,    	6500.0 },			--l12u_sarcofag
+	[25] = { 2000.0,   	1400.0,    	6500.0 },			--l12u_control_monolith
+	[26] = { 2500.0,    800.0,    	7000.0 },			--l13u_warlab
+	[31] = { 3000.0,    800.0,		4500.0 },			--labx8
+	[29] = { 1750.0,    800.0,		4500.0 },			--jupiter_underground
+	
+	-------------------------overground-----------------------------
+	-- these are ok
+	[1] =  { 950.0,		1000.0,		-206, },			--k00_marsh
+	[2] =  { 2050.0,	1000.0,		0.0 },				--l01_escape
+	[3] =  { 2050.0,	1000.0,		1550.0 },			--l02_garbage
+	[4] =  { 1300.0,	1000.0,		1400.0 },			--l03_agroprom
+	[5] =  { 3050.0,	1000.0,		197 },				--k01_darkscape
+	[6] =  { 3050.0,	1000.0,		1900.0 },			--l04_darkvalley
+	[7] =  { 2000.0,	1000.0,		2850.0 },			--l05_bar
+	[8] =  { 2000.0,	1000.0,		2850.0 },			--l06_rostok
+	[9] =  { 2730.0,	1000.0,		3350.0 },			--l07_military
+	[10] = { 1067.0,	1000.0,		2700.0 },			--l08_yantar
+	[11] = { 940.0,		1000.0,		3350.0 },			--l09_deadcity
+	[12] = { 910.0,		1000.0,		4650.0 },			--l10_limansk
+	[13] = { 2750.0,	1000.0,		4350.0 },			--l10_radar
+	[14] = { 1750.0,	1000.0,		4350.0 },			--l10_red_forest
+	[15] = { 1250.0,	1000.0,		5190.0 },			--l11_hospital
+	[16] = { 3113.0,	1000.0,		5350 },				--l11_pripyat
+	[17] = { 2000.0,	1000.0,		8000.0 },			--l12_stancia
+	[18] = { 2000.0,	1000.0,		8000.0 },			--l12_stancia_2
+	[19] = { 1500.0,	1000.0,		9300.0 },			--l13_generators
+	[27] = { 1750.0,	1000.0,		6450.0 },			--zaton
+	[28] = { 1750.0,	1000.0,		5303.0 },			--jupiter
+	[30] = { 3713.0,	1000.0,		5487.0 },			--pripyat
+	[32] = { 3333.0,	1000.0,		2820.0 },			--k02_trucks_cemetery
+	[34] = { 2490.0,	1000.0,		   710 },			--y04_pole
+}
+
+--[[
+	Usage:
+
+	object_or_position - This can be either an alife object or a vector object.
+	level_id - This can be either nil or a level_id when object_or_position is a position
+
+	If you pass in only one argument, an object, the function will calculate the global position for that
+	object and set it as a key value pair for the object with the key global_position.
+
+	You can also pass in a position and a level id. The position is the position vector value from alife objects,
+	for instance: squad.position, smart.position, etc etc. That position is local to the level that the alife object
+	is on, so adding the alife object's local position and the level's offset we arrive at the global position.
+
+	Example:
+
+	if (other and other.props and other.props.territory > 0) then
+		local p1 = global_position.from(other)
+		local p2 = global_position.from(squad)
+		local dist = p1:distance_to_xz(p2)
+		smarts_by_distance[#smarts_by_distance + 1] = { smart.id, dist }
+	end
+]]
+
+function from(object_or_position, level_id)
+	if (level_id ~= nil) then
+		local offset = level_offsets[level_id]
+		local p = object_or_position		
+		return vector():set(p.x + offset[1], p.y + offset[2], p.z + offset[3])
+	else
+		if (object_or_position.position and object_or_position.m_game_vertex_id) then
+			local global = from(object_or_position.position, game_graph():vertex(object_or_position.m_game_vertex_id):level_id())
+			object_or_position.global_position = global
+			return global
+		end
+	end
+end
+
+--[[
+old levels offset
+level_offsets = {
+	[1] =  { 1050.0,	1000.0,		0.0, },	
+	[2] =  { 2050.0,	1000.0,		0.0 },
+	[3] =  { 2050.0,	1000.0,		1000.0 },
+	[4] =  { 1300.0,	1000.0,		1000.0 },
+	[5] =  { 3050.0,	1000.0,		0.0 },
+	[6] =  { 3050.0,	1000.0,		1000.0 },
+	[7] =  { 2000.0,	1000.0,		2000.0 },
+	[8] =  { 2000.0,	1000.0,		2000.0 },
+	[9] =  { 2130.0,	1000.0,		3000.0 },
+	[10] = { 1200.0,	1000.0,		2000.0 },
+	[11] = { 1100.0,	1000.0,		3000.0 },
+	[12] = { 1100.0,	1000.0,		4000.0 },
+	[13] = { 2750.0,	1000.0,		4000.0 },
+	[14] = { 1750.0,	1000.0,		4000.0 },
+	[15] = { 1530.0,	1000.0,		5000.0 },
+	[16] = { 2500.0,	1000.0,		5000.0 },
+	[17] = { 2000.0,	1000.0,		6000.0 },
+	[18] = { 2000.0,	1000.0,		6500.0 },
+	[19] = { 2500.0,	1000.0,		7000.0 },
+	[20] = { 1300.0,	800.0,		1845.0 },
+	[21] = { 3050.0,	800.0,		1845.0 },	
+	[22] = { 1200.0,   	800.0, 		2845.0 },
+	[23] = { 2750.0, 	800.0,		4000.0 },
+	[24] = { 2000.0,  	1200.0,    	6500.0 },
+	[25] = { 2000.0,   	1400.0,    	6500.0 },
+	[26] = { 2500.0,    800.0,    	7000.0 },
+	[27] = { 1750.0,	1000.0,		5000.0 },
+	[28] = { 1750.0,	1000.0,		4500.0 },
+	[29] = { 1750.0,    800.0,		4500.0 },
+	[30] = { 3000.0,	1000.0,		4500.0 },
+	[31] = { 3000.0,    800.0,		4500.0 },
+	[32] = { 3000.0,	1000.0,		2000.0 },
+	[33] = {   10.0,	  10.0,		   0.0 },
+	[34] = { 2150.0,	1000.0,		   0.0 },
+}
+]]

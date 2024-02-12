@@ -1,0 +1,506 @@
+<w>
+	<background x="0" y="0" width="1024" height="768">
+		<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+			<texture x="0" y="0" width="1280" height="768">ui\ui_actor_main_menu_one</texture>
+		</auto_static>
+    </background>
+	
+	<workshop>
+		<frame x="27" y="50" width="969" height="669" stretch="1"> <!-- 138 -->
+			<texture>ui_inGame2_workshop_background</texture>
+		</frame>
+		
+		<cap_tab x="727" y="26" width="229" height="22">
+			<text complex_mode="1" r="200" g="200" b="200" align="c" font="letterica18"/>
+		</cap_tab>
+		
+		<pic_info x="99" y="594" width="20" height="20" stretch="1">
+			<texture>ui_inGame2_workshop_info</texture>
+		</pic_info>
+		<text_info x="152" y="557" width="556" height="96">
+			<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="c" font="letterica16"/>
+		</text_info>
+		
+		<btn_state x="27" y="21" width="67" height="26" check_mode="0">
+			<texture>ui_button_light</texture>
+		</btn_state>
+		<btn_repair x="146" y="21" width="67" height="26" check_mode="0">
+			<texture>ui_button_light</texture>
+		</btn_repair>
+		<btn_upgrade x="290" y="21" width="67" height="26" check_mode="0">
+			<texture>ui_button_light</texture>
+		</btn_upgrade>
+		<btn_craft x="442" y="21" width="67" height="26" check_mode="0">
+			<texture>ui_button_light</texture>
+		</btn_craft>
+		
+		<state>
+			<btn_back x="812" y="496" width="127" height="26">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_back</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_back>
+			
+			<!-- Background	-->
+			<pic_toolkit_1_b x="62" y="97" width="205" height="173" stretch="1">
+				<texture>ui_inGame2_workshop_toolkit</texture>
+			</pic_toolkit_1_b>
+			<pic_toolkit_2_b x="386" y="97" width="205" height="173" stretch="1">
+				<texture>ui_inGame2_workshop_toolkit</texture>
+			</pic_toolkit_2_b>
+			<pic_toolkit_3_b x="701" y="97" width="205" height="173" stretch="1">
+				<texture>ui_inGame2_workshop_toolkit</texture>
+			</pic_toolkit_3_b>
+			<pic_toolkit_4_b x="222" y="327" width="205" height="173" stretch="1">
+				<texture>ui_inGame2_workshop_toolkit</texture>
+			</pic_toolkit_4_b>
+			<pic_toolkit_5_b x="546" y="327" width="205" height="173" stretch="1">
+				<texture>ui_inGame2_workshop_toolkit</texture>
+			</pic_toolkit_5_b>
+			
+			<!-- Images -->
+			<pic_toolkit_1 x="71" y="104" width="186" height="157" stretch="1"/>
+			<pic_toolkit_2 x="395" y="104" width="186" height="157" stretch="1"/>
+			<pic_toolkit_3 x="710" y="104" width="186" height="157" stretch="1"/>
+			<pic_toolkit_4 x="231" y="335" width="186" height="157" stretch="1"/>
+			<pic_toolkit_5 x="555" y="335" width="186" height="157" stretch="1"/>
+			
+			<!-- Buttons 
+			<btn_toolkit_1 x="60" y="186" width="223" height="188" check_mode="0">
+				<texture>ui_inGame2_btn_workshop_toolkit_1</texture>
+			</btn_toolkit_1>
+			<btn_toolkit_2 x="376" y="186" width="223" height="188" check_mode="0">
+				<texture>ui_inGame2_btn_workshop_toolkit_2</texture>
+			</btn_toolkit_2>
+			<btn_toolkit_3 x="695" y="186" width="223" height="188" check_mode="0">
+				<texture>ui_inGame2_btn_workshop_toolkit_3</texture>
+			</btn_toolkit_3>-->
+			
+			<!-- Text	-->
+			<txt_toolkit_1 x="62" y="270" width="205" height="35">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</txt_toolkit_1>
+			<txt_toolkit_2 x="386" y="270" width="205" height="35">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</txt_toolkit_2>
+			<txt_toolkit_3 x="701" y="270" width="205" height="35">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</txt_toolkit_3>
+			<txt_toolkit_4 x="222" y="500" width="205" height="35">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</txt_toolkit_4>
+			<txt_toolkit_5 x="546" y="500" width="205" height="35">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</txt_toolkit_5>
+		</state>
+		
+		<repair>
+			<!-- Text	-->
+			<cap_inv x="31" y="91" width="303" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="c">st_cap_inventory</text>
+			</cap_inv>
+			<cap_inv_parts x="31" y="348" width="303" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="c">st_cap_replace_parts</text>
+			</cap_inv_parts>
+			<cap_toolkit x="711" y="557" width="181" height="23">
+				<text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_cap_req_toolkit</text>
+			</cap_toolkit>
+			
+			<text_item_1_name x="382" y="284" width="166" height="42">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_1_name>
+			<text_item_2_name x="407" y="413" width="166" height="42">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_2_name>
+			<text_item_3_name x="555" y="488" width="229" height="31">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_3_name>
+			<text_item_4_name x="755" y="413" width="166" height="42">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_4_name>
+			<text_item_5_name x="780" y="284" width="166" height="42">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_5_name>
+			<text_item_6_name x="546" y="80" width="229" height="31">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" font="letterica16"/>
+			</text_item_6_name>
+			
+			<text_item_1_con x="478" y="218" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_1_con>
+			<text_item_2_con x="504" y="346" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_2_con>
+			<text_item_3_con x="679" y="421" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_3_con>
+			<text_item_4_con x="851" y="346" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_4_con>
+			<text_item_5_con x="876" y="218" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_5_con>
+			<text_item_6_con x="678" y="114" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_6_con>
+			<text_item_r_con x="627" y="337" width="75" height="34">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</text_item_r_con>
+			<text_item_rq_num x="821" y="614" width="36" height="31">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" font="letterica18"/>
+			</text_item_rq_num>
+			
+			<!-- Selected -->
+			<pic_item_selected_1 x="478" y="218" width="43" height="62"  stretch="1"/>
+			<pic_item_selected_2 x="504" y="346" width="43" height="62"  stretch="1"/>
+			<pic_item_selected_3 x="679" y="421" width="43" height="62"  stretch="1"/>
+			<pic_item_selected_4 x="851" y="346" width="43" height="62"  stretch="1"/>
+			<pic_item_selected_5 x="876" y="218" width="43" height="62"  stretch="1"/>
+			<pic_item_selected_6 x="678" y="114" width="43" height="62"  stretch="1"/>
+			
+			<!-- Background	-->
+			<pic_inv_b x="30" y="114" width="304" height="239" stretch="1">
+				<texture>ui_inGame2_workshop_upgrade_inv</texture>
+			</pic_inv_b>
+			<pic_inv_parts_b x="61" y="375" width="240" height="125" stretch="1">
+				<texture>ui_inGame2_workshop_big_item_menu</texture>
+			</pic_inv_parts_b>
+			<pic_item_1_b x="402" y="210" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_1_b>
+			<pic_item_2_b x="428" y="338" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_2_b>
+			<pic_item_3_b x="604" y="412" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_3_b>
+			<pic_item_4_b x="775" y="338" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_4_b>
+			<pic_item_5_b x="800" y="210" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_5_b>
+			<pic_item_6_b x="602" y="106" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_6_b>
+			<pic_item_r_b x="623" y="332" width="84" height="45" stretch="1">
+				<texture>ui_inGame2_workshop_item_window_con</texture>
+			</pic_item_r_b>
+			<pic_item_rq_b x="738" y="575" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window_clean</texture>
+			</pic_item_rq_b>
+			
+			<!-- Icons	-->
+			<pic_item_r x="555" y="193" width="218" height="111" stretch="1"/>
+			<pic_item_1 x="410" y="218" width="66" height="62" stretch="1"/>
+			<pic_item_2 x="436" y="346" width="66" height="62" stretch="1"/>
+			<pic_item_3 x="611" y="421" width="66" height="62" stretch="1"/>
+			<pic_item_4 x="783" y="346" width="66" height="62" stretch="1"/>
+			<pic_item_5 x="808" y="218" width="66" height="62" stretch="1"/>
+			<pic_item_6 x="610" y="114" width="66" height="62" stretch="1"/>
+			<pic_item_rq x="746" y="583" width="110" height="62" stretch="1"/>
+			
+			<!-- Lines	-->
+			<pic_c_dot x="660" y="244" width="11" height="11" stretch="1">
+				<texture>ui_inGame2_workshop_dot</texture>
+			</pic_c_dot>
+			<pic_c_line_1 x="530" y="247" width="134" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_1>
+			<pic_c_line_2 x="554" y="248" width="111" height="127" stretch="1">
+				<texture>ui_inGame2_workshop_connector_2</texture>
+			</pic_c_line_2>
+			<pic_c_line_3 x="664" y="378" width="3" height="34" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_3>
+			<pic_c_line_4 x="665" y="248" width="111" height="127" stretch="1">
+				<texture>ui_inGame2_workshop_connector_1</texture>
+			</pic_c_line_4>
+			<pic_c_line_5 x="664" y="247" width="134" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_5>
+			<pic_c_line_6 x="664" y="184" width="3" height="65" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_6>
+			<pic_c_line_r x="664" y="248" width="3" height="85" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_r>
+			
+			<!-- Buttons -->
+			<inv_btn_part_1 x="410" y="218" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_1>
+			<inv_btn_part_2 x="436" y="346" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_2>
+			<inv_btn_part_3 x="611" y="421" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_3>
+			<inv_btn_part_4 x="783" y="346" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_4>
+			<inv_btn_part_5 x="808" y="218" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_5>
+			<inv_btn_part_6 x="610" y="114" width="66" height="62" stretch="1">
+				<texture>ui_button_inv</texture>
+			</inv_btn_part_6>
+			
+			<btn_back x="826" y="504" width="127" height="26">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_back</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_back>
+			<btn_repair x="812" y="496" width="127" height="26">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_repair</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_repair>
+			
+			<cont_inv x="41" y="126" width="281" height="217" stretch="1"/>
+			<cont_part x="72" y="382" width="218" height="111" stretch="1"/>
+		</repair>
+		
+		<upgrade>
+			<!-- Text	-->
+			<cap_inv x="31" y="91" width="303" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="c">st_cap_inventory</text>
+			</cap_inv>
+			<cap_upgrades x="356" y="91" width="589" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="c">st_cap_upgrades</text>
+			</cap_upgrades>
+			<cap_toolkit x="711" y="557" width="181" height="23">
+				<text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_cap_req_toolkit</text>
+			</cap_toolkit>
+			
+			<text_item_rq_num x="821" y="614" width="36" height="31">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" font="letterica18"/>
+			</text_item_rq_num>
+			
+			<!-- Background	-->
+			<pic_inv_b x="30" y="114" width="304" height="239" stretch="1">
+				<texture>ui_inGame2_workshop_upgrade_inv</texture>
+			</pic_inv_b>
+			<pic_upgr_menu_b x="356" y="114" width="589" height="402" stretch="1">
+				<texture>ui_inGame2_workshop_upgrade_menu</texture>
+			</pic_upgr_menu_b>
+			<pic_item_rq_b x="738" y="575" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window_clean</texture>
+			</pic_item_rq_b>
+			<pic_item_r_b x="61" y="375" width="240" height="125" stretch="1">
+				<texture>ui_inGame2_workshop_big_item_menu</texture>
+			</pic_item_r_b>
+			
+			<!-- Pic -->
+			<pic_item_rq x="746" y="583" width="110" height="62" stretch="1"/>
+			<pic_item_r x="72" y="382" width="218" height="111" stretch="1"/>
+			
+			<!-- Lines -->
+			<pic_c_line_1 x="181" y="351" width="3" height="25" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_1>
+			<pic_c_line_2 x="301" y="416" width="58" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_2>
+			<pic_c_line_3 x="301" y="436" width="58" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_3>
+			<pic_c_line_4 x="301" y="456" width="58" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_4>
+			
+			<!-- Upgrade -->
+			<text_upgr_idx x="0" y="0" width="39" height="120">
+				<text complex_mode="1" r="200" g="200" b="200" align="c" vert_align="c" font="letterica18"/>
+			</text_upgr_idx>
+			<upgr_1 x="40" y="26" width="152" height="44" stretch="1"/>
+			<upgr_2 x="40" y="76" width="152" height="44" stretch="1"/>
+			<upgr_3 x="220" y="26" width="152" height="44" stretch="1"/>
+			<upgr_4 x="220" y="76" width="152" height="44" stretch="1"/>
+			<upgr_5 x="400" y="26" width="152" height="44" stretch="1"/>
+			<upgr_6 x="400" y="76" width="152" height="44" stretch="1"/>
+			
+			<!-- Upgrade tamplate -->
+			<upgr>
+				<btn x="0" y="0" width="91" height="44">
+					<texture>ui_button_upgr</texture>
+				</btn>
+				<pic x="0" y="0" width="91" height="44"/>
+				<mask x="0" y="0" width="91" height="44"/>
+				<txt x="136" y="26" width="21" height="16">
+					<text complex_mode="1" r="150" g="150" b="150" align="r" vert_align="c" font="letterica16"/>
+				</txt>
+				<ico x="90" y="4" width="58" height="36"/>
+				<back x="81" y="0" width="71" height="44">
+					<texture>ui_inGame2_workshop_item_window_clean_s</texture>
+				</back>
+			</upgr>
+			
+			<btn_back x="189" y="504" width="127" height="26">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_back</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_back>
+			<btn_upgrade x="119" y="504" width="127" height="26">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_upgrade</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_upgrade>
+			
+			<!-- Forms -->
+			<cont_inv x="42" y="126" width="300" height="217" stretch="1"/>
+
+			<pic_upgr_form x="0" y="0" width="568" height="120" stretch="1"/>
+			<scrollbar_upgr x="367" y="126" width="588" height="378" right_ident="0" left_ident="0" top_indent="0" bottom_indent="0" vert_interval="0" always_show_scroll="0"/>
+
+		</upgrade>
+		
+		<craft>
+			<!-- Text	-->
+			<cap_menu x="47" y="91" width="155" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="t">st_cap_menu</text>
+			</cap_menu>
+			<cap_recipes x="47" y="328" width="155" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="t">st_cap_recipes</text>
+			</cap_recipes>
+			<cap_list x="236" y="91" width="229" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="t">st_cap_craftables</text>
+			</cap_list>
+			<cap_components x="532" y="91" width="175" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="t">st_cap_components</text>
+			</cap_components>
+			<cap_result x="741" y="91" width="175" height="31">
+				<text r="170" g="170" b="170" font="letterica18" align="c" vert_align="t">st_cap_result</text>
+			</cap_result>
+			
+			<text_item_4_name x="582" y="191" width="175" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="t" font="letterica16"/>
+			</text_item_4_name>
+			<text_item_3_name x="582" y="297" width="175" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="t" font="letterica16"/>
+			</text_item_3_name>
+			<text_item_2_name x="582" y="403" width="175" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="t" font="letterica16"/>
+			</text_item_2_name>
+			<text_item_1_name x="582" y="509" width="175" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="t" font="letterica16"/>
+			</text_item_1_name>
+			<text_item_r_name x="791" y="191" width="175" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="l" vert_align="t" font="letterica16"/>
+			</text_item_r_name>
+			<text_item_t_name x="766" y="509" width="125" height="19">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="t" font="letterica16"/>
+			</text_item_t_name>
+			
+			<text_item_4_num x="633" y="125" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_4_num>
+			<text_item_3_num x="633" y="231" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_3_num>
+			<text_item_2_num x="633" y="337" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_2_num>
+			<text_item_1_num x="633" y="443" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_1_num>
+			<text_item_r_num x="842" y="125" width="43" height="62">
+				<text complex_mode="1" r="150" g="150" b="150" align="c" vert_align="c" font="letterica16"/>
+			</text_item_r_num>
+			
+			<!-- Background	-->
+			<pic_menu_b x="43" y="117" width="163" height="209" stretch="1">
+				<texture>ui_inGame2_workshop_craft_menu</texture>
+			</pic_menu_b>
+			<pic_recipe_b x="43" y="354" width="163" height="162" stretch="1">
+				<texture>ui_inGame2_workshop_craft_recipes</texture>
+			</pic_recipe_b>
+			<pic_inv_b x="236" y="114" width="229" height="402" stretch="1">
+				<texture>ui_inGame2_workshop_craft_inv</texture>
+			</pic_inv_b>
+			<pic_item_4_b x="557" y="117" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_4_b>
+			<pic_item_3_b x="557" y="223" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_3_b>
+			<pic_item_2_b x="557" y="329" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_2_b>
+			<pic_item_1_b x="557" y="435" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_1_b>
+			<pic_item_r_b x="766" y="117" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window</texture>
+			</pic_item_r_b>
+			<pic_item_t_b x="766" y="435" width="125" height="78" stretch="1">
+				<texture>ui_inGame2_workshop_item_window_clean</texture>
+			</pic_item_t_b>
+			
+			<!-- Icons	-->
+			<pic_item_4 x="565" y="125" width="66" height="62" stretch="1"/>
+			<pic_item_3 x="565" y="231" width="66" height="62" stretch="1"/>
+			<pic_item_2 x="565" y="337" width="66" height="62" stretch="1"/>
+			<pic_item_1 x="565" y="443" width="66" height="62" stretch="1"/>
+			<pic_item_r x="774" y="125" width="66" height="62" stretch="1"/>
+			<pic_item_t x="774" y="443" width="111" height="62" stretch="1"/>
+			
+			<!-- Lines -->
+			<pic_c_line_4 x="462" y="152" width="98" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_4>
+			<pic_c_line_3 x="462" y="260" width="98" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_3>
+			<pic_c_line_2 x="462" y="366" width="98" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_2>
+			<pic_c_line_1 x="462" y="472" width="98" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_1>
+			
+			<pic_c_line_3_4 x="576" y="192" width="3" height="33" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_3_4>
+			<pic_c_line_2_3 x="576" y="298" width="3" height="33" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_2_3>
+			<pic_c_line_1_2 x="576" y="405" width="3" height="33" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_1_2>
+			
+			<pic_c_line_r1 x="679" y="473" width="92" height="3" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_r1>
+			<pic_c_line_r2 x="753" y="441" width="36" height="37" stretch="1">
+				<texture>ui_inGame2_workshop_connector_3</texture>
+			</pic_c_line_r2>
+			<pic_c_line_r3 x="786" y="193" width="3" height="245" stretch="1">
+				<texture>ui_inGame2_workshop_line</texture>
+			</pic_c_line_r3>
+			
+			<list_menu x="48" y="125" width="151" height="195" item_height="18" can_select="1" scroll_profile="hidden" always_show_scroll="0">
+				<font font="letterica16"/>
+			</list_menu>
+			
+			<btn_back x="783" y="419" width="93" height="19">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_back</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_back>
+			<btn_craft x="783" y="419" width="93" height="19">
+				<text r="150" g="150" b="150" font="letterica16" align="c">ui_mm_craft</text>
+				<texture>ui_button_ordinary</texture>
+			</btn_craft>
+			
+			<cont_list x="244" y="126" width="212" height="378"/>
+			<cont_recipe x="48" y="360" width="151" height="144"/>
+		</craft>
+		
+	</workshop>
+	
+	<tab_size x="0" y="0" width="969" height="559"/>
+
+	<hint_wnd x="0" y="0" width="300" height="100">
+	    <background x="0" y="0" width="300" height="100">
+		    <texture>ui_icons_PDA_tooltips</texture>
+	    </background>
+	    <text x="20" y="20" width="275" height="100">
+	    	<text font="letterica16" r="140" g="140" b="140" complex_mode="1" align="l" vert_align="t"/>
+	    </text>
+	</hint_wnd>
+</w>

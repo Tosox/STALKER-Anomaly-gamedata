@@ -1,0 +1,751 @@
+[scope_detector]
+vis_frame_speed		= 10000
+vis_frame_color		= 0.7,0.7,0.7,1.0
+;found_snd		= detectors\DA-2_beep1
+;catch_snd		= detectors\DA-2_beep1
+
+[scope_nightvision]
+snd_night_vision_on	= weapons\nv_start
+snd_night_vision_off	= weapons\nv_off
+snd_night_vision_idle	= weapons\nv_loop
+snd_night_vision_broken	= weapons\nv_off
+
+pp_eff_name = nightvision_2.ppe
+pp_eff_cyclic = 1
+pp_eff_overlap = false
+
+[scope_nightvision_2gen]
+snd_night_vision_on	= weapons\nv_start
+snd_night_vision_off	= weapons\nv_off
+snd_night_vision_idle	= weapons\nv_loop
+snd_night_vision_broken	= weapons\nv_off
+
+pp_eff_name = nightvision_1.ppe
+pp_eff_cyclic = 1
+pp_eff_overlap = false
+
+[scope_contrast]
+pp_eff_name = contrast.ppe
+pp_eff_cyclic = 1
+pp_eff_overlap = true
+
+[scope_brighten]
+pp_eff_name = brighten.ppe
+pp_eff_cyclic = 1
+pp_eff_overlap = true
+;-------------------------------------------------------------------------------
+;-------------------------------------------------------------------------------
+;-------------------------------------------------------------------------------
+[wpn_addon_scope]:identity_immunities ; this is a 4x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope"
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_descr
+cost			= 1860
+
+holder_range_modifier	= 1.25
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope
+inv_name_short	= st_addon_scope
+inv_weight		= 0.62
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pso1
+scope_zoom_factor	= 24	; x4
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_moist]:identity_immunities ; this is a 4x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope"
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_x2.7_moist_descr
+cost			= 1420
+
+holder_range_modifier	= 1.25
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_x2.7_moist
+inv_name_short	= st_addon_scope_x2.7_moist
+inv_weight		= 0.62
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pso1_moist
+scope_zoom_factor	= 24	; x4
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_worn]:identity_immunities ; this is a 4x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope"
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_x2.7_worn_descr
+cost			= 840
+
+holder_range_modifier	= 1.25
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_x2.7_worn
+inv_name_short	= st_addon_scope_x2.7_worn
+inv_weight		= 0.62
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pso1_broken
+scope_zoom_factor	= 24	; x4
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_x2.7]:identity_immunities ; this is a 2.7x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_x2.7" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch 		= 32
+description		= st_addon_scope_x2.7_descr
+cost			= 1220
+
+holder_range_modifier	= 1.55
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_x2.7
+inv_name_short	= st_addon_scope_x2.7
+
+inv_weight		= 0.7
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 14
+inv_grid_y		= 22
+scope_zoom_factor	= 37.3	; x2.8
+scope_texture		= wpn_crosshair_1p78
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_sv98]:identity_immunities ; this is a 4x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope"
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch		= 32
+description		= st_addon_scope_descr
+cost			= 1860
+
+holder_range_modifier	= 1.25
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope
+inv_name_short	= st_addon_scope
+inv_weight		= 0.62
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_sv98
+scope_zoom_factor	= 12
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_g43]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope" ; option for Level Editor
+class			= WP_SCOPE
+cform           	= skeleton
+visual          	= dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_zf4_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1590
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_zf4
+inv_name_short		= st_addon_scope_zf4
+inv_weight		= .4
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 7
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_g43
+scope_zoom_factor	= 24.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_detector]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_detector" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch 		= 32
+description		= st_addon_scope_detector_descr
+cost			= 14120
+
+holder_range_modifier	= 1.7
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_detector
+inv_name_short	= st_addon_scope_detector
+inv_weight		= .7
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pso_f
+;scope_alive_detector = scope_detector
+scope_zoom_factor	= 24	; x4
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_night]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_night" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch 		= 32
+description		= st_addon_scope_night_vision_descr
+cost			= 5810
+
+holder_range_modifier	= 1.55
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_night_vision
+inv_name_short	= st_addon_scope_night_vision
+inv_weight		= 2.1
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_nightvision = scope_nightvision_2gen
+scope_texture		= wpn_crosshair_nspu
+scope_zoom_factor	= 18	; x3
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_vsk]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+description		= st_addon_scope_vsk_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 2290
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_vsk
+inv_name_short	= st_addon_scope_vsk
+inv_weight		= 0.62
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_vsk
+;scope_nightvision 	= scope_contrast
+scope_zoom_factor	= 37.3		;x2.6
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat]:identity_immunities  ; this is a 2.7x scope now, configs have been replaced !!! ;UNUSED?
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_x1.6_descr
+slot			= -1
+
+cost			= 1460
+
+holder_range_modifier	= 1.2
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_susat_x1.6
+inv_name_short	= st_addon_scope_susat_x1.6
+inv_weight		= 0.417
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat
+scope_zoom_factor	= 44.8	; x2.0
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_moist]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_x1.6_moist_descr
+slot			= -1
+
+cost			= 1120
+
+holder_range_modifier	= 1.2
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_susat_x1.6_moist
+inv_name_short	= st_addon_scope_susat_x1.6_moist
+inv_weight		= 0.417
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat_moist
+scope_zoom_factor	= 44.8	; x2.0
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_worn]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency	=
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform			= skeleton
+visual			= dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_x1.6_worn_descr
+slot			= -1
+
+cost			= 730
+
+holder_range_modifier	= 1.2
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_susat_x1.6_worn
+inv_name_short	= st_addon_scope_susat_x1.6_worn
+inv_weight		= 0.417
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat_broken
+scope_zoom_factor	= 44.8	; x2.0
+
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_x1.6]:identity_immunities ; this is a 4x scope now, configs have been replaced !!!
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat_x1.6" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1930
+
+holder_range_modifier	= 1.50
+holder_fov_modifier		= 1.0
+
+inv_name			= st_addon_scope_susat
+inv_name_short		= st_addon_scope_susat
+inv_weight		= 0.417
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 22
+scope_texture		= wpn_crosshair_susat
+scope_zoom_factor	= 24	; x4
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_custom]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat_custom" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_custom_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 15680
+
+holder_range_modifier	= 1.75
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_susat_custom
+inv_name_short	= st_addon_scope_susat_custom
+inv_weight		= .45
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat
+scope_dynamic_zoom = on
+;scope_alive_detector = scope_detector
+scope_zoom_factor	= 24
+;scope_nightvision	= scope_brighten
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_dusk]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat_dusk" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_dusk_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1960
+
+holder_range_modifier	= 1.55
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_susat_dusk
+inv_name_short	= st_addon_scope_susat_dusk
+inv_weight		= .43
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat
+scope_nightvision 	= scope_contrast
+scope_zoom_factor	= 44.8	; x2.0
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_susat_night]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat_night" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+description		= st_addon_scope_susat_night_vision_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 6190
+
+holder_range_modifier	= 1.55
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_susat_night_vision
+inv_name_short	= st_addon_scope_susat_night_vision
+inv_weight		= 1.013
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_susat
+scope_nightvision = scope_nightvision
+scope_zoom_factor	= 44.8	; x2.0
+
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_pu9130]:wpn_addon_scope_susat
+inv_grid_y = 22
+[wpn_addon_scope_zf9]:wpn_addon_scope_susat
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_zf4]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_zf4_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1890
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_zf4
+inv_name_short	= st_addon_scope_zf4
+inv_weight		= .4
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 7
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_zf9
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_zf4_moist]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_zf4_moist_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1560
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_zf4_moist
+inv_name_short	= st_addon_scope_zf4_mosit
+inv_weight		= .4
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 7
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_zf9_moist
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_zf4_worn]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_zf4_worn_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1180
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope_zf4_worn
+inv_name_short	= st_addon_scope_zf4_worn
+inv_weight		= .4
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 7
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_zf9_broken
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_ww2]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_ww2_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1740
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_ww2
+inv_name_short		= st_addon_scope_ww2
+inv_weight		= .4
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 12
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pu9130
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_ww2_moist]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_ww2_moist_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1450
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_ww2_moist
+inv_name_short		= st_addon_scope_ww2_moist
+inv_weight		= .4
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 12
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pu9130_moist
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_ww2_worn]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_zf4.ogf
+description		= st_addon_scope_ww2_worn_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1120
+
+holder_range_modifier	= 1.3
+holder_fov_modifier	= 1.0
+
+inv_name		= st_addon_scope_ww2_worn
+inv_name_short		= st_addon_scope_ww2_worn
+inv_weight		= .4
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 12
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_pu9130_scratched
+scope_zoom_factor	= 44.8
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_acog]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_acog.ogf
+description		= st_addon_acog_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 1960
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_acog
+inv_name_short		= st_addon_acog
+inv_weight		= .396
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 22
+scope_texture		= wpn_crosshair_acog
+scope_zoom_factor	= 44.8 ; 2.0x
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_acog_night]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_acog.ogf
+description		= st_addon_night_acog_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 6820
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name			= st_addon_night_acog
+inv_name_short		= st_addon_night_acog
+inv_weight		= .9
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 22
+scope_texture		= wpn_crosshair_acog
+scope_nightvision 	= scope_nightvision
+scope_zoom_factor	= 44.8		;2.0X
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_acog_trijicon]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope_susat" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope_acog.ogf
+description		= st_addon_trijicon_acog_descr
+slot = -1
+;$prefetch 		= 64
+
+cost			= 2460
+
+holder_range_modifier	= 1.3
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_trijicon_acog
+inv_name_short		= st_addon_trijicon_acog
+inv_weight		= .155
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 22
+scope_texture		= wpn_crosshair_trijicon
+scope_zoom_factor	= 44.8		;2.0X
+;-------------------------------------------------------------------------------
+[wpn_addon_scope_m24]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\addons\scope" ; option for Level Editor
+class			= WP_SCOPE
+cform           = skeleton
+visual          = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch 		= 32
+description		= st_addon_scope_descr
+cost			= 1480
+
+holder_range_modifier	= 1.2
+holder_fov_modifier		= 1.0
+
+inv_name		= st_addon_scope
+inv_name_short	= st_addon_scope
+inv_weight		= .2
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x		= 4
+inv_grid_y		= 22
+scope_texture		= wpn_crosshair_m24
+scope_zoom_factor	= 8		;оян-1 5X
+;-------------------------------------------------------------------------------

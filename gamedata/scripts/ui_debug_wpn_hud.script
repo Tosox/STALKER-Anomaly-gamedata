@@ -1,0 +1,1202 @@
+
+--[[
+	Script by Tronex
+	Engine edits by Rezy
+	2019/9/15
+	Weapon HUD editor
+	
+	Weapon HUD editor allows you to change Weapon HUD position and orientation in real-time.
+	The GUI is interactive and easy to use, with ability to save adjusted pos in a temp file "temp_hud.ltx".
+	Edited values are temporarly cached for the weapons you worked on. You can return to them in case you turned off the editor (Avoid exiting or reloading when you have unsaved values).
+	Keybinds:
+	• Up Arrow: 		select previous parameter.
+	• Down Arrow: 		select next parameter.
+	• Left Arrow: 		reduce\rotate value of selected parameter.
+	• Right Arrow: 		increase\rotate value of selected parameter.
+	• LShift (hold): 	x10 value step.
+	• LAlt (hold): 		x50 value step.
+	• C: 				copy current section settings.
+	• V: 				paste/apply current section settings.
+	• Delete: 			clean temp cache.
+	• H: 				toggle hint window.
+	• Esc or Home: 		turn off editor.
+--]]
+
+local enable_debug = false
+
+local precision = 6 -- allowed number of zeros
+local t_dir = "items\\weapons\\"
+local parameters = {
+-- Type: 0 = string | 1 = number | 2 = 3d vector | 3 = 4d vector | 
+	["hands_position"]		            = { name = "Hands Position",         typ = 2, def = {0,0,0}, indx = 1,  min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 0,  hud = true },
+	["hands_orientation"]	            = { name = "Hands Orientation",      typ = 2, def = {0,0,0}, indx = 2,  min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 0,  hud = true },
+	["aim_hud_offset_pos"]		        = { name = "Aim Position",           typ = 2, def = {0,0,0}, indx = 3,  min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 1,  hud = true },
+	["aim_hud_offset_rot"]	            = { name = "Aim Orientation",        typ = 2, def = {0,0,0}, indx = 4,  min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 1,  hud = true },
+	["gl_hud_offset_pos"]		        = { name = "GL Position",            typ = 2, def = {0,0,0}, indx = 5,  min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 2,  hud = true },
+	["gl_hud_offset_rot"]		        = { name = "GL Orientation",         typ = 2, def = {0,0,0}, indx = 6,  min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 2,  hud = true },
+	["aim_hud_offset_alt_pos"]	        = { name = "Alt Position",           typ = 2, def = {0,0,0}, indx = 7,  min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 3,  hud = true },
+	["aim_hud_offset_alt_rot"]			= { name = "Alt Orientation",        typ = 2, def = {0,0,0}, indx = 8,  min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 3,  hud = true },
+	["lowered_hud_offset_pos"]			= { name = "Lowered Position",       typ = 2, def = {0,0,0}, indx = 9,  min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 4,  hud = true },
+	["lowered_hud_offset_rot"]			= { name = "Lowered Orientation",    typ = 2, def = {0,0,0}, indx = 10, min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 4,  hud = true },
+	["fire_point"]	        			= { name = "Fire Point",           	 typ = 2, def = {0,0,0}, indx = 11, min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 10, hud = true, no_16x9 = true },
+	["fire_point2"]	       				= { name = "Fire Point 2",           typ = 2, def = {0,0,0}, indx = 12, min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 11, hud = true, no_16x9 = true },
+	["fire_direction"]					= { name = "Fire Direction",         typ = 2, def = {0,0,1}, indx = 13, min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 10, hud = true, no_16x9 = true },
+	["shell_point"]						= { name = "Shell Point",        	 typ = 2, def = {0,0,0}, indx = 14, min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 11, hud = true, no_16x9 = true },
+	["custom_ui_pos"]	       		 	= { name = "UI Position",            typ = 2, def = {0,0,0}, indx = 15, min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 20 }, --idxb 20 is reserved for device ui
+	["custom_ui_rot"]					= { name = "UI Orientation",         typ = 2, def = {0,0,0}, indx = 16, min = -180,   max = 180, step = 1, 		 idxa = 1, idxb = 20 },
+	["item_position"]	        		= { name = "Item Position",          typ = 2, def = {0,0,0}, indx = 17, min = -180,   max = 180, step = 0.0001, idxa = 0, idxb = 12, hud = true, no_16x9 = true },
+	["item_orientation"]	       		= { name = "Item Orientation",       typ = 2, def = {0,0,0}, indx = 18, min = -180,   max = 180, step = 0.0001, idxa = 1, idxb = 12, hud = true, no_16x9 = true },
+	["scope_zoom_factor"]				= { name = "Zoom Factor",        	 typ = 1, def = 0, 		 indx = 19, min = 0,  	  max = 120, step = 0.1 },
+	["gl_zoom_factor"]					= { name = "GL Zoom Factor",         typ = 1, def = 0, 		 indx = 20, min = 0,  	  max = 120, step = 0.1 },
+	["scope_zoom_factor_alt"]			= { name = "Alt Zoom Factor",        typ = 1, def = 0, 		 indx = 21, min = 0,  	  max = 120, step = 0.1 }, 
+}
+
+local adjust_active = nil
+
+local is_wide = utils_xml.is_widescreen()
+local _width = (device().width)-400
+local _hight = (device().height)
+local msg_width = is_wide and (_width*0.8) or _width
+
+-- general values cache
+local _memo = {} 	-- _memo[section] = {...}
+local _memo_i = {}  -- _memo_i[section] = {...}
+
+-- cache current values
+local _cache = {}
+local _cache_i = {}
+local _selected = 1
+local _selected_group = 1
+
+local key_timer = 0
+local jump_1 = 1
+local jump_2 = 10
+local jump_3 = 50
+local jump = jump_1
+
+function print_dbg(...)
+	if enable_debug then
+		printf(...)
+	end
+end
+
+
+-------------------------------------------------------------------
+GUI = nil -- instance, don't touch
+function start(owner)
+	-- Hide the owner
+	if owner then
+		if (owner:IsShown()) then
+			print_dbg("~ hide owner: %s", owner.name or "?")
+			owner:HideDialog()
+			owner:Show(false)
+		end
+	else
+		hide_hud_inventory()
+	end
+	
+	local wpn = db.actor:active_item()
+	local det = db.actor:active_detector()
+	if wpn or det then
+	
+		if (not GUI) then
+			GUI = WpnHudEditor(owner, wpn and wpn:section() or det:section())
+		end
+	
+		
+		if (GUI) and (not GUI:IsShown()) then
+		
+			-- Enable hud adjust mode
+			if (not adjust_active) then
+				adjust_active = true
+				hud_adjust.enabled(true)
+				print_dbg("~ Enabled hud adjust mode")
+			end
+	
+			GUI:ShowDialog(true)
+			GUI.section = wpn and wpn:section() or det:section()
+			GUI:Reset()
+			
+			RegisterScriptCallback("on_key_release",on_key_release)
+			RegisterScriptCallback("on_key_hold",on_key_hold)
+			
+			Register_UI("WpnHudEditor","ui_debug_wpn_hud")
+		else
+			ui_debug_launcher.resume()
+			printe("! Ok... Something is fucked...")
+		end
+	else
+		ui_debug_launcher.resume()
+		actor_menu.set_msg(1, "Hold the weapon you want to edit in your hands first!",5)
+	end
+end
+
+function on_key_release(key)
+	jump = jump_1
+end
+
+function on_key_hold(key)
+	if GUI then
+		if (key == DIK_keys["DIK_LSHIFT"]) then
+			jump = jump_2
+			key_timer = time_global() + 200
+		elseif (key == DIK_keys["DIK_LMENU"]) then
+			jump = jump_3
+			key_timer = time_global() + 200
+		end
+	end
+end
+
+function on_game_start()
+	local function on_localization_change()
+		GUI = nil -- clear ui to force initing again
+	end
+	RegisterScriptCallback("on_localization_change",on_localization_change)
+end
+
+
+-------------------------------------------------------------------
+class "WpnHudEditor" (CUIScriptWnd)
+
+function WpnHudEditor:__init(owner,section) super()
+	self.owner = owner
+	self.section = section
+	
+	self.selected = _selected
+	self.selected_group = _selected_group
+	self.cnt = 0 		 -- parameters counter / index
+	self.cnt_group = {} -- parameters counter / index per parent parameter
+	
+	self.name = {} 		 -- parameters name (by index)
+	self.typ = {} 	 	 -- parameter type (by index)
+	self.value = {}  	 -- parameter value (by index)
+	self.value_i = {}  	 -- parameter value (by parent)
+	self.parent = {} 	 -- parameter parent, useful for dealing with vector values (by index)
+	self.index = {}		 -- list parameter index, to trace list value
+	
+	self.par = {}        -- parameter element (by index)
+	self.par_cap = {}    -- parameter cap (by index)
+	self.par_hl = {}     -- parameter hightlighting (by index)
+	self.par_list = {}	 -- parameter list for lists (by index)
+	self.par_list_n = {} -- parameter numbered list for lists (by index)
+
+	self:InitControls()
+	self:InitCallBacks()
+	
+	self:Reset(true)
+	
+	self:Send_MSG("%c[pda_green]Press H for info")
+end
+
+function WpnHudEditor:__finalize()
+end
+
+function WpnHudEditor:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	
+	if self.owner then
+		self.xml = self.owner.xml
+	else
+		self.xml = CScriptXmlInit()
+	end
+	
+	local xml = self.xml
+	if (not self.owner) then
+		xml:ParseFile			("ui_debug_launcher.xml")
+	end
+	
+	-- Guides
+	local width = device().width
+	local hight = device().height
+	local w_fac = (1024/width)
+	local h_fac = (768/hight)
+	local thic = 2
+	
+	self._w = xml:InitStatic("dbg_wpn_hud_editor:align", self)
+	--self._w:SetWndPos(vector2():set( 			0 								, 		((hight/2 * h_fac) - (thic/2)) 		))
+	--self._w:SetWndSize(vector2():set( 			(width * w_fac) 				, 		(thic * h_fac) 						))
+	self._w:Show(false)
+	
+	self._h = xml:InitStatic("dbg_wpn_hud_editor:align", self)
+	--self._h:SetWndPos(vector2():set( 			((width/2 * w_fac) - (thic/2)) 	, 		0 									))
+	--self._h:SetWndSize(vector2():set( 			(thic * w_fac) 					, 		(hight * h_fac) 					))
+	self._h:Show(false)
+	
+	local pos_w = self._w:GetWndPos()
+	--printf("_W | x=%s y=%s w=%s h=%s", pos_w.x, pos_w.y, self._w:GetWidth(), self._w:GetHeight())
+	
+	local pos_h = self._h:GetWndPos()
+	--printf("_H | x=%s y=%s w=%s h=%s", pos_h.x, pos_h.y, self._h:GetWidth(), self._h:GetHeight())
+	
+	-- Dialog
+	self.dialog	= xml:InitStatic("dbg_wpn_hud_editor", self)
+	
+	xml:InitFrame("dbg_wpn_hud_editor:frame", self.dialog)
+	xml:InitStatic("dbg_wpn_hud_editor:cap",self.dialog)
+	
+	self.txt_section = xml:InitTextWnd("dbg_wpn_hud_editor:section",self.dialog)
+	
+	-- Ratio saving
+	xml:InitStatic("dbg_wpn_hud_editor:cap_ratio", self.dialog)
+	
+	self.btn_ratio = xml:InitCheck("dbg_wpn_hud_editor:check_ratio", self.dialog)
+	self:Register(self.btn_ratio, "btn_ratio")
+	self.btn_ratio:SetCheck(true)
+	
+	-- Show alignment
+	self.btn_align = xml:Init3tButton("dbg_wpn_hud_editor:btn_alignment", self.dialog)
+	self:Register(self.btn_align, "btn_align")
+	
+	-- Copy section settings
+	self.btn_ini_copy = xml:Init3tButton("dbg_wpn_hud_editor:btn_ini_copy", self.dialog)
+	self:Register(self.btn_ini_copy, "btn_copy")
+	
+	-- Paste section settings
+	self.btn_ini_paste = xml:Init3tButton("dbg_wpn_hud_editor:btn_ini_paste", self.dialog)
+	self:Register(self.btn_ini_paste, "btn_paste")
+	
+	-- Save file
+	self.btn_save = xml:Init3tButton("dbg_wpn_hud_editor:btn_save", self.dialog)
+	self:Register(self.btn_save, "btn_save")
+	
+	-- Reload hud values
+	self.btn_reload = xml:Init3tButton("dbg_wpn_hud_editor:btn_reload", self.dialog)
+	self:Register(self.btn_reload, "btn_reload")
+	
+	-- Parameters
+	self.scroll_par = xml:InitScrollView("dbg_wpn_hud_editor:scroll_par", self.dialog)
+	self.scroll_par:Clear()
+	
+	local functor = function(t,a,b) return t[a].indx < t[b].indx end
+	for par,v in spairs(parameters,functor) do
+		local _st = xml:InitStatic("dbg_wpn_hud_editor:tmp_par", nil)
+		
+		-- Parameter cap
+		local n = #self.par_cap + 1
+		self.par_cap[n] = xml:InitTextWnd("dbg_wpn_hud_editor:op_par:cap", _st)
+		self.par_cap[n]:SetText(v.name)
+		
+		-- Multi boxes for vectors
+		local par_i = ((v.typ == 2) and 3) or ((v.typ == 3) and 4) or 1
+		for i=1,par_i do
+		
+			-- Tracers
+			local ext = self:GetStringByType(i,v.typ)
+			local str = par .. ext
+			self.cnt = self.cnt + 1
+			self.name[self.cnt] = str
+			self.typ[self.cnt] = v.typ
+			self.parent[self.cnt] = par
+			
+			self.cnt_group[n] = self.cnt_group[n] or {}
+			local size_cg = #self.cnt_group[n] + 1
+			self.cnt_group[n][size_cg] = self.cnt
+			
+			-- Parameter element and hightlight texture
+			if v.typ == 0 then
+				self.par[self.cnt] = xml:InitComboBox("dbg_wpn_hud_editor:op_par:list", _st)
+				self:Register(self.par[self.cnt],"par_" .. self.cnt)
+				
+				self.par_hl[self.cnt] = xml:InitStatic("dbg_wpn_hud_editor:op_par:hl_list", _st)
+			else
+				self.par[self.cnt] = xml:InitEditBox("dbg_wpn_hud_editor:op_par:input" .. ext, _st)
+				self:Register(self.par[self.cnt],"par_" .. self.cnt)
+				
+				if v.typ == 1 then
+					self.par[self.cnt]:SetText(v.def)
+				else
+					self.par[self.cnt]:SetText(v.def[i])
+				end
+				
+				self.par_hl[self.cnt] = xml:InitStatic("dbg_wpn_hud_editor:op_par:hl" .. ext, _st)
+			end
+			
+			-- Hightlight last selected parameter
+			if (self.cnt ~= _selected) then
+				self.par_hl[self.cnt]:Show(false)
+			end
+		end
+		
+		self.scroll_par:AddWindow(_st, true)
+		_st:SetAutoDelete(false)
+	end
+	
+	-- Lines
+	xml:InitStatic("dbg_wpn_hud_editor:line_1",self.dialog)
+	xml:InitStatic("dbg_wpn_hud_editor:line_2",self.dialog)
+	
+	
+	-- Message Window 
+	self.msg_wnd = xml:InitFrame("hint_wnd:background",self)
+	self.msg_wnd:SetAutoDelete(false)
+	self.msg_wnd_text = xml:InitTextWnd("hint_wnd:text",self.msg_wnd)
+	self.msg_wnd_text:SetTextAlignment(2)
+	
+	self.msg_wnd:Show(false)
+	self.msg_wnd:SetColor(GetARGB(255,0,0,0))
+	
+	-- Hint Window 
+	self.hint_wnd = xml:InitFrame("help_wnd:background",self)
+	self.hint_wnd:SetAutoDelete(false)
+	self.hint_wnd_text = xml:InitTextWnd("help_wnd:text",self.hint_wnd)
+	--self.hint_wnd_text:SetTextAlignment(2)
+	self.hint_wnd_text:SetText(game.translate_string("st_ui_dbg_hud_about"))
+	self.hint_wnd_text:AdjustHeightToText()
+	self.hint_wnd_text:SetWndSize(vector2():set(msg_width, self.hint_wnd_text:GetHeight()+10))
+	self.hint_wnd_text:SetWndPos(vector2():set(20,10))
+	
+	self.hint_wnd:Show(false)
+	self.hint_wnd:SetWndSize(vector2():set(msg_width, 700))
+	self.hint_wnd:SetWndPos(vector2():set( self.dialog:GetWidth() , 1 ))
+	self.hint_wnd:SetColor(GetARGB(255,0,0,0))
+end
+
+function WpnHudEditor:InitCallBacks()
+	self:AddCallback("btn_copy", ui_events.BUTTON_CLICKED, self.OnButtonCopy, self)
+	self:AddCallback("btn_paste", ui_events.BUTTON_CLICKED, self.OnButtonPaste, self)
+	self:AddCallback("btn_save", ui_events.BUTTON_CLICKED, self.OnButtonSave, self)
+	self:AddCallback("btn_reload", ui_events.BUTTON_CLICKED, self.OnButtonResume, self)
+	self:AddCallback("btn_align", ui_events.BUTTON_CLICKED, self.OnButtonAlign, self)
+	--self:AddCallback("btn_ratio", ui_events.BUTTON_CLICKED, self.OnButtonRatio, self)
+
+	for i=1,self.cnt do
+		self:AddCallback("par_" .. i, ui_events.EDIT_TEXT_COMMIT, self["OnInput_" .. i], self)
+	end
+end
+
+function WpnHudEditor:Reset(force,use_cache)
+	local _use_cache = use_cache and is_not_empty(_cache) and is_not_empty(_cache_i) and true
+	
+	local section = self.section
+	local hud_section = ini_sys:r_string_ex(section,"hud")
+	local str = utils_xml.is_widescreen() and "_16x9" or ""
+	local ltx = ini_file("temp_hud.ltx")
+	local section_found = ltx and ltx:section_exist(hud_section)
+	
+	self.txt_section:SetText(section)
+	empty_table(self.index)
+	
+	-- Read values and convert to numbers if needed
+	if _use_cache then 
+		--print_dbg("/ WpnHudEditor:Reset | use cache")
+		copy_table(self.value_i, _cache_i)
+		
+		if (not _memo_i[section]) then _memo_i[section] = {} end
+		copy_table(_memo_i[section], _cache_i)
+	elseif _memo_i[section] then
+		--print_dbg("/ WpnHudEditor:Reset | use memo | file: %s - hour: %s", file, hour)
+		copy_table(self.value_i, _memo_i[section])
+	else
+		
+		for par,v in pairs(parameters) do
+			local t = {}
+			if (v.hud) then
+				local par_str = v.no_16x9 and par or (par..str)
+				if section_found and ltx:r_string_ex(hud_section,(par_str)) then
+					t = parse_list(ltx, hud_section, (par_str))
+				else
+					t = parse_list(ini_sys, hud_section, (par_str))
+				end
+			else
+				if ltx:r_string_ex(section, par) then
+					t = parse_list(ltx, section, par)
+				else
+					t = parse_list(ini_sys, section, par)
+				end
+			end
+			
+			self.value_i[par] = {}
+			for i=1,#t do
+				if (v.typ ~= 0) then
+					self.value_i[par][i] = tonumber(t[i])
+				end
+			end
+			
+			-- use default values if nothing is found
+			if (#self.value_i[par] == 0) then
+				if (v.typ == 1) then
+					self.value_i[par][1] = v.def
+				else
+					copy_table(self.value_i[par], v.def)
+				end
+			end
+		end
+	end
+	
+	-- Fill current values
+	for i=1,self.cnt do
+		local value
+		if _use_cache then
+			value = _cache[i]
+			
+			if (not _memo[section]) then _memo[section] = {} end
+			_memo[section][i] = _cache[i]
+		elseif _memo[section] then
+			value = _memo[section][i]
+		else
+			value = self:GetParameterValue(i)
+		end
+		print_dbg("/ WpnHudEditor:Reset | Filler | self.value[%s] (%s) = %s", i, self.parent[i], value)
+		
+		self.value[i] = value
+		self.par[i]:SetText(value)
+	end
+
+	
+	-- Apply values in-game
+	for par,v in pairs(parameters) do
+		self:ApplyParameterValue(v.typ, par)
+	end
+
+	-- Crosshair state
+	self.crosshair = get_console_cmd(1,"hud_crosshair")
+	if self._w:IsShown() then
+		exec_console_cmd("hud_crosshair on")
+	end
+end
+
+
+---------------< Utility >---------------
+local indx_str = {
+	[1] = "_x",
+	[2] = "_y",
+	[3] = "_z",
+	[4] = "_a",
+}
+function WpnHudEditor:GetStringByType(indx,typ)
+	if (typ == 0) or (typ == 1) then
+		return ""
+	else
+		return indx_str[indx]
+	end
+end
+
+function WpnHudEditor:GetParameterValue(cnt)
+	local str = self.name[cnt]
+	local parent = self.parent[cnt]
+	local typ = self.typ[cnt]
+	
+	print_dbg("/ WpnHudEditor:GetParameterValue | str: %s - parent: %s - typ: %s", str, parent, typ)
+	if (typ == 0) or (typ == 1) then
+		return self.value_i[parent][1]
+	end
+	
+	if (string.sub(str,-2) == "_x") then return self.value_i[parent][1]
+	elseif (string.sub(str,-2) == "_y") then return self.value_i[parent][2]
+	elseif (string.sub(str,-2) == "_z") then return self.value_i[parent][3]
+	elseif (string.sub(str,-2) == "_a") then return self.value_i[parent][4]
+	end
+	printe("!ERROR no returned value for %s!", parent)
+end
+
+function WpnHudEditor:SetParameterValue(cnt,value)
+	local str = self.name[cnt]
+	local parent = self.parent[cnt]
+	local typ = self.typ[cnt]
+	
+	if self:IsInvalidValue(cnt,typ,value) then
+		self:Send_MSG("!ERROR nil value found for parameter [%s]", str)
+		return
+	end
+	
+	if (typ == 1) then
+		self.value_i[parent][1] = value
+	elseif (string.sub(str,-2) == "_x") then self.value_i[parent][1] = value
+	elseif (string.sub(str,-2) == "_y") then self.value_i[parent][2] = value
+	elseif (string.sub(str,-2) == "_z") then self.value_i[parent][3] = value
+	elseif (string.sub(str,-2) == "_a") then self.value_i[parent][4] = value
+	end
+	
+	local section = self.section
+	
+	if (not _memo[section]) then _memo[section] = {} end
+	copy_table(_memo[section], self.value)
+	
+	if (not _memo_i[section]) then _memo_i[section] = {} end
+	copy_table(_memo_i[section], self.value_i)
+end
+
+function WpnHudEditor:ApplyParameterValue(typ, parent)
+
+	print_dbg("# Setting now: %s",parent)
+	
+	if (typ == 1) then
+		local value = self.value_i[parent][1]
+		if value and (type(value) == "number") then
+			hud_adjust.set_value(parent, value)
+			print_dbg("-hud_adjust.set_value(%s,%s)",parent,value)
+		else
+			printe("! MISSING VALUE: WpnHudEditor:ApplyParameterValue(%s, %s)", typ ,parent)
+		end
+	elseif (typ == 2) then
+		local value_1 = self.value_i[parent][1]
+		local value_2 = self.value_i[parent][2]
+		local value_3 = self.value_i[parent][3]
+		if value_1 and (type(value_1) == "number")
+		and value_2 and (type(value_2) == "number")
+		and value_3 and (type(value_3) == "number")
+		then
+			hud_adjust.set_vector(parameters[parent].idxa, parameters[parent].idxb, value_1, value_2, value_3)
+			print_dbg("-hud_adjust.set_vector[%s]([%s][%s]: %s,%s,%s)", parent, parameters[parent].idxa, parameters[parent].idxb, value_1, value_2, value_3)
+		else
+			printe("! MISSING VALUE: WpnHudEditor:ApplyParameterValue(%s, %s)", typ ,parent)
+		end
+	elseif (typ == 3) then
+		local value_1 = self.value_i[parent][1]
+		local value_2 = self.value_i[parent][2]
+		local value_3 = self.value_i[parent][3]
+		local value_4 = self.value_i[parent][4]
+		if value_1 and (type(value_1) == "number")
+		and value_2 and (type(value_2) == "number")
+		and value_3 and (type(value_3) == "number")
+		and value_4 and (type(value_4) == "number")
+		then
+			--weather.set_value_vector(parent,value_1,value_2,value_3,value_4)
+			print_dbg("-weather.set_value_vector2(%s,%s,%s,%s,%s)",parent,value_1,value_2,value_3,value_4)
+		else
+			printe("! MISSING VALUE: WpnHudEditor:ApplyParameterValue(%s, %s)", typ ,parent)
+		end
+	end
+end
+
+function WpnHudEditor:IsInvalidValue(cnt,typ,value)
+	
+	-- Numbers
+	if not (value and value ~= "" and tonumber(value)) then
+		return true
+	end
+	
+	return false
+end
+
+function WpnHudEditor:Send_MSG(text,...)
+	local str = strformat(text,...)
+	
+	self.msg_wnd:Show(true)
+	self.msg_wnd_text:SetText(str)
+	self.msg_wnd_text:AdjustHeightToText()
+	self.msg_wnd_text:SetWndSize(vector2():set(msg_width, self.msg_wnd_text:GetHeight()+10))
+	self.msg_wnd_text:SetWndPos(vector2():set(0,20))
+	
+	self.msg_wnd:SetWndSize(vector2():set(msg_width, self.msg_wnd_text:GetHeight()+44))
+	self.msg_wnd:SetWndPos(vector2():set( self.dialog:GetWidth() , (_hight - self.msg_wnd:GetHeight()) ))
+	
+	self.msg_wnd_timer = time_global() + 4000
+end
+
+local toggle_hint = false
+function WpnHudEditor:ShowHint()
+	toggle_hint = not toggle_hint
+
+	self.hint_wnd_show = toggle_hint
+end
+
+
+function WpnHudEditor:Update()
+	CUIScriptWnd.Update(self)
+
+	-- Trick for managing shift/ctrl hold
+	if time_global() > key_timer then
+		key_timer = time_global() + 200
+		jump = jump_1
+	end
+	
+	if (self.msg_wnd_timer and time_global() > self.msg_wnd_timer) then 
+		self.msg_wnd_timer = nil
+		self.msg_wnd:Show(false)
+	end
+	
+	if (self.hint_wnd_show) then 
+		self.hint_wnd:Show(true)
+	else
+		self.hint_wnd:Show(false)
+	end
+end
+
+
+---------------< Callbacks >---------------
+function WpnHudEditor:OnButtonCopy()
+	copy_table(_cache, self.value)
+	copy_table(_cache_i, self.value_i)
+	
+	self:Send_MSG("Copied values")
+end
+
+function WpnHudEditor:OnButtonPaste()
+	if (_cache and _cache_i) then
+		self:Reset(false, true)
+		self:Send_MSG("Applied copied values")
+	else
+		self:Send_MSG("No values are copied yet!")
+	end
+end
+
+function WpnHudEditor:OnButtonSave()
+
+	local section = self.section
+	local hud_section = ini_sys:r_string_ex(section,"hud")
+	local prefix = utils_xml.is_widescreen() and "_16x9" or ""
+	local all_prefix = self.btn_ratio:GetCheck()
+	
+	local to_save = {}
+	for par,v in pairs(parameters) do
+		local value, value_def
+		if (v.typ == 2) then
+			value = self.value_i[par][1] ..",".. self.value_i[par][2] ..",".. self.value_i[par][3]
+			value_def = v.def[1] ..",".. v.def[2] ..",".. v.def[3]
+		elseif (v.typ == 3) then
+			value = self.value_i[par][1] ..",".. self.value_i[par][2] ..",".. self.value_i[par][3] ..",".. self.value_i[par][4]
+			value_def = v.def[1] ..",".. v.def[2] ..",".. v.def[3] ..",".. v.def[4]
+		else
+			value = self.value_i[par][1]
+			value_def = v.def
+		end
+		
+		value = tostring(value)
+		value_def = tostring(value_def)
+		local par_str = (v.hud and not v.no_16x9) and (par..prefix) or par
+		local old_value = v.hud and ini_sys:r_string_ex(hud_section, par_str) or ini_sys:r_string_ex(section, par)
+		local c_sec = v.hud and hud_section or section
+		local c_par = par_str
+		
+		if (value ~= old_value) and (value ~= value_def) then
+			if (to_save[c_sec] == nil) then to_save[c_sec] = {} end
+			to_save[c_sec][c_par] = value
+		end
+	end
+	
+	if is_empty(to_save) then
+		self:Send_MSG("No HUD values are modified for [%s]", section)
+		return
+	end
+	
+	local function file_exists(path)
+		return io.open(path) ~= nil
+	end
+	
+	local save_done
+	local ini_cc = ui_debug_launcher.ini_cc
+	local function on_execute(path,filename,quit)
+	
+		if is_empty(to_save) then
+			return
+		end
+				
+		local fullpath = path.."\\"..filename
+		local ltx = io.open(fullpath,"rb")
+		if (ltx) then
+			local data = ltx:read("*all")
+			ltx:close()
+			if (data) then
+				for sec,v in pairs(to_save) do
+					if (string.find(data,"["..sec.."]",nil,true)) then
+						ltx = utils_data.cfg_file(fullpath, true)
+						if (ltx) then
+							for par,val in pairs(v) do
+								local p = { par }
+								if all_prefix then
+									local p2 = par
+									if (prefix == "_16x9") then
+										p2 = string.gsub(p2, "_16x9", "")
+									else
+										p2 = p2 .. "_16x9"
+									end
+									p[2] = p2
+								end
+								
+								for i=1,#p do
+									ltx:SetValue(sec, p[i], val)
+									
+									-- Cache values for the first time so you can return to it upon reseting values
+									local cached_val = ini_cc:r_value(sec, p[i])
+									if not (cached_val and cached_val ~= "") then
+										local val_old = ini_sys:r_string_ex(sec, p[i])
+										ini_cc:w_value(sec, p[i], val_old)
+									end
+									
+									printf("% WpnHudEditor | saving [%s]->[%s]->[%s]",sec, p[i], val)
+								end
+							end
+							
+							ltx:SaveExt()
+							to_save[sec] = nil
+							save_done = true
+							
+							self:Send_MSG("%c[pda_green]Applied and saved the new values for [%s]\\nFile: %c[ui_gray_3]%s", sec, t_dir .. filename)
+							printf("% WpnHudEditor | saved changes for {%s}", fullpath)
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	local sp = getFS():update_path('$game_config$', t_dir)
+	sp = string.sub(sp,0,string.len(sp)-1)
+	lua_ext.recurse_subdirectories_and_execute(sp,{"ltx"},on_execute)
+	
+	-- Reload system_ini() to adapt the new values in game
+	reload_ini_sys()
+	
+	self:Reset()
+	
+	if (not save_done) then
+		self:Send_MSG("%c[pda_red]No changes are made on [%s].\\nKeep in mind that configs must be unpacked before applying changes!", section)
+	else
+		-- Cache original values
+		ini_cc:save()
+		
+		-- Remove cached HUD model from engine, so it updates to the new values
+		hud_adjust.remove_hud_model(section)
+		
+		-- Close the UI
+		self:Close()
+		
+		local str = strformat( "Changes are saved to [%s]", section)
+		actor_menu.set_msg(1, str,5)
+		
+		-- Clean memory of this section to adapt the new changes
+		_memo[section] = nil
+		_memo_i[section] = nil
+	end
+end
+
+function WpnHudEditor:OnButtonAlign()
+	if self._h:IsShown() then
+		self._h:Show(false)
+		self._w:Show(false)
+		exec_console_cmd("hud_crosshair off")
+		print_dbg("! WpnHudEditor | Hide alignments")
+	else
+		self._h:Show(true)
+		self._w:Show(true)
+		exec_console_cmd("hud_crosshair on")
+		print_dbg("- WpnHudEditor | Show alignments")
+	end
+end
+
+function WpnHudEditor:OnButtonResume()
+	self:Close()
+	
+	-- Resume normal hud behavior
+	hud_adjust.enabled(false)
+	adjust_active = false
+	
+	actor_menu.set_msg(1, "HUD adjust mode is stopped",5)
+	
+	--ui = nil
+end
+
+function WpnHudEditor:CleanMemo()
+	empty_table(_memo)
+	empty_table(_memo_i)
+	self:Reset(false)
+	self:Send_MSG("Cleared memory!")
+end
+
+function WpnHudEditor:SwitchParam(state, vert)
+
+	local function get_param_index(state, vert)
+	
+		--// Vertical movement
+		if vert then
+			local jumps = ((jump == jump_3) and 3) or ((jump == jump_2) and 2) or 1
+			
+			if state then
+				self.selected_group = self.selected_group + jumps
+			else
+				self.selected_group = self.selected_group - jumps
+			end
+			
+			if (self.selected_group > #self.cnt_group) then
+				self.selected_group = 1
+			elseif (self.selected_group < 1) then
+				self.selected_group = #self.cnt_group
+			end
+			
+			return self.cnt_group[self.selected_group][1]
+		
+		--// Horizental movement
+		else
+			print_dbg("selected_group: %s", self.selected_group)
+			local group = self.cnt_group[self.selected_group]
+			if group then
+				local first = group[1]
+				local last = group[#group]
+				if state and (self.selected < last) then
+					self.selected = self.selected + 1
+				elseif (not state) and (self.selected > first) then
+					self.selected = self.selected - 1
+				end
+			else
+				printe("! group doesn't exist for selected_group: %s", self.selected_group)
+			end
+			return self.selected
+		end
+	end
+	
+	if (not self.selected) or (not self.selected_group) then
+		self.selected = _selected or 1
+		self.selected_group = _selected_group or 1
+	else
+		self.par_hl[self.selected]:Show(false)
+		self.selected = get_param_index(state, vert)
+	end
+
+	self.par_hl[self.selected]:Show(true)
+	_selected = self.selected
+	_selected_group = self.selected_group
+end
+
+function WpnHudEditor:SwitchValue(state, selected)
+	if (not selected) then
+		return
+	end
+	
+	local n = selected
+	local typ = self.typ[n]
+	local parent = self.parent[n]
+	local val = self.value[n]
+	
+	local new_val
+	if typ ~= 0 then
+		local input_val = self.par[n]:GetText()
+		local curr_val = (not self:IsInvalidValue(n,typ,input_val)) and tonumber(input_val)
+		if (not curr_val) then
+			self:Send_MSG("%c[pda_red]Couldn't read previous input for parameter (%s)", self.name[n])
+			return
+		end
+		curr_val = round_idp(curr_val, precision)
+		
+		local max_val = parameters[parent].max
+		local min_val = parameters[parent].min
+		local step = parameters[parent].step * jump
+	
+		if state then
+			curr_val = curr_val + step
+		else
+			curr_val = curr_val - step
+		end
+		new_val = clamp(curr_val, min_val, max_val)
+	else
+		local curr_val = self.par[n]:GetText()
+		if (not curr_val) then
+			return
+		end
+		
+		if not (self.par_list_n[n]) then
+			return
+		end
+		
+		if (not self.index[n]) then
+			for i=1,#self.par_list_n[n] do
+				if (self.par_list_n[n][i] == curr_val) then
+					self.index[n] = i
+					break
+				end
+			end
+			if (not self.index[n]) then
+				return
+			end
+		end
+		
+		local num = #self.par_list_n[n]
+		if state then
+			self.index[n] = (self.index[n] < num) and (self.index[n] + 1) or self.index[n]
+		else
+			self.index[n] = (self.index[n] > 0) and (self.index[n] - 1) or self.index[n]
+		end
+		
+		local txt = self.par_list_n[n][self.index[n]]
+		if self:IsInvalidValue(n,0,txt) then
+			self:Send_MSG("%c[pda_red]Invalid path/section for parameter (%s)", self.name[n])
+			return
+		end
+		
+		new_val = txt
+	end
+	
+	if new_val then
+		self.value[n] = new_val
+		self.par[n]:SetText(new_val)
+		self:SetParameterValue(n,new_val)
+		self:ApplyParameterValue(typ,parent)
+		self:Send_MSG(self.name[n] .. " := " .. self.value[n], 4)
+	else
+		self:Send_MSG("%c[pda_red]No value can be set for (%s)",self.name[n])
+	end
+end
+
+function WpnHudEditor:SwitchValueGroup(state, selected_group)
+	if (not selected_group) then
+		return
+	end
+	print_dbg("/ WpnHudEditor | selected_group: %s", selected_group)
+	local group = self.cnt_group[selected_group]
+	local size = (#group > 3) and 3 or #group -- no need for alpha value
+	for i=1,size do
+		self:SwitchValue(state, group[i])
+	end
+end
+
+function WpnHudEditor:OnInput(cnt)
+	local val = self.par[cnt]:GetText()
+	local typ = self.typ[cnt]
+	local parent = self.parent[cnt]
+	
+	if self:IsInvalidValue(cnt,typ,val) then
+		self:Send_MSG("%c[pda_red]Error with input for parameter (%s)", self.name[cnt])
+		return
+	end
+	
+	if (typ == 0) then
+		val = val or ""
+	else
+		val = tonumber(val)
+		val = round_idp(val, precision)
+	end
+	
+	self.value[cnt] = val
+	self:SetParameterValue(cnt,val)
+	self:ApplyParameterValue(typ,parent)
+end
+
+function WpnHudEditor:Close()
+	self:HideDialog()
+	self:Show(false)
+	--ui = nil
+	
+	if adjust_active then
+		actor_menu.set_msg(1, "HUD adjust mode is still active",5)
+	end
+	
+	exec_console_cmd("hud_crosshair " .. (self.crosshair and "on" or "off"))
+	
+	UnregisterScriptCallback("on_key_release",on_key_release)
+	UnregisterScriptCallback("on_key_hold",on_key_hold)
+	
+	Unregister_UI("WpnHudEditor")
+	
+	if (level.present()) then
+		printf("- main_menu off")
+		exec_console_cmd("main_menu off")
+	end
+end
+
+function WpnHudEditor:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		local bind = dik_to_bind(dik)
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+			if dik == DIK_keys.DIK_NUMPAD8 then
+				self:SwitchValue(true, self.selected)
+			elseif dik == DIK_keys.DIK_NUMPAD2 then
+				self:SwitchValue(false, self.selected)
+			elseif dik == DIK_keys.DIK_NUMPAD9 then
+				self:SwitchValueGroup(true, self.selected_group)
+			elseif dik == DIK_keys.DIK_NUMPAD3 then
+				self:SwitchValueGroup(false, self.selected_group)
+				
+			elseif dik == DIK_keys.DIK_UP then
+				self:SwitchParam(false, true)
+			elseif dik == DIK_keys.DIK_DOWN then
+				self:SwitchParam(true, true)
+			elseif dik == DIK_keys.DIK_RIGHT then
+				self:SwitchParam(true, false)
+			elseif dik == DIK_keys.DIK_LEFT then
+				self:SwitchParam(false, false)
+				
+			elseif dik == DIK_keys.DIK_NUMPAD5 then
+				self:OnButtonCopy()
+			elseif dik == DIK_keys.DIK_NUMPAD6 then
+				self:OnButtonPaste()
+			elseif dik == DIK_keys.DIK_G then
+				self:OnButtonAlign()
+				
+			elseif dik == DIK_keys.DIK_DELETE then
+				self:CleanMemo()
+			elseif dik == DIK_keys.DIK_H then
+				self:ShowHint()
+			elseif dik == DIK_keys.DIK_ESCAPE then
+				self:Close()
+			end
+		end
+	end
+	return res
+end
+
+function WpnHudEditor:OnInput_1()
+	self:OnInput(1)
+end
+function WpnHudEditor:OnInput_2()
+	self:OnInput(2)
+end
+function WpnHudEditor:OnInput_3()
+	self:OnInput(3)
+end
+function WpnHudEditor:OnInput_4()
+	self:OnInput(4)
+end
+function WpnHudEditor:OnInput_5()
+	self:OnInput(5)
+end
+function WpnHudEditor:OnInput_6()
+	self:OnInput(6)
+end
+function WpnHudEditor:OnInput_7()
+	self:OnInput(7)
+end
+function WpnHudEditor:OnInput_8()
+	self:OnInput(8)
+end
+function WpnHudEditor:OnInput_9()
+	self:OnInput(9)
+end
+function WpnHudEditor:OnInput_10()
+	self:OnInput(10)
+end
+function WpnHudEditor:OnInput_11()
+	self:OnInput(11)
+end
+function WpnHudEditor:OnInput_12()
+	self:OnInput(12)
+end
+function WpnHudEditor:OnInput_13()
+	self:OnInput(13)
+end
+function WpnHudEditor:OnInput_14()
+	self:OnInput(14)
+end
+function WpnHudEditor:OnInput_15()
+	self:OnInput(15)
+end
+function WpnHudEditor:OnInput_16()
+	self:OnInput(16)
+end
+function WpnHudEditor:OnInput_17()
+	self:OnInput(17)
+end
+function WpnHudEditor:OnInput_18()
+	self:OnInput(18)
+end
+function WpnHudEditor:OnInput_19()
+	self:OnInput(19)
+end
+function WpnHudEditor:OnInput_20()
+	self:OnInput(20)
+end
+function WpnHudEditor:OnInput_21()
+	self:OnInput(21)
+end
+function WpnHudEditor:OnInput_22()
+	self:OnInput(22)
+end
+function WpnHudEditor:OnInput_23()
+	self:OnInput(23)
+end
+function WpnHudEditor:OnInput_24()
+	self:OnInput(24)
+end
+function WpnHudEditor:OnInput_25()
+	self:OnInput(25)
+end
+function WpnHudEditor:OnInput_26()
+	self:OnInput(26)
+end
+function WpnHudEditor:OnInput_27()
+	self:OnInput(27)
+end
+function WpnHudEditor:OnInput_28()
+	self:OnInput(28)
+end
+function WpnHudEditor:OnInput_29()
+	self:OnInput(29)
+end
+function WpnHudEditor:OnInput_30()
+	self:OnInput(30)
+end
+function WpnHudEditor:OnInput_31()
+	self:OnInput(31)
+end
+function WpnHudEditor:OnInput_32()
+	self:OnInput(32)
+end
+function WpnHudEditor:OnInput_33()
+	self:OnInput(33)
+end
+function WpnHudEditor:OnInput_34()
+	self:OnInput(34)
+end
+function WpnHudEditor:OnInput_35()
+	self:OnInput(35)
+end
+function WpnHudEditor:OnInput_36()
+	self:OnInput(36)
+end
+function WpnHudEditor:OnInput_37()
+	self:OnInput(37)
+end
+function WpnHudEditor:OnInput_38()
+	self:OnInput(38)
+end
+function WpnHudEditor:OnInput_39()
+	self:OnInput(39)
+end
+function WpnHudEditor:OnInput_40()
+	self:OnInput(40)
+end
+function WpnHudEditor:OnInput_41()
+	self:OnInput(41)
+end
+function WpnHudEditor:OnInput_42()
+	self:OnInput(42)
+end
+function WpnHudEditor:OnInput_43()
+	self:OnInput(43)
+end
+function WpnHudEditor:OnInput_44()
+	self:OnInput(44)
+end
+function WpnHudEditor:OnInput_45()
+	self:OnInput(45)
+end
+function WpnHudEditor:OnInput_46()
+	self:OnInput(46)
+end
+function WpnHudEditor:OnInput_47()
+	self:OnInput(47)
+end
+function WpnHudEditor:OnInput_48()
+	self:OnInput(48)
+end
+function WpnHudEditor:OnInput_49()
+	self:OnInput(49)
+end
+function WpnHudEditor:OnInput_50()
+	self:OnInput(50)
+end
+function WpnHudEditor:OnInput_51()
+	self:OnInput(51)
+end
+function WpnHudEditor:OnInput_52()
+	self:OnInput(52)
+end
+function WpnHudEditor:OnInput_53()
+	self:OnInput(53)
+end
+function WpnHudEditor:OnInput_54()
+	self:OnInput(54)
+end
+function WpnHudEditor:OnInput_55()
+	self:OnInput(55)
+end
+function WpnHudEditor:OnInput_56()
+	self:OnInput(56)
+end
+function WpnHudEditor:OnInput_57()
+	self:OnInput(57)
+end
+function WpnHudEditor:OnInput_58()
+	self:OnInput(58)
+end

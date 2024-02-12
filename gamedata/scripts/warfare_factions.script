@@ -1,0 +1,293 @@
+printd = warfare.printd
+
+factions_p = {}
+factions = {
+	"stalker",
+	"bandit",
+	"csky",
+	"army",
+	"freedom",
+	"dolg",
+	"ecolog",
+	"killer",
+	"monolith",
+	"greh",
+	"renegade",
+	"isg",
+	--"monster",
+	"zombied",
+}
+
+all_factions = {
+	"stalker",
+	"bandit",
+	"csky",
+	"army",
+	"freedom",
+	"dolg",
+	"ecolog",
+	"killer",
+	"monolith",
+	"greh",
+	"renegade",
+	"isg",
+	"monster",
+	"zombied",
+}
+
+faction_information = {}
+faction_timers = {}
+
+for i=1,#factions do
+	factions_p[factions[i]] = true
+end
+
+--[[
+
+	faction_information[faction] = {
+		base_count,
+		resource_count,
+		total_power,
+		defense_squads, -- current_action == 1 and (target.props.base > 0 or target.props.resource > 0)
+		offense_squads, -- current_action == 0 and (target.props.base > 0 or target.props.resource > 0)
+		patrol_squads,	-- current_action == 0 and (target.props.base == 0 and target.props.resource == 0)
+		relations = {
+			[faction] = value
+		},
+	}
+	
+]]
+
+function update()
+	for i,faction in pairs(factions) do
+		if faction ~= "monster" then
+			update_faction(faction)
+		end
+	end
+end
+
+function update_faction(faction)
+	if (not faction or faction == "none") then
+		return
+	end
+
+	if not (faction_information[faction]) then
+		local min_resurgence_wait_time = warfare_options.options.factions[faction].min_resurgence_wait_time or 30
+		local max_resurgence_wait_time = warfare_options.options.factions[faction].max_resurgence_wait_time or 120
+
+		local max_random_patrols = warfare_options.options.factions[faction].max_random_patrols or 15
+		local min_random_patrol_time = warfare_options.options.factions[faction].min_random_patrol_time or 30
+		local max_random_patrol_time = warfare_options.options.factions[faction].max_random_patrol_time or 120
+
+		local next_resurgence_attempt = math.random(min_resurgence_wait_time, max_resurgence_wait_time)
+		local next_random_patrol = math.random(min_random_patrol_time, max_random_patrol_time)
+
+		faction_information[faction] = {}
+		faction_information[faction].base_count = 0
+		faction_information[faction].resource_count = 0
+		faction_information[faction].total_power = 0		
+		faction_information[faction].inactive_squads = 0
+		faction_information[faction].active_squads = 0
+		faction_information[faction].faction_respawn = 0
+		faction_information[faction].patrol_respawn = 0
+		faction_information[faction].patrol_squads = 0
+		faction_information[faction].invasion_size = 0
+		faction_information[faction].patrol_pop_factor = 0
+		faction_information[faction].last_resurgence_attempt = game.get_game_time()
+		faction_information[faction].next_resurgence_attempt = next_resurgence_attempt
+		faction_information[faction].next_random_patrol = 0
+		faction_information[faction].last_random_patrol = game.get_game_time()
+	end
+
+	if (not faction_information[faction].timer or game.get_game_time():diffSec(faction_information[faction].timer) >= (faction_information[faction].next_update*60)) then
+		printd(0, faction or "nil faction")
+		
+		local min_resurgence_wait_time = warfare_options.options.factions[faction].min_resurgence_wait_time or 30
+		local max_resurgence_wait_time = warfare_options.options.factions[faction].max_resurgence_wait_time or 120
+
+		local max_random_patrols = warfare_options.options.factions[faction].max_random_patrols or 15
+		local min_random_patrol_time = warfare_options.options.factions[faction].min_random_patrol_time or 30
+		local max_random_patrol_time = warfare_options.options.factions[faction].max_random_patrol_time or 120
+
+		local last_resurgence_attempt = faction_information[faction].last_resurgence_attempt or game.get_game_time()
+		local next_resurgence_attempt = faction_information[faction].next_resurgence_attempt or math.random(min_resurgence_wait_time, max_resurgence_wait_time)
+		local last_random_patrol = faction_information[faction].last_random_patrol or game.get_game_time()
+		local next_random_patrol = faction_information[faction].next_random_patrol or math.random(min_random_patrol_time, max_random_patrol_time)
+
+		faction_information[faction] = {}
+        faction_information[faction].timer = game.get_game_time()
+		faction_information[faction].next_update = math.random(1, 5)
+		faction_information[faction].base_count = 0
+		faction_information[faction].resource_count = 0
+		faction_information[faction].total_power = 0		
+		faction_information[faction].inactive_squads = 0
+		faction_information[faction].active_squads = 0
+		faction_information[faction].faction_respawn = 0
+		faction_information[faction].patrol_respawn = 0
+		faction_information[faction].patrol_squads = 0
+		faction_information[faction].invasion_size = 0
+		faction_information[faction].patrol_pop_factor = 0
+		faction_information[faction].last_resurgence_attempt = last_resurgence_attempt
+		faction_information[faction].next_resurgence_attempt = next_resurgence_attempt
+		faction_information[faction].last_random_patrol = last_random_patrol
+		faction_information[faction].next_random_patrol = next_random_patrol
+
+		for i,lvl in pairs(level_targets.active_levels) do
+			local info = warfare_levels.level_information[lvl]
+			
+			if (info.faction_stats and info.faction_stats[faction]) then
+				local num_active = sim_offline_combat.get_num_squads_on_level(lvl, faction, true)
+				local num_inactive = sim_offline_combat.get_num_squads_on_level(lvl, faction, false)
+			
+				faction_information[faction].base_count = faction_information[faction].base_count + info.faction_stats[faction].base_count
+				faction_information[faction].resource_count = faction_information[faction].resource_count + info.faction_stats[faction].resource_count
+				faction_information[faction].total_power = faction_information[faction].total_power + info.faction_stats[faction].total_power
+				faction_information[faction].active_squads = faction_information[faction].active_squads + num_active
+				faction_information[faction].inactive_squads = faction_information[faction].inactive_squads + num_inactive
+			end
+		end
+
+        local ff = warfare_options.options.factions[faction]
+
+		if not (ff) then
+			return
+		end
+
+		local base_count = faction_information[faction].base_count or 0
+		local resource_count = faction_information[faction].resource_count or 0
+
+		if (game_relations.is_factions_enemies(faction, warfare.actor_faction)) then
+			base_count = base_count + warfare_options.options.enemy_base_boost
+			resource_count = resource_count + warfare_options.options.enemy_resource_boost
+		end
+
+		base_count = base_count + (ff and ff.base_count_modifier or 0)
+		resource_count = resource_count + (ff and ff.resource_count_modifier or 0)
+
+		faction_information[faction].base_count = base_count
+		faction_information[faction].resource_count = resource_count
+
+		local respawn = warfare.lerp(ff.max_faction_respawn, ff.min_faction_respawn, clamp(resource_count / warfare.resource_count, 0, 1))
+		local patrol_respawn = warfare.lerp(ff.max_patrol_time, ff.min_patrol_time, clamp(resource_count / warfare.resource_count, 0, 1))
+		local invasion_size = warfare.lerp(ff.min_invasion_size, ff.max_invasion_size, clamp(base_count / warfare.base_count, 0, 1))
+		local patrol_pop_factor = warfare.lerp(ff.min_patrol_squads, ff.max_patrol_squads, clamp(base_count / warfare.base_count, 0, 1))
+
+		for faction,tbl in pairs(warfare.registered_squads) do
+			for ID,target in pairs(tbl) do
+				local obj = alife_object(ID)
+
+				if (obj) then
+					if not (obj.clsid and obj:clsid() == clsid.online_offline_group_s and obj:get_squad_community() == faction) then
+						warfare.registered_squads[faction][ID] = nil
+					end
+				else
+					warfare.registered_squads[faction][ID] = nil
+				end
+			end
+		end
+
+        faction_information[faction].faction_respawn = respawn
+		faction_information[faction].patrol_respawn = patrol_respawn
+        faction_information[faction].patrol_squads = patrol_squads
+		faction_information[faction].invasion_size = invasion_size
+		faction_information[faction].patrol_pop_factor = patrol_pop_factor
+		
+		local mod = (ff and ff.base_count_modifier or 0)
+
+		if (game_relations.is_factions_enemies(faction, warfare.actor_faction)) then
+			mod = mod + warfare_options.options.enemy_base_boost
+		end
+
+		if (warfare_options.options.factions[faction].random_patrols) then
+			if (game.get_game_time():diffSec(faction_information[faction].last_random_patrol) > faction_information[faction].next_random_patrol*60) then
+				faction_information[faction].last_random_patrol = game.get_game_time()
+				faction_information[faction].next_random_patrol = math.random(min_random_patrol_time, max_random_patrol_time)
+
+				local start_id = smart_terrain_warfare.find_random_patrol_target(nil, faction)
+				local start = start_id and alife_object(start_id)
+				local target_id = smart_terrain_warfare.find_random_patrol_target(start, faction)
+								
+				local count = 0
+				for squad_id, squad_faction in pairs(smart_terrain_warfare.random_patrols) do
+					if (squad_faction and squad_faction == faction) then
+						count = count + 1
+					end
+				end
+
+				if (start and target_id and (count < max_random_patrols)) then
+					local section = faction_expansions.get_spawn_section(faction, faction_information[faction].resource_count)
+					local squad = utils_obj.create_squad(section, start:name())				
+					smart_terrain_warfare.random_patrols[squad.id] = faction
+					sim_squad_warfare.set_target(squad, target_id)
+				end
+			end
+		end
+
+		if (warfare_options.options.factions[faction].participate_in_warfare and (faction_information[faction].base_count - mod) == 0) then
+			if (game.get_game_time():diffSec(faction_information[faction].last_resurgence_attempt) > faction_information[faction].next_resurgence_attempt*60) then		
+				faction_information[faction].last_resurgence_attempt = game.get_game_time()
+				faction_information[faction].next_resurgence_attempt = math.random(min_resurgence_wait_time, max_resurgence_wait_time)
+
+				local levels = warfare.hash_table_to_array(level_targets.active_levels)
+				warfare.shuffleTable(levels)
+
+				local attempted = false
+				for _,v in pairs(levels) do				
+					local chosen = v.key
+					local info = warfare_levels.level_information[chosen]
+	
+					if (info) then
+						local smarts = info.smarts	
+						local targets = {}
+						local spawns = {}
+	
+						for v,smart_id in pairs(smarts) do
+							local smart = alife_object(smart_id)
+	
+							if (smart) then
+								if (smart.props and smart.props.base > 0) then
+									if (smart.owning_faction == "none" or game_relations.is_factions_enemies(smart.owning_faction, faction)) then
+										targets[#targets+1] = smart
+									end
+								elseif (smart.props and smart.props.territory > 0 and (smart.props.resource == nil or smart.props.resource <= 0)) then
+									spawns[#spawns+1] = smart
+								end
+							end
+						end
+
+						if (#spawns > 0 and #targets > 0) then
+							local target = targets[math.random(#targets)]
+							local target_pop = target.max_population
+
+							local nearest_smart = nil
+							local nearest_dist = nil
+
+							attempted = true
+
+							for _,ter in pairs(spawns) do
+								local d = warfare.distance_to_xz_sqr(global_position.from(target), global_position.from(ter))
+
+								if (nearest_dist == nil or d < nearest_dist) then
+									nearest_smart = ter
+									nearest_dist = d
+								end
+							end
+		
+							for j=0,target_pop do
+								local section = faction_expansions.get_spawn_section(faction, faction_information[faction].resource_count)
+								local squad = utils_obj.create_squad(section, nearest_smart:name())
+								sim_squad_warfare.set_target(squad, target.id)
+							end
+						end
+					end		
+
+					if (attempted) then
+						break
+					end
+				end
+			end
+		end
+	
+        printd(9, "true end")
+	end
+end

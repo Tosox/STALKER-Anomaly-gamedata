@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="st_ui_dbg_help">
+		<text>
+		%c[ui_gray_2]Горячие клавиши режима отладки:
+		\n \n%c[d_orange]Для загруженной игры:
+		\n%c[pda_blue]• %c[ui_gray_3]F7:%c[ui_gray_2] Запустить отладчик Anomaly
+		\n%c[pda_blue]• %c[ui_gray_3]1:%c[ui_gray_2] Отладка HUD - Переключение окна информации на панели слева
+		\n%c[pda_blue]• %c[ui_gray_3]2:%c[ui_gray_2] Отладка HUD - Переключение окна информации на средней панели
+		\n%c[pda_blue]• %c[ui_gray_3]3:%c[ui_gray_2] Отладка HUD - Переключение окна информации на панели справа
+		\n \n%c[d_orange]Вне загруженной игры:
+		\n%c[pda_blue]• %c[ui_gray_3]F2:%c[ui_gray_2] Запуск тест-карты
+		\n \n%c[d_orange]Всегда:
+		\n%c[pda_blue]• %c[ui_gray_3]Numpad 0:%c[ui_gray_2] Перезапуск system_ini()
+		</text>
+	</string>
+
+	<!-- Debuggers -->
+	<string id="st_ui_dbg_weather_about">
+		<text>
+			%c[ui_gray_1]Tronex / Rezy
+			\nДобавлен: 2019/6/1
+			\nПосл. изменение: 2020/2/22
+			\nРедактор погоды Anomaly v2.0
+			\n \n%c[pda_green]Информация%c[ui_gray_2]
+			\nРедактор погоды позволяет изменять погодные значения в реальном времени с точностью до минуты.
+			\nГрафический интерфейс пользователя полностью интерактивен и лёгок в использовании, позволяя изменять или создавать погодные файлы прямо по ходу игры.
+			\nИзменённые Вами значения погоды и времени временно кэшируются.
+			\nВы можете вернуться к ним в том случае, если Вы вышли из редактора (Избегайте выхода из игры или перезагрузки, если у Вас есть несохранённые значения).
+			\nВ режиме просмотра Вы можете проверить изменения погоды при помощи ползунка времени.
+			\n \n%c[pda_blue]Управление%c[ui_gray_2]\n
+			\n%c[d_purple]• %c[ui_gray_3]Стрелки: %c[ui_gray_2]навигация между параметрами.
+			\n%c[d_purple]• %c[ui_gray_3]LShift (удерж.): %c[ui_gray_2]размер шага значения x10 / прыжок на 2 параметра.
+			\n%c[d_purple]• %c[ui_gray_3]LAlt (удерж.): %c[ui_gray_2]размер шага значения x50 / прыжок на 3 параметра.\n
+			\n%c[d_purple]• %c[ui_gray_3]R / F: %c[ui_gray_2]увеличить / уменьшить значение.
+			\n%c[d_purple]• %c[ui_gray_3]T / G: %c[ui_gray_2]увеличить / уменьшить все значения выбранного параметра.
+			\n%c[d_purple]• %c[ui_gray_3]Q / A: %c[ui_gray_2]выбрать след. / предыд. час.
+			\n%c[d_purple]• %c[ui_gray_3]W / S: %c[ui_gray_2]выбрать след. / предыд. минуту.
+			\n%c[d_purple]• %c[ui_gray_3]E / D: %c[ui_gray_2]выбрать след. / предыд. момент.\n
+			\n%c[d_purple]• %c[ui_gray_3]Z: %c[ui_gray_2]режим просмотра.\n
+			\n%c[d_purple]• %c[ui_gray_3]C: %c[ui_gray_2]копировать значение выбранного параметра.
+			\n%c[d_purple]• %c[ui_gray_3]C + CTRL: %c[ui_gray_2]копировать текущие настройки.
+			\n%c[d_purple]• %c[ui_gray_3]V: %c[ui_gray_2]вставить / применить скопированное значение параметра.\n			
+			\n%c[d_purple]• %c[ui_gray_3]V + CTRL: %c[ui_gray_2]вставить / применить к текущим настройкам.\n
+			\n%c[d_purple]• %c[ui_gray_3]Delete: %c[ui_gray_2]сбросить текущий изменённый параметр.
+			\n%c[d_purple]• %c[ui_gray_3]Delete + CTRL: %c[ui_gray_2]сбросить все изменённые параметры.
+			\n%c[d_purple]• %c[ui_gray_3]H: %c[ui_gray_2]показать окно помощи.
+			\n%c[d_purple]• %c[ui_gray_3]Esc / Home: %c[ui_gray_2]покинуть редактор.
+		</text>
+	</string>
+	<string id="st_ui_dbg_weather_title">
+		<text>Редактор погоды v2.0</text>
+	</string>
+	<string id="st_ui_dbg_weather_file">
+		<text>Выбрать файл погоды</text>
+	</string>
+	<string id="st_ui_dbg_weather_time">
+		<text>Выбрать время</text>
+	</string>
+	<string id="st_ui_dbg_weather_copy">
+		<text>Копировать настройки</text>
+	</string>
+	<string id="st_ui_dbg_weather_paste">
+		<text>Применить настройки</text>
+	</string>
+	<string id="st_ui_dbg_weather_viewer">
+		<text>Режим просмотра</text>
+	</string>
+	<string id="st_ui_dbg_weather_save">
+		<text>Если Вы указали название в поле ниже, сохранять следует как новый файл. Если нет, то сохранять можно в текущий.
+		\nНазвание новых файлов должно начинаться с «w_».
+		</text>
+	</string>
+	<string id="st_ui_dbg_weather_resume">
+		<text>Возобновить погоду и выйти</text>
+	</string>
+	<string id="st_ui_dbg_weather_clear">
+		<text>Очистить кэшированные значения</text>
+	</string>
+	<string id="st_ui_dbg_weather_help">
+		<text>Описание</text>
+	</string>
+	<string id="st_ui_dbg_weather_exit">
+		<text>Выход (погода по-прежнему будет держаться на паузе в движке)</text>
+	</string>
+	<string id="st_ui_dbg_weather_save_msg_error">
+		<text>Файл (%s) не является допустимым.
+		\nНазвание файла должно начинаться с «w_»
+		\nПодсказка: если не указано название, сохранение будет производиться в текущий файл
+		</text>
+	</string>
+	<string id="st_ui_dbg_weather_save_msg_old">
+		<text>Сохранение в текущий файл (%s), продолжить?</text>
+	</string>
+	<string id="st_ui_dbg_weather_save_msg_new">
+		<text>Сохранение в новый файл (%s), продолжить?</text>
+	</string>
+	<string id="st_ui_dbg_weather_playing">
+		<text>Авто. воспроизведение</text>
+	</string>
+	
+	<string id="st_ui_dbg_lighting_title">
+		<text>Редактор освещения</text>
+	</string>
+	
+	<string id="st_ui_dbg_hud_title">
+		<text>HUD-редактор оружия</text>
+	</string>
+	<string id="st_ui_dbg_hud_alignment">
+		<text>Прицел (вкл./выкл.)</text>
+	</string>
+	<string id="st_ui_dbg_hud_ratio">
+		<text>Применить параметры для 4:3 и 16:9</text>
+	</string>
+	<string id="st_ui_dbg_hud_copy">
+		<text>Копировать настройки</text>
+	</string>
+	<string id="st_ui_dbg_hud_paste">
+		<text>Вставить настройки</text>
+	</string>
+	<string id="st_ui_dbg_hud_current_file">
+		<text>Сохранить в файл</text>
+	</string>
+	<string id="st_ui_dbg_hud_resume">
+		<text>Возобновить</text>
+	</string>
+	<string id="st_ui_dbg_hud_reload">
+		<text>Сбросить настройки</text>
+	</string>
+	<string id="st_ui_dbg_hud_about">
+		<text>
+			%c[ui_gray_1]Tronex/Rezy
+			\n2019/9/15
+			\nHUD-редактор оружия
+			\n \n%c[pda_green]Информация%c[ui_gray_2]
+			\nДанный редактор позволяет Вам изменять положение и ориентацию оружия в реальном времени.
+			\nГрафический интерфейс пользователя полностью интерактивен и лёгок в использовании, поддерживая возможность сохранения модифицированных значений во временном файле «temp_hud.ltx».
+			\nИзменённые значения временно кэшируются, что позволяет Вам вернуться к ним в случае выхода из редактора. (Следует избегать выхода из игры или загрузки, если у Вас имеются несохранённые значения).
+			\n \n%c[pda_red]Внимание%c[ui_gray_2]
+			\nПрежде чем приступить к редактированию, конфигурационные файлы должны быть распакованы (%c[ui_gray_3]gamedata/configs/items/weapons%c[ui_gray_2]).
+			\nИзменения, сохранённые в параметры HUD, возымеют эффект только после перезапуска игры.
+			\nДля параметров, отвечающих за положение при прицеливании, необходимо сперва включить опцию «Режим прицеливания» в настройках игры, а затем прицелиться (ПКМ) - после этого Вы можете использовать редактор для просмотра Ваших изменений.
+			\n(%c[ui_gray_3]gamedata/configs/cache_dbg.ltx%c[ui_gray_2]) будет удерживать оригинальные параметры в момент их изменения, так что Вы можете откатиться обратно к оригинальным значениям при помощи соответствующей клавиши.
+			\nНе забудьте заранее сделать копии редактируемых файлов.
+			\n \n%c[pda_blue]Управление%c[ui_gray_2]\n
+			\n%c[d_purple]• %c[ui_gray_3]Стрелки: %c[ui_gray_2]навигация между параметрами.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 8 / 2: %c[ui_gray_2]увеличить / уменьшить выбранное значение.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 9 / 3: %c[ui_gray_2]увеличить / уменьшить все значения выбранного параметра.
+			\n%c[d_purple]• %c[ui_gray_3]LShift (удерж.): %c[ui_gray_2]размер шага значения x10 / прыжок на 2 параметра.
+			\n%c[d_purple]• %c[ui_gray_3]LAlt (удерж.): %c[ui_gray_2]размер шага значения x50 / прыжок на 3 параметра.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 5: %c[ui_gray_2]копировать текущие параметры.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 6: %c[ui_gray_2]вставить сохранённые параметры.\n
+			\n%c[d_purple]• %c[ui_gray_3]G: %c[ui_gray_2]прицел (вкл./выкл.).
+			\n%c[d_purple]• %c[ui_gray_3]H: %c[ui_gray_2]показать окно помощи.
+			\n%c[d_purple]• %c[ui_gray_3]Esc: %c[ui_gray_2]покинуть редактор.
+		</text>
+	</string>
+	
+	<string id="st_ui_dbg_launcher_console">
+		<text>Консоль</text>
+	</string>
+	<string id="st_ui_dbg_launcher_target">
+		<text>Выполнить на цели</text>
+	</string>
+	<string id="st_ui_dbg_launcher_action">
+		<text>Выполнить действие</text>
+	</string>
+	<string id="st_ui_dbg_launcher_toggle">
+		<text>Переключение команды</text>
+	</string>
+	<string id="st_ui_dbg_launcher_editor">
+		<text>Список редакторов</text>
+	</string>
+	
+	<string id="st_ui_dbg_spawn_type">
+		<text>Типы предметов</text>
+	</string>
+	<string id="st_ui_dbg_spawn_list">
+		<text>Список</text>
+	</string>
+	<string id="st_ui_dbg_spawn_icon">
+		<text>Иконки</text>
+	</string>
+	<string id="st_ui_dbg_spawn_btn">
+		<text>Спаун</text>
+	</string>
+	<string id="st_ui_dbg_spawn_name">
+		<text>Спаун через секцию</text>
+	</string>
+	<string id="st_ui_dbg_spawn_smart">
+		<text>Спаун на смарт-террейне</text>
+	</string>
+	<string id="st_ui_dbg_spawn_smart_lvl">
+		<text>Выбрать локацию</text>
+	</string>
+	<string id="st_ui_dbg_spawn_smart_list">
+		<text>Выбрать смарт</text>
+	</string>
+	<string id="st_ui_dbg_spawn_point">
+		<text>Спаун на точке прицела</text>
+	</string>
+	<string id="st_ui_dbg_spawn_nearby">
+		<text>Спаун рядом с игроком</text>
+	</string>
+	<string id="st_ui_dbg_spawn_inv">
+		<text>Спаун в инвентарь</text>
+	</string>
+	<string id="st_ui_dbg_spawn_log">
+		<text>Лог</text>
+	</string>
+
+	<string id="st_ui_dbg_logic">
+		<text>Логика НПС</text>
+	</string>
+	<string id="st_ui_dbg_logic_section">
+		<text>Активная секция</text>
+	</string>
+	<string id="st_ui_dbg_logic_logic">
+		<text>Активная логика</text>
+	</string>
+	<string id="st_ui_dbg_logic_file">
+		<text>Название файла INI</text>
+	</string>
+	<string id="st_ui_dbg_logic_set">
+		<text>Установить логику</text>
+	</string>
+	<string id="st_ui_dbg_logic_revert">
+		<text>Откат изменений</text>
+	</string>
+
+	<string id="st_ui_dbg_exec">
+		<text>Функции</text>
+	</string>
+	<string id="st_ui_dbg_exec_btn">
+		<text>Выполнить</text>
+	</string>
+	
+	<string id="st_ui_dbg_item_stats">
+		<text>Параметры</text>
+	</string>
+	<string id="st_ui_dbg_item_list">
+		<text>Список</text>
+	</string>
+	<string id="st_ui_dbg_item_compare">
+		<text>Сравнение</text>
+	</string>
+	<string id="st_ui_dbg_item_btn_copy">
+		<text>Копировать</text>
+	</string>
+	<string id="st_ui_dbg_item_btn_paste">
+		<text>Вставить</text>
+	</string>
+	<string id="st_ui_dbg_item_btn_apply">
+		<text>Применить</text>
+	</string>
+	<string id="st_ui_dbg_item_btn_Reset">
+		<text>Откатиться</text>
+	</string>
+	<string id="st_ui_dbg_item_about">
+		<text>
+			%c[ui_gray_1]Tronex
+			\n2019/10/8
+			\nРедактор предметов
+			\n \n%c[pda_green]Информация%c[ui_gray_2]
+			\nДанный редактор позволяет редактировать конфигурацию предметов и сохранять/проверять изменения прямо во время игры.
+			\nГрафический интерфейс пользователя полностью интерактивен и лёгок в использовании, поддерживая редактирование оружия, костюмов и артефактов.
+			\nВы можете выбрать предмет из списка и сравнить его параметры с Вашим текущим.
+			\nИзменённые значения временно кэшируются, что позволяет Вам вернуться к ним в случае выхода из редактора.
+			\n \n%c[pda_red]Внимание%c[ui_gray_2]
+			\nПрежде чем приступить к редактированию, конфигурационные файлы должны быть распакованы (%c[ui_gray_3]gamedata/configs/items%c[ui_gray_2]).
+			\n(%c[ui_gray_3]gamedata/configs/cache_dbg.ltx%c[ui_gray_2]) будет удерживать оригинальные параметры в момент их изменения, так что Вы можете откатиться обратно к оригинальным значениям при помощи соответствующей клавиши.
+			\nНе забудьте заранее сделать копии редактируемых файлов.
+			\n \n%c[pda_blue]Управление%c[ui_gray_2]\n
+			\n%c[d_purple]• %c[ui_gray_3]Стрелки: %c[ui_gray_2]навигация между параметрами.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 8 / 2: %c[ui_gray_2]увеличить / уменьшить выбранное значение.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 9 / 3: %c[ui_gray_2]увеличить / уменьшить все значения выбранного параметра.
+			\n%c[d_purple]• %c[ui_gray_3]LShift (удерж.): %c[ui_gray_2]размер шага значения x10 / прыжок на 2 параметра.
+			\n%c[d_purple]• %c[ui_gray_3]LAlt (удерж.): %c[ui_gray_2]размер шага значения x50 / прыжок на 3 параметра.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 5: %c[ui_gray_2]копировать текущие параметры.
+			\n%c[d_purple]• %c[ui_gray_3]Numpad 6: %c[ui_gray_2]вставить сохранённые параметры.\n
+			\n%c[d_purple]• %c[ui_gray_3]H: %c[ui_gray_2]показать окно помощи.
+			\n%c[d_purple]• %c[ui_gray_3]Esc: %c[ui_gray_2]покинуть редактор.
+		</text>
+	</string>
+
+	<string id="st_desc_hit_power">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Величина повреждений, наносимых пулей.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[d_cyan](!)%c[ui_gray_2] Является статистическим параметром.
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Каждое значение параметра используется для разных уровней сложности:
+		\nМастер -> Ветеран -> Сталкер -> Новичок
+		\nДефолтный уровень сложности не используется в Anomaly, поэтому используйте одни и те же значения.
+		</text>
+	</string>
+	<string id="st_desc_hit_impulse">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Импульс силы пули. Высокие значения приведут к более драматическим смертям с ragdoll-эффектом.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_fire_distance">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальная дистанция полёта пули (в метрах) - всему, что находится дальше, не будет нанесено никакого урона.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_bullet_speed">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Начальная скорость пули (в метрах в секунду).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_rpm">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорострельность (в выстрелах в минуту).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_rpm_empty_click">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Частота звука, который проигрывается при попытке выстрела с пустым магазином.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<!--string id="st_desc_time_to_aim">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорость прицеливания.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string-->
+	<string id="st_desc_zoom_dof">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Множитель глубины резкости при прицеливании (ПКМ).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_reload_dof">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Глубина резкости при перезарядке.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_control_inertion_factor">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]«Тяжесть», добавляемая к оружию - отвечает за скорость поворота при наличии оружия в руках. Например, ПКМ и СВД имеют наиболее ощутимый эффект. Влияет на параметр удобности.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[d_cyan](!)%c[ui_gray_2] Является статистическим параметром.
+		</text>
+	</string>
+	<string id="st_desc_crosshair_inertion">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Сила инерции при поворотах камеры - отвечает за то, как сильно уводит камеру во время прицеливания при её поворотах. Влияет на параметр удобности.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_fire_dispersion_base">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Угол (в градусах) базовой дисперсии оружия - отвечает за то, насколько точными будут выстрелы из оружия. Влияет на базовую точность и отображение параметра точности.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[d_cyan](!)%c[ui_gray_2] Является статистическим параметром.
+		</text>
+	</string>
+	<string id="st_desc_misfire_probability">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Вероятность осечки в любой момент времени (Не используется).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_misfire_start_condition">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Состояние оружия, при котором появляется вероятность осечки.
+		\nОсечек не будет происходит при значениях выше указанного.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт вероятности осечки%c[ui_gray_2]
+		\n%c[ui_gray_3]Вероятность осечки при выстреле = start_prop + ( (start_con - condition) x (end_prop - start_prop) / factor )
+		
+		\n \n%c[d_purple]• %c[ui_gray_3]condition:%c[ui_gray_2] текущее состояние оружия
+		\n%c[d_purple]• %c[ui_gray_3]start_prop:%c[ui_gray_2] значение "misfire_start_prob"
+		\n%c[d_purple]• %c[ui_gray_3]end_prop:%c[ui_gray_2] значение "misfire_end_prob"
+		\n%c[d_purple]• %c[ui_gray_3]start_con:%c[ui_gray_2] значение "misfire_start_condition"
+		\n%c[d_purple]• %c[ui_gray_3]end_con:%c[ui_gray_2] значение "misfire_end_condition"
+		\n%c[d_purple]• %c[ui_gray_3]factor:%c[ui_gray_2] (start_con - end_con) - если их значения отличны друг от друга, (start_con) - если значения идентичны.
+		</text>
+	</string>
+	<string id="st_desc_misfire_end_condition">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Состояние оружия, при котором вероятность осечки перестаёт повышаться.
+		\nВероятность осечки будет ограничена значением "misfire_end_prob" при худшем состоянии.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт вероятности осечки%c[ui_gray_2]
+		\n%c[ui_gray_3]Расчёт вероятности осечки = start_prop + ( (start_con - condition) x (end_prop - start_prop) / factor )
+		
+		\n \n%c[d_purple]• %c[ui_gray_3]condition:%c[ui_gray_2] текущее состояние оружия
+		\n%c[d_purple]• %c[ui_gray_3]start_prop:%c[ui_gray_2] значение "misfire_start_prob"
+		\n%c[d_purple]• %c[ui_gray_3]end_prop:%c[ui_gray_2] значение "misfire_end_prob"
+		\n%c[d_purple]• %c[ui_gray_3]start_con:%c[ui_gray_2] значение "misfire_start_condition"
+		\n%c[d_purple]• %c[ui_gray_3]end_con:%c[ui_gray_2] значение "misfire_end_condition" 
+		\n%c[d_purple]• %c[ui_gray_3]factor:%c[ui_gray_2] (start_con - end_con) - если их значения отличны друг от друга, (start_con) - если значения идентичны.
+		</text>
+	</string>
+	<string id="st_desc_misfire_start_prob">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Вероятность осечки при значении «состояния оружия, при котором появляется вероятность осечки».
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт вероятности осечки%c[ui_gray_2]
+		\n%c[ui_gray_3]Расчёт вероятности осечки = start_prop + ( (start_con - condition) x (end_prop - start_prop) / factor )
+		
+		\n \n%c[d_purple]• %c[ui_gray_3]condition:%c[ui_gray_2] текущее состояние оружия
+		\n%c[d_purple]• %c[ui_gray_3]start_prop:%c[ui_gray_2] значение "misfire_start_prob"
+		\n%c[d_purple]• %c[ui_gray_3]end_prop:%c[ui_gray_2] значение "misfire_end_prob"
+		\n%c[d_purple]• %c[ui_gray_3]start_con:%c[ui_gray_2] значение "misfire_start_condition"
+		\n%c[d_purple]• %c[ui_gray_3]end_con:%c[ui_gray_2] значение "misfire_end_condition"
+		\n%c[d_purple]• %c[ui_gray_3]factor:%c[ui_gray_2] (start_con - end_con) если их значения отличны друг от друга, (start_con) - если значения идентичны.
+		</text>
+	</string>
+	<string id="st_desc_misfire_end_prob">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Вероятность осечки при значении «состояния оружия, при котором вероятность осечки перестаёт повышаться».
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт вероятности осечки%c[ui_gray_2]
+		\n%c[ui_gray_3]Расчёт вероятности осечки = start_prop + ( (start_con - condition) x (end_prop - start_prop) / factor )
+		
+		\n \n%c[d_purple]• %c[ui_gray_3]condition:%c[ui_gray_2] текущее состояние оружия
+		\n%c[d_purple]• %c[ui_gray_3]start_prop:%c[ui_gray_2] значение "misfire_start_prob"
+		\n%c[d_purple]• %c[ui_gray_3]end_prop:%c[ui_gray_2] значение "misfire_end_prob"
+		\n%c[d_purple]• %c[ui_gray_3]start_con:%c[ui_gray_2] значение "misfire_start_condition"
+		\n%c[d_purple]• %c[ui_gray_3]end_con:%c[ui_gray_2] значение "misfire_end_condition"
+		\n%c[d_purple]• %c[ui_gray_3]factor:%c[ui_gray_2] (start_con - end_con) если их значения отличны друг от друга, (start_con) - если значения идентичны.
+		</text>
+	</string>
+	<string id="st_desc_condition_shot_dec">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Значение состояния оружия, которое отнимается при каждом выстреле.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт
+		\n%c[ui_gray_3]потеря состояния за выстрел = (condition_shot_dec) x (weapon_degredation) x (impair) x (condition_shot_dec_k)
+		\n \n%c[d_purple]• %c[ui_gray_3]"condition_shot_dec"%c[ui_gray_2] определяется секцией для каждого оружия. Приведите "condition_queue_shot_dec" к тому же самому значению
+		\n%c[d_purple]• %c[ui_gray_3]"weapon_degredation"%c[ui_gray_2] - консольная команда, позволяющая контролировать износ во время игры в целом (по умолчанию установлено 1)
+		\n%c[d_purple]• %c[ui_gray_3]"impair"%c[ui_gray_2] - коэффициент износа оружия от используемой пули; определяется в секции патронов, которые используются в оружии в данный момент
+		\n%c[d_purple]• %c[ui_gray_3]"condition_shot_dec_k"%c[ui_gray_2] - параметр, который определяется в секции глушителей, закреплённой за оружием (при отсутствии: по умолчанию устанавливается 1)
+		</text>
+	</string>
+	<string id="st_desc_condition_queue_shot_dec">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Значение состояния оружия, которое отнимается при каждом выстреле в автоматическом режиме стрельбы.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Расчёт
+		\n%c[ui_gray_3]потеря состояния за выстрел = (condition_shot_dec) x (weapon_degredation) x (impair) x (condition_shot_dec_k)
+		\n \n%c[d_purple]• %c[ui_gray_3]"condition_shot_dec"%c[ui_gray_2] определяется секцией для каждого оружия. Приведите "condition_queue_shot_dec" к тому же самому значению
+		\n%c[d_purple]• %c[ui_gray_3]"weapon_degredation"%c[ui_gray_2] - консольная команда, позволяющая контролировать износ во время игры в целом (по умолчанию установлено 1)
+		\n%c[d_purple]• %c[ui_gray_3]"impair"%c[ui_gray_2] - коэффициент износа оружия от используемой пули; определяется в секции патронов, которые используются в оружии в данный момент
+		\n%c[d_purple]• %c[ui_gray_3]"condition_shot_dec_k"%c[ui_gray_2] - параметр, который определяется в секции глушителей, закреплённой за оружием (при отсутствии: по умолчанию устанавливается 1)
+		</text>
+	</string>
+	<string id="st_desc_cam_return">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Возвращается ли камера в исходное положение?
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cam_relax_speed">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорость возврата прицельного перекрестия в нейтральное положение.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		</text>
+	</string>
+	<string id="st_desc_cam_dispersion">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Увеличение дисперсии (в градусах) во время стрельбы (не прицеливаясь).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Данное значение не имеет ограничения в движке - отрицательные значения приведут к негативной отдаче.
+		</text>
+	</string>
+	<string id="st_desc_cam_dispersion_inc">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Величина, добавляемая с каждым выстрелом к значению «st_desc_cam_dispersion».
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Данное значение не имеет ограничения в движке - отрицательные значения приведут к негативной отдаче.
+		</text>
+	</string>
+	<string id="st_desc_cam_dispersion_frac">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Как сильно ствол будет подыматься. 		
+		\n \n%c[pda_blue]Расчёт
+		\n%c[ui_gray_3]Поднятие ствола = "cam_dispersion" x "cam_dispersion_frac" +- "cam_dispersion" x ("1 - cam_dispersion_frac")
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cam_max_angle">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальный угол отдачи.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cam_max_angle_horz">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальный угол отдачи по горизонтали.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cam_step_angle_horz">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Отдача по горизонтали во время выстрела. Значение 0 приведёт к вертикальной отдаче, отрицательное же значение - к отдаче влево.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_relax_speed">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорость, при которой механический прицел и/или оптические приспособления возвращаются в нейтральное положение.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_relax_speed".
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_dispersion">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Дисперсия (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_dispersion".
+		\nДанное значение не имеет ограничения в движке - отрицательные значения приведут к негативной отдаче.
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_dispersion_inc">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Величина, добавляемая с каждым выстрелом к значению «zoom_cam_dispersion» (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range (градус)
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_dispersion_inc".
+		\nДанное значение не имеет ограничения в движке - отрицательные значения приведут к негативной отдаче.
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_dispersion_frac">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Как сильно ствол будет подыматься (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_dispersion_frac".
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_max_angle">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальный угол отдачи (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_max_angle".
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_max_angle_horz">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальный угол отдачи по горизонтали (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_max_angle_horz".
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_step_angle_horz">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Отдача по горизонтали во время выстрела. Значение 0 приведёт к вертикальной отдаче, отрицательное же значение - к отдаче влево (только для механических прицелов и оптических приспособлений).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[pda_blue]Примечание
+		\n%c[ui_gray_2]Если данный параметр не задан в секции оружия, движок будет использовать значение "cam_step_angle_horz".
+		</text>
+	</string>
+	<string id="st_desc_PDM_disp_base">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]"PDM_" - зависимость качания оружия в руках ГГ от приседаний, бега и т.д. Данный параметр - это множитель, на который умножается базовая дисперсия оружия, когда персонаж стоит на месте в полный рост.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		\n \n%c[d_cyan](!)%c[ui_gray_2] Является статистическим параметром.
+		</text>
+	</string>
+	<string id="st_desc_PDM_disp_vel_factor">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Множитель, на который умножается базовая дисперсия оружия, когда персонаж идёт/бежит; 
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_PDM_disp_accel_factor">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Множитель, на который умножается базовая дисперсия оружия, когда персонаж бежит в спринте.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_PDM_disp_crouch">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Множитель, на который умножается базовая дисперсия оружия, когда персонаж идёт пригнувшись.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_PDM_disp_crouch_no_acc">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Множитель, на который умножается базовая дисперсия оружия, когда персонаж стоит на месте пригнувшись.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_fire_dispersion_condition_factor">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Увеличение дисперсии в процентах при максимальном износе.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cam_relax_speed_ai">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорость восстановления прицеливания у ИИ после стрельбы.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_zoom_cam_relax_speed_ai">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Скорость восстановления прицеливания у ИИ после стрельбы в режиме прицеливания.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_holder_range_modifier">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Во сколько раз увеличивается eye_range (дальность обзора для ИИ).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_holder_fov_modifier">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Во сколько раз увеличивается eye_fov у ИИ (поле зрения для ИИ) - 1.0 даёт примерно 180 градусов обзора.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_min_radius">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Минимальное расстояние, с которого НПС начинают использовать данное оружие. Для всего оружия, кроме снайперских винтовок, гранат и гранатомётов, рекомендуется значение 0. Используется для того, чтобы НПС с гранатомётами и снайперскими винтовками переключались при приближении врага на второе оружие, а также не бросали гранаты себе под ноги.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_max_radius">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Максимальное расстояние, на котором НПС используют данное оружие. Рекомендуется устанавливать знаечние максимально возможном, учитывая однако при этом точность оружия.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_zoom_enabled">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Разрешить или нет прицеливание.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_zoom_rotate_time">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Как много времени занимает переход в режим прицеливания.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_scope_zoom_factor">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Изменение поля зрения во время прицеливания. По умолчанию «1».
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_ammo_elapsed">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Размер магазина.
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_ammo_mag_size">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Число должно быть равным оному в «ammo_elapsed», иначе - otherwise the value may not be either!
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+	<string id="st_desc_cost">
+		<text>
+		\n \n%c[pda_green]Описание
+		\n%c[ui_gray_2]Базовая стоимость оружия (примечание: подвержена влиянию множеством экономических аспектов).
+		\n \n%c[pda_red]Диапазон
+		\n%c[ui_gray_2]$range
+		</text>
+	</string>
+</string_table>

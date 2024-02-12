@@ -1,0 +1,212 @@
+
+--[[
+	Created by Tronex
+	Last modification: 2018/7/20
+	Anomaly Maps UI
+--]]
+
+local map_routes_unlock = {
+	["l07_military"]        = "mil",
+	["l08_yantar"]          = "yan",
+	["l10_red_forest"]      = "red",
+	["l09_deadcity"]        = "cit",
+	["k02_trucks_cemetery"] = "trc",
+	["jupiter"]             = "jup",
+	["zaton"]               = "zat",
+	["l02_garbage"]         = "gar",
+	["l03_agroprom"]        = "agr",
+}
+
+
+----------------------------------------------------------------------
+-- Callbacks
+----------------------------------------------------------------------
+local function actor_on_item_use(obj)
+	local sec = obj:section()
+	if IsItem("map",sec) then
+		start(obj, sec)
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_item_use",actor_on_item_use)
+end
+
+
+----------------------------------------------------------------------
+GUI = nil -- instance, don't touch
+function start(obj, sec)
+	if (not obj) then
+		printf("!ERROR item_map_kit | no game object passed!")
+		return
+	end
+	
+	if (not sec) then
+		sec = obj:section()
+	end
+	
+	local hud = get_hud()
+	if (hud) then
+		hide_hud_inventory()
+	end
+	
+	if (not GUI) then
+		GUI = UIMapKit()
+	end
+	
+	if (GUI) and (not GUI:IsShown()) then
+		GUI:Reset(obj, sec)
+		GUI:ShowDialog(true)
+		Register_UI("UIMapKit","item_map_kit")
+	end
+end
+
+
+----------------------------------------------------------------------
+-- UI
+----------------------------------------------------------------------
+class "UIMapKit" (CUIScriptWnd)
+
+function UIMapKit:__init(owner,obj,section) super()
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function UIMapKit:__finalize()
+end
+
+function UIMapKit:InitControls()
+	self:SetWndRect			(Frect():set(0,0,1024,768))
+	self:SetAutoDelete(true)
+	
+	self.xml				= CScriptXmlInit()
+	local xml = self.xml
+	xml:ParseFile			("ui_items_map.xml")
+
+	self.dialog	= xml:InitStatic("map", self)
+	self.dialog:InitTexture("ui_itm_map_frame")
+	self.dialog:SetStretchTexture(true)
+
+	self.box_map = xml:InitStatic("map:box_map",self.dialog)
+	self.box_map:SetStretchTexture(true)
+
+	-- Map name
+	self.text_map = xml:InitTextWnd("map:text_map", self.dialog)
+
+	-- Button Ok
+	self.btn_ok_pic = xml:InitStatic("map:btn_ok_pic", self.dialog)
+	self.btn_ok_pic:InitTexture("ui_button_ordinary_h")
+	self.btn_ok_pic:SetStretchTexture(true)
+	
+	self.btn_ok = xml:Init3tButton("map:btn_ok", self.dialog)
+	self:Register(self.btn_ok,"btn_ok")
+	
+	-- Button Next
+	self.btn_next_pic = xml:InitStatic("map:btn_next_pic", self.dialog)
+	self.btn_next_pic:InitTexture("ui_button_ordinary_h")
+	self.btn_next_pic:SetStretchTexture(true)
+
+	self.btn_next = xml:Init3tButton("map:btn_next", self.dialog)
+	self:Register(self.btn_next,"btn_next")
+	
+	-- Button Previous
+	self.btn_previous_pic = xml:InitStatic("map:btn_previous_pic", self.dialog)
+	self.btn_previous_pic:InitTexture("ui_button_ordinary_h")
+	self.btn_previous_pic:SetStretchTexture(true)
+
+	self.btn_previous = xml:Init3tButton("map:btn_previous", self.dialog)
+	self:Register(self.btn_previous,"btn_previous")
+end
+
+function UIMapKit:InitCallBacks()
+	self:AddCallback("btn_ok", ui_events.BUTTON_CLICKED, self.Close, self)
+	self:AddCallback("btn_next", ui_events.BUTTON_CLICKED, self.OnNext, self)
+	self:AddCallback("btn_previous", ui_events.BUTTON_CLICKED, self.OnPrevious, self)
+end
+
+function UIMapKit:Reset(obj, sec)
+	self.section = sec
+	self.object = obj
+	
+	self.map = ini_sys:r_string_ex(sec,"use_map") or "l07_military"
+	self.maps = game_statistics.actor_anomaly_maps or {}
+	if (self.map ~= "nil") and (not self.maps[self.map]) then
+		self.maps[self.map] = true
+		
+		-- Open connected route
+		local mp = map_routes_unlock[self.map]
+		local c_mp = txr_routes.routes[mp]
+		local t = {}
+		for k,v in pairs(c_mp) do
+			if (not txr_routes.is_route_discovered(mp,k)) then
+				txr_routes.open_route(mp,k)
+			end
+		end
+		
+		utils_xml.set_msg("st_new_anomaly_map",true)
+	end
+	
+	self.index = 1
+	self.indexes = {}
+	for k,v in pairs (self.maps) do
+		if (v == true) then
+			self.indexes[#self.indexes+1] = k
+		end
+	end
+	
+	self.box_map:InitTexture("ui_itm_map_" .. self.indexes[self.index])
+	self.text_map:SetText(game.translate_string(self.indexes[self.index]))
+	
+	local to_show = (#self.indexes > 1)
+	self.btn_next_pic:Show(to_show)
+	self.btn_next:Show(to_show)
+	self.btn_previous_pic:Show(to_show)
+	self.btn_previous:Show(to_show)
+end
+
+-- Callbacks
+function UIMapKit:OnNext()
+	self.index = self.index + 1
+	if (self.index > #self.indexes) then
+		self.index = 1
+	end
+	utils_obj.play_sound("interface\\inv_page")
+	self.box_map:InitTexture("ui_itm_map_" .. self.indexes[self.index])
+	self.text_map:SetText(game.translate_string(self.indexes[self.index]))
+end
+
+function UIMapKit:OnPrevious()
+	self.index = self.index - 1
+	if (self.index == 0) then
+		self.index = #self.indexes
+	end
+	utils_obj.play_sound("interface\\inv_page")
+	self.box_map:InitTexture("ui_itm_map_" .. self.indexes[self.index])
+	self.text_map:SetText(game.translate_string(self.indexes[self.index]))
+end
+
+function UIMapKit:Close()
+	utils_obj.play_sound("interface\\inv_close")
+	self:HideDialog()
+	
+	Unregister_UI("UIMapKit")
+end
+
+function UIMapKit:OnKeyboard(dik, keyboard_action)
+	local res = CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
+	if (res == false) then
+		local bind = dik_to_bind(dik)
+		if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+			if (dik == DIK_keys.DIK_ESCAPE) then
+				self:Close()
+			elseif (#self.indexes > 1) then
+				if (dik == DIK_keys.DIK_D) or (dik == DIK_keys.DIK_RIGHT) then
+					self:OnNext()
+				elseif (dik == DIK_keys.DIK_A) or (dik == DIK_keys.DIK_LEFT) then
+					self:OnPrevious()
+				end
+			end
+		end
+	end
+	return res
+end

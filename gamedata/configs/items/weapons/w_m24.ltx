@@ -1,0 +1,199 @@
+;------------------------------------------------------------------------------------------------
+[wpn_m24]:identity_immunities,weapon_probability,default_weapon_params,wpn_m24_sounds
+        GroupControlSection         = spawn_group
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\wpn_m24"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_SVD
+        slot                        = 2
+        animation_slot              = 2
+        ef_main_weapon_type         = 3
+        ef_weapon_type              = 8
+        hand_dependence             = 1
+        single_handed               = 0
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+        inv_grid_height             = 2
+        inv_grid_width              = 6
+        inv_grid_x                  = 75
+        inv_grid_y                  = 71
+        inv_name                    = st_wpn_m24
+        inv_name_short              = st_wpn_m24
+        description                 = st_wpn_m24_descr
+        
+        kind                        = w_sniper
+        inv_weight                  = 5.4
+        cost                        = 76680
+        repair_type                 = rifle_7
+        weapon_class                = sniper_rifle
+        
+        hud                         = wpn_m24_hud
+        visual                      = dynamics\weapons\wpn_m24\wpn_m24.ogf
+        position                    = -0.026, -0.077, 0.00
+        orientation                 = 0, 0, 0
+        fire_point                  = 0.0, 0.129, 0.942
+        fire_point2                 = 0.0, 0.129, 0.942
+        strap_bone0                 = bip01_spine2
+        strap_bone1                 = bip01_spine1
+        strap_position              = -0.15, -0.15, 0.45
+        strap_orientation           = -25, -189, 65
+        ph_mass                     = 3
+        
+        flame_particles             = weapons\generic_weapon06
+        smoke_particles             = amik\weapons\smoke_particles\smoke_particles_pump_01
+        
+		shell_point		 	        = 0.0, 0.129, 0.192
+		shell_dir		 	        = 0.0, 0.0, 0.4
+		shell_particles	 		    = ;weapons\generic_shells
+
+        light_disabled              = false
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 4.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_m24, up_gr_seconab_m24, up_gr_thirdab_m24, up_gr_fourtab_m24, up_gr_fourtcd_m24, up_gr_fourtef_m24
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_svd
+        upgr_icon_x                 = 750
+        upgr_icon_y                 = 1850
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        
+        fire_modes                  = 1
+        ammo_class                  = ammo_magnum_300, ammo_magnum_300_bad, ammo_magnum_300_verybad
+        ammo_elapsed                = 5
+        ammo_mag_size               = 5
+        startup_ammo                = 10
+        
+        scope_status                = 1
+		scope_dynamic_zoom          = on
+        scope_name                  = wpn_addon_scope
+        scope_texture               = wpn_crosshair_mark4
+        scope_x                     = 60
+        scope_y                     = -2
+        scope_zoom_factor           = 10
+        
+        silencer_status             = 0
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        silencer_smoke_particles    = weapons\generic_shoot_00
+        
+        grenade_launcher_status     = 0
+        launch_speed                = 0
+        
+        hit_impulse                 = 45
+        hit_power                   = 1.35, 1.35, 1.35, 1.35
+        hit_type                    = fire_wound
+        fire_distance               = 1500
+        bullet_speed                = 845
+        rpm                         = 20
+        rpm_empty_click             = 200
+        
+        use_aim_bullet              = false
+        time_to_aim                 = 0.0 ;  1.0
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 2.2
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 9.8
+        fire_dispersion_base        = 0.054
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_probability         = 0.005
+        misfire_start_condition     = 0.7 ;  0.7
+        misfire_start_prob          = 0.005
+        misfire_end_condition       = 0.15
+        misfire_end_prob            = 0.1
+        
+        condition_queue_shot_dec    = 0.005
+        condition_shot_dec          = 0.005
+        
+        cam_return                  = 0
+        cam_relax_speed             = 4.5
+        cam_dispersion              = 3.14
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 3.14
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 0.86
+        zoom_cam_relax_speed        = 0.75
+        zoom_cam_dispersion         = 1.00
+        zoom_cam_dispersion_frac    = 1.0
+        zoom_cam_dispersion_inc     = 2.53
+        zoom_cam_max_angle          = 50.0
+        zoom_cam_max_angle_horz     = 50.0
+        zoom_cam_step_angle_horz    = 0.68
+        
+        PDM_disp_accel_factor       = 3.05
+        PDM_disp_base               = 1.65
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 3.05
+        
+        cam_relax_speed_ai          = 360
+        zoom_cam_relax_speed_ai     = 120.75
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 2.15
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 0
+        kill_msg_y                  = 0
+        kill_msg_width              = 98
+        kill_msg_height             = 23
+ 
+
+[wpn_m24_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_m24\wpn_m24_hud
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0.0, 0.0, 0.0
+        item_orientation            = 0.0, 0.0, 0.0
+        
+        hands_position              = -0.03, -0.145, 0.2
+        hands_position_16x9         = -0.03, -0.145, 0.2
+        hands_orientation           = 0, 0, 0
+        hands_orientation_16x9      = 0, 0, 0
+        
+        aim_hud_offset_pos          = -0.108100, 0.01, -0.3
+        aim_hud_offset_pos_16x9     = -0.108100, 0.01, -0.3
+        aim_hud_offset_rot          = 0, 0, 0
+        aim_hud_offset_rot_16x9     = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_hide                    = m2s_holster
+        anm_idle                    = m2s_idle
+        anm_idle_aim                = m2s_idle_aim
+        anm_idle_aim_moving         = m2s_idle_moving, idle, 0.75
+        anm_idle_aim_moving_crouch  = m2s_idle_moving, idle, 0.7
+        anm_idle_moving             = m2s_idle_moving
+        anm_idle_sprint             = m2s_idle_sprint
+        anm_reload                  = m2s_reload, reload
+        anm_shots                   = m2s_shoot, shoot
+        anm_show                    = m2s_draw
+        
+        shell_bone                  = gilza
+        shell_dir                   = 0.0, 1.0, 0.0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = muzzle
+        fire_point                  = 0, 0, 0
+ 
+		freelook_z_offset_mul		= 0.45

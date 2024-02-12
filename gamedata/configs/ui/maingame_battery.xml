@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+	<battery_state x="12" y="752" width="113" height="16" horz="1" min="0" max="100" pos="0">
+		<progress>
+			<texture>ui_inGame2_Patroni_HUD_red_bar</texture>
+		</progress>
+	</battery_state>
+</window>
+
+<!-- 375:539-->

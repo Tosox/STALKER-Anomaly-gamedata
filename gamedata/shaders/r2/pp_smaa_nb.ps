@@ -1,0 +1,33 @@
+#include "common.h"
+
+#define SMAA_HLSL_3
+#define SMAA_RT_METRICS screen_res.zwxy
+
+#if !defined(SMAA_QUALITY)
+    #define SMAA_PRESET_LOW
+#elif SMAA_QUALITY == 1
+    #define SMAA_PRESET_LOW
+#elif SMAA_QUALITY == 2
+    #define SMAA_PRESET_MEDIUM
+#elif SMAA_QUALITY == 3
+    #define SMAA_PRESET_HIGH
+#elif SMAA_QUALITY == 4
+    #define SMAA_PRESET_ULTRA
+#endif
+
+uniform sampler2D s_blendtex;
+
+#include "smaa.h"
+
+//Struct
+struct p_smaa
+{
+	float4 hpos			: POSITION;
+	float2 tc0			: TEXCOORD0; // Texture coordinates
+	float4 offset		: TEXCOORD2;
+};
+
+float4 main(p_smaa I) : COLOR0
+{
+	return SMAANeighborhoodBlendingPS(I.tc0, I.offset, s_image, s_blendtex);
+};

@@ -1,0 +1,205 @@
+;------------------------------------------------------------------------------------------------
+[wpn_g43]:identity_immunities,weapon_probability,default_weapon_params,wpn_g43_sounds
+        GroupControlSection         = spawn_group
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\g43"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_AK74
+        slot                        = 2
+        animation_slot              = 2
+        ef_main_weapon_type         = 3
+        ef_weapon_type              = 11
+        hand_dependence             = 1
+        single_handed               = 0
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+        inv_grid_height             = 1
+        inv_grid_width              = 5
+        inv_grid_x                  = 75
+        inv_grid_y                  = 75
+        inv_name                    = st_wpn_g43
+        inv_name_short              = st_wpn_g43
+        description                 = st_wpn_g43_descr
+        
+        kind                        = w_sniper
+        inv_weight                  = 4.33
+        cost                        = 23980
+        repair_type                 = rifle_7
+        weapon_class                = assault_rifle
+        
+        hud                         = wpn_g43_hud
+        visual                      = dynamics\weapons\wpn_g43\wpn_g43.ogf
+        position                    = -0.022, -0.0, -0.015
+        orientation                 = 0.0, -2.0, 0.0
+        fire_point                  = 0.0, 0.060, 0.800
+        fire_point2                 = 0.0, 0.060, 0.800
+        strap_bone0                 = bip01_spine2
+        strap_bone1                 = bip01_spine1
+        strap_position              = -0.22, -0.15, 0.05
+        strap_orientation           = -15, -9, 110
+        ph_mass                     = 4.4
+        
+        flame_particles             = weapons\generic_weapon06
+        smoke_particles             = weapons\generic_shoot_00
+        grenade_flame_particles     = weapons\generic_weapon01
+        
+		shell_point	        	    = 0.0, 0.129, 0.192
+		shell_dir	         	    = 0.0, 0.0, 0.4
+		shell_particles	    	    = weapons\generic_shells
+
+        light_disabled              = false
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 5.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.1
+        
+        upgrades                    = up_gr_firstab_g43, up_gr_seconab_g43, up_gr_thirdab_g43
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_toz34
+        upgr_icon_x                 = 1750
+        upgr_icon_y                 = 1000
+        upgr_icon_width             = 300
+        upgr_icon_height            = 50
+        
+        fire_modes                  = 1
+        ammo_class                  = ammo_7.92x33_fmj, ammo_7.92x33_fmj_bad, ammo_7.92x33_fmj_verybad, ammo_7.92x33_ap, ammo_7.92x33_ap_bad, ammo_7.92x33_ap_verybad
+        ammo_elapsed                = 10
+        ammo_mag_size               = 10
+        startup_ammo                = 7
+        
+        scope_status                = 1
+        scope_name                  = wpn_addon_scope_g43
+        scope_texture               = wpn_crosshair_g43
+        scope_x                     = 70
+        scope_y                     = -22
+        scope_zoom_factor           = 25
+        
+        silencer_status             = 0
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        
+        grenade_class               = ammo_vog-25, ammo_vog-25_bad, ammo_vog-25_verybad
+        grenade_launcher_status     = 0
+        launch_speed                = 0
+        
+        hit_impulse                 = 37
+        hit_power                   = 0.81, 0.81, 0.81, 0.81
+        hit_type                    = fire_wound
+        fire_distance               = 1000
+        bullet_speed                = 740
+        rpm                         = 70
+        rpm_empty_click             = 200
+        
+        use_aim_bullet              = false
+        time_to_aim                 = 0.0 ;  1.0
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 2.2
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 8.3
+        fire_dispersion_base        = 0.14
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_probability         = 0.005
+        misfire_start_condition     = 0.7 ;  0.8
+        misfire_start_prob          = 0.01
+        misfire_end_condition       = 0.25
+        misfire_end_prob            = 0.2
+        
+        condition_queue_shot_dec    = 0.002
+        condition_shot_dec          = 0.002
+        
+        cam_return                  = 0
+        cam_relax_speed             = 4.5
+        cam_dispersion              = 2.7
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 2.7
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 0.65
+        zoom_cam_relax_speed        = 0.75
+        zoom_cam_dispersion         = 1.8
+        zoom_cam_dispersion_frac    = 1.0
+        zoom_cam_dispersion_inc     = 1.8
+        zoom_cam_max_angle          = 50.0
+        zoom_cam_max_angle_horz     = 50.0
+        zoom_cam_step_angle_horz    = 0.55
+        
+        PDM_disp_accel_factor       = 2.75
+        PDM_disp_base               = 1.45
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 2.75
+        
+        cam_relax_speed_ai          = 360
+        zoom_cam_relax_speed_ai     = 120.75
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 2.15
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 175
+        kill_msg_y                  = 0
+        kill_msg_width              = 82
+        kill_msg_height             = 28
+ 
+
+[wpn_g43_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_g43\wpn_g43_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        hands_position              = 0.05, -0.059, 0.25
+        hands_position_16x9         = 0.05, -0.059, 0.25
+        hands_orientation           = 2, 2, 0
+        hands_orientation_16x9      = 2, 2, 0
+        
+        aim_hud_offset_pos          = -0.1232, 0.024, -0.25
+        aim_hud_offset_pos_16x9     = -0.1232, 0.024, -0.25
+        aim_hud_offset_rot          = 0.0165, 0.0345, 0.0
+        aim_hud_offset_rot_16x9     = 0.0165, 0.0345, 0.0
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_pos_16x9      = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        gl_hud_offset_rot_16x9      = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_hide                    = gxx_holster
+        anm_idle                    = gxx_idle
+        anm_idle_aim                = gxx_idle_aim
+        anm_idle_aim_moving         = gxx_idle_moving, idle, 0.75
+        anm_idle_aim_moving_crouch  = gxx_idle_moving, idle, 0.7
+        anm_idle_moving             = gxx_idle_moving
+        anm_idle_sprint             = gxx_idle_sprint
+        anm_reload                  = gxx_reload, reload
+        anm_shots                   = gxx_shoot, shoot
+        anm_show                    = gxx_draw
+        
+        shell_bone                  = gilza
+        shell_dir                   = 0.0, 1.0, 0.0
+        shell_point                 = 0, 0, 0
+        
+        fire_bone                   = muzzle
+        fire_bone2                  = wpn_body
+        fire_point                  = 0, 0, 0
+        fire_point2                 = 0, 0, 0
+ 

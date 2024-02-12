@@ -1,0 +1,22 @@
+#include "common.h"
+#include "gasmask_common.h"
+struct 	v2p
+{
+ 	float2 	tc: 		TEXCOORD0;
+};
+
+
+uniform sampler2D 	s_base0;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Pixel
+half4 	main	( v2p I )	: COLOR
+{
+	half2 	mask	= tex2D		(s_base0, I.tc);
+	half2	mask_offset	= (mask.xy-(127.0h/255.0h))*DUDV_DISTORT;
+
+	half2 mask_coord = I.tc + mask_offset * saturate(DUDV_INTENSITY);
+	half3 scene = tex2D(s_base,mask_coord);	
+
+	return  half4	(scene,1.h);
+}

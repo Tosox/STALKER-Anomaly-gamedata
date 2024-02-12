@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_features_options">
+		<text>Features (Options)</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_aoe_pickup_mode">
+		<text>AoE pickup mode</text>
+	</string>
+	<string id="encyclopedia_features_options_aoe_pickup_mode_text">
+		<text>
+			%c[d_cyan]Area-of-effect pickup mode%c[ui_gray_2] enables picking up of multiple items at once.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWhen enabled, this feature allows you to pick up multiple items and put them in your inventory with a single key-press, just as you could in Call of Pripyat.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
+	
+	<string id="encyclopedia_features_options_ai_die_in_anomaly">
+		<text>AI die in anomalies</text>
+	</string>
+	<string id="encyclopedia_features_options_ai_die_in_anomaly_text">
+		<text>
+			%c[d_cyan]AI die in anomalies%c[ui_gray_2] makes stalkers vulnerable against anomalies, just like mutants.\n
+			\n%c[d_red]Warning%c[ui_gray_2]\n
+			\nStalkers will try to avoid anomaly fields, but usually the AI fails to detect the borders of anomaly fields so it ends up with stalkers dying.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+			\nChanging the option in-game will require a game restart.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_artefact_degradation">
+		<text>Artefact degradation</text>
+	</string>
+	<string id="encyclopedia_features_options_artefact_degradation_text">
+		<text>
+			%c[d_cyan]Artefact degradation%c[ui_gray_2] causes artefact abilities and bonuses to degrade when activated.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWith this feature enabled having the best artefacts is no-longer the end of the line for artefact hunters.\n
+			\nArtefacts will become weaker the more they are used, promoting their further hunting and accumulation, instead of becoming just a quick source of income.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_day_radiation">
+		<text>Daytime radiation</text>
+	</string>
+	<string id="encyclopedia_features_options_day_radiation_text">
+		<text>
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nDuring daytime, the air will get radiated. exposing yourself outside will put your body under constant effect by the surrounding radiation, which in turn reflect badly on your health.\n
+			\nYou either need to avoid getting outside during daytime, or keep some anti-rads around to get rid of radiation absorbed throught your body.\n \n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_debug_hud">
+		<text>Debug HUD/Map</text>
+	</string>
+	<string id="encyclopedia_features_options_debug_hud_text">
+		<text>
+			%c[d_cyan]Debug HUD%c[ui_gray_2] shows info and location of smart terrains on the map.\n
+			\n%c[d_cyan]Debug map HUD%c[ui_gray_2] shows info and location of artefacts and stashes, you need to use keys such as SHIFT, ALT, CTRL on the map.\n
+			\nThese 2 features can be toggled from the game options menu and is disabled by default.
+			\nLaunching the game in Debug mode will show more info upon using these options.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_delayed_repairs">
+		<text>Delayed repairs</text>
+	</string>
+	<string id="encyclopedia_features_options_delayed_repairs_text">
+		<text>
+			%c[d_cyan]Delayed repairs%c[ui_gray_2] allows technicians to retain your equipment.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWith this feature enabled, broken weapons, outfits, and other items which you bring to a technician will be kept in their possession until they have completed all repairs.\n
+			\nAfter handing over your items you can speak with the technician again to ask whether they are ready for pick-up, to which they will either return them or tell you how much time they still require.\n
+			\nThis adds a somewhat realistic enhancement to the traditional repair system, suitable if you are seeking a harder experience, as it will no-longer work instantaneously and instead emphasise the use of gunsmith and sewing kits.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_dynamic_news">
+		<text>Offline combat simulator</text>
+	</string>
+	<string id="encyclopedia_features_options_dynamic_news_text">
+		<text>
+			%c[d_cyan]Offline combat simulator%c[ui_gray_2] allows stalkers/mutants to fight their enemies in the other parts of the Zone.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWhen enabled, it will simulate battles between squads in other maps to a certain degree. The outcome depends on the %c[ui_gray_3]population factors%c[ui_gray_2] for both stalkers and mutants.
+			\nThe player can receive news about shootout situations coming from stalkers in far locations.
+			\nWhen %c[ui_gray_3]Dynamic Faction Relations%c[ui_gray_2] option is enabled, the battles between factions will play a role in relation changes.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_extended_hud">
+		<text>Extended HUD</text>
+	</string>
+	<string id="encyclopedia_features_options_extended_hud_text">
+		<text>
+			%c[d_cyan]Extended HUD%c[ui_gray_2] allows the display of additional on-screen information.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWith this feature enabled brief companion information and a miniaturised version of the artefact belt are made visible on the heads-up display.\n
+			\nThis feature can be toggled from the UI/HUD options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_full_alife">
+		<text>Full a-life simulation</text>
+	</string>
+	<string id="encyclopedia_features_options_full_alife_text">
+		<text>
+			%c[d_cyan]Full a-life simulation%c[ui_gray_2] activates the a-life system in all maps.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nNormally, A-life simulation is only enabled in player's current map and the other maps connected directly to it.
+			\nThis feature will enable A-life simulation in every location, even if you aren't there. this will cause stalkers and mutants across the entire zone to move, live and act on their own which expand the dynamic experience in the zone.\n
+			\n%c[d_red]Attention: %c[ui_gray_2]This feature increases the load on the computer. Perhaps you will have to reduce the population factor if you faced performance issues.\n
+			\nThis feature can be toggled from the gameplay options menu and is disabled by default.\n
+			\nEnabling\disabling this feature will require a game restart.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_hardcore_ai_aim">
+		<text>Hardcore AI aim</text>
+	</string>
+	<string id="encyclopedia_features_options_hardcore_ai_aim_text">
+		<text>
+			%c[d_cyan]Hardcore AI%c[ui_gray_2] aim increases AI aim predictability and decreases reaction times.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWith this feature enabled it becomes harder for you to avoid being hit whilst strafing and sprinting, with the use of cover becoming much more essential to your long-term survival.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_harcore_campfire">
+		<text>Hardcore save (campfire)</text>
+	</string>
+	<string id="encyclopedia_features_options_harcore_campfire_text">
+		<text>
+			%c[d_cyan]Hardcore save (campfire)%c[ui_gray_2] allows you to save your progress only on campfires!.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nThis feature increases the hardcore element of the game and portray the survival experience.
+			\nOnce enabled, you won't be able to save your progress from the main menu or by using quicksave button. Instead, you need to use matches on campfires in order to save.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.\n
+			\nWorks perfectly alongside hardcore save (conditions) mode.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_harcore_conditions">
+		<text>Hardcore save (conditions)</text>
+	</string>
+	<string id="encyclopedia_features_options_harcore_conditions_text">
+		<text>
+			%c[d_cyan]Hardcore save (conditions)%c[ui_gray_2] allows you to save your progress when specific conditions are met.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nThis feature increases the hardcore element of the game and portray the survival experience.
+			\nOnce enabled, you won't be able to save your progress from the main menu or by using quicksave button when one of these conditions is met:
+			\n%c[d_red]• %c[ui_gray_2]Your health is low.
+			\n%c[d_red]• %c[ui_gray_2]You are irradiated.
+			\n%c[d_red]• %c[ui_gray_2]You are bleeding.
+			\n%c[d_red]• %c[ui_gray_2]You are in danger (enemies spotted you).
+			\n%c[d_red]• %c[ui_gray_2]There is an on-going emission.\n \n
+			\nThis feature can be toggled from the game options menu and is disabled by default.\n
+			\nWorks perfectly alongside hardcore save (campfire) mode.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_helicopter_patrols">
+		<text>Helicopter patrols</text>
+	</string>
+	<string id="encyclopedia_features_options_helicopter_patrols_text">
+		<text>
+			%c[d_cyan]Helicopter patrols%c[ui_gray_2] enables factions the use of air support to defend strategic areas.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nFactions who have friendly aircraft patrolling in the area will be able to call on them for support in attacking, or defending from, enemy stalkers (including you) and mutants.\n
+			\nDespite their intimidating appearance they can be easily taken down after receiving a light amount of damage to the tail rotor.\n
+			\nThis feature can be toggled from the game options menu and is enabled by default.\n
+			\n%c[d_green]Locations%c[ui_gray_2]\n
+			\n• Agroprom\n• Cordon\n• Darkscape\n• Great Swamp\n• Limansk
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_lootmoney">
+		<text>Loot money on corpses</text>
+	</string>
+	<string id="encyclopedia_features_options_lootmoney_text">
+		<text>
+			%c[d_cyan]Loot money%c[ui_gray_2] allows you to find money in pockets of those who died.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nThe amount of money you find depends on rank of the dead stalker. The higher the rank, the more money you can possibly find.\n
+			\nThis feature can be toggled from the gameplay options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_online_exclusion">
+		<text>Online exclusion</text>
+	</string>
+	<string id="encyclopedia_features_options_online_exclusion_text">
+		<text>
+			%c[d_cyan]Online exclusion%c[ui_gray_2] creates a no-spawn zone around your character.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nAs you explore near the edges of levels and their entry/exit points you could be attacked by enemies arriving from other levels. With online exclusion enabled these spawns are delayed until you are safely out of the way.\n
+			\nIt should be noted that this system revolves entirely around you; any enemies already at a location whilst you are changing levels will not be de-spawned upon your arrival.\n
+			\nThis feature can be adjusted from the game options menu and is set to 75 by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_population_factors">
+		<text>Population factors</text>
+	</string>
+	<string id="encyclopedia_features_options_population_factors_text">
+		<text>
+			%c[d_cyan]Population factors%c[ui_gray_2] modify the number of stalkers and mutants found in the Zone.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nStalker and mutant population factors can be adjusted independently from one another, allowing you to decide how wild or settled the Zone should be without the need to modify any of the game's files.\n
+			\nIt should be noted that the effect is greatest when starting a new character, as if the factors are changed during a playthrough in progress, they will only be realised as stalkers and/or mutants die and then respawn in greater or smaller numbers.\n
+			\nThese features can be adjusted from the game options menu.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_portrait_by_outfit">
+		<text>Portrait by outfit</text>
+	</string>
+	<string id="encyclopedia_features_options_portrait_by_outfit_text">
+		<text>
+			%c[d_cyan]Portrait by outfit%c[ui_gray_2] changes your portrait based on your current outfit.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nWith this feature enabled, every time you equip or unequip an outfit (not including headgear) your character's portrait will be updated to reflect this, mimicking how portraits for the AI match with how they look.\n
+			\nThis feature can be toggled from the gameplay options menu and is disabled by default.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_radio_music">
+		<text>Radio music</text>
+	</string>
+	<string id="encyclopedia_features_options_radio_music_text">
+		<text>
+			%c[d_cyan]Radio music%c[ui_gray_2] allows for custom music tracks to be played at certain locations.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nCertain relaxed areas within the Zone have radios installed nearby, with each playing a selection of musical tracks to keep stalkers entertained.\n
+			\nThis feature can be toggled from the game options menu and is enabled by default.\n
+			\n%c[d_green]Locations%c[ui_gray_2]\n
+			\n• Agroprom - Military base\n• Cordon - Sidorovich's bunker\n• Great Swamp - Clear Sky base\n• Dark Valley - Bandit base\n• Rostok - 100 Rads\n• Red Forest - Forester's tower
+		</text>
+	</string>
+	
+	<string id="encyclopedia_features_options_thirst">
+		<text>Thirst simulation</text>
+	</string>
+	<string id="encyclopedia_features_options_thirst_text">
+		<text>
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nAs the name suggests: this is a hardcore option to simulate thirst. It pushes the player constantly to look for water sources and add another layer of difficulty alongside with the rest of other needs.
+			\nA thirst indicator will show up on your HUD to determine the thirst level, the more thirsty you get the worse your health and stamina will be, until you reach the point of death.\n	
+			\nThis feature can be toggled from the game options menu and is enabled by default.
+		</text>
+	</string>`
+	
+	<string id="encyclopedia_features_options_sleep_deprivation">
+		<text>Sleep deprivation</text>
+	</string>
+	<string id="encyclopedia_features_options_sleep_deprivation_text">
+		<text>
+			%c[d_cyan]Sleep deprivation%c[ui_gray_2] allows time and the use of consumables to fatigue your character.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nThroughout the Zone you will find many beds and sleeping bags, normally they are only used to allow the you to skip time by sleeping, however with this feature enabled they become an essential part of gameplay.\n
+			\nAs time passes your character will slowly begin to feel tired, with the screen beginning to blur and shake. These effects will proceed to get worse until you find a suitable place to rest or the effects of sleep deprivation cause you to collapse from exhaustion.\n
+			\nTiredness can be accelerated through consuming items such as medical kits and vodka, and negated with those such as high-caffeine energy drinks - however using too many will leave you unable to rest until their effects wear off.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>`
+	
+	<string id="encyclopedia_features_options_use_battery">
+		<text>Use batteries</text>
+	</string>
+	<string id="encyclopedia_features_options_use_battery_text">
+		<text>
+			%c[d_cyan]Use batteries%c[ui_gray_2] option requires you to use batteries to keep your gadgets functional.\n
+			\n%c[d_green]Information%c[ui_gray_2]\n
+			\nElectrical devices such as detectors and flashlights get the required electrical voltage and power from the universal power device (UPD) in order to work properly. Because of this, the UPD unit gets constantly consumed.
+			\nTo keep the UPD unit functional, you should recharged it by using batteries before losing all its power. 
+			\nIt is important to keep some batteries in your pocket, you can either buy them or find some around.\n
+			\nThis feature can be toggled from the game options menu and is enabled by default.
+		</text>
+	</string>`
+	
+</string_table>

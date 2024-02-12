@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+	<!-- FIND LEVEL 1 TOOLKIT FOR BANDIT MLR TASK -->
+
+	<string id="trucks_cemetery_bandit_mechanic_task_1_name">
+		<text>Find %s for the Bandit mechanic in Truck Cemetery</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_1_text">
+		<text>The technician in the Truck Cemetery has asked me to find %s.</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_1_about">
+		<text>Bro, more than half of the stuff we got here is breaking apart, and I really need some tools to help out the lads. Wanna help?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_1_fetch_about">
+		<text>Bro, more than half of the stuff we got here is breaking apart, and I really need some tools to help out the lads. Wanna help?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_1_fetch_finish">
+		<text>Oooh, yeah... That's what I'm talkin' about. Tell ya what - since you helped me out, Imma help you out with a discount.</text>
+	</string>
+
+
+	<!-- FIND LEVEL 2 TOOLKIT FOR BANDIT MLR TASK -->
+
+	<string id="trucks_cemetery_bandit_mechanic_task_2_name">
+		<text>Find %s for the Bandit mechanic in Truck Cemetery</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_2_text">
+		<text>The technician in the Truck Cemetery has asked me to find %s.</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_2_about">
+		<text>This area is complete wilderness, but this place right here... It's a strategic point, man! To get our comrades as much firepower as possible, we're gonna need some better tools to work with. Help me out again, will ya?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_2_fetch_about">
+		<text>This area is a complete wilderness, but this place right here... It's a strategic point, man! To get our comrades as much firepower as possible, we're gonna need some better tools to work with. Help me out again, will ya?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_2_fetch_finish">
+		<text>Oh, fuck. You're the best, man. You'll definitely be getting another discount for that!</text>
+	</string>
+
+
+	<!-- FIND LEVEL 3 TOOLKIT FOR BANDIT BANDIT TASK -->
+
+	<string id="trucks_cemetery_bandit_mechanic_task_3_name">
+		<text>Find %s for the Bandit mechanic in Truck Cemetery</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_3_text">
+		<text>The technician in the Truck Cemetery has asked me to find %s.</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_3_about">
+		<text>Was just sittin' around, chillin' like villains, when I realized what we were missing. That's right, even better tools! Anyways, 'sup with you? Wanna help find some?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_3_fetch_about">
+		<text>Was just sittin' around, chillin' like villains, when I realized what we were missing. That's right, even better tools! Anyways, 'sup with you? Wanna help find some?</text>
+	</string>
+	<string id="trucks_cemetery_bandit_mechanic_task_3_fetch_finish">
+		<text>Wow, you actually fuckin' did it! Thanks, pal, you're the best. Biggest discount goes to you, enjoy it!</text>
+	</string>
+
+</string_table>

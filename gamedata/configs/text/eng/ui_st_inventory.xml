@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<!-- Sorter -->
+	<string id="ui_st_tab_all">
+		<text>All Items (1)</text>
+	</string>
+	<string id="ui_st_tab_weapons">
+		<text>Weapons and Attachments (2)</text>
+	</string>
+	<string id="ui_st_tab_armor">
+		<text>Armour, Helmets and Backpacks (3)</text>
+	</string>
+	<string id="ui_st_tab_ammo">
+		<text>Ammo and Grenades (4)</text>
+	</string>
+	<string id="ui_st_tab_artefact">
+		<text>Artefacts and Mutant Parts (5)</text>
+	</string>
+	<string id="ui_st_tab_tools">
+		<text>Devices, Tools and Repair Items (6)</text>
+	</string>
+	<string id="ui_st_tab_consumables">
+		<text>Medicine and Consumables (7)</text>
+	</string>
+	<string id="ui_st_tab_misc">
+		<text>Miscellaneous Items (8)</text>
+	</string>
+	
+	<!-- Loot mode -->
+	<string id="ui_st_put_all">
+		<text>Move all</text>
+	</string>
+	<string id="ui_st_put_all_hint">
+		<text>Move all items (SHIFT + P)</text>
+	</string>
+	<string id="ui_st_take_all">
+		<text>Take all</text>
+	</string>
+	<string id="ui_st_take_all_hint">
+		<text>Move all items to your backpack (SHIFT + T)</text>
+	</string>
+	
+	<!-- Trade mode -->
+	<string id="ui_total_price">
+		<text>Total</text>
+	</string>
+	<string id="ui_st_buy">
+		<text>Buy</text>
+	</string>
+	<string id="ui_st_sell">
+		<text>Sell</text>
+	</string>
+	<string id="ui_st_sell_hint">
+		<text>Sell selected items</text>
+	</string>
+	<string id="ui_st_buy_hint">
+		<text>Buy selected items</text>
+	</string>
+	<string id="not_enough_money_actor">
+		<text>Not enough money</text>
+	</string>
+	<string id="not_enough_money_partner">
+		<text>The character does not have enough money</text>
+	</string>
+	<string id="st_no_trade_tip_1">
+		<text>The trader isn’t interested in items like this.</text>
+	</string>
+	<string id="st_no_trade_tip_2">
+		<text>The item is too damaged to be traded.</text>
+	</string>
+
+	<!-- Upgrade mode -->
+	<string id="ui_st_inv_repair">
+		<text>Repair</text>
+	</string>
+	<string id="ui_repair_button_hint">
+		<text>Repair selected item</text>
+	</string>
+	
+	<!-- Quick use items -->
+	<string id="quick_use_str_1">
+		<text>$$ACTION_QUICK_USE_1$$</text>
+	</string>
+	<string id="quick_use_str_2">
+		<text>$$ACTION_QUICK_USE_2$$</text>
+	</string>
+	<string id="quick_use_str_3">
+		<text>$$ACTION_QUICK_USE_3$$</text>
+	</string>
+	<string id="quick_use_str_4">
+		<text>$$ACTION_QUICK_USE_4$$</text>
+	</string>
+	
+	<!-- Item Properties -->
+	<string id="st_activate_artefact">
+		<text>activate artefact</text>
+	</string>
+	<string id="st_attach_gl_to_rifle">
+		<text>attach grenade launcher to</text>
+	</string>
+	<string id="st_attach_scope_to_pistol">
+		<text>attach scope to</text>
+	</string>
+	<string id="st_attach_silencer_to_pistol">
+		<text>attach silencer to</text>
+	</string>
+	<string id="st_base_cost">
+		<text>Price</text>
+	</string>
+	<string id="st_community">
+		<text>Group:</text>
+	</string>
+	<string id="st_condition">
+		<text>Condition</text>
+	</string>
+	<string id="st_detach_gl">
+		<text>detach grenade launcher</text>
+	</string>
+	<string id="st_detach_scope">
+		<text>detach scope</text>
+	</string>
+	<string id="st_detach_silencer">
+		<text>detach silencer</text>
+	</string>
+	<string id="st_drop">
+		<text>drop</text>
+	</string>
+	<string id="st_drop_all">
+		<text>drop all</text>
+	</string>
+	<string id="st_eat">
+		<text>eat</text>
+	</string>
+	<string id="st_donate">
+		<text>donate</text>
+	</string>
+	<string id="st_move_on_belt">
+		<text>attach to belt</text>
+	</string>
+	<string id="st_move_to_bag">
+		<text>move to backpack</text>
+	</string>
+	<string id="st_move_to">
+		<text>move</text>
+	</string>
+	<string id="st_move_all">
+		<text>move all</text>
+	</string>
+	<string id="st_unequip">
+		<text>unequip</text>
+	</string>
+	<string id="st_move_to_slot">
+		<text>move to slot</text>
+	</string>
+	<string id="st_play">
+		<text>play</text>
+	</string>
+	<string id="st_sell_item">
+		<text>sell item</text>
+	</string>
+	<string id="st_item_use">
+		<text>use</text>
+	</string>
+	<string id="st_item_sort">
+		<text>sort</text>
+	</string>
+	<string id="st_item_unpack">
+		<text>unpack</text>
+	</string>
+	<string id="st_item_play">
+		<text>play</text>
+	</string>
+	<string id="st_item_open">
+		<text>open</text>
+	</string>
+	<string id="st_item_reveal">
+		<text>reveal</text>
+	</string>
+	<string id="st_item_read">
+		<text>read</text>
+	</string>
+	<string id="st_item_separate">
+		<text>separate</text>
+	</string>
+	<string id="st_item_disassemble">
+		<text>disassemble</text>
+	</string>
+	<string id="st_item_charge">
+		<text>charge UPD</text>
+	</string>
+	<string id="st_item_money">
+		<text>take out %s RU</text>
+	</string>
+	<string id="st_item_details">
+		<text>details</text>
+	</string>
+	<string id="st_item_unpack_battery">
+		<text>unpack batteries</text>
+	</string>
+	<string id="st_item_tear_patch">
+		<text>tear patch off</text>
+	</string>
+	<string id="st_item_attach_patch">
+		<text>attach patch</text>
+	</string>
+	<string id="st_awr_r_detail">
+		<text>restore part [!]</text>
+	</string>
+	<string id="st_awr_disassembly_weapon">
+		<text>disassemble weapon [!]</text>
+	</string>
+	<string id="st_awr_disassembly_outfit">
+		<text>disassemble outfit [!]</text>
+	</string>
+	<string id="st_awr_disassembly_helmet">
+		<text>disassemble headgear [!]</text>
+	</string>
+	<string id="st_awr_disassembly_cloth">
+		<text>disassemble [!]</text>
+	</string>
+	<string id="st_drink">
+		<text>drink</text>
+	</string>
+	<string id="st_unload_magazine">
+		<text>unload</text>
+	</string>
+	<string id="st_use">
+		<text>use</text>
+	</string>
+	<string id="st_dress_outfit">
+		<text>wear suit</text>
+	</string>
+	<string id="st_dress_helmet">
+		<text>wear helmet</text>
+	</string>
+	<string id="st_equip_backpack">
+		<text>wear backpack</text>
+	</string>
+	<string id="st_undress_outfit">
+		<text>remove suit</text>
+	</string>
+	<string id="st_undress_helmet">
+		<text>remove helmet</text>
+	</string>
+	<string id="st_unequip_backpack">
+		<text>remove backpack</text>
+	</string>
+
+	<string id="st_plant_explosive_prox">
+		<text>plant with proximity trigger</text>
+	</string>
+	<string id="st_plant_explosive_timer_10">
+		<text>plant with 10 seconds timer</text>
+	</string>
+	<string id="st_plant_explosive_timer_30">
+		<text>plant with 30 seconds timer</text>
+	</string>
+
+	<!-- Units -->
+	<string id="st_perc">
+		<text>%</text>
+	</string>
+	<string id="st_kg">
+		<text>kg</text>
+	</string>
+	<string id="st_g">
+		<text>g</text>
+	</string>
+	<string id="st_kcal">
+		<text>kcal eq.</text>
+	</string>
+	<string id="st_kcal_sec">
+		<text>kcal / sec eq.</text>
+	</string>
+	<string id="st_msv">
+		<text>mSv</text>
+	</string>
+	<string id="st_msv_sec">
+		<text>mSv / sec</text>
+	</string>
+	<string id="st_microg">
+		<text>µg of adren.</text>
+	</string>
+	<string id="st_microg_sec">
+		<text>µg of adren. / sec</text>
+	</string>
+	<string id="st_ml_min">
+		<text>ml / min</text>
+	</string>
+	<string id="st_kw_m2">
+		<text>kW/m2</text>
+	</string>
+	<string id="st_kv">
+		<text>kV</text>
+	</string>
+	<string id="st_mt">
+		<text>mT</text>
+	</string>
+	<string id="st_ppm">
+		<text>C1 ppm eq.</text>
+	</string>
+	<string id="st_j">
+		<text>H/mm2</text>
+	</string>
+	<string id="st_ah_sec">
+		<text>Ah/Sec</text>
+	</string>
+	<string id="st_mah_sec">
+		<text>mAh/Sec</text>
+	</string>
+	<string id="st_uah_sec">
+		<text>uAh/Sec</text>
+	</string>
+	<string id="st_pah_sec">
+		<text>pAh/Sec</text>
+	</string>
+	<string id="st_hz">
+		<text>Hz</text>
+	</string>
+	<string id="st_khz">
+		<text>KHz</text>
+	</string>
+	<string id="st_mhz">
+		<text>MHz</text>
+	</string>
+	<string id="st_ghz">
+		<text>GHz</text>
+	</string>
+	<string id="ui_inv_seconds_short">
+		<text>sec</text>
+	</string>
+	<string id="ui_inv_seconds">
+		<text>seconds</text>
+	</string>
+	
+	<!-- Player states -->
+	<string id="st_ui_main_sensor">
+		<text>TOOLTIP UNAVAILABLE! Ionising radiation poisoning\n \n%c[ui_gray_1]Exposure to ionising radiation poses an extreme, perhaps even fatal, risk. For this reason, the ability to adequately measure radiation levels is a vital skill. The basic unit in the scale of ionising radiation is millisievert %c[ui_gray_3](mSv)%c[ui_gray_1]. Levels of approximately %c[ui_gray_3]8000 mSv %c[ui_gray_1]are usually lethal without a chance of recovery. Radiation levels above the threshold of 1000 mSv (see below) can be briefly endured, but are highly problematic if left untreated. In case of exposure, it is thus strongly advised to administer anti-radiation drugs of appropriate potency as soon as possible. Table 3.2 presents radiation levels with typical symptoms:\n \n%c[0,102,255,0]250 - 1500 mSv: %c[ui_gray_2]Symptoms are unnoticeable. Long term consequences are negligible.\n \n%c[0,255,255,0]1500 - 3000 mSv: %c[ui_gray_2]Noticeable moderate to strong sickness, light-headedness, skin stains. Long-term symptoms are mild. Full recovery is possible if treated promptly.\n \n%c[0,255,122,0]3000 - 4500 mSv: %c[ui_gray_2]Very strong sickness, confusion and dizziness leading to premature death if not treated in relatively short time. Complete cease of hunger and thirst, taint, diarrhoea, peeling of skin and hair loss. High risk of permanent loss of reproduction ability. Restoration of bodily functions is feasible with extensive use of cleansing agents.\n \n%c[d_red]4500 - 6000 mSv: %c[ui_gray_2]Intensification of the above symptoms. Additionally, permanent damage to central nervous system. Death highly probable.\n \n%c[d_red]6000 mSv and above: %c[ui_gray_2]Imminent death. Often after rapid loss of consciousness.\n \n%c[d_cyan] • %c[ui_gray_2] unit: %c[ui_gray_1]mSv (milisivert)\n%c[d_cyan] • %c[ui_gray_2] imminent lethal radiation: %c[ui_gray_1]~6000+ mSv\n%c[d_cyan] • %c[ui_gray_2] av. outside rad. hot-spots potency: %c[ui_gray_1]~900 mSv / min\n \n \n</text>
+	</string>
+	<string id="ui_inv_burn_protection">
+		<text>Burn Resistance\n \n%c[ui_gray_1]Burn Resistance is primarily a measure of your ability to withstand thermal anomalies, as well as survive encounters with pyrokinetic mutants. Thermal anomalies come in several forms: they can manifest as a hemisphere of thermal radiation, slowly cooking anything that steps into them. They can manifest as shimmering waves of air that erupt into powerful jets of flame, and they can even manifest as mobile comets. It is not unusual for two or more of these variants to manifest together: for instance, the bridge tunnel leading to Yantar from Wild Territory consists of both the comet and eruption variants.\n \nThe eruption variant, colloquially known as a "Burner", is several hundred degrees Celsius, and some forms are powerful enough to instantly roast their hapless victims, regardless of their protection. In the north of the Zone, a Burner variant known as the "Boiler" operates on the same principles, but utilizes superheated gushes of steam instead of flame.\n \nIt is rumoured that thermal anomalies give birth to some of the more powerful artefacts of the Zone, but the dangers are so great, even with proper protection, that most choose to steer clear of them.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Burn Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] Due to the rarity of pyrokinetic mutants, as well as most stalkers' predisposition to not being roasted alive, the average stalker doesn't bother much with Burn Resistance, choosing to steer clear of thermal anomalies entirely, and might incidentally obtain 15% Burn Resistance when they can afford their first decent suit. \n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers, who need to be able to operate in the harshest conditions, typically have at least 40% Burn Resistance, which has let them flank more than a few surprised enemies by approaching them through thermal anomalies.\n%c[d_cyan] •%c[ui_gray_1] Independent, full-time artefact hunters and field researchers struggle to afford suit maintenance for the kind of damage that thermal anomalies can do, and as such avoid them the same way most stalkers would unless fulfilling a special contract.\n%c[d_cyan] •%c[ui_gray_1] Accomplished government scientists, however, do not need to worry much about cost, and elect to wear suits with 75% Burn Resistance so that they can operate with relative safety.\n \n \n</text>
+	</string>
+	<string id="ui_inv_chemical_burn_protection">
+		<text>Chemical Resistance\n \n%c[ui_gray_1]Chemical Resistance is a measure of your armour's ability to withstand toxic, acidic or corrosive materials. In the Zone, these materials are most often found in the form of chemical anomalies, the most common of which being the infamous "Burnt Fuzz", a moss or vine-like entity that releases thousands of sharp, toxic spores at the hapless stalker who runs into it. Other forms of chemical anomalies include gas clouds that cover entire areas, slime puddles that rot whatever steps in them, or even miniature acidic fog banks that react explosively to metal or organic matter.\n \nAll of these excel at eating exposed skin or devouring exposed respiratory systems. Nonetheless, these anomalies are among the first a junior artefact hunter will investigate, as it is relatively cheap to acquire decent armour and medication for resisting their effects.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Chemical Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] The average stalker will easily achieve at least 30% Chemical Resistance as soon as they can afford their first full-face gas mask and stalker suit, and many find this to be more than enough. If planning to hunt artefacts, they'll usually supplement this protection with appropriate medication.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers, who need to be able to operate in the harshest conditions, typically have at least 45% Chemical Resistance, allowing them to hide in gas clouds for a limited time if need be.\n%c[d_cyan] •%c[ui_gray_1] Independent, full-time artefact hunters and field researchers agree that 45% Chemical Resistance is sufficient for most cases.\n%c[d_cyan] •%c[ui_gray_1] Government scientists, however, spare no expense, and will typically opt for 55% Chemical Resistance during their field experiments and investigations.\n \n \n</text>
+	</string>
+	<string id="ui_inv_fire_wound_protection">
+		<text>Ballistic Resistance\n \n%c[ui_gray_1]Ballistic resistance, as one might expect, indicates the anti-ballistic properties of your body armour. It's a measure of your armour's ability to safely absorb the kinetic energy of small, high-velocity objects such as bullets or shrapnel. Ideally, this would mean the bullet doesn't get through your armour at all, but sadly this isn't a perfect world, and particularly heavy rounds can still cause bleeding even if they don't manage to outright penetrate. Equipping multiple kevlar, titanium or steel plates can significantly improve Ballistic Resistance, almost regardless of what you're wearing.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Ballistic Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] The average stalker knows better than to go looking for a fight, and as such can get by on 10% Ballistic Resistance.\n%c[d_cyan] •%c[ui_gray_1] Professional mercenaries, scouts or hitmen will want 15% Ballistic Resistance at a minimum, and will aim for better as soon as they can afford it.\n%c[d_cyan] •%c[ui_gray_1] Spetsnaz operators, who are often expected to disperse small stalker camps and conduct surgical strikes against entrenched positions, will accept no less than 40% Ballistic Resistance.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers, who are expected to break meatgrinders and turn the tide of the most vicious firefights, go into battle with a minimum of 60% Ballistic Resistance.\n \n \n</text>
+	</string>
+	<string id="ui_inv_radiation_protection">
+		<text>Radiation Resistance\n \n%c[ui_gray_1]Most radiation in the Zone travels via solid alpha particles, commonly inhaled via dust or moisture. The degree to which you are irradiated by these particles is measured in milisieverts, or mSv. You can check your mSv levels at any time, provided you own a Geiger counter.\n \nRadiation Resistance measures your suit or mask's ability to filter the air around you, reducing the rate at which you acquire mSv from irradiated areas. However, Radiation Resistance is preventative, not reductive: it does not reduce the damage done by radiation already accrued. If you decide to run naked through the Nuclear Power Plant and acquire 3000 mSv as a result, putting on a gas mask won't do much to save you at that point. Radiation Resistance also does not reduce the radiation accrued through ingesting Zone meats, nor do they block the radiation emitted by artefacts.\n \n%c[ui_gray_1]In these cases, you'll need to rely on medicine or other consumables to flush your system instead. In the Zone, your system naturally flushes 1 mSv every 4-6 seconds.\n \n%c[0,250,250,250,0]Degrees of Irradiation\n \n%c[0,250,250,250,0] •%c[ui_gray_1] At 20 mSv, you may begin to experience headaches, but should otherwise be alright.\n%c[0,250,250,250,0] •%c[ui_gray_1] At 100-900 mSv, your health will begin to deteriorate at a rate of less than 1.5% of your maximum every 4-6 seconds. Depending on severity, this could mean you'll be okay no matter what, or it could mean you have hours to live without treatment.\n%c[0,250,250,0,0] •%c[ui_gray_1] At approximately 950-1900 mSv, you'll experience blurred vision, hot flashes, and a health deterioration of less than 5% every 4-6 seconds. Without any means of flushing your system faster, this could mean you have minutes to live.\n%c[d_orange] •%c[ui_gray_1] At 1950 mSv, the deterioration becomes more serious. \n%c[d_red] •%c[ui_gray_1] At 2900 mSv, your condition is critical, and you'll lose health at a rate of 7% or higher every 4-6 seconds. This means less than a minute and a half to live, at best.\n \n%c[d_orange]How Much Protection Do You Need?\n \n%c[d_cyan] •%c[ui_gray_1] The average stalker will aim for 40% Radiation Resistance as soon as they can afford it.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers aim for 65% Radiation Resistance, so that even if their masks are damaged they can still enjoy safety from radioactive particles.\n%c[d_cyan] •%c[ui_gray_1] Independent, full-time artefact hunters and field researchers find that 58% Radiation Resistance is enough for most practical scientific purposes.\n%c[d_cyan] •%c[ui_gray_1] Government scientists, however, also err on the side of caution with 65% Radiation Resistance. \n \n \n</text>
+	</string>
+	<string id="ui_inv_shock_protection">
+		<text>Electrical Resistance\n \n%c[ui_gray_1]While the greater scientific community sees Electro anomalies as a potential source for renewable power, to you these electrical manifestations are unstable and deadly oscillations of energy that must be handled with care.\n \n%c[ui_gray_1]To this end, Electrical Resistance measures how well your armour insulates you from electric shock. Electrical anomalies can manifest either as "pools" of electricity on the ground, or as "Tesla" comets floating about in a rhythmic fashion.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Electrical Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] Electro anomalies vary in strength, but the average stalker finds that 20% Electrical Resistance is enough to help them survive the occasional accident.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers, who must be reasonably ready for absolutely anything, prefer having at least 40% Electrical Resistance, as they know how strong such anomalies can be in the most dangerous parts of the Zone.\n%c[d_cyan] •%c[ui_gray_1] Independent, full-time artefact hunters and field researchers agree that 40-45% Electrical Resistance is sufficient protection in most cases.\n%c[d_cyan] •%c[ui_gray_1] Government scientists, however, will spring for at least 70% Electrical Resistance whenever they can.\n \n \n</text>
+	</string>
+	<string id="ui_inv_telepatic_protection">
+		<text>Psychic Resistance\n \n%c[ui_gray_1]The Zone is a complex maze, full of deadly and unusual traps, and nowhere is this better illustrated than within the deadly psy-anomaly. The most infamous sources of psychic phenomena include the Brain Scorcher, Miracle Machine, Emissions and Psy-Storms, which are too powerful to be resisted outside of the most esoteric or specialized gear.\n \nThus, Psychic Resistance is mostly a measure of how well you can withstand the telepathic assaults of psy-mutants, or how long you can stay in lesser psy-anomalies.\n \nPsychic damage is unusual in that it does not harm you physically, but rather saps your self-control or will to live (if you're looking for your will to live, it's just above the health bar). Overexposure to psy-waves inevitably leads to memory loss, suicide or even zombification, and recovery from psy-waves requires specialized meds or artefacts: regular medkits do nothing to heal a fractured mind, but scientific medkits are markedly more successful.\n \nPsychic fields generally spherical or hemispherical, and are more potent the closer you are to its centre.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Psychic Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] The average stalker rarely encounters psy-mutants, or might not even believe they exist. Most aim for no more than 5% Psychic Resistance, although wiser stalkers are sure to carry psy-block, alprazolam or marijuana for emergencies.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military stalkers, who must be ready for absolutely anything, will aim for at least 30% Psychic Resistance. Some of them are all too familiar with what can happen if a Controller gets unrestrained access to your mind. \n%c[d_cyan] •%c[ui_gray_1] Independent, full-time artefact hunters or field researchers will aim for at least 50% Psychic Resistance, allowing them to spend time in more potent psy-anomalies.\n%c[d_cyan] •%c[ui_gray_1] Government scientists will go the extra mile, and aim for 55% Psychic Resistance so that they can push that little bit deeper.\n \n \n</text>
+	</string>
+	<string id="ui_inv_wound_protection">
+		<text>Rupture Resistance\n \n%c[ui_gray_1]Rupture resistance represents your armour's ability to absorb and displace the trauma imparted by all sorts of physical blows and impacts. These include - but are not limited to - attempted punches, kicks, stabs, cuts, bites and telekinetically thrown debris. \n \n%c[ui_gray_1]This aspect of your armour not only reduces the initial damage caused by such attacks, but also reduces the degree of bleeding any single strike can give you.\n \nRupture resistance also synergise with your ballistic resistance. This is because even bullets that do not penetrate your ballistic armour can still cause blunt trauma, which rupture resistance reduces.\n \n%c[d_orange]How Much Protection Do You Need?\n%c[ui_gray_1]Important: The percentage values suggested below refer only to how full the Rupture Resistance bar appears, which is determined predominantly by armour. This should not be confused with any percentages shown on belt items or consumables, which do not stack additively.\n \n%c[d_cyan] •%c[ui_gray_1] Knowing that mutants cannot be reasoned with, the average stalker will aim for a minimum of 15% Rupture Resistance as soon as they can afford it.\n%c[d_cyan] •%c[ui_gray_1] A professional mercenary will also aim for 15% Rupture Resistance as a minimum, and will obtain better when their budget allows.\n%c[d_cyan] •%c[ui_gray_1] Spetsnaz operators, who are expected to clear out mutant lairs or assist in lab raids, do not settle for less than 40% Rupture Resistance.\n%c[d_cyan] •%c[ui_gray_1] Commissioned military Stalkers, who are expected to survive alone for long periods in the most dangerous parts of the Zone, surprisingly settle for as little as 25% Rupture Resistance, but will exceed their Spetsnaz brethren when the mission requires.\n \n \n</text>
+	</string>
+	<string id="ui_inv_power_restore">
+		<text>Stamina Recovery\n \n%c[ui_gray_1]First, let's cover some fundamentals:\n \n%c[d_cyan] •%c[ui_gray_1] You are not a pack mule, and making peace with this simple truth is the key to managing your energy.\n%c[d_cyan] •%c[ui_gray_1] High stamina recovery makes it easier to sprint great distances, escape gravitational anomalies, vault over obstacle after obstacle, and even resist some paranormal phenomena, such as telekinesis.\n%c[d_cyan] •%c[ui_gray_1] Poor stamina recovery can make even a light walk a draining exercise. When stamina reserves dip too low, it becomes impossible to initiate a sprint. When they empty, it becomes impossible to walk. Better stamina recovery means you'll empty your reserves slower and fill them faster.\n \n%c[ui_gray_1]As you don't want to be out of stamina when a live grenade rolls up next to you, or a pack of dogs decides to chase you down, it's important to keep your stamina recovery high.\n \n%c[d_cyan] •%c[ui_gray_1] The most basic way to do this is to always ensure you're well fed, rested and hydrated. These three things can already mean the difference between life and death.\n%c[d_cyan] •%c[ui_gray_1] Next, be mindful of your carry weight. If you're carrying more than 50% of your total weight capacity, you may notice your recovery slow slightly. This effect becomes more noticeable as you approach maximum capacity. If you're carrying above your maximum capacity, all actions that drain stamina - including walking - will begin draining it significantly faster.\n%c[d_cyan] •%c[ui_gray_1] Equip higher quality backpacks, or wear armours that grant more carrying capacity than they take up, to let yourself carry more equipment without impacting your stamina recovery.\n%c[d_cyan] •%c[ui_gray_1] Unless specially modified, most gas masks make breathing a hot and sweaty affair. When you don't need your headgear's protective qualities, take it off for a small stamina recovery boost.\n%c[d_cyan] •%c[ui_gray_1] Many artefacts and belt items can boost your recovery rates even further.\n%c[d_cyan] •%c[ui_gray_1] Consumables that boost carry weight or recovery, such as Hercules or energy drinks, can be invaluable for escaping emergencies.\n \n \n</text>
+	</string>
+	<string id="st_ui_bleeding_sensor">
+		<text>TOOLTIP UNAVAILABLE! Bleeding\n \n%c[ui_gray_1]Bleeding can rapidly drain your health if not treated promptly. Bleeding is most often caused by piercing or slashing attacks that manage to get through your armour and puncture your skin, although excessive blunt trauma can cause bleeding through even the sturdiest suits.\n \n%c[ui_gray_1]Bandages, army medkits or tourniquets can effectively stop the bleeding, while coagulating agents such as vinca can be used to reduce the overall rate of bleeding. Note that it is generally faster and cheaper to stop your bleeding outright than it is to try regenerate your health through it. Finally, be aware that bleeding is cumulative: multiple small wounds can lead to just as much blood loss as a single severe one.\n \n%c[d_cyan] • %c[0,255,255,255]Mild bleeding can be quickly stopped with bandages, or may even stop on its own given time.\n%c[d_cyan] • %c[0,250,250,0]Moderate bleeding can deal a great amount of damage over time if left unattended, but is usually stopped quickly with proper medical attention. Some injuries heal on their own, but others simply lead to a slow death over the course of minutes.\n%c[d_cyan] • %c[d_orange] Serious blood loss can lead to death in less than a minute if it isn't treated immediately. Without imminent medical attention, there is little chance of survival.\n%c[d_cyan] • %c[d_red] Severe blood loss can kill in seconds, even if you're in peak physical condition. May require extensive medical supplies to treat while in the field.\n \n \n</text>
+	</string>
+	<string id="st_ui_health_sensor_inv">
+		<text>Health\n \n%c[ui_gray_1]Your health represents your body's ability to endure physical illness and trauma. A full bar means you're in peak condition, while a nearly empty one means you're about to go into shock. From there, you're as good as dead, so tread carefully. \n \n%c[ui_gray_1]Armour, as well as some medication, can protect you from different kinds of pain, making it easier to endure. Some items, like medkits or stimpacks, alleviate pain entirely, treating your injuries and restoring your health.\n \n%c[ui_gray_1]However, even the best protection is still worse than avoiding damage outright, which you can do through employing companions, cover, disguises, darkness and paying attention to your environment. In the Zone, the most direct route isn't always the safest.\n \n%c[ui_gray_1]Another important factor in your survival is that you stay hydrated, well-fed and well-rested: in other words, take care of yourself. A body that is well looked-after will have a much easier time coping with pain than one that is malnourished, dessicated or passing out from exhaustion.\n \nThat said, life in the Zone is never without danger, and can be summed up thus: to return to the outside world with treasure is great! To do so without scars is even better! But to not return at all? That's just fate.\n \n%c[0,255,255,255]Bleeding\n \n%c[ui_gray_1]Bleeding occurs when piercing or slashing attacks manage to puncture your skin, although excessive blunt trauma can cause bleeding through even the sturdiest suits.\n \n%c[d_cyan] • %c[0,255,255,255]Mild bleeding can be quickly stopped with bandages, or may even stop on its own given time, especially if you're under the effects of a coagulant like Vinca.\n%c[d_cyan] • %c[0,250,250,0]Moderate bleeding can deal a great amount of damage over time if left unattended, but is usually stopped quickly with proper medical attention such as a tourniquet. Some moderate bleeds stop on their own, especially with Vinca, but others simply lead to a slow death over the course of minutes.\n%c[d_cyan] • %c[d_orange] Serious blood loss can lead to death in less than a minute. Without imminent medical attention, ideally from an army or scientific medkit, there is little chance of survival.\n%c[d_cyan] • %c[d_red] Severe blood loss can kill in seconds, even if you're in peak physical condition. May require extensive medical supplies to treat while in the field.\n \n \n</text>
+	</string>
+	
+	<!-- Item description-->
+	<string id="st_cap_old">
+		<text>Old</text>
+	</string>
+	<string id="st_cap_verybad">
+		<text>Bad</text>
+	</string>
+	
+	<string id="st_cap_upgr_1">
+		<text>(Basic)</text>
+	</string>
+	<string id="st_cap_upgr_2">
+		<text>(Advanced)</text>
+	</string>
+	<string id="st_cap_upgr_3">
+		<text>(Fine-tuning)</text>
+	</string>
+	
+	<string id="st_cap_meal_1">
+		<text>(Zone-produced)</text>
+	</string>
+	<string id="st_cap_meal_2">
+		<text>(Stewed)</text>
+	</string>
+	<string id="st_cap_meal_3">
+		<text>(Purified)</text>
+	</string>
+	
+	<string id="st_cap_con_25_o">
+		<text>Torn</text>
+	</string>
+	<string id="st_cap_con_50_o">
+		<text>Damaged</text>
+	</string>
+	<string id="st_cap_con_75_o">
+		<text>Scratched</text>
+	</string>
+	<string id="st_cap_con_100_o">
+		<text>Clean</text>
+	</string>
+	<string id="st_cap_con_25_w">
+		<text>Deformed</text>
+	</string>
+	<string id="st_cap_con_50_w">
+		<text>Damaged</text>
+	</string>
+	<string id="st_cap_con_75_w">
+		<text>Scratched</text>
+	</string>
+	<string id="st_cap_con_100_w">
+		<text>Functional</text>
+	</string>
+
+	<string id="st_ui_armor_static">
+		<text>Armour condition</text>
+	</string>
+	<string id="st_weight">
+		<text>Wgt.</text>
+	</string>
+	<string id="st_weight_full">
+		<text>Weight</text>
+	</string>
+	<string id="ui_ammo_count">
+		<text>Mag. size</text>
+	</string>
+	<string id="ui_inv_accuracy">
+		<text>Accuracy</text>
+	</string>
+	<string id="ui_inv_damage">
+		<text>Damage</text>
+	</string>
+	<string id="ui_inv_handling">
+		<text>Handling</text>
+	</string>
+	
+	<string id="ui_inv_health">
+		<text>Health restoration</text>
+	</string>
+	<string id="ui_inv_power">
+		<text>Stamina Recovery</text>
+	</string>
+	
+	<string id="ui_inv_outfit_additional_weight">
+		<text>Weight carried</text>
+	</string>
+	<string id="ui_inv_outfit_artefact_count">
+		<text>Belt slots</text>
+	</string>
+	<string id="ui_inv_outfit_burn_protection">
+		<text>Burn Res.</text>
+	</string>
+	<string id="ui_inv_outfit_chemical_burn_protection">
+		<text>Chemical Res.</text>
+	</string>
+	<string id="ui_inv_outfit_fire_wound_protection">
+		<text>Ballistic Res.</text>
+	</string>
+	<string id="ui_inv_outfit_radiation_protection">
+		<text>Radiation Res.</text>
+	</string>
+	<string id="ui_inv_outfit_shock_protection">
+		<text>Electrical Res.</text>
+	</string>
+	<string id="ui_inv_outfit_telepatic_protection">
+		<text>Psychic Res.</text>
+	</string>
+	<string id="ui_inv_outfit_wound_protection">
+		<text>Rupture Res.</text>
+	</string>
+	<string id="ui_inv_outfit_explosion_protection">
+		<text>Explosive Res.</text>
+	</string>
+	<string id="ui_inv_outfit_strike_protection">
+		<text>Impact Res.</text>
+	</string>
+	<string id="ui_inv_outfit_hit_fraction_actor">
+		<text>Strength</text>
+	</string>
+	
+	<string id="ui_inv_satiety">
+		<text>Satiety level</text>
+	</string>
+	<string id="ui_inv_outfit_power_restore">
+		<text>Stamina Recovery</text>
+	</string>
+	<string id="ui_inv_weight">
+		<text>Conv. encumbrance</text>
+	</string>
+	<string id="ui_inv_af_condition">
+		<text>Efficiency</text>
+	</string>
+	<string id="ui_total_weight">
+		<text>Weight:</text>
+	</string>
+	<string id="st_ui_health_sensor">
+		<text>Health</text>
+	</string>
+	<string id="ui_ammo_types">
+		<text>Ammo</text>
+	</string>
+	<string id="ui_inv_effect_time">
+		<text>Duration</text>
+	</string>
+	
+	<string id="st_itm_desc_properties">
+		<text>PROPERTIES</text>
+	</string>
+	<string id="st_itm_desc_details">
+		<text>DETAILS</text>
+	</string>
+	<string id="st_itm_desc_warning">
+		<text>WARNING</text>
+	</string>
+	
+	<string id="st_itm_desc_state_possible">
+		<text>possible</text>
+	</string>
+	<string id="st_itm_desc_state_not_possible">
+		<text>not possible</text>
+	</string>
+	<string id="st_itm_desc_state_avail">
+		<text>included</text>
+	</string>
+	<string id="st_itm_desc_state_avail_workshop">
+		<text>available (by the mechanic)</text>
+	</string>
+	<string id="st_itm_desc_state_not_avail">
+		<text>not available</text>
+	</string>
+	<string id="st_itm_desc_state_not_included">
+		<text>not included</text>
+	</string>
+	<string id="st_itm_desc_state_low">
+		<text>low</text>
+	</string>
+	<string id="st_itm_desc_state_average">
+		<text>average</text>
+	</string>
+	<string id="st_itm_desc_state_high">
+		<text>high</text>
+	</string>
+	<string id="st_itm_desc_state_slight">
+		<text>slight</text>
+	</string>
+	<string id="st_itm_desc_state_moderate">
+		<text>moderate</text>
+	</string>
+	<string id="st_itm_desc_state_significant">
+		<text>significant</text>
+	</string>
+	<string id="st_itm_desc_state_increase">
+		<text>increment</text>
+	</string>
+	<string id="st_itm_desc_state_decrease">
+		<text>reduction</text>
+	</string>
+	
+	<string id="st_itm_desc_arty_cont">
+		<text>contained artefact</text>
+	</string>
+	<string id="st_itm_desc_arty_cont_rad">
+		<text>permissible radiation level</text>
+	</string>
+	
+	<string id="st_itm_desc_eat_sleepiness">
+		<text>%s sleepiness %s</text>
+	</string>
+	<string id="st_itm_desc_eat_thirst">
+		<text>%s thirstiness %s</text>
+	</string>
+	<string id="st_itm_desc_eat_radiation">
+		<text>radiation poisoning</text>
+	</string>
+	<string id="st_itm_desc_eat_health">
+		<text>unhealthy</text>
+	</string>
+	
+	<string id="st_itm_desc_outfit_upgradable">
+		<text>upgradable</text>
+	</string>
+	<string id="st_itm_desc_outfit_heardgear">
+		<text>headgear</text>
+	</string>
+	<string id="st_itm_desc_outfit_num_of_slots">
+		<text>attachments for extra slots</text>
+	</string>
+	<string id="st_itm_desc_outfit_carry_weight">
+		<text>carry weight increment</text>
+	</string>
+	<string id="st_itm_desc_outfit_run">
+		<text>sprinting is</text>
+	</string>
+	<string id="st_itm_desc_outfit_patch_torn">
+		<text>The %s on this outfit has been torn</text>
+	</string>
+	<string id="st_itm_desc_outfit_faction">
+		<text>faction</text>
+	</string>
+	
+	<string id="st_itm_desc_outfit_repair_bonus">
+		<text>repair bonus</text>
+	</string>
+	<string id="st_itm_desc_outfit_required_tool">
+		<text>required tool</text>
+	</string>
+	
+	<string id="st_itm_desc_workshop_tool">
+		<text>usable on mechanic's workshop for part replacement and upgrades</text>
+	</string>
+	<string id="st_itm_desc_repair_min_con">
+		<text>not usable below condition level</text>
+	</string>
+	<string id="st_itm_desc_repair_base_con">
+		<text>base condition gain</text>
+	</string>
+	<string id="st_itm_desc_repair_match">
+		<text>can repair materials by using their counterparts</text>
+	</string>
+	
+	<string id="st_itm_desc_part_usable">
+		<text>usable at workshops for part replacement</text>
+	</string>
+	<string id="st_itm_desc_part_i">
+		<text>base component</text>
+	</string>
+	<string id="st_itm_desc_part_w">
+		<text>weapon part</text>
+	</string>
+	<string id="st_itm_desc_part_o">
+		<text>outfit part</text>
+	</string>
+	
+	<string id="st_itm_desc_upgr_w">
+		<text>weapon upgrade kit</text>
+	</string>
+	<string id="st_itm_desc_upgr_o">
+		<text>outfit upgrade kit</text>
+	</string>
+	<string id="st_itm_desc_upgr_usable">
+		<text>usable at workshops for installing suitable upgrades</text>
+	</string>
+
+<!-- Others -->
+	<string id="ui_inv_ammo_pistol">
+		<text>Buy basic ammo for pistol (Q)</text>
+	</string>
+	<string id="ui_inv_ammo_rifle">
+		<text>Buy rifle ammo (W)</text>
+	</string>
+	<string id="ui_inv_bleeding">
+		<text>Bleeding control</text>
+	</string>
+	<string id="ui_inv_cancel">
+		<text>Cancel</text>
+	</string>
+	<string id="ui_inv_cant_buy_item">
+		<text>Cannot buy weapon</text>
+	</string>
+	<string id="ui_inv_count_restr">
+		<text>Amount restrictions</text>
+	</string>
+	<string id="ui_inv_default(F5)">
+		<text>Default (F5)</text>
+	</string>
+	<string id="ui_inv_exit">
+		<text>Back</text>
+	</string>
+	<string id="ui_inv_granadelauncher_rifle">
+		<text>Buy under-barrel grenade launcher for rifle (D)</text>
+	</string>
+	<string id="ui_inv_granades_rifle">
+		<text>Buy under-barrel grenade launcher grenades (E)</text>
+	</string>
+	<string id="ui_inv_has">
+		<text>Now</text>
+	</string>
+	<string id="ui_inv_heavy_weapons">
+		<text>Heavy</text>
+	</string>
+	<string id="ui_inv_last_buy">
+		<text>Buy last purchased loadout</text>
+	</string>
+	<string id="ui_inv_last_buy(F4)">
+		<text>Previous (F4)</text>
+	</string>
+	<string id="ui_inv_money">
+		<text>Money</text>
+	</string>
+	<string id="ui_inv_need">
+		<text>Required</text>
+	</string>
+	<string id="ui_inv_needs">
+		<text>Needs</text>
+	</string>
+	<string id="ui_inv_not_enought_money">
+		<text>Not enough money</text>
+	</string>
+	<string id="ui_inv_ok">
+		<text>OK</text>
+	</string>
+	<string id="ui_inv_preset1(F1)">
+		<text>Loadout 1 (F1)</text>
+	</string>
+	<string id="ui_inv_preset2(F2)">
+		<text>Loadout 2 (F2)</text>
+	</string>
+	<string id="ui_inv_preset3(F3)">
+		<text>Loadout 3 (F3)</text>
+	</string>
+	<string id="ui_inv_radiation">
+		<text>Radiation</text>
+	</string>
+	<string id="ui_inv_rank_restr">
+		<text>Rank restriction</text>
+	</string>
+	<string id="ui_inv_rate_of_fire">
+		<text>Fire rate</text>
+	</string>
+	<string id="ui_inv_reset_items(C)">
+		<text>Clear (C)</text>
+	</string>
+	<string id="ui_inv_rifles">
+		<text>Assault rifles</text>
+	</string>
+	<string id="ui_inv_scope_rifle">
+		<text>Buy optical scope for rifle (S)</text>
+	</string>
+	<string id="ui_inv_sell_items(X)">
+		<text>Sell all items in backpack (X)</text>
+	</string>
+	<string id="ui_inv_shotguns">
+		<text>Rifles</text>
+	</string>
+	<string id="ui_inv_silencer_pistol">
+		<text>Buy silencer for pistol (A)</text>
+	</string>
+	<string id="ui_inv_silencer_rifle">
+		<text>Buy silencer for rifle (F)</text>
+	</string>
+	<string id="ui_inv_sniper_rifles">
+		<text>Sniper</text>
+	</string>
+	<string id="ui_inv_time">
+		<text>Time</text>
+	</string>
+	<string id="ui_inv_you_already_have">
+		<text>Already got one</text>
+	</string>
+	<string id="ui_st_err_gs_not_available">
+		<text>Online S.T.A.L.K.E.R. services are not accessible.</text>
+	</string>
+	<string id="ui_st_err_sb_master_server_conn_fail">
+		<text>Cannot connect to master server.</text>
+	</string>
+	<string id="ui_st_outfit_protect">
+		<text>Protection:</text>
+	</string>
+	<string id="ui_st_preset_def">
+		<text>Default</text>
+	</string>
+	<string id="ui_st_preset_stored_to">
+		<text>Purchased loadout saved as</text>
+	</string>
+	<string id="ui_inv_survive_surge">
+		<text>Allows you to survive an emission</text>
+	</string>
+	<string id="st_ui_containers">
+		<text>Containers</text>
+	</string>
+	<string id="st_ui_artifacts">
+		<text>Artefacts</text>
+	</string>
+	<string id="st_ui_itm_repair_base">
+		<text>Damaged Items</text>
+	</string>
+	<string id="st_ui_itm_repair_support">
+		<text>Supportive Materials</text>
+	</string>
+	<string id="st_ui_itm_cook_fuel">
+		<text>Fuel</text>
+	</string>
+	<string id="st_ui_itm_cook_food">
+		<text>Recipes</text>
+	</string>
+	<string id="st_ui_repair">
+		<text>Repair</text>
+	</string>
+	<string id="st_ui_craft">
+		<text>Craft</text>
+	</string>
+	<string id="st_ui_cancel">
+		<text>Cancel</text>
+	</string>
+	<string id="st_ui_total">
+		<text>Total</text>
+	</string>
+	<string id="st_ui_bonus">
+		<text>Bonus</text>
+	</string>
+	<string id="st_ui_base">
+		<text>Base</text>
+	</string>
+	<string id="st_ui_oldcon">
+		<text>Old</text>
+	</string>
+	
+	<!-- Messages -->
+	<string id="st_news_dis_items">
+		<text>%c[d_red]A proper disassembling tool is required.</text>
+	</string>
+	<string id="st_ui_need_charger">
+		<text>%s is required to conduct electricity</text>
+	</string>
+	<string id="st_new_anomaly_map">
+		<text>New anomaly map is discovered</text>
+	</string>
+	<string id="ui_st_create_stash">
+		<text>create stash</text>
+	</string>
+	<string id="ui_st_geiger_mode_1">
+		<text>Mode 1: while active</text>
+	</string>
+	<string id="ui_st_geiger_mode_2">
+		<text>Mode 2: always</text>
+	</string>
+	<string id="ui_st_geiger_mode_3">
+		<text>Mode 3: on button click</text>
+	</string>
+	<string id="ui_st_npc_pda_unkown">
+		<text>PDA is not functional</text>
+	</string>
+	<string id="ui_st_npc_pda_low_power">
+		<text>LOW POWER</text>
+	</string>
+	<string id="ui_st_npc_pda_access_denied">
+		<text>ACCESS DENIED</text>
+	</string>
+	<string id="ui_st_npc_pda_strelok">
+		<text>KILL STRELOK</text>
+	</string>
+	<string id="ui_st_battery_more_power">
+		<text>The device has more power</text>
+	</string>
+	<string id="st_lamp_disconnected">
+		<text>Head lamp disconnected</text>
+	</string>
+	<string id="st_lamp_equipped">
+		<text>Head lamp equipped</text>
+	</string>
+	<string id="st_lamp_power_left">
+		<text>Head lamp has %s% power left</text>
+	</string>
+	<string id="st_lamp_no_power_left">
+		<text>Head lamp has no power left</text>
+	</string>
+	<string id="st_upd_disconnected">
+		<text>You don't have a Universal Power Device (UPD)</text>
+	</string>
+	<string id="st_upd_low">
+		<text>Low battery power</text>
+	</string>
+	<string id="st_pda_no_power">
+		<text>PDA has no power left</text>
+	</string>
+	<string id="st_pda_no_active">
+		<text>No active PDA</text>
+	</string>
+	
+	<string id="st_ui_scopes">
+		<text>Scopes</text>
+	</string>
+	<string id="st_ui_silencer">
+		<text>Silencer</text>
+	</string>
+	<string id="st_ui_grenade_launcher">
+		<text>Grenade Launcher</text>
+	</string>
+	<string id="st_ui_awr_parts_list">
+		<text>Replacement Parts</text>
+	</string>
+	<string id="st_ui_repair_kit_list">
+		<text>Compatible Repair Kits</text>
+	</string>
+	<string id="st_ui_workshop_kit_list">
+		<text>Compatible Workshop Kit</text>
+	</string>
+	<string id="st_ui_disassemly_list">
+		<text>Components</text>
+	</string>
+	<string id="st_ui_upgrade_list">
+		<text>Upgrades</text>
+	</string>
+	<string id="st_ui_arty_rank">
+		<text>artefact rank</text>
+	</string>
+	<string id="st_ui_artefact">
+		<text>artefact</text>
+	</string>
+	<string id="st_ui_repair_add_condition">
+		<text>Base condition gain</text>
+	</string>
+	<string id="st_ui_repair_min_condition">
+		<text>Not usable below condition level</text>
+	</string>
+	<string id="st_ui_repair_bonus">
+		<text>repair bonus</text>
+	</string>
+	<string id="st_ui_power_loss">
+		<text>power loss</text>
+	</string>
+	<string id="st_ui_number_of_uses">
+		<text>Uses</text>
+	</string>
+	<string id="st_ui_repair_parts_include">
+		<text>Useable Materials</text>
+	</string>
+	<string id="st_ui_power">
+		<text>Power</text>
+	</string>
+	<string id="st_ui_amount">
+		<text>Amount</text>
+	</string>
+	<string id="st_ui_power_consumption">
+		<text>power consumption</text>
+	</string>
+	<string id="st_ui_info">
+		<text>Info</text>
+	</string>
+	<string id="st_ui_inventory_unpack">
+		<text>unpack</text>
+	</string>
+	<string id="st_ui_inventory_attach">
+		<text>attach</text>
+	</string>
+	<string id="st_ui_inventory_view">
+		<text>view</text>
+	</string>
+	<string id="st_ui_container_remove">
+		<text>Remove from Container</text>
+	</string>
+	<string id="st_ui_container_place">
+		<text>Place in Container</text>
+	</string>
+	<string id="st_imm_swiss_open">
+		<text>open can</text>
+	</string>
+	<string id="st_item_place">
+		<text>place</text>
+	</string>
+	<string id="st_cap_companion_inv">
+		<text>Swap items</text>
+	</string>
+	<string id="st_ui_cook_fuel_usable">
+		<text>Useable fuel</text>
+	</string>
+	
+
+	<!-- Workshop-->
+	<string id="st_tab_state">
+		<text>STATE</text>
+	</string>
+	<string id="st_tab_repair">
+		<text>REPAIR</text>
+	</string>
+	<string id="st_tab_upgrade">
+		<text>UPGRADES</text>
+	</string>
+	<string id="st_tab_craft">
+		<text>CRAFT</text>
+	</string>
+	<string id="st_cap_inventory">
+		<text>Inventory</text>
+	</string>
+	<string id="st_cap_menu">
+		<text>Craft menu</text>
+	</string>
+	<string id="st_cap_recipes">
+		<text>Known recipes and guides</text>
+	</string>
+	<string id="st_cap_craftables">
+		<text>List of craftable items</text>
+	</string>
+	<string id="st_cap_components">
+		<text>Components</text>
+	</string>
+	<string id="st_cap_result">
+		<text>Result</text>
+	</string>
+	<string id="st_cap_replace_parts">
+		<text>Replacement parts</text>
+	</string>
+	<string id="st_cap_upgrades">
+		<text>Upgrades</text>
+	</string>
+	<string id="st_cap_req_toolkit">
+		<text>Required toolkit</text>
+	</string>
+	<string id="st_ui_craft_device">
+		<text>Devices</text>
+	</string>
+	<string id="st_ui_craft_equipment">
+		<text>Equipment</text>
+	</string>
+	<string id="st_ui_craft_repair">
+		<text>Repair toolkits</text>
+	</string>
+	<string id="st_ui_craft_upgrades">
+		<text>Upgrade parts</text>
+	</string>
+	<string id="st_ui_craft_medical">
+		<text>Medical</text>
+	</string>
+	<string id="st_ui_craft_ammo">
+		<text>Ammo</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_state_intro">
+		<text>The workshop allows you to repair, upgrade and craft items by yourself with the help of proper toolkits.
+		\nThe tools shown above represent the available main toolkits on this workshop, which allow further adjustments for your items.
+		\nSelect one of the tabs to proceed.
+		</text>
+	</string>
+	<string id="st_ui_workshop_owner">
+		<text>This workshop belongs to %s.</text>
+	</string>
+	<string id="st_ui_workshop_owner_nobody">
+		<text>nobody</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_repair_intro">
+		<text>You can replace damaged parts of your weapon or outfit by using replacement parts and proper toolkit.
+		\nChoose the item you want to repair from your inventory.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_tip_1">
+		<text>Each item has its own set of parts and materials
+		\nGrayed parts indicate the lack of identical replacements for them in your inventory.
+		\nIf you have the replacement part and a usable "%s" in your possession, click on the part you wish to replace.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_warning_1">
+		<text>You don't have any replacement parts in your inventory for this equipment.</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_solution_1">
+		<text>Replacement parts can be obtained mainly through disassembling outfits and weapons.</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_warning_2">
+		<text>You cannot replace parts of this equipment without "%s"</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_solution_2">
+		<text>The majority of mechanics sell such tools. You also may be able to obtain them by other ways.</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_tip_3">
+		<text>You can pick identical replacement parts "%s" from your inventory.
+		\nOnly parts with higher condition can be used to improve your item.
+		\nGreyed parts means they have worse condition than your item's part. They are not suitable for proper replacement.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_warning_3">
+		<text>The replacement part "%s" in your inventory has worse condition compared to the one used by your equipment. It cannot be used.</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_solution_3">
+		<text>Many tools can repair these parts using counterparts. The majority of mechanics sell such tools. You also may be able to obtain them by other ways.</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_tip_4">
+		<text>Replacement parts are ready to be installed, click on "Repair" button to install selected replacements.
+		</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_upgrade_intro">
+		<text>With the correct toolkits in your possession, you can install upgrades for your weapons and outfits.
+		\nChoose the item you want to upgrade from your inventory.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_tip_1">
+		<text>Each upgrade requires a specific toolset of the same type, in addition to usable "%s" to complete the process.
+		\nAdditional conditions need to be met in order for the upgrade to be installed correctly.
+		\nClick on the upgrade you want to install on your selected item.
+		\nIf the upgrade is disabled, hover on it to see all the missing requirements.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_warning_1">
+		<text>You cannot install upgrades on this equipment without "%s"</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_solution_1">
+		<text>The majority of mechanics sell such tools. You also may be able to obtain them by other ways.</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_warning_2">
+		<text>There is no available upgrade to be installed.</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_solution_2">
+		<text>Hover on an upgrade to see missing requirements.</text>
+	</string>
+	<string id="st_ui_workshop_info_upgrade_tip_3">
+		<text>Upgrade is ready to install. If you're done, click on "Upgrade" button to install selected upgrades.</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_craft_intro">
+		<text>A lot of materials can be used to craft various kinds of items.
+		\nRecipes and guides you've acquired through your journey can provide you with more information to craft more items.
+		\nSelect an entry from the craft menu to see craftable items.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_tip_1">
+		<text>Select the item you want to craft.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_warning_2">
+		<text>You don't know how to craft "%s" yet.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_solution_2">
+		<text>Guide books and recipes have enough information regarding items, they will come in handy for learning more about those items.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_warning_3">
+		<text>"%s" is required to craft this item using its components (availability only, by player or the mechanic)</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_solution_3">
+		<text>Such tools are usually rare to come by, keep an eye on such sets through your travels.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_warning_4">
+		<text>Your inventory is lacking some necessary components to craft this item.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_solution_4">
+		<text>Components can be obtained from different items and materials around you. It's advised that you disassemble unneeded items in order to acquire useful components.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_tip_5">
+		<text>You have all necessary components to craft "%s", select "Craft" button if you wish to continue.
+		</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_state_1">
+		<text>The workshop allows you to repair, upgrade and craft items by yourself with the help of proper toolkits.
+		The tools shown above represent the available main toolkits on this workshop, which allow further adjustments for your items.
+		\nSelect one of the tabs to proceed.
+		</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_repair_1">
+		<text>You can replace damaged parts of your weapon or outfit by using replacement parts and proper toolkit.
+		\nChoose the item you want to repair from your inventory.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_2">
+		<text>Each item has its own set of parts and materials
+		\nGrayed parts indicate the lack of identical replacements for them in your inventory.
+		\nIf you have the replacement part and a usable "%s" in your possession, click on the part you wish to replace.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_3">
+		<text>You can pick identical replacement parts from your inventory.
+		\nOnly parts with higher condition can be used to improve your item.
+		\nGreyed parts means they have worse condition than your item's part. They are not suitable for proper replacement.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_repair_4">
+		<text>Replacement parts are ready to be installed, click on "Repair" button to install selected replacements.
+		</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_upgr_1">
+		<text>With the correct toolkits in your possession, you can install upgrades for your weapons and outfits.
+		\nChoose the item you want to upgrade from your inventory.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_upgr_2">
+		<text>Each upgrade requires a specific toolset of the same type, in addition to usable "%s" to complete the process.
+		\nAdditional conditions need to be met in order for the upgrade to be installed correctly.
+		\nClick on the upgrade you want to install on your selected item.
+		\nIf the upgrade is disabled, hover on it to see all the missing requirements.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_upgr_3">
+		<text>Upgrade is ready to install. If you're done, click on "Upgrade" button to install selected upgrades.</text>
+	</string>
+	
+	<string id="st_ui_workshop_info_craft_1">
+		<text>A lot of materials can be used to craft various kinds of items.
+		\nRecipes and guides you've acquired through your journey can provide you with more information to craft more items.
+		\nSelect an entry from the craft menu to see craftable items.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_2">
+		<text>Select the item you want to craft.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_3">
+		<text>To craft this item, a set of specified components are required.
+		\nWhen you don't have the minimum amount of some component, it will be showed in red. Thus preventing the craft procedure.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_4">
+		<text>You have all necessary components to craft this item, select "Craft" button if you wish to continue.
+		</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_5">
+		<text>You don't know how to craft this item.</text>
+	</string>
+	<string id="st_ui_workshop_info_craft_6">
+		<text>"%s" are required on this workshop so you can craft this item.
+		</text>
+	</string>
+	
+	<string id="st_ui_workshop_no_upgr_1">
+		<text>"%s" is required for this upgrade to be installed.</text>
+	</string>
+	<string id="st_ui_workshop_no_upgr_2">
+		<text>"%s" is required for this upgrade to be installed.</text>
+	</string>
+	<!--string id="st_ui_workshop_no_upgr_3">
+		<text>The condition of this item is critical for this upgrade to be installed.</text>
+	</string-->
+	<string id="st_ui_workshop_no_upgr_3">
+		<text>This workshop missing the required tools to install this upgrade.</text>
+	</string>
+	<string id="st_ui_workshop_no_upgr_4">
+		<text>An alternative upgrade is already installed in this slot.</text>
+	</string>
+	<string id="st_ui_workshop_no_upgr_5">
+		<text>It's not possible to install this upgrade without installing previous upgrades.</text>
+	</string>
+	
+	<string id="st_ui_upgr_required_con">
+		<text>Minimum required condition</text>
+	</string>
+
+</string_table>

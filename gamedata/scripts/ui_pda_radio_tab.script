@@ -1,0 +1,975 @@
+
+--[[
+	Tronex
+	Last edit: 2018/5/22
+	PDA radio/music player
+	
+	==============================================================================================
+	Codes/comments with ( --< can be expanded for more channels >-- ) tag can be edited to add more radio channels
+	Creating new radio channel require editing the other XML and DDS files as well.
+	Using (radio_vol = soundObject.volume) will cause a crash if you didn't give the object a volume value
+	Sounds start always at maxed volume before going down if you declare a volume value before playing the sound
+	Don't use (play_no_feedback) method, it has no controls
+	volume values changes give fractions (for example 0.2 change is actually 0.20000003278255)
+	Codes/comments with ( --< can be expanded for more channels >-- ) tag can be edited to add more radio channels
+	==============================================================================================
+--]]
+
+
+------------------------------------------------------------
+-- Controls
+------------------------------------------------------------
+-- Files links & controls
+local ini_radio    		 = ini_file("plugins\\radio_zone_fm.ltx")		-- File control: reading the ltx file that controls the hotkeys
+local num_of_plyr        = ini_radio:r_float("trx_radio_plyr","number_of_playlists") or 2 -- Number of Music Player plylists
+local num_of_ch          = 2									--< can be expanded for more channels >--- Number of Radio channels 
+local num_of_noise       = 8									-- File control: number of files with name (white_noise_heavy_horror_)
+local num_of_mixdown     = 4									-- File control: number of files with name (radio_mixdown)
+local path_radio_ch      = {} 									-- File control: the path to channel x tracks
+local path_radio_session = {} 									-- File control: the path to channel x sessions
+local path_plyr          = {}									-- File control: the path to playlist x tracks
+for x = 1, num_of_ch do
+	path_radio_ch[x] = "radio\\_channel_" .. tostring(x) .."\\"
+	path_radio_session[x] = "radio\\_channel_" .. tostring(x) .."_session\\"	
+end
+for x = 1, num_of_plyr do
+	path_plyr[x] = "radio\\_playlist_" .. tostring(x) .."\\"	
+end
+local fileList, count, file									-- Variables for file reading
+
+
+-- Volume controls
+local radio_vol = 0.5										-- In-game control: Radio volume - first value
+local plyr_vol  = 0.5										-- In-game control: Music Player volume - first value
+local vol_max   = 0.98										-- In-game control: Max volume value (1.1 - anything beyond 1.0 has no additional effect)
+local vol_min   = 0.12										-- In-game control: Min volume value (0.1 - still hearable)
+local vol_step  = 0.2										-- In-game control: Volume change per click
+local psi_vol   = 0											-- This value get subtracted from the main volume value, it become >0 on emissions to reduce the total radio volume
+
+
+-- Radio
+local radio_ch    = {}										-- Multi-dimensional table: Radio channels, every channel has its tracks
+local radio_ch_out = {}										-- Similar, used for outer radios
+local radio_index = {}										-- Multi-dimensional table: Radio channels indexes, every channel index has its track indexes
+local radio_now   = {}										-- Table: to determine the current track for each channel
+for x = 1, num_of_ch do										-- Reading the files for radio channels
+	radio_ch[x] = {}
+	radio_ch_out[x] = {}
+	radio_index[x] = {}
+	radio_now[x] = 1
+	fileList = getFS():file_list_open("$game_sounds$", path_radio_ch[x], bit_or(FS.FS_ListFiles, FS.FS_RootOnly))		-- Reading the file list in channel x
+	count = fileList and fileList:Size() or 0																			-- Get the number of files per channel x
+	if (count > 0) then
+		for i = 1, count do
+			file = fileList:GetAt(i - 1):sub(1, -5)								-- Get red off the extension
+			radio_ch[x][i] = sound_object(path_radio_ch[x] .. file)				-- Creating sound objects, every track in every channel
+			radio_ch_out[x][i] = sound_object(path_radio_ch[x] .. file)
+			radio_index[x][i] = i												-- Creating track index
+			--printf("-txr_radio: Radio | channel " .. tostring(x) .. " | loading file: " .. file)
+		end
+	else																		-- if no files found
+		radio_ch[x][1] = sound_object("radio\\no_sound")							-- assign no sound, a small hack to prevent the game from crashing
+		radio_ch_out[x][1] = sound_object("radio\\no_sound")
+		radio_index[x][1] = 1
+		--printf("-txr_radio: Radio | channel " .. tostring(x) .. " | no tracks found")
+	end
+end
+local radio_state         = false							-- Radio on/off state (off = false, on = true)
+local radio_selected      = 0								-- Selected Radio channel (0 means nothing is selected)
+local radio_hotkey_switch = false							-- Safety switch for (Play/Stop Radio) Hotkey
+
+
+-- Radio sessions
+local radio_session      = {}								-- Multi-dimensional table: Radio channels commercial sessions, every channel has its sessions
+local radio_session_out  = {}								-- Similar, used for outer radios
+local radio_session_now  = {}								-- Current session per channel
+local radio_session_lock = {}								-- Boolean table: used to make sure that only 1 session is being played between tracks
+for x = 1, num_of_ch do										-- assign sound files for sessions
+	radio_session[x] = {}
+	radio_session_out[x] = {}
+	radio_session_now[x] = 1
+	radio_session_lock[x] = false
+	fileList = getFS():file_list_open("$game_sounds$", path_radio_session[x], bit_or(FS.FS_ListFiles, FS.FS_RootOnly))	-- Reading the file list in channel x sessions
+	count = fileList and fileList:Size() or 0				-- Get the number of files per channel x
+	if (count > 0) then
+		for i = 1, count do
+			file = fileList:GetAt(i - 1):sub(1, -5)
+			radio_session[x][i] = sound_object(path_radio_session[x] .. file)
+			radio_session_out[x][i] = sound_object(path_radio_session[x] .. file)
+			--printf("-txr_radio: Radio | channel " .. tostring(x) .. " sessions | loading file: " .. file)
+		end
+	else
+		radio_session[x][1] = sound_object("radio\\no_sound")
+		radio_session_out[x][1] = sound_object("radio\\no_sound")
+		--printf("-txr_radio: Radio | channel " .. tostring(x) .. " sessions | no tracks found")
+	end
+end
+
+
+-- Music player
+local plyr_num_of_tracks  = {}
+local plyr_tracks         = {}								-- Table: music player tracks, contains all tracks pathes
+local plyr_tracks_display = {}								-- Table: music player - PDA display names of tracks
+local plyr_index          = {}								-- Table: music player tracks indexes
+local plyr_now            = {}								-- Table: Music Player current track
+local plyr_counter        = {}								-- Table: tracks counter, used for remembering tracks order, important for (previous) button
+for x = 1, num_of_plyr do
+	plyr_tracks[x]         = {}
+	plyr_tracks_display[x] = {}
+	plyr_index[x]          = {}
+	plyr_now[x]            = 1
+	plyr_counter[x]        = {}
+	fileList = getFS():file_list_open("$game_sounds$", path_plyr[x], bit_or(FS.FS_ListFiles, FS.FS_RootOnly))		-- Reading the file list in music player directory
+	count = fileList and fileList:Size() or 0																		-- Get the number of files
+	if (count > 0) then
+		plyr_num_of_tracks[x] = count						-- Number of tracks of Music Player
+		for i = 1, count do
+			file = fileList:GetAt(i - 1):sub(1, -5)
+			plyr_tracks[x][i] = sound_object(path_plyr[x] .. file)
+			plyr_index[x][i] = i
+			plyr_tracks_display[x][i] = string.gsub(file, "_", " ")			-- Display name, get rid of underscore
+			--printf("-txr_radio: music player | playlist: " .. tostring(x) .. " | loading file: " .. plyr_tracks_display[x][i])
+		end
+	else
+		plyr_num_of_tracks[x] = 1
+		plyr_tracks[x][1] = sound_object("radio\\no_sound")
+		plyr_index[x][1] = 1
+		--printf("-txr_radio: music player | no tracks found in playlist: " .. tostring(x))
+	end
+end
+local plyr_state         = false								-- Music Player on/off state (off = false, on = true)	
+local playlist           = 1									-- Selected playlist													
+local plyr_shuffle       = false								-- Music Player shuffle state (off = false, on = true)
+local plyr_loop          = 0									-- Music Player loop state (no loop = 0, loop all = 1, loop one = 2)
+local time_start         = time_global() or 0					-- Start time of played song in music player, used for displaying song timer
+local plyr_hotkey_switch = false								-- Safety switch for (Play/Stop Music Player) Hotkey
+
+
+-- Sound effects
+local snd_radio_mixdown            = {}
+local snd_white_noise_heavy_horror = {}
+local snd_click                    = sound_object("radio\\interact\\click")
+local snd_radio_on                 = sound_object("radio\\interact\\radio_on")
+local snd_radio_off                = sound_object("radio\\interact\\radio_off")
+local snd_white_noise_light        = sound_object("radio\\white_noise\\white_noise_light")
+local snd_white_noise_heavy        = sound_object("radio\\white_noise\\white_noise_heavy")
+local snd_white_noise_heavy_start  = sound_object("radio\\white_noise\\white_noise_heavy_fade_in")
+local snd_white_noise_heavy_end    = sound_object("radio\\white_noise\\white_noise_heavy_fade_out")
+for i = 1, num_of_mixdown do
+	snd_radio_mixdown[i] = sound_object("radio\\interact\\radio_mixdown_" .. tostring(i))
+	snd_radio_mixdown[i].volume = 2
+end
+for i = 1, num_of_noise do
+	snd_white_noise_heavy_horror[i] = sound_object("radio\\white_noise\\White_noise_heavy_horror_" .. tostring(i))
+end
+snd_click.volume     = 2
+snd_radio_on.volume  = 2
+snd_radio_off.volume = 2
+
+
+-- Others
+local safety_lock     = false									-- become "true" after making change. while true, it prevents any possible additional changes done by user for a brief amount of time until the code is over. basically a safety procedure to prevent codes from interfering with each others (locked = true, free to go = false)
+local white_noise_now = 1										-- Current index of the white noise
+local psi_start_lock  = false									-- used to separate stages of for emission noise effects
+local psi_time        = time_global() or 0						-- period between radio volume shifts for emission/underground noise effects
+local indoor_lvls     = {}										-- Table: contains names of underground levels
+local gini            = game_ini()
+local levels          = utils_data.collect_section(gini,"level_maps_single")
+for i=1,#levels do
+	wthr = gini:r_string_ex(levels[i],"weathers")
+	if (wthr == "indoor") then
+		indoor_lvls[levels[i]] = true
+	end
+end
+
+
+-- Hotkeys
+local opt = {}
+local option_playlist_name = {}
+function update_settings()
+	opt.emission_noise         = ui_options.get("sound/radio/emission_intereferences")
+	opt.underground_noise      = ui_options.get("sound/radio/underground_intereferences")
+	opt.display_names          = ui_options.get("sound/radio/display_tracks")
+	for i=1,num_of_plyr do
+		option_playlist_name[i] = ui_options.get("sound/radio/playlist_name_" .. i)
+	end
+end
+
+
+
+------------------------------------------------------------
+-- Functionality
+------------------------------------------------------------
+function action_radio_ch(n) -- Rule: Switch to Channel (n)
+	if radio_state and (not safety_lock) and (not is_snd_playing()) and (radio_selected ~= n) then
+		safety_lock = true
+		get_ui():SwitchChannel(n)
+		radio_setVolume(0) -- set volume 0 to the previous channel
+		radio_selected = n
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		snd_radio_mixdown[math.random(#snd_radio_mixdown)]:play(db.actor, 0, sound_object.s2d)
+		safety_lock = false
+	end
+end
+
+function action_radio_v_down() -- Rule: Reduce the radio volume
+	if (radio_vol > vol_min) and radio_state and (not safety_lock) and (not is_snd_playing()) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		radio_vol = radio_vol - vol_step
+		radio_setVolume(radio_vol - psi_vol)
+		safety_lock = false
+	end
+end
+
+function action_radio_v_up() -- Rule: Increase the radio volume
+	if (radio_vol < vol_max) and radio_state and (not safety_lock) and (not is_snd_playing()) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		radio_vol = radio_vol + vol_step
+		radio_setVolume(radio_vol - psi_vol)
+		safety_lock = false
+	end
+end
+
+function action_radio_stop() -- Rule: Stop the radio
+	if radio_state and (not safety_lock) and (not is_snd_playing()) then
+		safety_lock = true
+		radio_state = false
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		snd_radio_off:play(db.actor, 0, sound_object.s2d)
+		radio_setVolume(0)
+		safety_lock = false
+	end
+end
+
+function action_radio_start() -- Rule: Start the radio
+
+	if (not radio_state)
+	and (item_device.is_pda_charged(true))
+	and (not safety_lock)
+	and (not is_snd_playing())
+	then
+		safety_lock = true
+		radio_state = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		if plyr_state then
+			plyr_state = false
+			plyr_tracks[playlist][plyr_now[playlist]]:stop()
+		end
+		snd_radio_on:play(db.actor, 0, sound_object.s2d)
+		radio_setVolume(radio_vol - psi_vol)
+		safety_lock = false
+	end
+end
+
+function action_plyr_playlist()
+	if plyr_state and (not safety_lock) then
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_tracks[playlist][plyr_now[playlist]]:stop()
+		playlist = playlist + 1
+		if (playlist > num_of_plyr) then
+			playlist = 1
+		end
+		time_start = time_global()
+		plyr_tracks[playlist][plyr_now[playlist]]:play(db.actor, 0, sound_object.s2d)
+		plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+		if opt.display_names then
+			actor_menu.set_msg(1, game.translate_string("ui_st_radio_playing") .. ": " .. plyr_tracks_display[playlist][plyr_now[playlist]],4)
+		end
+		safety_lock = false
+	end
+end
+
+function action_plyr_loop()	-- Rule: Loop the tracks from music player
+	if plyr_state and (not safety_lock) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_loop = plyr_loop + 1
+		if (plyr_loop == 3) then
+			plyr_loop = 0
+		end
+		safety_lock = false
+	end
+end
+
+function action_plyr_shuffle() -- Rule: Shuffle the tracks from music player
+	if plyr_state and (not safety_lock) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_shuffle = not plyr_shuffle
+		safety_lock = false
+	end
+end
+
+function action_plyr_v_down() -- Rule: Reduce music player's volume
+	if (plyr_vol > vol_min) and plyr_state and (not safety_lock) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_vol = plyr_vol - vol_step
+		plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+		safety_lock = false
+	end
+end
+
+function action_plyr_v_up()	-- Rule: Increase music player's volume	
+	if (plyr_vol < vol_max) and plyr_state and (not safety_lock) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)						
+		plyr_vol = plyr_vol + vol_step
+		plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+		safety_lock = false
+	end
+end
+
+function action_plyr_previous() -- Rule: Previous track from music player
+	if plyr_state and (not safety_lock) then
+		safety_lock = true
+		time_start = time_global()
+		--snd_click:play(db.actor, 0, sound_object.s2d)	
+		plyr_tracks[playlist][plyr_now[playlist]]:stop ()
+		plyr_now[playlist] = plyr_pick (#plyr_tracks[playlist], plyr_now[playlist], true, plyr_shuffle, plyr_loop, plyr_counter[playlist], plyr_index[playlist])
+		if (plyr_now[playlist] <= plyr_num_of_tracks[playlist]) then
+			plyr_tracks[playlist][plyr_now[playlist]]:play(db.actor, 0, sound_object.s2d)
+			plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+			if opt.display_names then
+				actor_menu.set_msg(1, game.translate_string("ui_st_radio_playing") .. ": " .. plyr_tracks_display[playlist][plyr_now[playlist]],4)
+			end
+		else
+			plyr_state = false
+		end
+		safety_lock = false
+	end
+end
+
+function action_plyr_stop() -- Rule: Stop the music player
+	if plyr_state and (not safety_lock) then
+		safety_lock = true
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_state = false
+		plyr_tracks[playlist][plyr_now[playlist]]:stop()
+		safety_lock = false	
+	end
+end
+
+function action_plyr_start() -- Rule: Start the music player
+	if (not plyr_state)
+	and (item_device.is_pda_charged(true))
+	and (not safety_lock)
+	then
+		safety_lock = true
+		plyr_state = true
+		time_start = time_global()
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		if radio_state then
+			radio_state = false	
+			snd_radio_off:play(db.actor, 0, sound_object.s2d)
+			radio_setVolume(0)
+		end
+		if plyr_now[playlist] > plyr_num_of_tracks[playlist] then
+			plyr_now[playlist] = 1
+			for i=1, plyr_num_of_tracks[playlist] do
+				plyr_index[playlist][i] = i
+			end
+		end
+		plyr_tracks[playlist][plyr_now[playlist]]:play(db.actor, 0, sound_object.s2d)
+		plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+		if opt.display_names then
+			actor_menu.set_msg(1, game.translate_string("ui_st_radio_playing") .. ": " .. plyr_tracks_display[playlist][plyr_now[playlist]],4)
+		end
+		safety_lock = false
+	end
+end
+
+function action_plyr_next()	-- Rule: Next track from music player
+	if plyr_state and (not safety_lock) then
+		safety_lock = true
+		time_start = time_global()
+		--snd_click:play(db.actor, 0, sound_object.s2d)
+		plyr_tracks[playlist][plyr_now[playlist]]:stop()
+		plyr_now[playlist] = plyr_pick(#plyr_tracks[playlist], plyr_now[playlist], false, plyr_shuffle, plyr_loop, plyr_counter[playlist], plyr_index[playlist])
+		if (plyr_now[playlist] <= plyr_num_of_tracks[playlist]) then
+			plyr_tracks[playlist][plyr_now[playlist]]:play(db.actor, 0, sound_object.s2d)
+			plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+			if opt.display_names then
+				actor_menu.set_msg(1, game.translate_string("ui_st_radio_playing") .. ": " .. plyr_tracks_display[playlist][plyr_now[playlist]],4)
+			end
+		else
+			plyr_state = false
+		end
+		safety_lock = false
+	end
+end
+
+----------------------------------------------------------------------------------------
+
+function is_snd_playing() -- Rule: check if some interacting sound is currently playing | it prevents any changes done by the player until that sound is over (no sound interfering)
+	if snd_click:playing() or snd_radio_on:playing() or snd_radio_off:playing() then
+		return true	
+	end
+	for j = 1, #snd_radio_mixdown do
+		if snd_radio_mixdown[j]:playing() then
+			return true
+		end
+	end
+	return false
+end
+
+function radio_setVolume(radio_vol) -- Rule: set volume for selected channel
+	-- This might seem unnecessary at first glance since the volume get modified always through (actor_on_update) callback
+	-- but tests showed that volume changes slowly, not instantly. 
+	-- with bigger code snippets between the sound play and volume change, its even slower. 
+	-- This function make things faster for volume changes.
+	
+	if (radio_selected ~= 0) then
+		radio_ch[radio_selected][radio_now[radio_selected]].volume = radio_vol
+		radio_session[radio_selected][radio_session_now[radio_selected]].volume = radio_vol
+	end
+end
+
+function radio_pick(radio_index_i, number_of_tracks) -- Rule: pick a random index for radio channels, get rid of the picked index afterwards so it doesn't get chosen again until a new cycle is called
+	if (#radio_index_i == 0) then
+		for i=1,number_of_tracks do	
+			radio_index_i[i] = i
+		end
+	end
+	local j = math.random(#radio_index_i)
+	local k = radio_index_i[j]
+	table.remove(radio_index_i, j)
+	return k
+end
+
+function plyr_pick(num_of_tracks, plyr_now, previous, shuffle, loop, counter, index) -- Rule: pick a number based on music player states, important to know next or previous songs
+	if (not previous) then -- Next
+		if (loop ~= 2) then -- NOT Loop One
+			if shuffle then	-- Shuffle
+				if (#index == 0) then -- if index is over
+					if (loop == 1) then -- if Loop All
+						for i=1, num_of_tracks do	
+							index[i] = i		
+						end
+					else -- if NOT Loop All
+						return (num_of_tracks + 1) -- if (index is over + Shuffle + NOT Loop All) then fuck it!
+					end
+				end
+				local x = math.random(#index)		
+				local y = index[x]					
+				table.remove(index,x)				
+				plyr_now = y										
+			else -- NOT shuffle
+				plyr_now = plyr_now + 1
+				if (plyr_now > num_of_tracks) then
+					if (loop == 1) then -- if (index is over + Loop All)
+						plyr_now = 1						
+					elseif (loop == 0) then		
+						return (num_of_tracks + 1) -- if (index is over + NOT Loop All) then fuck it!
+					end
+				end
+			end
+		end
+		table.insert(counter,plyr_now) -- insert the new count at last index
+		if (#counter > num_of_tracks) then -- if the table size exceeded the tracks number
+			table.remove(counter,1)	-- remove the first index
+		end
+	
+	else -- Previous
+		if (#counter ~= 0) then
+			plyr_now = counter[#counter] -- get the value of last index
+			counter[#counter] = nil	-- remove the last index
+		else
+			plyr_now = plyr_now - 1
+			if (plyr_now == 0) then
+				plyr_now = num_of_tracks + 1
+			end
+		end
+	end
+	return plyr_now
+end
+
+function get_plyr_param() -- called/used by radio interface
+	local plyr_info = {
+		["state"]      = plyr_state,
+		["loop"]       = plyr_loop,
+		["shuffle"]    = plyr_shuffle,
+		["now"]        = plyr_tracks[playlist][plyr_now[playlist]],
+		["display"]    = plyr_tracks_display[playlist][plyr_now[playlist]],
+		["start_time"] = time_start,
+		["playlist"]   = option_playlist_name[playlist]
+	}
+	
+	return plyr_info
+end
+
+function get_num_of_plyr() -- called/used by (ui_mm_opt_radio.script) to set up playlists names settings
+	return num_of_plyr
+end
+
+function get_playing_object(i) -- called from ph_sound to play current track on the radio on radio objects
+	local sound_obj = radio_session_out[i][radio_session_now[i]]
+	if (radio_session[i][radio_session_now[i]]:playing()) then
+		return sound_obj
+	end
+	
+	sound_obj = radio_ch_out[i][radio_now[i]]
+	if (radio_ch[i][radio_now[i]]:playing()) then
+		return sound_obj
+	end
+	
+	return
+end
+
+
+------------------------------------------------------------
+-- Callbacks
+------------------------------------------------------------
+local function on_key_release(key) --> Rule: called on key release to perform functions
+	local bind = dik_to_bind(key)
+	
+	-- Play/Stop button (for Radio)
+	if (bind == key_bindings.kCUSTOM7) then 
+		if item_device.is_pda_charged(true) then
+			if (not radio_hotkey_switch) then
+				action_radio_start()
+				radio_hotkey_switch = true
+			else
+				action_radio_stop()
+				radio_hotkey_switch = false
+			end
+		end
+		
+	-- Play/Stop button (for Music Player)
+	elseif (bind == key_bindings.kCUSTOM8) then 
+		if item_device.is_pda_charged(true) then
+			if (not plyr_hotkey_switch) then
+				action_plyr_start()
+				plyr_hotkey_switch = true
+			else
+				action_plyr_stop()
+				plyr_hotkey_switch = false
+			end
+		end
+		
+	-- Volume Up button (for Radio & Music Player)
+	elseif (bind == key_bindings.kCUSTOM9) then 
+		action_radio_v_up()
+		action_plyr_v_up()
+		
+	-- Volume Down button (for Radio & Music Player)
+	elseif (bind == key_bindings.kCUSTOM10) then 
+		action_radio_v_down()
+		action_plyr_v_down()
+		
+	-- Next Track (for Radio & Music Player)
+	elseif (bind == key_bindings.kCUSTOM11) then 
+		action_plyr_next()
+		
+	-- Previous Track (for Radio & Music Player)
+	elseif (bind == key_bindings.kCUSTOM12) then 
+		action_plyr_previous()
+		
+	-- Next Channel/Playlist (for Radio & Music Player)
+	elseif (bind == key_bindings.kCUSTOM16) then 
+		if item_device.is_pda_charged(true) then
+			action_plyr_playlist()
+			local a = radio_selected
+			a = a + 1
+			if (a > num_of_ch) then
+				a = 1
+			end
+			action_radio_ch(a)
+		end
+	end
+end
+
+local function actor_on_update() --> Rule: runs automatically on actor updates (run always)
+	-- Radio (no channel) part
+	if radio_state and (radio_selected == 0) then
+			if not snd_white_noise_light:playing() then
+				snd_white_noise_light:play(db.actor, 0, sound_object.s2d)
+				snd_white_noise_light.volume = 0.4
+			end
+	else
+		snd_white_noise_light:stop()
+	end
+	
+	-- Consume power from PDA if radio/player is ON
+	if radio_state or plyr_state then
+		local pda = db.actor:item_in_slot(8)
+		item_device.drain_device_on_event(pda, nil, 2)
+		
+		-- Turn off Radio/Player if PDA is not in slot/battery is low
+		if (not item_device.is_pda_charged(true)) then
+			if radio_state then
+				action_radio_stop()
+			elseif plyr_state then
+				action_plyr_stop()
+			end
+		end
+	end
+	
+	
+	if (not safety_lock) then
+		-- Radio part
+		if (not is_snd_playing()) then
+			for i=1,num_of_ch do
+				if (not radio_ch[i][radio_now[i]]:playing()) and (not radio_session[i][radio_session_now[i]]:playing()) then	 	-- if no track and no session is playing in channel (i)
+					if (math.random(3) == 1) and (not radio_session_lock[i]) then		-- chance of playing a session between tracks (%30)
+						radio_session_now[i] = math.random(#radio_session[i])	-- pick a session from channel i
+						radio_session[i][radio_session_now[i]]:play(db.actor, 0, sound_object.s2d)	-- play it
+						radio_session_lock[i] = true
+					else	-- if no session is picked, go for radio tracks
+						radio_now[i] = radio_pick (radio_index[i], #radio_ch[i])	-- pick a track from channel i
+						radio_ch[i][radio_now[i]]:play(db.actor, 0, sound_object.s2d)	-- play it
+						radio_session_lock[i] = false
+					end
+				end
+				
+				if radio_state and (radio_selected == i) then												
+					radio_ch[i][radio_now[i]].volume = radio_vol - psi_vol
+					radio_session[i][radio_session_now[i]].volume = radio_vol - psi_vol
+				else
+					radio_ch[i][radio_now[i]].volume = 0
+					radio_session[i][radio_session_now[i]].volume = 0
+				end
+			end
+		end
+		
+		-- Music Player part
+		if plyr_state then
+			if (not plyr_tracks[playlist][plyr_now[playlist]]:playing()) then
+				plyr_now[playlist] = plyr_pick(#plyr_tracks[playlist], plyr_now[playlist], false, plyr_shuffle, plyr_loop, plyr_counter[playlist], plyr_index[playlist])
+				if (plyr_now[playlist] <= plyr_num_of_tracks[playlist]) then
+					plyr_tracks[playlist][plyr_now[playlist]]:play(db.actor, 0, sound_object.s2d)
+					plyr_tracks[playlist][plyr_now[playlist]].volume = plyr_vol
+					if opt.display_names then
+						actor_menu.set_msg(1, game.translate_string("ui_st_radio_playing") .. ": " .. plyr_tracks_display[playlist][plyr_now[playlist]],4)
+					end
+					time_start = time_global()
+				else
+					plyr_state = false
+				end
+			end
+		end
+	end
+	
+	-- Emission part
+	if opt.emission_noise then
+		if  xr_conditions.surge_started() or psi_storm_manager.is_started() then 
+			if not psi_start_lock then 	-- lock to make sure this condition happen once per emission
+				psi_start_lock = true
+				snd_white_noise_heavy_start:play(db.actor, 0, sound_object.s2d)
+			end
+			if (not snd_white_noise_heavy_start:playing()) and (not snd_white_noise_heavy_horror[white_noise_now]:playing()) then
+				white_noise_now = math.random(#snd_white_noise_heavy_horror)
+				snd_white_noise_heavy_horror[white_noise_now]:play(db.actor, 0, sound_object.s2d)
+			end
+			if (math.floor(psi_time + 1500) < time_global()) then
+				psi_time = time_global()
+				psi_vol = math.random(2,8)/10
+			end
+		elseif psi_start_lock then
+			if (xr_conditions.surge_complete() or psi_storm_manager.is_finished()) and (not snd_white_noise_heavy_horror[white_noise_now]:playing()) and (not snd_white_noise_heavy_start:playing()) and (not snd_white_noise_heavy_end:playing()) then -- if emission ended AND start/end sound are not playing AND emission lock is on 
+				snd_white_noise_heavy_end:play(db.actor, 0, sound_object.s2d)
+				psi_start_lock = false
+				psi_vol = 0
+			end
+		end
+	else
+		snd_white_noise_heavy_horror[white_noise_now]:stop()
+		snd_white_noise_heavy_start:stop()
+		snd_white_noise_heavy_end:stop()
+		psi_start_lock = false
+		psi_vol = 0
+	end
+	
+	-- Underground part
+	if indoor_lvls[level.name()] then
+		if opt.underground_noise then
+			if (not snd_white_noise_heavy:playing()) then
+				snd_white_noise_heavy:play(db.actor, 0, sound_object.s2d)
+			end
+			if (math.floor(psi_time + 1500) < time_global()) then
+				psi_time = time_global()
+				psi_vol = math.random(5,8)/10
+			end
+		else
+			psi_vol = 0
+		end
+	end
+	
+	if radio_state then 
+		snd_white_noise_heavy_horror[white_noise_now].volume = radio_vol
+		snd_white_noise_heavy_start.volume = radio_vol
+		snd_white_noise_heavy_end.volume = radio_vol
+		snd_white_noise_heavy.volume = radio_vol
+	else
+		snd_white_noise_heavy_horror[white_noise_now].volume = 0
+		snd_white_noise_heavy_start.volume = 0
+		snd_white_noise_heavy_end.volume = 0
+		snd_white_noise_heavy.volume = 0
+	end
+end
+
+function on_game_start()
+	local function on_game_load()
+		update_settings()
+	end
+	RegisterScriptCallback("on_key_release",on_key_release)
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+	RegisterScriptCallback("on_option_change",update_settings)
+	RegisterScriptCallback("on_game_load",on_game_load)
+end
+
+
+------------------------------------------------------------
+-- GUI
+------------------------------------------------------------
+local ch_count = 2
+local SINGLETON = nil
+
+function get_ui() -- get called from pressing the tab
+	SINGLETON = SINGLETON or pda_radio_tab()
+	return SINGLETON
+end
+
+class "pda_radio_tab" (CUIScriptWnd)
+
+function pda_radio_tab:__init() super()
+	self.radio_display_ch = {}
+	for i=1,ch_count do
+		self.radio_display_ch[i] = false -- If true, it will display channel i red marker 
+	end
+
+	self:InitControls()
+	self:InitCallbacks()
+end
+
+function pda_radio_tab:__finalize() 
+	SINGLETON = nil
+end
+
+function pda_radio_tab:InitControls() -- Rule: Prepare the UI	
+	local xml = CScriptXmlInit()
+	xml:ParseFile("pda_radio.xml")
+	
+	
+	-- Main frame
+	self:SetWndRect(Frect():set(0, 0, 1024, 768))
+	xml:InitFrame("frame1", self)
+	xml:InitFrame("frame2", self)
+	xml:InitFrame("frame3", self)
+	
+	xml:InitStatic("frame2:caption", self)
+	xml:InitStatic("frame3:caption", self)
+	
+	xml:InitStatic("interface_plyr", self)
+	
+	-- Text
+	self.playing_text = xml:InitStatic("playing", self):TextControl()
+	self.playlist_text = xml:InitStatic("playlist_state", self):TextControl()
+	self.time_text = xml:InitStatic("time_left", self):TextControl()
+	self.suffle_text = xml:InitStatic("suffle_state", self):TextControl()
+	self.loop_text = xml:InitStatic("loop_state", self):TextControl()
+	
+	-- Radio channels
+	self.radio_off = xml:InitStatic("interface_radio_off", self)
+	self.radio_ch = {}
+	self.btn_radio_ch = {}
+	for i=1,ch_count do
+		self.radio_ch[i] = xml:InitStatic("interface_radio_ch" .. i, self)
+		self.radio_ch[i]:Show(false)
+		
+		self.btn_radio_ch[i] = xml:Init3tButton("btn_radio_ch_" .. i, self)
+		self:Register(self.btn_radio_ch[i], "btn_radio_ch_" .. i)
+	end
+	
+	-- Radio buttons
+	self.btn_radio_v_down = xml:Init3tButton("btn_radio_v_down", self)
+	self:Register(self.btn_radio_v_down, "btn_radio_v_down")
+	
+	self.btn_radio_v_up = xml:Init3tButton("btn_radio_v_up", self)
+	self:Register(self.btn_radio_v_up, "btn_radio_v_up")
+		
+	self.btn_radio_stop = xml:Init3tButton("btn_radio_stop", self)
+	self:Register(self.btn_radio_stop, "btn_radio_stop")
+	
+	self.btn_radio_start = xml:Init3tButton("btn_radio_start", self)
+	self:Register(self.btn_radio_start, "btn_radio_start")
+	
+	
+	-- Music Player buttons
+	self.btn_plyr_playlist = xml:Init3tButton("btn_plyr_playlist", self)
+	self:Register(self.btn_plyr_playlist, "btn_plyr_playlist")
+	
+	self.btn_plyr_loop = xml:Init3tButton("btn_plyr_loop", self)
+	self:Register(self.btn_plyr_loop, "btn_plyr_loop")
+	
+	self.btn_plyr_shuffle = xml:Init3tButton("btn_plyr_shuffle", self)
+	self:Register(self.btn_plyr_shuffle, "btn_plyr_shuffle")
+		
+	self.btn_plyr_v_down = xml:Init3tButton("btn_plyr_v_down", self)
+	self:Register(self.btn_plyr_v_down, "btn_plyr_v_down")
+		
+	self.btn_plyr_v_up = xml:Init3tButton("btn_plyr_v_up", self)
+	self:Register(self.btn_plyr_v_up, "btn_plyr_v_up")
+		
+	self.btn_plyr_prev = xml:Init3tButton("btn_plyr_prev", self)
+	self:Register(self.btn_plyr_prev, "btn_plyr_prev")
+		
+	self.btn_plyr_stop = xml:Init3tButton("btn_plyr_stop", self)
+	self:Register(self.btn_plyr_stop, "btn_plyr_stop")
+	
+	self.btn_plyr_start = xml:Init3tButton("btn_plyr_start", self)
+	self:Register(self.btn_plyr_start, "btn_plyr_start")
+	
+	self.btn_plyr_next = xml:Init3tButton("btn_plyr_next", self)
+	self:Register(self.btn_plyr_next, "btn_plyr_next")
+end
+
+function pda_radio_tab:InitCallbacks()
+	-- Radio
+	for i=1,ch_count do
+		self:AddCallback("btn_radio_ch_" .. i, ui_events.BUTTON_CLICKED, self["On_Radio_Channel_" .. i], self)
+	end
+	self:AddCallback("btn_radio_stop",    ui_events.BUTTON_CLICKED, self.On_Radio_Stop,        self)
+	self:AddCallback("btn_radio_start",   ui_events.BUTTON_CLICKED, self.On_Radio_Start,       self)
+	self:AddCallback("btn_radio_v_down",  ui_events.BUTTON_CLICKED, self.On_Radio_Volume_Down, self)
+	self:AddCallback("btn_radio_v_up",    ui_events.BUTTON_CLICKED, self.On_Radio_Volume_Up,   self)
+	
+	-- Music Player
+	self:AddCallback("btn_plyr_stop",     ui_events.BUTTON_CLICKED, self.On_Player_Stop,       self)
+	self:AddCallback("btn_plyr_start",    ui_events.BUTTON_CLICKED, self.On_Player_Start,      self)
+	self:AddCallback("btn_plyr_v_down",   ui_events.BUTTON_CLICKED, self.On_Player_Vol_Down,   self)
+	self:AddCallback("btn_plyr_v_up",     ui_events.BUTTON_CLICKED, self.On_Player_Vol_Up,     self)
+	self:AddCallback("btn_plyr_prev",     ui_events.BUTTON_CLICKED, self.On_Player_Prev,       self)
+	self:AddCallback("btn_plyr_next",     ui_events.BUTTON_CLICKED, self.On_Player_Next,       self)
+	self:AddCallback("btn_plyr_playlist", ui_events.BUTTON_CLICKED, self.On_Player_Playlist,   self)
+	self:AddCallback("btn_plyr_loop",     ui_events.BUTTON_CLICKED, self.On_Player_Loop,       self)
+	self:AddCallback("btn_plyr_shuffle",  ui_events.BUTTON_CLICKED, self.On_Player_Shuffle,    self)
+end
+
+function pda_radio_tab:Update()	-- Rule: called automatically to update the PDA UI
+	CUIScriptWnd.Update(self)
+	
+	local empty_text = "" 
+	local plyr_info = get_plyr_param()
+	for i=1,ch_count do
+		self.radio_ch[i]:Show(self.radio_display_ch[i])
+	end
+		
+	if plyr_info.state then	-- if Music Player is on
+		
+		-- Display track name
+		self.playing_text:SetText(game.translate_string("ui_st_radio_playing") .. ": " .. plyr_info.display)
+		
+		-- Display playlist
+		self.playlist_text:SetText(game.translate_string("ui_st_radio_playlist") .. ": " .. plyr_info.playlist)
+		
+		-- Display loop state
+		if (plyr_info.loop == 0) then
+			self.loop_text:SetText(game.translate_string("ui_st_radio_loop_off"))
+		elseif (plyr_info.loop == 1) then
+			self.loop_text:SetText(game.translate_string("ui_st_radio_loop_all"))
+		elseif (plyr_info.loop == 2) then
+			self.loop_text:SetText(game.translate_string("ui_st_radio_loop_one"))
+		end
+		
+		-- Display shuffle state
+		if (plyr_info.shuffle) then
+			self.suffle_text:SetText(game.translate_string("ui_st_radio_shuffle_on"))
+		else
+			self.suffle_text:SetText(game.translate_string("ui_st_radio_shuffle_off"))
+		end
+		
+		-- Display track remaining time
+		if plyr_info.now:playing() then
+			local time_length = math.floor(plyr_info.now:length() / 1000)
+			local time_elapsed = math.floor((time_global() - plyr_info.start_time) / 1000)
+			local time_remaining = time_length - time_elapsed
+			local time_mins_left = string.format("%02d", math.floor(time_remaining / 60))
+			local time_secs_left = string.format("%02d", time_remaining % 60)
+			self.time_text:SetText(time_mins_left .. ":" .. time_secs_left)
+		else
+			plyr_info.start_time = time_global()
+			self.time_text:SetText(empty_text)
+		end
+	else 	-- if Music Player is off
+		self.playing_text:SetText(empty_text)
+		self.playlist_text:SetText(empty_text)
+		self.time_text:SetText(empty_text)
+		self.suffle_text:SetText(empty_text)
+		self.loop_text:SetText(empty_text)
+	end
+end
+
+function pda_radio_tab:SwitchChannel(n)
+	for i=1,ch_count do
+		if (i == n) then
+			self.radio_display_ch[i] = true
+		else
+			self.radio_display_ch[i] = false
+		end
+	end
+end
+
+-- Callbacks
+function pda_radio_tab:On_Radio_Channel_1()
+	action_radio_ch(1)
+end
+
+function pda_radio_tab:On_Radio_Channel_2()
+	action_radio_ch(2)
+end
+--< can be expanded for more channels >-- you need to make new function for each new channel
+
+function pda_radio_tab:On_Radio_Volume_Down()
+	action_radio_v_down()
+end	
+
+function pda_radio_tab:On_Radio_Volume_Up()
+	action_radio_v_up()
+end
+
+function pda_radio_tab:On_Radio_Stop()
+	action_radio_stop()
+end
+
+function pda_radio_tab:On_Radio_Start()
+	action_radio_start()
+end
+
+function pda_radio_tab:On_Player_Playlist()
+	action_plyr_playlist()
+end
+
+function pda_radio_tab:On_Player_Loop()
+	action_plyr_loop()
+end
+
+function pda_radio_tab:On_Player_Shuffle()
+	action_plyr_shuffle()
+end
+
+function pda_radio_tab:On_Player_Vol_Down()
+	action_plyr_v_down()
+end
+
+function pda_radio_tab:On_Player_Vol_Up()
+	action_plyr_v_up()
+end
+
+function pda_radio_tab:On_Player_Prev()	
+	action_plyr_previous()
+end
+
+function pda_radio_tab:On_Player_Stop()
+	action_plyr_stop()
+end
+
+function pda_radio_tab:On_Player_Start()
+	action_plyr_start()
+end
+
+function pda_radio_tab:On_Player_Next()
+	action_plyr_next()
+end

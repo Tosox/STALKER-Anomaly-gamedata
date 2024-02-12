@@ -1,0 +1,76 @@
+[logic@pri_a28_stalker_stitch]
+active = camper@stalker_stitch
+suitable = {=check_npc_name(stalker_stitch_oa)} true
+prior = 200
+   
+[camper@stalker_stitch]
+reach_movement = assault
+path_walk = kovalski_2_walk
+path_look = kovalski_1_look
+def_state_standing = threat_danger
+def_state_moving = assault
+def_state_campering = hide_na
+use_camp = false 
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+invulnerable = true
+on_info = {+lttz_oa_stitch} camper@stalker_stitch_attack
+out_restr = pri_a28_scene_end_zone
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+radius = 70
+no_retreat = true
+meet = no_meet
+
+[camper@stalker_stitch_attack]:camper@stalker_stitch
+invulnerable = false
+on_info = {+pri_a28_zombie_wave1_dead +pri_a28_zombie_wave2_dead} camper@stalker_stitch_done
+
+[camper@stalker_stitch_done]:camper@stalker_stitch_attack
+on_info = {+stalker_stitch_dialog_oa} animpoint@stalker_stitch_go
+meet = meet2
+
+[animpoint@stalker_stitch_go]
+reach_movement = assault
+cover_name = pri_a16_animp_sokolov
+avail_animations = animpoint_sit_high
+use_camp = false
+combat_ignore_cond = false
+combat_ignore_keep_when_attacked = false
+invulnerable = false
+on_info = {=npc_in_zone(pri_surge_hide_a16)} %=remove_special_task_squad(stalker_stitch) +pri_a28_stitch_inside%
+out_restr = pri_a16_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = true
+corpse_detection_enabled = false
+meet = no_meet
+
+[animpoint@stalker_stitch_oa]:animpoint@stalker_stitch_go
+reach_movement = patrol
+cover_name = pri_a16_animp_sokolov
+invulnerable = true
+out_restr = pri_a16_sr_noweap
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_snd_hello = nil
+close_snd_bye 	= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[meet2]:meet
+close_anim 		= threat_danger
+close_victim 	= actor
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 10
+far_distance 	= 0

@@ -1,0 +1,429 @@
+; This plugin determines the categories and their articles for the encyclopedia.
+; Categories are listed in "encyclopedia" and their articles in sections of the same names.
+
+; Flags can be used to alter the behaviour of specific articles.
+
+; Tier flags ensure that random unlocks via memory sticks will primarily work through articles based on their relevance.
+; By using this you can ensure that the player has access to early-game content long before that of the very late-game.
+; However, tiers will do nothing to hinder progress at the occasional possibility of discovering late-game content early on.
+; Whilst regular articles are always randomly unlockable, there is a 50% chance of selecting exclusively from tiered articles.
+
+; Mode flags make available/unavailable an article based on whether a certain mode is in use.
+; A value of "0" requires the mode not be used for the article to be available, and vice versa for a value of "1".
+; For an article to be available regardless of the current mode, the absence of this flag altogether will suffice.
+; The available mode flags are as follows: "azazal", "debug", "dev_debug", "ironman", "story" and "survival".
+
+; Unlock flags remove the requirement of having to discover an article or randomly unlock it.
+; This is extremely useful for tutorial-esque articles, such as those about achievements or features.
+; Valuing the unlock flag at "0" has the same effect as if the flag didn't exist whatsoever.
+
+; For any article which you add it is HIGHLY recommended to add texture description for it for reasons too long to list, even if it lacks an image.
+; You can create this by looking in the /configs/ui/textures_descr/ui_pda_encyclopedia.xml file and following the existing examples.
+
+[encyclopedia]
+encyclopedia__notes
+encyclopedia_achievements
+encyclopedia_anomalies
+encyclopedia_artefacts
+encyclopedia_characters
+encyclopedia_factions
+encyclopedia_features
+encyclopedia_historic
+encyclopedia_items
+encyclopedia_locations
+encyclopedia_mutants
+encyclopedia_options
+
+[encyclopedia__notes]
+encyclopedia__notes__state = unlocked=1, special=1
+encyclopedia__notes__ironman = unlocked=1, ironman=1
+encyclopedia__notes_recipe_basic_1
+encyclopedia__notes_recipe_basic_2
+encyclopedia__notes_recipe_basic_3
+encyclopedia__notes_recipe_basic_4
+encyclopedia__notes_recipe_advanced_1
+encyclopedia__notes_recipe_advanced_2
+encyclopedia__notes_recipe_advanced_3
+encyclopedia__notes_recipe_advanced_4
+encyclopedia__notes_recipe_expert_1
+encyclopedia__notes_recipe_expert_2
+encyclopedia__notes_recipe_expert_3
+encyclopedia__notes_recipe_expert_4
+encyclopedia__notes_recipe_drug_1
+encyclopedia__notes_recipe_drug_2
+encyclopedia__notes_recipe_drug_3
+encyclopedia__notes_recipe_drug_4
+encyclopedia__notes_recipe_ammo_1
+encyclopedia__notes_recipe_ammo_2
+encyclopedia__notes_recipe_ammo_3
+encyclopedia__notes_recipe_ammo_4
+encyclopedia__notes_recipe_cooking_1
+encyclopedia__notes_letter_memoirs_1_of_2
+encyclopedia__notes_letter_memoirs_2_of_2
+encyclopedia__notes_letter_freedom_manual_1_of_2
+encyclopedia__notes_letter_freedom_manual_2_of_2
+encyclopedia__notes_letter_stalker_letter_1_of_2
+encyclopedia__notes_letter_stalker_letter_2_of_2
+encyclopedia__notes_letter_stalker_letter_3
+encyclopedia__notes_letter_ecologist_report_1_of_3
+encyclopedia__notes_letter_ecologist_report_2_of_3
+encyclopedia__notes_letter_ecologist_report_3_of_3
+encyclopedia__notes_letter_monolith_prayer_1_of_3
+encyclopedia__notes_letter_monolith_prayer_2_of_3
+encyclopedia__notes_letter_monolith_prayer_3_of_3
+encyclopedia__notes_letter_monolithian_thoughts
+encyclopedia__notes_letter_letter_to_outside
+encyclopedia__notes_letter_military_stalker
+encyclopedia__notes_letter_mercenary
+encyclopedia__notes_letter_military_log
+encyclopedia__notes_note_from_aslan
+encyclopedia__notes_note_from_spirit
+encyclopedia__notes_note_from_trunk
+encyclopedia__notes_note_from_meeker
+encyclopedia__notes_note_from_grifon
+encyclopedia__notes_mysteries_of_the_zone
+encyclopedia__notes_living_legend
+encyclopedia__notes_mortal_sin
+
+[encyclopedia_achievements]
+;encyclopedia_achievements_bookworm_food = unlocked=1
+encyclopedia_achievements_completionist = unlocked=1
+encyclopedia_achievements_down_to_earth = unlocked=1
+encyclopedia_achievements_duga_free = unlocked=1, story=1
+encyclopedia_achievements_geologist = unlocked=1
+encyclopedia_achievements_heavy_pockets = unlocked=1
+encyclopedia_achievements_infopreneur = unlocked=1
+encyclopedia_achievements_mechanized_warfare = unlocked=1
+encyclopedia_achievements_patriarch = unlocked=1
+encyclopedia_achievements_radiotherapy = unlocked=1
+encyclopedia_achievements_rag_and_bone = unlocked=1
+encyclopedia_achievements_silver_or_lead = unlocked=1
+encyclopedia_achievements_tourist = unlocked=1
+encyclopedia_achievements_well_dressed = unlocked=1
+encyclopedia_achievements_wishful_thinking = unlocked=1, story=1
+encyclopedia_achievements_infantile_pleasure = unlocked=1
+encyclopedia_achievements_recycler = unlocked=1
+encyclopedia_achievements_artificer_eagerness = unlocked=1
+encyclopedia_achievements_unforeseen_guest = unlocked=1
+encyclopedia_achievements_absolver = unlocked=1
+encyclopedia_achievements_collaborator = unlocked=1
+encyclopedia_achievements_iron_curtain = unlocked=1
+encyclopedia_achievements_murky_spirit = unlocked=1
+encyclopedia_achievements_invictus = unlocked=1
+
+[encyclopedia_anomalies]
+encyclopedia_anomalies_emission
+encyclopedia_anomalies_phantom
+encyclopedia_anomalies_psistorm
+encyclopedia_anomalies_radiation
+encyclopedia_anomalies_psi
+encyclopedia_anomalies_brain_scorcher
+encyclopedia_anomalies_burner     
+encyclopedia_anomalies_comet      
+encyclopedia_anomalies_vortex 
+encyclopedia_anomalies_springboard
+encyclopedia_anomalies_whirligig  
+encyclopedia_anomalies_fruit      
+encyclopedia_anomalies_fuzz       
+encyclopedia_anomalies_gas        
+encyclopedia_anomalies_gascloud   
+encyclopedia_anomalies_electro    
+encyclopedia_anomalies_tesla      
+encyclopedia_anomalies_space      
+encyclopedia_anomalies_teleport
+encyclopedia_anomalies_pulse
+
+
+[encyclopedia_artefacts]
+encyclopedia_artefacts__about
+encyclopedia_artefacts_af_medusa
+encyclopedia_artefacts_af_cristall_flower
+encyclopedia_artefacts_af_night_star
+encyclopedia_artefacts_af_vyvert
+encyclopedia_artefacts_af_gravi
+encyclopedia_artefacts_af_gold_fish
+encyclopedia_artefacts_af_cristall
+encyclopedia_artefacts_af_fireball
+encyclopedia_artefacts_af_fire_loop
+encyclopedia_artefacts_af_dummy_glassbeads
+encyclopedia_artefacts_af_eye
+encyclopedia_artefacts_af_fire
+encyclopedia_artefacts_af_blood
+encyclopedia_artefacts_af_mincer_meat
+encyclopedia_artefacts_af_soul
+encyclopedia_artefacts_af_fuzz_kolobok
+encyclopedia_artefacts_af_baloon
+encyclopedia_artefacts_af_glass
+encyclopedia_artefacts_af_electra_sparkler
+encyclopedia_artefacts_af_electra_flash
+encyclopedia_artefacts_af_electra_moonlight
+encyclopedia_artefacts_af_dummy_battery
+encyclopedia_artefacts_af_dummy_dummy
+encyclopedia_artefacts_af_ice
+encyclopedia_artefacts_af_vaselisk
+encyclopedia_artefacts_af_geliy
+encyclopedia_artefacts_af_gimlet
+;encyclopedia_artefacts_af_dragon_eye
+encyclopedia_artefacts_af_monolith
+;encyclopedia_artefacts_af_ball
+;encyclopedia_artefacts_af_fonar
+;encyclopedia_artefacts_af_tapeworm
+;encyclopedia_artefacts_af_moh
+;encyclopedia_artefacts_af_serofim
+;encyclopedia_artefacts_af_elektron
+;encyclopedia_artefacts_af_kogot
+;encyclopedia_artefacts_af_generator
+;encyclopedia_artefacts_af_black_angel
+;encyclopedia_artefacts_af_grapes
+;encyclopedia_artefacts_af_skull_miser
+;encyclopedia_artefacts_af_star_phantom
+;encyclopedia_artefacts_af_medallion
+;encyclopedia_artefacts_af_peas
+;encyclopedia_artefacts_af_kislushka
+;encyclopedia_artefacts_af_zhelch
+;encyclopedia_artefacts_af_sandstone
+;encyclopedia_artefacts_af_fountain
+;encyclopedia_artefacts_af_spaika
+;encyclopedia_artefacts_af_signet
+;encyclopedia_artefacts_af_repei
+;encyclopedia_artefacts_af_bat
+;encyclopedia_artefacts_af_sun
+;encyclopedia_artefacts_af_ear
+;encyclopedia_artefacts_af_chelust
+;encyclopedia_artefacts_af_atom
+;encyclopedia_artefacts_af_lighthouse
+;encyclopedia_artefacts_af_cell
+;encyclopedia_artefacts_af_cocoon
+encyclopedia_artefacts_af_compass
+encyclopedia_artefacts_af_oasis_heart
+;encyclopedia_artefacts_jup_b1_half_artifact
+;encyclopedia_artefacts_af_quest_b14_twisted
+encyclopedia_artefacts_af_black_spray
+encyclopedia_artefacts_af_bracelet
+encyclopedia_artefacts_af_death_lamp
+encyclopedia_artefacts_af_empty
+encyclopedia_artefacts_af_full_empty
+encyclopedia_artefacts_af_itcher
+encyclopedia_artefacts_af_lobster_eyes
+encyclopedia_artefacts_af_pin
+encyclopedia_artefacts_af_ring
+encyclopedia_artefacts_af_sponge
+
+
+[encyclopedia_characters]
+encyclopedia_characters_ashot
+encyclopedia_characters_axel
+encyclopedia_characters_barkeep
+encyclopedia_characters_beard
+encyclopedia_characters_cardan
+encyclopedia_characters_cold
+encyclopedia_characters_doctor
+encyclopedia_characters_fanatic
+encyclopedia_characters_gonta
+encyclopedia_characters_hawaiian
+encyclopedia_characters_professor_kalancha
+encyclopedia_characters_librarian
+encyclopedia_characters_lieutenant_kirilov
+encyclopedia_characters_limpid
+encyclopedia_characters_loki
+encyclopedia_characters_major_kuznetsov
+encyclopedia_characters_nimble = tier=1
+encyclopedia_characters_novikov
+encyclopedia_characters_olivius
+encyclopedia_characters_owl
+encyclopedia_characters_professor_kruglov
+encyclopedia_characters_professor_sakharov
+encyclopedia_characters_sergeant_spooner
+encyclopedia_characters_sidorovich = tier=1
+encyclopedia_characters_spore
+encyclopedia_characters_sultan
+encyclopedia_characters_wolf
+encyclopedia_characters_xenotech
+encyclopedia_characters_yar
+encyclopedia_characters_spirit
+encyclopedia_characters_peregrine
+encyclopedia_characters_butcher
+encyclopedia_characters_aslan
+encyclopedia_characters_leopard
+encyclopedia_characters_surgeon
+encyclopedia_characters_loris
+encyclopedia_characters_snitch
+encyclopedia_characters_navigator
+encyclopedia_characters_griffin
+encyclopedia_characters_trunk
+encyclopedia_characters_meeker
+encyclopedia_characters_solid
+encyclopedia_characters_leshiy
+encyclopedia_characters_hip
+encyclopedia_characters_vector
+encyclopedia_characters_kolin
+encyclopedia_characters_eidolon
+encyclopedia_characters_gatekeeper
+encyclopedia_characters_rogue
+encyclopedia_characters_stitch
+encyclopedia_characters_strelok
+encyclopedia_characters_chernobog
+encyclopedia_characters_degtyarev
+encyclopedia_characters_aspirin
+encyclopedia_characters_mangun
+encyclopedia_characters_colonel_petrenko
+encyclopedia_characters_general_voronin
+encyclopedia_characters_lieutenant_rogovets
+encyclopedia_characters_major_zhurov
+encyclopedia_characters_arnie
+encyclopedia_characters_skinflint
+encyclopedia_characters_stribog
+encyclopedia_characters_dazhbog
+encyclopedia_characters_vodnik
+encyclopedia_characters_drekavac
+
+
+[encyclopedia_factions]
+encyclopedia_factions_bandit = tier=1
+encyclopedia_factions_clear_sky = tier=2
+encyclopedia_factions_duty = tier=2
+encyclopedia_factions_ecologist = tier=3
+encyclopedia_factions_freedom = tier=2
+encyclopedia_factions_loner = tier=1
+encyclopedia_factions_mercenary = tier=3
+encyclopedia_factions_military = tier=3
+encyclopedia_factions_monolith = tier=4
+encyclopedia_factions_zombified = tier=2
+encyclopedia_factions_isg = tier=4
+encyclopedia_factions_greh = tier=4
+encyclopedia_factions_renegade = tier=1
+
+[encyclopedia_features]
+encyclopedia_features_economy_difficulty = unlocked=1
+encyclopedia_features_gameplay_difficulty = unlocked=1
+encyclopedia_features_fast_travel = unlocked=1
+encyclopedia_features_disguise = unlocked=1
+encyclopedia_features_battery = unlocked=1
+encyclopedia_features_companions = unlocked=1
+encyclopedia_features_guide = unlocked=1
+encyclopedia_features_map_spots = unlocked=1
+encyclopedia_features_hud = unlocked=1
+encyclopedia_features_rank = unlocked=1
+encyclopedia_features_reputation = unlocked=1
+encyclopedia_features_stashes = unlocked=1
+encyclopedia_features_workshop = unlocked=1
+encyclopedia_features_workshop_repair = unlocked=1
+encyclopedia_features_workshop_upgrade = unlocked=1
+encyclopedia_features_workshop_craft = unlocked=1
+encyclopedia_features_disassembly = unlocked=1
+encyclopedia_features_azazel_mode = unlocked=1, azazel=1
+encyclopedia_features_ironman_mode = unlocked=1, ironman=1
+encyclopedia_features_story_mode = unlocked=1, story=1
+encyclopedia_features_survival_mode = unlocked=1, survival=1
+encyclopedia_features_campfire_mode = unlocked=1, campfire=1
+encyclopedia_features_agony_mode = unlocked=1, agony=1
+encyclopedia_features_timer_mode = unlocked=1, timer=1
+encyclopedia_features_warfare = unlocked=1, warfare=1
+
+[encyclopedia_historic]
+encyclopedia_historic_final_day
+encyclopedia_historic_rat_wolf
+encyclopedia_historic_tark
+
+[encyclopedia_items]
+encyclopedia_items_pda = unlocked=1
+;encyclopedia_items_itm_upd = unlocked=1
+;encyclopedia_items_itm_basickit
+;encyclopedia_items_itm_advancedkit
+;encyclopedia_items_itm_expertkit
+;encyclopedia_items_itm_drugkit
+;encyclopedia_items_itm_ammokit
+encyclopedia_items_kit_hunt
+encyclopedia_items_fieldcooker
+encyclopedia_items_cooking
+encyclopedia_items_army_bowler
+encyclopedia_items_af_iam
+encyclopedia_items_af_aac
+encyclopedia_items_af_aam
+encyclopedia_items_lead_box
+encyclopedia_items_detector_simple
+encyclopedia_items_detector_advanced
+encyclopedia_items_detector_elite
+encyclopedia_items_detector_scientific
+encyclopedia_items_detector_geiger
+encyclopedia_items_detector_radio
+;encyclopedia_items_gps_tracker
+
+[encyclopedia_locations]
+encyclopedia_locations_agroprom
+encyclopedia_locations_agroprom_underground
+encyclopedia_locations_army_warehouses
+encyclopedia_locations_chernobyl_npp = tier=3
+encyclopedia_locations_cordon
+encyclopedia_locations_dark_valley
+encyclopedia_locations_darkscape
+encyclopedia_locations_dead_city
+encyclopedia_locations_deserted_hospital
+encyclopedia_locations_garbage
+;encyclopedia_locations_generators = tier=5
+encyclopedia_locations_great_swamp
+encyclopedia_locations_jupiter
+encyclopedia_locations_jupiter_underground
+encyclopedia_locations_lab_x16 = tier=4
+encyclopedia_locations_lab_x18 = tier=4
+encyclopedia_locations_lab_x19 = tier=4
+encyclopedia_locations_lab_x8 = tier=4
+encyclopedia_locations_limansk
+;encyclopedia_locations_monolith_control_center = tier=5
+;encyclopedia_locations_monolith_war_lab = tier=5
+encyclopedia_locations_outskirts
+encyclopedia_locations_pripyat
+encyclopedia_locations_radar
+encyclopedia_locations_red_forest
+encyclopedia_locations_rostok
+;encyclopedia_locations_sarcophagus = tier=5
+encyclopedia_locations_truck_cemetery
+encyclopedia_locations_wild_territory
+encyclopedia_locations_yantar
+encyclopedia_locations_zaton
+
+[encyclopedia_mutants]
+encyclopedia_mutants_blind_dog = tier=1
+encyclopedia_mutants_bloodsucker = tier=3
+encyclopedia_mutants_boar = tier=1
+encyclopedia_mutants_burer = tier=4
+encyclopedia_mutants_cat = tier=1
+encyclopedia_mutants_chimera = tier=3
+encyclopedia_mutants_controller = tier=3
+encyclopedia_mutants_crow = tier=1
+encyclopedia_mutants_flesh = tier=1
+encyclopedia_mutants_fracture = tier=2
+encyclopedia_mutants_karlik = tier=5
+encyclopedia_mutants_poltergeist = tier=3
+encyclopedia_mutants_pseudodog = tier=2
+encyclopedia_mutants_pseudogeist = tier=3
+encyclopedia_mutants_pseudogiant = tier=4
+encyclopedia_mutants_psydog = tier=3
+encyclopedia_mutants_pyrogeist = tier=3
+encyclopedia_mutants_rat = tier=2
+encyclopedia_mutants_snork = tier=2
+encyclopedia_mutants_tushkano = tier=2
+encyclopedia_mutants_zombie = tier=2
+encyclopedia_mutants_lurker = tier=2
+encyclopedia_mutants_psysucker = tier=3
+
+[encyclopedia_options]
+;encyclopedia_options_ai_die_to_anomalies = unlocked=1
+;encyclopedia_options_aoe_pickup_mode = unlocked=1
+;encyclopedia_options_artefact_degradation = unlocked=1
+encyclopedia_options_delayed_repairs = unlocked=1
+encyclopedia_options_enhanced_recoil = unlocked=1
+encyclopedia_options_hardcore_ai_aim = unlocked=1
+encyclopedia_options_helicopter_patrols = unlocked=1
+encyclopedia_options_localisation = unlocked=1
+;encyclopedia_options_lootmoney = unlocked=1
+encyclopedia_options_online_exclusion = unlocked=1
+encyclopedia_options_population_factors = unlocked=1
+encyclopedia_options_quicksave_count = unlocked=1
+encyclopedia_options_radio_music = unlocked=1
+;encyclopedia_options_sleep_deprivation = unlocked=1
+;encyclopedia_options_thirst = unlocked=1
+encyclopedia_options_dynamic_news = unlocked=1
+encyclopedia_options_extended_hud = unlocked=1
+encyclopedia_options_portrait_by_outfit = unlocked=1
+;encyclopedia_options_use_battery = unlocked=1

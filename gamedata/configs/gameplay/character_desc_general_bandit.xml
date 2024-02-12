@@ -1,0 +1,998 @@
+
+<specific_character id="sim_default_bandit_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1b</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_a</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_1_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1b_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1c_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_a</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_a</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandita1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_a2</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandita2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_a</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandita3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1_gas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_1_gas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1_gas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1a_gas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1b_gas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1b_gas</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_0_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1_gas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1c_gas</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_0_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_0.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_merc_10</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_bandit_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_1</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_3</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_3_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit3a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit3b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit3c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1b</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_a</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_1_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1b_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_1_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit1c_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_npc_u_soldier_spetsnaz</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1_mask</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bondit_zara</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_npc_u_soldier_antigas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_5_gasmask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_merc_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_8</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_1_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_1.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_7</visual>
+</specific_character>
+    
+
+
+<specific_character id="sim_default_bandit_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_band_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band_2_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_band_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2a</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2a</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit2a_old</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_7</visual>
+</specific_character>
+ 
+<specific_character id="sim_default_bandit_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6d</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6d</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6e</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6f</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6g</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_2_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6h</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_2_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_npc_u_soldier_spetsnaz</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_2_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_npc_u_soldier_antigas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_5_gasmask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_2_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_merc_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_2_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_2.xml"
+    <icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_8</visual>
+</specific_character>
+	   
+
+
+<specific_character id="sim_default_bandit_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_4</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit4c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2a</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2a</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_4abc</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit5d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit2a_old</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+	<icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_7</visual>
+</specific_character>
+   
+<specific_character id="sim_default_bandit_3_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6d</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6d</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6e</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_22" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6f</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_23" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6g</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_3_default_24" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6h</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_25" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_npc_u_soldier_antigas</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_5_gasmask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_26" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_bandit_heavy</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band_ha</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_27" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_stalker_bandit_skat</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_soldier_b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_28" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+	<icon>ui_inGame2_mercenary3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_seva2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_29" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+	<icon>ui_inGame2_mercenary3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_seva1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_30" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+	<icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_merc_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_3_default_31" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+	<icon>ui_inGame2_bandit_1</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_8</visual>
+</specific_character>
+
+<specific_character id="sim_default_bandit_3_default_32" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_neutral_3</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral3a</visual>
+</specific_character>
+
+<specific_character id="sim_default_bandit_3_default_33" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_3.xml"
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral_nauchni2</visual>
+</specific_character>
+	   
+
+
+<specific_character id="sim_default_bandit_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_exo</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_exo</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_exo</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_exo</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_band_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band2a_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_band_2_mask</icon>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band_2_mask</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_2a</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit2a_old</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit2a_old</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+	<icon>ui_inGame2_mercenary3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_seva1</visual>
+</specific_character>
+   
+<specific_character id="sim_default_bandit_4_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a_gp5</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6a</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_6d</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6b</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6c</visual>
+</specific_character>
+    
+<specific_character id="sim_default_bandit_4_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_6l</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_4_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_bandit_heavy</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_band_ha</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_4_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_stalker_bandit_skat</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_bandit\stalker_soldier_b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_4_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+	<icon>ui_inGame2_mercenary3</icon>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+	<visual>actors\stalker_bandit\stalker_bandit_seva2</visual>
+</specific_character>
+
+<specific_character id="sim_default_bandit_4_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_neutral_4</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral4a</visual>
+</specific_character>
+
+<specific_character id="sim_default_bandit_4_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_neutral_nauchniy</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral_nauchni2</visual>
+</specific_character>
+
+<specific_character id="sim_default_bandit_4_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_4.xml"
+    <icon>ui_inGame2_neutral_3</icon>
+    <snd_config>characters_voice\human\bandit_3\</snd_config>
+    <visual>actors\stalker_neutral\stalker_neutral3a</visual>
+</specific_character>
+
+ 
+	
+<!-- Special -->
+<specific_character id="sim_default_bandit_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_special.xml"
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <class>sim_default_bandit_trader</class>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_important_documents</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_special.xml"
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <class>sim_default_bandit_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit_2a_gp5</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+<specific_character id="sim_default_bandit_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_special.xml"
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <class>sim_default_bandit_medic</class>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_bandit_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_bandit_special.xml"
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <class>sim_default_bandit_barman</class>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <visual>actors\stalker_bandit\stalker_bandit6d</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+
+	
+<specific_character id="sim_default_bandit_dead_default_0" team_default = "1">
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_1a_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_bandit_dead</class>
+    <community>bandit</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <rank>3164</rank>
+    <reputation>-50</reputation>
+    <money min="250" max="1750" infinitive="0"/>
+    <visual>actors\stalker_bandit\stalker_bandit1a_mask</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+ 
+<specific_character id="sim_default_bandit_dead_default_1" team_default = "1">
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_band_2_mask</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_bandit_dead</class>
+    <community>bandit</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\bandit_1\</snd_config>
+    <rank>11604</rank>
+    <reputation>-2</reputation>
+    <money min="500" max="1750" infinitive="0"/>
+    <visual>actors\stalker_bandit\stalker_band_2_mask</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+<specific_character id="sim_default_bandit_dead_default_2" team_default = "1">
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_bandit_dead</class>
+    <community>bandit</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <rank>6106</rank>
+    <reputation>128</reputation>
+    <money min="3000" max="4000" infinitive="0"/>
+    <visual>actors\stalker_bandit\stalker_bandit5b</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<specific_character id="sim_default_bandit_dead_default_3" team_default = "1">
+    <name>GENERATE_NAME_bandit</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+    <class>sim_default_bandit_dead</class>
+    <community>bandit</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\bandit_2\</snd_config>
+    <rank>3659</rank>
+    <reputation>-981</reputation>
+    <money min="3000" max="4000" infinitive="0"/>
+    <visual>actors\stalker_bandit\stalker_bandit5c</visual>
+    <supplies>
+        [spawn] \n
+		broken_pda = 1 \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	

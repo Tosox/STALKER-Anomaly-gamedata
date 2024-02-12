@@ -1,0 +1,213 @@
+
+[up_sect_firsta_bm16_full]
+cost                                     = 1460
+value                                    = +10
+condition_shot_dec                       = -0.0005
+condition_queue_shot_dec                 = -0.0002
+inv_weight                               = +0.15
+
+[up_sect_firstc_bm16_full]
+cost                                     = 1350
+value                                    = +20
+fire_dispersion_base                     = -0.09
+
+inv_weight                               = +0.12
+
+[up_sect_secona_bm16_full]
+cost                                     = 1690
+value                                    = -0.74
+inv_weight                               = -0.74
+crosshair_inertion                       = -0.25
+PDM_disp_vel_factor                      = -0.05
+PDM_disp_accel_factor                    = -0.05
+
+[up_sect_seconc_bm16_full]
+cost                                     = 1410
+value                                    = +15
+crosshair_inertion                       = -0.5
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.2
+PDM_disp_accel_factor                    = -0.2
+inv_weight                               = +0.1
+
+[up_sect_second_bm16_full]
+cost                                     = 1580
+value                                    = -10
+cam_dispersion                           = -0.145
+cam_dispersion_inc                       = 0.0 ;-0.0
+cam_step_angle_horz                      = -0.55 
+zoom_cam_dispersion                      = -0.122
+zoom_cam_dispersion_inc                  = 0.0 ; -0.0
+zoom_cam_step_angle_horz                 = -0.35
+inv_weight                               = +0.15
+
+[up_sect_thirda_bm16_full]
+cost                                     = 1250
+value                                    = +10
+condition_shot_dec                       = -0.0005
+condition_queue_shot_dec                 = -0.0002
+inv_weight                               = +0.2
+
+[up_sect_thirdc_bm16_full]
+cost                                     = 1710
+value                                    = -10
+cam_dispersion                           = -0.145
+cam_dispersion_inc                       = 0.0 ;-0.0
+cam_step_angle_horz                      = -0.55 
+zoom_cam_dispersion                      = -0.122
+zoom_cam_dispersion_inc                  = 0.0 ; -0.0
+zoom_cam_step_angle_horz                 = -0.35
+inv_weight                               = +0.15
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_bm16_full]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_bm16_full
+section                                  = up_sect_firsta_toz34
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b1_name
+description                              = st_up_bard_b1_descr
+icon                                     = ui_inGame2_upgrade_Obrez_1
+
+[up_firstc_bm16_full]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firstc_toz34
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_bard_b2_name
+description                              = st_up_bard_b2_descr
+icon                                     = ui_inGame2_upgrade_Obrez_2
+
+
+[up_secona_bm16_full]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_bm16_full
+section                                  = up_sect_secona_toz34
+property                                 = prop_weight
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_a1_name
+description                              = st_up_stvd_a1_descr
+icon                                     = ui_inGame2_upgrade_Obrez_3
+
+[up_seconc_bm16_full]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconc_toz34
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b2_name
+description                              = st_up_stvd_b2_descr
+icon                                     = ui_inGame2_upgrade_Obrez_4
+
+
+[up_second_bm16_full]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_second_toz34
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvd_b3_name
+description                              = st_up_stvd_b3_descr
+icon                                     = ui_inGame2_upgrade_Obrez_5
+
+
+[up_thirda_bm16_full]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_bm16_full
+section                                  = up_sect_thirda_toz34
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_a1_name
+description                              = st_up_autd_a1_descr
+icon                                     = ui_inGame2_upgrade_Obrez_6
+
+
+[up_thirdc_bm16_full]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdc_toz34
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_autd_b1_name
+description                              = st_up_autd_b1_descr
+icon                                     = ui_inGame2_upgrade_Obrez_7
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_bm16_full]
+elements                                 = up_firsta_bm16_full
+
+[up_gr_firstcd_bm16_full]
+elements                                 = up_firstc_bm16_full
+
+[up_gr_seconab_bm16_full]
+elements                                 = up_secona_bm16_full
+
+[up_gr_seconcd_bm16_full]
+elements                                 = up_seconc_bm16_full, up_second_bm16_full
+
+[up_gr_thirdab_bm16_full]
+elements                                 = up_thirda_bm16_full
+
+[up_gr_thirdcd_bm16_full]
+elements                                 = up_thirdc_bm16_full

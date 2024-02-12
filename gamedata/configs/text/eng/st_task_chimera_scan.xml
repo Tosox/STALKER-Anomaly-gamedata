@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+<string id="yan_stalker_sakharov_task_chimera_scan_name">
+	<text>Mind Mapping</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_about">
+	<text>You have heard of the mutant commonly known as the Chimera, yes? There is much debate in the scientific community about whether the creature is simply a severely mutated animal that came to develop what seems to be a human head OR the result of a terrible breach of scientific ethics. To shed light on this mystery we need more data. Our technicians prepared a special device to record the precise electromagnetic waves emitted by brains and, well, I mean no offense, but I doubt you would find the rest of the explanation comprehensible. Anyway, what we need is a volunteer to reach a specific Chimera specimen and record its brain signals. Of course, this must be done while the mutant is still living and this is where the difficulty of the task lies. You will have to get close to it and survive until the device stabilizes and manages to record the signals. After that, it's not necessary to leave the poor creature alive, but that is up to you.</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_stage_0">
+	<text>Stay near the designated Chimera to record its brain waves</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_stage_1">
+	<text>Recover the device</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_stage_2">
+	<text>Return to Sakharov</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_start">
+	<text>Initialization complete: scan started</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_error">
+	<text>Error: signal lost, scan aborted</text>
+</string>
+<string id="yan_stalker_sakharov_task_chimera_scan_complete">
+	<text>Scan complete.</text>
+</string>
+<string id="chimera_scan_device_name">
+	<text>Brain wave scanner</text>
+</string>
+<string id="chimera_scan_device_desc">
+	<text>A device designed to record nearby electromagnetic waves, this one has been specifically tuned to isolate the neural oscillations of a specific Chimera specimen.</text>
+</string>
+</string_table>

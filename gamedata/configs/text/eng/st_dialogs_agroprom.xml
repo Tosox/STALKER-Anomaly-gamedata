@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- Sergeant Spooner (Military Trader) -->
+	<string id="guid_agr_mlr_military_0">
+		<text>Can you organize a trip? There's somewhere I need to fly.</text>
+	</string>
+	<string id="guid_agr_mlr_military_1">
+		<text>Yeah, I can take you to the Cordon and Yantar... Wait, who are you, even? I offer transport, but not for an ordinary soldier like you. Shoo.</text>
+	</string>
+
+	<string id="guid_agr_mlr_military_list_0">
+		<text>Where do you fly to, again?</text>
+	</string>
+	<string id="guid_agr_mlr_military_list_1">
+		<text>To our checkpoint in the Cordon for five thousand rubles, as well as the base in Yantar for seven thousand.</text>
+	</string>
+
+	<string id="guid_agr_mlr_military_vert_0">
+		<text>I require a pilot.</text>
+	</string>
+	<string id="guid_agr_mlr_military_vert_1">
+		<text>Alright, our next flight leaves shortly. Where to?</text>
+	</string>
+	<string id="guid_agr_mlr_military_vert_2">
+		<text>To the checkpoint in the Cordon. %c[d_orange][5000 RU]</text>
+	</string>
+	<string id="guid_agr_mlr_military_vert_3">
+		<text>To the base in Yantar. %c[d_orange][7000 RU]</text>
+	</string>
+	<string id="guid_agr_mlr_military_vert_4">
+		<text>I've changed my mind.</text>
+	</string>
+	
+	<string id="find_blackbox_mlr_reward_army_0">
+		<text>I've found a flight recorder from a helicopter wreckage.</text>
+	</string>
+	<string id="find_blackbox_mlr_reward_army_1">
+		<text>Good find! Well done, soldier.</text>
+	</string>
+
+	
+<!-- Military - Medic -->
+	<string id="rogovets_about_himself_1_6_army_mlr_0">
+		<text>Tell me about yourself.</text>
+	</string>
+	<string id="rogovets_about_himself_1_6_army_mlr_1">
+		<text>I'm the medic attached to this base. I first arrived in the Zone on contract years ago. After some preparation, I got myself assigned to the prestigious Fairway Group. Sadly, Operation Fairway itself was a failure. We had little choice but to bunker down in Pripyat - well, those of us who were still alive, at least - until an investigator from the SSU arrived and helped in our evacuation.\n \nI'm glad to be rid of that place. Strange things happen all the time in that cursed city, and one of my oddest experiences entailed waking up in a locked refrigerator. To this day, I have no idea how I got there, or what I was doing beforehand. The other men teased me for it, but I remember the sweat, the lack of air, the veil over my eyes. Once more soldiers started encountering the so-called "mythical" Controllers, well, let's say the teasing stopped.</text>
+	</string>
+	<string id="rogovets_about_himself_1_6_army_mlr_2">
+		<text>And then what happened? Why didn't you quit?</text>
+	</string>
+	<string id="rogovets_about_himself_1_6_army_mlr_3">
+		<text>Oh, I did "quit" for a while. Or rather, I went on reserve. After my commanding officer got dismissed for Operation Fairway's failure, I got a bad taste in my mouth. I then left active service as soon as I could to advance my medical career instead. Still, there's something special about working on soldiers, and I feel I'd be abandoning them if I didn't return eventually. It's not the grunts' fault that some of the general staff are - eheh, er, ahem.\n \nAs I was saying, Colonel Kuznetsov's command style is certainly not the way my old commander, the former Colonel Kovalsky, would've done things. But I'm happy to be keeping the troops alive all the same. I would be happier if that SSU investigator - Colonel Degtyarev - took a more active leadership role here as well, but I suppose it's enough to know he's still out there, kicking around in the Zone somewhere. He's saved my life more times than I'd care to admit.  </text>
+	</string>
+	<string id="rogovets_about_himself_1_6_army_mlr_4">
+		<text>Understood. Thanks for sharing, but I must get back to business.</text>
+	</string>
+	
+	<string id="rogovets_hello_1_6_army_mlr_0">
+		<text>Huh? Oh, it's you...</text>
+	</string>
+
+	
+<!-- Commander, barman in Agroprom -->
+	<string id="barmen_about_himself_1_6_army_mlr_0">
+		<text>Who are you?</text>
+	</string>
+	<string id="barmen_about_himself_1_6_army_mlr_1">
+		<text>Well, I'm the local barman - or a manager of provisions - whichever you prefer. The troops around here call me Commander. My first stint in the Zone was as a liquidator, cleaning up around the NPP after the accident of '86. I'm not exactly from here, but after the Soviet Union fell I decided to stay in the Zone on contract. I've got some experience on me, hah. </text>
+	</string>
+	<string id="barmen_about_himself_1_6_army_mlr_2">
+		<text>What was it like, cleaning up after the first accident?</text>
+	</string>
+	<string id="barmen_about_himself_1_6_army_mlr_3">
+		<text>Well, I was much younger back then - just an army draftee, you see? Not the half-centenarian you see today. I was lucky. Only ever got to hose down the dust off of empty villages and turn over the soil afterwards. Officers would measure the radiation, and I'd get sent in to clean it up. However, the liquidators near the power station ended up waist-deep in shit. Up there, even our technology died from the fallout, let alone the people. Imagine that.\n \nSo, they cleaned the roofs of graphite with freakin' shovels. But it had to be done, for the good of the state - whatever that means now. I used to think radiation was a strange thing -  how it curses some and spares others, like Dyatlov, who survived to end up in prison. But, compared to what's been happening since 2006, I don't know. There are certainly stranger things than radiation going on these days.</text>
+	</string>
+</string_table>

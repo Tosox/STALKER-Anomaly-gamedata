@@ -1,0 +1,71 @@
+;[[
+
+; Tronex 2019/4/16
+; Recipes for tasty mutant meals, yum yum!
+;------------------------------------------
+
+; Adding new recipes:
+; Done under [meal_list] section
+; A recipes need 4 or 6 values (depends on number of ingredients, right now you can have 2 ingredients + fuel)
+; Declaring:	x_recipe				= fuel tier , unlocked note (false mean it will be available by default) , ingredient (1) , amount (1) , ingredient (2) , amount (2)
+; Example: 				x_meat_tushkano		    = 1, false, mutant_part_tushkano_meat,1
+; ingredient 2 is optional
+; unlocked encyclopedia notes can be used to unlock some recipes
+
+; Fuel tier:
+; fuel types are declared under [fuel] section along with their tier
+; A recipe with specific fuel tier means it can only be cooked using a fuel of the needed tier and higher, keep in mind that cooking tools use specific fuels (see their sections)
+
+; ATTENTION: the reason why there is a "x_" in the start of craft items names is to avoid an issue with configs reading by the scripts 
+; if you use 2 craft recipes for the exact same item for example, the reader will take one recipe and ignore the rest
+; to avoid this case, you put 2 strings of anything before the actual name, here i used "x_" and "y_"
+; example: if you want to use 3 recipes for the geiger counter in one section, do something like this: "x_geiger_dead" "y_geiger_dead" "z_geiger_dead"
+; Otherwise, put "x_" or anything and move along. Just always remember to use 2 digits only and nothing else
+; this is a stupid yet simple fix
+
+;]]
+
+;;--==========================< List of meals >=============================
+[settings]
+campfire_cook_tier		= 1
+
+[fuel]
+charcoal				= 1
+kerosene				= 2
+explo_jerrycan_fuel		= 2
+explo_balon_gas			= 2
+
+[meal_list]
+x_meat_tushkano		        = 1, false, mutant_part_tushkano_meat,1
+x_meat_dog		    	    = 1, false, mutant_part_dog_meat,1
+x_meat_pseudodog		    = 1, false, mutant_part_psevdodog_meat,1
+x_meat_flesh			    = 1, false, mutant_part_flesh_meat,1
+x_meat_boar		    	    = 1, false, mutant_part_boar_chop,1
+x_meat_snork		        = 1, false, mutant_part_snork_hand,1
+x_meat_bloodsucker		    = 1, false, mutant_part_krovosos_meat,1
+x_meat_psysucker		    = 1, false, mutant_part_psysucker_meat,1
+x_meat_lurker		        = 1, false, mutant_part_lurker_meat,1
+x_meat_chimera		        = 2, false, mutant_part_chimera_meat,1
+
+x_meat_tushkano_b		    = 1, false, mutant_part_tushkano_meat,1,flask,1
+x_meat_dog_b		    	= 1, false, mutant_part_dog_meat,1,flask,1
+x_meat_pseudodog_b		    = 1, false, mutant_part_psevdodog_meat,1,flask,2
+x_meat_flesh_b			    = 1, false, mutant_part_flesh_meat,1,flask,2
+x_meat_boar_b		    	= 1, false, mutant_part_boar_chop,1,flask,2
+x_meat_snork_b		        = 1, false, mutant_part_snork_hand,1,flask,2
+x_meat_bloodsucker_b		= 2, false, mutant_part_krovosos_meat,1,mineral_water,1
+x_meat_psysucker_b		    = 2, false, mutant_part_psysucker_meat,1,mineral_water,1
+x_meat_lurker_b		        = 2, false, mutant_part_lurker_meat,1,mineral_water,1
+x_meat_chimera_b		    = 2, false, mutant_part_chimera_meat,1,mineral_water,1
+
+x_meat_tushkano_a		    = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_tushkano_meat,1,flask,2
+x_meat_dog_a		    	= 2, encyclopedia__notes_recipe_cooking_1, mutant_part_dog_meat,1,vodka,1
+x_meat_pseudodog_a		    = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_psevdodog_meat,1,vodka,2
+x_meat_flesh_a		        = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_flesh_meat,2,vodka,1
+x_meat_boar_a		    	= 2, encyclopedia__notes_recipe_cooking_1, mutant_part_boar_chop,2,vodka,1
+x_meat_snork_a		        = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_snork_hand,2,vodka,2
+x_meat_bloodsucker_a		= 2, encyclopedia__notes_recipe_cooking_1, mutant_part_krovosos_meat,2,vodka2,1
+x_meat_psysucker_a		    = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_psysucker_meat,2,vodka2,1
+x_meat_lurker_a		        = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_lurker_meat,2,vodka2,1
+x_meat_chimera_a		    = 2, encyclopedia__notes_recipe_cooking_1, mutant_part_chimera_meat,2,vodka2,1
+

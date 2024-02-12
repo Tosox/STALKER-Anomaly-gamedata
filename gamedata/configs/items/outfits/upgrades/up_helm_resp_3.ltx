@@ -1,0 +1,53 @@
+
+[up_sect_firsta_helm_resp_3]:up_sect_prop_burn_10
+
+[up_sect_firstc_helm_resp_3]:up_sect_prop_telepatic_10
+
+;---------------------------------------------------------------------------------------------
+
+[up_firsta_helm_resp_3]
+scheme_index            = 0, 0
+known                   = 1
+effects                 = up_gr_firstcd_helm_resp_3
+section                 = up_sect_firsta_helm_resp_3
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+
+property                = prop_thermo
+name                    = st_up_helm_burn_1_name
+description             = st_up_helm_burn_1_descr
+icon                    = ui_inGame2_upgrade_outfit_burn_1
+
+[up_firstc_helm_resp_3]
+scheme_index            = 1, 0
+known                   = 1
+effects                 =   
+section                 = up_sect_firstc_helm_resp_3
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+
+property                = prop_psy
+name                    = st_up_helm_tele_1_name
+description             = st_up_helm_tele_1_descr
+icon                    = ui_inGame2_upgrade_helm_psi_1
+
+;---------------------------------------------------------------------------------------------
+
+[up_gr_firstab_helm_resp_3]
+elements                = up_firsta_helm_resp_3
+
+[up_gr_firstcd_helm_resp_3]
+elements                = up_firstc_helm_resp_3
+

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+<dialog id="bar_barmen_minigame_21_point_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>zat_sich_minigame_21_point_dialog_1</text>
+                <next>1</next>
+                <next>6</next>
+            </phrase>
+            <phrase id="1">
+                <text>zat_sich_minigame_21_point_dialog_2</text>
+                <next>2</next>
+                <next>9</next>
+            </phrase>
+            <phrase id="2">
+                <text>zat_sich_minigame_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zat_sich_minigame_21_point_dialog_4</text>
+                <next>4</next>
+                <next>11</next>
+            </phrase>
+            <phrase id="4">
+                <text>zat_sich_minigame_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>zat_sich_minigame_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="6">
+                <text>zat_sich_minigame_21_point_dialog_7</text>
+                <next>7</next>
+                <next>10</next>
+            </phrase>
+            <phrase id="7">
+                <text>zat_sich_minigame_21_point_dialog_8</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>zat_sich_minigame_21_point_dialog_9</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="9">
+                <text>zat_sich_minigame_21_point_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="10">
+                <text>zat_sich_minigame_21_point_dialog_11</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="11">
+                <text>zat_sich_minigame_21_point_dialog_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="zat_bandit_informer_game_call_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>zat_bandit_informer_game_call_dialog_1</text>
+                <next>102</next>
+            </phrase>
+            <phrase id="102">
+                <text>zat_bandit_informer_game_call_dialog_2</text>
+                <action>sgm_dialogs.start_question_game</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="minigames_petrenko">
+	<phrase_list>
+           <phrase id="0">
+                <text>petrenko_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+                <phrase id="1">
+                <text>petrenko_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+           </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="minigames_sidor">
+	<phrase_list>
+           <phrase id="0">
+                <text>sidor_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+                <phrase id="1">
+                <text>sidor_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+           </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="minigames_shustriy">
+	<phrase_list>
+           <phrase id="0">
+                <text>shustriy_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+                <phrase id="1">
+                <text>shustriy_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+           </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="minigames_maslina">
+	<phrase_list>
+           <phrase id="0">
+                <text>maslina_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+                <phrase id="1">
+                <text>maslina_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+           </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="minigames_military">
+	<phrase_list>
+           <phrase id="0">
+                <text>military_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+                <phrase id="1">
+                <text>military_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+           </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="minigames_propovednik">
+	<phrase_list>
+           <phrase id="0">
+                <text>propovednik_21_point_dialog_1</text>
+                        <next>1</next>
+           </phrase>
+           <phrase id="1">
+                <text>propovednik_21_point_dialog_2</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+	</phrase_list>
+	</dialog>
+<dialog id="mil_skraga_minigame_21_point_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>skraga_21_point_dialog_1</text>
+                <next>1</next>
+                <next>6</next>
+            </phrase>
+            <phrase id="1">
+                <text>skraga_21_point_dialog_2</text>
+                <next>2</next>
+                <next>9</next>
+            </phrase>
+            <phrase id="2">
+                <text>skraga_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>skraga_21_point_dialog_4</text>
+                <next>4</next>
+                <next>11</next>
+            </phrase>
+            <phrase id="4">
+                <text>skraga_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>skraga_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="6">
+                <text>skraga_21_point_dialog_7</text>
+                <next>7</next>
+                <next>10</next>
+            </phrase>
+            <phrase id="7">
+                <text>skraga_21_point_dialog_8</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>zat_sich_minigame_21_point_dialog_9</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="9">
+                <text>zat_sich_minigame_21_point_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="10">
+                <text>zat_sich_minigame_21_point_dialog_11</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="11">
+                <text>zat_sich_minigame_21_point_dialog_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="xolod_minigame">
+        <phrase_list>
+            <phrase id="0">
+                <text>xolod_21_point_dialog_1</text>
+                <next>1</next>
+                <next>6</next>
+            </phrase>
+            <phrase id="1">
+                <text>xolod_21_point_dialog_2</text>
+                <next>2</next>
+                <next>9</next>
+            </phrase>
+            <phrase id="2">
+                <text>xolod_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>xolod_21_point_dialog_4</text>
+                <next>4</next>
+                <next>11</next>
+            </phrase>
+            <phrase id="4">
+                <text>xolod_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>xolod_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="6">
+                <text>xolod_21_point_dialog_7</text>
+                <next>7</next>
+                <next>10</next>
+            </phrase>
+            <phrase id="7">
+                <text>xolod_21_point_dialog_8</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>zat_sich_minigame_21_point_dialog_9</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="9">
+                <text>zat_sich_minigame_21_point_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="10">
+                <text>zat_sich_minigame_21_point_dialog_11</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="11">
+                <text>zat_sich_minigame_21_point_dialog_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="lesnik_minigame">
+        <phrase_list>
+            <phrase id="0">
+                <text>lesnik_21_point_dialog_1</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>lesnik_21_point_dialog_2</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>lesnik_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>lesnik_21_point_dialog_4</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>lesnik_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>lesnik_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="cit_killers_minigame">
+        <phrase_list>
+            <phrase id="0">
+                <text>cit_killers_21_point_dialog_1</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>cit_killers_21_point_dialog_2</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>cit_killers_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>cit_killers_21_point_dialog_4</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>cit_killers_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>cit_killers_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="saxarov_minigame">
+        <phrase_list>
+            <phrase id="0">
+                <text>saxarov_21_point_dialog_1</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>saxarov_21_point_dialog_2</text>
+                <next>2</next>
+            </phrase>
+            <phrase id="2">
+                <text>saxarov_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>saxarov_21_point_dialog_4</text>
+                <next>4</next>
+            </phrase>
+            <phrase id="4">
+                <text>saxarov_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>saxarov_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="zat_sich_minigame_21_point_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>zat_sich_minigame_21_point_dialog_1</text>
+                <next>1</next>
+                <next>6</next>
+            </phrase>
+            <phrase id="1">
+                <text>zat_sich_minigame_21_point_dialog_2</text>
+                <next>2</next>
+                <next>9</next>
+            </phrase>
+            <phrase id="2">
+                <text>zat_sich_minigame_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>zat_sich_minigame_21_point_dialog_4</text>
+                <next>4</next>
+                <next>11</next>
+            </phrase>
+            <phrase id="4">
+                <text>zat_sich_minigame_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>zat_sich_minigame_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="6">
+                <text>zat_sich_minigame_21_point_dialog_7</text>
+                <next>7</next>
+                <next>10</next>
+            </phrase>
+            <phrase id="7">
+                <text>zat_sich_minigame_21_point_dialog_8</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>zat_sich_minigame_21_point_dialog_9</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="9">
+                <text>zat_sich_minigame_21_point_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="10">
+                <text>zat_sich_minigame_21_point_dialog_11</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="11">
+                <text>zat_sich_minigame_21_point_dialog_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+<dialog id="jup_barmen_minigame_21_point_dialog">
+        <phrase_list>
+            <phrase id="0">
+                <text>jup_barmen_minigame_21_point_dialog_1</text>
+                <next>1</next>
+                <next>6</next>
+            </phrase>
+            <phrase id="1">
+                <text>jup_barmen_minigame_21_point_dialog_2</text>
+                <next>2</next>
+                <next>9</next>
+            </phrase>
+            <phrase id="2">
+                <text>jup_barmen_minigame_21_point_dialog_3</text>
+                <next>3</next>
+            </phrase>
+            <phrase id="3">
+                <text>jup_barmen_minigame_21_point_dialog_4</text>
+                <next>4</next>
+                <next>11</next>
+            </phrase>
+            <phrase id="4">
+                <text>jup_barmen_minigame_21_point_dialog_5</text>
+                <next>5</next>
+            </phrase>
+            <phrase id="5">
+                <text>jup_barmen_minigame_21_point_dialog_6</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="6">
+                <text>jup_barmen_minigame_21_point_dialog_7</text>
+                <next>7</next>
+                <next>10</next>
+            </phrase>
+            <phrase id="7">
+                <text>jup_barmen_minigame_21_point_dialog_8</text>
+                <next>8</next>
+            </phrase>
+            <phrase id="8">
+                <text>jup_barmen_minigame_21_point_dialog_9</text>
+                <action>ui_mod_elements.start_game</action>
+            </phrase>
+            <phrase id="9">
+                <text>jup_barmen_minigame_21_point_dialog_10</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="10">
+                <text>jup_barmen_minigame_21_point_dialog_11</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+            <phrase id="11">
+                <text>jup_barmen_minigame_21_point_dialog_12</text>
+                <action>dialogs.break_dialog</action>
+            </phrase>
+        </phrase_list>
+</dialog>
+</game_dialogs>

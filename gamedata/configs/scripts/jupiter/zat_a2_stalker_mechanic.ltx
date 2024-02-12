@@ -1,0 +1,62 @@
+[logic@zat_a2_stalker_mechanic]
+active = beh@zat_a2_stalker_mechanic
+suitable = {=check_npc_name(zat_a2_stalker_mechanic)} true
+prior = 200
+level_spot = mechanic
+trade = items\trade\trade_generic_mechanic.ltx
+can_select_weapon = false
+dont_keep_items = true
+   
+[beh@general]
+behavior_state = beh_move
+target = waypoint
+walk_dist = 90
+jog_dist = 150
+wait_anim = guard
+walk_anim = patrol	;assault
+jog_anim = patrol	;assault
+run_anim = patrol	;assault
+delay_anim = guard
+use_camp = false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = {=is_warfare} false, {=actor_true_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = {=is_warfare} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+meet = meet
+on_info = {+awr_zat_a2_stalker_mechanic_access} walker@smoke
+
+;-- Warding near gadgets
+[beh@zat_a2_stalker_mechanic]:beh@general
+pt1 = 88860000,ward | pos:-42.18270111084,3.485543012619,179.1169128418 look:-43.164097428322,3.485543012619,179.30672048032 ;pos:-41.556606292725,3.4859049320221,178.65744018555 look:-42.522602379322,3.4859049320221,178.91505250335
+path_end = loop
+
+;-- smoking outside
+[walker@smoke]
+path_walk = kardan_mlr_1_walk
+path_look = kardan_mlr_1_look
+on_game_timer = 2000 | beh@zat_a2_stalker_mechanic %=awr_timer_msg_off%
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+reach_distance = 10
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+invulnerable = {!actor_enemy} true, false
+meet = meet
+
+[meet]
+;close_anim 	= ward
+;close_victim 	= actor
+close_snd_hello = zat_b3_tech_drink_no_more
+far_anim 		= nil
+far_victim 		= nil
+close_snd_distance = 3
+close_snd_bye 	= nil
+close_distance  = 0 ;5
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false

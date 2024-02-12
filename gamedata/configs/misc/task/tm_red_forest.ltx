@@ -1,0 +1,328 @@
+;==============================================================
+;
+; TASKS PROVIDED ON RED FOREST MAP
+;
+;	Main Faction: Sin
+;	Strings file: st_quests_red_forest.xml
+;
+;==============================================================
+
+;------------------------------------------------
+; Stribog (Sin) Default Storyline Task (no task, just send to next honcho)-
+
+[drx_sl_red_greh_trader_default_task]
+
+icon = ui_inGame2_Mesta_evakuatsii
+storyline = true
+prior = 193
+
+title = drx_sl_red_greh_trader_default_task_name
+descr = drx_sl_red_greh_trader_default_task_text
+job_descr = drx_sl_red_greh_trader_default_task_about
+task_complete_descr = drx_sl_red_greh_trader_default_task_finish
+
+condlist_0 = {-drx_sl_dummy_info} complete
+condlist_1 = {!task_giver_alive(drx_sl_red_greh_trader_default_task)} fail
+
+on_complete = %=drx_sl_meet_random_honcho() =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_default_task)%
+on_fail = %=drx_sl_meet_random_honcho() =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_default_task)%
+
+;------------------------------------------------
+; Stribog (Sin Honcho) Retrieve the Secrets of Lab X-16 Storyline Task-
+
+[drx_sl_red_greh_trader_task_1]
+
+icon = ui_inGame2_Laboratoriya_X8
+storyline = true
+prior = 165
+repeat_timeout = 0
+precondition = {-main_3_search_labx16_task_done} true, false
+
+title = drx_sl_red_greh_trader_task_1_name
+descr = drx_sl_red_greh_trader_task_1_text
+job_descr = drx_sl_red_greh_trader_task_1_about
+task_complete_descr = drx_sl_red_greh_trader_task_1_finish
+
+stage_complete = 1
+target = {!actor_has_item(drx_x16_documents)} yan_space_restrictor_to_x16, {=actor_has_item(drx_x16_documents)} red_greh_trader
+status_functor = drx_sl_retrieve_item_task_status
+status_functor_params = drx_x16_documents
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_trader_task_1)} fail
+
+on_init = %=spawn_item_at_pos(drx_x16_documents)%
+on_complete = %+main_3_search_labx16_task_done =reward_random_money(18500:19500) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_trader_task_1) =remove_item(drx_x16_documents) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_1)%
+
+;------------------------------------------------
+; Stribog (Sin Trader) Escort the Sin Informer Storyline Task-
+
+[drx_sl_red_greh_trader_task_2]
+
+icon = ui_inGame2_Odin_vistrel
+storyline = true
+prior = 135
+repeat_timeout = 0
+precondition = {-spy_task_active =validate_spy_task(drx_sl_red_greh_trader_task_2:greh:false:false:3)} true, false
+
+title = drx_sl_red_greh_trader_task_2_name
+descr = drx_sl_red_greh_trader_task_2_text
+job_descr = drx_sl_red_greh_trader_task_2_about
+task_complete_descr = drx_sl_red_greh_trader_task_2_finish
+
+stage_complete = 3
+target_functor = spy_task_target_functor
+status_functor = spy_task_status_functor
+status_functor_params = greh
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_trader_task_2)} fail
+
+task_loadout_spy = wpn_svd
+task_loadout_other = wpn_ak74
+task_msg_on_join = drx_sl_red_greh_trader_task_2_msg_join
+task_msg_on_leave = drx_sl_red_greh_trader_task_2_msg_leave
+
+on_job_descr = %=setup_spy_task(drx_sl_red_greh_trader_task_2)%
+on_init = %+spy_task_active%
+on_complete = %=reward_random_money(8500:12500) =reward_stash(true) =complete_task_inc_goodwill(50:greh) -spy_task_active =inc_task_stage(drx_sl_red_greh_trader_task_2) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:greh) -spy_task_active =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count() =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_2)%
+
+;------------------------------------------------
+; Stribog (Sin Trader) Avange the Sinners Storyline Task-
+
+[drx_sl_red_greh_trader_task_3]
+
+icon = ui_inGame2_PD_Ohotnik_na_mutantov
+storyline = true
+prior = 120
+repeat_timeout = 0
+precondition = {=validate_assault_task(drx_sl_red_greh_trader_task_3:3:2:nil:false:false:nil)} true, false
+
+title = drx_sl_red_greh_trader_task_3_name
+descr = drx_sl_red_greh_trader_task_3_text
+job_descr = drx_sl_red_greh_trader_task_3_about
+task_complete_descr = drx_sl_red_greh_trader_task_3_finish
+
+stage_complete = 1
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = greh
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_trader_task_3)} fail
+
+on_job_descr = %=setup_assault_task(drx_sl_red_greh_trader_task_3)%
+on_complete = %=reward_random_money(6500:7000) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_trader_task_3) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_3)%
+
+;------------------------------------------------
+; Stribog (Sin Trader) Limansk Purge Storyline Task-
+
+[drx_sl_red_greh_trader_task_4]
+
+icon = ui_inGame2_PD_Ohotnik_na_mutantov
+storyline = true
+prior = 120
+repeat_timeout = 0
+precondition = {=validate_dominance_task(drx_sl_red_greh_trader_task_4:2:nil:true)} true, false
+
+title = drx_sl_red_greh_trader_task_4_name
+descr = drx_sl_red_greh_trader_task_4_text
+job_descr = drx_sl_red_greh_trader_task_4_about
+task_complete_descr = drx_sl_red_greh_trader_task_4_finish
+
+stage_complete = 1
+target_functor = dominance_task_target_functor
+status_functor = dominance_task_status_functor
+status_functor_params = killer, stalker
+status_functor_level = l10_limansk
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_trader_task_4)} fail
+
+on_job_descr = %=setup_dominance_task(drx_sl_red_greh_trader_task_4)%
+on_complete = %=reward_random_money(14500:16000) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_trader_task_4) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_4)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_task_4)%
+
+; ------------------------------------------------
+; Stribog (Sin Trader) Payoff Change Factions Task-
+[drx_sl_red_greh_trader_cf_task_1]
+
+icon = ui_inGame2_Sdelka
+storyline = true
+prior = 197
+repeat_timeout = 0
+;precondition = true
+
+title = drx_sl_pri_red_greh_trader_stalker_cf_task_1_name
+descr = drx_sl_pri_red_greh_trader_stalker_cf_task_1_text
+job_descr = drx_sl_pri_red_greh_trader_stalker_cf_task_1_about
+task_complete_descr = drx_sl_pri_red_greh_trader_stalker_cf_task_1_finish
+
+stage_complete = 1
+target_functor = drx_sl_money_task_target
+status_functor = drx_sl_money_task_status
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_trader_cf_task_1)} fail
+
+on_init = %=pstor_set(drx_sl_red_greh_trader_cf_task_1_fetch:1000) +drx_sl_on_cf_task%
+on_complete = %=drx_sl_money_task_payment(drx_sl_red_greh_trader_cf_task_1_fetch) =drx_sl_change_factions(greh) =inc_task_stage(drx_sl_red_greh_trader_cf_task_1) =pstor_reset(drx_sl_red_greh_trader_cf_task_1_fetch) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_cf_task_1) -drx_sl_on_cf_task%
+on_fail = %=pstor_reset(drx_sl_red_greh_trader_cf_task_1_fetch) =drx_sl_unregister_task_giver(drx_sl_red_greh_trader_cf_task_1) -drx_sl_on_cf_task%
+
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+;------------------------------------------------
+; Dazhbog (Sin) Default Storyline Task (no task, just send to next honcho)-
+
+[drx_sl_red_greh_tech_default_task]
+
+icon = ui_inGame2_Mesta_evakuatsii
+storyline = true
+prior = 193
+
+title = drx_sl_red_greh_tech_default_task_name
+descr = drx_sl_red_greh_tech_default_task_text
+job_descr = drx_sl_red_greh_tech_default_task_about
+task_complete_descr = drx_sl_red_greh_tech_default_task_finish
+
+condlist_0 = {-drx_sl_dummy_info} complete
+condlist_1 = {!task_giver_alive(drx_sl_red_greh_tech_default_task)} fail
+
+on_complete = %=drx_sl_meet_random_honcho() =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_default_task)%
+on_fail = %=drx_sl_meet_random_honcho() =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_default_task)%
+
+;------------------------------------------------
+; Dazhbog (Sin Mechanic) Search Lab X-18 (Dark Valley) Storyline Task-
+
+[drx_sl_red_greh_tech_task_1]
+
+icon = ui_inGame2_Laboratoriya_X8
+storyline = true
+prior = 165
+repeat_timeout = 0
+precondition = {-main_2_search_labx18_task_done} true, false
+
+title = drx_sl_red_greh_tech_task_1_name
+descr = drx_sl_red_greh_tech_task_1_text
+job_descr = drx_sl_red_greh_tech_task_1_about
+task_complete_descr = drx_sl_red_greh_tech_task_1_finish
+
+stage_complete = 1
+target = {!actor_has_item(drx_x18_documents)} val_space_restrictor_to_labx18, {=actor_has_item(drx_x18_documents)} red_greh_tech
+status_functor = drx_sl_retrieve_item_task_status
+status_functor_params = drx_x18_documents
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_tech_task_1)} fail
+
+on_init = %=spawn_item_at_pos(drx_x18_documents)%
+on_complete = %+main_2_search_labx18_task_done =reward_random_money(20500:21000) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_tech_task_1) =remove_item(drx_x18_documents) =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_1)%
+
+;------------------------------------------------
+; Dazhbog (Sin Mechanic) Hunt the Forest Beast Storyline Task-
+
+[drx_sl_red_greh_tech_task_2]
+
+icon = ui_inGame2_PD_Ohotnik_na_mutantov
+storyline = true
+prior = 145
+repeat_timeout = 0
+precondition = {=validate_assault_task(drx_sl_red_greh_tech_task_2:1:1:nil:true:true:nil)} true, false
+
+title = drx_sl_red_greh_tech_task_2_name
+descr = drx_sl_red_greh_tech_task_2_text
+job_descr = drx_sl_red_greh_tech_task_2_about
+task_complete_descr = drx_sl_red_greh_tech_task_2_finish
+
+stage_complete = 1
+target_functor = assault_task_target_functor
+status_functor = assault_task_status_functor
+status_functor_params = monster_predatory_night, monster_zombied_day, monster_zombied_night, monster_special
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_tech_task_2)} fail
+
+on_job_descr = %=setup_assault_task(drx_sl_red_greh_tech_task_2)%
+on_complete = %=reward_random_money(6500:8000) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_tech_task_2) =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_2)%
+
+;------------------------------------------------
+; Dazhbog (Sin Mechanic) Slay the Enemy Informer Storyline Task-
+
+[drx_sl_red_greh_tech_task_3]
+
+icon = ui_inGame2_Odin_vistrel
+storyline = true
+prior = 135
+repeat_timeout = 0
+;precondition = true
+
+title = drx_sl_red_greh_tech_task_3_name
+descr = drx_sl_red_greh_tech_task_3_text
+job_descr = drx_sl_red_greh_tech_task_3_about
+task_complete_descr = drx_sl_red_greh_tech_task_3_finish
+
+stage_complete = 1
+target_functor = general_bounty_task
+status_functor = bounty_task
+condlist_0 = {!task_giver_alive(drx_sl_red_greh_tech_task_3)} fail
+
+on_job_descr = %=setup_bounty_task(drx_sl_red_greh_tech_task_3:true:false:greh:monolith)%
+on_complete = %=reward_random_money(7500:9500) =reward_stash(true) =complete_task_inc_goodwill(50:greh) =inc_task_stage(drx_sl_red_greh_tech_task_3) =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_meet_random_honcho() =drx_sl_decrease_sl_tasks_count() =drx_sl_unregister_task_giver(drx_sl_red_greh_tech_task_3)%
+
+
+;------------------------------------------------------------------------------------------
+; Dazhbog (Sin Mechanic)
+;------------------------------------------------------------------------------------------
+[red_greh_tech_task_1]	;-- Find Level 1 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 15
+precondition = {-red_greh_tech_upgrade_tier_1} true, false
+title = red_greh_tech_task_1_name
+title_functor = general_fetch_task
+descr = red_greh_tech_task_1_text
+descr_functor = general_fetch_task
+job_descr = red_greh_tech_task_1_about
+fetch_descr = red_greh_tech_task_1_fetch_about
+task_complete_descr = red_greh_tech_task_1_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(red_greh_tech_task_1)} fail
+fetch_func = %=setup_generic_fetch_task(red_greh_tech_task_1_fetch:1:itm_basickit)%
+on_complete = %=complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(red_greh_tech_task_1_fetch) =inc_task_stage(red_greh_tech_task_1) +red_greh_tech_upgrade_tier_1 =drx_sl_unregister_task_giver(red_greh_tech_task_1)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_unregister_task_giver(red_greh_tech_task_1)%
+
+
+[red_greh_tech_task_2]	;-- Find Level 2 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 16
+precondition = {+red_greh_tech_upgrade_tier_1 -red_greh_tech_upgrade_tier_2} true, false
+title = red_greh_tech_task_2_name
+title_functor = general_fetch_task
+descr = red_greh_tech_task_2_text
+descr_functor = general_fetch_task
+job_descr = red_greh_tech_task_2_about
+fetch_descr = red_greh_tech_task_2_fetch_about
+task_complete_descr = red_greh_tech_task_2_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(red_greh_tech_task_2)} fail
+fetch_func = %=setup_generic_fetch_task(red_greh_tech_task_2_fetch:1:itm_advancedkit)%
+on_complete = %=complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(red_greh_tech_task_2_fetch) =inc_task_stage(red_greh_tech_task_2) +red_greh_tech_upgrade_tier_2 =drx_sl_unregister_task_giver(red_greh_tech_task_2)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_unregister_task_giver(red_greh_tech_task_2)%
+
+
+[red_greh_tech_task_3]	;-- Find Level 3 Toolkit Task
+icon = ui_inGame2_Instrumenti
+storyline = false
+prior = 17
+precondition = {+red_greh_tech_upgrade_tier_2 -red_greh_tech_upgrade_tier_3} true, false
+title = red_greh_tech_task_3_name
+title_functor = general_fetch_task
+descr = red_greh_tech_task_3_text
+descr_functor = general_fetch_task
+job_descr = red_greh_tech_task_3_about
+fetch_descr = red_greh_tech_task_3_fetch_about
+task_complete_descr = red_greh_tech_task_3_fetch_finish
+stage_complete = 1
+target_functor = general_fetch_task
+status_functor = actor_has_fetch_item
+condlist_0 = {!task_giver_alive(red_greh_tech_task_3)} fail
+fetch_func = %=setup_generic_fetch_task(red_greh_tech_task_3_fetch:1:itm_expertkit)%
+on_complete = %=complete_task_inc_goodwill(50:greh) =fetch_reward_and_remove(red_greh_tech_task_3_fetch) =inc_task_stage(red_greh_tech_task_3) +red_greh_tech_upgrade_tier_3 =drx_sl_unregister_task_giver(red_greh_tech_task_3)%
+on_fail = %=fail_task_dec_goodwill(25:greh) =drx_sl_unregister_task_giver(red_greh_tech_task_3)%

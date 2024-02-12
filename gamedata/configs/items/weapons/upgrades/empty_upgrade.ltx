@@ -1,0 +1,108 @@
+[up_sect_empty_tier_1]
+;---------------
+cost		      		= 0
+value					= "" ; +10
+
+[up_sect_empty_tier_2]
+;---------------
+cost		      		= 0
+value					= "" ; +20
+
+[up_sect_empty_tier_3]
+;---------------
+cost		      		= 0
+value					= "" ; +30
+
+[up_sect_empty]
+;---------------
+cost		      		= 0
+value					= ""
+
+[up_empty_tier_1]
+scheme_index            = 0, 0
+known                   = 1
+effects                 =
+section                 = up_sect_empty_tier_1
+property                = prop_not_available
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = true
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
+
+[up_empty_tier_2]
+scheme_index            = 1, 0
+known                   = 1
+effects                 =
+section                 = up_sect_empty_tier_2
+property                = prop_not_available
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = true
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
+
+[up_empty_tier_3]
+scheme_index            = 2, 0
+known                   = 1
+effects                 = 
+section                 = up_sect_empty_tier_3
+property                = prop_not_available
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = true
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
+
+[up_empty]
+scheme_index            = 0, 1
+known                   = 1
+effects                 = 
+section                 = up_sect_empty
+property                = prop_not_available_no_reason
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = true
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_upgrade_not_available_name
+description             = st_up_upgrade_not_available_descr
+icon                    = ui_inGame2_upgrade_unavailable
+
+[up_gr_empty_tier_1]
+elements                = up_empty_tier_1
+
+[up_gr_empty_tier_2]
+elements                = up_empty_tier_2
+
+[up_gr_empty_tier_3]
+elements                = up_empty_tier_3

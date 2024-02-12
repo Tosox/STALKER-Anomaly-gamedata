@@ -1,0 +1,168 @@
+;=====бандосы на автобусной остановке
+
+[start_visitirs_hangar_mlr_squad]:online_offline_group
+faction = stalker
+npc_random =  sim_default_duty_2, sim_default_csky_0, sim_default_duty_1, sim_default_stalker_1, sim_default_stalker_0, sim_default_stalker_0
+npc_in_squad = 1, 3
+target_smart = gar_smart_terrain_3_5
+
+[hunter_gar_trader_squad]:online_offline_group
+faction = stalker
+npc = hunter_gar_trader
+target_smart = gar_smart_terrain_3_5
+story_id = hunter_gar_trader_squad
+npc_in_squad = 1, 1
+
+[stalker_sim_baraholka_traders]:online_offline_group
+faction = stalker
+npc = baraholka_trader, baraholka_trader_night
+npc_in_squad = 2, 2
+target_smart = gar_smart_terrain_6_3
+
+[stalker_mlr_baraholka_squad]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_2, sim_default_stalker_1, sim_default_stalker_1
+npc_in_squad = 1, 3
+target_smart = gar_smart_terrain_6_3
+
+[stalker_sim_dolg_post]:online_offline_group
+faction = dolg
+npc = sim_default_duty_1, sim_default_duty_1, sim_default_duty_2, sim_default_duty_2, sim_default_duty_2, sim_default_duty_3
+npc_in_squad = 1, 3
+target_smart = gar_smart_terrain_5_2
+
+[bandit_gar_smart_terrain_4_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 3
+target_smart = gar_smart_terrain_4_5
+always_arrived = true
+
+[stalker_gar_smart_terrain_6_3]:online_offline_group
+faction = stalker
+npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1
+target_smart = gar_smart_terrain_6_3
+target_smart = gar_smart_terrain_6_3
+always_arrived = true
+
+[gar_4_2_zombie_mlr_squad]:online_offline_group
+faction = monster_predatory_day
+npc_random = zombie_weak, zombie_normal, zombie_strong
+npc_in_squad = 6, 12
+target_smart = gar_smart_terrain_4_2
+on_death = %+gar_4_2_zombie_mlr_squad_death%
+
+;======спам поста долга=====
+[simulation_mix_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc_random = dog_normal_brown, pseudodog_grey_weak, pseudodog_normal, pseudodog_strong, pseudodog_grey_strong, dog_normal_red, dog_normal_white, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black, dog_weak_bulterier, dog_weak_brown, dog_weak_brown, pseudodog_normal, dog_normal_brown, dog_normal_bulterier, dog_weak_red, dog_weak_white, dog_weak_brown, dog_weak_bulterier, dog_strong_red, dog_strong_white, dog_strong_brown, dog_strong_bulterier, dog_strong_black, dog_weak_bulterier, dog_weak_brown, dog_weak_brown, pseudodog_normal
+npc_in_squad = 7, 10
+target_smart = gar_smart_terrain_5_2
+
+[simulation_mix2_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc_random = snork_weak, snork_weak2, snork_weak3, snork_normal3, snork_normal, snork_weak, snork_weak, snork_weak, snork_strong, snork_weak, snork_strong, snork_strong, snork_weak
+npc_in_squad = 7, 9
+target_smart = gar_smart_terrain_5_2
+
+[simulation_mix3_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc_random = boar_normal, boar_normal, boar_normal, boar_strong, boar_01a_weak, boar_02a_weak, boar_02a_strong, boar_01a_hard, boar_02a_hard, flesh_01a_weak, flesh_01a_weak, flesh_normal, flesh_02a_normal, flesh_01a_strong, flesh_02a_strong
+npc_in_squad = 7, 12
+target_smart = gar_smart_terrain_5_2
+
+[simulation_mix4_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc_random = tushkano_normal, tushkano_normal_a, tushkano_normal_b, tushkano_normal_c, tushkano_weak, tushkano_weak_a, tushkano_weak_b, tushkano_weak_c, tushkano_strong, tushkano_strong_a, tushkano_strong_b, tushkano_strong_c
+npc_in_squad = 15, 20
+target_smart = gar_smart_terrain_5_2
+
+;===тот же спам через 3-9 месяцев в Зоне===
+[simulation_gigant_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc = gigant_strong
+target_smart = gar_smart_terrain_5_2
+
+[simulation_bloodsucker_gar_smart_terrain_6_1]:online_offline_group
+faction = monster
+npc_random = bloodsucker_red_weak, bloodsucker_black_weak, bloodsucker_red_normal, bloodsucker_black_normal, bloodsucker_red_strong, bloodsucker_black_strong
+npc_in_squad = 2, 3
+target_smart = gar_smart_terrain_5_2
+
+;======Депо и его окрестности=====
+
+[bandit_gar_smart_terrain_2_4]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 2, 4
+target_smart = gar_smart_terrain_2_4
+always_arrived = true
+
+[bandit2_gar_smart_terrain_2_4]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1
+npc_in_squad = 2, 4
+target_smart = gar_smart_terrain_2_4
+always_arrived = true
+
+[bandit3_gar_smart_terrain_2_4]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
+npc_in_squad = 3, 4
+target_smart = gar_smart_terrain_2_4
+always_arrived = true
+
+;====агро-свалка===
+[bandit_gar_smart_terrain_1_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1
+npc_in_squad = 2, 4
+target_smart = gar_smart_terrain_1_5
+always_arrived = true
+
+[bandit2_gar_smart_terrain_1_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1
+npc_in_squad = 2, 4
+target_smart = gar_smart_terrain_1_5
+always_arrived = true
+
+[bandit3_gar_smart_terrain_1_5]:online_offline_group
+faction = bandit
+npc_random = sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3
+npc_in_squad = 3, 4
+target_smart = gar_smart_terrain_1_5
+always_arrived = true
+
+;----депо----
+[depo_bandit_gar_smart_terrain_3_5]:online_offline_group
+faction = bandit
+npc = sim_default_bandit_2, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_2, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0
+npc_in_squad = 3, 6
+target_smart = gar_smart_terrain_3_5
+always_arrived = true
+
+[start_depo_bandit_gar_smart_terrain_3_5]:online_offline_group
+faction = bandit
+npc = sim_default_bandit_1, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_0
+target_smart = gar_smart_terrain_3_5
+always_arrived = true
+
+;====блокпост долгарей======
+[bar_svalka_dolg_gar_smart_terrain_5_2]:online_offline_group
+faction = dolg
+npc = sim_default_duty_4, sim_default_duty_0, sim_default_duty_2, sim_default_duty_2, sim_default_duty_1
+target_smart = gar_smart_terrain_5_2
+always_arrived = true
+
+
+
+
+
+
+
+
+
+
+
+

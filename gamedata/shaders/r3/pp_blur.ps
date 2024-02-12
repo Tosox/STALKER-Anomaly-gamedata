@@ -1,0 +1,31 @@
+#include "common.h"
+
+float4 blur_params;
+
+float4 main(p_screen I) : SV_Target
+{
+	const float GAUSS_SIGMA = 2.5;
+	const int support = int(GAUSS_SIGMA * 1.5);
+	
+	//Get direction
+	float2 dir = (0,0);
+	if(blur_params.x == 1.0)
+		dir = float2(1.0/blur_params.z, 0.f);
+	else if(blur_params.y == 1.0)
+		dir = float2(0.0, 1.0/blur_params.w);
+		
+	//Accumulation
+	float3 image = (0.0, 0.0, 0.0);
+	float norm = 0.0;
+	
+	//Blur loop
+	[unroll]
+	for (int i = -support; i <= support; i++) 
+	{
+		float coeff = exp(-0.5 * float(i) * float(i) / (GAUSS_SIGMA * GAUSS_SIGMA));
+		image += s_image.SampleLevel(smp_nofilter, I.tc0 + float(i) * dir, 0).xyz * coeff;
+		norm += coeff;
+	}
+	image *= 1.0/norm; 
+    return float4(image, 1.0);
+} 

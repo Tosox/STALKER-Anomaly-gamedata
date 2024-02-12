@@ -1,0 +1,81 @@
+<w>
+	<npc_pda x="0" y="0" width="819" height="768" stretch="1">
+		<state x="0" y="0" width="819" height="768" stretch="1">
+			<text complex_mode="1" r="200" g="200" b="200" vert_align="c" align="c" font="graffiti32"/>
+		</state>
+
+		<info x="0" y="0" width="819" height="768" stretch="1">
+			<border x="80" y="100" width="659" height="568" stretch="1">
+				<!-- Top -->
+				<auto_frameline x="0" y="0" width="659" height="1" vertical="0">
+					<texture>ui_inGame2_pda_line_horizontal</texture>
+				</auto_frameline>
+				<!-- Middle -->
+				<auto_frameline x="0" y="107" width="252" height="1" vertical="0">
+					<texture>ui_inGame2_pda_line_horizontal</texture>
+				</auto_frameline>
+				<!-- Bottom -->
+				<auto_frameline x="0" y="568" width="659" height="1" vertical="0">
+					<texture>ui_inGame2_pda_line_horizontal</texture>
+				</auto_frameline>
+				
+				<!-- Left -->
+				<auto_frameline x="0" y="1" width="1" height="568" vertical="1">
+					<texture>ui_inGame2_pda_line_vertical</texture>
+				</auto_frameline>
+				<!-- Right -->
+				<auto_frameline x="659" y="1" width="1" height="568" vertical="1">
+					<texture>ui_inGame2_pda_line_vertical</texture>
+				</auto_frameline>
+				<!-- Center -->
+				<auto_frameline x="252" y="1" width="1" height="568" vertical="1">
+					<texture>ui_inGame2_pda_line_vertical</texture>
+				</auto_frameline>
+			</border>
+	
+			<!-- Contact info -->
+			<contact x="80" y="100" width="252" height="107" >
+				<icon x="8" y="10" width="98" height="87"/>
+				<name x="114" y="10" width="129" height="20">
+					<text complex_mode="1" r="200" g="200" b="200" vert_align="c" align="l" font="letterica16"/>
+				</name>
+				<comm x="114" y="30" width="129" height="20">
+					<text complex_mode="1" r="150" g="150" b="150" vert_align="c" align="l" font="letterica16"/>
+				</comm>
+				<rank x="114" y="50" width="129" height="20">
+					<text complex_mode="1" r="150" g="150" b="150" vert_align="c" align="l" font="letterica16"/>
+				</rank>
+				<rep x="114" y="70" width="129" height="20">
+					<text complex_mode="1" r="150" g="150" b="150" vert_align="c" align="l" font="letterica16"/>
+				</rep>
+			</contact>
+			
+			<message_list x="80" y="208" width="252" height="461" item_height="60" can_select="1" always_show_scroll="0">
+				<font font="letterica16" r="150" g="150" b="150"/>
+			</message_list>
+			
+			<description x="332" y="100" width="407" height="568">
+				<scrollbar x="8" y="10" width="392" height="548" right_ident="0" left_ident="0" top_indent="0" bottom_indent="0" vert_interval="0" always_show_scroll="0"/>
+				<information width="392" height="1">
+					<text font="letterica16" r="150" g="150" b="150" complex_mode="1" align="l" vert_align="t" x="4" y="6"/>
+				</information>
+				<information2 width="392" height="1">
+					<text font="letterica16" r="150" g="150" b="150" complex_mode="1" align="l" vert_align="t" x="4" y="6"/>
+				</information2>
+				<image_frame x="0" y="0" width="252" height="157"/>
+				<image_container>
+					<image x="4" y="8" width="0" height="0"></image>
+				</image_container>
+			</description>
+		</info>
+	</npc_pda>
+
+	<hint_wnd x="0" y="0" width="240" height="100">
+	    <background x="0" y="0" width="240" height="100">
+		    <texture>ui_icons_PDA_tooltips</texture>
+	    </background>
+	    <text x="16" y="20" width="220" height="100">
+	    	<text font="letterica16" r="140" g="140" b="140" complex_mode="1" align="l" vert_align="t"/>
+	    </text>
+	</hint_wnd>
+</w>

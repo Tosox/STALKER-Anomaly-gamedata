@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!--===========================================================
+<
+< TEXT STRINGS FOR LOST TO THE ZONE: LIVING LEGEND TASKS
+<	Anomaly 1.5 - Lost to the Zone: Living Legend
+<
+<	Made by: SarisKhan
+<	Last revised: 04 September 2019
+<
+<===========================================================-->
+
+<string_table>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 1 -->
+	<string id="lttz_ll_find_doctor_task_title">
+		<text>Living Legend: Old Friend</text>
+	</string>
+	<string id="lttz_ll_find_doctor_task_descr">
+		<text>Doctor, Strelok's old companion, has retired to the north-west corner of the Great Swamps. Find a way to reach him to continue your search for Strelok.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 2 -->
+	<string id="lttz_ll_visit_agro_ug_name">
+		<text>Living Legend: Underground Hideout</text>
+	</string>
+	<string id="lttz_ll_visit_agro_ug_text">
+		<text>Doctor suggested visiting Strelok's hideout in Agroprom Underground for clues on his whereabouts.</text>
+	</string>
+	<string id="lttz_ll_visit_agro_ug_text_2">
+		<text>A thorough read of Doctor's notes reveals Strelok's got a hideout in Agroprom Underground. Visit it for clues on his whereabouts.</text>
+	</string>
+	
+	<string id="strelok_notes_name">
+		<text>Strelok's notebook</text>
+	</string>
+	<string id="strelok_notes_desc">
+		<text>This notebook used to belong to Strelok. A quick read reveals many rather disjointed and cryptic notes. Seems the stalker had a crisis about an important decision he had made a few years ago, and wanted to quickly resupply at Rostok before pushing north to verify his choices.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 3 -->
+	<string id="lttz_ll_visit_barkeep_task_title">
+		<text>Living Legend: Following the Trail</text>
+	</string>
+	<string id="lttz_ll_visit_barkeep_task_descr">
+		<text>If Strelok wanted to resupply at Rostok, Barkeep probably knows something about it. Pay him a visit.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 3 -->
+	<string id="lttz_ll_visit_aslan_task_title">
+		<text>Living Legend: Following the Trail</text>
+	</string>
+	<string id="lttz_ll_visit_aslan_task_descr">
+		<text>Aslan is knowledgeable about the Zone's north. Pay him a visit.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 4 -->
+	<string id="lttz_ll_call_north_task_title">
+		<text>Living Legend: Call of the North</text>
+	</string>
+	<string id="lttz_ll_call_north_task_descr">
+		<text>Obtain a functional psychic device to protect you from the Brain Scorcher.</text>
+	</string>
+	<string id="lttz_ll_call_north_task_descr2">
+		<text>Gatekeeper is a veteran who defends the Barrier. He's likely the last person who's seen Strelok's group.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 5 -->
+	<string id="lttz_ll_breakthrough_task_name">
+		<text>Living Legend: Breakthrough</text>
+	</string>		
+	<string id="lttz_ll_breakthrough_task_text">
+		<text>The Monolith are invading the Barrier. You have to defeat them in order to access Radar.</text>
+	</string>
+	<string id="lttz_ll_talk_gatekeeper_task_descr">
+		<text>You've repelled the Monolith assault. Talk to Gatekeeper.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 6 -->
+	<string id="lttz_ll_radar_deactivate_name">
+		<text>Living Legend: Over the Rainbow</text>
+	</string>
+	<string id="lttz_ll_deactivate_text">
+		<text>Disable the Brain Scorcher in order to access the heart of the Zone.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 7 -->
+	<string id="lttz_ll_visit_beard_task_title">
+		<text>Living Legend: The Enclave</text>
+	</string>
+	<string id="lttz_ll_visit_beard_task_descr">
+		<text>Gatekeeper sends his regards to Beard. The latter might know something about Strelok.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 8 -->
+	<string id="lttz_ll_meet_rogue_task_title">
+		<text>Living Legend: Meet Rogue</text>
+	</string>
+	<string id="lttz_ll_meet_rogue_task_descr">
+		<text>One of Strelok's group, Rogue, is currently in Skadovsk. Talk with him to find out more.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 9 -->
+	<string id="lttz_ll_fetch_gauss_task_title">
+		<text>Living Legend: Experimental Weapon</text>
+	</string>
+	<string id="lttz_ll_fetch_gauss_task_descr">
+		<text>Rogue wants you to find an experimental weapon for him. Visit an abandoned military installation.</text>
+	</string>
+	<string id="lttz_ll_fetch_gauss_task_descr2">
+		<text>You have found the experimental weapon. Return to Rogue.</text>
+	</string>
+	
+	<string id="lttz_ll_wpn_gauss_quest_name">
+		<text>"Item №62"</text>
+	</string>
+	<string id="lttz_ll_wpn_gauss_quest_descr">
+		<text>Extremely powerful and highly accurate electromagnetic accelerator gun. Obtains energy from electric-type artefacts. Can penetrate even the best armour. Someone apparently abandoned this hand-held version on the shooting range of its much bigger prototype.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 10 -->
+	<string id="lttz_ll_path_pripyat_task_title">
+		<text>Living Legend: Path to Pripyat</text>
+	</string>
+	<string id="lttz_ll_path_pripyat_task_descr">
+		<text>Pass through the Jupiter Underground. Rogue will accompany you.</text>
+	</string>
+	<string id="lttz_ll_talk_rogue_underpass_task_descr">
+		<text>You have defeated a Monolith ambush. Consult Rogue about the situation.</text>
+	</string>
+	<string id="lttz_ll_reach_pripyat_task_descr">
+		<text>Reach Strelok's hideout in Pripyat. Rogue will accompany you.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 11 -->
+	<string id="lttz_ll_medical_supplies_name">
+		<text>Living Legend: Medical Supplies</text>
+	</string>
+	<string id="lttz_ll_medical_supplies_text">
+		<text>Stitch, Strelok's combat medic, has asked you to procure %s.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 12 -->
+	<string id="lttz_ll_attack_on_titan_name">
+		<text>Living Legend: Attack on Titan</text>
+	</string>
+	<string id="lttz_ll_attack_on_titan_text">
+		<text>A dangerous pseudogiant roams Pripyat. Kill it in advance to avoid a lethal distraction.</text>
+	</string>
+	<string id="lttz_ll_return_rogue_attack_on_titan_task_descr">
+		<text>You have defeated the pseudogiant. Return to Rogue to inform him about your success.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 13 -->
+	<string id="lttz_ll_find_documents_name">
+		<text>Living Legend: Top Secret</text>
+	</string>
+	<string id="lttz_ll_find_documents_text">
+		<text>Lab X-8 contains top secret information on the Zone. Find the documents and bring them to Strelok.</text>
+	</string>
+	
+	<string id="item_doc_x8_ll_name">
+		<text>X-8 documents</text>
+	</string>
+	<string id="item_doc_x8_ll_desc">
+		<text>These documents briefly touch on the results of extensive experiments in psy-research conducted by an unknown group. Most notably, the results seem to confirm the existence of a non-contact field of psychic energy which envelops the Earth.\n \nAlso contained is the brief description of sophisticated machinery that could potentially influence said field in a controlled fashion.\n  \nThe bulk of these documents, however, are simply a long list of human test subjects who were exposed to psy-emissions of various frequencies and intensities. Many were noted to have seemingly developed superhuman endurance, intellect or telepathic abilities during the testing. Some are recorded to have later died, others were transferred, and many were left completely unaccounted for, as if they disappeared or escaped.\n \nScribbled along one of the margins is a cryptic note: "Already we have perverted the human form far beyond recognition for the sake of our vision! How much longer will it be before our hubris and sin catches up to us?". Strelok will definitely be interested in this.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 14 -->
+	<string id="lttz_ll_eidolon_start_task_title">
+		<text>Living Legend: First Strike</text>
+	</string>
+	<string id="lttz_ll_eidolon_start_task_descr">
+		<text>Assemble the team and set out to defeat Eidolon.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 15 -->
+	<string id="lttz_ll_eidolon_task_title">
+		<text>Living Legend: Champion of the Monolith</text>
+	</string>
+	<string id="lttz_ll_eidolon_task_descr">
+		<text>Raid the Palace of Culture to lure Eidolon out, and defeat him.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 16 -->
+	<string id="lttz_ll_strelok_objective_task_title">
+		<text>Living Legend: Ambitious Objective</text>
+	</string>
+	<string id="lttz_ll_strelok_objective_task_descr">
+		<text>You've defeated Eidolon. Now's the time for Strelok to reveal his main objective.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 17 -->
+	<string id="lttz_ll_chernobyl_raid_task_title">
+		<text>Living Legend: CNPP Raid</text>
+	</string>
+	<string id="lttz_ll_chernobyl_raid_task_descr">
+		<text>Reach the CNPP and defeat the defending Monolith forces.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 18 -->
+	<string id="lttz_ll_crucible_task_title">
+		<text>Living Legend: Crucible</text>
+	</string>
+	<string id="lttz_ll_crucible_task_descr">
+		<text>Fight your way to the Monolith Control Centre, defeat the Phantom Guard and find the Shard of the Monolith.</text>
+	</string>
+	
+	<string id="item_monolith_shard_name">
+		<text>Shard of the Monolith</text>
+	</string>
+	<string id="item_monolith_shard_desc">
+		<text>This object was, according to legend, split from the Wish Granter itself. Displays properties not unlike an artefact. It crackles with unnerving energy, and may boast insidious powers that aren't immediately apparent.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 19 -->
+	<string id="lttz_ll_answers_task_title">
+		<text>Living Legend: Answers</text>
+	</string>
+	<string id="lttz_ll_answers_task_descr">
+		<text>You have obtained a shard of the Monolith. The time for answers has come.</text>
+	</string>
+	
+	<string id="st_strelok_pendrive_name">
+		<text>Strelok's pendrive</text>
+	</string>
+	<string id="st_strelok_pendrive_descr">
+		<text>This pendrive contains plenty of encrypted data: the backup copy of Strelok's many findings throughout the years. Invaluable piece of evidence regarding the top secret experiments that allegedly created the Zone.</text>
+	</string>
+	
+	<!-- ----------------------------------------------------------------------------------------- -->
+	<!-- Living Legend Task 20 -->
+	<string id="lttz_ll_finish_task_title">
+		<text>Living Legend: Finish</text>
+	</string>
+	
+	<string id="lttz_ll_finish_csky_task_descr">
+		<text>Return to Cold to report your success.</text>
+	</string>
+	<string id="lttz_ll_finish_stalker_task_descr">
+		<text>Return to Sidorovich to report your success.</text>
+	</string>
+	<string id="lttz_ll_finish_killer_task_descr">
+		<text>Return to Dushman to report your success.</text>
+	</string>
+	<string id="lttz_ll_finish_freedom_task_descr">
+		<text>Return to Lukash to report your success.</text>
+	</string>
+	<string id="lttz_ll_finish_dolg_task_descr">
+		<text>Return to General Voronin to report your success.</text>
+	</string>
+	<string id="lttz_ll_finish_ecolog_task_descr">
+		<text>Return to Professor Sakharov to report your success.</text>
+	</string>
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	
+</string_table>

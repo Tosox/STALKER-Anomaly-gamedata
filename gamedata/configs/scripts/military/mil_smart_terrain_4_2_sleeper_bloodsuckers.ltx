@@ -1,0 +1,111 @@
+;****************************< 1 >***************************
+[logic@sleeper_bloodsucker_1]
+active = mob_walker@sleep_1
+suitable = {=target_squad_name(mil_smart_terrain_4_2_bloodsuckers_sleepers)} true
+monster_job = true
+prior = 200
+on_hit = hit@1
+
+[mob_walker@sleep_1]
+path_walk = sleeper_bloodsuckerm_1_walk_1
+path_look = sleeper_bloodsuckerm_1_look_1
+combat_ignore_cond = true
+aggressive = false
+on_info = %=set_force_sleep_animation(0)%
+on_info2 = {=is_night} mob_walker@sleep_1_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+[mob_walker@sleep_1_night]
+home_min_radius = 3
+home_max_radius = 80
+path_walk = sleeper_bloodsuckerm_1_walk_1
+path_look = sleeper_bloodsuckerm_1_look_1
+combat_ignore_cond = false
+aggressive = true
+on_timer = 86400 | {!is_night} mob_walker@sleep_1
+
+[hit@1]
+on_info = mob_walker@sleep_1_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+;****************************< 2 >***************************
+[logic@sleeper_bloodsucker_2]
+active = mob_walker@sleep_2
+suitable = {=target_squad_name(mil_smart_terrain_4_2_bloodsuckers_sleepers)} true
+monster_job = true
+prior = 200
+on_hit = hit@2
+
+[mob_walker@sleep_2]
+path_walk = sleeper_bloodsuckerm_2_walk_1
+path_look = sleeper_bloodsuckerm_2_look_1
+combat_ignore_cond = true
+aggressive = false
+on_info = %=set_force_sleep_animation(0)%
+on_info2 = {=is_night} mob_walker@sleep_2_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+[mob_walker@sleep_2_night]
+home_min_radius = 3
+home_max_radius = 80
+path_walk = sleeper_bloodsuckerm_2_walk_1
+path_look = sleeper_bloodsuckerm_2_look_1
+combat_ignore_cond = false
+aggressive = true
+on_timer = 86400 | mob_walker@sleep_2
+
+[hit@2]
+on_info = mob_walker@sleep_2_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+;****************************< 3 >***************************
+[logic@sleeper_bloodsucker_3]
+active = mob_walker@sleep_3
+suitable = {=target_squad_name(mil_smart_terrain_4_2_bloodsuckers_sleepers)} true
+monster_job = true
+prior = 200
+on_hit = hit@3
+
+[mob_walker@sleep_3]
+path_walk = sleeper_bloodsuckerm_3_walk_1
+path_look = sleeper_bloodsuckerm_3_look_1
+combat_ignore_cond = true
+aggressive = false
+on_info = %=set_force_sleep_animation(0)%
+on_info2 = {=is_night} mob_walker@sleep_3_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+[mob_walker@sleep_3_night]
+home_min_radius = 3
+home_max_radius = 80
+path_walk = sleeper_bloodsuckerm_3_walk_1
+path_look = sleeper_bloodsuckerm_3_look_1
+combat_ignore_cond = false
+aggressive = true
+on_timer = 86400 | mob_walker@sleep_3
+
+[hit@3]
+on_info = mob_walker@sleep_3_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+;****************************< 4 >***************************
+[logic@sleeper_bloodsucker_4]
+active = mob_walker@sleep_4
+suitable = {=target_squad_name(mil_smart_terrain_4_2_bloodsuckers_sleepers)} true
+monster_job = true
+prior = 200
+on_hit = hit@4
+
+[mob_walker@sleep_4]
+path_walk = sleeper_bloodsuckerm_4_walk_1
+path_look = sleeper_bloodsuckerm_4_look_1
+combat_ignore_cond = true
+aggressive = false
+on_info = %=set_force_sleep_animation(0)%
+on_info2 = {=is_night} mob_walker@sleep_4_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%
+
+[mob_walker@sleep_4_night]
+home_min_radius = 3
+home_max_radius = 80
+path_walk = sleeper_bloodsuckerm_4_walk_1
+path_look = sleeper_bloodsuckerm_4_look_1
+combat_ignore_cond = false
+aggressive = true
+on_timer = 86400 | mob_walker@sleep_4
+
+[hit@4]
+on_info = mob_walker@sleep_4_night %=set_bloodsucker_state(default) =release_force_sleep_animation =set_visual_memory_enabled(1)%

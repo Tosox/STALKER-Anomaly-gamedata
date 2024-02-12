@@ -1,0 +1,18 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_bandit_1</class>
+<community>bandit</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="500" max="2000" infinitive="0"/>
+<name>GENERATE_NAME_bandit</name>
+<rank min="1000" max="3000" />
+<reputation min="-2000" max="-500" />
+<supplies>
+#include "gameplay\loadouts\bandit_base.ltx"
+#include "gameplay\loadouts\bandit_tier_1.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

@@ -1,0 +1,767 @@
+
+--[[
+
+-- =======================================================================================
+-- Tronex
+-- Last edit: 2019/9/27
+
+-- Offline Combat Simulator
+-- Full simulation: When 2 enemy squads get close to each other, a battle will be simulated
+-- Smart simulation: enemies assigned to the same smart terrain will fight each others
+
+-- More powerful squads have higher chance to win, power is determind by the sum of NPC ranks of the squad
+-- If dynamic relations are on, offline battles will anticipate in relation changes
+-- In addition, dominators will get more rank, and their kill stats will be recorded
+-- =======================================================================================
+
+--]]
+
+local enable_debug = false
+
+-- timer for rescanning squads and updating info [real seconds]
+local UPDATE_TIME         		= 30
+
+-- When the distance between 2 enemy squads is below this value, they will fight [m^2]
+local COMBAT_DISTANCE  	  		= 20*20
+local COMBAT_DISTANCE_WARFARE  	= 40*40
+
+-- affected by population factors, levels with common squad count that exceed this limit will be out of offline simulation
+local MAX_SQUAD_COUNT     		= 30 	
+local MAX_SQUAD_COUNT_WARFARE 	= 0
+	
+-- exclude special characters from the system and release their enemies, battles involving not_so_special communities will be ingored on the other hand
+local EXCLUDE_STORY_ID			= true
+local EXCLUDE_STORY_ID_WARFARE	= false
+local NOT_SO_SPECIAL = {
+	["monster"] = true,
+	["zombied"] = true,
+}
+
+local MONSTER_MULTI		  	= 1 		-- multiplier for mutants rank
+local HIT_BASE            	= 0.4
+local HIT_FACTOR          	= 0.2
+	
+local RANK_FRACTION		  	= 250
+local RANK_COMMANDER_GAIN 	= 50
+
+local can_fight_mutant
+local smart_battles_only
+local ini_ocs
+local is_enemy, string_find, math_random, math_ceil, math_max, math_pow 	=	 game_relations.is_factions_enemies, string.find, math.random, math.ceil, math.max, math.pow
+
+-- Ignore list
+task_squads = {}
+local task_giver_squads = {}
+story_id_communities = {}
+ignore_list = {}
+
+-- Storage
+ocs_power = {}
+opponents = {}
+squads_by_level = {}
+local count_by_level = {}
+local limit_by_level = {}
+local faction_power = {}
+
+local c_cnt, c_tbl = 0, {} -- enemies collector
+local tbl_smart = {}
+local old_state, new_state
+local opt_exclude, opt_dist = EXCLUDE_STORY_ID, COMBAT_DISTANCE
+
+-- Mutants settings
+local m_rank_max, m_rank_factor = 27000, 0.2
+local m_class = {
+	[clsid.rat_s]					= 0.01,
+	[clsid.tushkano_s] 				= 0.05,
+	
+	[clsid.zombie_s] 				= 0.1,
+	[clsid.cat_s] 					= 0.2,
+	[clsid.dog_s] 					= 0.1,
+	[clsid.flesh_s] 				= 0.1,
+	[clsid.boar_s] 					= 0.25,
+	
+	[clsid.fracture_s] 				= 0.4,
+	[clsid.snork_s] 				= 0.4,
+	[clsid.pseudodog_s] 			= 0.35,
+	
+	[clsid.bloodsucker_s] 			= 0.5,
+	[clsid.poltergeist_s] 			= 0.6,
+	
+	[clsid.psy_dog_phantom_s] 		= 0.5,
+	[clsid.psy_dog_s] 				= 0.5,
+	[clsid.burer_s] 				= 0.65,
+	[clsid.controller_s] 			= 0.7,
+	
+	[clsid.chimera_s] 				= 1.3,
+	[clsid.gigant_s] 				= 1.5,
+}
+
+
+-------------------------------
+-- Main
+-------------------------------
+local function smart_terrain_on_update(smart)
+
+	empty_table(tbl_smart)
+	
+	for id,_ in pairs(SIMBOARD.smarts[smart.id].squads) do
+		tbl_smart[#tbl_smart+1] = id
+	end
+	
+	if (#tbl_smart == 0) then
+		return
+	end
+	
+	shuffle_table(tbl_smart)
+	
+	local sim = alife()
+	local lid_1
+	
+	for i,id_1 in pairs(tbl_smart) do
+		local squad_1 = sim:object(id_1)
+		
+		if squad_1 and (not squad_1.online) and SIMBOARD.squads[squad_1.id] and (squad_1:npc_count() > 0)
+		then
+			local community_1 = squad_1:get_squad_community()
+			if (community_1 == "monster" and (not can_fight_mutant)) then
+				return
+			end
+	
+			lid_1 = lid_1 or game_graph():vertex(squad_1.m_game_vertex_id):level_id()
+			if lid_1 and squads_by_level[lid_1] and limit_by_level[lid_1] then 
+				
+				if (not task_squads[id_1]) and (not task_giver_squads[id_1]) then
+					
+					-- If squad already have an opponent, no need for full scan
+					local id_t = opponents[id_1]
+					if id_t and squads_by_level[lid_1][id_t] then
+						--squad_1.assigned_target_id = id_t
+						in_combat = validate_enemy(sim, lid_1, squad_1, id_1, id_t, community_1)
+						if in_combat then
+							if enable_debug then
+								printf("% OCS | Battle in smart [%s]", smart:name())
+								printf("------------------------------------------------------------------------")
+							end
+							return
+						end
+					end
+			
+					-- Otherwise, scan for squads in the same map
+					for j,id_2 in pairs(tbl_smart) do
+						in_combat = validate_enemy(sim, lid_1, squad_1, id_1, id_2, community_1)
+						if in_combat then
+							if enable_debug then
+								printf("% OCS | Battle in smart [%s]", smart:name())
+								printf("------------------------------------------------------------------------")
+							end
+							return
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+local function squad_on_update(squad_1)
+
+	if (squad_1:clsid() ~= clsid.online_offline_group_s) then
+		printe("!!! TRYING TO REGISTER NON-SQUAD AS SQUAD")
+		return
+	end
+	
+	if (squad_1.online) then
+		return
+	end
+	
+	-- Make sure squad exists within the simboard, and npc counts are greater than 0
+	if not (SIMBOARD.squads[squad_1.id] and (squad_1:npc_count() > 0)) then
+		return
+	end
+	
+	local sim = alife()
+	local community_1 = squad_1:get_squad_community()
+	local id_1 = squad_1.id
+	local lid_1 = game_graph():vertex(squad_1.m_game_vertex_id):level_id()
+	local in_combat
+	--empty_table(c_tbl)
+	--c_cnt = 0
+	
+	if (community_1 == "monster" and (not can_fight_mutant)) then
+		return
+	end
+	
+	-- Scan all squads in related level
+	-- Only simulate in same level and enough squads num cap
+	if lid_1 and squads_by_level[lid_1] and limit_by_level[lid_1] then 	
+	
+		-- Only simulate for non-task squads
+		if (not task_squads[id_1]) and (not task_giver_squads[id_1]) then 
+		
+			-- If squad already have an opponent, no need for full scan
+			local id_t = opponents[id_1]
+			if id_t and squads_by_level[lid_1][id_t] then
+				--squad_1.assigned_target_id = id_t
+				in_combat = validate_enemy(sim, lid_1, squad_1, id_1, id_t, community_1)
+				if in_combat then
+					if enable_debug then
+						printf("------------------------------------------------------------------------")
+					end
+					return
+				end
+			end
+	
+			-- Otherwise, scan for squads in the same map
+			for id_2,_ in pairs(squads_by_level[lid_1]) do 	
+				in_combat = validate_enemy(sim, lid_1, squad_1, id_1, id_2, community_1)
+				if in_combat then
+					if enable_debug then
+						printf("------------------------------------------------------------------------")
+					end
+					return
+				end
+			end
+		end
+	end
+	
+	--[[ Pick enemy to target if no opponent found
+	if (#c_tbl > 0) then
+		local new_target = c_tbl[math_random(#c_tbl)]
+		opponents[id_1] = new_target
+	end
+	--]]
+end
+
+local function coordinator()
+	ResetTimeEvent("cycle","ocs", UPDATE_TIME)
+	
+	-- Toggle feature
+	
+	
+	if (ui_options.get("alife/general/offline_combat") == "on_smarts_only") then
+		new_state = 2
+	elseif (ui_options.get("alife/general/offline_combat") == "full") then
+		new_state = 1
+	else
+		if (old_state == 1) then
+			UnregisterScriptCallback("squad_on_update", squad_on_update)
+			printdbg("- OCS | Full simulation = OFF")
+		elseif (old_state == 2) then
+			UnregisterScriptCallback("smart_terrain_on_update", smart_terrain_on_update)
+			printdbg("- OCS | Simulate at smarts = OFF")
+		end
+		old_state = 0
+		new_state = 0
+		
+		return false
+	end
+	
+	if (old_state ~= new_state) then
+	
+		-- On smart only
+		if (new_state == 2) then
+			if (old_state == 1) then
+				UnregisterScriptCallback("squad_on_update", squad_on_update)
+				printdbg("~ OCS | Full simulation = OFF")
+			end
+			old_state = 2
+			RegisterScriptCallback("smart_terrain_on_update", smart_terrain_on_update)
+			printdbg("- OCS | Simulate at smarts = ON")
+			
+		-- Full
+		elseif (new_state == 1) then	
+			if (old_state == 2) then
+				UnregisterScriptCallback("smart_terrain_on_update", smart_terrain_on_update)
+				printdbg("~ OCS | Simulate at smarts = OFF")
+			end
+			old_state = 1
+			RegisterScriptCallback("squad_on_update", squad_on_update)
+			printdbg("- OCS | Full simulation = ON")
+		end
+	end
+			
+	-- Empty tables, prepare
+	local sim = alife()
+	local gg = game_graph()
+	empty_table(squads_by_level)
+	empty_table(count_by_level)
+	empty_table(limit_by_level)
+	
+	-- Get rid of non-existing task squads cache
+	for id,v in pairs(task_squads) do
+		local squad = sim:object(id)
+		if (not squad) then
+			--printf("-OCS | task squad [%s] no longer exists",id)
+			task_squads[id] = nil
+		end
+	end
+	
+	-- Exclude task givers squads from simulation
+	empty_table(task_giver_squads)
+	for k,tsk in pairs(task_manager.get_task_manager().task_info) do
+		local id = tsk.task_giver_id
+		local se_npc = id and sim:object(id)
+		local squad = se_npc and se_npc.group_id and se_npc.group_id ~= 65535 and sim:object(se_npc.group_id)
+		if squad then
+			--printf("-OCS | excluded task giver squad [%s] from simulation",tsk_sq_se.id)
+			task_giver_squads[squad.id] = true
+		end
+	end
+	
+	-- Include non-important squads
+	for id,_ in pairs(SIMBOARD.squads) do
+		local squad = sim:object(id)
+		local section = squad and squad:section_name()
+		local sid = get_object_story_id(id)
+		if squad and section and ini_sys:r_bool_ex(section,"common") and (not sid) and (not task_squads[id]) then
+			local lid = gg:vertex(squad.m_game_vertex_id):level_id()
+			
+			-- Build a table of squads id in every map
+			if (not squads_by_level[lid]) then
+				squads_by_level[lid] = {}
+			end
+			squads_by_level[lid][id] = true
+			
+			-- Count non story squads
+			if (not count_by_level[lid]) then
+				count_by_level[lid] = _G.WARFARE and MAX_SQUAD_COUNT or MAX_SQUAD_COUNT_WARFARE
+			end
+			count_by_level[lid] = count_by_level[lid] + 1
+		end
+	end
+	
+	local stalker_pop_factor = ui_options.get("alife/general/alife_stalker_pop")
+	local monster_pop_factor = ui_options.get("alife/general/alife_mutant_pop")
+	local pop_factor = (stalker_pop_factor + monster_pop_factor)/2
+	for lid,v in pairs(count_by_level) do
+		-- if the squad count in a map exceeds the limit
+		if (math_ceil(pop_factor * MAX_SQUAD_COUNT)) < v then
+			limit_by_level[lid] = true
+		else
+			limit_by_level[lid] = false
+		end
+	end
+	
+	-- Options by mode
+	if _G.WARFARE then
+		opt_dist = COMBAT_DISTANCE_WARFARE
+		opt_exclude = EXCLUDE_STORY_ID_WARFARE
+		can_fight_mutant = warfare_options.options.enable_mutant_offline_combat
+		
+		for community,v in pairs(warfare_options.options.factions) do
+			faction_power[community] = v.offline_power_multiplier
+		end
+	else
+		opt_dist = COMBAT_DISTANCE
+		opt_exclude = EXCLUDE_STORY_ID
+		can_fight_mutant = true
+	end
+	
+	if enable_debug then
+		printf("- OCS | Combat Distance: %s - Execlude special characters: %s - Mutants included: %s", opt_dist, opt_exclude, can_fight_mutant)
+	end
+	
+	--[[ Debugger
+	if enable_debug and (not _G.WARFARE) then
+		for lid,v in pairs(squads_by_level) do
+			local clr = limit_by_level[lid] and "%" or "~"
+			printf(clr .. " OCS | lvl: %s - squad_count: %s - allow_simulation %s", sim:level_name(lid), count_by_level[lid], tostring(limit_by_level[lid]))
+		end
+	end
+	--]]
+	
+	return false
+end
+
+
+function validate_enemy(sim, lid, squad_1, id_1, id_2, community_1)
+
+	if (id_2 == id_1) then
+		return false
+	end
+	
+	if (not sim) then
+		sim = alife()
+	end
+	
+	local squad_2 = id_2 and sim:object(id_2)
+	
+	if squad_2
+	and (not squad_2.online)
+	and ((opponents[id_2] == id_1) or (opponents[id_2] == nil)) -- target is not occupied
+	and (not task_squads[id_2])
+	and (not task_giver_squads[id_2])
+	then
+	
+		-- Only simulate for enemies
+		local community_2 = squad_2:get_squad_community()
+		if (community_2 ~= "monster" or can_fight_mutant) and is_enemy(community_1, community_2) then 	
+			
+			-- Only simulate for close squads
+			local d = distance_to_xz_sqr(squad_1.position, squad_2.position)
+			if (d < opt_dist) then 	
+				
+				if opt_exclude then
+					local sid_1 = not squad_1.common
+					local sid_2 = not squad_2.common
+					
+					-- If both are story squads, don't simulate battle
+					if sid_1 and sid_2 then
+						--printf("% [%s] and [%s] are special, ignore", squad_1:name(), squad_2:name())
+						return false
+						
+					-- If one is a story squad, kill the other squads incase they have the same target
+					elseif (sid_1 or sid_2) and (squad_1.assigned_target_id == squad_2.assigned_target_id) then
+					
+						if (sid_1 and NOT_SO_SPECIAL[community_1])  then
+							--printf("% OCS |  [%s] {%s} is not so special, ignore battle", squad_1:name(), community_1)
+							
+						elseif (sid_2 and NOT_SO_SPECIAL[community_2]) then
+							--printf("% OCS |  [%s] {%s} is not so special, ignore battle", squad_2:name(), community_2)
+							
+						elseif sid_1 then
+							if enable_debug then
+								printf("% OCS |  [%s] is special, [%s] is removed", squad_1:name(), squad_2:name())
+							end
+							
+							remove_squad_info(squad_2, id_2, id_1, lid)
+							local se_attacker = get_random_npc(squad_1)
+							for k in squad_2:squad_members() do
+								local victim = alife_object(k.id)
+								if victim then
+									victim:on_death(se_attacker)
+								end
+							end
+							
+						elseif sid_2 then
+							if enable_debug then
+								printf("% OCS |  [%s] is special, [%s] is removed", squad_2:name(), squad_1:name())
+							end
+							
+							remove_squad_info(squad_1, id_1, id_2, lid)
+							local se_attacker = get_random_npc(squad_2)
+							for k in squad_1:squad_members() do
+								local victim = alife_object(k.id)
+								if victim then
+									victim:on_death(se_attacker)
+								end
+							end
+						end
+						
+						return false
+					end
+				end
+				
+				-- Simulate battle
+				simulate_battle(id_1, id_2, squad_1, squad_2, community_1, community_2, lid)
+			
+				return true
+				
+			--[[ Collect enemies to target
+			elseif (not opponents[id_1]) and (_G.WARFARE) then
+				c_cnt = c_cnt + 1
+				c_tbl[c_cnt] = id_2
+			--]]
+			end
+		end
+	end
+	
+	return false
+end
+
+function simulate_battle(id_1, id_2, squad_1, squad_2, community_1, community_2, lid)
+-- squad 1 = Attacker
+-- squad 2 = Victim
+
+	-- Get squad power
+	ocs_power[id_1] = calculate_squad_power(squad_1, community_1)
+	ocs_power[id_2] = calculate_squad_power(squad_2, community_2)
+	
+	if not (ocs_power[id_1] > 0 and ocs_power[id_2] > 0) then
+		return
+	end
+	
+	-- Make both squads targeting themselves
+	opponents[id_1] = id_2
+	--squad_1.assigned_target_id = id_2
+	
+	opponents[id_2] = id_1
+	--squad_2.assigned_target_id = id_1
+
+	-- Get squads MVPs
+	local se_attacker = get_random_npc(squad_1)
+	local se_victim = get_random_npc(squad_2)
+	
+	-- Calculate damage dealt
+	local raw_power = calculate_squad_power(squad_2, community_2, true)
+	local damage = ocs_power[id_1] * (HIT_BASE + math_random() * HIT_FACTOR)
+	damage = math_ceil(damage)
+	
+	if enable_debug then
+		printf("/ OCS | %s | Attacker [%s](Power: %s) vs Victim [%s](Power: %s) | Damage: %s",
+		alife():level_name(lid), squad_1:name(), ocs_power[id_1], squad_2:name(), ocs_power[id_2], damage)
+	end
+	
+	-- Cause damage
+	ocs_power[id_2] = ocs_power[id_2] - damage
+	
+	-- Release victim squad if it got rekt
+	if (ocs_power[id_2] <= 0) then
+		
+		if enable_debug then
+			printf("! OCS | Squad gone [%s] | Moment: %s sec", squad_2:name(), math_ceil(time_global()/1000))
+		end
+	
+		-- Post-battle state
+		set_battle_outcome(true, id_1, id_2, squad_1, squad_2, community_1, community_2, se_attacker, se_victim, damage)
+		
+		-- Release
+		remove_squad_info(squad_2, id_2, id_1, lid)
+		for k in squad_2:squad_members() do
+			local victim = alife_object(k.id)
+			if victim then
+				victim:on_death(se_attacker)
+			end
+		end
+		
+	-- Kill the victim NPC if the damage dealt exceeds its rank
+	elseif (raw_power - ocs_power[id_2]) > calculate_npc_power(se_victim, community_2) then
+	
+		if enable_debug then
+			printf("~ OCS | Squad [%s] lost NPC [%s] | Remaining power: %s | Moment: %s sec", squad_2:name(), se_victim:name(), ocs_power[id_2], math_ceil(time_global()/1000))
+		end
+		
+		-- Post-battle state
+		set_battle_outcome(false, id_1, id_2, squad_1, squad_2, community_1, community_2, se_attacker, se_victim, damage)
+		
+		if enable_debug and squad_2:npc_count() <= 1 then
+			printf("! OCS | Squad gone [%s] | Moment: %s sec", squad_2:name(), math_ceil(time_global()/1000))
+		end
+		
+		if squad_2:npc_count() <= 1 then
+			remove_squad_info(squad_2, id_2, id_1, lid)
+		end
+		
+		-- Release
+		se_victim:on_death(se_attacker)
+		
+		--[[
+		squad_2:remove_npc(se_victim.id)
+		
+		if squad_2:npc_count() <= 1 then
+			remove_squad_info(squad_2, id_2, id_1, lid)
+			
+			if enable_debug then
+				printf("! OCS | Squad gone [%s] | Moment: %s sec", squad_2:name(), math_ceil(time_global()/1000))
+			end
+		end
+		--]]
+	end
+end
+
+function set_battle_outcome(victory, id_1, id_2, squad_1, squad_2, community_1, community_2, se_attacker, se_victim, damage)
+
+	-- Affect relations
+	game_relations.offline_npc_on_death(se_victim, se_attacker)
+	
+	-- Send news
+	if (not victory) then
+		dynamic_news_manager.get_dynamic_news():SOSBattleOffline(squad_2, squad_1)
+	end
+		
+	if IsStalker(se_attacker) then
+	
+		-- Improve attacker rank depending on their damage
+		if se_attacker and se_attacker.set_rank then
+			local rank_inc = math_ceil(damage/RANK_FRACTION)
+			se_attacker:set_rank(se_attacker:rank() + rank_inc)
+			ocs_power[id_1] = ocs_power[id_1] + rank_inc
+		end
+		
+		-- Record attacker action
+		local m_data = alife_storage_manager.get_se_obj_state(se_attacker,true)
+		if (m_data) then
+			local value = IsStalker(se_victim) and "killed_stalkers" or "killed_monsters"
+			m_data[value] = m_data[value] and m_data[value] + 1 or 1
+		end
+		
+		-- Attackers commander get bonus
+		local commander = alife_object(squad_1:commander_id())
+		if commander and commander.set_rank then
+			local rank_inc = math_random(1,RANK_COMMANDER_GAIN)
+			commander:set_rank(commander:rank() + rank_inc)
+			ocs_power[id_1] = ocs_power[id_1] + rank_inc
+		end
+	
+	end
+end
+
+function remove_squad_info(squad_2, id_2, id_1, lid)
+	if _G.WARFARE then
+		sim_squad_warfare.remove_squad(squad_2)
+	end
+	
+	id_2 = id_2 or squad_2.id
+	lid = lid or game_graph():vertex(squad_2.m_game_vertex_id):level_id()
+	
+	ocs_power[id_2] = nil
+	
+	if id_1 then
+		opponents[id_1] = nil
+	end
+	opponents[id_2] = nil
+	
+	if squads_by_level[lid] then
+		squads_by_level[lid][id_2] = nil
+	end
+	if count_by_level[lid] then
+		count_by_level[lid] = count_by_level[lid] - 1
+	end
+end
+
+
+-------------------------------
+-- Utilities
+-------------------------------
+function calculate_npc_power(se_obj, community)
+	local power, cls = 0, se_obj:clsid()
+	if IsMonster(nil,cls) then
+		power = math_ceil(m_class[cls] * m_rank_max)
+		power = math_max(0, power)
+		power = math_random( power - (m_rank_factor * power) , power + (m_rank_factor * power) )
+	else
+		power = se_obj:rank()
+	end
+	
+	return ( power * (faction_power[community] or 1) )
+end
+
+function calculate_squad_power(squad, community, raw)
+	--printf("-offline_simulation | calculate_squad_power")
+	if (not raw) and ocs_power[squad.id] then
+		return ocs_power[squad.id]
+	end
+	
+	local power = 0	
+	local sim = alife()
+	community = community or squad:get_squad_community()
+	
+	for k in squad:squad_members() do
+		local se_obj = k.id and sim:object(k.id)
+		
+		if (se_obj) then
+			power = power + calculate_npc_power(se_obj, community)
+		end
+	end
+	
+	power = math_ceil(power)
+	
+	--printf("-pwr [%s] = %s", squad:name(), power)
+	if (not raw) then
+		ocs_power[squad.id] = power
+	end
+	
+	return power
+end
+
+function get_random_npc(squad)
+	local squad_npcs = {}
+	for k in squad:squad_members() do
+		squad_npcs[#squad_npcs+1] = k.id
+	end
+	return alife_object( squad_npcs[math_random(#squad_npcs)] )
+end
+
+function distance_to_xz_sqr(a, b)
+	return math_pow(b.x - a.x, 2) + math_pow(b.z - a.z, 2)
+end
+
+function get_num_squads_on_level(lvl, faction, mode)
+-- mode: true (active), false (inactive)
+	if (squads_by_level[lvl]) then
+		local count = 0
+		
+		for s,_ in pairs(squads_by_level[lvl]) do
+			local squad = alife_object(s)
+			
+			if (squad) then			
+				--printf("get_num_squads_on_level -- squad=%s", squad:name())
+			
+				if (squad.get_squad_community and squad:get_squad_community() == faction) then
+					if (mode == nil)
+					or ((mode == true) and (squad.current_action == 0))
+					or ((mode == false) and (squad.current_action == 1))
+					then
+						count = count + 1
+					end
+				end
+			end
+		end
+		
+		--printf("return " .. tostring(count))
+		return count
+	else
+		--printf("level doesn't exist")
+	end
+
+	return 0
+end
+
+
+-------------------------------
+-- Prepare
+-------------------------------
+function get_ignore_list()
+	if is_empty(ignore_list) then
+		init_settings()
+	end
+	return ignore_list
+end
+
+function init_settings()
+	ini_ocs = ini_file("misc\\offline_combat_simulator.ltx")
+	
+	local n = ini_ocs:line_count("story_communities")
+	for i=0,n-1 do
+		local result, id, value	= ini_ocs:r_line_ex("story_communities",i,"","")
+		if id and value then
+			story_id_communities[id] = value
+		end
+	end
+	
+	n = ini_ocs:line_count("ignore_list")
+	for i=0,n-1 do
+		local result, id, value	= ini_ocs:r_line_ex("ignore_list",i,"","")
+		if id then
+			ignore_list[id] = true
+		end
+	end
+end
+
+
+-------------------------------
+-- Callbacks
+-------------------------------
+local function load_state(m_data)
+	--ocs_power = m_data.offline_power or {}
+	task_squads = m_data.offline_task_squads or {}
+end
+
+local function save_state(m_data)
+	--m_data.offline_power = ocs_power
+	m_data.offline_task_squads = task_squads
+end
+
+function on_game_start()
+	if is_empty(ignore_list) or is_empty(health_table) or is_empty(story_id_communities) then
+		init_settings()
+	end
+
+	local function on_game_load()
+		CreateTimeEvent("cycle","ocs", 2, coordinator)
+		RegisterScriptCallback("save_state", save_state)
+	end
+
+	RegisterScriptCallback("on_game_load", on_game_load)
+	RegisterScriptCallback("load_state", load_state)
+end

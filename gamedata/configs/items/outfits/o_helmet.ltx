@@ -1,0 +1,1107 @@
+
+[tch_helmet]:global_item_actions
+		GroupControlSection                      	    = spawn_group
+		discovery_dependency                     	    =
+		;$spawn 									    = "outfit\helmet"
+		$prefetch                                	    = 32
+		kind                                            = o_helmet
+		class                                    	    = E_HLMET
+		cform                                    	    = skeleton
+		visual                                   	    = dynamics\outfit\scientific_outfit
+		slot                                     	    = 11
+		repair_type 								    = helmet
+		default_to_ruck                          	    = true
+		sprint_allowed                           	    = true
+		control_inertion_factor                  	    = 1.0
+		inv_name                                 	    = st_helmet
+		inv_name_short                           	    = st_helmet
+		description                              	    = st_helmet_descr
+		additional_inventory_weight2 				    = 0
+		additional_inventory_weight 				    = 0
+		inv_weight                               	    = 1.0
+		inv_grid_width                           	    = 2
+		inv_grid_height                          	    = 2
+		upgr_icon_x                              	    = 200
+		upgr_icon_y                              	    = 0
+		upgr_icon_width                          	    = 100
+		upgr_icon_height                         	    = 100
+		upgrades                					    =
+		installed_upgrades      					    =
+		upgrade_scheme          					    =
+		cost                                     	    = 1500
+		power_loss                    					= 0.1
+		burn_protection                         	    = 0.0
+		shock_protection                         	    = 0.0
+		chemical_burn_protection                 	    = 0.0
+		radiation_protection                     	    = 0.0
+		telepatic_protection                     	    = 0.0
+		strike_protection                        	    = 0.0
+		explosion_protection                     	    = 0.0
+		wound_protection                         	    = 0.0
+		hit_fraction_actor                       	    = 1.0
+		immunities_sect                          	    = sect_helm_immunities
+		bones_koeff_protection                   	    = actor_helm_respirator
+		snd_on_take								    	= outfit
+
+;--------------------------------------------------------------------------
+; MASKS
+;--------------------------------------------------------------------------
+
+[helm_bandana]:tch_helmet
+		$spawn                        = "outfit\helm_respirator"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\cloth_mask.ogf
+        
+		inv_name                      = st_helm_bandana
+		inv_name_short                = st_helm_bandana
+		description                   = st_helm_bandana_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 4
+		upgr_icon_x                   = 1493
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 124
+		upgr_icon_height              = 143
+		
+		kind                          = o_helmet
+		cost                          = 230
+		inv_weight                    = 0.1
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_bandana_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.03
+		hit_fraction_actor            = 1
+		bones_koeff_protection        = actor_helm_absent
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.02
+		shock_protection              = 0.04
+		radiation_protection          = 0.004
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0
+		explosion_protection          = 0
+		wound_protection              = 0
+
+[sect_helm_bandana_immunities]
+		burn_immunity                 = 0.3
+		chemical_burn_immunity        = 0.295
+		explosion_immunity            = 0.28
+		fire_wound_immunity           = 0.162
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_cloth_mask]:tch_helmet
+		$spawn                        = "outfit\helm_respirator"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\cloth_mask.ogf
+        
+		inv_name                      = st_helm_cloth_mask
+		inv_name_short                = st_helm_cloth_mask
+		description                   = st_helm_cloth_mask_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 1875
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 124
+		upgr_icon_height              = 143
+		upgrades                      =
+		installed_upgrades            =
+		upgrade_scheme                =
+		
+		kind                          = o_helmet
+		cost                          = 450
+		inv_weight                    = 0.22
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_cloth_mask_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.03
+		hit_fraction_actor            = 1
+		bones_koeff_protection        = actor_helm_absent
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.01
+		shock_protection              = 0.03
+		radiation_protection          = 0.003
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0
+		explosion_protection          = 0
+		wound_protection              = 0
+
+[sect_helm_cloth_mask_immunities]
+		burn_immunity                 = 0.3
+		chemical_burn_immunity        = 0.295
+		explosion_immunity            = 0.28
+		fire_wound_immunity           = 0.162
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_rp_bala]:tch_helmet
+		$spawn                        = "outfit\helm_respirator"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\cloth_mask.ogf
+        
+		inv_name                      = st_helm_rp_bala
+		inv_name_short                = st_helm_rp_bala
+		description                   = st_helm_rp_bala_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 2
+		upgr_icon_x                   = 801
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 120
+		upgr_icon_height              = 143
+		
+		kind                          = o_helmet
+		cost                          = 550
+		inv_weight                    = 0.21
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_cloth_mask_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.03
+		hit_fraction_actor            = 1
+		bones_koeff_protection        = actor_helm_absent
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.02
+		shock_protection              = 0.04
+		radiation_protection          = 0.004
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0
+		explosion_protection          = 0
+		wound_protection              = 0
+ 
+
+;--------------------------------------------------------------------------
+; RESPIRATORS
+;--------------------------------------------------------------------------
+
+[helm_resp]:tch_helmet
+		$spawn                        = "outfit\helm_resp"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_respirator
+        
+		inv_name                      = st_helm_resp
+		inv_name_short                = st_helm_resp
+		description                   = st_helm_resp_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 1245
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 124
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_1
+		upgrade_scheme                = up_scheme_helm_resp_1
+		
+		kind                          = o_helmet
+		cost                          = 4220
+		inv_weight                    = 1.1
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_resp_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.11
+		hit_fraction_actor            = 0.95
+		bones_koeff_protection        = actor_helm_respirator
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.0035
+		shock_protection              = 0.04
+		radiation_protection          = 0.0095
+		chemical_burn_protection      = 0.022
+		telepatic_protection          = 0.003
+		strike_protection             = 0
+		explosion_protection          = 0.013
+		wound_protection              = 0.016
+
+[sect_helm_resp_immunities]
+		burn_immunity                 = 0.2
+		chemical_burn_immunity        = 0.13
+		explosion_immunity            = 0.2
+		fire_wound_immunity           = 0.1
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_respirator]:tch_helmet
+		$spawn                        = "outfit\helm_respirator"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_respirator
+        
+		inv_name                      = st_helm_respirator
+		inv_name_short                = st_helm_respirator
+		description                   = st_helm_respirator_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 2
+		upgr_icon_x                   = 20
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 106
+		upgr_icon_height              = 149
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 6120
+		inv_weight                    = 1.18
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_respirator_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.11
+		hit_fraction_actor            = 0.9
+		bones_koeff_protection        = actor_helm_respirator
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.007
+		shock_protection              = 0.08
+		radiation_protection          = 0.0125
+		chemical_burn_protection      = 0.042
+		telepatic_protection          = 0.002
+		strike_protection             = 0
+		explosion_protection          = 0.027
+		wound_protection              = 0.032
+
+[sect_helm_respirator_immunities]
+		burn_immunity                 = 0.2
+		chemical_burn_immunity        = 0.165
+		explosion_immunity            = 0.28
+		fire_wound_immunity           = 0.196
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_respirator_old]:tch_helmet
+		$spawn                        = "outfit\helm_respirator_old"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_respirator_monolith
+        
+		inv_name                      = st_helm_respirator
+		inv_name_short                = st_helm_respirator
+		description                   = st_helm_respirator_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 4
+		upgr_icon_x                   = 1369
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 124
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 7120
+		inv_weight                    = 2.28
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_respirator_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.11
+		hit_fraction_actor            = 0.9
+		bones_koeff_protection        = actor_helm_respirator
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.007
+		shock_protection              = 0.08
+		radiation_protection          = 0.0155
+		chemical_burn_protection      = 0.042
+		telepatic_protection          = 0.006
+		strike_protection             = 0
+		explosion_protection          = 0.027
+		wound_protection              = 0.032
+
+ 
+;--------------------------------------------------------------------------
+
+[helm_respirator_gp5]:tch_helmet
+		$spawn                        = "outfit\helm_respirator_gp5"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_respirator_gp5
+        
+		inv_name                      = st_helm_respirator_gp5
+		inv_name_short                = st_helm_respirator_gp5
+		description                   = st_helm_respirator_gp5_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 6
+		upgr_icon_x                   = 921
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 162
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 10120
+		inv_weight                    = 1.5
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_respirator_gp5_immunities
+		repair_type                   = helmet_light
+		;repair_part_bonus             = 0.11
+		hit_fraction_actor            = 0.9
+		bones_koeff_protection        = actor_helm_respirator
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.007
+		shock_protection              = 0.08
+		radiation_protection          = 0.0235
+		chemical_burn_protection      = 0.012
+		telepatic_protection          = 0.006
+		strike_protection             = 0
+		explosion_protection          = 0.027
+		wound_protection              = 0.032
+
+[sect_helm_respirator_gp5_immunities]
+		burn_immunity                 = 0.2
+		chemical_burn_immunity        = 0.155
+		explosion_immunity            = 0.26
+		fire_wound_immunity           = 0.186
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+
+;--------------------------------------------------------------------------
+
+[helm_m40]:tch_helmet
+		$spawn                        = "outfit\helm_m40"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_m40
+        
+		inv_name                      = st_helm_m40
+		inv_name_short                = st_helm_m40
+		description                   = st_helm_m40_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 8
+		upgr_icon_x                   = 1741
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 134
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 15920
+		inv_weight                    = 2.9
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_m40_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.14
+		hit_fraction_actor            = 0.9
+		bones_koeff_protection        = actor_helm_m40
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.0105
+		shock_protection              = 0.095
+		radiation_protection          = 0.0295
+		chemical_burn_protection      = 0.062
+		telepatic_protection          = 0.025
+		strike_protection             = 0
+		explosion_protection          = 0.15
+		wound_protection              = 0.06
+
+[sect_helm_m40_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.065
+		explosion_immunity            = 0.16
+		fire_wound_immunity           = 0.097
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_ppm88]:tch_helmet
+		$spawn                        = "outfit\helm_hardhat"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_m40
+        
+		inv_name                      = helm_ppm88
+		inv_name_short                = helm_ppm88
+		description                   = helm_ppm88_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 12
+		upgr_icon_x                   = 814
+		upgr_icon_y                   = 579
+		upgr_icon_width               = 159
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 18500
+		inv_weight                    = 2.25
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_ppm88_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.12
+		hit_fraction_actor            = 0.9
+		bones_koeff_protection        = actor_helm_m40
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.009
+		shock_protection              = 0.06
+		radiation_protection          = 0.0355
+		chemical_burn_protection      = 0.036
+		telepatic_protection          = 0.009
+		strike_protection             = 0
+		explosion_protection          = 0.017
+		wound_protection              = 0.022
+
+[sect_helm_ppm88_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.026
+		explosion_immunity            = 0.15
+		fire_wound_immunity           = 0.14
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.074
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_protective]:tch_helmet
+		$spawn                        = "outfit\helm_protective"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_protective
+        
+		inv_name                      = st_helm_protective
+		inv_name_short                = st_helm_protective
+		description                   = st_helm_protective_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 10
+		upgr_icon_x                   = 639
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 119
+		upgr_icon_height              = 148
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 17720
+		inv_weight                    = 6.0
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_protective_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.22
+		hit_fraction_actor            = 0.85
+		bones_koeff_protection        = actor_helm_screen
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.037
+		shock_protection              = 0.04
+		radiation_protection          = 0.0335
+		chemical_burn_protection      = 0.109
+		telepatic_protection          = 0.06
+		strike_protection             = 0
+		explosion_protection          = 0.02
+		wound_protection              = 0.046
+
+[sect_helm_protective_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.007
+		explosion_immunity            = 0.25
+		fire_wound_immunity           = 0.13
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_m50]:tch_helmet
+		$spawn                        = "outfit\helm_tactic"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_m40
+        
+		inv_name                      = helm_m50
+		inv_name_short                = helm_m50
+		description                   = helm_m50_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 14
+		upgr_icon_x                   = 814
+		upgr_icon_y                   = 579
+		upgr_icon_width               = 159
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 20700
+		inv_weight                    = 2.18
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_m50_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.12
+		hit_fraction_actor            = 0.85
+		bones_koeff_protection        = actor_helm_m40
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.009
+		shock_protection              = 0.083
+		radiation_protection          = 0.0415
+		chemical_burn_protection      = 0.049
+		telepatic_protection          = 0.07
+		strike_protection             = 0
+		explosion_protection          = 0.15
+		wound_protection              = 0.032
+
+[sect_helm_m50_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.024
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.115
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.072
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_ranger]:tch_helmet
+		$spawn                        = "outfit\helm_tactic"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_m40
+        
+		inv_name                      = helm_ranger
+		inv_name_short                = helm_ranger
+		description                   = helm_ranger_descr
+		inv_grid_x                    = 78
+		inv_grid_y                    = 16
+		upgr_icon_x                   = 814
+		upgr_icon_y                   = 579
+		upgr_icon_width               = 159
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_helm_resp_2
+		upgrade_scheme                = up_scheme_helm_resp_2
+		
+		kind                          = o_helmet
+		cost                          = 24300
+		inv_weight                    = 2.42
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_ranger_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.12
+		hit_fraction_actor            = 0.85
+		bones_koeff_protection        = actor_helm_m40
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.2
+		shock_protection              = 0.08
+		radiation_protection          = 0.04
+		chemical_burn_protection      = 0.047
+		telepatic_protection          = 0.125
+		strike_protection             = 0
+		explosion_protection          = 0.2
+		wound_protection              = 0.032
+
+[sect_helm_ranger_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.024
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.115
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.072
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+ 
+;--------------------------------------------------------------------------
+; COMBAT
+;--------------------------------------------------------------------------
+
+[helm_hardhat]:tch_helmet
+		$spawn                        = "outfit\helm_hardhat"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_hardhat
+        
+		inv_name                      = st_helm_hardhat
+		inv_name_short                = st_helm_hardhat
+		description                   = st_helm_hardhat_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 8
+		upgr_icon_x                   = 474
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 149
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_3
+		upgrade_scheme                = up_scheme_helm_resp_1
+		
+		kind                          = o_helmet
+		cost                          = 10640
+		inv_weight                    = 2.67
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_hardhat_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.16
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_helm_hardhat
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.003
+		shock_protection              = 0.035
+		radiation_protection          = 0.0011
+		chemical_burn_protection      = 0.0026
+		telepatic_protection          = 0.01
+		strike_protection             = 0
+		explosion_protection          = 0.25
+		wound_protection              = 0.035
+
+[sect_helm_hardhat_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.04
+		explosion_immunity            = 0.14
+		fire_wound_immunity           = 0.064
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_hardhat_snag]:tch_helmet
+		$spawn                        = "outfit\helm_hardhat_snag"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_hardhat
+        
+		inv_name                      = st_helm_hardhat
+		inv_name_short                = st_helm_hardhat
+		description                   = st_helm_hardhat_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 8
+		upgr_icon_x                   = 474
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 149
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_3
+		upgrade_scheme                = up_scheme_helm_resp_1
+		
+		kind                          = o_helmet
+		cost                          = 15820
+		inv_weight                    = 2.67
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_hardhat_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.16
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_helm_hardhat
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.003
+		shock_protection              = 0.035
+		radiation_protection          = 0.0011
+		chemical_burn_protection      = 0.0026
+		telepatic_protection          = 0.01
+		strike_protection             = 0
+		explosion_protection          = 0.25
+		wound_protection              = 0.035
+
+ 
+;--------------------------------------------------------------------------
+
+[helm_ach7]:tch_helmet
+		$spawn                        = "outfit\helm_hardhat"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_hardhat
+        
+		inv_name                      = helm_ach7
+		inv_name_short                = helm_ach7
+		description                   = helm_ach7_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 6
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_helm_resp_3
+		upgrade_scheme                = up_scheme_helm_resp_1
+		
+		kind                          = o_helmet
+		cost                          = 13700
+		inv_weight                    = 3.27
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_ach7_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.15
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_helm_hardhat
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.0039
+		shock_protection              = 0.04
+		radiation_protection          = 0.0011
+		chemical_burn_protection      = 0.0029
+		telepatic_protection          = 0.1
+		strike_protection             = 0
+		explosion_protection          = 0.2
+		wound_protection              = 0.035
+
+[sect_helm_ach7_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+ 
+;--------------------------------------------------------------------------
+; COMBAT + RESPIRATOR
+;--------------------------------------------------------------------------
+
+[helm_ach7ex]:tch_helmet
+		$spawn                        = "outfit\helm_hardhat"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_hardhat
+        
+		inv_name                      = helm_ach7ex
+		inv_name_short                = helm_ach7ex
+		description                   = helm_ach7ex_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 16
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 17500
+		inv_weight                    = 3.89
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_ach7ex_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.17
+		hit_fraction_actor            = 0.7
+		bones_koeff_protection        = actor_helm_hardhat
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.014
+		shock_protection              = 0.11
+		radiation_protection          = 0.0205
+		chemical_burn_protection      = 0.034
+		telepatic_protection          = 0.1
+		strike_protection             = 0
+		explosion_protection          = 0.25
+		wound_protection              = 0.05
+
+[sect_helm_ach7ex_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_battle]:tch_helmet
+		$spawn                        = "outfit\helm_battle"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_battle
+        
+		inv_name                      = st_helm_battle
+		inv_name_short                = st_helm_battle
+		description                   = st_helm_battle_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 12
+		upgr_icon_x                   = 150
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 162
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 27520
+		inv_weight                    = 4.87
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_battle_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.20
+		hit_fraction_actor            = 0.7
+		bones_koeff_protection        = actor_helm_battle
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.019
+		shock_protection              = 0.085
+		radiation_protection          = 0.0295
+		chemical_burn_protection      = 0.042
+		telepatic_protection          = 0.069
+		strike_protection             = 0
+		explosion_protection          = 0.27
+		wound_protection              = 0.08
+
+[sect_helm_battle_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.035
+		explosion_immunity            = 0.075
+		fire_wound_immunity           = 0.05
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_exo]:tch_helmet
+		$spawn                        = "outfit\helm_exo"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_exo
+        
+		inv_name                      = st_helm_exo_name
+		inv_name_short                = st_helm_exo_name
+		description                   = st_helm_exo_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 1083
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 162
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 30520
+		inv_weight                    = 5.37
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_exo_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.20
+		hit_fraction_actor            = 0.5
+		bones_koeff_protection        = actor_helm_exo
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.07
+		shock_protection              = 0.085
+		radiation_protection          = 0.0235
+		chemical_burn_protection      = 0.042
+		telepatic_protection          = 0.06
+		strike_protection             = 0
+		explosion_protection          = 0.3
+		wound_protection              = 0.09
+
+[sect_helm_exo_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.035
+		explosion_immunity            = 0.075
+		fire_wound_immunity           = 0.044
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_metro]:tch_helmet
+		$spawn                        = "outfit\helm_tactic"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_tactic
+        
+		inv_name                      = st_helm_metro
+		inv_name_short                = st_helm_metro
+		description                   = st_helm_metro_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 20
+		upgr_icon_x                   = 1617
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 124
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 33440
+		inv_weight                    = 6.87
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_tactic_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.45
+		bones_koeff_protection        = actor_helm_exo
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.113
+		shock_protection              = 0
+		radiation_protection          = 0.0255
+		chemical_burn_protection      = 0.074
+		telepatic_protection          = 0.048
+		strike_protection             = 0
+		explosion_protection          = 0.35
+		wound_protection              = 0.07
+
+[sect_helm_tactic_immunities]
+		burn_immunity                 = 0.04
+		chemical_burn_immunity        = 0.035
+		explosion_immunity            = 0.08
+		fire_wound_immunity           = 0.06
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_spartan]:tch_helmet
+		$spawn                        = "outfit\helm_battle"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_battle
+        
+		inv_name                      = helm_spartan
+		inv_name_short                = helm_spartan
+		description                   = helm_spartan_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 22
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 37000
+		inv_weight                    = 5.12
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_spartan_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.22
+		hit_fraction_actor            = 0.35
+		bones_koeff_protection        = actor_helm_spartan
+		control_inertion_factor       = 1
+        
+		burn_protection               = 0.275
+		shock_protection              = 0
+		radiation_protection          = 0.0295
+		chemical_burn_protection      = 0.086
+		telepatic_protection          = 0.055
+		strike_protection             = 0
+		explosion_protection          = 0.4
+		wound_protection              = 0.12
+
+[sect_helm_spartan_immunities]
+		burn_immunity                 = 0.025
+		chemical_burn_immunity        = 0.01
+		explosion_immunity            = 0.04
+		fire_wound_immunity           = 0.04
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.0
+		strike_immunity               = 0.04
+		telepatic_immunity            = 0.0
+		wound_2_immunity              = 0.0
+		wound_immunity                = 0.0
+ 
+;--------------------------------------------------------------------------
+
+[helm_tactic]:tch_helmet
+		$spawn                        = "outfit\helm_tactic"
+		class                         = E_HLMET
+		visual                        = dynamics\outfit\helm_tactic
+        
+		inv_name                      = st_helm_tactic
+		inv_name_short                = st_helm_tactic
+		description                   = st_helm_tactic_descr
+		inv_grid_x                    = 80
+		inv_grid_y                    = 10
+		upgr_icon_x                   = 325
+		upgr_icon_y                   = 1381
+		upgr_icon_width               = 136
+		upgr_icon_height              = 143
+		upgrades                      = up_gr_firstab_helm_resp_4
+		upgrade_scheme                = up_scheme_helm_resp_4
+		
+		kind                          = o_helmet
+		cost                          = 22440
+		inv_weight                    = 4.18
+		additional_inventory_weight   = 0
+		additional_inventory_weight2  = 0
+		immunities_sect               = sect_helm_tactic_immunities
+		repair_type                   = helmet
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.7
+		bones_koeff_protection        = actor_helm_tactic
+		control_inertion_factor       = 1
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.013
+		shock_protection              = 0.22
+		radiation_protection          = 0.0255
+		chemical_burn_protection      = 0.054
+		telepatic_protection          = 0.048
+		strike_protection             = 0
+		explosion_protection          = 0.25
+		wound_protection              = 0.05

@@ -1,0 +1,594 @@
+
+<specific_character id="sim_default_greh_0_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0a_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0b_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0c_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0d</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0e</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0f</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0g_1</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0g_2</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0g_3</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0h</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0i</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0j</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0d_face_06</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0e_face_06</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0a_face_07</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0f_face_07</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0d_face_08</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0f_face_08</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0a_face_09</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0f_face_09</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0d_face_10</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_0_default_21" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_0.xml"
+    <icon>ui_inGame2_bandit_5</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0f_face_10</visual>
+</specific_character>
+
+
+
+<specific_character id="sim_default_greh_1_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_3_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_01</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_02</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_03</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_04</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_05</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1b_face_06</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1b_face_07</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_1b_face_08</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1b_face_09</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_1_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_1.xml"
+    <icon>ui_inGame2_bandit_4</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_1b_face_10</visual>
+</specific_character>
+	
+
+
+<specific_character id="sim_default_greh_2_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2a</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_2a</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_3" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_2b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_4" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_5" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_2c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_6" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2a_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_7" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2b_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_8" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2c_mask</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_9" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2a_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_10" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2b_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_11" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2a_gp5</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2c_gp5</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_12" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2a_old</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_13" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2b_old</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_14" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_duty_2_old</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_2c_old</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_15" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3a</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_16" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_3a</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_17" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_18" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_bandit_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_3b</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_19" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3c</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_2_default_20" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_2.xml"
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_3c</visual>
+</specific_character>
+
+
+
+<specific_character id="sim_default_greh_3_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_3.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3a_merc</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_3_default_1" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_3.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3b_merc</visual>
+</specific_character>
+	
+<specific_character id="sim_default_greh_3_default_2" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_3.xml"
+    <icon>ui_inGame2_merc_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_3c_merc</visual>
+</specific_character>
+	
+
+
+<specific_character id="sim_default_greh_4_default_0" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_4.xml"
+    <icon>ui_inGame2_Freedom_2</icon>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_4</visual>
+</specific_character>
+  
+  
+<!--  Sin Veteran Heavy Weapons  -->
+<specific_character id="sim_greh_hwp" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_Freedom_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sinner.</bio>
+    <class>sim_greh_hwp</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <rank>12000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_4</visual>
+    <supplies>
+	[spawn_loadout] \n
+	  wpn_rpg7 = 1 \n
+	  wpn_pkm = 1 \n
+	  wpn_rpk = 1 \n
+	  wpn_rpd = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_desert_eagle = 1 \n
+	  wpn_gsh18 = 1 \n
+	  wpn_mp443 = 1 \n
+      [spawn] \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+    
+<!--  Sin Expert Sniper  -->
+<specific_character id="sim_greh_sniper_default_0" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_merc_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sinner.</bio>
+    <class>sim_greh_sniper</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <rank>9000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_3a_merc</visual>
+    <supplies>
+	[spawn_loadout] \n
+	  wpn_vintorez_pso1m21 = 1 \n
+	  wpn_svd_ps01 = 1 \n
+	  wpn_svu_ps01 = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_beretta = 1 \n
+	  wpn_colt1911 = 1 \n	  
+	  wpn_sig220 = 1 \n
+	  wpn_usp = 1 \n
+	  wpn_gsh18 = 1 \n
+	  wpn_mp443 = 1 \n
+	  wpn_fort = 1 \n
+      [spawn] \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	
+<specific_character id="sim_greh_sniper_default_1" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_merc_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sinner.</bio>
+    <class>sim_greh_sniper</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <rank>9000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_3b_merc</visual>
+    <supplies>
+	[spawn_loadout] \n
+	  wpn_vintorez_pso1m21 = 1 \n
+	  wpn_svd_ps01 = 1 \n
+	  wpn_svu_ps01 = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_beretta = 1 \n
+	  wpn_colt1911 = 1 \n	  
+	  wpn_sig220 = 1 \n
+	  wpn_usp = 1 \n
+	  wpn_gsh18 = 1 \n
+	  wpn_mp443 = 1 \n
+	  wpn_fort = 1 \n
+      [spawn] \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+	
+<specific_character id="sim_greh_sniper_default_2" team_default = "1">
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_merc_2</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Sinner.</bio>
+    <class>sim_greh_sniper</class>
+    <community>greh</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human\greh_3\</snd_config>
+    <rank>9000</rank>
+    <reputation>-600</reputation>
+    <visual>actors\stalker_greh\stalker_greh_3c_merc</visual>
+    <supplies>
+	[spawn_loadout] \n
+	  wpn_vintorez_pso1m21 = 1 \n
+	  wpn_svd_ps01 = 1 \n
+	  wpn_svu_ps01 = 1 \n
+	  [spawn_loadout2] \n
+	  wpn_beretta = 1 \n
+	  wpn_colt1911 = 1 \n	  
+	  wpn_sig220 = 1 \n
+	  wpn_usp = 1 \n
+	  wpn_gsh18 = 1 \n
+	  wpn_mp443 = 1 \n
+	  wpn_fort = 1 \n
+      [spawn] \n
+	</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+
+
+	<!-- Special -->
+<specific_character id="sim_default_greh_trader" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <class>sim_default_greh_trader</class>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_0d_face_10</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_broker_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>buy_route</actor_dialog>
+	<!--actor_dialog>buy_extra_items</actor_dialog-->
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_greh_mechanic" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_neutral_2_mask</icon>
+    <class>sim_default_greh_mechanic</class>
+	<mechanic_mode>1</mechanic_mode>
+    <snd_config>characters_voice\human\greh_1\</snd_config><!--2-->
+    <visual>actors\stalker_greh\stalker_greh_2a</visual>
+
+	<actor_dialog>dm_init_trader</actor_dialog>
+	<actor_dialog>dm_init_mechanic</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>dm_tech_repair</actor_dialog>
+	<actor_dialog>dm_encrypted_pda</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_greh_medic" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_bandit_4</icon>
+    <class>sim_default_greh_medic</class>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_1a_face_02</visual>
+
+		<actor_dialog>dm_init_medic</actor_dialog>
+		<actor_dialog>dm_medic_general</actor_dialog>
+		<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+		<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+		<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	
+<specific_character id="sim_default_greh_barman" team_default = "1">
+#include "gameplay\profiles\character_desc_greh_special.xml"
+    <name>GENERATE_NAME_stalker</name>
+    <icon>ui_inGame2_bandit_5</icon>
+    <class>sim_default_greh_barman</class>
+    <snd_config>characters_voice\human\greh_1\</snd_config>
+    <visual>actors\stalker_greh\stalker_greh_0c_1</visual>
+
+	<actor_dialog>dm_init_batender</actor_dialog>
+	<actor_dialog>dm_ordered_task_dialog</actor_dialog>
+	<actor_dialog>dm_ordered_task_completed_dialog</actor_dialog>
+	<actor_dialog>actor_break_dialog</actor_dialog>
+</specific_character>
+	

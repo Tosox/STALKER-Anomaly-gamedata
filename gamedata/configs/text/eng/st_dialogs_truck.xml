@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+<!-- (Bandit Mechanic) -->
+	<string id="trucks_cemetery_bandit_mechanic_start_0">
+		<text>Congratulations! You've just found the only crook with a crank in this radioactive dumpster fire. Pay me roubles and I'll fix your shit.</text>
+	</string>
+	
+</string_table>

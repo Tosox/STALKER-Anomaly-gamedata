@@ -1,0 +1,1002 @@
+-- werejew
+
+-- this file is going to be used to determine faction stats such as respawn times for now.
+-- over time, more and more will be shifted over to smart_terrain_warfare.script.
+
+--_G.DEACTIVATE_SIM_ON_NON_LINKED_LEVELS = false
+--_G.ProcessEventQueueState = function() return end
+
+--[[
+axr_keybind.keybinds["warfare_hide_smarts"] = "DIK_M"
+function axr_keybind.action.warfare_hide_smarts(p)
+	if (p == 1) then
+		smart_terrain_warfare.hide_smarts = not smart_terrain_warfare.hide_smarts
+	end	
+end
+
+axr_keybind.keybinds["warfare_debug_info"] = "DIK_L"
+function axr_keybind.action.warfare_debug_info(p)
+	if (p == 1) then
+		local actor = alife():actor()
+		local lvid = actor.m_level_vertex_id
+		local gvid = actor.m_game_vertex_id
+		local x = actor.position.x
+		local y = actor.position.y
+		local z = actor.position.z
+
+		--printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+		--printf("	LVID 	= 	"..tostring(lvid))
+		--printf("	GVID	=	"..tostring(gvid))
+		--printf("	X		=	"..tostring(x))
+		--printf("	y		=	"..tostring(y))
+		--printf("	z		=	"..tostring(z))
+		--printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	end
+end]]
+
+squad_community_by_behaviour["trader"] = "trader"
+
+warfare_debug = true
+
+actor_faction = nil
+actor_influence_points = 0
+influence_levels = {} -- influence_levels[smart_terrain_id] = influence_level if > 0 or nil
+
+base_count = 0
+resource_count = 0
+level_count = 32
+initialized = false
+
+-- Variable to see if all_out_war was applied at the start of a new game (maintain compatibility with dynamic relations)
+all_out_war_applied = false
+
+-- Variable to see if all_out_war was applied after loading a save.
+need_all_out_war_applied = true
+dynamic_relations_installed = false
+
+-- Special squads to ignore in offline combat and to ignore when assigning targets
+ignore = {}
+
+function apply_all_out_war()
+	printd(0)
+	for i,faction in pairs(warfare_factions.factions) do
+		for j,faction2 in pairs(warfare_factions.factions) do
+			if (faction ~= faction2) then
+				game_relations.set_factions_community(faction, faction2, -4000)
+				
+				if (dynamic_relations_installed) then
+					save_var( db.actor, ("drx_df_" .. faction .. "_" .. faction2 .. "_relations"), -4000)
+					save_var( db.actor, ("drx_df_" .. faction2 .. "_" .. faction .. "_relations"), -4000)
+				end
+				
+				if (actor_faction == faction) then
+					game_relations.set_factions_community("actor_"..faction, faction2, -4000)
+				elseif (actor_faction == faction2) then
+					game_relations.set_factions_community(faction, "actor_"..faction2, -4000)
+				end
+			end
+		end
+	end
+	printd(1)
+end
+
+-- table for registered squad ids
+registered_squads = {
+	stalker = {},	
+	bandit = {},	
+	csky = {},	
+	army = {},	
+	freedom = {},	
+	dolg = {},	
+	ecolog = {},	
+	killer = {},	
+	monolith = {},
+	renegade = {},	
+	greh = {},	
+	isg = {},
+	monster = {},
+	zombied = {},
+}
+
+-- save warfare state
+function save_state(m_data)
+	printd(0, "save_state")
+
+	-- if data doesn't exist, create it.
+	if (not m_data.warfare) then
+		m_data.warfare = {}
+		m_data.warfare.squads = {}
+		m_data.warfare.smart_owners = {}
+	end	
+
+    m_data.warfare.actor_influence_points = actor_influence_points
+    m_data.warfare.influence_levels = influence_levels
+	m_data.warfare.all_out_war_applied = all_out_war_applied
+	m_data.warfare.manual_control = pda_actor.manual_control
+	m_data.warfare.manual_point = smart_terrain_warfare.manual_point
+	m_data.warfare.invasions = smart_terrain_warfare.invasions
+	m_data.warfare.player_heli = warfare_faction_control.player_heli
+	m_data.warfare.defense_timers = smart_terrain_warfare.defense_timers
+	m_data.warfare.defense_next_update = smart_terrain_warfare.defense_next_update
+	m_data.warfare.patrol_timers = smart_terrain_warfare.patrol_timers
+	m_data.warfare.patrol_next_update = smart_terrain_warfare.patrol_next_update
+	m_data.warfare.patrol_squads = smart_terrain_warfare.patrol_squads
+	m_data.warfare.faction_information = warfare_factions.faction_information
+	m_data.warfare.new_surge = new_surge or true
+
+	for k,v in pairs(smart_terrain_warfare.random_patrols) do
+		local squad = alife_object(k)
+
+		if (squad) then
+			if (squad:clsid() ~= online_offline_group_s or squad:npc_count() == 0) then
+				smart_terrain_warfare.random_patrols[k] = nil
+			end
+		end
+	end
+
+	m_data.warfare.random_patrols = smart_terrain_warfare.random_patrols
+
+	-- iterate over the faction tables in registered_squads
+	for faction,tbl in pairs(registered_squads) do		
+		if not m_data.warfare.squads[faction] then
+			m_data.warfare.squads[faction] = {}
+		end
+	
+		-- iterate over the squad ids in the faction table
+		for ID,target in pairs(tbl) do
+			m_data.warfare.squads[faction][ID] = target
+		end
+	end
+	
+	for name,smart in pairs(SIMBOARD.smarts_by_names) do
+		m_data.warfare.smart_owners[smart.id] = smart.owning_faction
+	end
+
+	printd(1, "save_state")
+end
+
+loaded_squads = false
+
+function load_state(m_data)
+	printd(0, "load_state")
+	-- if warfare data isn't saved, return early.
+
+	printd(1)
+	
+	actor_influence_points = m_data.warfare and m_data.warfare.actor_influence_points or 0
+	influence_levels = m_data.warfare and m_data.warfare.influence_levels or {}
+	all_out_war_applied = m_data.warfare and m_data.warfare.all_out_war_applied or false
+	pda_actor.manual_control = m_data.warfare and m_data.warfare.manual_control or false
+	smart_terrain_warfare.manual_point = m_data.warfare and m_data.warfare.manual_point
+
+	printd(2)
+		
+	smart_terrain_warfare.invasions = m_data.warfare and m_data.warfare.invasions or {}
+	warfare_faction_control.player_heli = m_data.warfare and m_data.warfare.player_heli
+
+	smart_terrain_warfare.defense_timers = m_data.warfare and m_data.warfare.defense_timers or {}
+	smart_terrain_warfare.defense_next_update = m_data.warfare and m_data.warfare.defense_next_update or {}
+	smart_terrain_warfare.patrol_timers = m_data.warfare and m_data.warfare.patrol_timers or {}
+	smart_terrain_warfare.patrol_next_update = m_data.warfare and m_data.warfare.patrol_next_update or {}
+	smart_terrain_warfare.patrol_squads = m_data.warfare and m_data.warfare.patrol_squads or {}
+	smart_terrain_warfare.random_patrols = m_data.warfare and m_data.warfare.random_patrols or {}
+
+	new_surge = m_data.warfare and m_data.warfare.new_surge or true
+	
+	printd(3)
+
+	for smart,squads in pairs(m_data.warfare and m_data.warfare.patrol_squads or {}) do
+		for squad_id, tbl in pairs(squads) do			
+			if type(tbl) == "number" then			
+				smart_terrain_warfare.patrol_squads[smart][squad_id] = {
+					target = tbl,
+					arrive_time = nil,
+					stay_time = nil
+				}
+			end
+		end
+	end
+	
+	printd(4)
+
+	warfare_factions.faction_information = m_data.warfare and m_data.warfare.faction_information or {}
+	
+	
+	for faction,tbl in pairs(m_data.warfare and m_data.warfare.squads or {}) do		
+		for ID,target in pairs(tbl) do
+			registered_squads[faction][ID] = target
+			loaded_squads = true
+		end
+	end
+
+	printd(5)
+	
+	if (m_data.warfare and m_data.warfare.smart_owners) then
+		for smart,faction in pairs(m_data.warfare and m_data.warfare.smart_owners or {}) do
+			smart_terrain_warfare.smart_owners[smart] = faction
+		end
+	end
+	
+	printd(6)
+	
+	if (m_data.warfare and m_data.warfare.point_cap_timers) then
+		for smart,timer in pairs(m_data.warfare and m_data.warfare.point_cap_timers or {}) do
+			smart_terrain_warfare.point_cap_timers[smart] = timer
+		end
+	end
+	
+	printd(7)
+	
+	-- clear old data.
+	m_data.warfare = nil
+	printd(1, "load_state")
+end
+
+-- callback for when npcs are created for a squad, done in create_squad for sim_board.
+function squad_on_npc_creation(squad,se_obj,spawn_smart)
+	----printf("--- squad_on_npc_creation ---")
+
+	printd(0, squad:name())
+
+	-- Ignore any squads in the ignore list.
+	if not (ignore[squad:section_name()]) then
+		if (not squad.registered_with_warfare) then
+			----printf("!!! registering " .. squad:section_name() .. " with warfare")
+		
+			-- get the squads faction
+			local faction = squad:get_squad_community()
+			
+			if (registered_squads[faction]) then
+				----printf("--- registering squad " .. squad:section_name() .. " for " .. faction .. " with target: " .. spawn_smart:name() .. " ---")
+				registered_squads[faction][squad.id] = spawn_smart.id
+				squad.assigned_target_id = spawn_smart.id
+				squad.registered_with_warfare = true
+				spawn_smart:on_reach_target(squad)
+			end
+		else
+			----printf("--- Already registered squad ---")
+		end
+	end
+
+	printd(1)
+end
+
+-- last update time
+local last_update
+
+local first_update = true
+local new_surge = true
+local old_surge_cnt
+
+-- callback for the actors update method
+function actor_on_update()
+	printd(0, "actor_on_update")
+
+	if not (IsWarfare()) then
+		if (_G.WARFARE) then
+			_G.WARFARE = false
+		end
+
+		return
+	end
+
+	-- get the current time
+	local tg = time_global()
+	
+	if first_update then
+		first_update = false
+		actor_faction = get_actor_true_community() or alife():actor():community():sub(7)
+		--actor_faction = alife_storage_manager.get_state().default_faction
+		--printf("!!!! "..alife_storage_manager.get_state().default_faction.." !!!!" )
+		give_info("actor_made_wish_for_peace")
+
+		if (warfare_options.options.all_out_war) then
+			for i,f in pairs(warfare_factions.factions) do
+				for j,f2 in pairs(warfare_factions.factions) do
+					if f ~= f2 then
+						game_relations.set_factions_community_num(f, f2, -5000)
+					end
+				end
+			end
+		end
+
+		for name,smart in pairs(SIMBOARD.smarts_by_names) do
+			if (not smart.level_id) then
+				smart.level_id = game_graph():vertex(smart.m_game_vertex_id):level_id()
+			end
+			
+			if (not warfare_levels.level_information[smart.level_id]) then
+				warfare_levels.level_information[smart.level_id] = {}
+				warfare_levels.level_information[smart.level_id].smarts = {}
+				warfare_levels.level_information[smart.level_id].faction_priority = {}
+				warfare_levels.level_information[smart.level_id].base_count = 0 
+				warfare_levels.level_information[smart.level_id].resource_count = 0
+				warfare_levels.level_information[smart.level_id].territory_count = 0
+				warfare_levels.level_information[smart.level_id].lair_count = 0
+				warfare_levels.level_information[smart.level_id].first_update = true
+			end
+			
+			if (smart.props) then
+				table.insert(warfare_levels.level_information[smart.level_id].smarts, smart.id)
+				
+				if smart.props then
+
+					-- Count the total number of smart terrain types in the level; will be used in level analysis
+					if smart.props.base > 0 then
+						warfare_levels.level_information[smart.level_id].base_count = warfare_levels.level_information[smart.level_id].base_count + 1
+						base_count = base_count + 1
+					elseif smart.props.territory > 0 then
+						warfare_levels.level_information[smart.level_id].territory_count = warfare_levels.level_information[smart.level_id].territory_count + 1
+					end
+					
+					if smart.props.resource > 0 then
+						warfare_levels.level_information[smart.level_id].resource_count = warfare_levels.level_information[smart.level_id].resource_count + 1
+						resource_count = resource_count + smart.props.resource
+					end
+					
+					if smart.props.lair > 0 then
+						warfare_levels.level_information[smart.level_id].lair_count = warfare_levels.level_information[smart.level_id].lair_count + 1
+					end
+				
+					-- Cycle through factions
+					for i,f in pairs(warfare_factions.factions) do
+						-- check if smart is flagged for faction
+						if smart.props[f] and smart.props[f] > 0 then
+							if not warfare_levels.level_information[smart.level_id].faction_priority[f] then
+								warfare_levels.level_information[smart.level_id].faction_priority[f] = 0
+							end
+							
+							warfare_levels.level_information[smart.level_id].faction_priority[f] = warfare_levels.level_information[smart.level_id]["faction_priority"][f] + smart.props[f]
+						end
+					end		
+				end
+			end
+		end
+	end
+
+	-- if last update time doesn't exist, set it.
+	if (not last_update) then
+		last_update = tg + 10000
+	end
+	
+	if (tg < last_update) then
+		printd(1, "actor_on_update")
+		return
+	end
+    
+    printd(2, "actor_on_update")
+	
+	-- Update faction to account for switching factions or azazel mode.
+	--printf("!!!! "..alife_storage_manager.get_state().default_faction.." !!!!" )
+	actor_faction = get_actor_true_community() or alife():actor():community():sub(7)
+
+	-- set new update time
+	last_update = tg + 10000
+	
+	if (not initialized) then
+		if ui_options.get("alife/general/dynamic_relations") then
+			dynamic_relations_installed = true
+		end
+		
+		if (dynamic_relations_installed) then
+			if (not all_out_war_applied and warfare_options.options.all_out_war) then
+				apply_all_out_war()
+				all_out_war_applied = true
+			end
+		elseif (warfare_options.options.all_out_war) then
+			apply_all_out_war()
+		end
+	
+		initialize()
+		warfare_levels.update()		
+		warfare_factions.update()
+	end
+	
+	warfare_levels.update()
+	warfare_factions.update()
+
+	local new_surge_cnt = game_statistics.actor_statistics["emissions"].count or 0
+	if (not old_surge_cnt) then
+		old_surge_cnt = new_surge_cnt
+	end
+	if (new_surge_cnt > old_surge_cnt) then
+		snap()
+	end
+	old_surge_cnt = new_surge_cnt
+	
+	--[[
+	local sg = surge_manager.get_surge_manager()
+	if (sg.started) then
+		if (new_surge) then
+			local t = sg.inited_time			
+			local diff_sec = math.ceil(game.get_game_time():diffSec(t)/level.get_time_factor())
+
+			if (diff_sec >= 170) then
+				new_surge = false
+				snap()
+			end			
+		end
+	else
+		new_surge = true
+	end
+	--]]
+
+    printd(3, "actor_on_update")
+end
+
+function initialize()
+	----printf("--- initializing warfare ---")
+		
+	-- At this point this just serves to pause everything to ensure squads reach their "waiting at target" state before resource counts etc are calculated.
+	initialized = true
+	
+	--[[for lvl,tbl in pairs(warfare_levels.level_information) do
+		for f,p in pairs(tbl["faction_priority"]) do
+			----printf(game.translate_string(alife():level_name(lvl)) .. " priority for " .. game.translate_string(f) .. " = " .. p)
+		end
+	end]]
+end
+
+warfare_positions_filled = false
+
+FACTION_TERRITORY_RADIUS = 100
+
+function shuffleTable( t )
+    local rand = math.random 
+    local iterations = #t
+    local j
+    
+    for i = iterations, 2, -1 do
+        j = rand(i)
+        t[i], t[j] = t[j], t[i]
+    end
+end
+
+-- for vanilla, probably create a custom simulation.ltx 
+function fill_start_position()
+	printd(0)
+
+	if (not IsWarfare()) then
+		printf("not warfare")
+		return
+	end
+	
+	if (SIMBOARD.start_position_filled) then
+		return
+	end
+	
+	SIMBOARD.start_position_filled = true
+
+	if (warfare_options.options.random_starting_locations) then
+		printf("Warfare | Random starting locations")
+		return
+		--initialize_random_starting_locations()
+	end
+
+	local setting_ini
+	setting_ini = ini_file("misc\\simulation.ltx")
+	
+	local stalker_pop_factor = ui_options.get("alife/general/alife_stalker_pop")
+	local monster_pop_factor = ui_options.get("alife/general/alife_mutant_pop")
+		
+	local result, squad_section, count, li, lc
+	-- enemy_new_game_bonus
+	local ene_bonus = warfare_options.options.enemy_new_game_bonus
+	local actor_faction
+	if ene_bonus then
+		local config = axr_main.config
+		if not (config) then
+			return
+		end
+	    actor_faction = config:r_value("character_creation","new_game_faction",3)
+	end
+	
+	ignore = sim_offline_combat.get_ignore_list()
+	
+	setting_ini:section_for_each(function(section)
+		lc = setting_ini:line_count(section)
+		for li=0,lc-1 do
+			local smart = SIMBOARD.smarts_by_names[section]
+			if (smart) then
+				result, squad_section, count = setting_ini:r_line(section,li,"","")
+				count = tonumber(count) or 1
+				
+				if (ignore[squad_section] or not warfare_options.options.random_starting_locations) then	
+					local common = ini_sys:r_bool_ex(squad_section,"common")
+					local faction = ini_sys:r_string_ex(squad_section,"faction")
+					if common then
+					
+						-- Common mutants
+						if is_squad_monster[faction] then
+							count = count*monster_pop_factor
+							if (count == 0.5) then 
+								count = math.random(0,1)
+							else 
+								count = round_idp(count)
+							end
+							
+						-- Common stalkers
+						else
+							count = count*stalker_pop_factor
+							if (count == 0.5) then -- just randomly 0 or 1 instead of always rounding to 1
+								count = math.random(1,2)
+							else 
+								count = round_idp(count)
+							end
+							-- reduce the starting amount of squads from actor's faction and factions neutral to actor's faction and spawn more squads from factions that are enemies with actor's faction(optional)
+							if (ene_bonus and actor_faction) then
+								if (string.find(squad_section,actor_faction) or not warfare.is_squad_section_enemy_of_faction(squad_section, actor_faction)) then 
+									--printf("actor's faction is %s", actor_faction)
+									if (count >= 1) then
+										if (math.random() < 0.5) then
+											count = count - 1
+										end
+									end
+								else
+									--if (math.random() < 0.5) then
+										count = count + 1
+									--end
+								end
+							end
+						end
+					end
+					
+					local sf = get_squad_section_faction(squad_section)
+
+					if (warfare_options.options.factions[sf].spawn_on_new_game) then						
+						for i=1,count do
+							squad = SIMBOARD:create_squad(smart,squad_section)
+
+							if smart and squad and registered_squads[squad:get_squad_community()] and not ignore[squad:section_name()] then
+								sim_squad_warfare.set_target(squad, smart.id)
+								--printf("-Warfare Registered Squad | smart=%s, squad=%s", tostring(smart:name()), tostring(squad:name()))
+							else
+								--printf("-Warfare Ignored Squad | smart=%s, squad=%s", tostring(smart:name()), tostring(squad:name()))
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+
+	printd(1)
+end
+
+-- force squads to target nearest smarts on new warfare game, on_game_load compatibility
+function fill_start_position_on_load()
+	if alife_storage_manager.get_state().warfare_filled_start_position then
+		return
+	end
+	alife_storage_manager.get_state().warfare_filled_start_position = true
+	
+	local function get_nearest_smart_id(squad)
+		local dist
+		local min_dist
+		local nearest
+		
+		for name,smart in pairs( SIMBOARD.smarts_by_names ) do
+			local dist = smart.position:distance_to(squad.position)
+			if (not min_dist) then
+				min_dist = dist
+				nearest = smart
+			elseif (dist < min_dist) then
+				min_dist = dist
+				nearest = smart
+			end
+		end
+		if (nearest) then
+			if (simulation_objects.is_on_the_same_level(nearest, squad)) then
+				return nearest.id
+			end
+		end
+	end
+	
+	for id,v in pairs( SIMBOARD.squads ) do
+		local squad = alife_object(id)
+		local section = squad and squad:section_name()
+		if section and registered_squads[squad.player_id] and (not ignore[section]) then
+			local smart_id = get_nearest_smart_id(squad)
+			if smart_id then
+				sim_squad_warfare.set_target(squad, smart_id)
+				--printf("- squad: %s - target: %s",section,smart_id)
+			end
+		end
+	end
+end
+
+function initialize_random_starting_locations()
+	printd(0)
+	local bases = {}
+	local max_resources = 0
+	for _,smart in pairs(SIMBOARD.smarts_by_names) do
+		--printf("smart name: %s", smart:name())
+
+		if not (smart.props) then
+			simulation_objects.get_props(smart)
+		end
+
+		if (smart.props and smart.props.resource) then
+			max_resources = max_resources + smart.props.resource
+		end
+
+		if (smart.props and smart.props.base > 0) then
+			bases[#bases+1] = smart
+		end
+	end
+	
+	local base = bases[math.random(#bases)]
+	
+	printd(1)
+	start_pos = {}
+	table.insert(start_pos, base.m_level_vertex_id)
+	table.insert(start_pos, base.m_game_vertex_id)
+	table.insert(start_pos, base.position)
+
+	local id = smart_terrain.nearest_to_actor_smart.id
+	local starting_smarts = {}
+	local used_smarts = {}
+
+	actor_faction = alife():actor():community():sub(7)
+
+	printd(2)
+	starting_smarts[actor_faction] = {
+		smart = base, 
+		p = global_position.from(base)
+	}
+
+	printd(3, actor_faction)
+	used_smarts[base.id] = true
+	local resources = math.random(max_resources) --warfare_factions.faction_information[actor_faction].resource_count
+	local section = faction_expansions.get_spawn_section(actor_faction, resources, max_resources)
+
+	local squad = utils_obj.create_squad(section, base:name())
+	sim_squad_warfare.set_target(squad, base.id)
+	
+	printd(5)
+	for _,f in pairs(warfare_factions.factions) do				
+		if (f ~= actor_faction and warfare_options.options.factions[f].spawn_on_new_game) then
+			local smarts = SIMBOARD.smarts_by_names
+			local smarts2 = hash_table_to_array(smarts)
+			shuffleTable(smarts2)
+			
+			for __,t in pairs(smarts2) do
+				local s = t.value
+				local lvl = game_graph():vertex(s.m_game_vertex_id):level_id()
+				local off = level_targets.level_offsets[lvl]
+				
+				if (off and s.props and s.props.base > 0) then
+					local gpos = global_position.from(s)
+					local safe = true
+					
+					for f2,t2 in pairs(starting_smarts) do
+						local dist = gpos:distance_to_sqr(t2.p)
+						
+						if (dist < 160000) then
+							safe = false
+						end
+					end
+					
+					if (safe) then
+						starting_smarts[f] = { smart=s, p=gpos, }
+						used_smarts[s.id] = true
+						s.global_position = gpos
+						
+						local section = faction_expansions.get_spawn_section(f, math.random(max_resources), max_resources)
+						local squad = utils_obj.create_squad(section, s:name())
+						sim_squad_warfare.set_target(squad, s.id)
+						
+						break
+					end
+				end
+			end
+		end
+	end
+	
+	printd(6)
+	for name,smart in pairs(SIMBOARD.smarts_by_names) do
+		if (smart.props) then
+			if (smart.props.base > 0) then
+				if not (used_smarts[smart.id]) then	
+					local f = {}
+					
+					for _,faction in pairs(warfare_factions.factions) do
+						if (warfare_options.options.factions[faction].spawn_on_new_game) then
+							local flag = smart.props[faction] or 0
+							local entries = warfare_options.options.factions[faction].random_spawn_entries
+
+							if (entries > 0) then
+								for i=0,entries do
+									f[#f+1] = faction
+								end
+							end
+									
+							if (flag > 0) then		
+								f[#f+1] = faction
+							end
+						end
+					end
+					
+					if (#f > 0) then
+						f = f[math.random(#f)]
+						
+						if (math.random(100) <= warfare_options.options.random_stalker_chance) then
+							local section = faction_expansions.get_spawn_section(f, math.random(max_resources), max_resources)
+							local squad = utils_obj.create_squad(section, smart:name())
+							sim_squad_warfare.set_target(squad, smart.id)
+						end
+					end
+				end
+			elseif (smart.props.resource > 0) then
+				local f = {}
+				
+				for _,faction in pairs(warfare_factions.factions) do
+					local flag = smart.props[faction] or 0
+					
+					if (warfare_options.options.factions[faction].spawn_on_new_game) then
+						local flag = smart.props[faction] or 0
+						local entries = warfare_options.options.factions[faction].random_spawn_entries
+
+						if (entries > 0) then
+							for i=0,entries do
+								f[#f+1] = faction
+							end
+						end
+								
+						if (flag > 0) then		
+							f[#f+1] = faction
+						end
+					end
+				end
+					
+				if (#f > 0) then
+					f = f[math.random(#f)]
+					
+					if (math.random(100) <= warfare_options.options.random_stalker_chance) then
+						local section = faction_expansions.get_spawn_section(f, math.random(max_resources), max_resources)
+						local squad = utils_obj.create_squad(section, smart:name())
+						sim_squad_warfare.set_target(squad, smart.id)
+					end
+				end
+			elseif (smart.props.territory > 0) then
+				if (math.random(100) <= warfare_options.options.random_monster_chance) then
+					local section = faction_expansions.get_spawn_section("monster", math.random(max_resources), max_resources)
+					local squad = utils_obj.create_squad(section, smart:name())
+					sim_squad_warfare.set_target(squad, smart.id)
+				end
+			end
+		end
+	end	
+	
+	ChangeLevel(start_pos[3],start_pos[1],start_pos[2],VEC_ZERO)		
+	
+	printd(1)
+end
+
+-- linear interpolation function
+function lerp(a, b, f)
+	if (a and b and f) then
+		return (1 - f) * a + (f * b)
+	else
+		return a or b or 0
+	end
+end
+
+-- table shuffle function
+function shuffle(t)
+    local rand = math.random 
+    local iterations = #t
+    local j
+    
+    for i = iterations, 2, -1 do
+        j = rand(i)
+        t[i], t[j] = t[j], t[i]
+    end
+end
+
+function squad_on_unregister(squad,type_name)
+	if (type_name ~= "sim_squad_scripted") then
+		return
+	end
+	
+	if (squad) then
+		local faction = squad:get_squad_community()
+
+		if (registered_squads[faction]) then
+			registered_squads[faction][squad.id] = nil
+
+			if (smart_terrain_warfare.random_patrols[squad.id]) then
+				smart_terrain_warfare.random_patrols[squad.id] = nil
+			end
+
+			if (squad.patrol_owner) then
+				smart_terrain_warfare.patrol_squads[squad.patrol_owner][squad.id] = nil
+			end	
+		else
+			printf(faction)
+		end
+	end
+end
+
+function on_game_start()
+	printd(0, "on_game_start")
+	--_G.WARFARE = false
+	warfare_options.update_settings()
+	
+	RegisterScriptCallback("fill_start_position", fill_start_position)
+	RegisterScriptCallback("load_state", load_state)
+	_G.WARFARE = true
+	RegisterScriptCallback("smart_terrain_on_update", smart_terrain_warfare.smart_terrain_on_update)
+	RegisterScriptCallback("squad_on_update", sim_squad_warfare.squad_on_update)
+	RegisterScriptCallback("actor_on_update", actor_on_update)
+	RegisterScriptCallback("save_state", save_state)
+	RegisterScriptCallback("squad_on_npc_death", sim_squad_warfare.squad_on_npc_death)
+	RegisterScriptCallback("server_entity_on_unregister", squad_on_unregister)
+	printd(2, "on_game_start")
+	
+	local function on_game_load()
+		ignore = sim_offline_combat.get_ignore_list()
+		CreateTimeEvent(0,"reset_warfare_callbacks",60,resetter)
+	end
+	RegisterScriptCallback("on_game_load",on_game_load)
+end
+
+function printd(e, optionalMessage)
+    if (warfare_options.options.debug_logging) then
+        info = debug.getinfo(2, "nS")
+		local line = debug.getinfo(1).currentline
+
+        if (info.short_src and info.name) then
+			local str = info.short_src.." || "..info.name.." || line: "..line
+
+			if (e == 0) then
+				str = str.." || start"
+				
+				if (optionalMessage) then
+					str = str.." "..optionalMessage
+				end
+			else
+				str = str.." || end "..e
+				
+				if (optionalMessage) then
+					str = str.." "..optionalMessage
+				end
+			end
+
+			printf(str)
+		end
+    end
+end
+
+function hash_table_to_array(tbl)
+	local r = {}
+	
+	for k,v in pairs(tbl) do 
+		r[#r+1] = {key=k, value=v}
+	end
+	
+	return r
+end
+
+
+-- Requires the priority to be the first element in each table within tbl.
+function sort_priority_table(tbl)	
+	table.sort(tbl, function(a, b)
+		return (math.abs(a[1]) < math.abs(b[1]))
+	end) return tbl
+end
+
+function distance_to_xz_sqr(a, b)
+	return math.pow(b.x - a.x, 2) + math.pow(b.z - a.z, 2)
+end
+
+function is_warfare_trader(npc) -- used by task managers
+	if string.find(npc:name(), "sim_default_%a+_trader") or 
+	string.find(npc:name(),"sim_default_%a+_mechanic") or
+	string.find(npc:name(), "sim_default_%a+_medic") or
+	string.find(npc:name(), "sim_default_%a+_barman") then
+		return true
+	else
+		return false
+	end
+end 
+
+function get_squad_section_faction(squad_section)
+	if string.find(squad_section,"stalker") then
+		return "stalker"
+	elseif string.find(squad_section,"bandit") then
+		return "bandit"
+	elseif string.find(squad_section,"csky") then
+		return "csky"
+	elseif string.find(squad_section,"army") or string.find(squad_section,"military") then
+		return "army"
+	elseif string.find(squad_section,"freedom") then
+		return "freedom"
+	elseif string.find(squad_section,"duty") or string.find(squad_section,"dolg") then
+		return "dolg"
+	elseif string.find(squad_section,"ecolog") then
+		return "ecolog"
+	elseif string.find(squad_section,"merc") or string.find(squad_section,"killer") then
+		return "killer"
+	elseif string.find(squad_section,"monolith") then
+		return "monolith"
+	elseif string.find(squad_section,"renegade") then
+		return "renegade"
+	elseif string.find(squad_section,"greh") then
+		return "greh"
+	elseif string.find(squad_section,"isg") then
+		return "isg"
+	elseif string.find(squad_section,"zombied") then
+		return "zombied"
+	else
+		return "stalker"
+	end
+end
+
+function is_squad_section_enemy_of_faction(squad_section, faction)
+	if not faction then
+		faction = db.actor and character_community(db.actor) --:sub(7)
+	end
+	if string.find(squad_section,"stalker") then
+		return game_relations.is_factions_enemies("stalker", faction)
+	elseif string.find(squad_section,"bandit") then
+		return game_relations.is_factions_enemies("bandit", faction)
+	elseif string.find(squad_section,"csky") then
+		return game_relations.is_factions_enemies("csky", faction)
+	elseif string.find(squad_section,"army") or string.find(squad_section,"military") then
+		return game_relations.is_factions_enemies("army", faction)
+	elseif string.find(squad_section,"freedom") then
+		return game_relations.is_factions_enemies("freedom", faction)
+	elseif string.find(squad_section,"duty") or string.find(squad_section,"dolg") then
+		return game_relations.is_factions_enemies("dolg", faction)
+	elseif string.find(squad_section,"ecolog") then
+		return game_relations.is_factions_enemies("ecolog", faction)
+	elseif string.find(squad_section,"merc") or string.find(squad_section,"killer") then
+		return game_relations.is_factions_enemies("killer", faction)
+	elseif string.find(squad_section,"monolith") then
+		return game_relations.is_factions_enemies("monolith", faction)
+	elseif string.find(squad_section,"renegade") then
+		return game_relations.is_factions_enemies("renegade", faction)
+	elseif string.find(squad_section,"greh") then
+		return game_relations.is_factions_enemies("greh", faction)
+	elseif string.find(squad_section,"isg") then
+		return game_relations.is_factions_enemies("isg", faction)
+	elseif string.find(squad_section,"zombied") then
+		return game_relations.is_factions_enemies("zombied", faction)
+	else
+		return true
+	end
+end
+
+function snap()	
+	if (warfare_options.options.purge_zone_on_emission) then
+		local p = warfare_options.options.purge_zone_percentage or 50
+
+		for faction,tbl in pairs(registered_squads) do		
+			for squad_id,_ in pairs(tbl) do
+				local squad = alife_object(squad_id)
+
+				if (math.random(100) <= p) then
+					sim_squad_warfare.remove_squad(squad)
+					squad:remove_squad()
+				end
+			end
+		end
+	end
+end
+
+function resetter()
+	if not (IsWarfare()) then
+		_G.WARFARE = false
+		UnregisterScriptCallback("fill_start_position", fill_start_position)
+		UnregisterScriptCallback("load_state", load_state)
+		UnregisterScriptCallback("smart_terrain_on_update", smart_terrain_warfare.smart_terrain_on_update)
+		UnregisterScriptCallback("squad_on_update", sim_squad_warfare.squad_on_update)
+		UnregisterScriptCallback("actor_on_update", actor_on_update)
+		UnregisterScriptCallback("save_state", save_state)
+		UnregisterScriptCallback("squad_on_npc_death", sim_squad_warfare.squad_on_npc_death)
+		UnregisterScriptCallback("server_entity_on_unregister", squad_on_unregister)
+		printf("~ Warfare is not loaded, unregistered warfare callbacks")
+	end
+	return true
+end

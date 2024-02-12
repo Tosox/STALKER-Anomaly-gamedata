@@ -1,0 +1,62 @@
+#include "common.h"
+#include "lmodel.h"
+
+struct   vf
+{
+	float4         hpos        :         POSITION        ;
+	float2  tbase        :        TEXCOORD0        ;  // base
+	float2         tnorm0        :        TEXCOORD1        ;  // nm0
+	float2         tnorm1        :        TEXCOORD2        ;  // nm1
+	half3         M1                :        TEXCOORD3        ;
+	half3         M2                :        TEXCOORD4        ;
+	half3         M3                :        TEXCOORD5        ;
+	half3        v2point        :        TEXCOORD6        ;
+	half4        c0                :          COLOR0                ;
+};
+
+uniform sampler2D	s_nmap;
+uniform samplerCUBE	s_env0;
+uniform samplerCUBE	s_env1;
+uniform sampler2D	s_leaves;
+
+half4   main  ( vf I )          : COLOR
+{
+	half4	base	= tex2D (s_base,I.tbase);
+	half3	n0	= tex2D (s_nmap,I.tnorm0);
+	half3	n1	= tex2D (s_nmap,I.tnorm1);
+	half3	Navg	= n0 + n1 - 1;
+
+	half3	Nw	= mul (half3x3(I.M1, I.M2, I.M3), Navg);
+			Nw	= normalize (Nw);
+	half3	v2point	= normalize (I.v2point);
+	half3	vreflect= reflect(v2point, Nw);
+			vreflect.y= vreflect.y*2-1;     // fake remapping
+			
+	half3	env0	= texCUBE (s_env0, vreflect);
+	half3	env1	= texCUBE (s_env1, vreflect);
+	half3	env	= lerp (env0,env1,L_ambient.w);
+			env	*= env*2;
+
+	half	fresnel	= saturate (dot(vreflect,v2point));
+	half	power	= pow(fresnel,9);
+	half	amount	= 0.15h+0.20h*power;
+			
+	half3	c_reflection       = env*amount;
+
+	half3	final	= (0,0,0);
+
+	#ifdef NEED_REFLECTIONS
+	final = lerp(c_reflection,base.rgb,base.a);
+	#else
+	final = lerp(base.rgb,base.rgb,base.a);	
+	#endif
+	
+	#ifdef NEED_SPECULARS
+	final	+= specular_phong(v2point, Nw.xyz, L_sun_dir_w)*2.f;
+	#endif
+	
+	final	*= I.c0*2;
+
+
+    return  half4(final, 0.75 );
+}

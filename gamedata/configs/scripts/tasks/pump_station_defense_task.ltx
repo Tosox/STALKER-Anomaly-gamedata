@@ -1,0 +1,88 @@
+[logic]
+active = beh@guard_1
+post_combat_time = 0,0
+
+[beh@attacker]
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+behavior_state = beh_move
+target = actor
+on_info1 = {=is_wounded} %=kill_npc%
+on_info2 = {=no_guns} %=kill_npc%
+walk_anim 	= assault
+jog_anim 	= assault
+run_anim 	= assault
+
+[beh@morituri]
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = true
+behavior_state = beh_wait
+on_info1 = %=kill_npc%
+
+[beh@base]
+meet = no_meet
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+behavior_state = beh_move
+target = waypoint
+on_info1 = {=is_wounded} %=kill_npc%
+path_end = loop
+walk_anim 	= assault
+jog_anim 	= assault
+; combat_ignore_cond = true
+
+[beh@guard_1]:beh@base
+pt1 = 999999999,threat_na | pos:5.0465126037598,3.2883059978485,18.298782348633 look:6.0332088470459,3.2883059978485,18.164248481393
+[beh@guard_2]:beh@base
+pt1 = 999999999,threat_na | pos:4.9958162307739,3.2920978069305,12.101389884949 look:5.985458791256,3.2920978069305,12.184434644878
+[beh@guard_3]:beh@base
+pt1 = 999999999,threat_na | pos:3.1273865699768,2.1526610851288,-3.6081943511963 look:2.8480429649353,2.1526610851288,-4.5653926730156
+[beh@guard_4]:beh@base
+pt1 = 999999999,threat_na | pos:3.9808230400085,3.3214418888092,4.2588877677917 look:3.733621314168,3.3214418888092,3.2949203848839
+[beh@guard_5]:beh@base
+pt1 = 999999999,threat_na | pos:-5.9249491691589,3.3302540779114,6.0563468933105 look:-5.927354606567,3.3302540779114,5.058843255043
+[beh@guard_6]:beh@base
+pt1 = 999999999,threat_na | pos:-8.3903884887695,3.3009197711945,21.665546417236 look:-9.0439950823784,3.3009197711945,22.412159144878
+; [beh@guard_7]:beh@base
+; pt1 = 999999999,threat_na | pos:4.8541598320007,3.2795026302338,18.133401870728 look:5.8285993337631,3.2795026302338,17.946849763393
+[beh@guard_8]:beh@base
+pt1 = 999999999,threat_na | pos:-19.692607879639,4.9291095733643,16.863489151001 look:-20.395505309105,4.9291095733643,17.556683778763
+[beh@guard_9]:beh@base
+pt1 = 999999999,threat_na | pos:-3.0288643836975,7.4963979721069,21.317720413208 look:-3.060708835721,7.4963979721069,22.260476887226
+[beh@guard_10]:beh@base
+pt1 = 999999999,threat_na | pos:-8.4230470657349,7.4919381141663,21.478458404541 look:-8.8148953318596,7.4919381141663,22.336513638496
+[beh@guard_11]:beh@base
+pt1 = 999999999,threat_na | pos:-5.6953091621399,6.0414133071899,3.4653482437134 look:-5.7083743968979,6.0414133071899,2.4766224622726
+[beh@guard_12]:beh@base
+pt1 = 999999999,threat_na | pos:0.93054169416428,2.1486051082611,-5.0393652915955 look:0.69462250173092,2.1486051082611,-6.0083059072495
+
+
+
+; commander
+[beh@guard_commander]:beh@base
+meet = meet@commander
+invulnerable = {=pump_station_defense_task_commander_inv_condition} true, false
+pt1 = 999999999,guard | pos:-16.133546829224,4.8830790519714,13.973717689514 look:-15.136951565742,4.8830790519714,14.018476251513
+
+[meet@commander]
+allow_break = false
+meet_dialog	= {=pump_station_defense_task_need_intro_talk} pump_station_defense_task_start, {=pump_station_defense_task_need_intro_talk_2} pump_station_defense_task_start_2, {=pump_station_defense_task_need_end_talk !pump_station_defense_task_commander_replaced} pump_station_defense_task_end, {=pump_station_defense_task_need_end_talk =pump_station_defense_task_commander_replaced} pump_station_defense_task_end_replaced
+close_distance 		= 0
+close_anim 			= nil
+close_snd_distance 	= 0
+close_snd_hello		= nil
+close_snd_bye		= nil
+close_victim		= nil
+far_distance		= 0
+far_anim			= nil
+far_snd_distance	= 0
+far_snd				= nil
+far_victim			= nil
+snd_on_use			= nil
+abuse				= false
+trade_enable		= false
+meet_on_talking		= true

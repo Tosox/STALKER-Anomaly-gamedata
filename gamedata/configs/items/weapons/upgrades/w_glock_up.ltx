@@ -1,0 +1,434 @@
+
+[up_sect_firsta_glock]
+cost                                     = 1580
+value                                    = +10
+rpm                                      = +27
+inv_weight                               = +0.08
+
+[up_sect_firstc_glock]
+cost                                     = 1960
+value                                    = +15
+
+condition_shot_dec                       = -0.0002
+condition_queue_shot_dec                 = -0.0002
+misfire_start_prob                       = -0.0013
+misfire_end_prob                         = -0.013
+inv_weight                               = +0.09
+
+[up_sect_firstd_glock]
+cost                                     = 1710
+value                                    = -10
+cam_dispersion                           = -0.062 
+cam_dispersion_inc                       = 0.0 ;-0.071 
+cam_step_angle_horz                      = -0.042 
+inv_weight                               = +0.04
+
+[up_sect_firste_glock]
+cost                                     = 2690
+
+fire_modes                               = 1, 3
+cam_dispersion                           = -0.038 
+cam_dispersion_inc                       = 0.0 ;-0.044 
+cam_step_angle_horz                      = -0.025 
+
+[up_sect_secona_glock]
+cost                                     = 2280
+value                                    = +10
+rpm                                      = +27
+inv_weight                               = +0.09
+
+[up_sect_seconc_glock]
+cost                                     = 2360
+value                                    = +20
+bullet_speed                             = +70
+fire_distance                            = +50
+fire_dispersion_base                     = -0.035
+inv_weight                               = +0.11
+
+[up_sect_second_glock]
+cost                                     = 1890
+value                                    = +15
+
+condition_shot_dec                       = -0.0002
+condition_queue_shot_dec                 = -0.0002
+misfire_start_prob                       = -0.0013
+misfire_end_prob                         = -0.013
+inv_weight                               = +0.08
+
+[up_sect_secone_glock]
+cost                                     = 2490
+value                                    = +15
+rpm                                      = +40
+inv_weight                               = +0.06
+
+[up_sect_thirda_glock]
+cost                                     = 1650
+value                                    = +10
+
+condition_shot_dec                       = -0.00015
+condition_queue_shot_dec                 = -0.00015
+misfire_start_prob                       = -0.0006
+misfire_end_prob                         = -0.006
+inv_weight                               = +0.13
+
+[up_sect_thirdc_glock]
+cost                                     = 2260
+value                                    = +15
+crosshair_inertion                       = -1
+PDM_disp_base                            = -0.2
+PDM_disp_vel_factor                      = -0.35
+PDM_disp_accel_factor                    = -0.35
+inv_weight                               = -0.32
+
+[up_sect_thirdd_glock]
+cost                                     = 2320
+value                                    = -10
+cam_dispersion                           = -0.062 
+cam_dispersion_inc                       = 0.0 ;-0.071 
+cam_step_angle_horz                      = -0.042 
+inv_weight                               = -0.07
+
+[up_sect_fourta_glock]
+cost                                     = 2160
+value                                    = +10
+fire_dispersion_base                     = -0.05
+
+inv_weight                               = -0.08
+
+[up_sect_fourtc_glock]
+cost                                     = 2320
+value                                    = +25
+rpm                                      = +60
+inv_weight                               = +0.08
+
+[up_sect_fiftha_glock]
+cost                                     = 1550
+
+silencer_status                          = 2
+silencer_name                            = wpn_sil_gemtech 
+silencer_x                               = 60 
+silencer_y                               = -12
+snd_silncer_shot                         = weapons\glock\glock_shot_sil
+inv_weight                               = +0.07
+
+[up_sect_fifthc_glock]
+cost                                     = 2950
+value                                    = "9x18"
+ammo_class                               = ammo_9x18_fmj,ammo_9x18_fmj_bad,ammo_9x18_fmj_verybad,ammo_9x18_pmm,ammo_9x18_pmm_bad,ammo_9x18_pmm_verybad,ammo_9x18_ap,ammo_9x18_ap_bad,ammo_9x18_ap_verybad
+condition_shot_dec                       = +0.00015
+condition_queue_shot_dec                 = +0.00015
+misfire_start_prob                       = 0.0008
+misfire_end_prob                         = 0.008
+
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_glock]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_glock
+section                                  = up_sect_firsta_glock
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_a1_name
+description                              = st_up_zatp_a1_descr
+icon                                     = ui_inGame2_upgrade_Marta_1
+
+
+[up_firstc_glock]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_glock
+section                                  = up_sect_firstc_glock
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b5_name
+description                              = st_up_zatp_b5_descr
+icon                                     = ui_inGame2_upgrade_Marta_2
+
+[up_firstd_glock]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_glock
+section                                  = up_sect_firstd_glock
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_b7_name
+description                              = st_up_zatp_b7_descr
+icon                                     = ui_inGame2_upgrade_Marta_3
+
+[up_firste_glock]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_glock
+property                                 = prop_3xfire
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zatp_c7_name
+description                              = st_up_zatp_c7_descr
+icon                                     = ui_inGame2_upgrade_Volker_P9M_4
+
+[up_secona_glock]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_glock
+section                                  = up_sect_secona_glock
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_a3_name
+description                              = st_up_barp_a3_descr
+icon                                     = ui_inGame2_upgrade_Marta_5
+
+[up_seconc_glock]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_glock
+section                                  = up_sect_seconc_glock
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_b4_name
+description                              = st_up_barp_b4_descr
+icon                                     = ui_inGame2_upgrade_Marta_6
+
+[up_second_glock]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  = up_gr_seconef_glock
+section                                  = up_sect_second_glock
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_b1_name
+description                              = st_up_barp_b1_descr
+icon                                     = ui_inGame2_upgrade_Marta_7
+
+
+[up_secone_glock]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_glock
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_c1_name
+description                              = st_up_barp_c1_descr
+icon                                     = ui_inGame2_upgrade_Marta_8
+
+
+[up_thirda_glock]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_glock
+section                                  = up_sect_thirda_glock
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_a2_name
+description                              = st_up_stvp_a2_descr
+icon                                     = ui_inGame2_upgrade_Marta_9
+
+[up_thirdc_glock]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdc_glock
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b5_name
+description                              = st_up_stvp_b5_descr
+icon                                     = ui_inGame2_upgrade_Marta_10
+
+[up_thirdd_glock]
+scheme_index                             = 1, 5
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirdd_glock
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stvp_b3_name
+description                              = st_up_stvp_b3_descr
+icon                                     = ui_inGame2_upgrade_Marta_11
+
+[up_fourta_glock]
+scheme_index                             = 0, 3
+known                                    = 1
+effects                                  = up_gr_fourtcd_glock
+section                                  = up_sect_fourta_glock
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_usmp_b1_name
+description                              = st_up_usmp_b1_descr
+icon                                     = ui_inGame2_upgrade_Marta_12
+
+
+[up_fourtc_glock]
+scheme_index                             = 1, 6
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourtc_glock
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_barp_c1_name
+description                              = st_up_barp_c1_descr
+icon                                     = ui_inGame2_upgrade_HPSS_1m_7
+
+[up_fiftha_glock]
+scheme_index                             = 0, 4
+known                                    = 1
+effects                                  = up_gr_fifthcd_glock
+section                                  = up_sect_fiftha_glock
+property                                 = prop_silencer
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_add_a1_name
+description                              = st_up_add_a1_descr
+icon                                     = ui_inGame2_upgrade_Marta_14
+
+[up_fifthc_glock]
+scheme_index                             = 1, 7
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fifthc_glock
+property                                 = prop_calibre
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_add_b3_name
+description                              = st_up_add_b3_descr
+icon                                     = ui_inGame2_upgrade_Marta_15
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_glock]
+elements                                 = up_firsta_glock
+
+[up_gr_firstcd_glock]
+elements                                 = up_firstc_glock, up_firstd_glock
+
+[up_gr_firstef_glock]
+elements                                 = up_firste_glock
+
+[up_gr_seconab_glock]
+elements                                 = up_secona_glock
+
+[up_gr_seconcd_glock]
+elements                                 = up_seconc_glock, up_second_glock
+
+[up_gr_seconef_glock]
+elements                                 = up_secone_glock
+
+[up_gr_thirdab_glock]
+elements                                 = up_thirda_glock
+
+[up_gr_thirdcd_glock]
+elements                                 = up_thirdc_glock, up_thirdd_glock
+
+[up_gr_fourtab_glock]
+elements                                 = up_fourta_glock
+
+[up_gr_fourtcd_glock]
+elements                                 = up_fourtc_glock
+
+[up_gr_fifthab_glock]
+elements                                 = up_fiftha_glock
+
+[up_gr_fifthcd_glock]
+elements                                 = up_fifthc_glock

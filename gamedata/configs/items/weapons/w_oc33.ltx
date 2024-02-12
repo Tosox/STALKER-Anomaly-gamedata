@@ -1,0 +1,197 @@
+;------------------------------------------------------------------------------------------------
+[wpn_oc33]:identity_immunities,weapon_probability,default_weapon_params,wpn_oc33_sounds
+        GroupControlSection         = spawn_group
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\beretta"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_LR300
+        slot                        = 1
+        animation_slot              = 1
+        ef_weapon_type              = 5
+        hand_dependence             = 1
+        single_handed               = 1
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+        inv_grid_height             = 1
+        inv_grid_width              = 2
+        inv_grid_x                  = 71
+        inv_grid_y                  = 77
+        inv_name                    = st_wpn_oc33
+        inv_name_short              = st_wpn_oc33
+        description                 = st_wpn_oc33_descr
+        
+        kind                        = w_pistol
+        inv_weight                  = 1.15
+        cost                        = 8860
+        repair_type                 = pistol
+        
+        hud                         = wpn_oc33_hud
+        visual                      = dynamics\weapons\wpn_oc33\wpn_oc33.ogf
+        position                    = -0.021, -0.085, 0.0
+        orientation                 = 0, 0, 0
+        fire_point                  = 0.0, 0.133, 0.161
+        ph_mass                     = 1
+        
+        flame_particles             = weapons\generic_weapon03
+        smoke_particles             = weapons\generic_shoot_00
+        
+		shell_point		 			= 0.0, 0.133, 0.047
+		shell_dir		 			= 0.0, 0.0, 0.4
+		shell_particles	 			= weapons\9x18
+
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 2.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_oc33, up_gr_seconab_oc33, up_gr_thirdab_oc33, up_gr_fourtab_oc33, up_gr_fifthab_oc33, up_gr_fifthcd_oc33
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_pm
+        upgr_icon_x                 = 1300
+        upgr_icon_y                 = 500
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        
+        fire_modes                  = 1, -1
+        ammo_class                  = ammo_9x18_fmj, ammo_9x18_fmj_bad, ammo_9x18_fmj_verybad, ammo_9x18_pmm, ammo_9x18_pmm_bad, ammo_9x18_pmm_verybad, ammo_9x18_ap, ammo_9x18_ap_bad, ammo_9x18_ap_verybad
+        ammo_elapsed                = 27
+        ammo_mag_size               = 27
+        
+        scope_status                = 0
+        scope_zoom_factor           = 0
+        
+        silencer_name               = wpn_sil_aps
+        silencer_status             = 0
+        silencer_x                  = 59
+        silencer_y                  = -18
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        silencer_smoke_particles    = weapons\generic_shoot_00
+        
+        grenade_launcher_status     = 0
+        launch_speed                = 0
+        
+        hit_impulse                 = 20
+        hit_power                   = 0.45, 0.45, 0.45, 0.45
+        hit_type                    = fire_wound
+        fire_distance               = 300
+        bullet_speed                = 290
+        rpm                         = 800
+        rpm_empty_click             = 120
+        
+        use_aim_bullet              = false
+        time_to_aim                 = 0.0 ;  1.0
+        zoom_dof                    = -1000, 1.0, 1000
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 1.7
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 3.8
+        fire_dispersion_base        = 0.49
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_probability         = 0.005
+        misfire_start_condition     = 0.7 ;  0.84
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.11
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0018
+        condition_shot_dec          = 0.0015
+        
+        cam_return                  = 0
+        cam_relax_speed             = 8
+        cam_dispersion              = 2.0
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 0.0
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 0.48
+		zoom_cam_dispersion         = 1.5
+        
+        PDM_disp_accel_factor       = 1.055
+        PDM_disp_base               = 0.78
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.05
+        
+        cam_relax_speed_ai          = 360
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 1.0
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 126
+        kill_msg_y                  = 154
+        kill_msg_width              = 35
+        kill_msg_height             = 23
+		weapon_lower_speed			= 0.2
+		
+
+[wpn_oc33_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_oc33\wpn_oc33_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0.000746, -0.000321, 0.003479
+        item_orientation            = 1.239378, -0.134046, -2.052052
+        
+        hands_position              = -0.031, -0.17, 0.0025
+        hands_position_16x9         = -0.031, -0.17, 0.0025
+        hands_orientation           = -0.5, 1., 1.15
+        hands_orientation_16x9      = -0.5, 1., 1.15
+        
+		safemode_anm				= 
+		safemode_anm2				= 
+		
+		lowered_hud_offset_pos			= 0,0.1,0
+		lowered_hud_offset_rot			= 0.3,-0.1,0.1
+
+		lowered_hud_offset_pos_16x9		= 0,0.1,0
+		lowered_hud_offset_rot_16x9		= 0.3,-0.1,0.1
+		
+        aim_hud_offset_pos          = -0.0973, 0.0599, -0.2
+        aim_hud_offset_pos_16x9     = -0.0973, 0.0599, -0.2
+        aim_hud_offset_rot          = 0.003, 0.006, -0.023
+        aim_hud_offset_rot_16x9     = 0.003, 0.006, -0.023
+        
+        gl_hud_offset_pos           = 0, 0, 0
+        gl_hud_offset_rot           = 0, 0, 0
+        
+        lean_hud_offset_pos         = 0, 0, 0
+        lean_hud_offset_rot         = 0, 0, 0
+        
+        anm_hide                    = lancew_oc33_holster, idle, 0.5
+        anm_idle                    = lancew_oc33_idle
+        anm_idle_aim                = lancew_oc33_idle_aim
+        anm_idle_aim_moving         = lancew_oc33_moving, idle, 0.75
+        anm_idle_aim_moving_crouch  = lancew_oc33_moving, idle, 0.7
+        anm_idle_moving             = lancew_oc33_moving
+        anm_idle_sprint             = cz75a_idle_sprint
+        anm_reload                  = lancew_oc33_reload, reload
+        anm_shots                   = lancew_oc33_shoot, shoot
+        anm_show                    = lancew_oc33_draw, idle, 0.5
+        
+        shell_bone                  = wpn_body
+        shell_point                 = -0.015, 0.048, 0.071
+        
+        fire_bone                   = wpn_body
+        fire_point                  = 0.0, 0.030917, 0.110026
+ 
+
+[wpn_oc33_sk1_hud]:wpn_oc33_hud
+        item_visual                 = anomaly_weapons\wpn_oc33\wpn_oc33_sk1_hud.ogf
+ 

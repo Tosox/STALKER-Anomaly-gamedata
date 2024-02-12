@@ -1,0 +1,551 @@
+;;--=============================================
+;;--=============| AAM Containers |==============
+;;--=============================================
+
+[af_aam]:identity_immunities
+GroupControlSection                      = spawn_group
+$spawn                                   = "artefacts\af_aam"
+class                                    = II_ATTCH ;;--  class				= SCRPTART  --Yasti Artefact Containers
+kind                                     = i_arty_cont
+cform                                    = skeleton
+visual                                   = dynamics\equipments\aa\aam
+description                              = st_af_aam_descr
+inv_name                                 = st_af_aam_name
+inv_name_short                           = st_af_aam_name
+inv_weight                               = 3.06 ;;--4.63 W;;--     
+inv_grid_x                               = 3
+inv_grid_y                               = 28
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+1icon_layer_x                            = 0
+1icon_layer_y                            = 60
+1icon_layer_scale                        = 0.45
+upgr_icon_path                           = ui\actor_items\ui_actor_items_1
+upgr_icon_x                              = 300
+upgr_icon_y                              = 450
+upgr_icon_width                          = 100
+upgr_icon_height                         = 150
+belt                                     = false ;;-- Yasti Artefact Containers
+cost                                     = 31485 ;;--20990 W;;--    
+eat_health                               = 0
+eat_satiety                              = 0
+eat_power                                = 0
+eat_radiation                            = 0
+wounds_heal_perc                         = 0
+eat_portions_num                         = 1
+jump_height                              = 0.0
+;particles		                                   = artefact\af_thermal_idle
+det_show_particles                       = artefact\af_thermal_show
+det_hide_particles                       = artefact\af_thermal_hide
+particles_bone                           = joint2
+af_rank                                  = 0
+lights_enabled                           = false
+trail_light_color                        = 0.9,0.4,0.2
+trail_light_range                        = 2.0
+attach_angle_offset                      = 1.922,1.551,-0.740
+attach_position_offset                   = 0.15,0.002,0.25
+attach_bone_name                         = bip01_r_hand
+auto_attach                              = false
+artefact_activation_seq                  = af_activation_bold
+radiation_restore_speed                  = 0
+repair_part_bonus                        = 0.12
+use1_functor                             = itms_manager.menu_open
+use1_action_functor                      = itms_manager.use_arty_container
+tier                                     = 5
+
+;;----===============================================================================================
+
+[af_misery_bread_af_aam]:af_misery_bread, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.3 ;;--9.28 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_misery_bread_af_aam_descr
+inv_name                                 = st_af_misery_bread_af_aam_name
+inv_name_short                           = st_af_misery_bread_af_aam_name
+1icon_layer                              = af_misery_bread
+
+;;----===============================================================================================
+
+[af_medusa_af_aam]:af_medusa, af_aam
+class                                    = SCRPTART
+inv_weight                               = 6.12 ;;--9.28 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_medusa_af_aam_descr
+inv_name                                 = st_af_medusa_af_aam_name
+inv_name_short                           = st_af_medusa_af_aam_name
+1icon_layer                              = af_medusa
+
+;;----===============================================================================================
+
+[af_cristall_flower_af_aam]:af_cristall_flower, af_aam
+class                                    = SCRPTART
+inv_weight                               = 7.53 ;;--11.41 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_cristall_flower_af_aam_descr
+inv_name                                 = st_af_cristall_flower_af_aam_name
+inv_name_short                           = st_af_cristall_flower_af_aam_name
+1icon_layer                              = af_cristall_flower
+
+;;----===============================================================================================
+
+[af_night_star_af_aam]:af_night_star, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.89 ;;--11.27 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_night_star_af_aam_descr
+inv_name                                 = st_af_night_star_af_aam_name
+inv_name_short                           = st_af_night_star_af_aam_name
+1icon_layer                              = af_night_star
+
+;;----===============================================================================================
+
+[af_vyvert_af_aam]:af_vyvert, af_aam
+class                                    = SCRPTART
+inv_weight                               = 7.52 ;;--11.40 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_vyvert_af_aam_descr
+inv_name                                 = st_af_vyvert_af_aam_name
+inv_name_short                           = st_af_vyvert_af_aam_name
+1icon_layer                              = af_vyvert
+
+;;----===============================================================================================
+
+[af_gravi_af_aam]:af_gravi, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.87 ;7.6;;--11.51 W;;--
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_gravi_af_aam_descr
+inv_name                                 = st_af_gravi_af_aam_name
+inv_name_short                           = st_af_gravi_af_aam_name
+1icon_layer                              = af_gravi
+
+;;----===============================================================================================
+
+[af_gold_fish_af_aam]:af_gold_fish, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.47 ;8.0;;--12.12 W;;--
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_gold_fish_af_aam_descr
+inv_name                                 = st_af_gold_fish_af_aam_name
+inv_name_short                           = st_af_gold_fish_af_aam_name
+1icon_layer                              = af_gold_fish
+
+;;----===============================================================================================
+
+[af_cristall_af_aam]:af_cristall, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.52 ;;--8.36 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_cristall_af_aam_descr
+inv_name                                 = st_af_cristall_af_aam_name
+inv_name_short                           = st_af_cristall_af_aam_name
+1icon_layer                              = af_cristall
+
+;;----===============================================================================================
+
+[af_fireball_af_aam]:af_fireball, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.68 ;;--8.60 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_fireball_af_aam_descr
+inv_name                                 = st_af_fireball_af_aam_name
+inv_name_short                           = st_af_fireball_af_aam_name
+1icon_layer                              = af_fireball
+
+;;----===============================================================================================
+
+[af_dummy_glassbeads_af_aam]:af_dummy_glassbeads, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.72 ;;--8.66 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_dummy_glassbeads_af_aam_descr
+inv_name                                 = st_af_dummy_glassbeads_af_aam_name
+inv_name_short                           = st_af_dummy_glassbeads_af_aam_name
+1icon_layer                              = af_dummy_glassbeads
+
+;;----===============================================================================================
+
+[af_eye_af_aam]:af_eye, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.78 ;;--8.75 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_eye_af_aam_descr
+inv_name                                 = st_af_eye_af_aam_name
+inv_name_short                           = st_af_eye_af_aam_name
+1icon_layer                              = af_eye
+
+;;----===============================================================================================
+
+[af_fire_af_aam]:af_fire, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.81 ;;--8.81 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_fire_af_aam_descr
+inv_name                                 = st_af_fire_af_aam_name
+inv_name_short                           = st_af_fire_af_aam_name
+1icon_layer                              = af_fire
+
+;;----===============================================================================================
+
+[af_blood_af_aam]:af_blood, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.19 ;;--6.35 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_blood_af_aam_descr
+inv_name                                 = st_af_blood_af_aam_name
+inv_name_short                           = st_af_blood_af_aam_name
+1icon_layer                              = af_blood
+
+;;----===============================================================================================
+
+[af_mincer_meat_af_aam]:af_mincer_meat, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.2 ;;--6.37 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_mincer_meat_af_aam_descr
+inv_name                                 = st_af_mincer_meat_af_aam_name
+inv_name_short                           = st_af_mincer_meat_af_aam_name
+1icon_layer                              = af_mincer_meat
+
+;;----===============================================================================================
+
+[af_soul_af_aam]:af_soul, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.27 ;;--6.47 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_soul_af_aam_descr
+inv_name                                 = st_af_soul_af_aam_name
+inv_name_short                           = st_af_soul_af_aam_name
+1icon_layer                              = af_soul
+
+;;----===============================================================================================
+
+[af_fuzz_kolobok_af_aam]:af_fuzz_kolobok, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.3 ;;--6.51 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_fuzz_kolobok_af_aam_descr
+inv_name                                 = st_af_fuzz_kolobok_af_aam_name
+inv_name_short                           = st_af_fuzz_kolobok_af_aam_name
+1icon_layer                              = af_fuzz_kolobok
+
+;;----===============================================================================================
+
+[af_baloon_af_aam]:af_baloon, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.34 ;;--6.57 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_baloon_af_aam_descr
+inv_name                                 = st_af_baloon_af_aam_name
+inv_name_short                           = st_af_baloon_af_aam_name
+1icon_layer                              = af_baloon
+
+;;----===============================================================================================
+
+[af_glass_af_aam]:af_glass, af_aam
+class                                    = SCRPTART
+inv_weight                               = 4.32 ;;--6.54 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_glass_af_aam_descr
+inv_name                                 = st_af_glass_af_aam_name
+inv_name_short                           = st_af_glass_af_aam_name
+1icon_layer                              = af_glass
+
+;;----===============================================================================================
+
+[af_electra_sparkler_af_aam]:af_electra_sparkler, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.17 ;;--4.81 W;;--     
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_electra_sparkler_af_aam_descr
+inv_name                                 = st_af_electra_sparkler_af_aam_name
+inv_name_short                           = st_af_electra_sparkler_af_aam_name
+1icon_layer                              = af_electra_sparkler
+
+;;----===============================================================================================
+
+[af_electra_flash_af_aam]:af_electra_flash, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.19 ;;--4.832 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_electra_flash_af_aam_descr
+inv_name                                 = st_af_electra_flash_af_aam_name
+inv_name_short                           = st_af_electra_flash_af_aam_name
+1icon_layer                              = af_electra_flash
+
+;;----===============================================================================================
+
+[af_electra_moonlight_af_aam]:af_electra_moonlight, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.2 ;;--4.852 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_electra_moonlight_af_aam_descr
+inv_name                                 = st_af_electra_moonlight_af_aam_name
+inv_name_short                           = st_af_electra_moonlight_af_aam_name
+1icon_layer                              = af_electra_moonlight
+
+;;----===============================================================================================
+
+[af_dummy_battery_af_aam]:af_dummy_battery, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.34 ;;--5.056 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_dummy_battery_af_aam_descr
+inv_name                                 = st_af_dummy_battery_af_aam_name
+inv_name_short                           = st_af_dummy_battery_af_aam_name
+1icon_layer                              = af_dummy_battery
+
+;;----===============================================================================================
+
+[af_dummy_dummy_af_aam]:af_dummy_dummy, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.34 ;;--5.063 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_dummy_dummy_af_aam_descr
+inv_name                                 = st_af_dummy_dummy_af_aam_name
+inv_name_short                           = st_af_dummy_dummy_af_aam_name
+1icon_layer                              = af_dummy_dummy
+
+;;----===============================================================================================
+
+[af_ice_af_aam]:af_ice, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.5 ;;--5.297 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+description                              = st_af_ice_af_aam_descr
+inv_name                                 = st_af_ice_af_aam_name
+inv_name_short                           = st_af_ice_af_aam_name
+1icon_layer                              = af_ice
+
+;;----===============================================================================================
+
+[af_compass_af_aam]:af_compass, af_aam
+class                                    = SCRPTART
+inv_weight                               = 6.51 ;;--9.871 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+belt                                     = true
+description                              = st_af_compass_af_aam_descr
+inv_name                                 = st_af_compass_af_aam_name
+inv_name_short                           = st_af_compass_af_aam_name
+1icon_layer                              = af_compass
+
+;;----===============================================================================================
+
+[af_oasis_heart_af_aam]:af_oasis_heart, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.49 ;;--8.324 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+belt                                     = true
+description                              = st_af_oasis_heart_af_aam_descr
+inv_name                                 = st_af_oasis_heart_af_aam_name
+inv_name_short                           = st_af_oasis_heart_af_aam_name
+1icon_layer                              = af_oasis_heart
+
+;;----===============================================================================================
+
+[jup_b1_half_artifact_af_aam]:jup_b1_half_artifact, af_aam
+class                                    = SCRPTART
+inv_weight                               = 6.64 ;;--10.058 W;;--   
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+quest_item                               = true
+description                              = st_jup_b1_half_artifact_af_aam_descr
+inv_name                                 = st_jup_b1_half_artifact_af_aam_name
+inv_name_short                           = st_jup_b1_half_artifact_af_aam_name
+1icon_layer                              = jup_b1_half_artifact
+radiation_restore_speed                  = 0.00013
+
+;;----===============================================================================================
+
+[af_quest_b14_twisted_af_aam]:af_quest_b14_twisted, af_aam
+class                                    = SCRPTART
+inv_weight                               = 6.11 ;;--9.254 W;;--    
+cost                                     = 0 ;;--0 W;;--        
+can_trade                                = false
+belt                                     = true
+quest_item                               = true
+description                              = st_af_quest_b14_twisted_af_aam_descr
+inv_name                                 = st_af_quest_b14_twisted_af_aam_name
+inv_name_short                           = st_af_quest_b14_twisted_af_aam_name
+1icon_layer                              = af_quest_b14_twisted
+radiation_restore_speed                  = 0.00013
+
+;;----===============================================================================================
+
+[af_black_spray_af_aam]:af_black_spray, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.96
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_black_spray_af_aam_descr
+inv_name                                 = st_af_black_spray_af_aam_name
+inv_name_short                           = st_af_black_spray_af_aam_name
+1icon_layer                              = af_black_spray
+
+;;----===============================================================================================
+
+[af_bracelet_af_aam]:af_bracelet, af_aam
+class                                    = SCRPTART
+inv_weight                               = 2.315
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_bracelet_af_aam_descr
+inv_name                                 = st_af_bracelet_af_aam_name
+inv_name_short                           = st_af_bracelet_af_aam_name
+1icon_layer                              = af_bracelet
+
+;;----===============================================================================================
+
+[af_death_lamp_af_aam]:af_death_lamp, af_aam
+class                                    = SCRPTART
+inv_weight                               = 10.315
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_death_lamp_af_aam_descr
+inv_name                                 = st_af_death_lamp_af_aam_name
+inv_name_short                           = st_af_death_lamp_af_aam_name
+1icon_layer                              = af_death_lamp
+radiation_restore_speed                  = 0.00013
+
+;;----===============================================================================================
+
+[af_empty_af_aam]:af_empty, af_aam
+class                                    = SCRPTART
+inv_weight                               = 2.065
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_empty_af_aam_descr
+inv_name                                 = st_af_empty_af_aam_name
+inv_name_short                           = st_af_empty_af_aam_name
+1icon_layer                              = af_empty
+
+;;----===============================================================================================
+
+[af_full_empty_af_aam]:af_full_empty, af_aam
+class                                    = SCRPTART
+inv_weight                               = 9.29
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_full_empty_af_aam_descr
+inv_name                                 = st_af_full_empty_af_aam_name
+inv_name_short                           = st_af_full_empty_af_aam_name
+1icon_layer                              = af_full_empty
+
+;;----===============================================================================================
+
+[af_itcher_af_aam]:af_itcher, af_aam
+class                                    = SCRPTART
+inv_weight                               = 2.115
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_itcher_af_aam_descr
+inv_name                                 = st_af_itcher_af_aam_name
+inv_name_short                           = st_af_itcher_af_aam_name
+1icon_layer                              = af_itcher
+
+;;----===============================================================================================
+
+[af_lobster_eyes_af_aam]:af_lobster_eyes, af_aam
+class                                    = SCRPTART
+inv_weight                               = 5.065
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_lobster_eyes_af_aam_descr
+inv_name                                 = st_af_lobster_eyes_af_aam_name
+inv_name_short                           = st_af_lobster_eyes_af_aam_name
+1icon_layer                              = af_lobster_eyes
+
+;;----===============================================================================================
+
+[af_pin_af_aam]:af_pin, af_aam
+class                                    = SCRPTART
+inv_weight                               = 2.315
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_pin_af_aam_descr
+inv_name                                 = st_af_pin_af_aam_name
+inv_name_short                           = st_af_pin_af_aam_name
+1icon_layer                              = af_pin
+
+;;----===============================================================================================
+
+[af_ring_af_aam]:af_ring, af_aam
+class                                    = SCRPTART
+inv_weight                               = 2.415
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_ring_af_aam_descr
+inv_name                                 = st_af_ring_af_aam_name
+inv_name_short                           = st_af_ring_af_aam_name
+1icon_layer                              = af_ring
+
+;;----===============================================================================================
+
+[af_sponge_af_aam]:af_sponge, af_aam
+class                                    = SCRPTART
+inv_weight                               = 3.565
+cost                                     = 0
+can_trade                                = false
+belt                                     = true
+description                              = st_af_sponge_af_aam_descr
+inv_name                                 = st_af_sponge_af_aam_name
+inv_name_short                           = st_af_sponge_af_aam_name
+1icon_layer                              = af_sponge

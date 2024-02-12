@@ -1,0 +1,9 @@
+#include "pas_b400_field_general.ltx"
+
+[logic]
+active = sr_idle@lttz_ll_monolith_ambush
+
+[sr_idle@lttz_ll_monolith_ambush]
+on_info = {=actor_in_zone(pas_b400_sr_hall_1) +stalker_rogue_reach_pripyat} sr_idle@nil %+monolith_ambush%
+
+[sr_idle@nil]

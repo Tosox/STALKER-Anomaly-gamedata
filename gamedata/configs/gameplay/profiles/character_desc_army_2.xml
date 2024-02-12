@@ -1,0 +1,19 @@
+<bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
+<class>sim_default_military_2</class>
+<community>army</community>
+<map_icon x="1" y="0"></map_icon>
+<money min="1500" max="3500" infinitive="0"/>
+<name>GENERATE_NAME_senior_sergeant</name>
+<rank min="6000" max="15000" />
+<reputation min="-700" max="1500" />
+<supplies>
+#include "gameplay\loadouts\army_base.ltx"
+#include "gameplay\loadouts\army_tier_2.ltx"
+[spawn] \n
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs.xml"
+</supplies>
+#include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
+<terrain_sect>stalker_terrain</terrain_sect>

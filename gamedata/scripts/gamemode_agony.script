@@ -1,0 +1,99 @@
+
+--[[
+
+	Created by Tronex
+	Added: 2018/3/19
+	Last visit: 2020/3/25
+	
+	Agony mode
+	Allow/Prevent player on saving based on the conditions
+	Disable save menu while in combat, if bleeding and/or irradiated or if an emission or psi-storm currently ongoing
+	
+--]]
+
+
+function is_health_critical(flags)
+
+	-- Prevent saving while injured (health below 50%)
+	if (db.actor.health < 0.50) then
+		if (db.actor.health > 0.40) then
+			flags.str = game.translate_string("st_ui_no_save_injury_1")
+		elseif (db.actor.health < 0.40 and db.actor.health > 0.25) then
+			flags.str = game.translate_string("st_ui_no_save_injury_2")
+		elseif (db.actor.health < 0.25 and db.actor.health > 0.10) then
+			flags.str = game.translate_string("st_ui_no_save_injury_3")
+		elseif (db.actor.health < 0.10) then
+			flags.str = game.translate_string("st_ui_no_save_injury_4")
+		end
+		flags.ret = true
+		return true
+	end
+	return false
+end
+
+function is_bleeding(flags)
+
+	-- Prevent saving if bleeding and/or irradiated.
+	local bleeding = db.actor.bleeding > 0
+	local radiation = db.actor.radiation > 0.04 -- ~100 msv
+	if (bleeding or radiation) then
+		if (bleeding and radiation) then
+			flags.str = game.translate_string("st_ui_no_save_bleed_radiation")
+		elseif (bleeding) then
+			flags.str = game.translate_string("st_ui_no_save_bleed")
+		elseif (radiation) then
+			flags.str = game.translate_string("st_ui_no_save_radiation")
+		end
+		flags.ret = true
+		return true
+	end
+	return false
+end
+
+function is_emission_active(flags)
+
+	-- Prevent saving during an emission or psi-storm.
+	if (xr_conditions.surge_started() or psi_storm_manager.is_started()) then
+		flags.str = game.translate_string("st_ui_no_save_surge")
+		flags.ret = true
+		return true
+	end
+	return false
+end
+
+function is_in_combat(flags)
+
+	-- Prevent saving during an emission or psi-storm.
+	if not (is_empty(xr_combat_ignore.fighting_with_actor_npcs)) then 
+		flags.str = game.translate_string("st_ui_no_save_combat")
+		flags.ret = true
+		return true
+	end 
+	return false
+end
+
+
+-------------------------------
+-- CALLBACKS
+-------------------------------
+local function on_before_save_input(flags, typ, text)
+	local can_check = alife_storage_manager.get_state().enable_conditions_mode and db.actor and db.actor:alive() and true or false
+	if (not can_check) then
+		return
+	end
+	
+	if is_health_critical(flags)
+	or is_bleeding(flags)
+	or is_emission_active(flags)
+	or is_in_combat(flags)
+	then
+		if flags.str then
+			actor_menu.set_msg(1, strformat(flags.str,text), 4)
+			exec_console_cmd("main_menu off")
+		end
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_before_save_input",on_before_save_input)
+end

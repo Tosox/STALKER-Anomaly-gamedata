@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!--
+	Upgrading Parts
+-->
+
+<string_table>
+
+<!-- Outfits -->
+	<string id="st_upgr_o_health">
+		<text>Prototype of life support system</text>
+	</string>
+	<string id="st_upgr_o_health_desc">
+		<text>This package contains an integrated system that monitors the wearer's health and supplies vitamins, adrenalin or anabolic substances as required.\n \n
+		</text>
+	</string>
+	
+	<string id="st_upgr_o_bleed">
+		<text>Prototype of wound healing system</text>
+	</string>
+	<string id="st_upgr_o_bleed_desc">
+		<text>This package contains a medical device designed for continuous administration of medicines in the field.\n \n
+		</text>
+	</string>
+	
+	<string id="st_upgr_o_armor">
+		<text>Reinforced ballistic inserts</text>
+	</string>
+	<string id="st_upgr_o_armor_desc">
+		<text>This package contains various types of kevlar, titanium, beryl, aluminium and carbon fibre plates and matrices. Featuring high viscosity and excellent stopping action.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_damage">
+		<text>Compensating armour layers</text>
+	</string>
+	<string id="st_upgr_o_damage_desc">
+		<text>This package contains specially crafted armoured plates of different materials, slightly increasing bullet resistance.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_durability">
+		<text>Durable plates and fabrics</text>
+	</string>
+	<string id="st_upgr_o_durability_desc">
+		<text>This package contains durable armour plates of titanium and aluminium alloy for heavy equipment, and polymeric inserts for lighter outfits.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_power">
+		<text>Plastic and synthetic parts</text>
+	</string>
+	<string id="st_upgr_o_power_desc">
+		<text>This package contains synthetic and plastic parts from various armoured suits, designed to reduce the weight of armour and increase mobility and endurance.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_chem">
+		<text>Chemical fire retardants and inserts</text>
+	</string>
+	<string id="st_upgr_o_chem_desc">
+		<text>This package contains a set of hazardous fabrics and materials which can improve the protective performance of suits of armour against chemical effects. They can interrupt the chemical reaction in the gas phase of combustion, while some contain chemicals that cause swelling up behind the protective layer, providing even more insulation.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_burn">
+		<text>Flame-retardant fabrics and inserts</text>
+	</string>
+	<string id="st_upgr_o_burn_desc">
+		<text>This package contains a set of protective fabrics and materials with unqiue properties to slow or stop the spread of fire or reduce its intensity. Some are fireproof materials containing magnesium elements of varying length, width, thickness and shape.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_shock">
+		<text>Electrical-insulating textiles and inserts</text>
+	</string>
+	<string id="st_upgr_o_shock_desc">
+		<text>This package contains a set of protective constantan, magnesium and silicone inserts, designed to reduce the impact of electrical charges on armour.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_psi">
+		<text>Protective coated layers of fabrics</text>
+	</string>
+	<string id="st_upgr_o_psi_desc">
+		<text>This package contains a set of screening inserts and aluminized layers for helmets and armoured suits, with radio-repellent rubber to slightly reducing the effects of psy-influences.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_rad">
+		<text>Active filters and radiation shielding materials</text>
+	</string>
+	<string id="st_upgr_o_rad_desc">
+		<text>A set of protective filters, preventing the entry of various poisons and chemicals into the body through respiratory systems. In addition of high-density materials to reduce the intensity of alpha and gamma particles.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_carry">
+		<text>Fastening system for load distribution</text>
+	</string>
+	<string id="st_upgr_o_carry_desc">
+		<text>This package contains a set of various fasteners for load distribution.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_arty">
+		<text>Fastening for attachments</text>
+	</string>
+	<string id="st_upgr_o_arty_desc">
+		<text>This package contains a suit belt attachment to increase the number of simultaneously usable modules and artefact containers.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_run">
+		<text>Hydraulic servo drive amplification system</text>
+	</string>
+	<string id="st_upgr_o_run_desc">
+		<text>This package contains enhanced prototypical servo drives for first and second generation exoskeletons, allowing the user to sprint.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_o_weight">
+		<text>Lightweight materials</text>
+	</string>
+	<string id="st_upgr_o_weight_desc">
+		<text>This package contains a set of lightweight polymeric materials of varying length, width, thickness and shape, as well as various properties.\n \n</text>
+	</string>
+
+<!-- Weapons -->
+	<string id="st_upgr_w_weight">
+		<text>Mobile counter-weight components</text>
+	</string>
+	<string id="st_upgr_w_weight_desc">
+		<text>This package contains a set of lightweight polymer components for various types of weapons. The fashion for polymer components has not only paid off, but it has also become quite a popular upgrade.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_muffle">
+		<text>Barrel external threading components</text>
+	</string>
+	<string id="st_upgr_w_muffle_desc">
+		<text>This package contains a set of external threading components for various types of weapons. External threading allows a silencer to be installed.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_grenade_mount">
+		<text>Underbarrel grenade launcher mounts</text>
+	</string>
+	<string id="st_upgr_w_grenade_mount_desc">
+		<text>This package contains a set of external underbarrel grenade launcher mounts for various types of weapons.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_reliability">
+		<text>Automatic gas regulators</text>
+	</string>
+	<string id="st_upgr_w_reliability_desc">
+		<text>This package contains a set of special regulator mechanism for various types of weapons. It protects the weapon from dirt.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_speed">
+		<text>Barrel Additional threaded canals</text>
+	</string>
+	<string id="st_upgr_w_speed_desc">
+		<text>This package contains a set of additional threaded canals for various types of weapons. Installation of a barrel with additional threaded canals improves bullet speed and weapon accuracy at the cost of a considerable increase in recoil.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_recoil">
+		<text>Additional gas pistons</text>
+	</string>
+	<string id="st_upgr_w_recoil_desc">
+		<text>This package contains a set of additional gas pistons for various types of weapons. A second piston moves the counter-weight, compensating for the bolt mechanism movement impulse.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_magazine">
+		<text>High-capacity magazine set</text>
+	</string>
+	<string id="st_upgr_w_magazine_desc">
+		<text>This package contains a set of magazines for various types of weapons with higher capacity for calibres.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_scope">
+		<text>Optical scopes mounting set</text>
+	</string>
+	<string id="st_upgr_w_scope_desc">
+		<text>This package contains a set of optical scopes for various types of weapons. Mounting includes scopes for close, medium and long range combat.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_dispersion">
+		<text>Balancing elements</text>
+	</string>
+	<string id="st_upgr_w_dispersion_desc">
+		<text>This package contains a set of balancing elements for various types of weapons. Synthetic elements installed onto rods ensures that they move strictly as intended, increasing accuracy.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_calibre">
+		<text>Calibre components set</text>
+	</string>
+	<string id="st_upgr_w_calibre_desc">
+		<text>This package contains a set of calibre components for various types of weapons. A complex, integrated alteration of the weapon's mechanical and automated parts, which allows its calibre to be changed at the cost of reliability.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_inertion">
+		<text>Ergonomic receivers with different shapes</text>
+	</string>
+	<string id="st_upgr_w_inertion_desc">
+		<text>This package contains a set of ergonomic receiver for various types of weapons. A modification used exclusively for barrels with solid bullpup receivers, which simplifies maintenance of the weapon.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_rpm">
+		<text>Titanium return mechanism rods</text>
+	</string>
+	<string id="st_upgr_w_rpm_desc">
+		<text>This package contains a set of titanium rods for various types of weapons. Titanium rods can endure a much higher rate of fire than regular rods.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_scope_mount">
+		<text>Optical mount set</text>
+	</string>
+	<string id="st_upgr_w_scope_mount_desc">
+		<text>This package contains a set of optical mounts for various types of weapons. Allowing installation of a mount for attachment of an optical scope.\n \n</text>
+	</string>
+	
+	<string id="st_upgr_w_firemode">
+		<text>Trigger mechanism set</text>
+	</string>
+	<string id="st_upgr_w_firemode_desc">
+		<text>This package contains a set of trigger mechanism for various types of weapons. Improvement of the weapon's automatic parts suitable for different burst and automated fire modes.\n \n</text>
+	</string>
+
+</string_table>

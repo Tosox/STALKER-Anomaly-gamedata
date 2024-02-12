@@ -1,0 +1,23 @@
+[logic]
+active = ph_sound ;ph_idle@music
+
+[ph_sound]
+snd = esc_sidorovich_radio
+looped = false
+min_idle = 300
+max_idle = 500
+random = true
+volume = {=surge_started}0, 1
+
+[ph_idle@music]
+on_info = %=play_sound(ds_killer_base_st)%
+on_info2 = {=surge_started} ph_idle@surge
+hit_on_bone = 1|ph_idle@broken
+
+[ph_idle@surge]
+on_info = %=play_sound(broken_radio_mlr)%
+on_info2 = {!surge_started} ph_idle@music
+hit_on_bone = 1|ph_idle@broken
+
+[ph_idle@broken]
+on_info = nil %=stop_sound%

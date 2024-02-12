@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@close
+
+[ph_idle@close]
+nonscript_usable = false
+on_info = {+mar_doctor_found} ph_idle@open
+
+[ph_idle@open]
+nonscript_usable = true
+tips = actor_inventory_box_use

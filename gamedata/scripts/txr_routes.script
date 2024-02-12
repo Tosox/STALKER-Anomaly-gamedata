@@ -1,0 +1,1568 @@
+--[[
+ ==========================================================================
+ Created by Tronex
+ Original concept by MLR
+ Last edit: 2018/6/7
+ ==========================================================================
+ Locations short names
+ You can simply open a route by using those short names instead of spot codes, example: open_route("mil","cit")
+ ======================
+aes1 -- CNPP South (ShoC)
+aes2 -- CNPP North (CS)
+agr -- Agroprom
+bar -- Rostok
+cit -- Dead City
+dsc -- Darkscape
+esc -- Cordon
+gar -- Garbage
+gen -- Generators
+jup -- Jupiter
+kat -- Deserted Hospital
+lim -- Limansk
+mar -- Great Swamps
+mil -- Army Warehouses
+out -- Outskirts
+pol -- Meadow
+pri -- Pripyat
+rad -- Radar
+red -- Red Forest
+ros -- Wild Territory
+trc -- Truck Cemetery
+val -- Dark Valley
+yan -- Yantar
+zat -- Zaton
+
+x8 	-- Lab X-8
+x16 -- Lab X-16
+x18 -- Lab X-18
+x19 -- Lab X-19
+mar_h -- Clea Sky's hidden path
+agr_u -- Agroprom Underground
+sar -- Sarcophagus
+s_lab -- Monolith Control Center
+w_lab -- Monolith War Lab
+--]]
+
+
+local sr_teleport_ini = ini_file("sr_teleport_sections.ltx")
+
+------------------------------------------------------------
+-- Control
+------------------------------------------------------------
+maps = {
+	"aes1",
+	"aes2",
+	"agr",
+	"bar",
+	"cit",
+	"dsc",
+	"esc",
+	"gar",
+	"gen",
+	"jup",
+	"kat",
+	"lim",
+	"mar",
+	"mil",
+	"out",
+	"pol",
+	"pri",
+	"rad",
+	"red",
+	"ros",
+	"trc",
+	"val",
+	"yan",
+	"zat",
+	"x8",
+	"x16",
+	"x18",
+	"x19",
+	"jup_u",
+	"mar_h",
+	"agr_u",
+	"sar",
+	"s_lab",
+	"w_lab",
+}
+
+local map_to_sec = {
+	["aes1"] = "l12_stancia",
+	["aes2"] = "l12_stancia_2",
+	["agr"] = "l03_agroprom",
+	["bar"] = "l05_bar",
+	["cit"] = "l09_deadcity",
+	["dsc"] = "k01_darkscape",
+	["esc"] = "l01_escape",
+	["gar"] = "l02_garbage",
+	["gen"] = "l13_generators",
+	["jup"] = "jupiter",
+	["kat"] = "l11_hospital",
+	["lim"] = "l10_limansk",
+	["mar"] = "k00_marsh",
+	["mil"] = "l07_military",
+	["out"] = "pripyat",
+	["pol"] = "y04_pole",
+	["pri"] = "l11_pripyat",
+	["rad"] = "l10_radar",
+	["red"] = "l10_red_forest",
+	["ros"] = "l06_rostok",
+	["trc"] = "k02_trucks_cemetery",
+	["val"] = "l04_darkvalley",
+	["yan"] = "l08_yantar",
+	["zat"] = "zaton",
+	["x8"] = "labx8",
+	["x16"] = "l08u_brainlab",
+	["x18"] = "l04u_labx18",
+	["x19"] = "l10u_bunker",
+	["jup_u"] = "jupiter_underground",
+	--["mar_h"] = "",
+	["agr_u"] = "l03u_agr_underground",
+	["sar"] = "l12u_sarcofag",
+	["s_lab"] = "l12u_control_monolith",
+	["w_lab"] = "l13u_warlab",
+}
+
+local sec_to_map = {
+	["l12_stancia"] = "aes1",
+	["l12_stancia_2"] = "aes2",
+	["l03_agroprom"] = "agr",
+	["l05_bar"] = "bar",
+	["l09_deadcity"] = "cit",
+	["k01_darkscape"] = "dsc",
+	["l01_escape"] = "esc",
+	["l02_garbage"] = "gar",
+	["l13_generators"] = "gen",
+	["jupiter"] = "jup",
+	["l11_hospital"] = "kat",
+	["l10_limansk"] = "lim",
+	["k00_marsh"] = "mar",
+	["l07_military"] = "mil",
+	["pripyat"] = "out",
+	["y04_pole"] = "pol",
+	["l11_pripyat"] = "pri",
+	["l10_radar"] = "rad",
+	["l10_red_forest"] = "red",
+	["l06_rostok"] = "ros",
+	["k02_trucks_cemetery"] = "trc",
+	["l04_darkvalley"] = "val",
+	["l08_yantar"] = "yan",
+	["zaton"] = "zat",
+	["labx8"] = "x8",
+	["l08u_brainlab"] = "x16",
+	["l04u_labx18"] = "x18",
+	["l10u_bunker"] = "x19",
+	["jupiter_underground"] = "jup_u",
+	["l03u_agr_underground"] = "agr_u",
+	["l12u_sarcofag"] = "sar",
+	["l12u_control_monolith"] = "s_lab",
+	["l13u_warlab"] = "w_lab",
+}
+	
+local routes_start = {
+	general = {
+		-- esc > mar + gar + pol > val + bar + agr > trc + mil + ros > yan 
+		{"esc","pol"},
+		{"esc","mar"},
+		{"esc","gar"},
+		{"esc","dsc"},
+	    {"val","pol"},
+		{"val","trc"},
+		{"val","gar"},
+		{"val","dsc"},
+		{"gar","agr"},
+		{"gar","bar"},
+		{"bar","mil"},
+		{"bar","ros"},
+		{"yan","ros"}
+	},
+	monolith = {
+		-- aes1 + aes2 > gen + pri + sar + kat > rad + lim + out > mil > bar > ros > yan
+		{"bar","mil"},
+		{"bar","ros"},
+		{"yan","ros"},
+		{"mil","rad"},
+		{"pri","rad"},
+		{"kat","lim"},
+		{"red","lim"},
+		{"pri","out"},
+		{"pri","aes1"},
+		{"aes1","sar"},
+		{"aes1","aes2"},
+		{"aes2","gen"},
+		{"aes2","kat"},
+	},
+	killer = { 
+		-- cit > lim + mil > bar > ros + gar > yan + esc + val + agr > mar + dsc 
+		{"esc","mar"},
+		{"cit","lim"},
+		{"esc","gar"},
+		{"esc","dsc"},
+		{"val","dsc"},
+		{"gar","agr"},
+		{"gar","bar"},
+		{"val","gar"},
+		{"bar","mil"},
+		{"bar","ros"},
+		{"yan","ros"},
+		{"cit","mil"}
+	},
+	csky = {
+		-- mar > mar_h + esc > gar + dsc > val + bar + agr > mil ros > yan
+		{"mar","mar_h"},
+		{"esc","mar"},
+		{"esc","gar"},
+		{"esc","dsc"},
+		{"val","dsc"},
+		{"gar","agr"},
+		{"gar","bar"},
+		{"val","gar"},
+		{"bar","mil"},
+		{"bar","ros"},
+		{"yan","ros"}
+	},
+	renegade = {
+		-- mar > mar_h + esc > gar + dsc > val + bar + agr > mil ros > yan
+		{"mar","mar_h"},
+		{"esc","mar"},
+		{"esc","gar"},
+		{"esc","dsc"},
+		{"val","dsc"},
+		{"gar","agr"},
+		{"gar","bar"},
+		{"val","gar"},
+		{"bar","mil"},
+		{"bar","ros"},
+		{"yan","ros"}
+	},
+	greh = {
+		-- aes1 + aes2 > gen + pri + sar + kat > rad + lim + out > mil > bar > ros > yan
+		{"red","rad"},
+		{"red","jup"},
+		{"yan","ros"},
+		{"mil","rad"},
+		{"pri","rad"},
+		{"kat","lim"},
+		{"red","lim"},
+		{"pri","out"},
+		{"pri","aes1"},
+		{"aes1","sar"},
+		{"aes1","aes2"},
+		{"aes2","gen"},
+		{"aes2","kat"},
+		{"jup","jup_u"},
+	},
+	isg = { 
+		{"esc","dsc"},
+	}
+}
+
+routes = {
+	["aes1"] = { 
+		["sar"] = {"aes_space_restrictor_to_sarcofag"}, 
+		["pri"] = {"aes_space_restrictor_to_pripyat"}, 
+		["zat"] = {"aes_space_restrictor_to_zaton"}, 
+		["aes2"] = {"aes_space_restrictor_to_aes2"} 
+	},
+	["aes2"] = { 
+		["gen"] = {"aes2_space_restrictor_to_gen"}, 
+		["aes1"] = {"aes2_space_restrictor_to_aes1"}, 
+		["s_lab"] = {"aes2_space_restrictor_to_secret_lab"}, 
+		["kat"] = {"aes2_space_restrictor_to_hospital"} 
+	},
+	["agr"] = { 
+		["mar"] = {"agr_space_restrictor_to_marsh_1"}, 
+		["yan"] = {"agr_space_restrictor_to_yantar_1"}, 
+		["gar"] = {"agr_space_restrictor_to_garbage_1","agr_space_restrictor_to_garbage_2"}, 
+		["agr_u"] = {"agr_space_restrictor_to_agr_ug_1","agr_space_restrictor_to_agr_ug_2","agr_space_restrictor_to_agr_ug_3","agr_space_restrictor_to_agr_ug_4","agr_space_restrictor_to_agr_ug_5","agr_space_restrictor_to_agr_ug_6"} 
+	},
+	["bar"] = { 
+		["gar"] = {"bar_space_restrictor_to_garbage_01"}, 
+		["mil"] = {"bar_space_restrictor_to_military_01"}, 
+		["ros"] = {"bar_space_restrictor_to_rostok_01"}, 
+		["trc"] = {"bar_space_restrictor_to_tc"} 
+	},
+	["cit"] = { 
+		["mil"] = {"cit_space_restrictor_to_military"}, 
+		["yan"] = {"cit_space_restrictor_to_yantar"}, 
+		["lim"] = {"cit_space_restrictor_to_limansk"} 
+	},
+	["dsc"] = { 
+		["val"] = {"ds_space_restrictor_to_darkvalley"}, 
+		["esc"] = {"ds_space_restrictor_to_escape"} 
+	},
+	["esc"] = { 
+		["pol"] = {"esc_space_restrictor_to_pole_1"}, 
+		["mar"] = {"esc_space_restrictor_to_marsh_1","esc_space_restrictor_to_marsh_2"}, 
+		["gar"] = {"esc_space_restrictor_to_garbage_1","esc_space_restrictor_to_garbage_2"}, 
+		["dsc"] = {"esc_space_restrictor_to_darkscape_1"} 
+	},
+	["gar"] = { 
+		["esc"] = {"gar_space_restrictor_to_escape_1","gar_space_restrictor_to_escape_2"}, 
+		["val"] = {"gar_space_restrictor_to_darkvalley_1","gar_space_restrictor_to_darkvalley_2"}, 
+		["agr"] = {"gar_space_restrictor_to_agroprom_1","gar_space_restrictor_to_agroprom_2"}, 
+		["bar"] = {"gar_space_restrictor_to_bar_1"}, 
+		["ros"] = {"gar_space_restrictor_to_rostok_1"} 
+	},
+	["gen"] = { 
+		["aes2"] = {"gen_space_restrictor_to_aes2"}, 
+		["w_lab"] = {"gen_space_restrictor_to_warlab"} 
+	},
+	["jup"] = { 
+		["red"] = {"jupiter_space_restrictor_to_red_forest"}, 
+		["pri"] = {"jupiter_space_restrictor_to_soc_pripyat"}, 
+		["zat"] = {"jup_space_restrictor_to_zaton"}, 
+		["jup_u"] = {"jupiter_space_restrictor_to_jupiter_ug"} 
+	},
+	["jup_u"] = { 
+		["jup"] = {"jupiter_ug_space_restrictor_to_jupiter"} 
+	},
+	["kat"] = { 
+		["lim"] = {"katacomb_space_restrictor_to_limansk"}, 
+		["aes2"] = {"katacomb_space_restrictor_to_aes_1"} 
+	},
+	["lim"] = { 
+		["kat"] = {"lim_space_restrictor_to_hospital"}, 
+		["cit"] = {"lim_space_restrictor_to_dead_city"}, 
+		["red"] = {"lim_space_restrictor_to_red_forest"} 
+	},
+	["mar"] = { 
+		["agr"] = {"mar_space_restrictor_to_agroprom_1"}, 
+		["esc"] = {"mar_space_restrictor_to_escape_1","mar_space_restrictor_to_escape_2"}, 
+		["mar_h"] = {"mar_teleport_from_base_to_west"}
+	},
+	["mil"] = { 
+		["cit"] = {"mil_space_restrictor_to_dead_city_1"}, 
+		["red"] = {"mil_space_restrictor_to_red_1"}, 
+		["bar"] = {"mil_space_restrictor_to_bar_1"}, 
+		["rad"] = {"mil_space_restrictor_to_radar_1"}, 
+		["trc"] = {"mil_space_restrictor_to_tc"} 
+	},
+	["out"] = { 
+		["pri"] = {"cop_pripyat_space_restrictor_to_soc_pripyat"}, 
+		["jup_u"] = {"pri_space_restrictor_to_jup_ug"}, 
+		["x8"] = {"pri_space_restrictor_to_labx8"} 
+	},
+	["pol"] = { 
+		["esc"] = {"pol_space_restrictor_to_escape_1"}, 
+		["val"] = {"pol_space_restrictor_to_val_1"}, 
+	},
+	["pri"] = { 
+		["out"] = {"pri_space_restrictor_to_cop_pripyat"}, 
+		["jup"] = {"pri_space_restrictor_to_jupiter"}, 
+		["rad"] = {"pri_space_restrictor_to_radar"}, 
+		["aes1"] = {"pri_space_restrictor_to_stancia"} 
+	},
+	["rad"] = { 
+		["pri"] = {"rad_space_restrictor_to_pripyat_01"}, 
+		["mil"] = {"rad_space_restrictor_to_military_01"}, 
+		["red"] = {"rad_space_restrictor_to_red_forest"}, 
+		["x19"] = {"rad_space_restrictor_to_bunker"} 
+	},
+	["red"] = { 
+		["mil"] = {"red_space_restrictor_to_military_1"}, 
+		["rad"] = {"red_space_restrictor_to_radar_1"}, 
+		["lim"] = {"red_space_restrictor_to_limansk"}, 
+		["jup"] = {"red_space_restricor_to_jupiter"} 
+	},
+	["ros"] = { 
+		["gar"] = {"ros_space_restrictor_to_garbage_1"}, 
+		["yan"] = {"ros_space_restrictor_to_yantar_1"}, 
+		["bar"] = {"ros_space_restrictor_to_bar_1"} 
+	},
+	["trc"] = { 
+		["bar"] = {"tc_space_restrictor_to_bar"}, 
+		["val"] = {"tc_space_restrictor_to_darkvalley"}, 
+		["mil"] = {"tc_space_restrictor_to_military_1", "tc_space_restrictor_to_military_2", "tc_space_restrictor_to_military_3"} 
+	},
+	["val"] = { 
+		["pol"] = {"val_space_restrictor_to_pole_1"}, 
+		["trc"] = {"val_space_restrictor_to_tc"} , 
+		["dsc"] = {"val_space_restrictor_to_darkscape"} , 
+		["gar"] = {"val_space_restrictor_to_garbage_1", "val_space_restrictor_to_garbage_2"},
+		["x18"] = {"val_space_restrictor_to_labx18"} 
+	},
+	["yan"] = { 
+		["ros"] = {"yan_space_restrictor_to_rostok_1"}, 
+		["agr"] = {"yan_space_restrictor_to_agroprom_1"}, 
+		["cit"] = {"yan_space_restrictor_to_dead_city_1"}, 
+		["x16"] = {"yan_space_restrictor_to_x16"} 
+	},
+	["zat"] = { 
+		["aes1"] = {"zaton_space_restrictor_to_stancia_1"}, 
+		["jup"] = {"zaton_space_restrictor_to_jupiter"}
+	}
+}
+
+
+local money_ini = ini_file("plugins\\mlr.ltx")
+local money_1 = money_ini:line_exist("money_1") and money_ini:r_float_ex("money_1") or 8000
+local money_2 = money_ini:line_exist("money_2") and money_ini:r_float_ex("money_2") or 10000
+local money_3 = money_ini:line_exist("money_3") and money_ini:r_float_ex("money_3") or 12000
+local money_4 = money_ini:line_exist("money_4") and money_ini:r_float_ex("money_4") or 40000
+
+
+
+------------------------------------------------------------
+-- Preconditions
+------------------------------------------------------------
+function have_money(money)
+	return mlr_utils.have_money(money)
+end
+function check_all_routes (first_speaker, second_speaker)
+	local a = is_route_left()
+	return a or false
+end
+
+function check_route_and_money_jup_red (first_speaker, second_speaker)
+	return is_map_discovered("jup","red") and (not is_route_discovered("jup","red")) and have_money(money_1)
+end
+function check_route_and_money_jup_pri (first_speaker, second_speaker)
+	return is_map_discovered("jup","pri") and (not is_route_discovered("jup","pri")) and have_money(money_1)
+end
+function check_route_and_money_jup_jup_u (first_speaker, second_speaker)
+	return is_map_discovered("jup","jup_u") and (not is_route_discovered("jup","jup_u")) and have_money(money_1)
+end
+function check_route_and_money_jup_zat (first_speaker, second_speaker)
+	return is_map_discovered("jup","zat") and (not is_route_discovered("jup","zat")) and have_money(money_1)
+end
+function check_route_and_money_esc_mar (first_speaker, second_speaker)
+	return is_map_discovered("esc","mar") and (not is_route_discovered("esc","mar")) and have_money(money_1)
+end
+function check_route_and_money_esc_dsc (first_speaker, second_speaker)
+	return is_map_discovered("esc","dsc") and (not is_route_discovered("esc","dsc")) and have_money(money_1)
+end
+function check_route_and_money_esc_pol (first_speaker, second_speaker)
+	return is_map_discovered("esc","pol") and (not is_route_discovered("esc","pol")) and have_money(money_1)
+end
+function check_route_and_money_esc_gar (first_speaker, second_speaker)
+	return is_map_discovered("esc","gar") and (not is_route_discovered("esc","gar")) and have_money(money_1)
+end
+function check_route_and_money_dsc_val (first_speaker, second_speaker)
+	return is_map_discovered("dsc","val") and (not is_route_discovered("dsc","val")) and have_money(money_1)
+end
+function check_route_and_money_val_x18 (first_speaker, second_speaker)
+	return is_map_discovered("val","x18") and (not is_route_discovered("val","x18")) and have_money(money_1)
+end
+function check_route_and_money_val_trc (first_speaker, second_speaker)
+	return is_map_discovered("val","trc") and (not is_route_discovered("val","trc")) and have_money(money_1)
+end
+function check_route_and_money_val_gar (first_speaker, second_speaker)
+	return is_map_discovered("val","gar") and (not is_route_discovered("val","gar")) and have_money(money_1)
+end
+function check_route_and_money_val_pol (first_speaker, second_speaker)
+	return is_map_discovered("val","pol") and (not is_route_discovered("val","pol")) and have_money(money_1)
+end
+function check_route_and_money_zat_aes1 (first_speaker, second_speaker)
+	return is_map_discovered("zat","aes1") and (not is_route_discovered("zat","aes1")) and have_money(money_1)
+end
+function check_route_and_money_yan_agr (first_speaker, second_speaker)
+	return is_map_discovered("yan","agr") and (not is_route_discovered("yan","agr")) and have_money(money_1)
+end
+function check_route_and_money_yan_cit (first_speaker, second_speaker)
+	return is_map_discovered("yan","cit") and (not is_route_discovered("yan","cit")) and have_money(money_1)
+end
+function check_route_and_money_yan_x16 (first_speaker, second_speaker)
+	return is_map_discovered("yan","x16") and (not is_route_discovered("yan","x16")) and have_money(money_1)
+end
+function check_route_and_money_yan_ros (first_speaker, second_speaker)
+	return is_map_discovered("yan","ros") and (not is_route_discovered("yan","ros")) and have_money(money_1)
+end
+function check_route_and_money_kat_aes2 (first_speaker, second_speaker)
+	return is_map_discovered("kat","aes2") and (not is_route_discovered("kat","aes2")) and have_money(money_1)
+end
+function check_route_and_money_kat_lim (first_speaker, second_speaker)
+	return is_map_discovered("kat","lim") and (not is_route_discovered("kat","lim")) and have_money(money_1)
+end
+function check_route_and_money_bar_trc (first_speaker, second_speaker)
+	return is_map_discovered("bar","trc") and (not is_route_discovered("bar","trc")) and have_money(money_1)
+end
+function check_route_and_money_bar_mil (first_speaker, second_speaker)
+	return is_map_discovered("bar","mil") and (not is_route_discovered("bar","mil")) and have_money(money_1)
+end
+function check_route_and_money_bar_gar (first_speaker, second_speaker)
+	return is_map_discovered("bar","gar") and (not is_route_discovered("bar","gar")) and have_money(money_1)
+end
+function check_route_and_money_bar_ros (first_speaker, second_speaker)
+	return is_map_discovered("bar","ros") and (not is_route_discovered("bar","ros")) and have_money(money_1)
+end
+function check_route_and_money_agr_mar (first_speaker, second_speaker)
+	return is_map_discovered("agr","mar") and (not is_route_discovered("agr","mar")) and have_money(money_1)
+end
+function check_route_and_money_agr_agr_u (first_speaker, second_speaker)
+	return is_map_discovered("agr","agr_u") and (not is_route_discovered("agr","agr_u")) and have_money(money_1)
+end
+function check_route_and_money_agr_gar (first_speaker, second_speaker)
+	return is_map_discovered("agr","gar") and (not is_route_discovered("agr","gar")) and have_money(money_1)
+end
+function check_route_and_money_lim_red (first_speaker, second_speaker)
+	return is_map_discovered("lim","red") and (not is_route_discovered("lim","red")) and have_money(money_1)
+end
+function check_route_and_money_lim_cit (first_speaker, second_speaker)
+	return is_map_discovered("lim","cit") and (not is_route_discovered("lim","cit")) and have_money(money_1)
+end
+function check_route_and_money_mil_cit (first_speaker, second_speaker)
+	return is_map_discovered("mil","cit") and (not is_route_discovered("mil","cit")) and have_money(money_1)
+end
+function check_route_and_money_mil_red (first_speaker, second_speaker)
+	return is_map_discovered("mil","red") and (not is_route_discovered("mil","red")) and have_money(money_1)
+end
+function check_route_and_money_mil_trc (first_speaker, second_speaker)
+	return is_map_discovered("mil","trc") and (not is_route_discovered("mil","trc")) and have_money(money_1)
+end
+function check_route_and_money_mil_rad (first_speaker, second_speaker)
+	return is_map_discovered("mil","rad") and (not is_route_discovered("mil","rad")) and have_money(money_1)
+end
+function check_route_and_money_gen_w_lab (first_speaker, second_speaker)
+	return is_map_discovered("gen","w_lab") and (not is_route_discovered("gen","w_lab")) and have_money(money_1)
+end
+function check_route_and_money_gen_aes2 (first_speaker, second_speaker)
+	return is_map_discovered("gen","aes2") and (not is_route_discovered("gen","aes2")) and have_money(money_1)
+end
+function check_route_and_money_red_rad (first_speaker, second_speaker)
+	return is_map_discovered("red","rad") and (not is_route_discovered("red","rad")) and have_money(money_1)
+end
+function check_route_and_money_aes2_s_lab (first_speaker, second_speaker)
+	return is_map_discovered("aes2","s_lab") and (not is_route_discovered("aes2","s_lab")) and have_money(money_1)
+end
+function check_route_and_money_aes2_aes1 (first_speaker, second_speaker)
+	return is_map_discovered("aes2","aes1") and (not is_route_discovered("aes2","aes1")) and have_money(money_1)
+end
+function check_route_and_money_gar_ros (first_speaker, second_speaker)
+	return is_map_discovered("gar","ros") and (not is_route_discovered("gar","ros")) and have_money(money_1)
+end
+function check_route_and_money_mar_mar_h (first_speaker, second_speaker)
+	return is_map_discovered("mar","mar_h") and (not is_route_discovered("mar","mar_h")) and have_money(money_1)
+end
+function check_route_and_money_pri_aes1 (first_speaker, second_speaker)
+	return is_map_discovered("pri","aes1") and (not is_route_discovered("pri","aes1")) and have_money(money_1)
+end
+function check_route_and_money_pri_rad (first_speaker, second_speaker)
+	return is_map_discovered("pri","rad") and (not is_route_discovered("pri","rad")) and have_money(money_1)
+end
+function check_route_and_money_pri_out (first_speaker, second_speaker)
+	return is_map_discovered("pri","out") and (not is_route_discovered("pri","out")) and have_money(money_1)
+end
+function check_route_and_money_out_x8 (first_speaker, second_speaker)
+	return is_map_discovered("out","x8") and (not is_route_discovered("out","x8")) and have_money(money_1)
+end
+function check_route_and_money_out_jup_u (first_speaker, second_speaker)
+	return is_map_discovered("out","jup_u") and (not is_route_discovered("out","jup_u")) and have_money(money_1)
+end
+function check_route_and_money_aes1_sar (first_speaker, second_speaker)
+	return is_map_discovered("aes1","sar") and (not is_route_discovered("aes1","sar")) and have_money(money_1)
+end
+function check_route_and_money_rad_x19 (first_speaker, second_speaker)
+	return is_map_discovered("rad","x19") and (not is_route_discovered("rad","x19")) and have_money(money_1)
+end
+
+
+function check_route_yan_x16 (first_speaker, second_speaker)
+	return is_map_discovered("yan","x16") and (not is_route_discovered("yan","x16"))
+end
+function check_route_mil_rad (first_speaker, second_speaker)
+	return is_map_discovered("mil","rad") and (not is_route_discovered("mil","rad"))
+end
+function check_route_rad_x19 (first_speaker, second_speaker)
+	return is_map_discovered("rad","x19") and (not is_route_discovered("rad","x19"))
+end
+function check_route_pri_rad (first_speaker, second_speaker)
+	return is_map_discovered("pri","rad") and (not is_route_discovered("pri","rad"))
+end
+function check_route_pri_out (first_speaker, second_speaker)
+	return is_map_discovered("pri","out") and (not is_route_discovered("pri","out"))
+end
+function check_route_pri_aes1 (first_speaker, second_speaker)
+	return is_map_discovered("pri","aes1") and (not is_route_discovered("pri","aes1"))
+end
+function check_route_aes2_aes1 (first_speaker, second_speaker)
+	return is_map_discovered("aes2","aes1") and (not is_route_discovered("aes2","aes1"))
+end
+function check_route_yan_agr (first_speaker, second_speaker)
+	return is_map_discovered("yan","agr") and (not is_route_discovered("yan","agr"))
+end
+function check_route_mil_red (first_speaker, second_speaker)
+	return is_map_discovered("mil","red") and (not is_route_discovered("mil","red"))
+end
+function check_route_lim_red (first_speaker, second_speaker)
+	return is_map_discovered("lim","red") and (not is_route_discovered("lim","red"))
+end
+function check_route_bar_gar (first_speaker, second_speaker)
+	return is_map_discovered("bar","gar") and (not is_route_discovered("bar","gar"))
+end
+
+
+------------------------------------------------------------
+-- Actions
+------------------------------------------------------------
+function take_money(first_speaker, second_speaker, money)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, money)
+end
+
+function open_route_and_money_jup_red (first_speaker, second_speaker)
+	open_route("jup","red")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_jup_pri (first_speaker, second_speaker)
+	open_route("jup","pri")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_jup_jup_u (first_speaker, second_speaker)
+	open_route("jup","jup_u")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_jup_zat (first_speaker, second_speaker)
+	open_route("jup","zat")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_esc_mar (first_speaker, second_speaker)
+	open_route("esc","mar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_esc_dsc (first_speaker, second_speaker)
+	open_route("esc","dsc")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_esc_pol (first_speaker, second_speaker)
+	open_route("esc","pol")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_esc_gar (first_speaker, second_speaker)
+	open_route("esc","gar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_dsc_val (first_speaker, second_speaker)
+	open_route("dsc","val")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_val_x18 (first_speaker, second_speaker)
+	open_route("val","x18")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_val_trc (first_speaker, second_speaker)
+	open_route("val","trc")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_val_gar (first_speaker, second_speaker)
+	open_route("val","gar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_val_pol (first_speaker, second_speaker)
+	open_route("val","pol")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_zat_aes1 (first_speaker, second_speaker)
+	open_route("zat","aes1")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_yan_agr (first_speaker, second_speaker)
+	open_route("yan","agr")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_yan_cit (first_speaker, second_speaker)
+	open_route("yan","cit")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_yan_x16 (first_speaker, second_speaker)
+	open_route("yan","x16")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_yan_ros (first_speaker, second_speaker)
+	open_route("yan","ros")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_kat_aes2 (first_speaker, second_speaker)
+	open_route("kat","aes2")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_kat_lim (first_speaker, second_speaker)
+	open_route("kat","lim")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_bar_trc (first_speaker, second_speaker)
+	open_route("bar","trc")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_bar_mil (first_speaker, second_speaker)
+	open_route("bar","mil")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_bar_gar (first_speaker, second_speaker)
+	open_route("bar","gar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_bar_ros (first_speaker, second_speaker)
+	open_route("bar","ros")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_agr_mar (first_speaker, second_speaker)
+	open_route("agr","mar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_agr_agr_u (first_speaker, second_speaker)
+	open_route("agr","agr_u")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_agr_gar (first_speaker, second_speaker)
+	open_route("agr","gar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_lim_red (first_speaker, second_speaker)
+	open_route("lim","red")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_lim_cit (first_speaker, second_speaker)
+	open_route("lim","cit")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_mil_cit (first_speaker, second_speaker)
+	open_route("mil","cit")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_mil_red (first_speaker, second_speaker)
+	open_route("mil","red")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_mil_trc (first_speaker, second_speaker)
+	open_route("mil","trc")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_mil_rad (first_speaker, second_speaker)
+	open_route("mil","rad")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_gen_w_lab (first_speaker, second_speaker)
+	open_route("gen","w_lab")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_gen_aes2 (first_speaker, second_speaker)
+	open_route("gen","aes2")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_red_rad (first_speaker, second_speaker)
+	open_route("red","rad")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_aes2_s_lab (first_speaker, second_speaker)
+	open_route("aes2","s_lab")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_aes2_aes1 (first_speaker, second_speaker)
+	open_route("aes2","aes1")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_gar_ros (first_speaker, second_speaker)
+	open_route("gar","ros")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_mar_mar_h (first_speaker, second_speaker)
+	open_route("mar","mar_h")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_pri_aes1 (first_speaker, second_speaker)
+	open_route("pri","aes1")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_pri_rad (first_speaker, second_speaker)
+	open_route("pri","rad")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_pri_out (first_speaker, second_speaker)
+	open_route("pri","out")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_out_x8 (first_speaker, second_speaker)
+	open_route("out","x8")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_out_jup_u (first_speaker, second_speaker)
+	open_route("out","jup_u")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_aes1_sar (first_speaker, second_speaker)
+	open_route("aes1","sar")
+	take_money(first_speaker, second_speaker, money_1)
+end
+function open_route_and_money_rad_x19 (first_speaker, second_speaker)
+	open_route("rad","x19")
+	take_money(first_speaker, second_speaker, money_1)
+end
+
+-- MLR
+function open_route_yan_x16 (first_speaker, second_speaker)
+	open_route("yan","x16")
+end
+function open_route_mil_rad (first_speaker, second_speaker)
+	open_route("mil","rad")
+end
+function open_route_rad_x19 (first_speaker, second_speaker)
+	open_route("rad","x19")
+end
+function open_route_pri_rad (first_speaker, second_speaker)
+	open_route("pri","rad")
+end
+function open_route_pri_out (first_speaker, second_speaker)
+	open_route("pri","out")
+end
+function open_route_pri_aes1 (first_speaker, second_speaker)
+	open_route("pri","aes1")
+end
+function open_route_aes2_aes1 (first_speaker, second_speaker)
+	open_route("aes2","aes1")
+end
+function open_route_yan_agr (first_speaker, second_speaker)
+	open_route("yan","agr")
+end
+function open_route_mil_red (first_speaker, second_speaker)
+	open_route("mil","red")
+end
+function open_route_lim_red (first_speaker, second_speaker)
+	open_route("lim","red")
+end
+function open_route_bar_gar (first_speaker, second_speaker)
+	open_route("bar","gar")
+end
+
+
+------------------------------------------------------------
+-- Dialog
+------------------------------------------------------------
+function st_buy_route_jup_red (first_speaker, second_speaker)
+	local map_1 = "jup"
+	local map_2 = "red"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_jup_pri (first_speaker, second_speaker)
+	local map_1 = "jup"
+	local map_2 = "pri"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_jup_jup_u (first_speaker, second_speaker)
+	local map_1 = "jup"
+	local map_2 = "jup_u"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_jup_zat (first_speaker, second_speaker)
+	local map_1 = "jup"
+	local map_2 = "zat"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_esc_mar (first_speaker, second_speaker)
+	local map_1 = "esc"
+	local map_2 = "mar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_esc_dsc (first_speaker, second_speaker)
+	local map_1 = "esc"
+	local map_2 = "dsc"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_esc_pol (first_speaker, second_speaker)
+	local map_1 = "esc"
+	local map_2 = "pol"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_esc_gar (first_speaker, second_speaker)
+	local map_1 = "esc"
+	local map_2 = "gar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_dsc_val (first_speaker, second_speaker)
+	local map_1 = "dsc"
+	local map_2 = "val"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_val_x18 (first_speaker, second_speaker)
+	local map_1 = "val"
+	local map_2 = "x18"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_val_trc (first_speaker, second_speaker)
+	local map_1 = "val"
+	local map_2 = "trc"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_val_gar (first_speaker, second_speaker)
+	local map_1 = "val"
+	local map_2 = "gar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_val_pol (first_speaker, second_speaker)
+	local map_1 = "val"
+	local map_2 = "pol"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_zat_aes1 (first_speaker, second_speaker)
+	local map_1 = "zat"
+	local map_2 = "aes1"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_yan_agr (first_speaker, second_speaker)
+	local map_1 = "yan"
+	local map_2 = "agr"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_yan_cit (first_speaker, second_speaker)
+	local map_1 = "yan"
+	local map_2 = "cit"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_yan_x16 (first_speaker, second_speaker)
+	local map_1 = "yan"
+	local map_2 = "x16"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_yan_ros (first_speaker, second_speaker)
+	local map_1 = "yan"
+	local map_2 = "ros"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_kat_aes2 (first_speaker, second_speaker)
+	local map_1 = "kat"
+	local map_2 = "aes2"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_kat_lim (first_speaker, second_speaker)
+	local map_1 = "kat"
+	local map_2 = "lim"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_bar_trc (first_speaker, second_speaker)
+	local map_1 = "bar"
+	local map_2 = "trc"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_bar_mil (first_speaker, second_speaker)
+	local map_1 = "bar"
+	local map_2 = "mil"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_bar_gar (first_speaker, second_speaker)
+	local map_1 = "bar"
+	local map_2 = "gar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_bar_ros (first_speaker, second_speaker)
+	local map_1 = "bar"
+	local map_2 = "ros"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_agr_mar (first_speaker, second_speaker)
+	local map_1 = "agr"
+	local map_2 = "mar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_agr_agr_u (first_speaker, second_speaker)
+	local map_1 = "agr"
+	local map_2 = "agr_u"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_agr_gar (first_speaker, second_speaker)
+	local map_1 = "agr"
+	local map_2 = "gar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_lim_red (first_speaker, second_speaker)
+	local map_1 = "lim"
+	local map_2 = "red"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_lim_cit (first_speaker, second_speaker)
+	local map_1 = "lim"
+	local map_2 = "cit"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_mil_cit (first_speaker, second_speaker)
+	local map_1 = "mil"
+	local map_2 = "cit"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_mil_red (first_speaker, second_speaker)
+	local map_1 = "mil"
+	local map_2 = "red"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_mil_trc (first_speaker, second_speaker)
+	local map_1 = "mil"
+	local map_2 = "trc"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_mil_rad (first_speaker, second_speaker)
+	local map_1 = "mil"
+	local map_2 = "rad"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_gen_w_lab (first_speaker, second_speaker)
+	local map_1 = "gen"
+	local map_2 = "w_lab"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_gen_aes2 (first_speaker, second_speaker)
+	local map_1 = "gen"
+	local map_2 = "aes2"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_red_rad (first_speaker, second_speaker)
+	local map_1 = "red"
+	local map_2 = "rad"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_aes2_s_lab (first_speaker, second_speaker)
+	local map_1 = "aes2"
+	local map_2 = "s_lab"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_aes2_aes1 (first_speaker, second_speaker)
+	local map_1 = "aes2"
+	local map_2 = "aes1"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_gar_ros (first_speaker, second_speaker)
+	local map_1 = "gar"
+	local map_2 = "ros"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_mar_mar_h (first_speaker, second_speaker)
+	local map_1 = "mar"
+	local map_2 = "mar_h"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_pri_aes1 (first_speaker, second_speaker)
+	local map_1 = "pri"
+	local map_2 = "aes1"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_pri_rad (first_speaker, second_speaker)
+	local map_1 = "pri"
+	local map_2 = "rad"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_pri_out (first_speaker, second_speaker)
+	local map_1 = "pri"
+	local map_2 = "out"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_out_x8 (first_speaker, second_speaker)
+	local map_1 = "out"
+	local map_2 = "x8"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_out_jup_u (first_speaker, second_speaker)
+	local map_1 = "out"
+	local map_2 = "jup_u"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_aes1_sar (first_speaker, second_speaker)
+	local map_1 = "aes1"
+	local map_2 = "sar"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+function st_buy_route_rad_x19 (first_speaker, second_speaker)
+	local map_1 = "rad"
+	local map_2 = "x19"
+	local money = money_1
+	return strformat(game.translate_string("st_buy_route_dialog"),game.translate_string("st_route_" .. map_1),game.translate_string("st_route_" .. map_2),money)
+end
+
+
+--[[
+--=====================================< Dialog Function >=====================================|
+function add_dialog(p_id,id,phrase_id,cond,act)
+	if not ( saved_dialog ) then
+		return
+	end
+
+	local phrase = saved_dialog:AddPhrase(phrase_id,tostring(id),tostring(p_id),-10000)
+	if not ( phrase ) then
+		return
+	end
+
+	--printf("phrase_id = %s",phrase_id)
+
+	local phrase_script = phrase:GetPhraseScript()
+	if ( cond ) then
+		if ( type(cond) == "table" ) then
+			for key, value in pairs(cond) do
+				if (utils_data.findfunction(value,_G)) then
+					phrase_script:AddPrecondition(value)
+					--table.insert(cond_list,value)
+				else
+					printf("dialog_manager:Error: No such function exists '%s'",value)
+				end
+			end
+		else
+			if (utils_data.findfunction(cond,_G)) then
+				phrase_script:AddPrecondition(cond)
+				--table.insert(cond_list,value)
+			else
+				printf("dialog_manager:Error: No such function exists '%s'",cond)
+			end
+		end
+	end
+
+	if ( act ) then
+		if ( type(act) == "table" ) then
+			for key, value in pairs(act) do
+				if (utils_data.findfunction(value,_G)) then
+					phrase_script:AddAction(value)
+				else
+					printf("dialog_manager:Error: No such function exists '%s'",value)
+				end
+			end
+		else
+			if (utils_data.findfunction(act,_G)) then
+				phrase_script:AddAction(act)
+			else
+				printf("dialog_manager:Error: No such function exists '%s'",act)
+			end
+		end
+	end
+	return phrase_script
+end
+
+function add_script_dialog(p_id,id,phrase_id,cond,act)
+	local d = add_dialog(p_id,id,phrase_id,cond,act)
+	if (d) then
+		d:SetScriptText(phrase_id)
+	end
+end
+
+--------------------
+local saved_dialog
+function buy_route (dialog)
+	saved_dialog = dialog
+
+	-- loop is necessary to allow skipping of unwanted tasks
+	local base_id = 0
+	local a = get_connected_maps(true)
+	
+	-- ASK FOR AVAILABLE TASKS
+	add_dialog("",base_id,"st_buy_route_0","txr_routes.is_route_left") -- ACTOR
+		add_dialog(base_id,base_id+1,"st_buy_route_1") -- NPC
+		local new_id = base_id+1
+		for i=1,#a do
+			add_script_dialog(new_id , new_id+i ,"st_buy_route_"..a[i][1].."_"..a[i][2] , "check_route_and_money_"..a[i][1].."_"..a[i][2] , "open_route_and_take_money_"..a[i][1].."_"..a[i][2]) -- ACTOR
+		end
+			add_dialog(new_id,new_id+(#a)+1,"st_buy_route_2") -- ACTOR
+end
+--]]
+
+
+------------------------------------------------------------
+-- Utility
+------------------------------------------------------------
+function is_map_connected (map_1,map_2)
+	if (routes[map_1] and routes[map_1][map_2]) or (routes[map_2] and routes[map_2][map_1]) then
+		return true
+	end
+	return false
+end
+
+function is_map_discovered (map_1,map_2)
+	if mlr_utils.load_var("routes_"..map_1) or mlr_utils.load_var("routes_"..map_2) then
+		--printf(">>> Tronex: is_map_discovered (True): " .. map_1 .. " , " .. map_2)
+		return true
+	end
+	--printf(">>> Tronex: is_map_discovered (False): " .. map_1 .. " , " .. map_2)
+	
+	local curr_map = get_map(level.name())
+	if curr_map and (curr_map ~= "") and ((curr_map == map_1) or (curr_map == map_2)) then
+		return true
+	end
+	
+	return false
+end
+
+function is_route_discovered (map_1,map_2)
+	local a = get_route(map_1, map_2)
+	if (not a) then return end
+	for i=1,#a do
+		if mlr_utils.load_var("routes_"..a[i]) then
+			--printf(">>> Tronex: is_route_discovered (True): " .. map_1 .. " , " .. map_2)
+			return true
+		end
+	end
+	--printf(">>> Tronex: is_route_discovered (False): " .. map_1 .. " , " .. map_2)
+	return false
+end
+
+function is_route_left()
+	if (alife_storage_manager.get_state().opened_routes == true) then
+		return false
+	end
+	
+	local a = list_map(false,true,true)
+	for i=1,#a do
+		local b = get_route(a[i][1],a[i][2])
+		for j=1,#b do
+			if (not mlr_utils.load_var("routes_"..b[j])) then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function open_route(map_1,map_2, no_msg)
+	local msg
+	local a = get_route(map_1, map_2)
+	if (not a) then return end
+	for i=1,#a do
+		if (check_spot(get_route_info(a[i])) == false) then
+			local id, spot, hint = get_route_info(a[i])
+			hint = hint and game.translate_string(hint)
+			level.map_add_object_spot_ser(id, spot ,hint) -- add new spot
+			mlr_utils.save_var("routes_".. a[i], true)
+			register_map(map_1,map_2)
+			msg = true
+		end
+	end
+	
+	if msg and (no_msg ~= true) then
+		msg_route (map_1, map_2)
+		return
+	end
+end
+
+function get_route (map_1,map_2)
+	local a,b = {},{}
+	if routes[map_1] and routes[map_1][map_2] then
+		a[#a+1] = routes[map_1][map_2]
+	end
+	if routes[map_2] and routes[map_2][map_1] then
+		a[#a+1] = routes[map_2][map_1]
+	end
+	if (#a == 0) then return end
+	for i=1,#a do
+		for j=1,#a[i] do
+			b[#b+1] = a[i][j]
+		end
+	end
+	return b
+end
+
+--txr_routes.reload_route_hints()
+
+function reload_route_hints()
+	for k1,v1 in pairs(routes) do
+		for k2,v2 in pairs(v1) do
+			for i=1, #v2 do
+				local id, spot, hint = get_route_info(v2[i])
+				if (level.map_has_object_spot(id, spot)) then
+					hint = hint and game.translate_string(hint)
+					level.map_change_spot_hint(id, spot ,hint)
+				end
+			end
+		end
+	end
+end
+
+function scan_route (sr_name)  -- called by (ui_sr_teleport.script), return true if the route is unlocked by default
+	for k1,v1 in pairs(routes_start[mlr_utils.load_var("routes_faction")] or routes_start["general"]) do
+		local a = get_route(v1[1],v1[2])
+		if (not a) then return end
+		for i=1,#a do
+			if (a[i] == sr_name) then
+				mlr_utils.save_var("routes_"..sr_name,true)
+				register_map(v1[1],v1[2])
+				return true
+			end
+		end
+	end
+	return false
+end
+
+function list_map (discovered, connected, couple)
+	if connected then
+		local a = {}
+		for k1,v1 in pairs(routes) do
+			a[k1] = {}
+			for k2,v2 in pairs(v1) do
+				a[k1][#a[k1] + 1] = k2
+			end
+		end
+		if (not couple) then  -- if we want connected maps (return indexed table, key = map, value = table of connected maps to it)
+			return a
+		end
+		
+		-- if we want connected maps as couple tables (return clean table of 2-sized tables of connected maps)
+		local b = {} 
+		for k1,v1 in pairs(a) do
+			for i=1,#v1 do
+				b[#b+1] = {k1,v1[i]}
+			end
+		end
+		
+		-- gather all duplicated indexes to delete
+		local delet,c = {},{}
+		for i=1,#b do
+			for j=1,#b do
+				if (b[i][1] == b[j][2]) and (b[i][2] == b[j][1]) and (not delet[tostring(i)]) and (not delet[tostring(j)]) then
+					delet[tostring(i)] = j
+				end
+			end
+		end
+		
+		-- create a clean table without duplicated indexes
+		local can_read = true
+		for i=1,#b do
+			for k1,v1 in pairs(delet) do
+				if (v1 == i) then
+					can_read = false
+				end
+			end
+			if can_read then
+				c[#c+1] = b[i]
+			end
+			can_read = true
+		end
+		
+		return c
+	end
+	
+	-- if we want discovered/undiscovered maps only (return simple table of required maps)
+	local a = {}
+	for k1,v1 in pairs(routes) do
+		if discovered and mlr_utils.load_var("routes_"..k1) and check_key(a,k1) then
+			a[#a+1] = k1
+		elseif (not discovered) and (not mlr_utils.load_var("routes_"..k1)) and check_no_value(a,k1) then
+			a[#a+1] = k1
+		end
+		for k2,v2 in pairs(v1) do
+			if discovered and mlr_utils.load_var("routes_"..k2) and check_key(a,k2) then
+				a[#a+1] = k2
+			elseif (not discovered) and (not mlr_utils.load_var("routes_"..k2)) and check_key(a,k2) then
+				a[#a+1] = k2
+			end
+		end
+	end
+	return a
+end
+
+function get_section(map)
+	return map and map_to_sec[map] or ""
+end
+
+function get_map(sec)
+	return sec and sec_to_map[sec] or ""
+end
+
+local c_scanned = {}
+local c_to_scan = {}
+local shortest_dist
+function c_search(lv1_target, n)
+	-- Clear the search from scanned maps
+	for lvl,_ in pairs(c_scanned) do
+		c_to_scan[lvl] = nil
+	end
+	if is_empty(c_to_scan) then
+		return
+	end
+	
+	-- Search current maps
+	local found = false
+	local tbl = {}
+	for lvl,_ in pairs(c_to_scan) do
+		if (not c_scanned[lvl]) then
+			c_scanned[lvl] = true
+			if routes[lvl] then
+				if routes[lvl][lv1_target] then
+					printdbg("- c_scan | target level found at: %s - scan radius: %s", lvl, n)
+					found = true
+					break
+				else
+					for lvl2,_ in pairs(routes[lvl]) do
+						if (not c_scanned[lvl2]) then
+							tbl[lvl2] = true
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- Scan result
+	if (not shortest_dist) then
+		if found then
+			shortest_dist = n
+		else
+			for k,_ in pairs(tbl) do
+				c_to_scan[k] = true
+				printdbg("- c_scan | levels to scan: %s - scan radius: %s", k, n)
+			end
+			c_search(lv1_target, n + 1)
+		end
+	end
+end
+function get_shortest_path_num(map_1, map_2)
+	local lv1_1 = map_1 and sec_to_map[map_1]
+	local lv1_2 = map_2 and sec_to_map[map_2]
+	
+	if not (lv1_1 and lv1_2) then
+		printe("! get_shortest_path_num | no level defined!")
+		return 0
+	end
+	
+	if (lv1_1 == lv1_2) then
+		return 1
+	end
+
+	empty_table(c_scanned)
+	empty_table(c_to_scan)
+	shortest_dist = false
+	
+	c_to_scan[lv1_1] = true
+	c_search(lv1_2, 1)
+	
+	return shortest_dist or 1
+end
+
+------------------------------------
+
+function check_spot (id,spot) -- check if spot on map exist
+	if (spot and level.map_has_object_spot(id,spot) ~= 0) then
+		return true
+	end
+	return false
+end
+
+function get_route_info (sr_name)
+	local id = get_story_object_id(sr_name)
+	local spot = sr_teleport_ini:line_exist(sr_name,"spot") and sr_teleport_ini:r_string_ex(sr_name,"spot") -- icon
+	local hint = sr_teleport_ini:line_exist(sr_name,"hint") and sr_teleport_ini:r_string_ex(sr_name,"hint")
+	return id, spot, hint
+end
+
+local msg_snd_delay = 0
+function msg_route (map_1,map_2) -- send news about discovering location
+	local map_1_str = game.translate_string("st_route_" .. map_1)
+	local map_2_str = game.translate_string("st_route_" .. map_2)
+	local sender = game.translate_string("st_route_open_title")
+	local msg = strformat(game.translate_string("st_route_open_msg"), map_1_str, map_2_str)
+	db.actor:give_game_news(sender, msg, "ui_iconsTotal_locations", 0, 5000, 0)
+	if (time_global() > msg_snd_delay + 500) then
+		msg_snd_delay = time_global()
+		local snd = sound_object([[device\pda\route_opened]])
+		snd.volume = 1
+		snd:play(db.actor, 0, sound_object.s2d)
+	end
+end
+
+function msg_route_general()
+	local sender = game.translate_string("st_route_open_title")
+	local msg = game.translate_string("st_msg_unlocked_routes")
+	db.actor:give_game_news(sender, msg, "ui_iconsTotal_locations", 0, 5000, 0)
+	local snd = sound_object([[device\pda\route_opened]])
+	snd.volume = 1
+	snd:play(db.actor, 0, sound_object.s2d)
+end
+
+function register_map (...)
+	local p = {...}
+	for i=1,#p do
+		if (not mlr_utils.load_var("routes_"..p[i])) then
+			mlr_utils.save_var("routes_"..p[i],true)
+			--printf(">>> Tronex: register_map: " .. p[i])
+		end
+	end
+end
+
+function check_no_value (tbl,value) -- return true if the value doesn't exist in the table
+	for i=1, #tbl do
+		if (tbl[i] == value) then
+			return false
+		end
+	end
+	return true
+end
+
+
+------------------------------------------------------------
+-- Debug
+------------------------------------------------------------
+local function on_game_load()
+	
+	reload_route_hints()
+	
+	if DEV_DEBUG then
+		-- Debug Commands
+		local CMD = debug_cmd_list.command_get_list()
+
+		function CMD.unlock_all_routes(_,__,x)
+			if (not is_route_left()) then
+				x:SendOutput('!All routes are already unlocked')
+				return
+			end
+			
+			for i=1,#maps do
+				for j=1,#maps do
+					open_route(maps[i],maps[j], true)
+				end
+			end
+			x:SendOutput('-Unlocked all routes')
+		end
+
+		-- Debug Launcher executions
+		ui_debug_launcher.inject("action", { name = "Unlock all routes" , cmd = "unlock_all_routes" , hide_ui = 2 } )
+	end
+end
+
+function on_localization_change()
+	reload_route_hints()
+end
+
+function on_screen_resolution_changed()
+	reload_route_hints()
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_game_load",on_game_load)
+	RegisterScriptCallback("on_localization_change",on_localization_change)
+	RegisterScriptCallback("on_screen_resolution_changed",on_screen_resolution_changed)
+end

@@ -1,0 +1,132 @@
+printd = warfare.printd
+
+level_keys = {
+	["esc_smart_terrain_2_12"] = true,
+}
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_add_influ")
+	str_wrfr[2] = game.translate_string("st_wrfr_remove_influ")
+end
+
+local function map_spot_menu_add_property(ui,id,lvl)
+    printd(0)
+
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+	if (obj:clsid() == clsid.smart_terrain) then
+		local faction = obj.owning_faction or "none"
+		local actor = faction == warfare.actor_faction
+		local friends = game_relations.is_factions_friends(faction, warfare.actor_faction)
+		local enemies = game_relations.is_factions_enemies(faction, warfare.actor_faction) or faction == "none"
+		
+		--[[if (obj.props and obj.props.base > 0 and actor or friends) then
+			ui:AddItem("Request support")
+		end]]
+		
+		if (enemies) then
+			if (warfare.influence_levels[obj.id] and warfare.influence_levels[obj.id] > 0) then
+				if (warfare.actor_influence_points >= 1) then
+					ui:AddItem(str_wrfr[1] .. " (" .. warfare.influence_levels[obj.id] .. ")")
+				end
+				
+				ui:AddItem(str_wrfr[2] .. " (" .. warfare.influence_levels[obj.id] .. ")")
+			else
+				if (warfare.actor_influence_points >= 1) then
+					ui:AddItem(str_wrfr[1])
+				end
+			end
+		end
+		--[[
+		if (actor and pda_flagger.is_object_selected()) then
+			local flagged = pda_flagger.get_selected_object()
+			local faction2 = flagged.owning_faction or "none"
+			local actor2 = faction2 == warfare.actor_faction
+			local friends2 = game_relations.is_factions_friends(faction2, warfare.actor_faction)
+			local enemies2 = game_relations.is_factions_enemies(faction2, warfare.actor_faction) or faction2 == "none"			
+			
+			-- Only want bases to target other points that are enemies.
+			if (enemies2 and flagged:clsid() == clsid.smart_terrain) then
+				ui:AddItem("Target selected smart terrain")
+			end
+			
+			-- Can send squad to either point OR another squad (for intercepting etc)
+			-- Will allow to send squads to other squads that are friendly as well.
+			ui:AddItem("Send squad to selected object")
+		end]]
+	end
+    
+    printd(2)
+end
+
+local function map_spot_menu_property_clicked(property_ui,id,level_name,prop)
+    printd(0)
+
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+	if (obj:clsid() == clsid.smart_terrain) then
+		if (prop:find(str_wrfr[1])) then
+			if (warfare.influence_levels[obj.id]) then		
+				warfare.influence_levels[obj.id] = warfare.influence_levels[obj.id] + 1
+				--printf("curr="..warfare.influence_levels[obj.id])
+			else
+				warfare.influence_levels[obj.id] = 1
+				--printf("curr="..warfare.influence_levels[obj.id])
+			end
+		elseif (prop:find(str_wrfr[2])) then
+			if (warfare.influence_levels[obj.id] and warfare.influence_levels[obj.id] > 0) then		
+				warfare.influence_levels[obj.id] = warfare.influence_levels[obj.id] - 1				
+				warfare.actor_influence_points = warfare.actor_influence_points + 1
+				
+				if (warfare.influence_levels[obj.id] == 0) then
+					warfare.influence_levels[obj.id] = nil
+				end
+			end
+		end
+--[[
+		-- Not going to clear the selected object, as some people may wish to have multiple bases target
+		-- a single point and reselecting would be tedious.
+		if (prop == "Target selected smart terrain") then
+			local id = pda_flagger.get_selected_object_id()
+			
+			if id and not (obj.target_smarts[id]) then
+				obj.target_smarts[id] = true
+			end
+		elseif (prop == "Send squad to selected object") then
+			local id = pda_flagger.get_selected_object_id()
+			
+			if id then
+				smart_terrain_warfare.control_hold[obj.id] = id
+			end
+		elseif (prop == "Request support") then
+			local object = pda_flagger.get_selected_object()
+			
+			if object then
+				smart_terrain_warfare.control_hold[object.id] = 0
+			end
+		end]]
+    end
+    printd(2)
+end
+
+function on_game_start()
+	local function on_game_load()
+		if alife_storage_manager.get_state().enable_warfare_mode then
+			RegisterScriptCallback("map_spot_menu_add_property",map_spot_menu_add_property)
+			RegisterScriptCallback("map_spot_menu_property_clicked",map_spot_menu_property_clicked)
+		end
+	end
+	RegisterScriptCallback("on_game_load", on_game_load)
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+	
+	refresh_strings()
+end

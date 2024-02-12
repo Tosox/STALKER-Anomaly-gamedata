@@ -1,0 +1,364 @@
+
+[up_sect_fourta_m4a1]
+cost                                     = 3950
+value                                    = +5
+rpm                                      = +35
+inv_weight                               = +0.1
+PDM_disp_base                            = -0.05
+PDM_disp_vel_factor                      = -0.1
+PDM_disp_accel_factor                    = -0.1
+
+[up_sect_fiftha_m4a1]
+cost                                     = 3520
+
+grenade_launcher_status                  = 2
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203 
+grenade_launcher_x                       = 123
+grenade_launcher_y                       = 32
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_firsta_m4a1]
+scheme_index                             = 0, 0
+known                                    = 1
+effects                                  = up_gr_firstcd_m4a1
+section                                  = up_sect_firsta_m4
+property                                 = prop_reliability
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a1_name
+description                              = st_up_zat_a1_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_1
+
+
+[up_firstc_m4a1]
+scheme_index                             = 1, 0
+known                                    = 1
+effects                                  = up_gr_firstef_m4a1
+section                                  = up_sect_firstc_m4
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_b5_name
+description                              = st_up_zat_b5_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_2
+
+[up_firstd_m4a1]
+scheme_index                             = 1, 1
+known                                    = 1
+effects                                  = up_gr_firstef_m4a1
+section                                  = up_sect_firstd_m4
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_b6_name
+description                              = st_up_zat_b6_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_3
+
+[up_firste_m4a1]
+scheme_index                             = 2, 0
+known                                    = 1
+effects                                  =
+section                                  = up_sect_firste_m4
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_c2_name
+description                              = st_up_zat_c2_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_4
+
+[up_secona_m4a1]
+scheme_index                             = 0, 1
+known                                    = 1
+effects                                  = up_gr_seconcd_m4a1
+section                                  = up_sect_secona_m4
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_a1_name
+description                              = st_up_auto_a1_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_5
+
+[up_seconc_m4a1]
+scheme_index                             = 1, 2
+known                                    = 1
+effects                                  = up_gr_seconef_m4a1
+section                                  = up_sect_seconc_m4
+property                                 = prop_reliability
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_b1_name
+description                              = st_up_auto_b1_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_6
+
+[up_secone_m4a1]
+scheme_index                             = 2, 1
+known                                    = 1
+effects                                  =
+section                                  = up_sect_secone_m4
+property                                 = prop_recoil
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c1_name
+description                              = st_up_auto_c1_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_7
+
+[up_seconf_m4a1]
+scheme_index                             = 2, 2
+known                                    = 1
+effects                                  =
+section                                  = up_sect_seconf_m4
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here_h
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_auto_c5_name
+description                              = st_up_auto_c5_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_8
+
+[up_thirda_m4a1]
+scheme_index                             = 0, 2
+known                                    = 1
+effects                                  = up_gr_thirdcd_m4a1
+section                                  = up_sect_thirda_m4
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_a2_name
+description                              = st_up_ret_a2_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_9
+
+[up_thirdc_m4a1]
+scheme_index                             = 1, 3
+known                                    = 1
+effects                                  = up_gr_thirdef_m4a1
+section                                  = up_sect_thirdc_m4
+property                                 = prop_dispersion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b3_name
+description                              = st_up_ret_b3_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_10
+
+
+[up_thirdd_m4a1]
+scheme_index                             = 1, 4
+known                                    = 1
+effects                                  = up_gr_thirdef_m4a1
+section                                  = up_sect_thirdd_m4
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_b2_name
+description                              = st_up_ret_b2_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_11
+
+[up_thirde_m4a1]
+scheme_index                             = 2, 3
+known                                    = 1
+effects                                  =
+section                                  = up_sect_thirde_m4
+property                                 = prop_rpm
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_ret_c3_name
+description                              = st_up_ret_c3_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_12
+
+[up_fourta_m4a1]
+scheme_index                             = 0, 3
+known                                    = 1
+effects                                  = up_gr_fourtcd_m4a1
+section                                  = up_sect_fourta_m4a1
+property                                 = prop_rpm
+
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = on_weapon_upgrade_something_here
+
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_zat_a3_name
+description                              = st_up_zat_a3_descr
+icon                                     = ui_inGame2_upgrade_SGI_5K_1
+
+[up_fourtc_m4a1]
+scheme_index                             = 1, 5
+known                                    = 1
+effects                                  = up_gr_fourtef_m4a1
+section                                  = up_sect_fourtc_m4
+property                                 = prop_inertion
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stk_b2_name
+description                              = st_up_stk_b2_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_14
+
+[up_fourte_m4a1]
+scheme_index                             = 2, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourte_m4
+property                                 = prop_inertion
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stk_c3_name
+description                              = st_up_stk_c3_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_15
+
+[up_fourtf_m4a1]
+scheme_index                             = 2, 5
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fourtf_m4
+property                                 = prop_bullet_speed
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_stk_c2_name
+description                              = st_up_stk_c2_descr
+icon                                     = ui_inGame2_upgrade_TRs_301_16
+
+[up_fiftha_m4a1]
+scheme_index                             = 0, 4
+known                                    = 1
+effects                                  =
+section                                  = up_sect_fiftha_m4a1
+property                                 = prop_underbarrel_slot
+known                                    = 1
+precondition_functor                     = inventory_upgrades.precondition_functor_a
+precondition_parameter                   = a & b
+effect_functor                           = inventory_upgrades.effect_functor_a
+effect_parameter                         = something_here
+prereq_functor                           = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor                   = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params                            =
+name                                     = st_up_add_a3_name
+description                              = st_up_add_a3_descr
+icon                                     = ui_inGame2_upgrade_AS96_2_17
+
+
+
+;----------------------------------------------------------------------------------------------------------------------
+[up_gr_firstab_m4a1]
+elements                                 = up_firsta_m4a1
+
+[up_gr_firstcd_m4a1]
+elements                                 = up_firstc_m4a1, up_firstd_m4a1
+
+[up_gr_firstef_m4a1]
+elements                                 = up_firste_m4a1
+
+[up_gr_seconab_m4a1]
+elements                                 = up_secona_m4a1
+
+[up_gr_seconcd_m4a1]
+elements                                 = up_seconc_m4a1
+
+[up_gr_seconef_m4a1]
+elements                                 = up_secone_m4a1, up_seconf_m4a1,
+
+[up_gr_thirdab_m4a1]
+elements                                 = up_thirda_m4a1
+
+[up_gr_thirdcd_m4a1]
+elements                                 = up_thirdc_m4a1, up_thirdd_m4a1
+
+[up_gr_thirdef_m4a1]
+elements                                 = up_thirde_m4a1
+
+[up_gr_fourtab_m4a1]
+elements                                 = up_fourta_m4a1
+
+[up_gr_fourtcd_m4a1]
+elements                                 = up_fourtc_m4a1
+
+[up_gr_fourtef_m4a1]
+elements                                 = up_fourte_m4a1, up_fourtf_m4a1
+
+[up_gr_fifthab_m4a1]
+elements                                 = up_fiftha_m4a1

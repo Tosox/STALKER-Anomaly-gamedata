@@ -1,0 +1,2504 @@
+;==============================================================
+;
+; QUEST ITEMS
+;	CoC 1.4.22 - DoctorX Questlines 1.22
+;
+;	Modified by: DoctorX
+;	Last revised: December 24, 2016
+;
+;==============================================================
+
+
+[tch_quest]:identity_immunities	;;-- (technical)
+GroupControlSection                                = spawn_group 
+discovery_dependency                               = 
+$spawn                                             = "devices\pda"
+$prefetch                                          = 16
+cform                                              = skeleton 
+visual                                   		   = dynamics\devices\dev_pda\dev_pda.ogf
+class                                              = II_ATTCH 
+kind			                               = i_quest
+default_to_ruck                                    = false
+sprint_allowed                                     = true
+description                                        = st_pda_descr
+inv_name                                           = st_pda_name
+inv_name_short                                     = st_pda_name
+inv_weight                               		   = 0.1
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 0
+inv_grid_y                                         = 0
+cost                                     		   = 0
+attach_angle_offset                                = 0.000000, -1.204452, -1.262921 
+attach_position_offset                             = 0.081856, -0.035081, 0.011694 
+attach_bone_name                                   = bip01_l_hand 
+auto_attach                                        = false 
+can_trade                               			= false
+
+;--===================================< Packages >===================================--
+[quest_package_1]:tch_quest
+$spawn                                   = "quest_items\quest_package_1"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_1
+;quest_item                             = true
+inv_weight                               = 5.42
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 0
+inv_grid_y                               = 77
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_2]:tch_quest
+$spawn                                   = "quest_items\quest_package_2"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_2
+;quest_item                             = true
+inv_weight                               = 5.42
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 4
+inv_grid_y                               = 77
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_3]:tch_quest
+$spawn                                   = "quest_items\quest_package_3"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_3
+;quest_item                             = true
+inv_weight                               = 3.61
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 76
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_4]:tch_quest
+$spawn                                   = "quest_items\quest_package_4"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_4
+;quest_item                             = true
+inv_weight                               = 0.67
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 76
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_5]:tch_quest
+$spawn                                   = "quest_items\quest_package_5"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_5
+;quest_item                             = true
+inv_weight                               = 0.98
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 5
+inv_grid_y                               = 76
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_6]:tch_quest
+$spawn                                   = "quest_items\quest_package_6"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_6
+;quest_item                             = true
+inv_weight                               = 2.37
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 8
+inv_grid_y                               = 77
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_7]:tch_quest
+$spawn                                   = "quest_items\quest_package_7"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_7
+;quest_item                             = true
+inv_weight                               = 2.17
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 8
+inv_grid_y                               = 77
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+[quest_package_8]:tch_quest
+$spawn                                   = "quest_items\quest_package_8"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+story_id                                 = quest_package_8
+;quest_item                             = true
+inv_weight                               = 2.55
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 8
+inv_grid_y                               = 77
+inv_name                                 = quest_package_name
+inv_name_short                           = quest_package_name
+description                              = quest_package_desc
+can_trade                                = false
+cost                                     = 0
+use1_functor         		             = itms_manager.menu_unpack
+use1_action_functor  		             = itms_manager.use_package_random
+
+
+[broken_pda]:tch_quest
+$spawn                                   = "quest_items\broken_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+;story_id                                 = broken_pda
+quest_item                              = true
+inv_weight                               = 0.1
+inv_name                                 = st_broken_pda
+inv_name_short                           = st_broken_pda
+description                              = st_broken_pda_descr
+can_trade                                = false
+cost                                     = 0
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+
+;------------------------------------------------
+; DRX Storyline Quest Item Documents-
+
+[drx_sl_quest_item_1]:tch_quest
+
+$spawn                                   = "quest_items\drx_sl_quest_item_1"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_2.ogf
+story_id                                 = drx_sl_quest_item_1
+; quest_item                             = true
+
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 12
+inv_grid_y                               = 15
+
+inv_name                                 = drx_sl_quest_item_1_name
+inv_name_short                           = drx_sl_quest_item_1_name
+description                              = drx_sl_quest_item_1_desc
+
+can_trade                                = false
+cost                                     = 0
+
+;------------------------------------------------
+; DRX Storyline Quest Item Locked Case-
+
+[drx_sl_quest_item_2]:tch_quest
+
+$spawn                                   = "quest_items\drx_sl_quest_item_2"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\safe_container.ogf
+story_id                                 = drx_sl_quest_item_2
+; quest_item                             = false
+
+inv_weight                               = 7.0
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 4
+inv_grid_y                               = 11
+
+inv_name                                 = drx_sl_quest_item_2_name
+inv_name_short                           = drx_sl_quest_item_2_name
+description                              = drx_sl_quest_item_2_desc
+
+can_trade                                = false
+; cost                                   = 100
+
+;------------------------------------------------
+; DRX Storyline Quest Item PDA-
+
+[drx_sl_quest_item_3]:tch_quest
+
+$spawn                                   = "quest_items\drx_sl_quest_item_3"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+story_id                                 = drx_sl_quest_item_3
+; quest_item                             = true
+inv_grid_x                               = 7
+inv_grid_y                               = 3
+inv_name                                 = drx_sl_quest_item_3_name
+inv_name_short                           = drx_sl_quest_item_3_name
+description                              = drx_sl_quest_item_3_name
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 0
+
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+;*************************************************************************
+;**					Marsh
+;*************************************************************************
+[mar_base_owl_stalker_trader_task_1_pda]:tch_quest
+$spawn                                   = "quest_items\mar_base_owl_stalker_trader_task_1_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+can_trade                                = false
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+cost                                     = 0
+quest_item                               = true
+
+;*************************************************************************
+;**					Jupiter
+;*************************************************************************
+
+[jup_a9_conservation_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_conservation_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 12
+inv_grid_y                               = 15
+description                              = jup_a9_conservation_info_desc
+inv_name                                 = jup_a9_conservation_info
+inv_name_short                           = jup_a9_conservation_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_conservation_info
+
+[jup_a9_power_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_power_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+description                              = jup_a9_power_info_desc
+inv_name                                 = jup_a9_power_info
+inv_name_short                           = jup_a9_power_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_power_info
+
+[jup_a9_way_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_way_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+description                              = jup_a9_way_info_desc
+inv_name                                 = jup_a9_way_info
+inv_name_short                           = jup_a9_way_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_way_info
+
+[jup_a9_evacuation_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_evacuation_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 10
+inv_grid_y                               = 15
+description                              = jup_a9_evacuation_info_desc
+inv_name                                 = jup_a9_evacuation_info
+inv_name_short                           = jup_a9_evacuation_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_evacuation_info
+
+[jup_a9_meeting_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_meeting_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_paper_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 16
+inv_grid_y                               = 15
+description                              = jup_a9_meeting_info_desc
+inv_name                                 = jup_a9_meeting_info
+inv_name_short                           = jup_a9_meeting_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_meeting_info
+
+[jup_a9_losses_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_losses_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+description                              = jup_a9_losses_info_desc
+inv_name                                 = jup_a9_losses_info
+inv_name_short                           = jup_a9_losses_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_losses_info
+
+[jup_a9_delivery_info]:tch_quest
+$spawn                                   = "quest_items\jup_a9_delivery_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_letter_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+description                              = jup_a9_delivery_info_desc
+inv_name                                 = jup_a9_delivery_info
+inv_name_short                           = jup_a9_delivery_info
+can_trade                                = false
+cost                                     = 0
+;quest_item     			             = true
+story_id                                 = jup_a9_delivery_info
+
+[jup_b10_ufo_memory]:tch_quest
+$spawn                                   = "quest_items\jup_b10_ufo_memory"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\memory_module.ogf
+inv_weight                               = 1.5
+inv_name                                 = st_jup_b10_ufo_memory_name
+inv_name_short                           = st_jup_b10_ufo_memory_name_short
+description                              = st_jup_b10_ufo_memory_desc
+can_trade                                = false
+cost                                     = 0
+quest_item                               = true
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 17
+inv_grid_y                               = 6
+
+[jup_b10_ufo_memory_2]:jup_b10_ufo_memory
+$spawn                                   = "quest_items\jup_b10_ufo_memory_2"
+inv_name                                 = st_jup_b10_ufo_memory_2_name
+inv_name_short                           = st_jup_b10_ufo_memory_2_name_short
+description                              = st_jup_b10_ufo_memory_2_desc
+;quest_item     		                 = false
+
+[jup_b10_notes_01]:tch_quest
+$spawn                                   = "quest_items\jup_b10_notes_01"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_letter_1.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_jup_b10_notes_01_name
+inv_name_short                           = st_jup_b10_notes_01_name_short
+description                              = st_jup_b10_notes_01_desc
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 18
+inv_grid_y                               = 15
+
+[jup_b10_notes_02]:tch_quest
+$spawn                                   = "quest_items\jup_b10_notes_02"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_paper_2.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_jup_b10_notes_02_name
+inv_name_short                           = st_jup_b10_notes_02_name_short
+description                              = st_jup_b10_notes_02_desc
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 15
+
+[jup_b10_notes_03]:tch_quest
+$spawn                                   = "quest_items\jup_b10_notes_03"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_letter_1.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_jup_b10_notes_03_name
+inv_name_short                           = st_jup_b10_notes_03_name_short
+description                              = st_jup_b10_notes_03_desc
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 18
+inv_grid_y                               = 15
+
+[jup_b205_sokolov_note]:tch_quest
+$spawn                                   = "quest_items\jup_b205_sokolov_note"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_letter_3.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_jup_b205_sokolov_note_name
+inv_name_short                           = st_jup_b205_sokolov_note_name_short
+description                              = st_jup_b205_sokolov_note_desc
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 15
+
+[jup_b206_plant]:tch_quest
+$spawn                                   = "quest_items\jup_b206_plant"
+$prefetch                                = 16
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\anomaly_plant.ogf
+inv_weight                               = 0.5
+startup_animation                        = idle
+inv_name                                 = st_jup_b206_plant_name
+inv_name_short                           = st_jup_b206_plant_name
+description                              = st_jup_b206_plant_desc
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 6
+inv_grid_y                               = 3
+cost                                     = 0
+can_trade                                = false
+;quest_item     		                 = true
+custom_data                              = models\objects\ignore_static.ltx
+
+[jup_b209_monster_scanner]:tch_quest
+$spawn                                   = "quest_items\jup_b209_monster_scanner"
+description                              = jup_b209_monster_scanner_descr
+inv_name                                 = jup_b209_monster_scanner
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\scanner_anomaly.ogf
+inv_weight                               = 2
+story_id                                 = jup_b209_monster_scanner
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 2
+inv_grid_x                               = 0
+inv_grid_y                               = 11
+custom_data                              = models\objects\ignore_static.ltx
+
+[jup_b200_tech_materials_wire]:tch_quest
+$spawn                                   = "quest_items\jup_b200_tech_materials_wire"
+description                              = jup_b200_tech_materials_wire_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\materials_wire.ogf
+inv_weight                               = 0.5
+inv_name                                 = jup_b200_tech_materials_wire
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 5
+inv_grid_y                               = 3
+
+[jup_b200_tech_materials_acetone]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b200_tech_materials_acetone"
+description                              = jup_b200_tech_materials_acetone_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_kanifol.ogf
+inv_name                                 = jup_b200_tech_materials_acetone
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 1
+inv_grid_y                               = 3
+
+[jup_b200_tech_materials_textolite]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b200_tech_materials_textolite"
+description                              = jup_b200_tech_materials_textolite_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\materials_textolite.ogf
+inv_name                                 = jup_b200_tech_materials_textolite
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 3
+inv_grid_y                               = 3
+
+[jup_b200_tech_materials_transistor]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b200_tech_materials_transistor"
+description                              = jup_b200_tech_materials_transistor_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_transistors.ogf
+inv_name                                 = jup_b200_tech_materials_transistor
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 3
+
+[jup_b200_tech_materials_capacitor]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b200_tech_materials_capacitor"
+description                              = jup_b200_tech_materials_capacitor_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_condensers.ogf
+inv_name                                 = jup_b200_tech_materials_capacitor
+can_trade                                = false
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 3
+
+[jup_b9_blackbox]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b9_blackbox"
+description                              = jup_b9_blackbox_descr
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_black.ogf
+inv_weight                               = 3
+inv_name                                 = jup_b9_blackbox
+;quest_item      	                     = true
+can_trade                                = false
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 2
+inv_grid_y                               = 11
+
+[jup_b32_scanner_device]:tch_quest
+$spawn                                   = "quest_items\jup_b32_scanner_device"
+;class 									 = S_PDA
+visual                                   = dynamics\equipments\quest\scanner_artefact.ogf
+inv_weight                               = 2.14
+inv_name                                 = st_jup_b32_scanner_device_name
+inv_name_short                           = st_jup_b32_scanner_device_name
+description                              = st_jup_b32_scanner_device_desc
+inv_grid_width                           = 1
+inv_grid_height                          = 2
+inv_grid_x                               = 1
+inv_grid_y                               = 11
+cost                                     = 0
+radius                                   = 68
+can_trade                                = false
+quest_item     							 = true
+auto_attach                              = false
+default_to_ruck                          = false
+sprint_allowed                           = true
+attach_angle_offset                      = -1.303,0.107,-1.702
+attach_position_offset                   = 0.14,0.001,0.02
+attach_bone_name                         = bip01_l_hand
+script_binding                           = bind_physic_object.init
+custom_data                              = models\objects\ignore_static.ltx
+use1_functor 							 = itms_manager.menu_place
+use1_action_functor 					 = itms_manager.use_place
+
+[jup_b46_duty_founder_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b46_duty_founder_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_jup_b46_duty_founder_pda_desc
+inv_name                                 = st_jup_b46_duty_founder_pda_name
+inv_name_short                           = st_jup_b46_duty_founder_pda_name
+can_trade                                = false
+cost                                     = 20
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+;quest_item     		                 = true
+story_id                                 = jup_b46_duty_founder_pda
+
+[jup_b207_merc_pda_with_contract]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b207_merc_pda_with_contract"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_jup_b207_merc_pda_with_contract_desc
+inv_name                                 = st_jup_b207_merc_pda_with_contract_name
+inv_name_short                           = st_jup_b207_merc_pda_with_contract_name
+can_trade                                = false
+cost                                     = 0
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+;quest_item     		                 = true
+
+[jup_b47_jupiter_products_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b47_jupiter_products_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_1.ogf
+inv_weight                               = 0.05
+$prefetch                                = 16
+description                              = jup_b47_jupiter_products_info_descr
+inv_name                                 = jup_b47_jupiter_products_info
+inv_name_short                           = jup_b47_jupiter_products_info
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 10
+inv_grid_y                               = 15
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+story_id                                 = jup_b47_jupiter_products_info
+
+[jup_b47_merc_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b47_merc_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = jup_b47_merc_pda_desc
+inv_name                                 = jup_b47_merc_pda
+inv_name_short                           = jup_b47_merc_pda
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+story_id                                 = jup_b47_merc_pda
+
+;*************************************************************************
+;**					Zaton
+;*************************************************************************
+
+[toolkit_2]:tch_quest
+$spawn                                   = "	                                       ;quest_items\toolkit_2"
+;story_id                                = toolkit_2
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_2.ogf
+inv_name                                 = st_toolkit_2_name
+inv_name_short                           = st_toolkit_2_name
+description                              = st_toolkit_2_desc
+inv_weight                               = 2
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+can_trade                                = false
+;quest_item     		                 = true
+
+[toolkit_1]:tch_quest
+$spawn                                   = "	                                       ;quest_items\toolkit_1"
+;story_id                                = toolkit_1
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_1.ogf
+inv_name                                 = st_toolkit_1_name
+inv_name_short                           = st_toolkit_1_name
+description                              = st_toolkit_1_desc
+inv_weight                               = 2.5
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+can_trade                                = false
+;quest_item     		                 = true
+
+[zat_b33_safe_container]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b33_safe_container"
+story_id                                 = zat_b33_safe_container
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\safe_container.ogf
+inv_name                                 = zat_b33_safe_container_name
+inv_name_short                           = zat_b33_safe_container_name_short
+description                              = zat_b33_safe_container_desc
+inv_weight                               = 12.0
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 4
+inv_grid_y                               = 11
+can_trade                                = false
+;quest_item     		                 = false
+;cost 				                     = 100
+
+[zat_b57_gas]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b57_gas"
+$prefetch                                = 16
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\balloon_poison_gas.ogf
+story_id                                 = zat_b57_gas
+inv_name                                 = st_zat_b57_gas_name
+inv_name_short                           = st_zat_b57_gas_name
+description                              = st_zat_b57_gas_desc
+inv_weight                               = 10
+inv_grid_width                           = 1
+inv_grid_height                          = 2
+inv_grid_x                               = 8
+inv_grid_y                               = 11
+cost                                     = 0
+can_trade                                = false
+;quest_item      	                     = false
+custom_data                              = models\objects\ignore_static.ltx
+
+[zat_b12_key_1]:dev_flash_1
+$spawn                                   = "	                                       ;quest_items\zat_b12_key_1"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\key.ogf
+description                              = st_zat_b12_key_1_descr
+inv_name                                 = st_zat_b12_key_1
+inv_name_short                           = st_zat_b12_key_1
+can_trade                                = false
+;quest_item      		                 = true
+cost                                     = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 13
+inv_grid_y                               = 3
+
+[zat_b12_key_2]:dev_flash_2
+$spawn                                   = "	                                       ;quest_items\zat_b12_key_2"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\key.ogf
+description                              = st_zat_b12_key_2_descr
+inv_name                                 = st_zat_b12_key_2
+inv_name_short                           = st_zat_b12_key_2
+can_trade                                = false
+;quest_item      		                 = true
+cost                                     = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 13
+inv_grid_y                               = 3
+
+[zat_b12_documents_1]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b12_documents_1"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+$prefetch                                = 16
+description                              = st_zat_b12_documents_1_descr
+inv_name                                 = st_zat_b12_documents_1
+inv_name_short                           = st_zat_b12_documents_1
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+
+[zat_b12_documents_2]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b12_documents_2"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+$prefetch                                = 16
+description                              = st_zat_b12_documents_2_descr
+inv_name                                 = st_zat_b12_documents_2
+inv_name_short                           = st_zat_b12_documents_2
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+
+[device_pda_port_bandit_leader]:tch_quest
+$spawn                                   = "	                                       ;quest_items\device_pda_port_bandit_leader"
+description                              = st_device_pda_port_bandit_leader_descr
+inv_name                                 = st_device_pda_port_bandit_leader
+inv_name_short                           = st_device_pda_port_bandit_leader
+can_trade                                = false
+;quest_item      	                     = true
+cost                                     = 0
+
+[device_flash_snag]:tch_quest
+$spawn                                   = "	                                       ;quest_items\device_flash_snag"
+description                              = st_device_flash_snag_descr
+inv_name                                 = st_device_flash_snag
+inv_name_short                           = st_device_flash_snag
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 100
+
+[jup_b202_bandit_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\jup_b202_bandit_pda"
+description                              = st_jup_b202_bandit_pda_descr
+inv_name                                 = st_jup_b202_bandit_pda
+inv_name_short                           = st_jup_b202_bandit_pda
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 100
+
+[zat_b40_notebook]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b40_notebook"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notebook.ogf
+inv_weight                               = 3.5
+description                              = st_zat_b40_notebook_desc
+inv_name                                 = st_zat_b40_notebook_name
+inv_name_short                           = st_zat_b40_notebook_name
+can_trade                                = false
+cost                                     = 100
+;quest_item     		                 = true
+story_id                                 = zat_b40_notebook
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 6
+inv_grid_y                               = 11
+
+[zat_b40_pda_1]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b40_pda_1"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_zat_b40_pda_1_desc
+inv_name                                 = st_zat_b40_pda_1_name
+inv_name_short                           = st_zat_b40_pda_1_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 20
+;quest_item     		                 = true
+story_id                                 = zat_b40_pda_1
+
+[zat_b40_pda_2]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b40_pda_2"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_zat_b40_pda_2_desc
+inv_name                                 = st_zat_b40_pda_2_name
+inv_name_short                           = st_zat_b40_pda_2_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 20
+;quest_item     		                 = true
+story_id                                 = zat_b40_pda_2
+
+[device_pda_zat_b5_dealer]:tch_quest
+$spawn                                   = "	                                       ;quest_items\device_pda_zat_b5_dealer"
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_device_pda_zat_b5_dealer_desc
+inv_name                                 = st_device_pda_zat_b5_dealer_name
+inv_name_short                           = st_device_pda_zat_b5_dealer_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 0
+;quest_item     		= true
+story_id                                 = device_pda_zat_b5_dealer_id
+[zat_b20_noah_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b20_noah_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_zat_b20_noah_pda_desc
+inv_name                                 = st_zat_b20_noah_pda_name
+inv_name_short                           = st_zat_b20_noah_pda_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 2000
+;quest_item     		                 = true
+
+[zat_a23_access_card]:dev_flash_2
+$spawn                                   = "	                                       ;quest_items\zat_a23_access_card"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\access_card.ogf
+description                              = st_zat_a23_access_card_descr
+inv_name                                 = st_zat_a23_access_card
+inv_name_short                           = st_zat_a23_access_card
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 11
+inv_grid_y                               = 3
+can_trade                                = false
+;quest_item      		                 = true
+cost                                     = 0
+
+[zat_a23_gauss_rifle_docs]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_a23_gauss_rifle_docs"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+description                              = st_zat_a23_gauss_rifle_docs_descr
+inv_name                                 = st_zat_a23_gauss_rifle_docs
+inv_name_short                           = st_zat_a23_gauss_rifle_docs
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+story_id                                 = zat_a23_gauss_rifle_docs
+
+[zat_b44_barge_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b44_barge_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = zat_b44_barge_pda_desc
+inv_name                                 = zat_b44_barge_pda_name
+inv_name_short                           = zat_b44_barge_pda_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 2000
+;quest_item     		                 = true
+
+[zat_b39_joker_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b39_joker_pda"
+description                              = zat_b39_joker_pda_description
+inv_name                                 = zat_b39_joker_pda_name
+inv_name_short                           = zat_b39_joker_pda_name
+can_trade                                = false
+;quest_item     		                 = true
+
+[zat_b22_medic_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b22_medic_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = zat_b22_medic_pda_desc
+inv_name                                 = zat_b22_medic_pda
+inv_name_short                           = zat_b22_medic_pda
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 20
+;quest_item     		                 = true
+
+
+;*************************************************************************
+;**					Pripyat
+;*************************************************************************
+
+[pri_a15_wpn_svu]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "weapons\wpn_svu_a"
+cform                                    = skeleton
+class                                    = II_ATTCH
+kind			                     = i_quest
+visual                                   = dynamics\weapons\wpn_svu\wpn_svu.ogf
+cost                                     = 17500
+inv_name                                 = st_wpn_svu
+inv_name_short                           = st_wpn_svu
+description                              = st_wpn_svu_descr
+inv_weight                               = 4.4
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+auto_attach                              = false
+;Strap postion
+attach_bone_name                         = bip01_spine2
+;variation 1 - better
+attach_position_offset                   = -0.245, -0.11, -0.265
+attach_angle_offset                      = 1.326452, -0.15708, 1.919862
+;variation 2 - from weapons ltx
+;attach_position_offset	                 = -0.25, -0.11, -0.26
+;attach_angle_offset		             = 1.308999, -0.15708, 1.919862
+
+[pri_a15_wpn_svu_unstrapped]
+;Hands position
+attach_angle_offset                      = -1.570796, 0.0, 0.0
+attach_position_offset                   = 0, -0.084, 0.026
+attach_bone_name                         = bip01_r_finger1
+
+[pri_a15_wpn_wincheaster1300]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "weapons\wpn_wincheaster1300_a"
+cform                                    = skeleton
+class                                    = II_ATTCH
+kind			                     = i_quest
+visual                                   = dynamics\weapons\wpn_winchester1300\wpn_winchester1300.ogf
+cost                                     = 1250
+inv_name                                 = st_wpn_wincheaster1300
+inv_name_short                           = st_wpn_wincheaster1300
+description                              = st_wpn_wincheaster1300_descr
+inv_weight                               = 3.0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+auto_attach                              = false
+;Strap position
+attach_bone_name                         = bip01_spine2
+attach_position_offset                   = -0.05, -0.10, -0.26
+;variation 1 - both bad
+attach_angle_offset                      = 1.343905, -0.122173, 1.919862
+;variation 2 - from weapons ltx
+;attach_angle_offset		             = 1.308999, -0.15708, 1.919862
+
+[pri_a15_wpn_wincheaster1300_unstrapped]
+;Hands position
+attach_angle_offset                      = -1.570796, -0.069813, 0.0
+attach_position_offset                   = 0.0, -0.097, 0.024
+attach_bone_name                         = bip01_r_finger1
+
+[pri_a15_wpn_ak74u]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "weapons\wpn_ak74u_a"
+cform                                    = skeleton
+class                                    = II_ATTCH
+kind			                     = i_quest
+visual                                   = dynamics\weapons\wpn_ak74u\wpn_ak74u.ogf
+cost                                     = 2100
+inv_name                                 = st_wpn_ak74u
+inv_name_short                           = st_wpn_ak74u
+description                              = st_wpn_ak74u_descr
+inv_weight                               = 2.7
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+auto_attach                              = false
+;Strap position
+attach_bone_name                         = bip01_spine2
+attach_position_offset                   = -0.20, -0.45, -0.18
+;variation 1 - better
+attach_angle_offset                      = 1.413716, -0.087266, 0.174533
+;variation 2 - from weapons ltx
+;attach_angle_offset		             = 1.396263, -0.087266, 0.174533
+
+[pri_a15_wpn_ak74u_unstrapped]
+;Hands position
+attach_angle_offset                      = -1.570796, 0.0, 0.0
+attach_position_offset                   = 0.0, -0.215, 0.026
+attach_bone_name                         = bip01_r_finger1
+
+[pri_a15_wpn_ak74]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "weapons\wpn_ak74_a"
+cform                                    = skeleton
+class                                    = II_ATTCH
+kind			                     = i_quest
+visual                                   = dynamics\weapons\wpn_ak74\wpn_ak74.ogf
+cost                                     = 4000
+inv_name                                 = st_wpn_ak74
+inv_name_short                           = st_wpn_ak74
+description                              = st_wpn_ak74_descr
+inv_weight                               = 3.3
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+auto_attach                              = false
+;Strap position
+attach_bone_name                         = bip01_spine2
+;variation 1 - better
+attach_position_offset                   = -0.245, -0.105, -0.27
+attach_angle_offset                      = 1.343905, -0.122173, 1.919862
+;variation 2 - from weapons ltx
+;attach_position_offset	                 = -0.25, -0.11, -0.26
+;attach_angle_offset		             = 1.308999, -0.15708, 1.919862
+
+[pri_a15_wpn_ak74_unstrapped]
+;Hands position
+attach_angle_offset                      = -1.570796, 0.0, 0.0
+attach_position_offset                   = 0.0, -0.175, 0.026
+attach_bone_name                         = bip01_r_finger1
+
+[pri_a15_documents]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "	                                       ;quest_items\pri_a15_documents"
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\identity_card.ogf
+description                              = st_vodka_descr
+inv_name                                 = st_vodka
+inv_name_short                           = st_vodka
+inv_weight                               = 0.05
+
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 16
+inv_grid_y                               = 7
+cost                                     = 100
+
+attach_angle_offset                      = -1.903, -1.493, 0.998
+attach_position_offset                   = 0.09, 0.051, 0.03
+attach_bone_name                         = bip01_l_hand
+auto_attach                              = false
+
+[toolkit_3]:tch_quest
+$spawn                                   = "	                                       ;quest_items\toolkit_3"
+;story_id                                = toolkit_3
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\box_toolkit_3.ogf
+inv_name                                 = st_toolkit_3_name
+inv_name_short                           = st_toolkit_3_name
+description                              = st_toolkit_3_desc
+inv_weight                               = 1.5
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+can_trade                                = false
+;quest_item     		                 = true
+
+[pri_b35_lab_x8_key]:dev_flash_2
+$spawn                                   = "	                                       ;quest_items\pri_b35_lab_x8_key"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\access_card.ogf
+description                              = st_pri_b35_lab_x8_key_desc
+inv_name                                 = st_pri_b35_lab_x8_key_name
+inv_name_short                           = st_pri_b35_lab_x8_key_name
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 10
+inv_grid_y                               = 3
+
+[pri_b36_monolith_hiding_place_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_b36_monolith_hiding_place_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = st_pri_b36_monolith_hiding_place_pda_desc
+inv_name                                 = st_pri_b36_monolith_hiding_place_pda_name
+inv_name_short                           = st_pri_b36_monolith_hiding_place_pda_name
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+
+;------------------- pri_a25, kovalski to actor on start task explosive give ------------------
+
+[pri_a25_explosive_charge_item]:identity_immunities
+;quest_item 		                     = true
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "dynamic_objects\scene_objects\pri_a25_explosive_gift"
+$prefetch                                = 16
+class                                    = D_PDA
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\explosive_charge.ogf
+description                              = pri_a25_explosive_charge_descr
+radius                                   = 68	                                       ; 50
+slot                                     = 7
+default_to_ruck                          = false
+sprint_allowed                           = true
+control_inertion_factor                  = 1
+script_binding                           = bind_physic_object.init
+inv_name                                 = pri_a25_explosive_name
+inv_name_short                           = pri_a25_explosive_name
+inv_weight                               = 3.5	                                       ;0.2
+inv_grid_width                           = 1
+inv_grid_height                          = 2
+inv_grid_x                               = 9
+inv_grid_y                               = 11
+cost                                     = 20
+attach_angle_offset                      = 3.080506,-1.493053,-1.202040	                                       ;устанавливается в радианах Angle*PI/180
+attach_position_offset                   = 0.080000,0.021273,0.100000
+attach_bone_name                         = bip01_r_hand
+auto_attach                              = false
+
+[pri_a19_american_experiment_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_a19_american_experiment_info"
+inv_weight                               = 0.02
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+$prefetch                                = 16
+description                              = st_pri_a19_american_experiment_info_descr
+inv_name                                 = st_pri_a19_american_experiment_info_name
+inv_name_short                           = st_pri_a19_american_experiment_info_name
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+
+[pri_a19_lab_x16_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_a19_lab_x16_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+description                              = st_pri_a19_lab_x16_info_descr
+inv_name                                 = st_pri_a19_lab_x16_info_name
+inv_name_short                           = st_pri_a19_lab_x16_info_name
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+
+[pri_a19_lab_x10_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_a19_lab_x10_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+description                              = st_pri_a19_lab_x10_info_descr
+inv_name                                 = st_pri_a19_lab_x10_info_name
+inv_name_short                           = st_pri_a19_lab_x10_info_name
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+
+[pri_a19_lab_x7_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_a19_lab_x7_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+description                              = st_pri_a19_lab_x7_info_descr
+inv_name                                 = st_pri_a19_lab_x7_info_name
+inv_name_short                           = st_pri_a19_lab_x7_info_name
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+
+[pri_a19_lab_x18_info]:tch_quest
+$spawn                                   = "	                                       ;quest_items\pri_a19_lab_x18_info"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 10
+inv_grid_y                               = 15
+inv_name                                 = st_pri_a19_lab_x18_info_name
+inv_name_short                           = st_pri_a19_lab_x18_info_name
+description                              = st_pri_a19_lab_x18_info_descr
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+
+[zat_a23_labx8_key]:dev_flash_2
+$spawn                                   = "	                                       ;quest_items\zat_a23_labx8_key"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\access_card.ogf
+description                              = st_zat_a23_labx8_key_descr
+inv_name                                 = st_zat_a23_labx8_key_name
+inv_name_short                           = st_zat_a23_labx8_key_name
+can_trade                                = false
+cost                                     = 0
+;quest_item     		                 = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 12
+inv_grid_y                               = 3
+
+[lx8_service_instruction]:tch_quest
+$spawn                                   = "	                                       ;quest_items\lx8_service_instruction"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 12
+inv_grid_y                               = 15
+description                              = st_lx8_service_instruction_descr
+inv_name                                 = st_lx8_service_instruction_name
+inv_name_short                           = st_lx8_service_instruction_name
+can_trade                                = false
+;quest_item     		                 = true
+cost                                     = 0
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Brain Scorcher
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[good_psy_helmet]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\good_psy_helmet"
+;$prefetch 			                     = 32
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\equipments\item_psi_helmet.ogf
+radius                                   = 1
+;script_binding		                     = stalker.object_init
+quest_item                               = true
+
+description                              = st_psy_helmet_desc
+
+inv_name                                 = good_psy_helmet_name
+inv_name_short                           = good_psy_helmet_name
+inv_weight                               = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 13
+inv_grid_y                               = 28
+cost                                     = 64380
+
+[bad_psy_helmet]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\bad_psy_helmet"
+;$prefetch 			                     = 32
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\equipments\item_psi_helmet.ogf
+radius                                   = 1
+;script_binding		                     = stalker.object_init
+quest_item                               = true
+
+description                              = st_bad_psy_helmet_desc
+
+inv_name                                 = bad_psy_helmet_name
+inv_name_short                           = bad_psy_helmet_name
+inv_weight                               = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 13
+inv_grid_y                               = 28
+cost                                     = 44380
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;			Итем для вызова НПС
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[radio_connections_pda]:tch_quest
+$spawn                                   = "quest_items\radio_connections_pda"
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+;description			                 = ПДА_для_связи_с_другими_НПС
+;inv_name			                     = ПДА_для_связи
+;inv_name_short		                     = ПДА_для_связи
+can_trade                                = false
+cost                                     = 0
+quest_item                               = true
+inv_grid_width                                     = 1
+inv_grid_height                                    = 1
+inv_grid_x                                         = 7
+inv_grid_y                                         = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+script_binding                                     = bind_item.bind
+max_uses                                 = 255
+remove_after_use                         = false
+
+
+[pri_decoder_documents]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\quest_items\decoder_documents"
+;$prefetch 			                     = 32
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = equipments\item_document_01.ogf
+radius                                   = 1
+;script_binding		                     = stalker.object_init
+quest_item                               = true
+story_id                                 = pri_decoder_documents
+
+description                              = pri_decoder_docs_conclusion_txt
+
+inv_name                                 = item_docs_hiden_pri_name
+inv_name_short                           = item_docs_hiden_pri_desc
+inv_weight                               = 0
+
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 16
+cost                                     = 0
+
+[cit_doctors_key]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\quest_items\cit_doctors_key"
+;$prefetch 			                     = 32
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\key.ogf
+radius                                   = 1
+;script_binding		                     = stalker.object_init
+quest_item                               = true
+story_id                                 = cit_doctors_key
+
+inv_name                                 = cit_doctors_key_name
+inv_name_short                           = cit_doctors_key_short_desc
+inv_weight                               = 0
+description                              = cit_doctors_key_desc
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 13
+inv_grid_y                               = 3
+cost                                     = 0
+
+[cit_doctors_pda]:tch_quest
+$spawn                                   = "quest_items\cit_doctors_pda"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_letter_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+description                              = cit_doctors_pda_desc
+inv_name                                 = cit_doctors_pda_name
+inv_name_short                           = cit_doctors_pda_name
+can_trade                                = false
+cost                                     = 0
+quest_item     							 = true
+story_id                                 = cit_doctors_pda
+
+[decoder]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\quest_items\decoder"
+;$prefetch 			                     = 32
+class                                    = II_ATTCH
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = equipments\item_decoder.ogf
+radius                                   = 1
+;script_binding		                     = stalker.object_init
+quest_item                               = true
+story_id                                 = decoder
+
+description                              = item_decoder_desc
+
+inv_name                                 = item_decoder_name
+inv_name_short                           = item_decoder_name
+inv_weight                               = 0
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 19
+inv_grid_y                               = 6
+cost                                     = 50
+
+[recover_mutant_data_device]:decoder
+description                              = recover_mutant_data_device_desc
+inv_name                                 = recover_mutant_data_device_name
+inv_name_short                           = recover_mutant_data_device_name																  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;			7 canonical documents
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[main_story_1_quest_case]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\agr_ug_quest_case"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_merger.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+
+description                              = item_quest_case_02_desc
+inv_name			                     = item_quest_case_02_name
+inv_name_short		                     = item_quest_case_02_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 16
+cost				                     = 1000
+story_id			                     = main_story_1_quest_case
+
+[main_story_2_lab_x18_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\dar_x18_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_1.ogf
+radius				                     = 1
+quest_item			                     = true
+can_trade                                = false
+
+description			                     = item_doc_x18_desc
+
+inv_name			                     = item_doc_x18_name
+inv_name_short		                     = item_doc_x18_name
+inv_weight			                     = 0
+
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 4
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = main_story_2_lab_x18_documents
+
+[main_story_3_lab_x16_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\yan_x16_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+
+description			                     = item_doc_x16_desc
+
+inv_name			                     = item_doc_x16_name
+inv_name_short		                     = item_doc_x16_name
+inv_weight			                     = 0
+
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = main_story_3_lab_x16_documents
+
+[main_story_4_lab_x10_documents]:tch_quest
+$spawn                                   = "devices\quest_items\bun_x10_documents"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+description                              = item_doc_x10_desc
+inv_name                                 = item_doc_x10_name
+inv_name_short                           = item_doc_x10_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+story_id								 = main_story_4_lab_x10_documents
+
+[main_story_5_lab_x8_documents]:tch_quest
+$spawn                                   = "devices\quest_items\pri_x8_documents"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_3.ogf
+inv_weight                               = 0.05
+description                              = item_doc_x8_desc
+inv_name                                 = item_doc_x8_name
+inv_name_short                           = item_doc_x8_name
+can_trade                                = false
+quest_item     							 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 14
+inv_grid_y                               = 15
+story_id								 = main_story_5_lab_x8_documents
+
+[main_story_6_jup_ug_documents]:tch_quest
+$spawn                                   = "devices\quest_items\jup_ug_documents"
+inv_weight                               = 0.02
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+$prefetch                                = 16
+description                              = item_doc_jup_ug_desc
+inv_name                                 = item_doc_jup_ug_name
+inv_name_short                           = item_doc_jup_ug_name
+can_trade                                = false
+quest_item     							 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+story_id								 = main_story_6_jup_ug_documents
+
+[main_story_7_mon_con_documents]:tch_quest
+$spawn                                   = "devices\quest_items\mon_con_documents"
+kind			                     = i_quest
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+description                              = item_doc_mon_con_name_desc
+inv_name                                 = item_doc_mon_con_name
+inv_name_short                           = item_doc_mon_con_name
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+can_trade                                = false
+quest_item     							 = true
+cost                                     = 0
+story_id								 = main_story_7_mon_con_documents
+
+[yantar_deployable_mgun]:identity_immunities,weapon_probability,default_weapon_params
+$spawn                                   = "quest_items\yantar_deployable_mgun"
+GroupControlSection                      = spawn_group
+ammo_class                               = ammo_pkm_100
+bullet_speed                             = 725
+cam_dispersion                           = 0.2
+cam_max_angle                            = 8
+cam_max_angle_horz                       = 9.0
+cam_relax_speed                          = 5.0
+cam_step_angle_horz                      = 1.8
+cform                                    = skeleton
+class                                    = W_STMGUN
+fire_dispersion_base                     = 0.5
+fire_dispersion_null                     = 0.5
+fire_distance                            = 1000
+flame_particles                          = weapons\generic_weapon05
+hit_impulse                              = 100
+hit_power                                = 0.1
+inv_name                                 = Mounted Weapon
+inv_name_short                           = Mounted Weapon
+light_color                              = 0.9,0.9,0.5
+light_range                              = 6
+light_time                               = 0.3
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+rpm                                      = 900
+shell_particles                          = weapons\generic_shells
+shell_point                              = 0.0, 0.0, 0.0
+smoke_particles                          = weapons\generic_shoot_00
+snd_shoot                                = weapons\pkm_shot
+tracer_start_length                      = 2
+tracer_trail_scale                       = 0.15
+tracer_width                             = 0.07
+use_aim_bullet                           = false
+kind			                     = i_quest
+visual                                   = dynamics\weapons\wpn_mounted\wpn_mounted_pkm_trenoga.ogf
+
+overheat_enabled 						 = true
+overheat_time_quant 					 = 0.90
+overheat_decr_quant 					 = 0.15
+overheat_threshold 						 = 150.00
+overheat_particles 						 = industrial_particles\exhaust_workshop_1_small
+
+
+
+;--================================< MLR >================================--
+[itm_actor_backpack_mlr]:booster
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "food and drugs\antirad"
+$prefetch                                = 32
+class                                    = II_ANTIR
+cform                                    = skeleton
+kind			                     = i_quest
+visual                                   = dynamics\devices\dev_rukzak\dev_rukzak.ogf
+inv_name                                 = st_itm_actor_backpack_name
+inv_name_short                           = st_itm_actor_backpack_name
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+cost                                     = 900
+inv_grid_x                               = 15
+inv_grid_y                               = 48
+description                              = st_itm_actor_backpack_desc_mlr
+inv_weight                               = 1
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+eat_health                               = 0
+eat_satiety                              = 0
+eat_power                                = 0
+eat_radiation                            = 0
+eat_alcohol                              = 0
+wounds_heal_perc                         = 0
+animation_slot                           = 4
+hud                                      = wpn_vodka_hud
+slot                                     = -1
+
+[blackbox_mlr]:tch_quest
+$spawn 				                     = "mlr_items\blackbox_mlr"
+description			                     = blackbox_mlr_descr
+visual				                     = dynamics\equipments\quest\box_black.ogf
+inv_weight			                     = 6
+inv_name			                     = blackbox_mlr
+quest_item      	                     = false
+can_trade			                     = false
+inv_grid_width		                     = 2
+inv_grid_height		                     = 2
+inv_grid_x			                     = 2
+inv_grid_y			                     = 11
+
+[mlr_x8_documents]:tch_quest
+$spawn                                   = "quest_items\mlr_x8_documents"
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+description                              = mlr_x8_documents_desc
+inv_name                                 = mlr_x8_documents
+inv_name_short                           = mlr_x8_documents
+can_trade                                = false
+cost                                     = 0
+
+[mlr_x8_copybook]:tch_quest
+$spawn                                   = "quest_items\mlr_x8_copybook"
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+description                              = mlr_x8_copybook_desc
+inv_name                                 = mlr_x8_copybook
+inv_name_short                           = mlr_x8_copybook
+can_trade                                = false
+cost                                     = 0
+
+[mlr_x8_copybook_2]:tch_quest
+$spawn                                   = "quest_items\mlr_x8_copybook_2"
+visual                                   = dynamics\equipments\quest\notes_document_case_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+description                              = mlr_x8_copybook_2_desc
+inv_name                                 = mlr_x8_copybook_2
+inv_name_short                           = mlr_x8_copybook_2
+can_trade                                = false
+cost                                     = 0
+;артефакты
+
+[mutant_part_general_mlr]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "devices\monster_items\mutant_part_general_mlr"
+class                                    = II_ATTCH
+cform                                    = skeleton
+visual                                   = dynamics\equipments\item_psevdodog_tail.ogf
+radius                                   = 1
+inv_weight                               = 0.2
+can_trade                                = true
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+;юзабельные
+
+[item_pda_map_mlr]:booster_script
+$spawn                                   = "mlr_items\item_pda_map_mlr"
+description                              = item_pda_map_mlr_descr
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+kind			                     = i_quest
+inv_weight                               = 0.1  
+inv_name                                 = item_pda_map_mlr_name
+inv_name_short                           = item_pda_map_mlr_name
+quest_item      	                     = false
+can_trade                                = false
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 7
+inv_grid_y                               = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+cost                                     = 150
+
+[mlr_strelok_item_01]:booster
+$spawn                                   = "quest_items\mlr_strelok_item_01"
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+kind			                    	 = i_quest
+inv_weight                               = 0.02
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+description                              = mlr_strelok_item_01_desc
+inv_name                                 = mlr_strelok_item_01
+inv_name_short                           = mlr_strelok_item_01
+can_trade                                = false
+cost                                     = 0
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE QUEST ITEMS
+;
+;	Made by SarisKhan
+;	for Lost to the Zone: Living Legend
+;	Last revised: 17 October 2017
+;
+;--------------------------------------------------------------------------------------------------
+[strelok_notes]:tch_quest
+$spawn 									 = "quest_items\strelok_notes"
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+story_id								 = sariskhan_notebook
+
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 8
+inv_grid_y                               = 15
+
+inv_name                                 = strelok_notes_name
+inv_name_short                           = strelok_notes_name
+description                              = strelok_notes_desc
+
+can_trade                                = false
+cost                                     = 0
+quest_item      	                     = true
+
+[wpn_gauss_quest]:wpn_gauss
+$spawn 									 = "quest_items\wpn_gauss_quest"
+inv_name                                 = lttz_ll_wpn_gauss_quest_name
+description                              = lttz_ll_wpn_gauss_quest_descr
+can_trade                                = false
+
+[x8_documents]:tch_quest
+$spawn                                   = "devices\quest_items\x8_documents"
+visual                                   = dynamics\equipments\quest\notes_document_case_2.ogf
+inv_weight                               = 0.05
+description                              = item_doc_x8_ll_desc
+inv_name                                 = item_doc_x8_ll_name
+inv_name_short                           = item_doc_x8_ll_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+story_id								 = lttz_ll_x8_documents
+
+[monolith_shard]:af_black
+$spawn                                   = "devices\quest_items\monolith_shard"
+visual                                   = dynamics\artefacts\artefact_diablo.ogf
+description                              = item_monolith_shard_desc
+inv_name                                 = item_monolith_shard_name
+inv_name_short                           = item_monolith_shard_name
+jump_height			                     = 0.4
+af_rank                                  = 0
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+story_id								 = lttz_ll_monolith_shard
+
+[strelok_pendrive]:tch_quest
+$spawn                                   = "devices\quest_items\strelok_pendrive"
+visual                                   = dynamics\devices\dev_flash_2\dev_flash_2.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_strelok_pendrive_name
+inv_name_short                           = st_strelok_pendrive_name
+description                              = st_strelok_pendrive_descr
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 9
+inv_grid_y                               = 3
+cost                                     = 0
+can_trade                                = false
+quest_item								 = true
+story_id								 = lttz_ll_strelok_pendrive
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE QUEST ITEMS
+;
+;	Made by SarisKhan
+;	for Lost to the Zone: Mortal Sin
+;	Last revised: 19 August 2019
+;
+;--------------------------------------------------------------------------------------------------
+
+[vodnik_notes]:tch_quest
+$spawn 									 = "quest_items\vodnik_notes"
+visual                                   = dynamics\equipments\quest\notes_letter_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+inv_name                                 = vodnik_notes_name
+inv_name_short                           = vodnik_notes_name
+description                              = vodnik_notes_desc
+can_trade                                = false
+cost                                     = 1000
+quest_item      	                     = false
+story_id								 = vodnik_notes
+
+[attackers_pda]:tch_quest
+$spawn                                   = "devices\quest_items\contact_lost_pda"
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description                              = attackers_pda_desc
+inv_name                                 = attackers_pda_name
+inv_name_short                           = attackers_pda_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+story_id								 = attackers_pda
+inv_grid_x			                     = 7
+inv_grid_y			                     = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+
+
+[stitch_decoder]:tch_quest
+$spawn                                   = "devices\quest_items\stitch_decoder"
+visual                                   = equipments\item_decoder.ogf
+inv_grid_x 								 = 19
+inv_grid_y 								 = 6
+description                              = stitch_decoder_desc
+inv_name                                 = stitch_decoder_name
+inv_name_short                           = stitch_decoder_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+story_id								 = stitch_decoder
+
+[drekavac_notes]:tch_quest
+$spawn 									 = "quest_items\drekavac_notes"
+visual                                   = dynamics\equipments\quest\notes_letter_2.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+inv_name                                 = drekavac_notes_name
+inv_name_short                           = drekavac_notes_name
+description                              = drekavac_notes_desc
+can_trade                                = false
+cost                                     = 1000
+quest_item      	                     = false
+story_id								 = drekavac_notes
+
+[contact_lost_pda]:tch_quest
+$spawn                                   = "devices\quest_items\contact_lost_pda"
+description                              = contact_lost_pda_desc
+inv_name                                 = contact_lost_pda_name
+inv_name_short                           = contact_lost_pda_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+story_id								 = contact_lost_pda
+inv_grid_x			                     = 7
+inv_grid_y			                     = 3
+
+[chernobog_notes]:tch_quest
+$spawn 									 = "quest_items\chernobog_notes"
+visual                                   = dynamics\equipments\quest\notes_writing_book_1.ogf
+inv_weight                               = 0.05
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 12
+inv_grid_y                               = 15
+inv_name                                 = chernobog_notes_name
+inv_name_short                           = chernobog_notes_name
+description                              = chernobog_notes_desc
+can_trade                                = false
+cost                                     = 2000
+quest_item      	                     = false
+story_id								 = chernobog_notes
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+;
+; STORYLINE QUEST ITEMS
+;
+;	Made by SarisKhan
+;	for Lost to the Zone: Operation Afterglow
+;	Last revised: 06 December 2018
+;
+;--------------------------------------------------------------------------------------------------
+[decryption_radio]:tch_quest
+$spawn                                   = "devices\quest_items\decryption_radio"
+visual                                   = dynamics\devices\dev_fmradio\dev_fmradio.ogf
+description                              = decryption_radio_desc
+inv_name                                 = decryption_radio_name
+inv_name_short                           = decryption_radio_name
+inv_weight								 = 0.42
+inv_grid_width			                 = 1
+inv_grid_height			                 = 1
+inv_grid_x			                     = 5
+inv_grid_y			                     = 42
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+story_id								 = decryption_radio
+
+[zat_b40_sarge_pda]:tch_quest
+$spawn                                   = "	                                       ;quest_items\zat_b40_sarge_pda"
+visual                                   = dynamics\devices\dev_pda\dev_pda.ogf
+description								 = st_zat_b40_sarge_pda_desc
+inv_name								 = st_zat_b40_sarge_pda_name
+inv_name_short							 = st_zat_b40_sarge_pda_name
+can_trade                                = false
+cost                                     = 0
+inv_grid_x			                     = 7
+inv_grid_y			                     = 3
+upgr_icon_path								 = ui\actor_items\ui_actor_items_1
+upgr_icon_x								 	 = 150
+upgr_icon_y								 	 = 0
+upgr_icon_width						 	 	 = 150
+upgr_icon_height						 	 = 100
+;quest_item     		= true
+
+[special_delivery_case]:tch_quest
+$spawn 									 = "quest_items\special_delivery_case"
+visual 									 = dynamics\equipments\quest\safe_container.ogf
+description 							 = special_delivery_case_desc
+inv_name 								 = special_delivery_case_name
+inv_name_short 							 = special_delivery_case_name
+inv_weight 								 = 6.0
+inv_grid_width 							 = 2
+inv_grid_height 						 = 2
+inv_grid_x 								 = 4
+inv_grid_y 								 = 11
+quest_item 								 = true
+can_trade 								 = false
+story_id 								 = special_delivery_case
+
+[army_isg_spy_pendrive]:tch_quest
+$spawn                                   = "devices\quest_items\army_isg_spy_pendrive"
+visual                                   = dynamics\devices\dev_flash_2\dev_flash_2.ogf
+inv_weight                               = 0.05
+inv_name                                 = st_army_isg_spy_pendrive_name
+inv_name_short                           = st_army_isg_spy_pendrive_name
+description                              = st_army_isg_spy_pendrive_descr
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 9
+inv_grid_y                               = 3
+cost                                     = 0
+can_trade                                = false
+quest_item								 = true
+story_id								 = army_isg_spy_pendrive
+
+[jupiter_documents]:tch_quest
+$spawn                                   = "devices\quest_items\jupiter_documents"
+visual									 = equipments\item_merger.ogf
+description                              = jupiter_documents_desc
+inv_name                                 = jupiter_documents_name
+inv_name_short                           = jupiter_documents_name
+can_trade                                = false
+quest_item								 = true
+cost                                     = 0
+inv_weight								 = 0.5
+inv_grid_width     						 = 2
+inv_grid_height    						 = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 16
+story_id								 = jupiter_documents
+
+[hb_isg_dushman_intel]:tch_quest
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\hb_isg_dushman_intel"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = dynamics\equipments\quest\notes_document_case_2.ogf
+radius				                     = 1
+quest_item			                     = true
+can_trade                                = false
+description                              = st_hb_isg_dushman_intel_desc
+inv_name			                     = st_hb_isg_dushman_intel_name
+inv_name_short		                     = st_hb_isg_dushman_intel_name
+inv_weight			                     = 0.5
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 2
+inv_grid_y                               = 15
+cost				                     = 0
+story_id			                     = hb_isg_dushman_intel
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+; DRX Questlines Documents
+; Tronex 2018/12/5
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+
+[drx_x8_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_x8_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_x8_documents_desc
+inv_name			                     = drx_x8_documents_name
+inv_name_short		                     = drx_x8_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_x8_documents
+
+[drx_x16_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_x16_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_x16_documents_desc
+inv_name			                     = drx_x16_documents_name
+inv_name_short		                     = drx_x16_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_x16_documents
+
+[drx_x18_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_x18_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_x18_documents_desc
+inv_name			                     = drx_x18_documents_name
+inv_name_short		                     = drx_x18_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_x18_documents
+
+[drx_x19_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_x19_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_x19_documents_desc
+inv_name			                     = drx_x19_documents_name
+inv_name_short		                     = drx_x19_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_x19_documents
+
+[drx_agr_u_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_agr_u_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_agr_u_documents_desc
+inv_name			                     = drx_agr_u_documents_name
+inv_name_short		                     = drx_agr_u_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_agr_u_documents
+
+[drx_jup_u_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\drx_jup_u_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = drx_jup_u_documents_desc
+inv_name			                     = drx_jup_u_documents_name
+inv_name_short		                     = drx_jup_u_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = drx_jup_u_documents
+
+
+
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+; Griffin quest
+; Tronex 2018/12/5
+;//////////////////////////////////////////////////////////////////////////////////////////////////
+
+[lx8_history_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\lx8_history_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = lx8_history_documents_desc
+inv_name			                     = lx8_history_documents_name
+inv_name_short		                     = lx8_history_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = lx8_history_documents
+
+[lx8_history_2_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\lx8_history_2_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = lx8_history_2_documents_desc
+inv_name			                     = lx8_history_2_documents_name
+inv_name_short		                     = lx8_history_2_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = lx8_history_2_documents
+
+[lx8_history_3_documents]:identity_immunities
+GroupControlSection	                     = spawn_group
+discovery_dependency                     =
+$spawn 				                     = "devices\quest_items\lx8_history_3_documents"
+;$prefetch 			                     = 32
+class				                     = II_ATTCH
+cform				                     = skeleton
+kind			                     = i_quest
+visual				                     = equipments\item_document_2.ogf
+radius				                     = 1
+;script_binding		                     = stalker.object_init
+quest_item			                     = true
+can_trade                                = false
+description			                     = lx8_history_3_documents_desc
+inv_name			                     = lx8_history_3_documents_name
+inv_name_short		                     = lx8_history_3_documents_name
+inv_weight			                     = 0
+inv_grid_width                           = 2
+inv_grid_height                          = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 16
+cost				                     = 0
+story_id			                     = lx8_history_3_documents
+
+
+[chimera_scan_device]:tch_quest
+quest_item = false
+visual                                   = dynamics\equipments\quest\scanner_artefact.ogf
+inv_weight                               = 3
+inv_name                                 = chimera_scan_device_name
+inv_name_short                           = chimera_scan_device_name
+description                              = chimera_scan_device_desc
+inv_grid_width                           = 1
+inv_grid_height                          = 2
+inv_grid_x                               = 1
+inv_grid_y                               = 11
+
+
+[rioc_sid_base_item]
+description			                     = st_rioc_sid_desc
+inv_name			                     = st_rioc_sid
+inv_name_short		                     = st_rioc_sid
+quest_item			                     = true
+can_trade                                = false
+
+[rioc_sid_item_1]:main_story_1_quest_case,rioc_sid_base_item
+story_id			                     = rioc_sid_item_1
+[rioc_sid_item_2]:zat_b33_safe_container,rioc_sid_base_item
+story_id			                     = rioc_sid_item_2
+; story id just to override the imported ones, not actually used
+
+[rioc_duty_item]:tch_quest
+description			                     = st_rioc_duty_desc
+inv_name			                     = st_rioc_duty
+inv_name_short		                     = st_rioc_duty
+inv_grid_x                               = 7
+inv_grid_y                               = 3
+quest_item			                     = true
+can_trade                                = false
+
+[rioc_ecolog_item]:tch_quest
+visual                                   = dynamics\equipments\quest\notebook.ogf
+description			                     = st_rioc_ecolog_desc
+inv_name			                     = st_rioc_ecolog
+inv_name_short		                     = st_rioc_ecolog
+inv_weight   	                         = 5
+inv_grid_width		                     = 2
+inv_grid_height		                     = 2
+inv_grid_x			                     = 10
+inv_grid_y			                     = 10
+quest_item			                     = true
+can_trade                                = false

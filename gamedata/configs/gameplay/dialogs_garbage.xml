@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+
+<!-- Butcher (Hunter-merchant in the Garbage) -->
+	<dialog id="hunter_trader_meet">
+		<dont_has_info>hunter_trader_meet_info</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>hunter_trader_meet_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>hunter_trader_meet_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>hunter_trader_meet_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>hunter_trader_meet_3</text>
+				<next>4</next>
+			</phrase>
+			<phrase id="4">
+				<text>hunter_trader_meet_4</text>
+				<next>5</next>
+			</phrase>
+			<phrase id="5">
+				<text>hunter_trader_meet_5</text>
+				<next>6</next>
+			</phrase>
+			<phrase id="6">
+				<text>hunter_trader_meet_6</text>
+				<give_info>hunter_trader_meet_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="about_baraholka_hunter_trader">
+		<dont_has_info>about_baraholka_hunter_trader_info</dont_has_info>
+		<has_info>hunter_trader_meet_info</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>about_baraholka_hunter_trader_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>about_baraholka_hunter_trader_1</text>
+				<give_info>about_baraholka_hunter_trader_info</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+<!-- Daytime trader at the flea market -->
+	<dialog id="baraholka_trader_talking">
+		<dont_has_info>baraholka_trader_talk</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>baraholka_trader_talking_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>baraholka_trader_talking_1</text>
+				<next>2</next>
+			</phrase>
+			<phrase id="2">
+				<text>baraholka_trader_talking_2</text>
+				<next>3</next>
+			</phrase>
+			<phrase id="3">
+				<text>baraholka_trader_talking_3</text>
+				<give_info>baraholka_trader_talk</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="information_about_stash_barah_night">
+		<dont_has_info>information_about_stash_barah_night1</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>information_about_stash_barah_night_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>information_about_stash_barah_night_1</text>
+				<give_info>information_about_stash_barah_night1</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+	<dialog id="information_about_stash_barah_night1">
+		<precondition>dialogs_mlr.have_money_to_jupiter_guid_bar</precondition>
+		<has_info>information_about_stash_barah_night1</has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>information_about_stash_barah_night1_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>information_about_stash_barah_night1_1</text>
+				<action>dialogs_mlr.give_money_to_jupiter_guid_bar</action>
+				<action>xr_effects.reward_stash</action>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	
+</game_dialogs>

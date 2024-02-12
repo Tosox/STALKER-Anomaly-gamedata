@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<string_table>
+  <string id="st_anabiotic_combat">
+      <text>Глотать анабиотик, когда рядом враги - самоубийство!</text>
+  </string>
+
+   <string id="st_psy_death_scene">
+      <text>Вы избежали участи куда хуже смерти...</text>
+  </string>
+
+  <string id="st_psy_zombification_scene">
+      <text>Зона подарила Вам второй шанс</text>
+  </string>
+</string_table>

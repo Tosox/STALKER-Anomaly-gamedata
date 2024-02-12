@@ -1,0 +1,152 @@
+--[[
+	Made by Tronex
+	2019/7/1
+--]]
+
+local tsk_id_top_10 = "snitch_top_10_task"
+
+---------------------------< Target functor >---------------------------
+task_functor.top_10_task_target_functor = function (task_id,field,p,tsk)
+	if not (db.actor and tsk) then return nil end
+	
+	if (field == "target") then
+		if (tsk and tsk.stage) then
+			if (tsk.stage < 10) then
+				local top_10_list = load_var(db.actor, task_id)
+				local id = top_10_list and top_10_list[10 - tsk.stage]
+				local se_obj = id and alife_object(id)
+				if se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive() then
+					return id
+				end
+				
+			elseif tsk.task_giver_id then
+				return tsk.task_giver_id
+			end
+		end
+	end
+end
+
+
+---------------------------< Status functor >---------------------------
+task_status_functor.top_10_task_status_functor = function (tsk,task_id)
+	if not (db.actor and tsk) then return end
+	
+	local top_10_list = load_var(db.actor, task_id) -- check saved data
+	if (not top_10_list) then return "fail" end
+	
+	local curr = #top_10_list
+	if (curr == 0) then
+		tsk.stage = 10
+	else
+		local id = top_10_list[curr]
+		local se_obj = id and alife_object(id)
+		if not (se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive()) then
+			printdbg("- top_10_task_status_functor | npc (%s) rank [%s] is missing, moving to next target", id, curr)
+			top_10_list[curr] = nil
+			curr = #top_10_list
+			save_var(db.actor, task_id, top_10_list)
+		end
+		
+		tsk.stage = 10 - curr
+	end
+end
+
+
+---------------------------< Conditions >---------------------------
+function actor_is_not_top_10(a,b)
+	-- Refresh list
+	pda.calculate_rankings()
+	
+	-- Check top 10 ranks
+	local ranking = pda.get_coc_ranking_list()
+	for i=1,10 do
+		local id = ranking[i]
+		if id == 0 then
+			return false
+		end
+	end
+	
+	return true
+end
+
+function almost_done_task_top_10(actor, npc)
+	local task_info = task_manager.get_task_manager().task_info
+	local task_top_10 = task_info and task_info[tsk_id_top_10]
+	if task_top_10 and task_top_10.stage and task_top_10.stage >= 10 then
+		return true
+	end
+	return false
+end
+
+
+---------------------------< Effects >---------------------------
+xr_effects.setup_top_10_task = function(actor, npc, p)
+	local task_id = p[1]
+
+	local ranking = pda.get_coc_ranking_list()
+	local top_10_list = {}
+	for i=1,10 do
+		local id = ranking[i]
+		top_10_list[i] = id
+		printdbg("- %s | rank [%s] - id (%s)", p[1], i, id)
+		
+		local se_obj = alife_object(id)
+		if (not se_obj) then
+			printdbg("! %s | id (%s) doesn't exist", p[1], id)
+			return
+		end
+		
+		local sq = se_obj and se_obj.group_id and se_obj.group_id ~= 65535 and alife_object(se_obj.group_id)
+		if sq then
+			sim_offline_combat.task_squads[sq.id] = true
+		end
+	end
+	
+	save_var(db.actor, task_id, top_10_list)
+end
+
+function start_task_top_10(actor, npc)
+	local npc = dialogs.who_is_npc(actor, npc)
+	task_manager.get_task_manager():give_task(tsk_id_top_10, npc and npc:id())
+end
+
+function complete_task_top_10(actor, npc)
+	task_manager.get_task_manager():set_task_completed(tsk_id_top_10)
+end
+
+
+---------------------------< Text >---------------------------
+function top_10_task_text(txt,task_id,field,p,tsk)
+	if not db.actor then return '' end
+	local top_10_list = load_var(db.actor, task_id)
+	local str = ""
+	if tsk and tsk.stage and top_10_list then
+		if tsk.stage < 10 then
+			local id = top_10_list[10 - tsk.stage]
+			local se_obj = id and alife_object(id)
+			if se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive() then
+				local name = se_obj:character_name()
+				local comm = se_obj:community()
+				local comm_str = game.translate_string("st_dyn_news_comm_" .. comm .. "_" .. tostring(1))
+				local location = dynamic_news_helper.GetPointDescription(se_obj)
+				local map = alife():level_name(game_graph():vertex(se_obj.m_game_vertex_id):level_id())
+				local map_str = game.translate_string(map)
+				str = utils_data.parse_string_keys(game.translate_string(txt), { ["num"]=(10 - tsk.stage), ["name"]=name , ["comm"]=comm_str , ["location"]=location , ["map"]=map_str } )
+			
+			else
+				str = game.translate_string("st_task_info_awaiting")
+			end
+		else
+			str = game.translate_string(txt .. "_finish")
+		end
+	end
+	return str
+end
+
+task_functor.top_10_task_name = function(task_id,field,p,tsk)
+	return top_10_task_text("top_10_task_name",task_id,field,p,tsk)
+end
+
+task_functor.top_10_task_description = function(task_id,field,p,tsk)
+	return top_10_task_text("top_10_task_description",task_id,field,p,tsk)
+end

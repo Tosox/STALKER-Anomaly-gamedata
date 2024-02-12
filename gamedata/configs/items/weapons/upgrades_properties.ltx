@@ -1,0 +1,372 @@
+[upgrades_properties]
+prop_weight 				;; Weight
+prop_silencer  				;; Muffler
+prop_underbarrel_slot 		;; Mount the grenade launcher
+prop_reliability  			;; Reliability
+prop_bullet_speed 		 	;; Flatness
+prop_recoil  				;; Recoil
+prop_ammo_size  			;; Cartridges
+prop_grenade_launcher  		;; Subbarrel
+prop_scope_4x  				;; Sight 4
+prop_scope_1.6x  			;; Sight 1.6
+prop_rpm  					;; Rate of fire
+prop_calibre  				;; caliber (9x18, 5x45)
+prop_dispersion  			;; Accuracy
+prop_inertion  				;; Convenience
+prop_autolockscope  		;; Auto Capture Targets in Optics
+prop_scope_1.5x  			;; Reflex Sight 1.5x
+prop_scope_5x  				;; Sight 5x
+prop_scope_6x  				;; Sight 6x
+prop_scope_12x  			;; Scope 12x
+prop_scope_15x  			;; Scope 15x
+prop_scope_attach  			;; Mount for optics
+prop_scope  				;; Adjustable rangefinder sight
+prop_contrast  				;; Increase the contrast of sight
+prop_autofire  				;; Fully automatic fire mode
+prop_3xfire  				;; Three shots automatic shooting mode
+prop_nightvision  			;; Installing NVD
+prop_no_buck  				;; Do not shoot a fraction.
+
+prop_armor 					;; armor
+prop_damage 				;; Damage
+prop_durability 			;; wear resistance (strength)
+prop_restore_bleeding 		;; reduce bleeding
+prop_restore_health 		;; Health Restoration
+prop_night_vision 			;; 1st generation PNV
+;prop_night_vision_2 		;; PNV 2nd generation DELETED !!! now use prop_night_vision section and value = +2
+;prop_night_vision_3 		;; PNV 3rd generation DELETED !!! now use prop_night_vision section and value = +3
+prop_power 					;; East. stamina
+prop_tonnage 				;; Carry weight
+prop_chem 					;; chemical protection
+prop_radio 					;; radio protection
+prop_thermo 				;; thermo protection
+prop_electro 				;; Electro protection
+prop_psy 					;; psi protection
+prop_artefact 				;; slot for artifacts
+prop_weightoutfit 			;; body armor weight
+prop_autolock 				;; Avtozapvat goal
+prop_sprint 				;; Run in the exoskeleton
+prop_scanner 				;; infrared sc
+
+;-- Tronex
+prop_binoc_zoom
+prop_binoc_nightvision
+prop_binoc_autolock
+
+prop_not_available			;; generic prop for blocked upgrades
+
+[prop_not_available]
+name     = st_prop_not_available
+icon     = ui_wp_prop_not_available
+functor  = inventory_upgrades.property_functor_b
+params   = cost, rpm
+
+[prop_not_available_no_reason]
+name     = st_prop_not_available_no_reason
+icon     = ui_wp_prop_not_available
+functor  = inventory_upgrades.property_functor_b
+params   = cost, rpm
+
+[prop_weight]
+name     = st_prop_weight
+icon     = ui_wp_prop_weight
+functor  = inventory_upgrades.property_functor_a
+params   = hit_power, rpm, cost
+
+[prop_silencer]
+name     = st_prop_silencer
+icon     = ui_wp_propery_02
+functor  = inventory_upgrades.property_functor_c
+params   = hit_power, rpm, cost
+
+[prop_underbarrel_slot]
+name     = st_prop_underbarrel_slot
+icon     = ui_wp_propery_03
+functor  = inventory_upgrades.property_functor_c
+params   = hit_power, rpm, cost
+
+[prop_reliability]
+name     = st_prop_reliability
+icon     = ui_wp_prop_nadezhnost
+functor  = inventory_upgrades.property_functor_a
+params   = hit_power, rpm, cost
+
+[prop_bullet_speed]
+name     = st_prop_bullet_speed
+icon     = ui_wp_prop_nastilnost
+functor  = inventory_upgrades.property_functor_a
+params   = hit_power, rpm, cost
+
+[prop_recoil]
+name     = st_prop_recoil
+icon     = ui_wp_prop_otdacha
+functor  = inventory_upgrades.property_functor_a
+params   = prop_rpm
+
+[prop_ammo_size]
+name     = ui_ammo_count
+icon     = ui_wp_propery_07
+functor  = inventory_upgrades.property_functor_a
+params   = hit_power, rpm, cost
+
+[prop_grenade_launcher]
+name     = st_prop_grenade_launcher
+icon     = ui_wp_propery_08
+functor  = inventory_upgrades.property_functor_c
+params   = hit_power, rpm, cost
+
+[prop_scope_4x]
+name     = st_prop_scope_4x
+icon     = ui_wp_propery_09
+functor  = inventory_upgrades.property_functor_b
+params   = rpm, hit_impulse
+
+[prop_scope_1.6x]
+name     = st_prop_scope_1.6x
+icon     = ui_wp_propery_10
+functor  = inventory_upgrades.property_functor_b
+params   = cost, rpm
+
+[prop_rpm]
+name     = ui_inv_rate_of_fire
+icon     = ui_wp_prop_skorostrelnost
+functor  = inventory_upgrades.property_functor_a
+params   = prop_recoil
+
+[prop_calibre]
+name     = st_prop_calibre
+icon     = ui_wp_propery_12
+functor  = inventory_upgrades.property_functor_b
+params   = cost, rpm
+
+[prop_autofire]
+name     = st_auto_fire
+icon     = ui_wp_prop_autofire
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_3xfire]
+name     = st_semi_auto_fire
+icon     = ui_wp_prop_3xfire
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_dispersion]
+name     = ui_inv_accuracy
+icon     = ui_wp_prop_tochnost
+functor  = inventory_upgrades.property_functor_a
+params   = cost, rpm
+
+[prop_inertion]
+name     = ui_inv_handling
+icon     = ui_wp_prop_ergonomics
+functor  = inventory_upgrades.property_functor_a
+params   = cost, rpm
+
+[prop_autolockscope]
+name     = st_prop_autolockscope
+icon     = ui_wp_prop_autolockscope
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_1.5x]
+name     = st_prop_scope_1.5x
+icon     = ui_wp_prop_scope_1.5x
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_5x]
+name     = st_prop_scope_5x
+icon     = ui_wp_prop_scope_5x
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_6x]
+name     = st_prop_scope_6x
+icon     = ui_wp_prop_scope_6x
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_12x]
+name     = st_prop_scope_12x
+icon     = ui_wp_prop_scope_6x
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_15x]
+name     = st_prop_scope_15x
+icon     = ui_wp_prop_scope_6x
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope_attach]
+name     = st_prop_scope_attach
+icon     = ui_wp_prop_scope_attach
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_nightvision]
+name     = st_prop_night_vision_2
+icon     = ui_wp_prop_nightvision
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scope]
+name     = st_prop_scope
+icon     = ui_wp_prop_optics
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_contrast]
+name     = st_prop_contrast
+icon     = ui_wp_prop_contrast
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_no_buck]
+name     = st_no_buck
+icon     = ui_wp_propery_07
+functor  = inventory_upgrades.property_functor_a
+params   = hit_power, rpm, cost
+
+;**************************
+;		OUTFIT PROP
+;**************************
+[prop_armor]
+name     = ui_inv_outfit_fire_wound_protection
+icon     = ui_am_propery_01
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_damage]
+name     = ui_inv_outfit_wound_protection
+icon     = ui_am_prop_damage
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_durability]
+name     = st_prop_durability
+icon     = ui_am_propery_03
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_restore_bleeding]
+name     = st_prop_restore_bleeding
+icon     = ui_am_prop_restore_bleeding
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_restore_health]
+name     = st_prop_restore_health
+icon     = ui_am_propery_05
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_night_vision]
+name     = st_prop_night_vision
+icon     = ui_wp_prop_nightvision
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+;[prop_night_vision_2]
+;name     = st_prop_night_vision_2
+;icon     = ui_am_prop_night_vision_2
+;functor  = inventory_upgrades.property_functor_a
+;params   = fire_wound_immunity, cost
+
+;[prop_night_vision_3]
+;name     = st_prop_night_vision_3
+;icon     = ui_am_prop_night_vision_3
+;functor  = inventory_upgrades.property_functor_a
+;params   = fire_wound_immunity, cost
+
+[prop_power]
+name     = ui_inv_outfit_power_restore
+icon     = ui_am_propery_07
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_tonnage]
+name     = ui_inv_outfit_additional_weight
+icon     = ui_am_propery_08
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_electro]
+name     = ui_inv_outfit_shock_protection
+icon     = ui_am_prop_electro
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cos
+
+[prop_thermo]
+name     = ui_inv_outfit_burn_protection
+icon     = ui_am_prop_thermo
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_radio]
+name     = ui_inv_outfit_radiation_protection
+icon     = ui_am_propery_09
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_chem]
+name     = ui_inv_outfit_chemical_burn_protection
+icon     = ui_am_prop_chem
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_psy]
+name     = ui_inv_outfit_telepatic_protection
+icon     = ui_am_propery_11
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_artefact]
+name     = st_prop_artefact
+icon     = ui_am_prop_artefact
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_weightoutfit]
+name     = st_prop_weightoutfit
+icon     = ui_am_prop_weightoutfit
+functor  = inventory_upgrades.property_functor_a
+params   = fire_wound_immunity, cost
+
+[prop_autolock]
+name     = st_prop_autolock
+icon     = ui_am_prop_autolock
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_sprint]
+name     = st_prop_sprint
+icon     = ui_am_prop_sprint
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+[prop_scanner]
+name     = st_prop_scanner
+icon     = ui_am_prop_scanner
+functor  = inventory_upgrades.property_functor_b
+params   = fire_wound_immunity, cost
+
+;;-- Binoculars
+[prop_binoc_zoom]
+name     = st_prop_binoc_zoom
+icon     = ui_am_prop_binoc_zoom
+functor  = inventory_upgrades.property_functor_t
+params   = cost
+
+[prop_binoc_nightvision]
+name     = st_prop_binoc_nightvision
+icon     = ui_am_prop_binoc_nightvision
+functor  = inventory_upgrades.property_functor_t
+params   = cost
+
+[prop_binoc_autolock]
+name     = st_prop_binoc_autolock
+icon     = ui_am_prop_binoc_autolock
+functor  = inventory_upgrades.property_functor_t
+params   = cost

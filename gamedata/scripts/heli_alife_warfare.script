@@ -1,0 +1,294 @@
+-- A lot of this is copied from heli_alife.script and modified for warfare.
+
+printd = warfare.printd
+
+helicopters = {}
+helicopter_spots = {}
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_heli")
+	str_wrfr[2] = game.translate_string("st_wrfr_target")
+	str_wrfr[3] = game.translate_string("st_wrfr_you")
+	str_wrfr[4] = game.translate_string("st_wrfr_mutant")
+	str_wrfr[5] = game.translate_string("st_wrfr_none")
+end
+
+function translate_smart_name(name)	
+	return (name and game.translate_string("st_" .. name .. "_name") or "")
+end
+
+function blargh()
+	for smartID, faction in pairs(helicopters) do
+
+	end
+end
+
+-- string, number, vector, number, number
+function create_heli_weak(faction, targetID, smart, pos)
+	printd(0, faction)
+	local heli = "simulation_" .. faction .. "_helicopter_weak"
+	local lvid = smart.m_level_vertex_id
+	local gvid = smart.m_game_vertex_id
+	local se_obj = alife_create(heli, pos, lvid, gvid)
+	helicopters[se_obj.id] = faction
+
+	local visual = utils_data.cfg_get_string(ini_sys, heli,"visual", se_obj, false)
+	-- required to spawn by script
+	local data = utils_stpk.get_heli_data(se_obj)
+	if (data) then
+		data.visual_name = visual and visual ~= "" and visual or [[dynamics\vehicles\mi2\veh_mi2_01]]
+		data.motion_name = [[helicopter\aaa.anm]]
+		data.startup_animation = "idle"
+		data.skeleton_name = "idle"
+		data.engine_sound = [[vehicles\helicopter\helicopter]]
+		utils_stpk.set_heli_data(data, se_obj)				
+		smart:register_npc(se_obj)
+	else
+		safe_release_manager.release(se_obj)
+	end
+	
+	printd(1, se_obj:name())
+	return se_obj
+end
+
+function show(se_obj)
+	printd(0, se_obj:name())
+	if (helicopters[se_obj.id] and se_obj) then
+		if not (helicopter_spots[se_obj.id]) then
+			local heli_spot = sim_squad_warfare.squad_icons[helicopters[se_obj.id]]
+			local info = get_heli_info(se_obj)
+			level.map_add_object_spot(se_obj.id, heli_spot, info)
+			helicopter_spots[se_obj.id] = heli_spot
+		else
+			local heli_spot = sim_squad_warfare.squad_icons[helicopters[se_obj.id]]
+			local info = get_heli_info(se_obj)
+			level.map_change_spot_hint(se_obj.id, heli_spot, info)
+		end
+	end
+	printd(1, se_obj:name())
+end
+
+function hide(se_obj)
+	printd(0, se_obj:name())
+	if (se_obj) then
+		if (helicopters[se_obj.id] and helicopter_spots[se_obj.id]) then
+			local heli_spot = sim_squad_warfare.squad_icons[helicopters[se_obj.id]]
+			level.map_remove_object_spot(se_obj.id, heli_spot)
+		end
+	end
+	printd(1, se_obj:name())
+end
+
+function update(heli,se_obj,heli_object)
+	printd(0, se_obj:name())
+
+	if not (heli_object) then
+		printd(1, se_obj:name())
+		return
+	end
+	
+	show(se_obj)
+
+	local st = db.storage[se_obj.id]
+	if (st and st.combat and st.combat:update()) then
+		return
+	end
+
+	se_obj.position = heli:position()
+	se_obj.dist_to_actor = distance_2d_sqr(se_obj.position, db.actor:position())
+
+	if (se_obj.current_action) then
+		local se_target = se_obj.assigned_target_id and alife_object(se_obj.assigned_target_id)
+
+		if (se_target) then
+			if (se_obj.current_action == 0) then
+				if (se_target:clsid() == clsid.online_offline_group_s) then
+					update_movement(heli, se_obj, heli_object, se_target)
+				end
+			elseif (se_obj.current_action == 1) then
+				if not (is_target_reached(se_obj, se_target)) then
+					move_to_target(heli, se_obj, heli_object, se_target)
+				end
+			end
+		end
+	end
+
+	printd(4, se_obj:name())
+end
+
+-- from heli_alife.script
+function update_movement(heli, se_obj, heli_object, se_target)
+	printd(0, se_obj:name())
+
+	local tg = time_global()
+	local st = db.storage[se_obj.id]
+
+	if not (st) then 
+		printd(1, se_obj:name())
+		return 
+	end
+	
+	if (st.change_speed_time and tg < st.change_speed_time) then
+		printd(2, se_obj:name())
+		return 
+	end
+
+	local pos = se_target.position	
+	st.change_speed_time = tg + 15000	
+
+	if (se_target:clsid() == clsid.online_offline_group_s) then
+		local npc = db.storage[se_target:commander_id()] and db.storage[se_target:commander_id()].object
+
+		if (npc) then 
+			pos = npc:position()
+		end
+	end
+
+	local center_pos = vector():set(pos)
+	center_pos.y = level.get_bounding_volume().max.y
+	heli_object:GoPatrolByRoundPath(center_pos, 70,  random_choice(true,false))
+	heli_object:LookAtPoint(center_pos, true)
+	heli_object:SetMaxVelocity(12)
+	heli_object:SetSpeedInDestPoint(12)	
+	
+	printd(3, se_obj:name())
+end
+
+function force_target_destination(id,target_id)
+	-- blank... no one should request helis in warfare through the normal means.
+end
+
+-- number, number
+function set_target(se_obj, target)
+	printd(0, se_obj:name())
+
+	if (se_obj) then
+		local smart = se_obj.m_smart_terrain_id and se_obj.m_smart_terrain_id ~= 65535 and alife_object(se_obj.m_smart_terrain_id)
+		if (smart) then
+			smart:unregister_npc(se_obj)
+		end
+
+		se_obj.assigned_target_id = target
+		se_obj.current_target_id = target
+		se_obj.current_action = 1
+		se_obj.help_id = se_obj.id
+	end
+
+	printd(1, se_obj:name())
+end
+
+-- from heli_alife.script
+function is_target_reached(se_obj, se_target)	
+	printd(0, se_obj:name())
+
+	local gvid = se_obj.m_game_vertex_id
+	local target_gvid = se_target.m_game_vertex_id
+	local gg = game_graph()
+	if gg:vertex(gvid):level_id() ~= gg:vertex(target_gvid):level_id() then
+		printd(1, se_obj:name())
+		return false
+	end
+	if (se_target:clsid() == clsid.online_offline_group_s) then 
+		printd(2, se_obj:name())
+		return false
+	end
+	local dist = distance_2d_sqr(se_obj.position,se_target.position)
+	printd(3, se_obj:name())
+	return dist <= 25 or se_obj.always_arrived or se_target.arrive_dist and dist < se_target.arrive_dist or false
+end
+
+function move_to_target(heli, se_obj, heli_object, se_target)
+	printd(0, se_obj:name())
+
+	heli = heli or db.storage[se_obj.id] and db.storage[se_obj.id].object
+	heli_object = heli_object or heli and heli:get_helicopter()
+
+	if not (heli_object) then
+		printd(1, se_obj:name())
+		abort("heli_alife.try_to_reach_target: heliObject is nil! IMPOSSIBLE!")
+		return
+	end
+
+	local vel = db.storage[se_obj.id].combat_max_velocity or 30
+	heli_object:SetMaxVelocity(vel)
+
+	local pos = heli:position()
+
+	if (pos.y + 10 < se_target.position.y+70) then
+		heli_object:SetDestPosition(vector():set(pos.x, se_target.position.y + 70, pos.z))
+		printd(2, se_obj:name())
+		return
+	end
+
+	if (se_target:clsid() == clsid.smart_terrain) then
+		heli_object:SetDestPosition(vector():set(se_target.position.x, se_target.position.y + 70, se_target.position.z))
+	else
+		local center_pos = vector():set(se_target.position)
+		center_pos.y = center_pos.y + 70
+		heli_object:SetMaxVelocity(vel)
+		heli_object:GoPatrolByRoundPath(center_pos, 50, true)
+		heli_object:LookAtPoint(se_target.position, true)
+	end
+
+	printd(3, se_obj:name())
+end
+
+function get_heli_info(se_obj)	
+	printd(0, se_obj:name())
+
+	if (se_obj) then
+		local props = " \\n" .. str_wrfr[1] .. " \\n"
+		
+		if (se_obj.assigned_target_id ~= nil) then
+			if (se_obj.assigned_target_id == AC_ID) then			
+				props = props .. " \\n" .. str_wrfr[2] .. ": [" .. str_wrfr[3] .. "]\\n"
+			else			
+				local target = alife_object(se_obj.assigned_target_id)
+			
+				if (target) then
+					if (target:clsid() == clsid.smart_terrain)  then		
+						local pointName = translate_smart_name(target:name())
+						
+						if not (pointName) then
+							pointName = target:name()
+						end
+						
+						props = props .. " \\n" .. str_wrfr[2] .. ": "..pointName.."\\n"
+					elseif (target:clsid() == clsid.online_offline_group_s) then
+						if (target:get_squad_community() ~= "monster") then
+							local commanderID = target:commander_id()
+							local commander = commanderID and alife_object(commanderID)
+							local commanderName = commander and commander.character_name and commander:character_name()	
+							local squadName = commanderName and commanderName.."'s squad" or target:name()
+							
+							props = props .. " \\n" .. str_wrfr[2] .. ": "..squadName.."\\n"
+						else
+							props = props .. " \\n" .. str_wrfr[2] .. ": [" .. str_wrfr[4] .. "]\\n"
+						end
+					end
+				else
+					props = props .. " \\n" .. str_wrfr[2] .. ": [" .. str_wrfr[5] .. "]\\n"
+				end
+			end
+		else
+			props = props .. " \\n" .. str_wrfr[2] .. ": nil\\n"
+		end
+		
+		printd(1, se_obj:name())
+		return props
+	end	
+
+	printd(2, se_obj:name())
+	return str_wrfr[1]
+end
+
+
+------------------------------------------------------------
+-- Callbacks
+------------------------------------------------------------
+function on_game_start()
+	refresh_strings()
+
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+end

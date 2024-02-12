@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="exchanging_items_phr_0">
+		<text>Слушай, братан, может, махнёмся, у кого чем мешок богатый?</text>
+	</string>
+	<string id="exchanging_items_phr_1">
+		<text>А что ж не поменяться? Давай поменяемся. Смотри, что могу тебе предложить, выбирай: </text>
+	</string>
+	<string id="exchanging_items_phr_2">
+		<text>Я бы артефакт взял...</text>
+	</string>
+	<string id="exchanging_items_phr_3">
+		<text>Я бы костюм взял...</text>
+	</string>
+	<string id="exchanging_items_phr_4">
+		<text>Я бы предмет взял...</text>
+	</string>
+	<string id="exchanging_items_phr_5">
+		<text>Я бы оружие взял...</text>
+	</string>
+	<string id="exchanging_items_phr_6">
+		<text>Хорошо. А в замен я у тебя возьму вот это: </text>
+	</string>
+	<string id="exchanging_items_phr_7">
+		<text>Думаю, никакого обмена у нас с тобой не будет и быть не может. Смотрю, у тебя нечего путного взять. Подваливай, когда разбогатеешь.</text>
+	</string>
+	<string id="exchanging_items_phr_8">
+		<text>Хорошо, я согласен, меняемся.</text>
+	</string>
+	<string id="exchanging_items_phr_9">
+		<text>Я передумал меняться.</text>
+	</string>
+	<string id="exchanging_items_phr_10">
+		<text>Дело твоё.</text>
+	</string>
+</string_table>

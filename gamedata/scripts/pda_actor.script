@@ -1,0 +1,81 @@
+printd = warfare.printd
+
+manual_control = false
+
+local str_wrfr = {}
+function refresh_strings()
+	str_wrfr[1] = game.translate_string("st_wrfr_influnence_points")
+	str_wrfr[2] = game.translate_string("st_wrfr_release_control_faction")
+	str_wrfr[3] = game.translate_string("st_wrfr_take_control_faction")
+	str_wrfr[4] = game.translate_string("st_wrfr_show_points")
+	str_wrfr[5] = game.translate_string("st_wrfr_hide_points")
+	str_wrfr[6] = game.translate_string("st_wrfr_display_faction_info")
+end
+
+local function map_spot_menu_add_property(ui,id,lvl)
+    printd(0)
+
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+	if (obj.id == AC_ID) then
+--av661194	
+		ui:AddItem(str_wrfr[1] .. ": " .. string.format("%.2f",warfare.actor_influence_points))
+--av661194
+		ui:AddItem("---------------------")
+		
+		if (manual_control) then
+			ui:AddItem(str_wrfr[2])
+		else
+			ui:AddItem(str_wrfr[3])
+		end
+		
+		if (smart_terrain_warfare.hide_smarts) then
+			ui:AddItem(str_wrfr[4])
+		else
+			ui:AddItem(str_wrfr[5])
+		end
+	end
+    
+    printd(2)
+end
+
+local function map_spot_menu_property_clicked(property_ui,id,level_name,prop)
+    printd(0)
+
+	local obj = alife_object(id)
+	if not (obj) then
+        printd(1)
+		return
+	end
+	
+	if (obj.id == AC_ID) then
+		if (prop == str_wrfr[2] or prop == str_wrfr[3]) then
+			manual_control = not manual_control
+		elseif (prop == str_wrfr[6]) then
+			-- TODO: make a pop up menu with faction stats.
+		end
+		
+		if (prop == str_wrfr[4] or prop == str_wrfr[5]) then
+			smart_terrain_warfare.hide_smarts = not smart_terrain_warfare.hide_smarts
+		end
+	end
+    
+    printd(2)
+end
+
+function on_game_start()
+	local function on_game_load()
+		if alife_storage_manager.get_state().enable_warfare_mode then
+			RegisterScriptCallback("map_spot_menu_add_property",map_spot_menu_add_property)
+			RegisterScriptCallback("map_spot_menu_property_clicked",map_spot_menu_property_clicked)
+		end
+	end
+	RegisterScriptCallback("on_game_load", on_game_load)
+	RegisterScriptCallback("on_localization_change",refresh_strings)
+	
+	refresh_strings()
+end

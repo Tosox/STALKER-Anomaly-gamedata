@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {=actor_has_item(strelok_notes) +living_legend_st +lttz_ll_visit_agro_ug_task} sr_idle@nil %=give_task(lttz_ll_visit_barkeep)%
+on_info2 = {=actor_has_item(strelok_notes) +living_legend_alt +lttz_ll_visit_agro_ug_task} sr_idle@nil %=give_task(lttz_ll_visit_blackjack)%
+
+[sr_idle@nil]

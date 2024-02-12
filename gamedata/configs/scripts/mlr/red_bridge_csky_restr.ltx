@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = {+look_for_cs_history_part_4_give} sr_idle@inside %=set_squad_goodwill(killer_bridge_trader_mlr_squad:0) =set_squad_goodwill(protectors_red_bridge_bandit_smart_skirmish_squad:0)%
+
+[sr_idle@inside]
+on_actor_inside = {+look_for_cs_history_part_4_give} %+look_for_cs_history_part_4_1_give =bridge_down =send_tip(st_bridge_is_open_message:nil)%
+on_info = {+look_for_cs_history_part_4_1_give} nil

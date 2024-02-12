@@ -1,0 +1,33 @@
+[logic@monolith_eidolon]
+active = walker@monolith_eidolon
+suitable = {=check_npc_name(monolith_eidolon)} true
+prior = 300
+level_spot = quest_npc
+   
+[walker@monolith_eidolon]
+path_walk = prayer_6_walk
+path_look = prayer_2_look
+use_camp = false
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+invulnerable = {=is_warfare} false, {!actor_true_enemy} true, false
+reach_distance = 10
+danger = danger
+meet = meet
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break 	= false
+meet_on_talking = false
+
+[danger]
+ignore_distance = 0

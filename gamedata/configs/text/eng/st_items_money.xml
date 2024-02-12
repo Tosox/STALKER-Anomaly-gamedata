@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+
+<!--
+	Basic items (Some are not used anymore)
+-->
+
+<string_table>
+
+	<string id="st_cash_name">
+		<text>Wallet</text>
+	</string>
+	<string id="st_cash_descr">
+		<text>A worn leather wallet for banknotes.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] storage for currency\n</text>
+	</string>
+	
+	<string id="st_roubles">
+		<text>Roubles</text>
+	</string>
+	<string id="st_roubles_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing reasons. But many stalkers keep at least a few roubles in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n</text>
+	</string>
+	
+	<string id="st_roubles_5000_name">
+		<text>5000 roubles</text>
+	</string>
+	<string id="st_roubles_5000_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+	<string id="st_roubles_1000_name">
+		<text>1000 roubles</text>
+	</string>
+	<string id="st_roubles_1000_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+	<string id="st_roubles_500_name">
+		<text>500 roubles</text>
+	</string>
+	<string id="st_roubles_500_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+	<string id="st_roubles_100_name">
+		<text>100 roubles</text>
+	</string>
+	<string id="st_roubles_100_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+	<string id="st_roubles_50_name">
+		<text>50 roubles</text>
+	</string>
+	<string id="st_roubles_50_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+	<string id="st_roubles_10_name">
+		<text>10 roubles</text>
+	</string>
+	<string id="st_roubles_10_descr">
+		<text>Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing risks. But many stalkers keep at least a few banknotes in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life.\n \n
+		%c[ui_gray_3]PROPERTIES:\n
+		%c[d_blue] • %c[ui_gray_2] everyday item\n
+		%c[d_blue] • %c[ui_gray_2] cash\n
+		%c[d_blue] • %c[ui_gray_2] universally recognised currency unit\n</text>
+	</string>
+	
+</string_table>

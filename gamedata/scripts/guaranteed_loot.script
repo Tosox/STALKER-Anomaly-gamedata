@@ -1,0 +1,144 @@
+local drop_table = {}
+local used_npc = {}
+local counters = {}
+local abort
+
+function pr(x,...)
+	-- printf(strformat('[%s] guaranteed_loot: ',time_global())..x, ...)
+end
+
+function on_game_start()
+	RegisterScriptCallback("npc_on_use",npc_on_use)
+	RegisterScriptCallback("server_entity_on_unregister",server_entity_on_unregister)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+end 
+
+function save_state(md)
+	md.guaranteed_drops_data = {}
+	md.guaranteed_drops_data.counters = counters
+	md.guaranteed_drops_data.used_npc = used_npc
+end
+
+function load_state(md)
+	used_npc = md.guaranteed_drops_data and md.guaranteed_drops_data.used_npc or {}
+	counters = md.guaranteed_drops_data and md.guaranteed_drops_data.counters or {}
+	make_drop_table()
+end
+
+function split_tonumber(str)
+	local x = split(str)
+	for i,v in ipairs(x) do
+		x[i] = tonumber(v)
+	end
+	return x
+end
+
+local _splitcache = {}
+function split(str)
+	if not _splitcache[str] then
+		_splitcache[str] = {}
+		for x in string.gmatch(str, '([^,]+)') do
+			x = x:gsub(' ','')
+			table.insert(_splitcache[str], x)
+		end	
+	end
+	return _splitcache[str]
+end
+
+function make_drop_table()
+	local i = ini_file("plugins\\guaranteed_drops.ltx")
+	drop_table = i and utils_data.parse_ini_section_to_array(i, 'settings')
+	
+	if not drop_table then 
+		abort = true 
+		printf("!Warning: couldn't load file gamedata/configs/plugins/guaranteed_drops.ltx, feature disabled!")
+		return 
+	end
+	
+	for k,v in pairs(drop_table) do
+		if string.find(v,',') then
+			local ret = split_tonumber(v)
+			drop_table[k] = {ret[1], ret[2]}
+		else
+			drop_table[k] = tonumber(v)
+		end
+	end
+end
+
+function check(obj_id, who_id)
+	pr('event start')
+	if not who_id then pr('quit because nil user id') return true end
+	if who_id > 0 then pr('quit because invalid user id %s', who_id) return true end
+	local npc = level.object_by_id(obj_id)
+	if not npc then pr('quit because victim id has no object %s', who_id) return true end
+	
+	local function itr(npc,item)
+		if drop_table[item:section()] then
+			pr('item dropped legit, reset counter for %s', item:section())
+			counters[item:section()] = 0
+		end
+	end
+	npc:iterate_inventory(itr,npc)
+
+	for k,v in pairs(counters) do
+		if type(drop_table[k]) == 'number' then
+			if v >= drop_table[k] then
+				pr('guaranteed drop for %s', k)
+				counters[k] = 0
+				alife_create_item(k, npc)
+			end
+		else
+			local start_ch_num, guaranteed_drop_num = unpack(drop_table[k])
+			-- if v >= guaranteed_drop_num then
+				-- -- pr('guaranteed drop for %s', k)
+				-- -- counters[k] = 0
+				-- -- alife_create_item(k, npc)
+			-- e
+			if v >= start_ch_num then
+				local step = 1 / (guaranteed_drop_num - start_ch_num)
+				local diff = v - start_ch_num + 1
+				pr('%s chance start is %s, we are at check %s, chance increase per step is %s', k, start_ch_num, v, step)
+				local roll = math.random()
+				pr('chance was %s, roll is %s', step * diff, roll)
+				if roll < (step*diff) then
+					pr('guaranteed drop for %s', k)
+					counters[k] = 0
+					alife_create_item(k, npc)
+				end
+			end
+		end
+	end
+	
+	return true
+end
+
+
+function npc_on_use(obj,who)
+	pr('npc_on_use triggered')
+	
+	if abort then return end
+	
+	if used_npc[obj:id()] then
+		pr('npc already looted, quit')
+		return
+	end
+	
+	used_npc[obj:id()] = true
+	
+	pr('looting %s', obj:id())
+	
+	for k,v in pairs(drop_table) do
+		if counters[k] then 
+			counters[k] = counters[k] + 1
+		else
+			counters[k] = 1
+		end
+	end
+	
+	CreateTimeEvent(0, "guaranteed_loot_event", 0, check, obj and obj:id(), who and who:id())
+end
+
+function server_entity_on_unregister(se_obj, kind)
+	used_npc[se_obj.id] = nil
+end

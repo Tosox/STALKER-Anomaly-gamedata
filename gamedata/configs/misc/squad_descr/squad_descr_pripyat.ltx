@@ -1,0 +1,349 @@
+;«десь содержатс€ дескрипшены сквадов, которые потом можно создавать использу€ спец функции.
+
+[trader_pri_a15_mlr_squad]:online_offline_group
+faction = stalker
+npc =  trader_pri_a15_mlr
+npc_in_squad = 1, 1
+target_smart = pri_a16
+
+[guid_pri_a15_mlr_squad]:online_offline_group
+faction = stalker
+npc =  guid_pri_a15_mlr
+npc_in_squad = 1, 1
+target_smart = pri_a15
+
+[start_prachka_squad]:online_offline_group
+faction = stalker
+npc =  sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_4, sim_default_stalker_4
+npc_in_squad = 3, 3
+target_smart = pri_a16
+
+[monolith_base_mlra_squad]:online_offline_group
+faction = monolith
+npc = sim_monolith_sniper, sim_default_monolith_4, sim_default_monolith_4, sim_monolith_sniper
+npc_in_squad = 1, 3
+target_smart = pri_smart_neutral_stalker1
+
+[merc_hide_squad_on_book_store]:online_offline_group
+faction = killer
+npc_random = sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_4, sim_default_killer_4
+npc_in_squad = 5, 5
+target_smart = pri_a18_smart_terrain
+story_id = merc_hide_squad_on_book_store
+
+[merc_pri_a18_mech_mlr_squad]:online_offline_group
+faction = killer
+relationship = friend
+npc = merc_pri_a18_mech_mlr
+npc_in_squad = 1, 1
+target_smart = pri_a18_smart_terrain
+story_id = merc_pri_a18_mech_mlr_squad
+
+[merc_pri_grifon_mlr_squad]:online_offline_group
+faction = killer
+relationship = friend
+npc = merc_pri_grifon_mlr
+npc_in_squad = 1, 1
+target_smart = pri_a18_smart_terrain
+story_id = merc_pri_grifon_mlr_squad
+
+[pri_special_trader_mlr_squad]:online_offline_group
+faction = killer
+relationship = friend
+npc = pri_special_trader_mlr
+npc_in_squad = 1, 1
+invulnerability = true
+target_smart = pri_a18_smart_terrain
+story_id = pri_special_trader_mlr_squad
+
+[merc_sim_squad_veteran_pri_a18_mlr_friends]:online_offline_group
+faction = killer
+relationship = friend
+npc_random = sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_3, sim_default_killer_4
+npc_in_squad = 1, 3
+target_smart = pri_a18_smart_terrain
+
+[merc_sim_squad_pri_a18_mlr]:online_offline_group
+faction = killer
+relationship = friend
+npc_random = sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_3, sim_default_killer_4, sim_default_killer_4
+npc_in_squad = 1, 3
+target_smart = pri_a18_smart_terrain
+
+[pri_a16_mech_mlr_squad]:online_offline_group
+faction = stalker
+npc = pri_a16_mech_mlr
+npc_in_squad = 1, 1
+target_smart = pri_a16_mlr_copy
+
+[monolith_base_mlr_squad]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4, sim_default_monolith_3, sim_default_monolith_4
+npc_in_squad = 1, 3
+target_smart = mlr_terrain
+
+[monolith_base_mlr2_squad]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_4, sim_default_monolith_2
+npc_in_squad = 1, 3
+target_smart = mlr_terrain
+
+[lider_monolith_haron_squad]:online_offline_group
+faction = monolith
+npc = lider_monolith_haron
+npc_in_squad = 1, 1
+target_smart = mlr_terrain
+spawn_point = haron_spawn_point
+
+[monolith_kbo_squad]:online_offline_group
+faction = monolith
+npc = trader_monolith_kbo, mechanic_monolith_kbo
+npc_in_squad = 2, 2
+target_smart = kbo_terrain
+
+;---------------------
+[pri_a25_poltergeist_1_squad]:online_offline_group
+faction = monster
+npc = m_poltergeist_normal_tele
+spawn_point = pri_a25_smart_terrain_pri_a25_poltergeist_1_spawn_point
+target_smart = pri_a25_smart_terrain
+story_id = pri_a25_poltergeist_1_squad
+
+[pri_a25_poltergeist_2_squad]:online_offline_group
+faction = monster
+npc = m_poltergeist_normal_tele
+spawn_point = pri_a25_smart_terrain_pri_a25_poltergeist_2_spawn_point
+target_smart = pri_a25_smart_terrain
+story_id = pri_a25_poltergeist_2_squad
+
+[pri_a25_poltergeist_3_squad]:online_offline_group
+faction = monster
+npc = m_poltergeist_normal_tele
+spawn_point = pri_a25_smart_terrain_pri_a25_poltergeist_2_spawn_point
+target_smart = pri_a25_smart_terrain
+story_id = pri_a25_poltergeist_3_squad
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; B 304 ;;;;;;;;;;;;;;;;;;;;;
+
+[pri_b304_dogs]:online_offline_group
+faction = monster_predatory_day
+npc = dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_weak, dog_strong, dog_strong
+spawn_point = pri_b304_monsters_smart_terrain_spawn
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_dogs
+
+[pri_b304_tushkano_1]:online_offline_group
+faction = monster_predatory_day
+npc = pas_b400_tushkano_smart, pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_1
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_1
+
+[pri_b304_tushkano_2]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart, pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_2
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_2
+
+[pri_b304_tushkano_3]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart, pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_3
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_3
+
+[pri_b304_tushkano_4]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart
+spawn_point = pri_b304_monsters_smart_terrain_spawn_4
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_4
+
+[pri_b304_tushkano_5]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_5
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_5
+
+[pri_b304_tushkano_6]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart, pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_6
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_6
+
+[pri_b304_tushkano_7]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_7
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_7
+
+[pri_b304_tushkano_8]:online_offline_group
+faction = monster_predatory_night
+npc = pas_b400_tushkano_smart, pas_b400_tushkano_smart 
+spawn_point = pri_b304_monsters_smart_terrain_spawn_8
+target_smart = pri_b304_monsters_smart_terrain
+story_id = pri_b304_tushkano_8
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;		Pripyat B306
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[pri_b306_4_floor_monolith]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_3, sim_default_monolith_2
+target_smart = pri_b306
+spawn_point = pri_b306_4_floor_spawn
+story_id = pri_b306_4_floor_monolith
+
+[pri_b306_4_floor_monolith_2]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_2, sim_default_monolith_1
+target_smart = pri_b306
+spawn_point = pri_b306_4_floor_spawn_2
+story_id = pri_b306_4_floor_monolith_2
+
+[pri_b306_3_floor_monolith]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_3, sim_default_monolith_2, sim_default_monolith_1, sim_default_monolith_1
+target_smart = pri_b306
+spawn_point = pri_b306_3_floor_spawn_monolith
+story_id = pri_b306_3_floor_monolith
+
+[pri_b306_3_floor_zombied]:online_offline_group
+faction = zombied
+npc = sim_default_zombied_2
+target_smart = pri_b306
+spawn_point = pri_b306_3_floor_spawn_zombied
+story_id = pri_b306_3_floor_zombied
+
+[pri_b306_2_floor_monolith]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_2, sim_default_monolith_1, sim_default_monolith_1, sim_default_monolith_1
+target_smart = pri_b306
+spawn_point = pri_b306_2_floor_spawn_monolith
+story_id = pri_b306_2_floor_monolith
+
+[pri_b306_2_floor_zombied]:online_offline_group
+faction = zombied
+npc = sim_default_zombied_3, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1
+target_smart = pri_b306
+spawn_point = pri_b306_2_floor_spawn_zombied
+story_id = pri_b306_2_floor_zombied
+
+[pri_b306_1_floor_zombied]:online_offline_group
+faction = zombied
+npc = sim_default_zombied_2, sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1
+target_smart = pri_b306
+spawn_point = pri_b306_1_floor_spawn_zombied
+story_id = pri_b306_1_floor_zombied
+
+[pri_b306_1_floor_zombied_2]:online_offline_group
+faction = zombied
+npc = sim_default_zombied_2, sim_default_zombied_1, sim_default_zombied_1, sim_default_zombied_1
+target_smart = pri_b306
+spawn_point = pri_b306_1_floor_spawn_zombied
+story_id = pri_b306_1_floor_zombied_2
+
+[pri_b306_mercs_squad_light]:online_offline_group
+faction = killer
+npc = sim_default_killer_1, sim_default_killer_2, sim_default_killer_2
+target_smart = {-pri_b306_mercs_attacked} pri_b306, nil
+spawn_point = pri_b306_mercs_spawn
+story_id = pri_b306_mercs_squad
+
+[pri_b306_mercs_squad_strong]:pri_b306_mercs_squad_light
+npc = sim_default_killer_1, sim_default_killer_2, sim_default_killer_2, sim_default_killer_3, sim_default_killer_3, sim_default_killer_4
+
+;-------------------- b36 --------------------
+[pri_b36_monolith_sniper_squad]:online_offline_group
+faction = monolith
+npc = pri_b36_monolith_sniper
+target_smart = pri_b36_smart_terrain
+spawn_point = pri_b36_sniper_spawn
+story_id = pri_b36_monolith_sniper_squad
+
+[pri_b36_zombied_squad]:online_offline_group
+faction = zombied
+npc = sim_default_zombied_3, sim_default_zombied_4, sim_default_zombied_3, sim_default_zombied_3 , sim_default_zombied_4
+target_smart = pri_b36_smart_terrain
+spawn_point = pri_b36_zombied_spawn_point
+story_id = pri_b36_zombied_squad
+
+[pri_b36_monolith_guard_squad]:online_offline_group
+faction = monolith
+npc = sim_default_monolith_2, sim_default_monolith_2
+target_smart = pri_b36_smart_terrain
+spawn_point = pri_b36_guard_spawn
+story_id = pri_b36_monolith_guard_squad
+
+[pri_b36_monolith_marine_squad]:online_offline_group
+faction = monolith
+npc = pri_b36_monolith_marine_sniper, sim_default_monolith_2 , sim_default_monolith_2, sim_default_monolith_2, sim_default_monolith_3,sim_default_monolith_3
+target_smart = pri_b36_smart_terrain
+spawn_point = pri_b36_smart_terrain_spawn_point
+story_id = pri_b36_monolith_marine_squad
+
+;-----------------------------------------------------------------
+[pri_b305_dogs_squad]:online_offline_group
+faction = monster_predatory_day
+npc = dog_weak, dog_weak, dog_weak, dog_strong, dog_strong
+spawn_point = pri_b305_dogs_spawn
+target_smart = pri_b305_dogs
+story_id = pri_b305_dogs_squad
+
+;---------------------------- b303 ------------------------------------------------
+[pri_b303_burer_squad]:online_offline_group
+faction = monster_zombied_night
+npc = burer_normal
+target_smart = pri_b303
+spawn_point = pri_b303_save_home
+story_id = pri_b303_burer_squad
+
+;---------------------
+[pri_a16_stalkers_squad]:online_offline_group
+faction = stalker
+relationship = neutral
+npc = sim_default_stalker_pri_a16, sim_default_stalker_3, sim_default_stalker_2
+target_smart = pri_a16
+
+[pri_a16_freedom_yar_squad]:online_offline_group
+faction = freedom
+relationship = neutral
+npc = jup_b19_freedom_yar                                                                                                 
+target_smart = pri_a16 
+
+;----------------------------- ISG ------------------------------------------------------------------
+[pri_a17_isg_squad]:online_offline_group
+faction = isg
+npc = sim_default_isg_1, sim_default_isg_2, sim_default_isg_3, sim_default_isg_4
+target_smart = pri_a17
+story_id = pri_a17_isg_squad
+
+
+;---------------------------------------------------------------------------------------------------
+;;;;;;;;;;;SZA Freeplay mod;;;;;;;;;;
+
+[pri_a16_medic_yar_squad]:online_offline_group
+faction = stalker
+npc = pri_medic_stalker
+target_smart = pri_a16
+story_id = pri_a16_medic_yar_squad
+
+;;;;;;;;;;;;;;;;;;;;;SOC Pripyat;;;;;;;;;;;;;;;;;;;;;;
+[pri_monolith_monolith_trader_stalker_squad]:online_offline_group
+faction = monolith
+npc = pri_monolith_monolith_trader_stalker
+target_smart = pri_monolith
+story_id = pri_monolith_monolith_trader_stalker_squad
+;spawn_point = pri_monolith_monolith_trader_spawn
+
+[pri_monolith_monolith_mechanic_stalker_squad]:online_offline_group
+faction = monolith
+npc = pri_monolith_monolith_mechanic_stalker
+target_smart = pri_monolith
+story_id = pri_monolith_monolith_mechanic_stalker_squad
+spawn_point = pri_monolith_monolith_mechanic_spawn

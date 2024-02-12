@@ -1,0 +1,132 @@
+[settings]
+bolt_max_num = 99
+
+[sleeping_bag]
+enable = true
+dangerous_sleep = false			;Enable hostile squads to hunt actor if he sleeps in unsafe area ; DISABLED AS FAULTY (NO SAFE SPOTS)
+unsafe_radius = 10000			;Distance in which hostile squads will be drawn to actor if he sleeps in unsafe area
+use_placeable = true			;Places sleeping bag at actor location instead of using item directly
+have_at_start = false 			;player starts with sleeping bag in inventory
+
+[sleeping_bag_sections]
+itm_sleepbag
+sleep_bag
+
+[sleeping_bag_ph_sections]
+ph_sleepbag = itm_sleepbag
+
+[tent_i_bag]
+unsafe_radius = 10000			;Distance in which hostile squads will be drawn to actor if he sleeps in unsafe area
+use_placeable = true			;Places sleeping bag at actor location instead of using item directly
+
+[tent_i_bag_sections]
+itm_tent
+tent_bag
+
+[tent_i_bag_ph_sections]
+ph_tent = itm_tent
+
+
+[empty_syringe_items]
+survival_kit
+stimpack
+stimpack_army
+stimpack_scientic
+rebirth
+tetanus
+glucose
+glucose_s
+salicidic_acid
+morphine
+adrenalin
+analgetic
+
+[ammo_box_unpacked]
+size = 1,5
+ammo_9x18_fmj
+ammo_9x19_fmj
+ammo_11.43x23_fmj
+ammo_357_hp_mag
+ammo_5.45x39_fmj
+ammo_5.56x45_ss190
+ammo_5.7x28_ss190
+ammo_9x39_pab9
+ammo_7.62x39_fmj
+ammo_7.62x51_fmj
+ammo_7.62x25_p
+ammo_7.92x33_fmj
+ammo_7.62x54_7h1
+ammo_7.62x54_ap
+ammo_12x70_buck
+ammo_12x76_zhekan
+ammo_9x18_fmj_bad
+ammo_9x19_fmj_bad
+ammo_11.43x23_fmj_bad
+ammo_357_hp_mag_bad
+ammo_5.45x39_fmj_bad
+ammo_5.56x45_ss190_bad
+ammo_5.7x28_ss190_bad
+ammo_9x39_pab9_bad
+ammo_7.62x39_fmj_bad
+ammo_7.62x51_fmj_bad
+ammo_7.62x25_p_bad
+ammo_7.92x33_fmj_bad
+ammo_7.62x54_7h1_bad
+ammo_7.62x54_ap_bad
+ammo_12x70_buck_bad
+ammo_12x76_zhekan_bad
+
+[package_content]
+medkit_ai1          = bandage,bandage,bandage,bandage,jgut,stimpack,salicidic_acid,antibio_sulfad,yadylin,analgetic,mineral_water
+medkit_ai2          = bandage,bandage,bandage,bandage,jgut,jgut,stimpack_army,caffeine,morphine,drug_sleepingpills,analgetic,tetanus,akvatab,mineral_water
+medkit_ai3          = jgut,stimpack_scientic,stimpack_scientic,antirad,antirad,antibio_sulfad,antirad_cystamine,antirad_cystamine,adrenalin,drug_antidot,antibio_chlor,drug_radioprotector,drug_psy_blockade,glucose_s,glucose_s,analgetic,mineral_water
+quest_package_1		= ammo_9x18_ap,ammo_9x19_ap,ammo_11.43x23_hydro,ammo_5.45x39_fmj,ammo_5.56x45_ap,ammo_7.62x39_ap,ammo_7.62x25_p
+quest_package_2     = ammo_9x18_fmj,ammo_9x19_fmj,ammo_12x70_buck,ammo_12x76_zhekan,ammo_vog-25,af_grid,gun_oil,solvent
+quest_package_3     = ammo_9x18_ap,ammo_9x19_ap,ammo_11.43x23_hydro,ammo_5.45x39_fmj,ammo_5.56x45_ap,ammo_7.62x39_ap,ammo_7.62x25_p,ammo_9x18_fmj,ammo_9x19_fmj,ammo_12x70_buck,ammo_12x76_zhekan,ammo_vog-25
+quest_package_4     = cigarettes,cigarettes_lucky,vodka_quality,cigar,stimpack_scientic,medkit_army,antirad,drug_coagulant,drug_antidot,adrenalin,rebirth,drug_sleepingpills
+quest_package_5     = cigarettes,cigarettes_lucky,vodka_quality,cigar,stimpack_scientic,medkit_army,antirad,drug_coagulant,drug_antidot,adrenalin,rebirth,drug_sleepingpills
+quest_package_6     = glue_b,glue_a,glue_e,gun_oil,gun_oil_ru_d,gun_oil_ru,cleaning_kit_p,cleaning_kit_s,cleaning_kit_r5,cleaning_kit_r7,cleaning_kit_u,sewing_kit_b,sewing_kit_a,sewing_kit_h,sharpening_stones
+quest_package_7     = glue_b,glue_a,glue_e,gun_oil,gun_oil_ru_d,gun_oil_ru,cleaning_kit_p,cleaning_kit_s,cleaning_kit_r5,cleaning_kit_r7,cleaning_kit_u,sewing_kit_b,sewing_kit_a,sewing_kit_h,sharpening_stones
+quest_package_8     = glue_b,glue_a,glue_e,gun_oil,gun_oil_ru_d,gun_oil_ru,cleaning_kit_p,cleaning_kit_s,cleaning_kit_r5,cleaning_kit_r7,cleaning_kit_u,sewing_kit_b,sewing_kit_a,sewing_kit_h,sharpening_stones
+
+;;--==========================< Workshop settings >=============================
+[workshop_settings]
+distance = 40 ;-- The distance to the mechanic when checking the range in the angle selection function
+
+;-- Section with angles at which meshes should be spawned (radians, in the range -3.14-3.14)
+[workshop_angles]
+mil_awr_tiski_01 = mil_smart_terrain_7_7_freedom_mechanic_stalker,	 3.14,		alive				; Механик на базе свободы, Армейские склады
+pri_awr_tiski_02 = merc_pri_a18_mech_mlr,							 3.14,		alive				; Механик в магазине "Книги", Припять
+jup_awr_tiski_02 = mechanic_monolith_jup_depo,						 3.14,		dead				; Механик в депо, Юпитер
+cit_awr_tiski_01 = cit_killers_merc_mechanic_stalker,				 3.14,		alive				; Механик, Мертвый Город
+zat_awr_tiski_02 = zat_stancia_mech_merc,							 2.93,		alive				; Механик на станции переработки, Затон
+val_awr_tiski_01 = val_smart_terrain_7_3_bandit_mechanic_stalker,	 1.57,		alive				; Механик на базе бандитов, Темная долина
+mar_awr_tiski_01 = mar_base_stalker_tech,							 1.57,		alive				; Механик на базе ЧН, Болота
+pri_awr_tiski_01 = mechanic_monolith_kbo,							 1.57,		alive				; Механик в КБО, Припять
+yan_awr_tiski_01 = mechanic_army_yan_mlr,							 1.39, 		alive				; Механик около бункера, Янтарь
+esc_awr_tiski_02 = army_south_mechan_mlr,							 0.40, 		alive				; Механик на КПП, Кордон
+jup_awr_tiski_01 = zat_a2_stalker_mechanic,							 0, 		alive				; Механик на Янове, Юпитер
+zat_awr_tiski_01 = zat_tech_mlr,									 0, 		alive				; Механик на Скадовске, Затон
+agr_awr_tiski_01 = agr_smart_terrain_1_6_army_mechanic_stalker,		 -1.57, 	alive				; Механик на базе военных, Агропром
+esc_awr_tiski_01 = esc_smart_terrain_5_7_loner_mechanic_stalker,	 -1.57, 	alive				; Механик на ферме, у моста, Кордон
+pri_awr_tiski_03 = pri_monolith_monolith_mechanic_stalker,			 -1.57, 	alive				; Механик на базе монолита, Центр. Припять
+jup_awr_tiski_03 = jup_cont_mech_bandit,							 -1.57, 	alive				; Механик на складе контейнеров, Юпитер
+red_awr_tiski_01 = m_lesnik,								 		 -1.57, 	alive				; Механик, Рыжий лес
+trc_awr_tiski_01 = trucks_cemetery_bandit_mechanic,					 -0.87,		alive				; Механик, Кладбище техники
+bar_awr_tiski_01 = bar_visitors_stalker_mechanic,					 -3.14, 	alive				; Механик, Бар
+ds_awr_tiski_01 = dasc_tech_mlr,									 0, 	alive				; Механик, Темная Долина
+;jup_b217_stalker_tech
+;jup_b6_scientist_tech
+;yan_ecolog_kruglov
+
+;-- if a drugkit is given to a medic, the mechanic around will give access to drugkit crafting
+;-- mechanic name = drug kit info portion
+[drugkit_access]
+cit_killers_merc_mechanic_stalker              = cit_killers_merc_medic_stalker_drugkit_done
+val_smart_terrain_7_3_bandit_mechanic_stalker  = bandit_main_base_medic_mlr_drugkit_done
+mar_base_stalker_tech                          = mar_smart_terrain_base_doctor_drugkit_done
+agr_smart_terrain_1_6_army_mechanic_stalker    = agr_smart_terrain_1_6_army_mechanic_stalker_drugkit_done
+bar_visitors_stalker_mechanic                  = bar_dolg_medic_drugkit_done
+zat_a2_stalker_mechanic                        = jup_a6_stalker_medik_drugkit_done
+mil_smart_terrain_7_7_freedom_mechanic_stalker = mil_freedom_medic_drugkit_done
+zat_tech_mlr                                   = zat_b22_stalker_medic_drugkit_done

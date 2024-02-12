@@ -1,0 +1,25 @@
+[logic]
+active = sr_particle
+
+[sr_particle]
+name = anomaly2\generatory
+mode = 2
+path = gen_part_points
+looped = true
+on_info = {+warlab_deactivate_generators_done} sr_idle@nil %=clear_weather%
+on_info2 = {+aes2_greh_squad1_dead +aes2_greh_squad2_dead -ms_stitch_msg =actor_on_level(l13_generators)} sr_idle@msg
+on_info3 = {+stalker_stitch_mortal_sin_emission_buildup -ms_decisive_blow} sr_timer@impending_doom
+on_info4 = {+premature_emission_started} sr_idle@nil
+
+[sr_timer@impending_doom]
+type = dec
+start_value = 1080000
+on_value = 5 | %=play_sound_on_actor(rad_hat_2)%
+on_info = {+ms_decisive_blow} sr_particle
+on_info2 = {+too_late} sr_particle
+string = st_impending_doom
+
+[sr_idle@msg]:sr_particle
+on_game_timer = 60 | sr_particle %=gen_stitch_message +ms_stitch_msg%
+
+[sr_idle@nil]

@@ -1,0 +1,11 @@
+#ifndef        ANOMALY_SHADERS_H
+#define        ANOMALY_SHADERS_H
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //Anomaly shaders 1.5																 				 			  //
+  //Credits to KD, Anonim, Crossire, daemonjax, Zhora Cementow, Meltac, X-Ray Oxygen, FozeSt, Zagolski, SonicEthers, //
+ //David Hoskins, BigWIngs																							//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	#define	LUMINANCE_VECTOR float3(0.2125, 0.7154, 0.0721)
+
+#endif

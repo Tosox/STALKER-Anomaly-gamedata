@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_factions">
+		<text>Factions</text>
+	</string>
+	
+	<string id="encyclopedia_factions_bandit">
+		<text>Bandit</text>
+	</string>
+	<string id="encyclopedia_factions_bandit_text">
+		<text>
+			%c[pda_white]Bandits%c[ui_gray_1] are members of the criminal underworld who operate in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nSome people come to the Zone to atone for past mistakes, to seek enlightenment or find adventure. Bandits are not those people.\n
+			\nFormerly nothing but disparate gangs pursuing independent goals, Sultan's iron fist has forced a semblance of cohesion out of the Zone's outcasts and criminals.\n
+			\nWhile most Bandits openly engage in turf wars with the other factions, smarter criminals opt to instead infiltrate those factions to con, kidnap, coerce and corrupt others with relative impunity.\n
+			\nHere, the law is what you make it, and Sultan likes to see the Bandits as a law unto themselves.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Avtoritet: Sultan\n• Stronghold: Dark Valley\n• Colours: Various
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_clear_sky">
+		<text>Clear Sky</text>
+	</string>
+	<string id="encyclopedia_factions_clear_sky_text">
+		<text>
+			%c[pda_white]Clear Sky%c[ui_gray_1] are a scientific faction dedicated to learning about the Zone's inner workings.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nDespite their role in the 2011 Faction Wars, they are generally seen as a peaceful faction, preferring to invest their time and energy into research rather than playing at politics or war.\n
+			\nThey view the Zone and its creation as both a gift and a curse - an incredible event with unappreciated potential - and a threat to humanity if not properly kept in balance.\n
+			\nIt was this latter part of their ideology which led them to near destruction. Believing that a man named Strelok was upsetting the Zone's balance by trying to break into the CNPP, Clear Sky mobilized one of the largest armies ever seen in the Zone to apprehend him.\n
+			\nThey intercepted him just outside the CNPP itself, shortly before the Third Large Emission. No one is completely sure what happened next, only that Clear Sky was left leaderless and decimated, while the Monolith defending the area seemed to have only gotten stronger.\n
+			\nToday, however, the faction has rebuilt and recovered. This is, in large part, thanks to their new leader, Cold. Clear Sky now spends its time carrying on the research of its predecessors, ensconced in the quiet corners of the Zone.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Leader: Cold\n• Headquarters: Great Swamp\n• Colours: Blue and white
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_duty">
+		<text>Duty</text>
+	</string>
+	<string id="encyclopedia_factions_duty_text">
+		<text>
+			%c[pda_white]Duty%c[ui_gray_1] is a paramilitary organisation dedicated to defending humanity from the horrors of the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nFounded by former soldiers, this was a once proud and powerful faction, now brought low by a string of scandals and operational failures in the north of the Zone.\n
+			\nWith most of their best men and command staff either dead or defected, Voronin and Petrenko have been hard pressed to maintain the faction's characteristic discipline amongst the remains.\n
+			\nAgainst all odds, however, the faction continues to live by its ideals, doing everything it can to keep Rostok a safe haven for neutral stalkers everywhere.\n
+			\nMembers who aren't part of Rostok's defense force tend to dedicate themselves to hunting down Bandits, purging mutant lairs and assisting Ecologists through donating scientific samples.\n
+			\nDespite having become a shadow of its former self, Duty still continues to oppose Freedom on ideological grounds, believing the Zone is too dangerous to be accessed unregulated.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Commanding Officer: General Voronin\n• Main Headquarters: Rostok\n• Colours: Red and black
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_ecologist">
+		<text>Ecologist</text>
+	</string>
+	<string id="encyclopedia_factions_ecologist_text">
+		<text>
+			%c[pda_white]Ecologists%c[ui_gray_1] are an institute of government-backed research organisations.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThere is no ecosystem anywhere else quite like the one found in the Zone, so naturally there is also a great interest expressed in it by the government.\n
+			\nIt is for this reason that this faction exists - to study the artefacts, anomalies, mutants and other unnatural objects that can only be found here.\n
+			\nThus far they have established two research labs, one in Yantar and the other in Jupiter, from which they conduct most of their secretive experiments.\n
+			\nWhen working out in the field they are often accompanied by an escort, usually former mercenaries, stalkers and soldiers under their employment, or are otherwise armed themselves.\n
+			\nMany stalkers who hunt for artefacts and rare mutant parts sell them to the Ecologists, as they are usually willing to pay much more than anybody else for them.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Chief Researcher: Professor Sakharov\n• Chief Research Lab: Yantar\n• Colours: Various
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_freedom">
+		<text>Freedom</text>
+	</string>
+	<string id="encyclopedia_factions_freedom_text">
+		<text>
+			%c[pda_white]Freedom%c[ui_gray_1] are armed Anarchic activists who fight for free access to the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nMembers of this faction believe in coexistence with the Zone, seeing it as both a scientific and socio-political marvel. They believe the Zone should be recognized as a free territory without rulers, and oppose anyone who seeks to control it or work against its nature.\n
+			\nThese views put them in direct contrast with Duty, who see any form of coexistence with the Zone as naive or temporary at best, and at worst advocate its destruction entirely.\n
+			\nLukash's resolve in defending against the Monolith, combined with Loki's level-headedness toward other groups has made Freedom one of the most widely accepted factions in the Zone...at least, for now.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Leader: Lukash\n• Main Headquarters: Army Warehouses\n• Colours: Green, olive, and yellow
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_loner">
+		<text>Loner</text>
+	</string>
+	<string id="encyclopedia_factions_loner_text">
+		<text>
+			%c[pda_white]Loners%c[ui_gray_1], or "%c[pda_green]free stalkers%c[ui_gray_1]", are those who aren't aligned to a faction.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nStalkers come to the Zone for a variety of reasons: a thirst for adventure, the urge to explore the unknown, or the desire to start a new life from scratch.\n
+			\nMany influential factions take a neutral or friendly stance towards them, seeing them as potential recruits, or as workers to perform jobs they are unable or unwilling to do themselves.\n
+			\nMost of their income is from the collection of artefacts, mutant parts, weapons and miscellaneous items discovered when looting abandoned buildings and deceased stalkers.\n
+			\nHowever, almost every hopeful stalker dreams of one day finding the legendary Wish Granter - apparently an ancient alien crystal capable of fulfilling any desire.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Most Influential Trader: Sidorovich\n• Training Ground: Cordon\n• Colours: Various
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_mercenary">
+		<text>Mercenary</text>
+	</string>
+	<string id="encyclopedia_factions_mercenary_text">
+		<text>
+			%c[pda_white]Mercenaries%c[ui_gray_1] are a faction of foreign private military contractors.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThey are very serious about their tasks and work in general, with well-planned operations and excellent preparation being the keys to their success.\n
+			\nContrary to popular belief they are not just hired killers, but carry out various contracts which involve finding rare artefacts and equipment, and escorting valuable cargo through the most dangerous areas of the Zone.\n
+			\nAlthough often sought out by others due to their high success rate, it is rumoured that their true client is a mysterious overseas employer, the motives of whom are even more unfathomable than the Zone itself.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Contractor-Liaison: Dushman\n• Field Headquarters: Dead City\n• Colours: Blue and black
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_military">
+		<text>Military</text>
+	</string>
+	<string id="encyclopedia_factions_military_text">
+		<text>
+			%c[pda_white]Military%c[ui_gray_1] forces in the Zone are a combined regiment of conscripted servicemen, professional Spetsnaz, and commissioned Military stalkers, mandated by the Ministry of Internal Affairs and advised by the Security Service of Ukraine.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nTasked primarily with ensuring that the border between the Zone and the outside world is not breached, they are hated here by almost everybody barring the Ecologists - who are funded by the same government - and Duty, who are rumoured to have made special deals with Military command through the Spetsnaz.\n
+			\nOfficially, military policy in the Zone requires any known trespassers or unsanctioned inhabitants to be apprehended, not killed. In practice, however, the conscripts are given standing orders to shoot stalkers on sight, and are generally taught to regard such illegals as little better than animals.\n
+			\nMeanwhile, their commissioned officers are frequently and easily bribed, with the most obvious example being how they generally ignore the rookie village in Cordon despite it being less than a few hundred meters away from a major checkpoint.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• De Facto Commanding Officer: Colonel Kuznetsov\n• Field Headquarters: Agroprom\n• Colours: Green and olive
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_monolith">
+		<text>Monolith</text>
+	</string>
+	<string id="encyclopedia_factions_monolith_text">
+		<text>
+			%c[pda_white]Monolith%c[ui_gray_1] are a fanatical pseudo-religious sect hostile to all but their own.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nFixated by their fanaticism, they attempt to resist all who would try to penetrate through to the centre of the Zone - to such an extent that most stalkers consider them to be genuinely insane.\n
+			\nWhilst physically on par with any other stalker in the Zone, their fervour is what truly sets them aside - members have been known to charge with knives after running out of ammo, or detonate themselves when at risk of being captured.\n
+			\nTheir members are thought to be inducted through brainwashing, previously via the use of the Brain Scorcher until it was shut down by Strelok.\n
+			\nIrrespective of this, in recent years the Monolith have managed to obtain a seemingly endless supply of recruits and materiel.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Intercessor: Rabbit/ Krolik\n• Holy City: Pripyat\n• Colours: White, black, and brown
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_greh">
+		<text>Sin</text>
+	</string>
+	<string id="encyclopedia_factions_greh_text">
+		<text>
+			%c[pda_white]Sin%c[ui_gray_1] are an extremely hostile cult of mutant stalkers who believe in the divine essence of the Zone, seeing it as a medium for healing and 'absolution'.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nVariously described as zombified, mutated or possessed, "dark stalkers" of the ominous Sin faction seek to expand the Zone to span the whole world - and they will stop at nothing to accomplish this ambitious goal.\n
+			\nDespite their deathly complexion and seemingly poor health, they are a force to be reckoned with. Their combat ability is on par with that of experienced stalkers, while fanatical devotion to their ideals compel them to press on through hails of bullets and shrapnel.\n
+			\nTheir founders are rumoured to be former death row inmates secretly experimented upon in underground labs long before the Zone's creation.\n
+			\nOn the other hand, their ranks are believed to have been bolstered with outcasts, renegades, voluntary recruits, and captives, brainwashed and mutated to serve as Sin's devoted servants.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Founding Father: Chernobog\n• Sanctum: Generators\n• Colours: Brown, grey, and black
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_isg">
+		<text>UNISG</text>
+	</string>
+	<string id="encyclopedia_factions_isg_text">
+		<text>
+			%c[pda_white]United Nations International Scientific Group%c[ui_gray_1] is a special forces unit with a keen interest in the Zone, and the more ruthless successor of the original ISG.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+		    \nWhile the original ISG was disbanded shortly after its founding in 2011 due to unforeseen circumstances, recent disturbing rumours followed by a vast yet harmless emission seen as far as London convinced the United Nations to restore this international group with a mandate to research the Zone.\n
+			\nOstensibly, they continue their old mission statement as the Western counterpart to the Ecologists, studying the Zone's wonders for the benefit of science.\n
+			\nIn reality, they are suspected by the Ukrainian government to have an avid and politically motivated interest in the Zone's true origins. Needless to say, the SSU would not want such knowledge to fall into the wrong hands. It is for this reason that officially permitted UN presence in the Zone is extremely limited.\n
+			\nThus, the many covert UNISG members active in the Zone would do anything to preserve their secrecy while it lasts, up to and including the liquidation of potential eye witnesses. Whatever their actual goal may be, their agents in the field are now far from defenceless, and they are prepared to 'obtain knowledge' with state-of-the-art weaponry and modern combat tactics.\n
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Mandated by: United Nations \n• Field Base: Unknown\n• Colours: White, green, and brown
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_renegade">
+		<text>Renegade</text>
+	</string>
+	<string id="encyclopedia_factions_renegade_text">
+		<text>
+			%c[pda_white]Renegades%c[ui_gray_1] are some of the most despicable stalkers in the Zone.\n
+			\n%c[pda_green]Information%c[ui_gray_1]\n
+			\nConsidered morally bankrupt even by the standards of Bandits, Renegades are said to consist of stalkers so brutal, vile, craven, unreliable or duplicitous that no other community is willing to openly affiliate with them.\n
+			\nThe only law they respect is one of force, preying on the weak at the perimeters of the Zone, often those who are too young and inexperienced to stand any chance against them.\n
+			\nDriven into the marshes by their numerous enemies, it is only in the face of Clear Sky that their desire to survive forced these jackals to unite as a faction of their own.
+			\n%c[pda_blue]Statistics%c[ui_gray_1]\n
+			\n• Leaders: Unknown\n• Headquarters: Unknown\n• Colours: Various\n
+		</text>
+	</string>
+
+	<string id="encyclopedia_factions_zombified">
+		<text>Zombified</text>
+	</string>
+	<string id="encyclopedia_factions_zombified_text">
+		<text>
+			%c[pda_white]Zombified%c[ui_gray_1] stalkers are those who have fallen under the effects of a strong psy-field, yet couldn't retain the will required to consciously serve the Monolith.\n
+			\n%c[pda_green]Information%c[ui_gray_1]
+			\nThese creatures lack the higher functions of the brain and act solely on residual reflexes and skills, incapable of conscious activity, and having a high threshold for pain.\n
+			\nThe mental and physical health of a zombified stalker will gradually deteriorate over time, eventually losing the last of their humanity, and becoming the mutant known as a zombie.\n
+			\nUnlike the mutant however, zombified stalkers are capable of using weapons and tools, and are frequently seen working together in groups, or herded by soldiers of the Monolith.\n
+			\n%c[pda_green]Statistics%c[ui_gray_1]\n
+			\n• Methods for Preventing/ Delaying Zombification: Anabiotics, Psy-Helmets, Drugs and Headgear that confer Psychic Resistance\n• Common Causes of Zombification: Emissions, the Brain Scorcher, the Miracle Machine, Controllers\n• Colours: Various\n
+		</text>
+	</string>
+</string_table>

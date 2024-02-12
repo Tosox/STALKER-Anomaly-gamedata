@@ -1,0 +1,15 @@
+[logic]
+active = sr_idle@waiting_order
+
+[sr_idle@waiting_order]
+on_info = {+pri_special_trader_mlr_order_in_process} sr_idle@24hours
+
+[sr_idle@24hours]
+on_info = %+cancel_new_orders_pri_mlr%
+on_game_timer = 86400 | sr_idle@order_ready
+
+[sr_idle@order_ready]
+on_info = sr_idle@order_ready2 %+order_pri_mlr_is_done =send_tip(st_pri_special_trader_mlr_message2:meeker)%
+
+[sr_idle@order_ready2]
+on_info = {+pri_special_trader_mlr_order_is_ready} sr_idle@waiting_order

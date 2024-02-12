@@ -1,0 +1,37 @@
+[logic]
+active = walker
+on_death = death
+
+[walker]
+path_walk = left_mlr_1_walk_1
+path_look = mlr_all_point_look
+combat_ignore_cond = true
+on_info = {+totaliz_money_has_gone} walker@1 %=make_enemy(total_group_stalkers_1:total_group_bandits_1) =make_enemy(total_group_stalkers_1:total_group_bandits_2) =make_enemy(total_group_stalkers_1:total_group_bandits_3) =make_enemy(total_group_stalkers_1:total_group_bandits_4)%
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+out_restr = bar_arena_restrictor
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} true
+
+[walker@1]
+path_walk = bar_arena_walk_attack
+path_look = mlr_all_point_look
+def_state_moving1 = raid
+def_state_moving2 = raid
+def_state_moving3 = raid
+wounded = wounded@ignore
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+out_restr = bar_arena_restrictor
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} true
+
+[wounded@ignore]
+hp_state        = 0|wounded_heavy@help_heavy
+hp_state_see    = 0|wounded_heavy@help_heavy
+hp_victim       = 0|nil
+hp_fight        = 0|false
+hp_cover        = 0|false
+
+[death]
+on_info = %+total_group_stalker_1_death%
