@@ -1,8 +1,8 @@
-*.ltx linguist-language=INI
-*.script linguist-language=Lua
+*.ltx linguist-language=ini
+*.script linguist-language=lua
 
-*.ps linguist-language=HLSL
-*.gs linguist-language=HLSL
-*.vs linguist-language=HLSL
-*.cs linguist-language=HLSL
-*.s linguist-language=HLSL
+*.ps linguist-language=shaderlab
+*.gs linguist-language=shaderlab
+*.vs linguist-language=shaderlab
+*.cs linguist-language=shaderlab
+*.s linguist-language=shaderlab
