@@ -1,2 +1,8 @@
 *.ltx linguist-language=INI
 *.script linguist-language=Lua
+
+*.ps linguist-language=ShaderLab
+*.gs linguist-language=ShaderLab
+*.vs linguist-language=ShaderLab
+*.cs linguist-language=ShaderLab
+*.s linguist-language=ShaderLab
