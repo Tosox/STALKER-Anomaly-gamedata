@@ -10,4 +10,4 @@ This repository contains the unpacked gamedata files of the version _1.5.2_ of t
 > Furthermore, I can't just use Git LFS since the storage capacity for the free plan is also limited.
 
 > [!NOTE]
-> GitHub cannot properly display Cyrillic text in the right encoding, resulting in some files appearing broken (such as [rus/_game_version.xml](gamedata/configs/text/rus/_game_version.xml)). However, there's no need to worry, as downloading the file and selecting the correct encoding (Windows-1251) will ensure that the Cyrillic text is displayed correctly.
+> GitHub cannot properly display Cyrillic text in the right encoding, resulting in some files appearing broken (such as [rus/_game_version.xml](gamedata/configs/text/rus/_game_version.xml)). However, there's no need to worry, as downloading the file and selecting the correct encoding (Windows-1251) when opening it will ensure that the Cyrillic text is displayed correctly.
